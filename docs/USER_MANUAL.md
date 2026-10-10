@@ -377,6 +377,16 @@ me when** on its page in Settings:
 | **GPU** | utilisation |
 | **Disk** | disk usage |
 
+**One busy app.** Also on the CPU page: **One app stays this busy for 5
+minutes**, on by default at 50% (of one core, as Activity Monitor counts it).
+It watches each app on its own -- an app can hold half a core while the
+machine as a whole looks quiet -- and folds helpers into their app, so
+Chrome's renderers are Chrome. The alert has a **Quit** button for an app,
+which asks it to quit the way ⌘Q does, so unsaved work still gets to ask. A
+command-line tool or system process is named, with a pointer to Activity
+Monitor, and no button. It is reported once per busy stretch, not every
+half minute.
+
 **Network** works the other way, under **Tell me when**: it notifies you when
 the interface, the local IP, the Wi-Fi network or the public IP changes. The
 public IP is only looked up when **Look up the public address** is on; see

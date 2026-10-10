@@ -355,3 +355,9 @@
 "Uninstall an app or tool" = "Alkalmazás vagy eszköz eltávolítása";
 "Removes the app and the files it left around the system, or a command-line tool and its settings." = "Eltávolítja az alkalmazást és a rendszerben hagyott fájljait, vagy egy parancssori eszközt a beállításaival.";
 "Uninstall…" = "Eltávolítás…";
+
+// Monitor · RunawayApps
+"%0 is working hard" = "A(z) %0 keményen dolgozik";
+"%0% CPU for %1 minutes." = "%0% CPU %1 perce.";
+"One app stays this busy for 5 minutes" = "Egy app 5 percig ennyire leterhelt";
+"Open Activity Monitor to see why." = "A Tevékenységfigyelőben megnézheti, miért.";

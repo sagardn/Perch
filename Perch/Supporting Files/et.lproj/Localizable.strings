@@ -355,3 +355,9 @@
 "Uninstall an app or tool" = "Eemalda rakendus või tööriist";
 "Removes the app and the files it left around the system, or a command-line tool and its settings." = "Eemaldab rakenduse ja failid, mille see süsteemi jättis, või käsurea tööriista koos seadetega.";
 "Uninstall…" = "Eemalda…";
+
+// Monitor · RunawayApps
+"%0 is working hard" = "%0 töötab kõvasti";
+"%0% CPU for %1 minutes." = "%0% protsessorit %1 minuti jooksul.";
+"One app stays this busy for 5 minutes" = "Üks rakendus on 5 minutit nii hõivatud";
+"Open Activity Monitor to see why." = "Põhjuse nägemiseks ava Activity Monitor.";

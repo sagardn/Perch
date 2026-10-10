@@ -355,3 +355,9 @@
 "Uninstall an app or tool" = "Dezinstalează o aplicație sau unealtă";
 "Removes the app and the files it left around the system, or a command-line tool and its settings." = "Elimină aplicația și fișierele lăsate în sistem, sau o unealtă de linie de comandă și setările ei.";
 "Uninstall…" = "Dezinstalează…";
+
+// Monitor · RunawayApps
+"%0 is working hard" = "%0 lucrează intens";
+"%0% CPU for %1 minutes." = "%0% CPU timp de %1 minute.";
+"One app stays this busy for 5 minutes" = "O aplicație rămâne atât de ocupată 5 minute";
+"Open Activity Monitor to see why." = "Deschideți Monitor activitate pentru a vedea de ce.";

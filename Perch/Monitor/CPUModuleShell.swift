@@ -126,6 +126,15 @@ final class CPUSettingsPage: NSView {
                 })
             })
 
+        // One app on its own, not the machine: the case this is for was an
+        // app holding 59% of a core while the total sat at a modest 30%.
+        let runaway = Controls.row(localized("One app stays this busy for 5 minutes"),
+                                   Controls.threshold(on: RunawayApps.isEnabled,
+                                                      value: RunawayApps.threshold,
+                                                      suffix: "%", range: 20...400, step: 10) { on, level in
+            RunawayApps.threshold = level
+            RunawayApps.isEnabled = on
+        })
         let alerts = Controls.section(localized("Notify me when"),
             CPUThreshold.allCases.filter { $0.isAvailable }.map { threshold in
                 Controls.row(threshold.title,
@@ -137,7 +146,7 @@ final class CPUSettingsPage: NSView {
                     threshold.isWatched = on
                     threshold.level = level
                 })
-            })
+            } + [runaway])
 
         let section = Controls.section(localized("CPU"), [
             Controls.row(localized("Show temperature"),

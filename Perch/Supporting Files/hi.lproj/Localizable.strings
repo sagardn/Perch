@@ -355,3 +355,9 @@
 "Uninstall an app or tool" = "ऐप या टूल अनइंस्टॉल करें";
 "Removes the app and the files it left around the system, or a command-line tool and its settings." = "ऐप और उसने सिस्टम में जो फ़ाइलें छोड़ीं उन्हें हटाता है, या कमांड-लाइन टूल और उसकी सेटिंग्स।";
 "Uninstall…" = "अनइंस्टॉल…";
+
+// Monitor · RunawayApps
+"%0 is working hard" = "%0 बहुत मेहनत कर रहा है";
+"%0% CPU for %1 minutes." = "%1 मिनट से %0% CPU।";
+"One app stays this busy for 5 minutes" = "एक ऐप 5 मिनट तक इतना व्यस्त रहे";
+"Open Activity Monitor to see why." = "कारण देखने के लिए Activity Monitor खोलें।";

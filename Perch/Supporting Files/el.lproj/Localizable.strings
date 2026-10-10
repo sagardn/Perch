@@ -355,3 +355,9 @@
 "Uninstall an app or tool" = "Απεγκατάσταση εφαρμογής ή εργαλείου";
 "Removes the app and the files it left around the system, or a command-line tool and its settings." = "Αφαιρεί την εφαρμογή και τα αρχεία που άφησε στο σύστημα, ή ένα εργαλείο γραμμής εντολών και τις ρυθμίσεις του.";
 "Uninstall…" = "Απεγκατάσταση…";
+
+// Monitor · RunawayApps
+"%0 is working hard" = "Το %0 δουλεύει έντονα";
+"%0% CPU for %1 minutes." = "%0% CPU για %1 λεπτά.";
+"One app stays this busy for 5 minutes" = "Μία εφαρμογή μένει τόσο απασχολημένη για 5 λεπτά";
+"Open Activity Monitor to see why." = "Ανοίξτε την Παρακολούθηση δραστηριότητας για να δείτε γιατί.";

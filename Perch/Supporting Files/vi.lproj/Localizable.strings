@@ -355,3 +355,9 @@
 "Uninstall an app or tool" = "Gỡ ứng dụng hoặc công cụ";
 "Removes the app and the files it left around the system, or a command-line tool and its settings." = "Gỡ ứng dụng và các tệp nó để lại trong hệ thống, hoặc một công cụ dòng lệnh cùng thiết lập của nó.";
 "Uninstall…" = "Gỡ…";
+
+// Monitor · RunawayApps
+"%0 is working hard" = "%0 đang hoạt động nặng";
+"%0% CPU for %1 minutes." = "%0% CPU trong %1 phút.";
+"One app stays this busy for 5 minutes" = "Một ứng dụng bận như vậy trong 5 phút";
+"Open Activity Monitor to see why." = "Mở Giám sát hoạt động để xem lý do.";

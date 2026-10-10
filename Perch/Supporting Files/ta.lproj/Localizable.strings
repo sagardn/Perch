@@ -355,3 +355,9 @@
 "Uninstall an app or tool" = "பயன்பாடு அல்லது கருவியை நிறுவல்நீக்கு";
 "Removes the app and the files it left around the system, or a command-line tool and its settings." = "பயன்பாட்டையும் அது கணினியில் விட்டுச் சென்ற கோப்புகளையும், அல்லது கட்டளை வரி கருவியையும் அதன் அமைப்புகளையும் நீக்கும்.";
 "Uninstall…" = "நிறுவல்நீக்கு…";
+
+// Monitor · RunawayApps
+"%0 is working hard" = "%0 கடுமையாக இயங்குகிறது";
+"%0% CPU for %1 minutes." = "%1 நிமிடங்களாக %0% CPU.";
+"One app stays this busy for 5 minutes" = "ஒரு ஆப் 5 நிமிடங்கள் இவ்வளவு பிஸியாக இருந்தால்";
+"Open Activity Monitor to see why." = "காரணத்தைக் காண Activity Monitor-ஐத் திறக்கவும்.";

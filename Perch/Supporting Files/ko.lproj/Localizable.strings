@@ -355,3 +355,9 @@
 "Uninstall an app or tool" = "앱 또는 도구 제거";
 "Removes the app and the files it left around the system, or a command-line tool and its settings." = "앱과 그것이 시스템에 남긴 파일, 또는 명령줄 도구와 그 설정을 제거합니다.";
 "Uninstall…" = "제거…";
+
+// Monitor · RunawayApps
+"%0 is working hard" = "%0 앱이 많이 작업하고 있습니다";
+"%0% CPU for %1 minutes." = "%1분 동안 CPU %0%.";
+"One app stays this busy for 5 minutes" = "앱 하나가 5분 동안 이만큼 바쁠 때";
+"Open Activity Monitor to see why." = "원인을 보려면 활성 상태 보기를 여십시오.";

@@ -109,6 +109,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate,
         // the menu bar behind a window asking which ones to show.
         setup {
             ModuleRegistry.shared.startAll()
+            RunawayApps.shared.start()
             // After the modules: the menu bar is built from what they say
             // about themselves, so started first the combined row would be
             // laid out before there was anything in it.
@@ -285,6 +286,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate,
                                 didReceive response: UNNotificationResponse,
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
         clickInNotification = true
+
+        // "Quit" on a runaway-app alert, or a click on one.
+        if RunawayApps.handle(response) {
+            completionHandler()
+            return
+        }
 
         // The url in the notification says a release existed when it was
         // posted, not that it is still the newest or that it is genuine -- so

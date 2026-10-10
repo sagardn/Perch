@@ -355,3 +355,9 @@
 "Uninstall an app or tool" = "Uygulamayı veya aracı kaldır";
 "Removes the app and the files it left around the system, or a command-line tool and its settings." = "Uygulamayı ve sistemde bıraktığı dosyaları, ya da bir komut satırı aracını ve ayarlarını kaldırır.";
 "Uninstall…" = "Kaldır…";
+
+// Monitor · RunawayApps
+"%0 is working hard" = "%0 yoğun çalışıyor";
+"%0% CPU for %1 minutes." = "%1 dakikadır %0% CPU.";
+"One app stays this busy for 5 minutes" = "Bir uygulama 5 dakika bu kadar meşgul kalırsa";
+"Open Activity Monitor to see why." = "Nedenini görmek için Etkinlik Monitörü’nü açın.";

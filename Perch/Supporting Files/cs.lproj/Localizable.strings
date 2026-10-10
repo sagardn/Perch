@@ -355,3 +355,9 @@
 "Uninstall an app or tool" = "Odinstalovat aplikaci nebo nástroj";
 "Removes the app and the files it left around the system, or a command-line tool and its settings." = "Odstraní aplikaci a soubory, které nechala v systému, nebo nástroj příkazové řádky a jeho nastavení.";
 "Uninstall…" = "Odinstalovat…";
+
+// Monitor · RunawayApps
+"%0 is working hard" = "%0 je hodně vytížená";
+"%0% CPU for %1 minutes." = "%0 % CPU po dobu %1 minut.";
+"One app stays this busy for 5 minutes" = "Jedna aplikace je takto vytížená 5 minut";
+"Open Activity Monitor to see why." = "Příčinu zjistíte v Monitoru aktivity.";

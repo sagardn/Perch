@@ -355,3 +355,9 @@
 "Uninstall an app or tool" = "Deinstaliraj aplikaciju ili alat";
 "Removes the app and the files it left around the system, or a command-line tool and its settings." = "Uklanja aplikaciju i datoteke koje je ostavila u sustavu, ili alat naredbenog retka i njegove postavke.";
 "Uninstall…" = "Deinstaliraj…";
+
+// Monitor · RunawayApps
+"%0 is working hard" = "%0 jako radi";
+"%0% CPU for %1 minutes." = "%0 % procesora tijekom %1 minuta.";
+"One app stays this busy for 5 minutes" = "Jedna aplikacija ostaje ovako zauzeta 5 minuta";
+"Open Activity Monitor to see why." = "Otvorite Monitor aktivnosti da vidite zašto.";

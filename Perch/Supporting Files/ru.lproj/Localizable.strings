@@ -355,3 +355,9 @@
 "Uninstall an app or tool" = "Удалить приложение или инструмент";
 "Removes the app and the files it left around the system, or a command-line tool and its settings." = "Удаляет приложение и файлы, оставленные им в системе, либо инструмент командной строки с его настройками.";
 "Uninstall…" = "Удалить…";
+
+// Monitor · RunawayApps
+"%0 is working hard" = "%0 сильно нагружает систему";
+"%0% CPU for %1 minutes." = "%0% ЦП в течение %1 мин.";
+"One app stays this busy for 5 minutes" = "Одно приложение так загружено 5 минут";
+"Open Activity Monitor to see why." = "Откройте Мониторинг системы, чтобы узнать причину.";

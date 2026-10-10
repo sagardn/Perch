@@ -355,3 +355,9 @@
 "Uninstall an app or tool" = "App やツールをアンインストール";
 "Removes the app and the files it left around the system, or a command-line tool and its settings." = "App とそれがシステムに残したファイル、またはコマンドラインツールとその設定を削除します。";
 "Uninstall…" = "アンインストール…";
+
+// Monitor · RunawayApps
+"%0 is working hard" = "%0 が高負荷で動作しています";
+"%0% CPU for %1 minutes." = "%1 分間 CPU %0%。";
+"One app stays this busy for 5 minutes" = "1 つのアプリが 5 分間この負荷を続けたとき";
+"Open Activity Monitor to see why." = "理由はアクティビティモニタで確認できます。";

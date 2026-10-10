@@ -355,3 +355,9 @@
 "Uninstall an app or tool" = "ถอนการติดตั้งแอปหรือเครื่องมือ";
 "Removes the app and the files it left around the system, or a command-line tool and its settings." = "เอาแอปและไฟล์ที่ทิ้งไว้ในระบบออก หรือเครื่องมือบรรทัดคำสั่งพร้อมการตั้งค่า";
 "Uninstall…" = "ถอนการติดตั้ง…";
+
+// Monitor · RunawayApps
+"%0 is working hard" = "%0 กำลังทำงานหนัก";
+"%0% CPU for %1 minutes." = "CPU %0% เป็นเวลา %1 นาที";
+"One app stays this busy for 5 minutes" = "แอปหนึ่งยังคงทำงานหนักขนาดนี้นาน 5 นาที";
+"Open Activity Monitor to see why." = "เปิดตัวตรวจสอบกิจกรรมเพื่อดูสาเหตุ";

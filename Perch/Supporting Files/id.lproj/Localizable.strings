@@ -355,3 +355,9 @@
 "Uninstall an app or tool" = "Hapus aplikasi atau alat";
 "Removes the app and the files it left around the system, or a command-line tool and its settings." = "Menghapus aplikasi dan berkas yang ditinggalkannya di sistem, atau alat baris perintah beserta pengaturannya.";
 "Uninstall…" = "Hapus…";
+
+// Monitor · RunawayApps
+"%0 is working hard" = "%0 bekerja keras";
+"%0% CPU for %1 minutes." = "%0% CPU selama %1 menit.";
+"One app stays this busy for 5 minutes" = "Satu app tetap sesibuk ini selama 5 menit";
+"Open Activity Monitor to see why." = "Buka Monitor Aktivitas untuk melihat alasannya.";

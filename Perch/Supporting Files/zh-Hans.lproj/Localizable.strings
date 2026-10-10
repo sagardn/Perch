@@ -355,3 +355,9 @@
 "Uninstall an app or tool" = "卸载 App 或工具";
 "Removes the app and the files it left around the system, or a command-line tool and its settings." = "移除 App 及其留在系统中的文件，或一个命令行工具及其设置。";
 "Uninstall…" = "卸载…";
+
+// Monitor · RunawayApps
+"%0 is working hard" = "“%0”正在高负荷运行";
+"%0% CPU for %1 minutes." = "%1 分钟内 CPU 占用 %0%。";
+"One app stays this busy for 5 minutes" = "某个应用持续这么忙 5 分钟";
+"Open Activity Monitor to see why." = "打开“活动监视器”查看原因。";
