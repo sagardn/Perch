@@ -266,9 +266,10 @@ final class SetupPageView: NSView {
         switch page {
         case .welcome:   return localized("Welcome to Perch")
         case .preset:    return localized("Select preset")
+        case .windowControl: return localized("Window control")
         case .loginItem: return localized("Start at login")
         case .updates:   return localized("Check for updates")
-        case .done:      return localized("The configuration is completed")
+        case .done:      return localized("You're all set")
         }
     }
 
@@ -276,6 +277,7 @@ final class SetupPageView: NSView {
         switch page {
         case .welcome:   return WelcomePage()
         case .preset:    return PresetPage()
+        case .windowControl: return WindowControlPage()
         case .loginItem: return LoginItemPage()
         case .updates:   return UpdatesPage()
         case .done:      return DonePage()
@@ -331,7 +333,10 @@ private enum SetupText {
     }
 
     private static func label(_ text: String, size: CGFloat, weight: NSFont.Weight) -> NSTextField {
-        let field = NSTextField(labelWithString: text)
+        // A wrapping label. `labelWithString` is single-line whatever width
+        // it is given -- the wrap width below was being honoured as a clip,
+        // which cut the welcome sentence off at "This short setu".
+        let field = NSTextField(wrappingLabelWithString: text)
         field.font = .systemFont(ofSize: size, weight: weight)
         field.toolTip = text
         field.translatesAutoresizingMaskIntoConstraints = false
@@ -535,6 +540,90 @@ private final class PresetPage: NSView {
 
 // MARK: - Start at login
 
+/// What the launcher half needs, asked for while there is time to explain it.
+///
+/// Every shortcut that moves a window -- minimising, restoring, snapping --
+/// depends on Accessibility, and without this page the first a new user
+/// heard of it was a notice when a shortcut did nothing. The status follows
+/// the grant live, because the grant happens in System Settings, not here.
+private final class WindowControlPage: NSView {
+
+    private let status = NSTextField(labelWithString: "")
+    private let allow = NSButton()
+    private var timer: Timer?
+
+    init() {
+        super.init(frame: .zero)
+
+        let message = SetupText.body(localized("window_control_message"))
+
+        let grid = NSGridView(views: [
+            ("⌃Space", localized("Search and switch apps")),
+            ("⌃Tab", localized("Cycle the apps you mark")),
+            ("⌃⌥← →", localized("Snap a window to half the screen")),
+            ("⌃`", localized("Minimise and bring back")),
+        ].map { keys, what -> [NSView] in
+            let key = NSTextField(labelWithString: keys)
+            key.font = .monospacedSystemFont(ofSize: 12, weight: .semibold)
+            key.alignment = .right
+            let text = NSTextField(labelWithString: what)
+            text.font = .systemFont(ofSize: 12)
+            text.textColor = .secondaryLabelColor
+            return [key, text]
+        })
+        grid.columnSpacing = 14
+        grid.rowSpacing = 6
+        grid.column(at: 0).xPlacement = .trailing
+        grid.column(at: 1).xPlacement = .leading
+        // Its natural width, so the column centres it rather than stretching
+        // it and leaving the keys stranded at the right.
+        grid.setContentHuggingPriority(.required, for: .horizontal)
+        grid.translatesAutoresizingMaskIntoConstraints = false
+
+        status.font = .systemFont(ofSize: 12, weight: .medium)
+        allow.title = localized("Allow…")
+        allow.bezelStyle = .rounded
+        allow.target = self
+        allow.action = #selector(grant)
+        let row = NSStackView(views: [status, allow])
+        row.spacing = 10
+
+        let column = NSStackView(views: [message, grid, row])
+        column.orientation = .vertical
+        column.alignment = .centerX
+        column.spacing = 22
+        column.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(column)
+        NSLayoutConstraint.activate([
+            column.leadingAnchor.constraint(equalTo: leadingAnchor),
+            column.trailingAnchor.constraint(equalTo: trailingAnchor),
+            column.topAnchor.constraint(equalTo: topAnchor),
+            column.bottomAnchor.constraint(equalTo: bottomAnchor),
+        ])
+        refresh()
+    }
+
+    required init?(coder: NSCoder) { fatalError("not used") }
+
+    override func viewDidMoveToWindow() {
+        super.viewDidMoveToWindow()
+        timer?.invalidate()
+        timer = nil
+        guard window != nil else { return }
+        // Once a second, only while this page is on screen.
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in self?.refresh() }
+    }
+
+    private func refresh() {
+        let trusted = WindowControl.isTrusted
+        status.stringValue = trusted ? "✓ " + localized("Allowed") : localized("Not allowed yet")
+        status.textColor = trusted ? .systemGreen : .secondaryLabelColor
+        allow.isHidden = trusted
+    }
+
+    @objc private func grant() { WindowControl.grantFromSettings() }
+}
+
 private final class LoginItemPage: NSView {
     init() {
         super.init(frame: .zero)
@@ -658,7 +747,8 @@ private final class DonePage: NSView {
     init() {
         super.init(frame: .zero)
 
-        let message = SetupText.body(localized("finish_setup_message"))
+        // Not "You are all set." again: the page's title says it now.
+        let message = SetupText.body(localized("finish_setup_body"))
 
         let links = NSStackView()
         links.orientation = .horizontal
@@ -708,15 +798,22 @@ private final class SetupLink: NSButton {
         self.open = open
         super.init(frame: NSRect(x: 0, y: 0, width: 30, height: 30))
 
-        title = ""
+        // Named under the icon: two unlabelled icons on the last page did not
+        // say that one is the source code and the other the support page.
+        title = name
+        font = .systemFont(ofSize: 10)
+        imagePosition = .imageAbove
         toolTip = name
         setAccessibilityLabel(name)
         // An asset, or failing that a system symbol of that name -- never a
         // force unwrap: a missing image should cost a blank button, not a
         // crash on the last page of first run.
-        self.image = NSImage(named: image)
+        let picture = NSImage(named: image)?.copy() as? NSImage
             ?? NSImage(systemSymbolName: image, accessibilityDescription: name)?
                 .withSymbolConfiguration(.init(pointSize: 18, weight: .regular))
+        // One size for both, so their names line up underneath.
+        picture?.size = NSSize(width: 24, height: 24)
+        self.image = picture
         imageScaling = .scaleProportionallyDown
         isBordered = false
         bezelStyle = .regularSquare
@@ -727,8 +824,8 @@ private final class SetupLink: NSButton {
         translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
-            widthAnchor.constraint(equalToConstant: 30),
-            heightAnchor.constraint(equalToConstant: 30),
+            widthAnchor.constraint(greaterThanOrEqualToConstant: 44),
+            heightAnchor.constraint(equalToConstant: 44),
         ])
     }
 

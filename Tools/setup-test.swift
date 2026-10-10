@@ -41,6 +41,7 @@ do {
 
     check("Next goes to the presets", flow.advance() == .show(.preset))
     check("you can go back from the second page", flow.canGoBack)
+    check("then window control", flow.advance() == .show(.windowControl))
     check("then start at login", flow.advance() == .show(.loginItem))
     check("then updates", flow.advance() == .show(.updates))
     check("then the last page", flow.advance() == .show(.done))
@@ -67,7 +68,7 @@ do {
     var walkedBack: [SetupPage] = [flow.page]
     while flow.canGoBack { walkedBack.append(flow.goBack()) }
     check("and back reaches every page in reverse, without skipping one",
-          walkedBack == [.updates, .loginItem, .preset, .welcome])
+          walkedBack == [.updates, .loginItem, .windowControl, .preset, .welcome])
     check("back from the first page is refused rather than wrapping",
           flow.goBack() == .welcome)
     check("and the first page offers Next again", flow.nextTitle == "Next")
@@ -78,7 +79,7 @@ do {
     var seen: [SetupPage] = [flow.page]
     while case .show(let page) = flow.advance() { seen.append(page) }
     check("five pages, in order",
-          seen == [.welcome, .preset, .loginItem, .updates, .done])
+          seen == [.welcome, .preset, .windowControl, .loginItem, .updates, .done])
     check("and the walk terminates", seen.count == SetupPage.allCases.count)
 }
 

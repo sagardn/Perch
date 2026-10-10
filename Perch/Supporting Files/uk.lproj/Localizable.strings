@@ -297,8 +297,6 @@
 "Check for a new version every week (once a week)" = "Перевіряти нову версію щотижня (раз на тиждень)";
 "Check for a new version every month (once a month)" = "Перевіряти нову версію щомісяця (раз на місяць)";
 "Never check for updates (not recommended)" = "Ніколи не перевіряти оновлення (не рекомендовано)";
-"The configuration is completed" = "Налаштування завершено";
-"finish_setup_message" = "Усе готово.\n\nPerch — безплатна програма з відкритим кодом. Якщо вона вам корисна, ви можете підтримати її розвиток.";
 "Next" = "Далі";
 "Next page" = "Наступна сторінка";
 "Finish" = "Готово";
@@ -389,3 +387,14 @@
 "Record Shortcut" = "Записати скорочення";
 "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Клацніть, потім натисніть комбінацію з ⌃, ⌥ або ⌘. ⎋ — скасувати, ⌫ — очистити.";
 "%0 already uses this shortcut" = "%0 уже використовує це скорочення";
+
+// Views · Setup, window control
+"Allow…" = "Дозволити…";
+"Cycle the apps you mark" = "Перемикатися між позначеними програмами";
+"Minimise and bring back" = "Згорнути й повернути";
+"Not allowed yet" = "Ще не дозволено";
+"Search and switch apps" = "Шукати й перемикати програми";
+"Snap a window to half the screen" = "Прикріпити вікно до половини екрана";
+"You're all set" = "Усе готово";
+"window_control_message" = "Скорочення Perch переміщують і згортають вікна за вас. macOS попросить один раз дозволити це в розділі «Приватність і безпека» → «Доступність». Нічого з того, що ви вводите, не записується й нікуди не надсилається.";
+"finish_setup_body" = "Perch живе на смузі меню. Натисніть на показник, щоб побачити подробиці, або натисніть ⌃Space для пошуку. Perch безкоштовний і з відкритим кодом; якщо він вам корисний, ви можете підтримати його розробку.";

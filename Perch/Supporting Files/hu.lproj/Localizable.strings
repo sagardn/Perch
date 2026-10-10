@@ -297,8 +297,6 @@
 "Check for a new version every week (once a week)" = "Új verzió keresése minden héten (hetente egyszer)";
 "Check for a new version every month (once a month)" = "Új verzió keresése minden hónapban (havonta egyszer)";
 "Never check for updates (not recommended)" = "Soha ne keressen frissítéseket (nem ajánlott)";
-"The configuration is completed" = "A beállítás befejeződött";
-"finish_setup_message" = "Minden készen áll.\n\nA Perch ingyenes és nyílt forráskódú. Ha hasznosnak találja, támogathatja a fejlesztését.";
 "Next" = "Tovább";
 "Next page" = "Következő oldal";
 "Finish" = "Befejezés";
@@ -389,3 +387,14 @@
 "Record Shortcut" = "Billentyűparancs rögzítése";
 "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Kattintson, majd nyomjon le egy kombinációt a ⌃, ⌥ vagy ⌘ billentyűvel. ⎋: mégse, ⌫: törlés.";
 "%0 already uses this shortcut" = "A(z) %0 már használja ezt a billentyűparancsot";
+
+// Views · Setup, window control
+"Allow…" = "Engedélyezés…";
+"Cycle the apps you mark" = "Váltás a megjelölt appok között";
+"Minimise and bring back" = "Kis méret és visszahozás";
+"Not allowed yet" = "Még nincs engedélyezve";
+"Search and switch apps" = "Appok keresése és váltása";
+"Snap a window to half the screen" = "Ablak illesztése a képernyő felére";
+"You're all set" = "Minden kész";
+"window_control_message" = "A Perch billentyűparancsai áthelyezik és kis méretre állítják helyetted az ablakokat. A macOS egyszer kéri, hogy ezt engedélyezd az Adatvédelem és biztonság → Kisegítő lehetőségek részen. Semmit, amit begépelsz, nem rögzít és sehová nem küld.";
+"finish_setup_body" = "A Perch a menüsorban lakik. Kattints egy mért értékre a részletekért, vagy nyomd meg a ⌃Space billentyűt a kereséshez. A Perch ingyenes és nyílt forráskódú; ha hasznos számodra, támogathatod a fejlesztését.";

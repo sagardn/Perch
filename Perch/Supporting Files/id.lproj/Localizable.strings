@@ -297,8 +297,6 @@
 "Check for a new version every week (once a week)" = "Periksa versi baru setiap minggu (sekali seminggu)";
 "Check for a new version every month (once a month)" = "Periksa versi baru setiap bulan (sekali sebulan)";
 "Never check for updates (not recommended)" = "Jangan pernah periksa pembaruan (tidak disarankan)";
-"The configuration is completed" = "Konfigurasi selesai";
-"finish_setup_message" = "Semua sudah siap.\n\nPerch gratis dan open source. Jika bermanfaat bagi Anda, Anda dapat mendukung pengembangannya.";
 "Next" = "Berikutnya";
 "Next page" = "Halaman berikutnya";
 "Finish" = "Selesai";
@@ -389,3 +387,14 @@
 "Record Shortcut" = "Rekam Pintasan";
 "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Klik, lalu tekan kombinasi dengan ⌃, ⌥, atau ⌘. ⎋ membatalkan, ⌫ menghapus.";
 "%0 already uses this shortcut" = "%0 sudah menggunakan pintasan ini";
+
+// Views · Setup, window control
+"Allow…" = "Izinkan…";
+"Cycle the apps you mark" = "Beralih di antara app yang Anda tandai";
+"Minimise and bring back" = "Minimalkan dan kembalikan";
+"Not allowed yet" = "Belum diizinkan";
+"Search and switch apps" = "Cari dan beralih app";
+"Snap a window to half the screen" = "Tempelkan jendela ke setengah layar";
+"You're all set" = "Semua siap";
+"window_control_message" = "Pintasan Perch memindahkan dan meminimalkan jendela untuk Anda. macOS meminta Anda mengizinkannya sekali, di Privasi & Keamanan → Aksesibilitas. Tidak ada yang Anda ketik yang direkam atau dikirim ke mana pun.";
+"finish_setup_body" = "Perch tinggal di bar menu Anda. Klik sebuah bacaan untuk detailnya, atau tekan ⌃Space untuk mencari. Perch gratis dan sumber terbuka; jika bermanfaat bagi Anda, Anda dapat mendukung pengembangannya.";

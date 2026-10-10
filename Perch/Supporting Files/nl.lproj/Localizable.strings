@@ -297,8 +297,6 @@
 "Check for a new version every week (once a week)" = "Controleer elke week op een nieuwe versie (eenmaal per week)";
 "Check for a new version every month (once a month)" = "Controleer elke maand op een nieuwe versie (eenmaal per maand)";
 "Never check for updates (not recommended)" = "Controleer nooit op updates (niet aanbevolen)";
-"The configuration is completed" = "De configuratie is voltooid";
-"finish_setup_message" = "Je bent klaar.\n\nPerch is gratis en opensource. Als je er iets aan hebt, kun je de ontwikkeling steunen.";
 "Next" = "Volgende";
 "Next page" = "Volgende pagina";
 "Finish" = "Voltooi";
@@ -389,3 +387,14 @@
 "Record Shortcut" = "Neem toetscombinatie op";
 "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Klik en druk op een combinatie met ⌃, ⌥ of ⌘. ⎋ annuleert, ⌫ wist.";
 "%0 already uses this shortcut" = "%0 gebruikt deze toetscombinatie al";
+
+// Views · Setup, window control
+"Allow…" = "Sta toe…";
+"Cycle the apps you mark" = "Wissel tussen de apps die je markeert";
+"Minimise and bring back" = "Minimaliseer en haal terug";
+"Not allowed yet" = "Nog niet toegestaan";
+"Search and switch apps" = "Zoek en wissel van app";
+"Snap a window to half the screen" = "Zet een venster op de helft van het scherm";
+"You're all set" = "Je bent klaar";
+"window_control_message" = "De sneltoetsen van Perch verplaatsen en minimaliseren vensters voor je. macOS vraagt je dit eenmalig toe te staan, bij Privacy en beveiliging → Toegankelijkheid. Niets wat je typt wordt vastgelegd of ergens naartoe gestuurd.";
+"finish_setup_body" = "Perch woont in je menubalk. Klik op een meetwaarde voor details, of druk op ⌃Space om te zoeken. Perch is gratis en open source; als je er iets aan hebt, kun je de ontwikkeling steunen.";

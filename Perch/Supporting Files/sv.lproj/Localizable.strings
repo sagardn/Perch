@@ -297,8 +297,6 @@
 "Check for a new version every week (once a week)" = "Sök efter en ny version varje vecka (en gång i veckan)";
 "Check for a new version every month (once a month)" = "Sök efter en ny version varje månad (en gång i månaden)";
 "Never check for updates (not recommended)" = "Sök aldrig efter uppdateringar (rekommenderas inte)";
-"The configuration is completed" = "Konfigurationen är klar";
-"finish_setup_message" = "Allt är klart.\n\nPerch är gratis och har öppen källkod. Om du har nytta av det kan du stödja utvecklingen.";
 "Next" = "Nästa";
 "Next page" = "Nästa sida";
 "Finish" = "Slutför";
@@ -389,3 +387,14 @@
 "Record Shortcut" = "Spela in kortkommando";
 "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Klicka och tryck sedan på en kombination med ⌃, ⌥ eller ⌘. ⎋ avbryter, ⌫ rensar.";
 "%0 already uses this shortcut" = "%0 använder redan det här kortkommandot";
+
+// Views · Setup, window control
+"Allow…" = "Tillåt…";
+"Cycle the apps you mark" = "Växla mellan apparna du markerar";
+"Minimise and bring back" = "Minimera och ta tillbaka";
+"Not allowed yet" = "Inte tillåtet ännu";
+"Search and switch apps" = "Sök och byt app";
+"Snap a window to half the screen" = "Fäst ett fönster på halva skärmen";
+"You're all set" = "Allt är klart";
+"window_control_message" = "Perchs kortkommandon flyttar och minimerar fönster åt dig. macOS ber dig tillåta det en gång, under Integritet och säkerhet → Hjälpmedel. Inget du skriver registreras eller skickas någonstans.";
+"finish_setup_body" = "Perch bor i menyraden. Klicka på ett mätvärde för detaljer, eller tryck på ⌃Space för att söka. Perch är gratis och öppen källkod; om du har nytta av det kan du stödja utvecklingen.";

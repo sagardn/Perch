@@ -297,8 +297,6 @@
 "Check for a new version every week (once a week)" = "التحقق من وجود إصدار جديد أسبوعيًا (مرة في الأسبوع)";
 "Check for a new version every month (once a month)" = "التحقق من وجود إصدار جديد شهريًا (مرة في الشهر)";
 "Never check for updates (not recommended)" = "عدم التحقق من وجود تحديثات أبدًا (غير موصى به)";
-"The configuration is completed" = "اكتمل الإعداد";
-"finish_setup_message" = "كل شيء جاهز.\n\nPerch مجاني ومفتوح المصدر. إذا كان مفيدًا لك، يمكنك دعم تطويره.";
 "Next" = "التالي";
 "Next page" = "الصفحة التالية";
 "Finish" = "إنهاء";
@@ -389,3 +387,14 @@
 "Record Shortcut" = "تسجيل اختصار";
 "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "انقر، ثم اضغط مجموعة مفاتيح مع ⌃ أو ⌥ أو ⌘. ⎋ للإلغاء، ⌫ للمسح.";
 "%0 already uses this shortcut" = "يستخدم %0 هذا الاختصار بالفعل";
+
+// Views · Setup, window control
+"Allow…" = "السماح…";
+"Cycle the apps you mark" = "التنقل بين التطبيقات التي تحددها";
+"Minimise and bring back" = "تصغير النافذة وإعادتها";
+"Not allowed yet" = "غير مسموح بعد";
+"Search and switch apps" = "البحث عن التطبيقات والتبديل بينها";
+"Snap a window to half the screen" = "محاذاة نافذة إلى نصف الشاشة";
+"You're all set" = "كل شيء جاهز";
+"window_control_message" = "تنقل اختصارات Perch النوافذ وتصغّرها نيابةً عنك. يطلب منك macOS السماح بذلك مرة واحدة، من الخصوصية والأمن → تسهيلات الاستخدام. لا يُسجَّل أي شيء تكتبه ولا يُرسَل إلى أي مكان.";
+"finish_setup_body" = "يوجد Perch في شريط القائمة. انقر على أي قراءة لعرض تفاصيلها، أو اضغط ⌃Space للبحث. Perch مجاني ومفتوح المصدر؛ وإن كان مفيدًا لك، يمكنك دعم تطويره.";

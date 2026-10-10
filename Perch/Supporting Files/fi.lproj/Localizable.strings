@@ -297,8 +297,6 @@
 "Check for a new version every week (once a week)" = "Tarkista uusi versio viikoittain (kerran viikossa)";
 "Check for a new version every month (once a month)" = "Tarkista uusi versio kuukausittain (kerran kuukaudessa)";
 "Never check for updates (not recommended)" = "Älä koskaan tarkista päivityksiä (ei suositeltu)";
-"The configuration is completed" = "Käyttöönotto on valmis";
-"finish_setup_message" = "Kaikki on valmista.\n\nPerch on ilmainen ja avointa lähdekoodia. Jos siitä on sinulle hyötyä, voit tukea sen kehitystä.";
 "Next" = "Seuraava";
 "Next page" = "Seuraava sivu";
 "Finish" = "Valmis";
@@ -389,3 +387,14 @@
 "Record Shortcut" = "Tallenna oikotie";
 "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Klikkaa ja paina yhdistelmää, jossa on ⌃, ⌥ tai ⌘. ⎋ kumoaa, ⌫ tyhjentää.";
 "%0 already uses this shortcut" = "%0 käyttää jo tätä oikotietä";
+
+// Views · Setup, window control
+"Allow…" = "Salli…";
+"Cycle the apps you mark" = "Vaihda merkitsemiesi appien välillä";
+"Minimise and bring back" = "Pienennä ja palauta";
+"Not allowed yet" = "Ei vielä sallittu";
+"Search and switch apps" = "Etsi ja vaihda appeja";
+"Snap a window to half the screen" = "Kiinnitä ikkuna puoleen näytöstä";
+"You're all set" = "Kaikki valmista";
+"window_control_message" = "Perchin pikanäppäimet siirtävät ja pienentävät ikkunoita puolestasi. macOS pyytää sinua sallimaan tämän kerran kohdassa Tietosuoja ja suojaus → Käyttöapu. Mitään kirjoittamaasi ei tallenneta eikä lähetetä minnekään.";
+"finish_setup_body" = "Perch asuu valikkorivilläsi. Klikkaa lukemaa nähdäksesi sen tiedot tai paina ⌃Space hakeaksesi. Perch on ilmainen ja avointa lähdekoodia; jos siitä on sinulle hyötyä, voit tukea sen kehitystä.";

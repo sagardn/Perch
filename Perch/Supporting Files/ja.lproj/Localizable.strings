@@ -297,8 +297,6 @@
 "Check for a new version every week (once a week)" = "毎週新しいバージョンを確認（1週間に1回）";
 "Check for a new version every month (once a month)" = "毎月新しいバージョンを確認（1か月に1回）";
 "Never check for updates (not recommended)" = "アップデートを確認しない（非推奨）";
-"The configuration is completed" = "設定が完了しました";
-"finish_setup_message" = "準備ができました。\n\nPerchは無料のオープンソースソフトウェアです。お役に立てたなら、開発を支援していただけます。";
 "Next" = "次へ";
 "Next page" = "次のページ";
 "Finish" = "完了";
@@ -389,3 +387,14 @@
 "Record Shortcut" = "ショートカットを記録";
 "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "クリックしてから、⌃、⌥、または⌘を含む組み合わせを押します。⎋でキャンセル、⌫で消去。";
 "%0 already uses this shortcut" = "%0がすでにこのショートカットを使用しています";
+
+// Views · Setup, window control
+"Allow…" = "許可…";
+"Cycle the apps you mark" = "マークしたアプリを順に切り替え";
+"Minimise and bring back" = "しまう／元に戻す";
+"Not allowed yet" = "まだ許可されていません";
+"Search and switch apps" = "アプリを検索して切り替え";
+"Snap a window to half the screen" = "ウインドウを画面の半分に配置";
+"You're all set" = "設定が完了しました";
+"window_control_message" = "Perchのショートカットは、ウインドウの移動やしまう操作を代わりに行います。macOSでは、これを「プライバシーとセキュリティ」→「アクセシビリティ」で一度だけ許可する必要があります。入力した内容が記録されたり、どこかに送信されたりすることはありません。";
+"finish_setup_body" = "Perchはメニューバーに常駐します。項目をクリックすると詳細が表示され、⌃Spaceで検索できます。Perchは無料のオープンソースです。役に立ったら、開発を支援していただけます。";

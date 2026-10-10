@@ -297,8 +297,6 @@
 "Check for a new version every week (once a week)" = "Rechercher une nouvelle version chaque semaine (une fois par semaine)";
 "Check for a new version every month (once a month)" = "Rechercher une nouvelle version chaque mois (une fois par mois)";
 "Never check for updates (not recommended)" = "Ne jamais rechercher de mises à jour (déconseillé)";
-"The configuration is completed" = "La configuration est terminée";
-"finish_setup_message" = "Tout est prêt.\n\nPerch est gratuit et open source. S’il vous est utile, vous pouvez soutenir son développement.";
 "Next" = "Suivant";
 "Next page" = "Page suivante";
 "Finish" = "Terminer";
@@ -389,3 +387,14 @@
 "Record Shortcut" = "Enregistrer un raccourci";
 "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Cliquez, puis appuyez sur une combinaison avec ⌃, ⌥ ou ⌘. ⎋ annule, ⌫ efface.";
 "%0 already uses this shortcut" = "%0 utilise déjà ce raccourci";
+
+// Views · Setup, window control
+"Allow…" = "Autoriser…";
+"Cycle the apps you mark" = "Parcourir les apps que vous marquez";
+"Minimise and bring back" = "Placer dans le Dock et ramener";
+"Not allowed yet" = "Pas encore autorisé";
+"Search and switch apps" = "Rechercher et changer d'app";
+"Snap a window to half the screen" = "Ancrer une fenêtre sur la moitié de l'écran";
+"You're all set" = "Tout est prêt";
+"window_control_message" = "Les raccourcis de Perch déplacent et placent les fenêtres dans le Dock pour vous. macOS vous demande de l'autoriser une seule fois, dans Confidentialité et sécurité → Accessibilité. Rien de ce que vous tapez n'est enregistré ni envoyé nulle part.";
+"finish_setup_body" = "Perch se loge dans votre barre des menus. Cliquez sur une mesure pour en voir le détail, ou appuyez sur ⌃Space pour rechercher. Perch est gratuit et open source ; s'il vous est utile, vous pouvez soutenir son développement.";

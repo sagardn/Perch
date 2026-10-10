@@ -297,8 +297,6 @@
 "Check for a new version every week (once a week)" = "ตรวจหาเวอร์ชันใหม่ทุกสัปดาห์ (สัปดาห์ละครั้ง)";
 "Check for a new version every month (once a month)" = "ตรวจหาเวอร์ชันใหม่ทุกเดือน (เดือนละครั้ง)";
 "Never check for updates (not recommended)" = "ไม่ต้องตรวจหาอัปเดตเลย (ไม่แนะนำ)";
-"The configuration is completed" = "การตั้งค่าเสร็จสมบูรณ์";
-"finish_setup_message" = "พร้อมแล้ว\n\nPerch ใช้งานได้ฟรีและเป็นโอเพนซอร์ส หาก Perch มีประโยชน์กับคุณ คุณสามารถสนับสนุนการพัฒนาได้";
 "Next" = "ถัดไป";
 "Next page" = "หน้าถัดไป";
 "Finish" = "เสร็จสิ้น";
@@ -389,3 +387,14 @@
 "Record Shortcut" = "บันทึกปุ่มลัด";
 "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "คลิก แล้วกดปุ่มผสมที่มี ⌃, ⌥ หรือ ⌘ ⎋ เพื่อยกเลิก ⌫ เพื่อล้าง";
 "%0 already uses this shortcut" = "%0 ใช้ปุ่มลัดนี้อยู่แล้ว";
+
+// Views · Setup, window control
+"Allow…" = "อนุญาต…";
+"Cycle the apps you mark" = "สลับไปมาระหว่างแอปที่คุณทำเครื่องหมาย";
+"Minimise and bring back" = "ย่อและเรียกกลับมา";
+"Not allowed yet" = "ยังไม่ได้รับอนุญาต";
+"Search and switch apps" = "ค้นหาและสลับแอป";
+"Snap a window to half the screen" = "จัดหน้าต่างให้เต็มครึ่งหน้าจอ";
+"You're all set" = "พร้อมใช้งานแล้ว";
+"window_control_message" = "ปุ่มลัดของ Perch จะย้ายและย่อหน้าต่างให้คุณ macOS จะขอให้คุณอนุญาตครั้งเดียวที่ ความเป็นส่วนตัวและความปลอดภัย → การช่วยการเข้าถึง สิ่งที่คุณพิมพ์จะไม่ถูกบันทึกหรือส่งไปที่ใดเลย";
+"finish_setup_body" = "Perch อยู่ในแถบเมนูของคุณ คลิกค่าที่อ่านได้เพื่อดูรายละเอียด หรือกด ⌃Space เพื่อค้นหา Perch ใช้ได้ฟรีและเป็นโอเพนซอร์ส หากมีประโยชน์กับคุณ คุณสามารถสนับสนุนการพัฒนาได้";

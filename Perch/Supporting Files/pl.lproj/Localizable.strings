@@ -297,8 +297,6 @@
 "Check for a new version every week (once a week)" = "Sprawdzaj nową wersję co tydzień (raz w tygodniu)";
 "Check for a new version every month (once a month)" = "Sprawdzaj nową wersję co miesiąc (raz w miesiącu)";
 "Never check for updates (not recommended)" = "Nigdy nie sprawdzaj uaktualnień (niezalecane)";
-"The configuration is completed" = "Konfiguracja została zakończona";
-"finish_setup_message" = "Wszystko gotowe.\n\nPerch jest darmowy i ma otwarty kod źródłowy. Jeśli Ci się przydaje, możesz wesprzeć jego rozwój.";
 "Next" = "Dalej";
 "Next page" = "Następna strona";
 "Finish" = "Zakończ";
@@ -389,3 +387,14 @@
 "Record Shortcut" = "Nagraj skrót";
 "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Kliknij, a następnie naciśnij kombinację z ⌃, ⌥ lub ⌘. ⎋ anuluje, ⌫ czyści.";
 "%0 already uses this shortcut" = "%0 już używa tego skrótu";
+
+// Views · Setup, window control
+"Allow…" = "Zezwól…";
+"Cycle the apps you mark" = "Przełączaj między oznaczonymi aplikacjami";
+"Minimise and bring back" = "Minimalizuj i przywracaj";
+"Not allowed yet" = "Jeszcze nie zezwolono";
+"Search and switch apps" = "Wyszukuj i przełączaj aplikacje";
+"Snap a window to half the screen" = "Przyciągnij okno do połowy ekranu";
+"You're all set" = "Wszystko gotowe";
+"window_control_message" = "Skróty Perch przesuwają i minimalizują okna za Ciebie. macOS prosi o jednorazowe zezwolenie na to w ustawieniach Prywatność i ochrona → Dostępność. Nic, co wpisujesz, nie jest rejestrowane ani nigdzie wysyłane.";
+"finish_setup_body" = "Perch mieszka na pasku menu. Kliknij odczyt, aby zobaczyć szczegóły, lub naciśnij ⌃Space, aby wyszukiwać. Perch jest bezpłatny i ma otwarty kod źródłowy; jeśli Ci się przydaje, możesz wesprzeć jego rozwój.";

@@ -297,8 +297,6 @@
 "Check for a new version every week (once a week)" = "Søg efter en ny version hver uge (en gang om ugen)";
 "Check for a new version every month (once a month)" = "Søg efter en ny version hver måned (en gang om måneden)";
 "Never check for updates (not recommended)" = "Søg aldrig efter opdateringer (anbefales ikke)";
-"The configuration is completed" = "Konfigurationen er fuldført";
-"finish_setup_message" = "Du er klar.\n\nPerch er gratis og open source. Hvis du har gavn af det, kan du støtte udviklingen.";
 "Next" = "Næste";
 "Next page" = "Næste side";
 "Finish" = "Afslut";
@@ -389,3 +387,14 @@
 "Record Shortcut" = "Optag genvej";
 "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Klik, og tryk derefter på en kombination med ⌃, ⌥ eller ⌘. ⎋ annullerer, ⌫ rydder.";
 "%0 already uses this shortcut" = "%0 bruger allerede denne genvej";
+
+// Views · Setup, window control
+"Allow…" = "Tillad…";
+"Cycle the apps you mark" = "Skift mellem de apps, du markerer";
+"Minimise and bring back" = "Minimer og hent tilbage";
+"Not allowed yet" = "Ikke tilladt endnu";
+"Search and switch apps" = "Søg og skift mellem apps";
+"Snap a window to half the screen" = "Fastgør et vindue til halvdelen af skærmen";
+"You're all set" = "Du er klar";
+"window_control_message" = "Perchs genveje flytter og minimerer vinduer for dig. macOS beder dig om at tillade det én gang under Anonymitet og sikkerhed → Tilgængelighed. Intet af det, du skriver, bliver registreret eller sendt nogen steder hen.";
+"finish_setup_body" = "Perch bor på din menulinje. Klik på en måling for at se detaljer, eller tryk på ⌃Space for at søge. Perch er gratis og open source; hvis du har gavn af det, kan du støtte udviklingen.";

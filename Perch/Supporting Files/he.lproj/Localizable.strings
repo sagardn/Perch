@@ -297,8 +297,6 @@
 "Check for a new version every week (once a week)" = "בדוק אם יש גרסה חדשה מדי שבוע (פעם בשבוע)";
 "Check for a new version every month (once a month)" = "בדוק אם יש גרסה חדשה מדי חודש (פעם בחודש)";
 "Never check for updates (not recommended)" = "לעולם אל תבדוק אם יש עדכונים (לא מומלץ)";
-"The configuration is completed" = "ההגדרה הושלמה";
-"finish_setup_message" = "הכול מוכן.\n\nPerch הוא חינמי וקוד פתוח. אם הוא מועיל לך, אפשר לתמוך בפיתוח שלו.";
 "Next" = "הבא";
 "Next page" = "העמוד הבא";
 "Finish" = "סיום";
@@ -389,3 +387,14 @@
 "Record Shortcut" = "הקלטת קיצור";
 "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "לחץ/י ואז הקש/י צירוף עם ⌃, ⌥ או ⌘. ⎋ מבטל, ⌫ מנקה.";
 "%0 already uses this shortcut" = "%0 כבר משתמש בקיצור זה";
+
+// Views · Setup, window control
+"Allow…" = "אפשר…";
+"Cycle the apps you mark" = "מעבר בין היישומים שסימנת";
+"Minimise and bring back" = "מזעור והחזרה";
+"Not allowed yet" = "עדיין לא אושר";
+"Search and switch apps" = "חיפוש ומעבר בין יישומים";
+"Snap a window to half the screen" = "הצמדת חלון לחצי מהמסך";
+"You're all set" = "הכול מוכן";
+"window_control_message" = "קיצורי המקשים של Perch מזיזים וממזערים חלונות בשבילך. macOS יבקש ממך לאשר זאת פעם אחת, תחת פרטיות ואבטחה → נגישות. שום דבר שמקלידים לא מוקלט ולא נשלח לשום מקום.";
+"finish_setup_body" = "Perch נמצא בשורת התפריטים שלך. לחץ/י על נתון כדי לראות פרטים, או הקש/י ⌃Space לחיפוש. Perch הוא חינמי וקוד פתוח; אם הוא מועיל לך, אפשר לתמוך בפיתוח שלו.";

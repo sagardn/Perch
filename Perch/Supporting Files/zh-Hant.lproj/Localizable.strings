@@ -297,8 +297,6 @@
 "Check for a new version every week (once a week)" = "每週檢查新版本（一週一次）";
 "Check for a new version every month (once a month)" = "每月檢查新版本（一個月一次）";
 "Never check for updates (not recommended)" = "永不檢查更新（不建議）";
-"The configuration is completed" = "設定已完成";
-"finish_setup_message" = "一切就緒。\n\nPerch 免費且開放原始碼。如果它對你有幫助，你可以支持它的開發。";
 "Next" = "下一步";
 "Next page" = "下一頁";
 "Finish" = "完成";
@@ -389,3 +387,14 @@
 "Record Shortcut" = "錄製快速鍵";
 "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "按一下，然後按下含 ⌃、⌥ 或 ⌘ 的組合鍵。⎋ 取消，⌫ 清除。";
 "%0 already uses this shortcut" = "%0 已在使用此快速鍵";
+
+// Views · Setup, window control
+"Allow…" = "允許⋯";
+"Cycle the apps you mark" = "在你標記的 App 之間循環切換";
+"Minimise and bring back" = "縮到最小並恢復";
+"Not allowed yet" = "尚未允許";
+"Search and switch apps" = "搜尋並切換 App";
+"Snap a window to half the screen" = "將視窗貼齊至半個螢幕";
+"You're all set" = "一切就緒";
+"window_control_message" = "Perch 的快速鍵會替你移動視窗並將其縮到最小。macOS 會要求你在「隱私權與安全性」→「輔助使用」中允許一次。你輸入的任何內容都不會被記錄或傳送到任何地方。";
+"finish_setup_body" = "Perch 位於選單列中。按一下讀數可查看詳細資訊，或按 ⌃Space 進行搜尋。Perch 免費且開放原始碼；如果它對你有幫助，你可以支持它的開發。";

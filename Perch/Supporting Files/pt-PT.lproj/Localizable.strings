@@ -297,8 +297,6 @@
 "Check for a new version every week (once a week)" = "Procurar uma nova versão todas as semanas (uma vez por semana)";
 "Check for a new version every month (once a month)" = "Procurar uma nova versão todos os meses (uma vez por mês)";
 "Never check for updates (not recommended)" = "Nunca procurar atualizações (não recomendado)";
-"The configuration is completed" = "A configuração está concluída";
-"finish_setup_message" = "Está tudo pronto.\n\nO Perch é gratuito e de código aberto. Se lhe for útil, pode apoiar o seu desenvolvimento.";
 "Next" = "Seguinte";
 "Next page" = "Página seguinte";
 "Finish" = "Concluir";
@@ -389,3 +387,14 @@
 "Record Shortcut" = "Gravar atalho";
 "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Clique e prima uma combinação com ⌃, ⌥ ou ⌘. ⎋ cancela, ⌫ limpa.";
 "%0 already uses this shortcut" = "%0 já utiliza este atalho";
+
+// Views · Setup, window control
+"Allow…" = "Permitir…";
+"Cycle the apps you mark" = "Alternar entre as aplicações que marcar";
+"Minimise and bring back" = "Minimizar e repor";
+"Not allowed yet" = "Ainda não permitido";
+"Search and switch apps" = "Pesquisar e alternar aplicações";
+"Snap a window to half the screen" = "Encaixar uma janela em metade do ecrã";
+"You're all set" = "Está tudo pronto";
+"window_control_message" = "Os atalhos do Perch movem e minimizam janelas por si. O macOS pede que o permita uma vez, em Privacidade e segurança → Acessibilidade. Nada do que escreve é registado ou enviado para lado nenhum.";
+"finish_setup_body" = "O Perch vive na barra de menus. Clique numa leitura para ver os detalhes, ou prima ⌃Space para pesquisar. O Perch é gratuito e de código aberto; se lhe for útil, pode apoiar o seu desenvolvimento.";

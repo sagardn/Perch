@@ -297,8 +297,6 @@
 "Check for a new version every week (once a week)" = "매주 새로운 버전 확인(일주일에 한 번)";
 "Check for a new version every month (once a month)" = "매월 새로운 버전 확인(한 달에 한 번)";
 "Never check for updates (not recommended)" = "업데이트 확인 안 함(권장하지 않음)";
-"The configuration is completed" = "설정이 완료되었습니다";
-"finish_setup_message" = "모든 준비가 끝났습니다.\n\nPerch는 무료 오픈 소스입니다. 유용하다면 개발을 후원할 수 있습니다.";
 "Next" = "다음";
 "Next page" = "다음 페이지";
 "Finish" = "완료";
@@ -389,3 +387,14 @@
 "Record Shortcut" = "단축키 기록";
 "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "클릭한 다음 ⌃, ⌥ 또는 ⌘가 포함된 조합을 누르십시오. ⎋는 취소, ⌫는 지우기.";
 "%0 already uses this shortcut" = "%0에서 이미 이 단축키를 사용 중입니다";
+
+// Views · Setup, window control
+"Allow…" = "허용…";
+"Cycle the apps you mark" = "표시한 앱 사이를 순환";
+"Minimise and bring back" = "최소화하고 다시 불러오기";
+"Not allowed yet" = "아직 허용되지 않음";
+"Search and switch apps" = "앱 검색 및 전환";
+"Snap a window to half the screen" = "윈도우를 화면 절반에 맞추기";
+"You're all set" = "모든 준비 완료";
+"window_control_message" = "Perch의 단축키는 사용자 대신 윈도우를 이동하고 최소화합니다. macOS에서 개인정보 보호 및 보안 → 손쉬운 사용에서 한 번 허용하도록 요청합니다. 입력하는 내용은 기록되거나 어디에도 전송되지 않습니다.";
+"finish_setup_body" = "Perch는 메뉴 막대에 있습니다. 측정값을 클릭하면 세부사항을 볼 수 있고, ⌃Space를 누르면 검색할 수 있습니다. Perch는 무료 오픈 소스입니다. 유용하다면 개발을 후원할 수 있습니다.";

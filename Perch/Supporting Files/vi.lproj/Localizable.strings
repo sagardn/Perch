@@ -297,8 +297,6 @@
 "Check for a new version every week (once a week)" = "Kiểm tra phiên bản mới hằng tuần (mỗi tuần một lần)";
 "Check for a new version every month (once a month)" = "Kiểm tra phiên bản mới hằng tháng (mỗi tháng một lần)";
 "Never check for updates (not recommended)" = "Không bao giờ kiểm tra cập nhật (không khuyên dùng)";
-"The configuration is completed" = "Đã hoàn tất cấu hình";
-"finish_setup_message" = "Mọi thứ đã sẵn sàng.\n\nPerch miễn phí và mã nguồn mở. Nếu thấy hữu ích, bạn có thể ủng hộ việc phát triển ứng dụng.";
 "Next" = "Tiếp";
 "Next page" = "Trang tiếp theo";
 "Finish" = "Hoàn tất";
@@ -389,3 +387,14 @@
 "Record Shortcut" = "Ghi phím tắt";
 "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Bấm, sau đó nhấn tổ hợp có ⌃, ⌥ hoặc ⌘. ⎋ để hủy, ⌫ để xóa.";
 "%0 already uses this shortcut" = "%0 đã sử dụng phím tắt này";
+
+// Views · Setup, window control
+"Allow…" = "Cho phép…";
+"Cycle the apps you mark" = "Chuyển vòng giữa các ứng dụng bạn đánh dấu";
+"Minimise and bring back" = "Thu nhỏ và đưa trở lại";
+"Not allowed yet" = "Chưa được cho phép";
+"Search and switch apps" = "Tìm kiếm và chuyển ứng dụng";
+"Snap a window to half the screen" = "Gắn cửa sổ vào nửa màn hình";
+"You're all set" = "Mọi thứ đã sẵn sàng";
+"window_control_message" = "Các phím tắt của Perch di chuyển và thu nhỏ cửa sổ cho bạn. macOS yêu cầu bạn cho phép việc này một lần, trong Quyền riêng tư & Bảo mật → Trợ năng. Không có gì bạn nhập bị ghi lại hoặc gửi đi bất cứ đâu.";
+"finish_setup_body" = "Perch nằm trên thanh menu của bạn. Bấm vào một chỉ số để xem chi tiết, hoặc nhấn ⌃Space để tìm kiếm. Perch miễn phí và mã nguồn mở; nếu thấy hữu ích, bạn có thể ủng hộ việc phát triển.";

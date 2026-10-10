@@ -297,8 +297,6 @@
 "Check for a new version every week (once a week)" = "Hledat novou verzi každý týden (jednou týdně)";
 "Check for a new version every month (once a month)" = "Hledat novou verzi každý měsíc (jednou měsíčně)";
 "Never check for updates (not recommended)" = "Nikdy nehledat aktualizace (nedoporučeno)";
-"The configuration is completed" = "Nastavení je dokončeno";
-"finish_setup_message" = "Vše je připraveno.\n\nPerch je zdarma a s otevřeným zdrojovým kódem. Pokud vám je užitečný, můžete podpořit jeho vývoj.";
 "Next" = "Další";
 "Next page" = "Další stránka";
 "Finish" = "Dokončit";
@@ -389,3 +387,14 @@
 "Record Shortcut" = "Nahrát zkratku";
 "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Klikněte a stiskněte kombinaci s ⌃, ⌥ nebo ⌘. ⎋ zruší, ⌫ vymaže.";
 "%0 already uses this shortcut" = "%0 už tuto zkratku používá";
+
+// Views · Setup, window control
+"Allow…" = "Povolit…";
+"Cycle the apps you mark" = "Přepínat mezi označenými aplikacemi";
+"Minimise and bring back" = "Minimalizovat a vrátit zpět";
+"Not allowed yet" = "Zatím nepovoleno";
+"Search and switch apps" = "Hledat a přepínat aplikace";
+"Snap a window to half the screen" = "Přichytit okno k polovině obrazovky";
+"You're all set" = "Vše je připraveno";
+"window_control_message" = "Zkratky aplikace Perch za vás přesouvají a minimalizují okna. macOS vás jednou požádá o povolení v nastavení Soukromí a zabezpečení → Zpřístupnění. Nic z toho, co napíšete, se nezaznamenává ani nikam neodesílá.";
+"finish_setup_body" = "Perch sídlí v řádku nabídek. Klikněte na údaj pro podrobnosti nebo stiskněte ⌃Space pro hledání. Perch je zdarma a s otevřeným zdrojovým kódem; pokud je vám užitečný, můžete podpořit jeho vývoj.";

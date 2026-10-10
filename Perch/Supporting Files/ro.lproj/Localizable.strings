@@ -297,8 +297,6 @@
 "Check for a new version every week (once a week)" = "Caută o versiune nouă în fiecare săptămână (o dată pe săptămână)";
 "Check for a new version every month (once a month)" = "Caută o versiune nouă în fiecare lună (o dată pe lună)";
 "Never check for updates (not recommended)" = "Nu căuta niciodată actualizări (nerecomandat)";
-"The configuration is completed" = "Configurarea s-a finalizat";
-"finish_setup_message" = "Totul este gata.\n\nPerch este gratuit și open source. Dacă îți este util, poți susține dezvoltarea sa.";
 "Next" = "Înainte";
 "Next page" = "Pagina următoare";
 "Finish" = "Finalizează";
@@ -389,3 +387,14 @@
 "Record Shortcut" = "Înregistrați scurtătura";
 "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Faceți clic, apoi apăsați o combinație cu ⌃, ⌥ sau ⌘. ⎋ anulează, ⌫ șterge.";
 "%0 already uses this shortcut" = "%0 utilizează deja această scurtătură";
+
+// Views · Setup, window control
+"Allow…" = "Permite…";
+"Cycle the apps you mark" = "Comută între aplicațiile marcate";
+"Minimise and bring back" = "Minimizează și readu";
+"Not allowed yet" = "Încă nepermis";
+"Search and switch apps" = "Caută și comută între aplicații";
+"Snap a window to half the screen" = "Fixează o fereastră pe jumătate de ecran";
+"You're all set" = "Totul este gata";
+"window_control_message" = "Scurtăturile Perch mută și minimizează ferestrele în locul tău. macOS îți cere să permiți acest lucru o singură dată, în Confidențialitate și securitate → Accesibilitate. Nimic din ce tastezi nu este înregistrat sau trimis nicăieri.";
+"finish_setup_body" = "Perch locuiește în bara de meniu. Fă clic pe o valoare pentru detalii sau apasă ⌃Space pentru a căuta. Perch este gratuit și open source; dacă îți este util, poți sprijini dezvoltarea sa.";

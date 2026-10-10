@@ -12,13 +12,15 @@ import Foundation
 
 // MARK: - The pages
 
-/// The five pages, in the order they are shown.
+/// The six pages, in the order they are shown.
 ///
 /// `Int` raw values because `--render setup:<n>` addresses them by number and
 /// that is the only interface anyone has to the later pages.
 enum SetupPage: Int, CaseIterable {
     case welcome
     case preset
+    /// Accessibility, explained before the first shortcut needs it.
+    case windowControl
     case loginItem
     case updates
     case done
@@ -42,7 +44,7 @@ struct SetupFlow {
     var canGoBack: Bool { page != SetupPage.allCases.first }
 
     /// The last page's button says Finish, because it closes the window
-    /// rather than showing a sixth page.
+    /// rather than showing a seventh page.
     var isFinish: Bool { page == SetupPage.allCases.last }
 
     var nextTitle: String { isFinish ? localized("Finish") : localized("Next") }

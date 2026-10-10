@@ -297,8 +297,6 @@
 "Check for a new version every week (once a week)" = "Wöchentlich nach einer neuen Version suchen (einmal pro Woche)";
 "Check for a new version every month (once a month)" = "Monatlich nach einer neuen Version suchen (einmal im Monat)";
 "Never check for updates (not recommended)" = "Nie nach Updates suchen (nicht empfohlen)";
-"The configuration is completed" = "Die Einrichtung ist abgeschlossen";
-"finish_setup_message" = "Alles bereit.\n\nPerch ist kostenlos und Open Source. Wenn es dir nützt, kannst du die Weiterentwicklung unterstützen.";
 "Next" = "Weiter";
 "Next page" = "Nächste Seite";
 "Finish" = "Fertig";
@@ -389,3 +387,14 @@
 "Record Shortcut" = "Kurzbefehl aufnehmen";
 "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Klicken, dann eine Kombination mit ⌃, ⌥ oder ⌘ drücken. ⎋ bricht ab, ⌫ löscht.";
 "%0 already uses this shortcut" = "%0 verwendet diesen Kurzbefehl bereits";
+
+// Views · Setup, window control
+"Allow…" = "Erlauben …";
+"Cycle the apps you mark" = "Durch markierte Apps wechseln";
+"Minimise and bring back" = "Minimieren und zurückholen";
+"Not allowed yet" = "Noch nicht erlaubt";
+"Search and switch apps" = "Apps suchen und wechseln";
+"Snap a window to half the screen" = "Fenster an Bildschirmhälfte ausrichten";
+"You're all set" = "Alles bereit";
+"window_control_message" = "Die Kurzbefehle von Perch bewegen und minimieren Fenster für dich. macOS bittet dich einmalig, dies unter „Datenschutz & Sicherheit“ → „Bedienungshilfen“ zu erlauben. Nichts, was du tippst, wird aufgezeichnet oder irgendwohin gesendet.";
+"finish_setup_body" = "Perch wohnt in deiner Menüleiste. Klicke auf einen Messwert für Details oder drücke ⌃Space zum Suchen. Perch ist kostenlos und Open Source; wenn es dir nützt, kannst du seine Entwicklung unterstützen.";

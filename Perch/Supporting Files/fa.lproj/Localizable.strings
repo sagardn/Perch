@@ -297,8 +297,6 @@
 "Check for a new version every week (once a week)" = "بررسی نسخهٔ جدید هر هفته (هفته‌ای یک بار)";
 "Check for a new version every month (once a month)" = "بررسی نسخهٔ جدید هر ماه (ماهی یک بار)";
 "Never check for updates (not recommended)" = "هرگز به‌روزرسانی‌ها بررسی نشود (توصیه نمی‌شود)";
-"The configuration is completed" = "پیکربندی کامل شد";
-"finish_setup_message" = "همه‌چیز آماده است.\n\nPerch رایگان و متن‌باز است. اگر برایتان مفید است، می‌توانید از توسعهٔ آن حمایت کنید.";
 "Next" = "بعدی";
 "Next page" = "صفحهٔ بعد";
 "Finish" = "پایان";
@@ -389,3 +387,14 @@
 "Record Shortcut" = "ضبط میان‌بر";
 "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "کلیک کنید، سپس ترکیبی با ⌃، ⌥ یا ⌘ را فشار دهید. ⎋ لغو می‌کند، ⌫ پاک می‌کند.";
 "%0 already uses this shortcut" = "%0 قبلاً از این میان‌بر استفاده می‌کند";
+
+// Views · Setup, window control
+"Allow…" = "اجازه دادن…";
+"Cycle the apps you mark" = "جابه‌جایی بین برنامه‌هایی که علامت می‌زنید";
+"Minimise and bring back" = "کوچک کردن و بازگرداندن";
+"Not allowed yet" = "هنوز اجازه داده نشده";
+"Search and switch apps" = "جستجو و جابه‌جایی بین برنامه‌ها";
+"Snap a window to half the screen" = "چسباندن پنجره به نیمی از صفحه";
+"You're all set" = "همه چیز آماده است";
+"window_control_message" = "میان‌برهای Perch پنجره‌ها را برای شما جابه‌جا و کوچک می‌کنند. macOS یک بار از شما می‌خواهد این کار را در حریم خصوصی و امنیت → دسترس‌پذیری مجاز کنید. هیچ چیزی که تایپ می‌کنید ضبط یا به جایی فرستاده نمی‌شود.";
+"finish_setup_body" = "Perch در نوار منوی شما جا دارد. برای دیدن جزئیات روی یک خوانش کلیک کنید، یا برای جستجو ⌃Space را بزنید. Perch رایگان و متن‌باز است؛ اگر برایتان مفید است، می‌توانید از توسعه‌اش حمایت کنید.";

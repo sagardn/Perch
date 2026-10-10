@@ -297,8 +297,6 @@
 "Check for a new version every week (once a week)" = "Her hafta yeni sürümü denetle (haftada bir kez)";
 "Check for a new version every month (once a month)" = "Her ay yeni sürümü denetle (ayda bir kez)";
 "Never check for updates (not recommended)" = "Güncellemeleri hiçbir zaman denetleme (önerilmez)";
-"The configuration is completed" = "Yapılandırma tamamlandı";
-"finish_setup_message" = "Her şey hazır.\n\nPerch ücretsiz ve açık kaynaktır. İşinize yarıyorsa geliştirilmesine destek olabilirsiniz.";
 "Next" = "Sonraki";
 "Next page" = "Sonraki sayfa";
 "Finish" = "Bitir";
@@ -389,3 +387,14 @@
 "Record Shortcut" = "Kısayolu Kaydet";
 "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Tıklayın, sonra ⌃, ⌥ veya ⌘ içeren bir kombinasyona basın. ⎋ vazgeçer, ⌫ temizler.";
 "%0 already uses this shortcut" = "%0 bu kısayolu zaten kullanıyor";
+
+// Views · Setup, window control
+"Allow…" = "İzin Ver…";
+"Cycle the apps you mark" = "İşaretlediğiniz uygulamalar arasında geçiş yapın";
+"Minimise and bring back" = "Küçült ve geri getir";
+"Not allowed yet" = "Henüz izin verilmedi";
+"Search and switch apps" = "Uygulama arayın ve geçiş yapın";
+"Snap a window to half the screen" = "Pencereyi ekranın yarısına yerleştirin";
+"You're all set" = "Her şey hazır";
+"window_control_message" = "Perch'ün kestirmeleri pencereleri sizin için taşır ve küçültür. macOS bunun için bir kez Gizlilik ve Güvenlik → Erişilebilirlik bölümünden izin vermenizi ister. Yazdığınız hiçbir şey kaydedilmez veya bir yere gönderilmez.";
+"finish_setup_body" = "Perch menü çubuğunuzda yaşar. Ayrıntılar için bir ölçüme tıklayın ya da aramak için ⌃Space tuşlarına basın. Perch ücretsiz ve açık kaynaktır; işinize yarıyorsa geliştirilmesine destek olabilirsiniz.";
