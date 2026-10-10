@@ -63,6 +63,18 @@ suite silently stops being run.
 Add to them when you add a reader — parsers and band boundaries are cheap to
 test and have already caught real bugs here.
 
+**Give the type checker the types in a suite's fixtures.** A fixture is
+usually a literal with nested `.init`s and a `map` or two, which is exactly
+the shape Swift's inference is slowest on. `widget-test` had one that took
+1137ms here and *failed to compile at all* on a CI runner, which is slower --
+and so the whole tests workflow was red from the day it was added. Declare
+the type on the local, and lift a `map` or a repeated call out of the
+expression. To find the next one:
+
+```bash
+swiftc -typecheck -Xfrontend -warn-long-expression-type-checking=150 <file>
+```
+
 A suite must do two things, and the runner checks both: print `all passed` or
 `<n> failed` as its last line, and exit non-zero when an assertion failed.
 The exit status alone cannot tell a failed assertion from a suite that never

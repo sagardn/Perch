@@ -37,8 +37,16 @@ func check(_ name: String, _ ok: Bool) {
 
 /// A busy eight-core machine, working its performance cluster: the shape that
 /// exercises every part of every style.
-let cores = [0.11, 0.17, 0.08, 0.21, 0.88, 0.94, 0.79, 0.91]
-let history = (0..<60).map { i in 0.2 + 0.45 * sin(Double(i) / 7) * sin(Double(i) / 7) }
+// Explicitly typed, and the sine lifted out of the expression. Both are for
+// the type checker rather than the reader: as one inferred expression this
+// took 373ms to solve here and timed out entirely on a CI runner, which is
+// slower. `swiftc -Xfrontend -warn-long-expression-type-checking=150` is how
+// to find the next one.
+let cores: [Double] = [0.11, 0.17, 0.08, 0.21, 0.88, 0.94, 0.79, 0.91]
+let history: [Double] = (0..<60).map { (i: Int) -> Double in
+    let phase = sin(Double(i) / 7)
+    return 0.2 + 0.45 * phase * phase
+}
 let reading = MenuBarReading(
     label: "CPU",
     load: 0.52,
@@ -55,12 +63,17 @@ let single = MenuBarReading(label: "CPU", load: 0.52, value: "52%",
                             history: history, bars: cores)
 
 /// What network reports: two rates and two series, and no percentage at all.
+// The two series are locals with declared types for the same reason. Inline
+// inside the nested .init this was the 1137ms expression that failed to
+// compile on CI at all, and took widget-test -- and so the whole tests
+// workflow -- red with it from the day the workflow was added.
+let upward: [Double] = (0..<30).map { Double($0) * 1000 }
+let downward: [Double] = (0..<30).map { Double(30 - $0) * 4000 }
 let rates = MenuBarReading(
     label: "NET",
     value: "1.2 MB/s",
     rates: .init("240 KB/s", "1.2 MB/s"),
-    mirrored: .init(up: (0..<30).map { Double($0) * 1000 },
-                    down: (0..<30).map { Double(30 - $0) * 4000 }))
+    mirrored: .init(up: upward, down: downward))
 
 func widget(_ styles: [MenuBarStyle], _ content: MenuBarReading?) -> MenuBarWidget {
     let w = MenuBarWidget()
