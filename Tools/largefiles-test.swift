@@ -62,6 +62,31 @@ check("and a sparse bundle",
 check("the extension is matched whatever its case",
       LargeFiles.isOpaque(URL(fileURLWithPath: "/A/Thing.APP")))
 check("an ordinary folder is not", !LargeFiles.isOpaque(URL(fileURLWithPath: "/A/Holiday")))
+
+// The first run of this filled all twenty rows with one project's
+// dependencies, 30 MB each, burying everything worth acting on.
+check("node_modules is one thing",
+      LargeFiles.isOpaque(URL(fileURLWithPath: "/p/node_modules")))
+check("so is a .git directory", LargeFiles.isOpaque(URL(fileURLWithPath: "/p/.git")))
+check("and DerivedData", LargeFiles.isOpaque(URL(fileURLWithPath: "/p/DerivedData")))
+check("a folder merely containing the word is not",
+      !LargeFiles.isOpaque(URL(fileURLWithPath: "/p/my_node_modules_backup")))
+
+print("\nLargeFiles.Item.folder")
+
+do {
+    let home = URL(fileURLWithPath: "/Users/me")
+    func folder(_ path: String) -> String {
+        LargeFiles.Item(url: URL(fileURLWithPath: path), bytes: 1).folder(relativeTo: home)
+    }
+    check("a file in Downloads says Downloads",
+          folder("/Users/me/Downloads/big.dmg") == "Downloads")
+    check("a nested one says the whole path under home",
+          folder("/Users/me/Documents/work/api/buf") == "Documents/work/api")
+    check("a file in home itself says ~", folder("/Users/me/loose.bin") == "~")
+    check("something outside home keeps its real path",
+          folder("/Volumes/Drive/clip.mov") == "/Volumes/Drive")
+}
 check("nor a video file", !LargeFiles.isOpaque(URL(fileURLWithPath: "/A/clip.mov")))
 
 // MARK: - What is left alone

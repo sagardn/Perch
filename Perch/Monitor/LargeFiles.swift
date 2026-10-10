@@ -72,6 +72,19 @@ enum LargeFiles {
 
         var name: String { url.lastPathComponent }
         var category: Category { Category.of(url) }
+
+        /// Where it is, relative to home -- "Downloads" or
+        /// "Documents/Projects/api". A list of twenty bare file names is a
+        /// list nobody can act on; "buf" means nothing and
+        /// "Documents/work/api" means everything.
+        func folder(relativeTo home: URL) -> String {
+            let parent = url.deletingLastPathComponent().path
+            let base = home.path
+            guard parent.hasPrefix(base) else { return parent }
+            let trimmed = String(parent.dropFirst(base.count))
+                .trimmingCharacters(in: CharacterSet(charactersIn: "/"))
+            return trimmed.isEmpty ? "~" : trimmed
+        }
     }
 
     /// The `n` largest, biggest first.
@@ -104,8 +117,27 @@ enum LargeFiles {
         "xcodeproj", "xcworkspace", "rtfd", "download",
     ]
 
+    /// Directories that are one thing to a person, whatever they hold.
+    ///
+    /// A developer's Mac has thousands of files inside `node_modules` and
+    /// `.git`, and the first run of this filled all twenty rows with them --
+    /// `rolldown-binding.win32-x64-msvc.node` and its siblings, 30 MB each,
+    /// burying every file somebody might actually act on. The useful answer
+    /// is not twenty dependencies, it is "this project's node_modules is
+    /// 2 GB", which is one row.
+    ///
+    /// They are reported, not hidden: the space is real and deleting a
+    /// `node_modules` is a normal thing to do. It is one line instead of
+    /// twenty.
+    static let opaqueDirectories: Set<String> = [
+        "node_modules", ".git", ".svn", "Pods", "Carthage", "DerivedData",
+        ".build", "build", "target", "vendor", "__pycache__", ".venv", "venv",
+        ".gradle", ".next", ".nuxt", "dist", ".cargo", ".rustup", ".npm",
+    ]
+
     static func isOpaque(_ url: URL) -> Bool {
-        opaqueExtensions.contains(url.pathExtension.lowercased())
+        if opaqueDirectories.contains(url.lastPathComponent) { return true }
+        return opaqueExtensions.contains(url.pathExtension.lowercased())
     }
 
     /// Whether to leave a path alone entirely.

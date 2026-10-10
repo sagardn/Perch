@@ -207,7 +207,9 @@ extension AppDelegate {
         DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
             let subject = request.subject
 
-            if subject == "setup:window" {
+            if subject == "files" {
+                self.renderLargeFiles(to: request.path)
+            } else if subject == "setup:window" {
                 self.renderSetupWindow(to: request.path)
             } else if subject.hasPrefix("setup:") {
                 self.renderSetupPage(Int(subject.dropFirst("setup:".count)) ?? 0,
@@ -347,6 +349,33 @@ extension AppDelegate {
                 Log.error("--render: could not write \(path):"
                           + " \(error.localizedDescription)")
             }
+        }
+    }
+
+    /// The large-files window, after its scan has finished.
+    ///
+    /// Longer wait than the settings window because this one walks the disk
+    /// before it has anything to draw -- capturing at two seconds reliably
+    /// photographs the word "Looking…".
+    private func renderLargeFiles(to path: String) {
+        LargeFilesWindow.present()
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 12) {
+            defer { NSApp.terminate(nil) }
+            guard let window = NSApp.windows.first(where: { $0 is LargeFilesWindow }),
+                  window.windowNumber > 0,
+                  let image = CGWindowListCreateImage(
+                    .null, .optionIncludingWindow,
+                    CGWindowID(window.windowNumber), [.boundsIgnoreFraming]),
+                  image.width > 1 else {
+                Log.error("--render files: could not capture the window")
+                return
+            }
+            let bitmap = NSBitmapImageRep(cgImage: image)
+            guard let png = bitmap.representation(using: .png, properties: [:]) else { return }
+            try? png.write(to: URL(fileURLWithPath: path))
+            NSLog("Perch: rendered the large files window to \(path), "
+                  + "\(image.width)x\(image.height)")
         }
     }
 

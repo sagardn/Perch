@@ -52,7 +52,20 @@ final class LargeFilesWindow: NSWindow, NSWindowDelegate, ClosableWindow {
 
         scroll.hasVerticalScroller = true
         scroll.drawsBackground = false
-        scroll.documentView = rows
+        // A flipped document view, or the list lays out from the bottom and
+        // opens showing the *smallest* results with the first row clipped --
+        // which is what the first version did, and is precisely backwards
+        // for a list sorted biggest-first.
+        let flipped = FlippedView()
+        flipped.translatesAutoresizingMaskIntoConstraints = false
+        flipped.addSubview(rows)
+        scroll.documentView = flipped
+        NSLayoutConstraint.activate([
+            rows.topAnchor.constraint(equalTo: flipped.topAnchor),
+            rows.leadingAnchor.constraint(equalTo: flipped.leadingAnchor),
+            rows.trailingAnchor.constraint(equalTo: flipped.trailingAnchor),
+            rows.bottomAnchor.constraint(equalTo: flipped.bottomAnchor),
+        ])
         scroll.translatesAutoresizingMaskIntoConstraints = false
 
         filter.controlSize = .small
@@ -90,7 +103,7 @@ final class LargeFilesWindow: NSWindow, NSWindowDelegate, ClosableWindow {
             scroll.leadingAnchor.constraint(equalTo: backdrop.leadingAnchor, constant: 14),
             scroll.trailingAnchor.constraint(equalTo: backdrop.trailingAnchor, constant: -14),
             scroll.bottomAnchor.constraint(equalTo: binButton.topAnchor, constant: -10),
-            rows.widthAnchor.constraint(equalTo: scroll.widthAnchor, constant: -4),
+            flipped.widthAnchor.constraint(equalTo: scroll.widthAnchor, constant: -4),
 
             binButton.trailingAnchor.constraint(equalTo: backdrop.trailingAnchor, constant: -18),
             binButton.bottomAnchor.constraint(equalTo: backdrop.bottomAnchor, constant: -14),
@@ -186,8 +199,10 @@ final class LargeFilesWindow: NSWindow, NSWindowDelegate, ClosableWindow {
         status.stringValue = localized("%0 items, %1 in total",
                                        String(items.count), Readings.bytes(UInt64(total)))
 
+        let home = FileManager.default.homeDirectoryForCurrentUser
         for item in items {
-            rows.addArrangedSubview(LargeFileRow(item, isTicked: selected.contains(item.url)) {
+            rows.addArrangedSubview(LargeFileRow(item, home: home,
+                                                 isTicked: selected.contains(item.url)) {
                 [weak self] on in
                 guard let self else { return }
                 if on { self.selected.insert(item.url) } else { self.selected.remove(item.url) }
@@ -238,7 +253,8 @@ private final class LargeFileRow: NSView {
     private let item: LargeFiles.Item
     private let ticked: (Bool) -> Void
 
-    init(_ item: LargeFiles.Item, isTicked: Bool, ticked: @escaping (Bool) -> Void) {
+    init(_ item: LargeFiles.Item, home: URL, isTicked: Bool,
+         ticked: @escaping (Bool) -> Void) {
         self.item = item
         self.ticked = ticked
         super.init(frame: .zero)
@@ -254,11 +270,28 @@ private final class LargeFileRow: NSView {
         icon.image = NSWorkspace.shared.icon(forFile: item.url.path)
         icon.translatesAutoresizingMaskIntoConstraints = false
 
+        // Name over location. Twenty bare file names cannot be acted on --
+        // "buf" is meaningless and "Documents/work/api" is the whole answer.
+        let label = NSStackView()
+        label.orientation = .vertical
+        label.alignment = .leading
+        label.spacing = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+
         let name = NSTextField(labelWithString: item.name)
         name.font = .systemFont(ofSize: 12)
         name.lineBreakMode = .byTruncatingMiddle
         name.toolTip = item.url.path
         name.translatesAutoresizingMaskIntoConstraints = false
+
+        let where_ = NSTextField(labelWithString: item.folder(relativeTo: home))
+        where_.font = .systemFont(ofSize: 10)
+        where_.textColor = .tertiaryLabelColor
+        where_.lineBreakMode = .byTruncatingHead
+        where_.translatesAutoresizingMaskIntoConstraints = false
+
+        label.addArrangedSubview(name)
+        label.addArrangedSubview(where_)
 
         let size = NSTextField(labelWithString: Readings.bytes(UInt64(item.bytes)))
         size.font = .monospacedDigitSystemFont(ofSize: 11, weight: .regular)
@@ -274,22 +307,23 @@ private final class LargeFileRow: NSView {
         }
         reveal.translatesAutoresizingMaskIntoConstraints = false
 
-        for view in [tick, icon, name, size, reveal] { addSubview(view) }
+        for view in [tick, icon, label, size, reveal] { addSubview(view) }
 
         NSLayoutConstraint.activate([
-            heightAnchor.constraint(equalToConstant: 26),
+            heightAnchor.constraint(equalToConstant: 38),
 
             tick.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 4),
             tick.centerYAnchor.constraint(equalTo: centerYAnchor),
 
             icon.leadingAnchor.constraint(equalTo: tick.trailingAnchor, constant: 2),
             icon.centerYAnchor.constraint(equalTo: centerYAnchor),
-            icon.widthAnchor.constraint(equalToConstant: 16),
-            icon.heightAnchor.constraint(equalToConstant: 16),
+            icon.widthAnchor.constraint(equalToConstant: 22),
+            icon.heightAnchor.constraint(equalToConstant: 22),
 
-            name.leadingAnchor.constraint(equalTo: icon.trailingAnchor, constant: 7),
-            name.centerYAnchor.constraint(equalTo: centerYAnchor),
-            name.trailingAnchor.constraint(lessThanOrEqualTo: size.leadingAnchor, constant: -8),
+            label.leadingAnchor.constraint(equalTo: icon.trailingAnchor, constant: 8),
+            label.centerYAnchor.constraint(equalTo: centerYAnchor),
+            label.trailingAnchor.constraint(lessThanOrEqualTo: size.leadingAnchor,
+                                            constant: -8),
 
             size.trailingAnchor.constraint(equalTo: reveal.leadingAnchor, constant: -8),
             size.centerYAnchor.constraint(equalTo: centerYAnchor),
@@ -299,6 +333,7 @@ private final class LargeFileRow: NSView {
             reveal.centerYAnchor.constraint(equalTo: centerYAnchor),
         ])
         name.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        where_.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
     }
 
     @objc private func tickChanged(_ sender: NSButton) {
@@ -306,4 +341,10 @@ private final class LargeFileRow: NSView {
     }
 
     required init?(coder: NSCoder) { fatalError("not used") }
+}
+
+
+/// Top-down layout inside a scroll view.
+private final class FlippedView: NSView {
+    override var isFlipped: Bool { true }
 }
