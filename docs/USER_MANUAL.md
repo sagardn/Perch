@@ -83,6 +83,30 @@ lose it for tab switching. If another app registered ⌃Tab first, Perch notices
 moves its cycle to **⌥Tab** and says so at launch. To give ⌃Tab back entirely,
 switch the cycle off in [Settings → Search & switcher](#search--switcher).
 
+### Window snapping
+
+Moves the frontmost window. Needs Accessibility, like minimising does.
+
+| Shortcut | Puts the window |
+|---|---|
+| **⌃⌥←** / **⌃⌥→** | In the left / right half. Press again for two thirds, again for one third, again for half. |
+| **⌃⌥↑** / **⌃⌥↓** | In the top / bottom half, cycling the same way |
+| **⌃⌥U** **⌃⌥I** **⌃⌥J** **⌃⌥K** | In the top-left, top-right, bottom-left, bottom-right quarter |
+| **⌃⌥↩** | Over the whole usable screen (not full screen: the menu bar and Dock stay) |
+| **⌃⌥C** | In the centre, at its current size |
+| **⌃⌥⌫** | Back where it was before Perch first moved it |
+| **⌃⌥⌘←** / **⌃⌥⌘→** | On the previous / next display, at the same place and proportion |
+
+These are Rectangle's keys. If Rectangle (or another window manager) is
+running, it owns them, and Perch says which it could not claim. To give them
+all back:
+
+```bash
+defaults write com.sagar.perch windowSnapping -bool false
+```
+
+then restart Perch.
+
 ### What a shortcut or a ↩ actually does
 
 Activating an app is a *toggle*, so the same key both goes to an app and puts it

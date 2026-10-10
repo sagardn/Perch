@@ -86,6 +86,7 @@ final class Launcher {
         }
         if minimizeHotkey == nil { taken.append("⌃`") }
         registerAppHotkeys()
+        if Prefs.windowSnapping { WindowSnapper.shared.startAndReport() }
 
         Gesture.shared.onTap = { [weak self] in self?.searchPanel?.toggle() }
         if Prefs.gestureEnabled {

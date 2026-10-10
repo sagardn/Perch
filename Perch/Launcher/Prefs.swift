@@ -17,6 +17,19 @@ enum Prefs {
         set { UserDefaults.standard.set(newValue, forKey: cycleKey) }
     }
 
+    private static let windowSnappingKey = "windowSnapping"
+
+    /// ⌃⌥ + arrows (and the rest of WindowSnapper's keys) move the frontmost
+    /// window. On by default; off gives the keys back to whatever else wants
+    /// them -- Rectangle, most often.
+    static var windowSnapping: Bool {
+        get {
+            if UserDefaults.standard.object(forKey: windowSnappingKey) == nil { return true }
+            return UserDefaults.standard.bool(forKey: windowSnappingKey)
+        }
+        set { UserDefaults.standard.set(newValue, forKey: windowSnappingKey) }
+    }
+
     private static let openAtPointerKey = "openAtPointer"
     private static let gestureKey = "gestureEnabled"
     private static let hideOnOutsideClickKey = "hideOnOutsideClick"

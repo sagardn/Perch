@@ -93,6 +93,10 @@ of them has. Perch is all three, built as one native app.
   Perch notices, moves to `⌥Tab` and tells you.
 - **Per-app hotkeys** — `⌃1` … `⌃9` jump straight to the apps you pin.
 - **Minimise and back** — `` ⌃` `` tucks the frontmost app away; press again to bring it back.
+- **Window snapping** — `⌃⌥←` / `⌃⌥→` put the window in the left or right half (press again
+  for two thirds, then one third), `⌃⌥↑` / `⌃⌥↓` the top or bottom half, `⌃⌥U I J K` the
+  quarters, `⌃⌥↩` fills the screen, `⌃⌥C` centres, `⌃⌥⌫` puts it back, and `⌃⌥⌘←` / `⌃⌥⌘→`
+  move it to the other display. Rectangle's keys, so there is nothing new to learn.
 - **Trackpad gesture** — a three-finger double tap opens the search (four-finger is a switch away).
 - **Running indicators** — every row shows whether its app is open, hidden or not running.
 
@@ -199,6 +203,10 @@ clean. Run it as yourself, not with `sudo` — Perch installs no helper or daemo
 | `⌃Tab` | Cycle your marked apps, most recent first |
 | `⌃1` … `⌃9` | Jump to a pinned app |
 | `` ⌃` `` | Minimise the frontmost app; press again to restore |
+| `⌃⌥←` `⌃⌥→` `⌃⌥↑` `⌃⌥↓` | Snap the window to a half (repeat for ⅔, ⅓) |
+| `⌃⌥U` `⌃⌥I` `⌃⌥J` `⌃⌥K` | Snap to a quarter |
+| `⌃⌥↩` · `⌃⌥C` · `⌃⌥⌫` | Fill the screen · centre · put it back |
+| `⌃⌥⌘←` `⌃⌥⌘→` | Move the window to the other display |
 
 Every module popup can have a shortcut of its own, and the search panel has
 more keys still. The [User Manual](docs/USER_MANUAL.md) lists them all.
