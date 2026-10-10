@@ -33,7 +33,7 @@ copyright alone (`LICENSE`). The last derived content went in one change:
 
 | What | How it went |
 |---|---|
-| 41 `.lproj` translations | retranslated from a rewritten `en.lproj`, working from the English only |
+| 41 `.lproj` translations | retranslated from a rewritten `en.lproj`, working from the English only -- the first pass left 2,141 old pairs in place; see Localisation ▸ How the translations were made |
 | `Tools/i18n.py` | rewritten from its documented behaviour -- `check`, `fix`, `scan` -- with no `translate` command |
 | `Makefile`, `exportOptions.plist` | deleted; releases are built by `.github/workflows/release.yaml` |
 | `background.png`, `Assets.xcassets/devices`, `support/github.png` | deleted; the Dashboard draws the system's own Mac icons and the setup window a system symbol |
@@ -360,18 +360,54 @@ key". It does not mean the app is translated. Wrapping the 122 is its own
 piece of work, and the right order is to wrap first and add the keys second,
 because `scan` will then name every key the wrapping needs.
 
+### How the translations were made
+
+Twice, and the first time did not take.
+
+The pass at the relicensing rewrote the headers, deleted 376 dead keys and
+fixed individual entries, and the files read as Perch's afterwards. They were
+not: compared pair by pair -- same key, same value -- against the import they
+started from, 2,141 translated lines across the 38 non-English languages were
+still verbatim. Whole-file similarity (12-34%) hid it; only the per-pair
+comparison finds it, so that is the check to run on anything inherited.
+
+The second pass (`e00b974`, 1.0.14) replaced every value in those 38 files:
+each language translated by a model from `en.lproj` alone, told not to open
+any existing translation or any history. en-GB and en-AU are `en` with
+British spelling. Each file's header says it is machine-translated, dated,
+and unreviewed.
+
+"Replaced every value" does not mean every value differs. Diff the two passes
+and about three quarters are byte-identical, because most of a 159-string UI
+is one- and two-word vocabulary with one rendering per language. What changed
+tracks how much room a translator had:
+
+| English key | Re-translated value differs |
+|---|---:|
+| 1 word | 16% |
+| 2 words | 23% |
+| 3-4 words | 30% |
+| 5+ words | 49% |
+
+That rising shape is what genuine re-translation looks like; carried-over
+values would be indifferent to length. The other direction says the same
+thing from the old side: against the import, the new files still match on
+51% of one-word keys but on only 36 of 418 five-plus-word ones, and those 36
+are formulaic ("Never check for updates (not recommended)"). No similarity
+figure can prove independence -- two honest translations of "Once per week"
+agree -- so the claim rests on how the files were made, which is recorded
+here and in the commit, and the table is the corroboration.
+
 ### The translations are machine-written and unreviewed
 
-All 40 non-English files were written fresh from `en.lproj` when Perch was
-relicensed, by a model working from the English alone, with a glossary that
-pins the terms most likely to go wrong -- memory *pressure* is Activity
-Monitor's, not the weather's. They have not been read by native speakers, and
-the translators flagged the strings they were least sure of: Activity
-Monitor's memory categories (Wired, Swap) in most languages, plural agreement
-in the Slavic languages and Arabic -- where "%0 cores" became a label and a
-count rather than a phrase -- and every term in Persian, Bengali and Tamil,
-which macOS itself is not localised into. Correcting a language you read is
-worth more than adding a new one.
+None of the 38 has been read by a native speaker. The translators flagged
+what they were least sure of: short labels that need the screen for context
+("Clock" is the CPU's clock speed, "Figure" the menu bar shape that shows a
+number), plural agreement in Czech, Croatian, Polish, Romanian, Russian,
+Slovak, Slovenian, Ukrainian and Arabic -- where "%0 cores" became a label
+and a count, "Ядер: %0", rather than a phrase -- and every term in Persian,
+Bengali and Tamil, which macOS itself is not localised into. Correcting a
+language you read is worth more than adding a new one.
 
 ---
 
