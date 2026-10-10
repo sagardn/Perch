@@ -203,7 +203,11 @@ do {
     }
 
     put(".claude/cache/old.bin", old)
-    put(".claude/projects/p/s.jsonl", old)
+    put(".claude/projects/-Users-x-code-Perch/s.jsonl", old)
+    put(".claude/projects/-Users-x-code-Perch/2664aea4-1653-479d-b59f-2b3fccde87ff.jsonl", recent)
+    put(".claude/projects/-Users-x-code-Perch/memory/MEMORY.md", old)
+    put(".codex/sessions/2026/07/01/rollout-a.jsonl", old)
+    put(".codex/sessions/2026/10/09/rollout-b.jsonl", recent)
     put(".claude/logs/new.log", recent)
     put(".claude/auth.json", old)
     put("Library/Application Support/Claude/Code Cache/js/a", old)
@@ -258,9 +262,28 @@ do {
     check("unknown age is never old enough",
           !AIAssistants.Item(url: fake, kind: .caches, bytes: 1).isOld(enough: 1))
 
+    print("\nA conversation at a time")
+    check("projects is not offered whole", item(".claude/projects") == nil)
+    let oldSession = item(".claude/projects/-Users-x-code-Perch/s.jsonl")
+    let newSession = item(".claude/projects/-Users-x-code-Perch/2664aea4-1653-479d-b59f-2b3fccde87ff.jsonl")
+    check("each session is its own entry", oldSession != nil && newSession != nil)
+    check("the old one is offered at 90 days, the new one is not",
+          at90.contains { $0.url == oldSession?.url } && !at90.contains { $0.url == newSession?.url })
+    check("a project's memory is never offered",
+          item(".claude/projects/-Users-x-code-Perch/memory") == nil
+            && !items.contains { $0.url.pathComponents.contains("memory") })
+    check("a session reads by its project", newSession?.displayName == "Perch · 2664aea4")
+    let oldDay = item(".codex/sessions/2026/07/01/rollout-a.jsonl")
+    check("dated folders are walked down to the day's sessions",
+          oldDay != nil && item(".codex/sessions/2026") == nil)
+    check("and named by their day", oldDay?.displayName == "2026-07-01 · rollout-a.jsonl")
+    check("July's session is old enough, October's is not",
+          at90.contains { $0.url == oldDay?.url }
+            && !at90.contains { $0.url.lastPathComponent == "rollout-b.jsonl" })
+
     print("\nChecked again before the Bin")
-    let session = item(".claude/projects")!
-    put(".claude/projects/p/s.jsonl", Date())   // written to after the scan
+    let session = oldSession!
+    put(".claude/projects/-Users-x-code-Perch/s.jsonl", Date())   // written to after the scan
     let busy = AIAssistants.moveToBin([session], olderThan: 90, home: fake)
     check("written to since the scan: refused", busy.moved.isEmpty && busy.failed == [session.url])
     check("and left where it was", fm.fileExists(atPath: session.url.path))
@@ -276,6 +299,14 @@ do {
     check("a cache-named link out of home is refused",
           AIAssistants.moveToBin([escape], olderThan: nil, home: fake).moved.isEmpty
             && fm.fileExists(atPath: sandbox.appendingPathComponent("outside.txt").path))
+
+    let july = item(".codex/sessions/2026/07/01/rollout-a.jsonl")!
+    let movedDay = AIAssistants.moveToBin([july], olderThan: 90, home: fake)
+    check("an old dated session goes to the Bin on its own",
+          movedDay.moved == [july.url] && !fm.fileExists(atPath: july.url.path)
+            && fm.fileExists(atPath: fake.appendingPathComponent(".codex/sessions/2026/10/09/rollout-b.jsonl").path))
+    let binned = fm.homeDirectoryForCurrentUser.appendingPathComponent(".Trash/rollout-a.jsonl")
+    if (try? Data(contentsOf: binned)) == Data(repeating: 7, count: 4096) { try? fm.removeItem(at: binned) }
 
     let cache = item(".claude/cache")!
     let done = AIAssistants.moveToBin([cache], olderThan: 90, home: fake)

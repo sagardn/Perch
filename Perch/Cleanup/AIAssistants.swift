@@ -66,15 +66,29 @@ enum AIAssistants {
         /// cannot be read is never offered by age.
         let lastUsed: Date
 
+        /// Where a single conversation came from, when it is one part of a
+        /// store -- the project for a Claude Code session, the day for a
+        /// Codex one. nil for a whole store, cache or model.
+        let context: String?
+
         var name: String { url.lastPathComponent }
 
+        /// For a list a person reads: "Perch · 560e3c32" rather than a UUID.
+        var displayName: String {
+            guard let context else { return name }
+            let looksLikeID = name.range(of: #"^[0-9a-f]{8}-[0-9a-f]{4}-"#,
+                                         options: .regularExpression) != nil
+            return "\(context) · \(looksLikeID ? String(name.prefix(8)) : name)"
+        }
+
         init(url: URL, kind: Kind, bytes: Int64, isMeasured: Bool = true,
-             lastUsed: Date = Date()) {
+             lastUsed: Date = Date(), context: String? = nil) {
             self.url = url
             self.kind = kind
             self.bytes = bytes
             self.isMeasured = isMeasured
             self.lastUsed = lastUsed
+            self.context = context
         }
 
         /// Whether the age rule lets this be offered. nil is "any age".
@@ -249,6 +263,22 @@ enum AIAssistants {
                 for entry in (try? fm.contentsOfDirectory(atPath: root.path))?.sorted() ?? [] {
                     guard let kind = kind(of: entry) else { continue }
                     let url = root.appendingPathComponent(entry)
+                    // A conversation store is offered a conversation at a
+                    // time, so the age rule can retire an old session while
+                    // today's stays. Judged whole, by its newest file, a
+                    // store any live tool writes into is always "used
+                    // today" -- measured: nothing on this Mac was older than
+                    // 26 days, so every age setting showed an empty list.
+                    if kind == .conversations, let units = conversationUnits(url) {
+                        for unit in units {
+                            let measured = AppLeftovers.measure(unit.url, fm: fm)
+                            guard measured != 0 else { continue }
+                            items.append(Item(url: unit.url, kind: .conversations,
+                                              bytes: measured ?? 0, isMeasured: measured != nil,
+                                              lastUsed: lastModified(unit.url), context: unit.context))
+                        }
+                        continue
+                    }
                     let measured = AppLeftovers.measure(url, fm: fm)
                     // A store that really is empty is nothing to offer and
                     // nothing to free; it only lengthens the list. One that
@@ -279,6 +309,58 @@ enum AIAssistants {
         }
 
         return tools.sorted { $0.bytes > $1.bytes }
+    }
+
+    /// The single conversations a store holds, or nil when it is a file
+    /// (a history.jsonl is one unit already).
+    ///
+    /// - `projects` (Claude Code): each session in each project. A project's
+    ///   `memory` folder is what the person taught the tool and is never a
+    ///   unit -- it is not offered at all.
+    /// - Folders named by date (Codex's `sessions/2026/10/11`): walked down
+    ///   to what is inside the day, so a year folder is not a unit that is
+    ///   "used today" for twelve months.
+    /// - Anything else: each item in the store.
+    static func conversationUnits(_ store: URL) -> [(url: URL, context: String?)]? {
+        let fm = FileManager.default
+        var isDirectory: ObjCBool = false
+        guard fm.fileExists(atPath: store.path, isDirectory: &isDirectory), isDirectory.boolValue
+        else { return nil }
+        func children(_ url: URL) -> [String] {
+            ((try? fm.contentsOfDirectory(atPath: url.path)) ?? []).sorted().filter { !$0.hasPrefix(".") }
+        }
+        func isFolder(_ url: URL) -> Bool {
+            var dir: ObjCBool = false
+            return fm.fileExists(atPath: url.path, isDirectory: &dir) && dir.boolValue
+        }
+        func isDated(_ name: String) -> Bool { !name.isEmpty && name.allSatisfy(\.isNumber) }
+
+        var units: [(URL, String?)] = []
+        func walk(_ url: URL, dated: [String]) {
+            for name in children(url) where name.lowercased() != "memory" {
+                let child = url.appendingPathComponent(name)
+                if isDated(name), isFolder(child) {
+                    walk(child, dated: dated + [name])
+                } else {
+                    units.append((child, dated.isEmpty ? nil : dated.joined(separator: "-")))
+                }
+            }
+        }
+        if store.lastPathComponent == "projects" {
+            for project in children(store) {
+                let folder = store.appendingPathComponent(project)
+                guard isFolder(folder) else { continue }
+                // Claude Code names a project after its path with "/" as "-":
+                // "-Users-amit-Desktop-project-Perch" is the Perch project.
+                let label = project.split(separator: "-").last.map(String.init) ?? project
+                for name in children(folder) where name.lowercased() != "memory" {
+                    units.append((folder.appendingPathComponent(name), label))
+                }
+            }
+        } else {
+            walk(store, dated: [])
+        }
+        return units
     }
 
     /// The entries one model store is split into.
@@ -362,6 +444,17 @@ enum AIAssistants {
                 if path == rootPath, isWhollyCache(root, home: home) { return true }
                 if parent == rootPath, !isWhollyCache(root, home: home),
                    kind(of: url.lastPathComponent) != nil { return true }
+            }
+        }
+        // One conversation out of a store directly inside a known root.
+        for name in known {
+            for root in roots(for: name, home: home) where !isWhollyCache(root, home: home) {
+                let rootPath = root.standardizedFileURL.path
+                guard path.hasPrefix(rootPath + "/") else { continue }
+                let store = String(path.dropFirst(rootPath.count + 1)).split(separator: "/").first.map(String.init) ?? ""
+                guard kind(of: store) == .conversations,
+                      let units = conversationUnits(root.appendingPathComponent(store)) else { continue }
+                if units.contains(where: { $0.url.standardizedFileURL.path == path }) { return true }
             }
         }
         return modelStores.contains { modelUnits($0, home: home).map(\.standardizedFileURL.path).contains(path) }
