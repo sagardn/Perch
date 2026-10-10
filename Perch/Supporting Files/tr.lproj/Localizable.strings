@@ -120,6 +120,10 @@
 "%0 had already quit" = "%0 zaten kapanmıştı";
 "%0 belongs to another user" = "%0 başka bir kullanıcıya ait";
 "Could not quit %0" = "%0 kapatılamadı";
+"Quit" = "Çık";
+"Quit %0" = "%0 uygulamasından çık";
+"Quit %0?" = "%0 kapatılsın mı?";
+"The process is asked to quit and may offer to save first." = "İşlemden çıkması istenir ve önce kaydetmeyi önerebilir.";
 "RAM" = "RAM";
 "Wired" = "Kalıcı";
 "Compressed" = "Sıkıştırılmış";

@@ -120,6 +120,10 @@
 "%0 had already quit" = "%0 już zakończył działanie";
 "%0 belongs to another user" = "%0 należy do innego użytkownika";
 "Could not quit %0" = "Nie udało się zakończyć %0";
+"Quit" = "Zakończ";
+"Quit %0" = "Zakończ %0";
+"Quit %0?" = "Zakończyć %0?";
+"The process is asked to quit and may offer to save first." = "Proces zostaje poproszony o zakończenie i może zaproponować zapis.";
 "RAM" = "RAM";
 "Wired" = "Związana";
 "Compressed" = "Skompresowana";

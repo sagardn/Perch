@@ -120,6 +120,10 @@
 "%0 had already quit" = "%0 sudah keluar";
 "%0 belongs to another user" = "%0 milik pengguna lain";
 "Could not quit %0" = "Tidak dapat menutup %0";
+"Quit" = "Keluar";
+"Quit %0" = "Keluar dari %0";
+"Quit %0?" = "Keluar dari %0?";
+"The process is asked to quit and may offer to save first." = "Proses diminta keluar dan dapat menawarkan menyimpan dulu.";
 "RAM" = "RAM";
 "Wired" = "Wired";
 "Compressed" = "Dikompresi";

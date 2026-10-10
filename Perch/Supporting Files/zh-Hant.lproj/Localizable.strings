@@ -120,6 +120,10 @@
 "%0 had already quit" = "%0 已經結束";
 "%0 belongs to another user" = "%0 屬於其他使用者";
 "Could not quit %0" = "無法結束 %0";
+"Quit" = "結束";
+"Quit %0" = "結束 %0";
+"Quit %0?" = "要結束 %0 嗎？";
+"The process is asked to quit and may offer to save first." = "會請求該程序結束，它可能先提示儲存。";
 "RAM" = "RAM";
 "Wired" = "固定";
 "Compressed" = "已壓縮";

@@ -120,6 +120,10 @@
 "%0 had already quit" = "%0 se închisese deja";
 "%0 belongs to another user" = "%0 aparține altui utilizator";
 "Could not quit %0" = "%0 nu a putut fi închis";
+"Quit" = "Închide";
+"Quit %0" = "Închide %0";
+"Quit %0?" = "Închizi %0?";
+"The process is asked to quit and may offer to save first." = "Procesului i se cere să se închidă și poate oferi salvarea.";
 "RAM" = "RAM";
 "Wired" = "Fixată";
 "Compressed" = "Comprimată";

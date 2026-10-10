@@ -120,6 +120,10 @@
 "%0 had already quit" = "%0 var allerede avsluttet";
 "%0 belongs to another user" = "%0 tilhører en annen bruker";
 "Could not quit %0" = "Kunne ikke avslutte %0";
+"Quit" = "Avslutt";
+"Quit %0" = "Avslutt %0";
+"Quit %0?" = "Avslutte %0?";
+"The process is asked to quit and may offer to save first." = "Prosessen blir bedt om å avslutte og kan tilby å arkivere først.";
 "RAM" = "RAM";
 "Wired" = "Låst";
 "Compressed" = "Komprimert";

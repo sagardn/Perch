@@ -120,6 +120,10 @@
 "%0 had already quit" = "%0 はすでに終了していました";
 "%0 belongs to another user" = "%0 は別のユーザのものです";
 "Could not quit %0" = "%0 を終了できませんでした";
+"Quit" = "終了";
+"Quit %0" = "%0 を終了";
+"Quit %0?" = "%0 を終了しますか？";
+"The process is asked to quit and may offer to save first." = "プロセスに終了を求めます。先に保存を促す場合があります。";
 "RAM" = "RAM";
 "Wired" = "確保中";
 "Compressed" = "圧縮";

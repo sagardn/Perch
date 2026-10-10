@@ -120,6 +120,10 @@
 "%0 had already quit" = "%0 پیش‌تر بسته شده بود";
 "%0 belongs to another user" = "%0 به کاربر دیگری تعلق دارد";
 "Could not quit %0" = "نتوانست %0 را ببندد";
+"Quit" = "خروج";
+"Quit %0" = "خروج از %0";
+"Quit %0?" = "از %0 خارج شود؟";
+"The process is asked to quit and may offer to save first." = "از فرایند خواسته می‌شود خارج شود و ممکن است ابتدا ذخیره را پیشنهاد دهد.";
 "RAM" = "RAM";
 "Wired" = "ثابت";
 "Compressed" = "فشرده";

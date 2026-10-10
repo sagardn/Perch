@@ -163,11 +163,20 @@ do {
 
     let menu = row.menu(for: rightClick(in: row))
     check("a row with a live pid offers a menu", menu != nil)
-    check("with exactly one item", menu?.items.count == 1)
-    check("naming the process", menu?.items.first?.title.contains("Google Chrome") == true)
-    check("and it is wired to something", menu?.items.first?.action != nil)
+    check("with both Quit and Force Quit", menu?.items.count == 2)
+    // Quit first: the top item is where a fast hand lands, and of the two it
+    // is the one that lets the process save.
+    check("Quit is offered before Force Quit",
+          menu?.items.first?.title.hasPrefix("Quit") == true
+            && menu?.items.last?.title.contains("Force") == true)
+    check("both name the process",
+          menu?.items.allSatisfy { $0.title.contains("Google Chrome") } == true)
+    check("both are wired to something",
+          menu?.items.allSatisfy { $0.action != nil } == true)
+    check("and to different things",
+          menu?.items.first?.action != menu?.items.last?.action)
     check("targeting the row, not whatever is first responder",
-          menu?.items.first?.target as? NSView === row)
+          menu?.items.allSatisfy { $0.target as? NSView === row } == true)
 }
 
 do {

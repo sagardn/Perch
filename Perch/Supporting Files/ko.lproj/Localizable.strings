@@ -120,6 +120,10 @@
 "%0 had already quit" = "%0은(는) 이미 종료되었습니다";
 "%0 belongs to another user" = "%0은(는) 다른 사용자의 것입니다";
 "Could not quit %0" = "%0을(를) 종료할 수 없습니다";
+"Quit" = "종료";
+"Quit %0" = "%0 종료";
+"Quit %0?" = "%0을(를) 종료할까요?";
+"The process is asked to quit and may offer to save first." = "프로세스에 종료를 요청하며, 먼저 저장을 제안할 수 있습니다.";
 "RAM" = "RAM";
 "Wired" = "와이어드";
 "Compressed" = "압축됨";

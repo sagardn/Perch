@@ -120,6 +120,10 @@
 "%0 had already quit" = "%0 вже завершився";
 "%0 belongs to another user" = "%0 належить іншому користувачу";
 "Could not quit %0" = "Не вдалося завершити %0";
+"Quit" = "Завершити";
+"Quit %0" = "Завершити %0";
+"Quit %0?" = "Завершити %0?";
+"The process is asked to quit and may offer to save first." = "Процесу пропонується завершитися; він може запропонувати зберегти.";
 "RAM" = "RAM";
 "Wired" = "Зарезервована";
 "Compressed" = "Стиснена";

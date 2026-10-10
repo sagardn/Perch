@@ -120,6 +120,10 @@
 "%0 had already quit" = "%0 ya había salido";
 "%0 belongs to another user" = "%0 pertenece a otro usuario";
 "Could not quit %0" = "No se pudo salir de %0";
+"Quit" = "Salir";
+"Quit %0" = "Salir de %0";
+"Quit %0?" = "¿Salir de %0?";
+"The process is asked to quit and may offer to save first." = "Se pide al proceso que salga y puede ofrecer guardar antes.";
 "RAM" = "RAM";
 "Wired" = "Fija";
 "Compressed" = "Comprimida";

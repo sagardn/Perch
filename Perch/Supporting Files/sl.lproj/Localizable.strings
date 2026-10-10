@@ -120,6 +120,10 @@
 "%0 had already quit" = "%0 se je že končal";
 "%0 belongs to another user" = "%0 pripada drugemu uporabniku";
 "Could not quit %0" = "%0 ni bilo mogoče končati";
+"Quit" = "Končaj";
+"Quit %0" = "Končaj %0";
+"Quit %0?" = "Končam %0?";
+"The process is asked to quit and may offer to save first." = "Proces je pozvan h koncu in lahko prej ponudi shranjevanje.";
 "RAM" = "RAM";
 "Wired" = "Fiksni";
 "Compressed" = "Stisnjeni";

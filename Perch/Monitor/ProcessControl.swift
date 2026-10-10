@@ -43,24 +43,42 @@ enum ProcessControl {
     /// being wrong is the machine, so it is checked rather than assumed.
     static func isSignallable(_ pid: Int32) -> Bool { pid > 1 }
 
-    /// Ends a process now.
+    /// Asks a process to quit, and lets it refuse.
     ///
-    /// `NSRunningApplication.forceTerminate()` where there is one, because it
-    /// goes through the window server and leaves the Dock and the app
-    /// switcher in a consistent state. A helper process -- most of what a
-    /// memory list shows -- has no `NSRunningApplication`, so it takes a
-    /// signal instead.
+    /// The one to reach for first. An app told to quit runs its own
+    /// shutdown: it can put up a "save changes?" sheet, and it can decline
+    /// altogether. So a `.terminated` here means *asked successfully*, not
+    /// *gone* -- the row may well still be there on the next sample, and
+    /// that is the process working as intended rather than a failure.
+    @discardableResult
+    static func quit(pid: Int32) -> Outcome {
+        send(pid: pid, signal: SIGTERM) { $0.terminate() }
+    }
+
+    /// Ends a process now, without letting it save.
     @discardableResult
     static func forceQuit(pid: Int32) -> Outcome {
+        send(pid: pid, signal: SIGKILL) { $0.forceTerminate() }
+    }
+
+    /// The shared half of the two.
+    ///
+    /// `NSRunningApplication` where there is one, because it goes through the
+    /// window server and leaves the Dock and the app switcher in a consistent
+    /// state -- and because it is what gives an app the chance to save. A
+    /// helper process, which is most of what a memory list shows, has no
+    /// `NSRunningApplication`, so it takes the signal instead.
+    private static func send(pid: Int32, signal: Int32,
+                             viaApp: (NSRunningApplication) -> Bool) -> Outcome {
         guard isSignallable(pid) else { return .failed(code: EINVAL) }
 
         if let app = NSRunningApplication(processIdentifier: pid) {
             if app.isTerminated { return .alreadyGone }
-            return app.forceTerminate() ? .terminated : .notPermitted
+            return viaApp(app) ? .terminated : .notPermitted
         }
 
         errno = 0
-        let result = kill(pid, SIGKILL)
+        let result = kill(pid, signal)
         return outcome(result: result, errno: errno)
     }
 

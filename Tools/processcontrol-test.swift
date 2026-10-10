@@ -43,6 +43,14 @@ check("pid 1 is launchd", !ProcessControl.isSignallable(1))
 check("an unsignallable pid is refused rather than attempted",
       ProcessControl.forceQuit(pid: 0) == .failed(code: EINVAL))
 check("and so is pid 1", ProcessControl.forceQuit(pid: 1) == .failed(code: EINVAL))
+// The gentle one is guarded identically. SIGTERM to pid 0 reaches every
+// process in the group just as SIGKILL does; being polite about it does not
+// make the target narrower.
+check("quit refuses pid 0 as well",
+      ProcessControl.quit(pid: 0) == .failed(code: EINVAL))
+check("and pid 1", ProcessControl.quit(pid: 1) == .failed(code: EINVAL))
+check("and a process group",
+      ProcessControl.quit(pid: -4321) == .failed(code: EINVAL))
 
 // MARK: - Reading kill(2)
 

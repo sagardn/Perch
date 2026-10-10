@@ -158,6 +158,10 @@
 "%0 had already quit" = "%0 had already quit";
 "%0 belongs to another user" = "%0 belongs to another user";
 "Could not quit %0" = "Could not quit %0";
+"Quit" = "Quit";
+"Quit %0" = "Quit %0";
+"Quit %0?" = "Quit %0?";
+"The process is asked to quit and may offer to save first." = "The process is asked to quit and may offer to save first.";
 
 // Monitor · RAMModuleShell
 "RAM" = "RAM";

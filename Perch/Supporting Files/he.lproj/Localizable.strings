@@ -120,6 +120,10 @@
 "%0 had already quit" = "%0 כבר יצא";
 "%0 belongs to another user" = "%0 שייך למשתמש אחר";
 "Could not quit %0" = "לא ניתן לסגור את %0";
+"Quit" = "יציאה";
+"Quit %0" = "יציאה מ‑%0";
+"Quit %0?" = "לצאת מ‑%0?";
+"The process is asked to quit and may offer to save first." = "מתבקש מהתהליך לצאת, והוא עשוי להציע לשמור קודם.";
 "RAM" = "RAM";
 "Wired" = "קשיח";
 "Compressed" = "דחוס";

@@ -120,6 +120,10 @@
 "%0 had already quit" = "%0 вече беше спрян";
 "%0 belongs to another user" = "%0 принадлежи на друг потребител";
 "Could not quit %0" = "%0 не можа да бъде спрян";
+"Quit" = "Спиране";
+"Quit %0" = "Спиране на %0";
+"Quit %0?" = "Спиране на %0?";
+"The process is asked to quit and may offer to save first." = "Процесът е помолен да спре и може да предложи да запази.";
 "RAM" = "RAM";
 "Wired" = "Фиксирана";
 "Compressed" = "Компресирана";

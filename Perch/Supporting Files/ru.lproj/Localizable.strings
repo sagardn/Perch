@@ -120,6 +120,10 @@
 "%0 had already quit" = "%0 уже завершился";
 "%0 belongs to another user" = "%0 принадлежит другому пользователю";
 "Could not quit %0" = "Не удалось завершить %0";
+"Quit" = "Завершить";
+"Quit %0" = "Завершить %0";
+"Quit %0?" = "Завершить %0?";
+"The process is asked to quit and may offer to save first." = "Процессу предлагается завершиться; он может предложить сохранить.";
 "RAM" = "RAM";
 "Wired" = "Фиксированная";
 "Compressed" = "Сжатая";

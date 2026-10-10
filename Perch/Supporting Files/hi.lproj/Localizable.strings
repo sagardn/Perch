@@ -120,6 +120,10 @@
 "%0 had already quit" = "%0 पहले ही बंद हो चुका था";
 "%0 belongs to another user" = "%0 किसी अन्य उपयोगकर्ता का है";
 "Could not quit %0" = "%0 को बंद नहीं किया जा सका";
+"Quit" = "बंद करें";
+"Quit %0" = "%0 बंद करें";
+"Quit %0?" = "%0 बंद करें?";
+"The process is asked to quit and may offer to save first." = "प्रक्रिया से बंद होने को कहा जाता है और वह पहले सहेजने की पेशकश कर सकती है।";
 "RAM" = "RAM";
 "Wired" = "वायर्ड";
 "Compressed" = "संपीड़ित";

@@ -120,6 +120,10 @@
 "%0 had already quit" = "%0 ออกไปแล้ว";
 "%0 belongs to another user" = "%0 เป็นของผู้ใช้อื่น";
 "Could not quit %0" = "ไม่สามารถปิด %0 ได้";
+"Quit" = "ออก";
+"Quit %0" = "ออกจาก %0";
+"Quit %0?" = "ออกจาก %0 ไหม";
+"The process is asked to quit and may offer to save first." = "กระบวนการจะถูกขอให้ปิด และอาจเสนอให้บันทึกก่อน";
 "RAM" = "RAM";
 "Wired" = "ถูกตรึง";
 "Compressed" = "ถูกบีบอัด";

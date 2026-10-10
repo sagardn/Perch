@@ -120,6 +120,10 @@
 "%0 had already quit" = "%0 hade redan avslutats";
 "%0 belongs to another user" = "%0 tillhör en annan användare";
 "Could not quit %0" = "Kunde inte avsluta %0";
+"Quit" = "Avsluta";
+"Quit %0" = "Avsluta %0";
+"Quit %0?" = "Avsluta %0?";
+"The process is asked to quit and may offer to save first." = "Processen ombeds avsluta och kan erbjuda att spara först.";
 "RAM" = "RAM";
 "Wired" = "Fast";
 "Compressed" = "Komprimerat";

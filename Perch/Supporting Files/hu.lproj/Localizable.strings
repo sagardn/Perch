@@ -120,6 +120,10 @@
 "%0 had already quit" = "%0 már kilépett";
 "%0 belongs to another user" = "%0 másik felhasználóé";
 "Could not quit %0" = "%0 nem léptethető ki";
+"Quit" = "Kilépés";
+"Quit %0" = "%0 bezárása";
+"Quit %0?" = "Bezárja a(z) %0 alkalmazást?";
+"The process is asked to quit and may offer to save first." = "A folyamat felszólítást kap a kilépésre, és felajánlhatja a mentést.";
 "RAM" = "RAM";
 "Wired" = "Rögzített";
 "Compressed" = "Tömörített";

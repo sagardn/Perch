@@ -120,6 +120,10 @@
 "%0 had already quit" = "%0 už bol ukončený";
 "%0 belongs to another user" = "%0 patrí inému používateľovi";
 "Could not quit %0" = "%0 sa nepodarilo ukončiť";
+"Quit" = "Ukončiť";
+"Quit %0" = "Ukončiť %0";
+"Quit %0?" = "Ukončiť %0?";
+"The process is asked to quit and may offer to save first." = "Proces je požiadaný o ukončenie a môže ponúknuť uloženie.";
 "RAM" = "RAM";
 "Wired" = "Pevná";
 "Compressed" = "Komprimovaná";

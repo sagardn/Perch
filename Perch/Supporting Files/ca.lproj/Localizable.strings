@@ -120,6 +120,10 @@
 "%0 had already quit" = "%0 ja havia sortit";
 "%0 belongs to another user" = "%0 pertany a un altre usuari";
 "Could not quit %0" = "No s'ha pogut sortir de %0";
+"Quit" = "Surt";
+"Quit %0" = "Surt de %0";
+"Quit %0?" = "Voleu sortir de %0?";
+"The process is asked to quit and may offer to save first." = "Es demana al procés que surti i pot oferir desar abans.";
 "RAM" = "RAM";
 "Wired" = "Fixa";
 "Compressed" = "Comprimida";

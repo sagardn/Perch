@@ -545,10 +545,16 @@ final class ProcessRow: NSView {
 
         let process = name.stringValue
         let menu = NSMenu()
-        let item = NSMenuItem(title: localized("Force Quit %0", process),
-                              action: #selector(forceQuit), keyEquivalent: "")
-        item.target = self
-        menu.addItem(item)
+
+        // Quit first, and not only because it is alphabetically unlucky:
+        // the top item is the one a fast hand lands on, and of the two this
+        // is the one that lets the process save.
+        for (title, action) in [(localized("Quit %0", process), #selector(quit)),
+                                (localized("Force Quit %0", process), #selector(forceQuit))] {
+            let item = NSMenuItem(title: title, action: action, keyEquivalent: "")
+            item.target = self
+            menu.addItem(item)
+        }
 
         // The popup closes when it stops being the key window, and opening a
         // menu is exactly that. The flag is the window's own, already used by
@@ -565,21 +571,40 @@ final class ProcessRow: NSView {
         (window as? MenuHostingWindow)?.isShowingOwnMenu = false
     }
 
+    @objc private func quit() {
+        // Confirmed even though it is the gentle one: the rows are eighteen
+        // points tall and seven of them sit together, so the cost of a slip
+        // is somebody else's unsaved work either way.
+        confirm(title: localized("Quit %0?", name.stringValue),
+                // One literal, not two joined: the i18n scan reads the
+                // argument as written, and a key split across a `+` is a key
+                // it cannot find.
+                detail: localized("The process is asked to quit and may offer to save first."),
+                style: .informational,
+                actionTitle: localized("Quit"),
+                act: ProcessControl.quit)
+    }
+
     @objc private func forceQuit() {
+        confirm(title: localized("Force quit %0?", name.stringValue),
+                detail: localized("The process ends immediately. Anything it has not saved is lost."),
+                style: .warning,
+                actionTitle: localized("Force Quit"),
+                act: ProcessControl.forceQuit)
+    }
+
+    /// Both items ask first, then act on the pid the row held when the menu
+    /// opened -- not whatever is in the row by the time the alert is answered,
+    /// which may be a different process entirely.
+    private func confirm(title: String, detail: String, style: NSAlert.Style,
+                         actionTitle: String,
+                         act: @escaping (Int32) -> ProcessControl.Outcome) {
         let target = pid
         let process = name.stringValue
         guard ProcessControl.isSignallable(target) else { return }
 
-        // Asked, because a force quit does not let the process save and the
-        // row is a one-pixel target next to seven others.
-        Alert.show(localized("Force quit %0?", process),
-                   // One literal, not two joined: the i18n scan reads the
-                   // argument as written, and a key split across a `+` is a
-                   // key it cannot find.
-                   localized("The process ends immediately. Anything it has not saved is lost."),
-                   style: .warning,
-                   actionTitle: localized("Force Quit")) {
-            let outcome = ProcessControl.forceQuit(pid: target)
+        Alert.show(title, detail, style: style, actionTitle: actionTitle) {
+            let outcome = act(target)
             if let message = ProcessControl.message(for: outcome, name: process) {
                 Notify.show(message, symbol: "exclamationmark.triangle")
             }
