@@ -411,6 +411,84 @@ language you read is worth more than adding a new one.
 
 ---
 
+## New hardware
+
+Perch reads hardware, and the hardware changes under it. A new Apple silicon
+generation arrives about once a year, and the way this app breaks on one is
+not a crash — it is a reading that quietly goes missing, or worse, one that
+reads zero because a key it expected was not there.
+
+Three rules, and every reader is held to them.
+
+**Discover, do not enumerate.** The SMC client walks the controller's own key
+table rather than carrying a list of keys, because which keys exist differs by
+model and firmware and a hard-coded table is wrong on the next Mac. The
+performance levels come from `hw.nperflevels` and each level's own
+`hw.perflevelN.name`, not from an assumption that there are two. The model
+name comes from the device tree's `product-name`, so a Mac nobody has seen
+reports itself correctly.
+
+**Degrade to a dash, never to a zero.** A reading the machine does not answer
+is nil all the way to the view, which draws "—". `GPUStats` looks each figure
+up under several spellings and leaves it nil rather than guessing;
+`levelLoads` returns nothing at all when the levels and the core count
+disagree, because a mean over the wrong slice of cores is worse than no
+figure. A fanless MacBook Air has no fan speed and that is not a bug — a fan
+speed of 0 rpm would be.
+
+**Be checkable on a Mac we do not have.** Nobody can test five generations:
+
+```bash
+cat Perch/UI/Localized.swift Perch/Settings/Preferences.swift \
+    Perch/Monitor/Readings.swift Perch/Monitor/CPUReadings.swift \
+    Perch/Monitor/MemoryReadings.swift Perch/Monitor/GPUStats.swift \
+    Perch/Monitor/DiskReadings.swift Perch/Monitor/NetworkInfo.swift \
+    Perch/Monitor/Temperature.swift Perch/Monitor/SMCKit.swift \
+    Perch/Monitor/SensorReadings.swift Perch/System/DeviceInfo.swift \
+    Tools/hardware-report.swift | swift -
+```
+
+`Tools/hardware-report.swift` runs every reader and prints what this machine
+answered, marking anything absent as MISSING rather than printing a zero. It
+is written to be pasted into an issue. Where a GPU reading is missing it also
+dumps the driver's own `PerformanceStatistics` keys, because the spelling a
+new driver uses is exactly the thing nobody here has — and adding it is then a
+one-line change.
+
+### Measured on an M2 (Mac14,2, macOS 26)
+
+46 of 48 readings answered. The two that did not are both correct absences:
+the SSID, which needs Location permission, and fan speed on a fanless Air.
+
+### The ordering that everything about clusters rests on
+
+`hw.perflevel0` is **Performance**, while `host_processor_info` lists
+**efficiency** cores first. So the core array runs in the opposite order to
+the perflevel index, and `levelLoads` reverses accordingly.
+
+This was an assumption in a comment until it was measured. Loading exactly
+`hw.perflevel0.logicalcpu` threads at `.userInteractive` — the QoS the
+scheduler reserves for performance cores — put ~285 busy ticks on cores 4–7
+against 83–123 on cores 0–3 of an M2. Efficiency cores are first. Had it been
+the other way round, every Mac would have had its two cluster figures swapped,
+with nothing to show for it on screen but two plausible numbers in the wrong
+rows.
+
+A three-level machine is the natural extension of the same rule and is the one
+case nobody has been able to run. `hardware-report` shouts if it sees one.
+
+### What is generation-sensitive, and what happens
+
+| Reader | Sensitivity | On an unknown chip |
+|---|---|---|
+| `CPUReadings` | `hw.perflevelN` count and order | all levels reported, named by the kernel |
+| `GPUStats` | driver key spellings | the figure is nil, the row shows "—" |
+| `SensorReadings` | which SMC keys exist | walks the table; new keys appear by themselves |
+| `Temperature` | HID page/usage constants | nil, and SMC temperatures still work |
+| `MemoryReadings`, `DiskReadings`, `NetworkInfo` | none — kernel APIs that predate Apple silicon | unaffected |
+
+---
+
 ## Adding a module
 
 1. Write the reader in `Perch/Monitor/`, against public APIs.

@@ -120,12 +120,61 @@ enum CPUReadings {
     /// Logical cores, as the scheduler sees them.
     static var coreCount: Int { ProcessInfo.processInfo.processorCount }
 
+    /// One of the machine's performance levels, as the kernel describes it.
+    struct PerfLevel: Equatable {
+        /// The `hw.perflevelN` index. 0 is the most performant.
+        let index: Int
+        /// The kernel's own name for it -- "Performance", "Efficiency".
+        /// Not a string this app chose, so a level nobody has seen yet
+        /// arrives correctly labelled.
+        let name: String
+        let logicalCores: Int
+    }
+
+    /// Every performance level, ordered the way `host_processor_info` lists
+    /// their cores: least performant first.
+    ///
+    /// Read from `hw.nperflevels` rather than assuming two. Apple silicon
+    /// has shipped exactly two since the M1, and the day that changes is the
+    /// day a hard-coded pair starts reporting a machine that does not exist
+    /// -- this reports whatever the kernel says it has, including one level
+    /// on Intel, where the counts are absent and this is empty.
+    ///
+    /// **The ordering is measured, not assumed.** `hw.perflevel0` is
+    /// *Performance* while `host_processor_info` lists *efficiency* cores
+    /// first, so the array order is the perflevel index descending. Verified
+    /// on an M2 by loading exactly `hw.perflevel0.logicalcpu` threads at
+    /// `.userInteractive`, the QoS the scheduler reserves for performance
+    /// cores: cores 4-7 took ~285 busy ticks each against 83-123 on cores
+    /// 0-3. A three-level machine is the natural extension of that and is
+    /// the one case here nobody has been able to run.
+    static var perfLevels: [PerfLevel] {
+        guard let count = sysctlInt("hw.nperflevels"), count > 0 else { return [] }
+
+        var levels: [PerfLevel] = []
+        for index in 0..<count {
+            guard let cores = sysctlInt("hw.perflevel\(index).logicalcpu"),
+                  cores > 0 else { return [] }
+            // A kernel that stops publishing the name is not a reason to
+            // drop the level; the count is what the arithmetic needs.
+            let name = sysctlString("hw.perflevel\(index).name") ?? "Level \(index)"
+            levels.append(PerfLevel(index: index, name: name, logicalCores: cores))
+        }
+        return levels.reversed()
+    }
+
     /// Efficiency and performance core counts on Apple silicon, nil on Intel
     /// where the distinction does not exist.
+    ///
+    /// The two-level view of `perfLevels`, kept because that is the shape
+    /// every caller wants today. nil rather than a guess where the machine
+    /// does not have exactly two levels -- on a future three-level chip the
+    /// callers that want a pair get nothing, while `levelLoads` keeps
+    /// working.
     static var clusters: (efficiency: Int, performance: Int)? {
-        guard let efficiency = sysctlInt("hw.perflevel1.logicalcpu"),
-              let performance = sysctlInt("hw.perflevel0.logicalcpu") else { return nil }
-        return (efficiency, performance)
+        let levels = perfLevels
+        guard levels.count == 2 else { return nil }
+        return (levels[0].logicalCores, levels[1].logicalCores)
     }
 
     static var brand: String? { sysctlString("machdep.cpu.brand_string") }
@@ -135,13 +184,30 @@ enum CPUReadings {
     /// while the efficiency cluster works is the normal, healthy shape, and
     /// one combined number hides it.
     static func clusterLoad(_ cores: [CoreLoad]) -> (efficiency: Double, performance: Double)? {
-        guard let clusters, cores.count == clusters.efficiency + clusters.performance,
-              clusters.efficiency > 0, clusters.performance > 0 else { return nil }
-        // The kernel reports the efficiency cluster first on Apple silicon.
-        let efficiency = cores.prefix(clusters.efficiency)
-        let performance = cores.suffix(clusters.performance)
-        return (efficiency.reduce(0) { $0 + $1.total } / Double(efficiency.count),
-                performance.reduce(0) { $0 + $1.total } / Double(performance.count))
+        let loads = levelLoads(cores)
+        guard loads.count == 2 else { return nil }
+        return (loads[0].load, loads[1].load)
+    }
+
+    /// Mean load of every performance level, least performant first.
+    ///
+    /// Empty where the levels and the cores disagree, which is the shape a
+    /// wrong answer would take: a machine reporting eight cores and levels
+    /// adding to six means this code has the wrong model of it, and a mean
+    /// over the wrong slice is worse than no figure at all.
+    static func levelLoads(_ cores: [CoreLoad]) -> [(level: PerfLevel, load: Double)] {
+        let levels = perfLevels
+        guard !levels.isEmpty,
+              levels.reduce(0, { $0 + $1.logicalCores }) == cores.count else { return [] }
+
+        var result: [(level: PerfLevel, load: Double)] = []
+        var start = 0
+        for level in levels {
+            let slice = cores[start..<(start + level.logicalCores)]
+            result.append((level, slice.reduce(0) { $0 + $1.total } / Double(slice.count)))
+            start += level.logicalCores
+        }
+        return result
     }
 
     /// 1, 5 and 15 minute run-queue averages -- the same figures `uptime`

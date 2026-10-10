@@ -119,6 +119,68 @@ do {
     check("user and system sum to the total",
           abs((load.user + load.system) - load.total) < 0.001 || load.total == 1)
 
+    // MARK: Performance levels, read rather than assumed
+
+    do {
+        let levels = CPUReadings.perfLevels
+        let count = CPUReadings.coreCount
+
+        if levels.isEmpty {
+            check("no performance levels on this machine, so no cluster split",
+                  CPUReadings.clusters == nil)
+        } else {
+            check("the levels account for every logical core "
+                  + "(\(levels.map { $0.logicalCores }.reduce(0, +)) of \(count))",
+                  levels.reduce(0) { $0 + $1.logicalCores } == count)
+            check("every level is named by the kernel, not by us "
+                  + "(\(levels.map { $0.name }.joined(separator: ", ")))",
+                  levels.allSatisfy { !$0.name.isEmpty })
+            check("every level has at least one core",
+                  levels.allSatisfy { $0.logicalCores > 0 })
+            // perfLevels is reversed so the array matches the order
+            // host_processor_info lists cores in: least performant first.
+            check("levels run least-performant first",
+                  levels.map { $0.index } == levels.map { $0.index }.sorted(by: >))
+
+            let loads = CPUReadings.levelLoads(load.cores)
+            check("a load for every level", loads.count == levels.count)
+            check("every level load is a share",
+                  loads.allSatisfy { $0.load >= 0 && $0.load <= 1 })
+            check("every level load is a number",
+                  loads.allSatisfy { $0.load.isFinite })
+
+            // The two-level accessor is the general one narrowed, so the two
+            // must agree wherever both answer. This is the assertion that
+            // catches the general version being wired up backwards.
+            if levels.count == 2, let pair = CPUReadings.clusterLoad(load.cores) {
+                check("clusterLoad agrees with levelLoads on efficiency",
+                      abs(pair.efficiency - loads[0].load) < 0.0001)
+                check("and on performance",
+                      abs(pair.performance - loads[1].load) < 0.0001)
+                check("the efficiency cluster is the one the kernel calls that",
+                      loads[0].level.name.lowercased().contains("efficien"))
+                check("and the performance cluster likewise",
+                      loads[1].level.name.lowercased().contains("perform"))
+            } else {
+                check("clusterLoad declines where there are not exactly two levels",
+                      CPUReadings.clusterLoad(load.cores) == nil)
+            }
+        }
+    }
+
+    // A machine whose levels do not add up to its cores is one this code has
+    // the wrong model of, and a mean over the wrong slice is worse than no
+    // figure. Checked with a core list of the wrong length.
+    do {
+        let tooFew = Array(load.cores.prefix(max(0, load.cores.count - 1)))
+        check("a core list that does not match the levels gets no split",
+              CPUReadings.levelLoads(tooFew).isEmpty)
+        let tooMany = load.cores + load.cores
+        check("nor does one with too many",
+              CPUReadings.levelLoads(tooMany).isEmpty)
+        check("nor does an empty one", CPUReadings.levelLoads([]).isEmpty)
+    }
+
     if let clusters = CPUReadings.clusterLoad(load.cores) {
         check("cluster loads are within 0...1",
               clusters.efficiency >= 0 && clusters.efficiency <= 1
