@@ -32,6 +32,7 @@
 "5 minutes" = "5 minutes";
 "Menu bar" = "Menu bar";
 "Notify me when" = "Notify me when";
+"Show temperature" = "Show temperature";
 
 // Monitor · CPUPopup
 "Clock" = "Clock";
@@ -60,6 +61,8 @@
 "Disk" = "Disk";
 "Startup volume" = "Startup volume";
 "not mounted" = "not mounted";
+"Include removable drives" = "Include removable drives";
+"Watch" = "Watch";
 
 // Monitor · DiskPopup
 "Format" = "Format";
@@ -118,6 +121,7 @@
 "Interface changes" = "Interface changes";
 "Local address changes" = "Local address changes";
 "Public address changes" = "Public address changes";
+"Look up the public address" = "Look up the public address";
 
 // Monitor · NetworkPopup
 "Download" = "Download";
@@ -174,6 +178,9 @@
 "Sensors" = "Sensors";
 "Show in the popup" = "Show in the popup";
 "Hottest temperature" = "Hottest temperature";
+"List the keys nobody has named" = "List the keys nobody has named";
+"Read every" = "Read every";
+"Read the HID sensors" = "Read the HID sensors";
 
 // Monitor · SensorsPopup
 "History" = "History";
@@ -210,6 +217,32 @@
 "Spacing" = "Spacing";
 "Celsius" = "Celsius";
 "Fahrenheit" = "Fahrenheit";
+"Backup" = "Backup";
+"Busy · upload and write" = "Busy · upload and write";
+"Close when it loses focus" = "Close when it loses focus";
+"Colour the menu bar" = "Colour the menu bar";
+"Colours" = "Colours";
+"Combine modules into one item" = "Combine modules into one item";
+"General" = "General";
+"Keep item positions" = "Keep item positions";
+"One popup for all" = "One popup for all";
+"Open where the pointer is" = "Open where the pointer is";
+"Search & switcher" = "Search & switcher";
+"Separators" = "Separators";
+"Show in Dock" = "Show in Dock";
+"Temperature unit" = "Temperature unit";
+"Trackpad gesture opens the search" = "Trackpad gesture opens the search";
+"Window control" = "Window control";
+"Your settings" = "Your settings";
+"⌃Tab cycles your marked apps" = "⌃Tab cycles your marked apps";
+"Allowed" = "Allowed";
+"Allowed, but stale since the update" = "Allowed, but stale since the update";
+"Four-finger double tap" = "Four-finger double tap";
+"Not allowed" = "Not allowed";
+"Reset…" = "Reset…";
+"Three-finger double tap" = "Three-finger double tap";
+"Export…" = "Export…";
+"Import…" = "Import…";
 
 // Settings · UpdateInterval
 "At start" = "At start";
@@ -235,6 +268,14 @@
 "Number of p-cores" = "%0 performance cores";
 "Disks" = "Disks";
 "Display" = "Display";
+
+// UI · Controls
+"1 second" = "1 second";
+"10 seconds" = "10 seconds";
+"3 seconds" = "3 seconds";
+"Large" = "Large";
+"Once per hour" = "Once per hour";
+"Small" = "Small";
 
 // UI · SupportWindow
 "Close" = "Close";

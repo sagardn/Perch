@@ -132,20 +132,20 @@ final class GeneralPane: NSStackView {
 
     private func general() -> NSView {
         // Switches first, then the two menus, so like controls line up.
-        Controls.section("General", [
-            Controls.row("Start at login", launchAtLoginToggle()),
-            Controls.row("Show in Dock", Controls.toggle(prefs.dockIcon) { [weak self] on in
+        Controls.section(localized("General"), [
+            Controls.row(localized("Start at login"), launchAtLoginToggle()),
+            Controls.row(localized("Show in Dock"), Controls.toggle(prefs.dockIcon) { [weak self] on in
                 self?.prefs.dockIcon = on
                 NSApp.setActivationPolicy(on ? .regular : .accessory)
             }),
-            Controls.row("Check for updates", Controls.choice(
+            Controls.row(localized("Check for updates"), Controls.choice(
                 [("Never", "Never"), ("Once per hour", "Once per hour"),
                  ("Once per day", "Once per day"), ("Once per week", "Once per week"),
                  ("Silent", "Silent")],
                 selected: prefs.updateInterval) { [weak self] value in
                     self?.prefs.updateInterval = value
                 }),
-            Controls.row("Temperature unit", Controls.choice(
+            Controls.row(localized("Temperature unit"), Controls.choice(
                 [("System", "system"), ("Celsius", "celsius"), ("Fahrenheit", "fahrenheit")],
                 selected: prefs.temperatureUnits) { [weak self] value in
                     self?.prefs.temperatureUnits = value
@@ -154,15 +154,15 @@ final class GeneralPane: NSStackView {
     }
 
     private func menuBar() -> NSView {
-        let spacing = Controls.row("Spacing", Controls.choice(
+        let spacing = Controls.row(localized("Spacing"), Controls.choice(
             [("None", "none"), ("Small", "small"), ("Normal", "normal"), ("Large", "large")],
             selected: prefs.combinedSpacing) { [weak self] value in
                 self?.prefs.combinedSpacing = value
             }, indented: true)
-        let separator = Controls.row("Separators", Controls.toggle(prefs.combinedSeparator) { [weak self] on in
+        let separator = Controls.row(localized("Separators"), Controls.toggle(prefs.combinedSeparator) { [weak self] on in
             self?.prefs.combinedSeparator = on
         }, indented: true)
-        let details = Controls.row("One popup for all", Controls.toggle(prefs.combinedPopup) { [weak self] on in
+        let details = Controls.row(localized("One popup for all"), Controls.toggle(prefs.combinedPopup) { [weak self] on in
             self?.prefs.combinedPopup = on
         }, indented: true)
         dependent["combined.spacing"] = spacing
@@ -171,14 +171,14 @@ final class GeneralPane: NSStackView {
 
         // Combine first, so the rows that only exist while it is on sit
         // directly under it rather than under the unrelated position switch.
-        return Controls.section("Menu bar", [
-            Controls.row("Combine modules into one item",
+        return Controls.section(localized("Menu bar"), [
+            Controls.row(localized("Combine modules into one item"),
                          Controls.toggle(prefs.combinedModules) { [weak self] on in
                              self?.prefs.combinedModules = on
                              self?.syncDependentRows()
                          }),
             spacing, separator, details,
-            Controls.row("Keep item positions",
+            Controls.row(localized("Keep item positions"),
                          Controls.toggle(prefs.keepMenuBarPositions) { [weak self] on in
                              self?.prefs.keepMenuBarPositions = on
                          }),
@@ -190,12 +190,12 @@ final class GeneralPane: NSStackView {
     /// the upload series, which the label says rather than leaving a user
     /// to wonder why their arrows changed.
     private func colours() -> NSView {
-        Controls.section("Colours", [
-            Controls.row("Colour the menu bar",
+        Controls.section(localized("Colours"), [
+            Controls.row(localized("Colour the menu bar"),
                          Controls.toggle(PerchColors.menuBarColoured) { PerchColors.menuBarColoured = $0 }),
-            Controls.row("Normal", Controls.colour(.calm)),
-            Controls.row("Busy · upload and write", Controls.colour(.warning)),
-            Controls.row("Critical", Controls.colour(.critical)),
+            Controls.row(localized("Normal"), Controls.colour(.calm)),
+            Controls.row(localized("Busy · upload and write"), Controls.colour(.warning)),
+            Controls.row(localized("Critical"), Controls.colour(.critical)),
         ])
     }
 
@@ -212,7 +212,13 @@ final class GeneralPane: NSStackView {
         // click and the pair Smart Zoom, so TapRecognizer refuses anything
         // below three. A row for it would be a switch that cannot turn on.
         let fingerRows = [3, 4].map { count -> NSView in
-            let row = Controls.row("\(["", "", "", "Three", "Four"][count])-finger double tap",
+            // Two whole keys rather than a word slotted into a sentence:
+            // "Three" and "-finger double tap" are not separable in every
+            // language, and the version that indexed an array of words could
+            // not be translated at all.
+            let label = count == 3 ? localized("Three-finger double tap")
+                                   : localized("Four-finger double tap")
+            let row = Controls.row(label,
                                    Controls.toggle(Prefs.gestureFingerCounts.contains(count)) { [weak self] on in
                                        self?.setGestureFinger(count, on)
                                    }, indented: true)
@@ -220,17 +226,17 @@ final class GeneralPane: NSStackView {
             return row
         }
 
-        let section = Controls.section("Search & switcher", [
-            Controls.row("Open where the pointer is",
+        let section = Controls.section(localized("Search & switcher"), [
+            Controls.row(localized("Open where the pointer is"),
                          Controls.toggle(Prefs.openAtPointer) { Prefs.openAtPointer = $0 }),
-            Controls.row("Close when it loses focus",
+            Controls.row(localized("Close when it loses focus"),
                          Controls.toggle(Prefs.hideOnOutsideClick) { Prefs.hideOnOutsideClick = $0 }),
-            Controls.row("⌃Tab cycles your marked apps",
+            Controls.row(localized("⌃Tab cycles your marked apps"),
                          Controls.toggle(Prefs.cycleHotkeyEnabled) {
                              Prefs.cycleHotkeyEnabled = $0
                              Launcher.shared.applyCycleHotkey()
                          }),
-            Controls.row("Trackpad gesture opens the search",
+            Controls.row(localized("Trackpad gesture opens the search"),
                          Controls.toggle(Prefs.gestureEnabled) { [weak self] on in
                              Prefs.gestureEnabled = on
                              Launcher.shared.applyGesture(userAsked: true)
@@ -239,7 +245,7 @@ final class GeneralPane: NSStackView {
         ] + fingerRows + [
             // The state and the way to change it on one row, rather than a
             // status row and a full-width button bar under it.
-            Controls.row("Window control", Controls.group([status, allow])),
+            Controls.row(localized("Window control"), Controls.group([status, allow])),
         ])
         syncAccessibility()
         return section
@@ -251,12 +257,12 @@ final class GeneralPane: NSStackView {
         let reset = Controls.button("Reset…") { [weak self] in self?.reset() }
         // The title, not contentTintColor: a rounded push button ignores the
         // tint, and the first attempt came out the same grey as its siblings.
-        reset.attributedTitle = NSAttributedString(string: "Reset…", attributes: [
+        reset.attributedTitle = NSAttributedString(string: localized("Reset…"), attributes: [
             .foregroundColor: NSColor.systemRed,
             .font: NSFont.systemFont(ofSize: NSFont.smallSystemFontSize),
         ])
-        return Controls.section("Backup", [
-            Controls.row("Your settings", Controls.group([
+        return Controls.section(localized("Backup"), [
+            Controls.row(localized("Your settings"), Controls.group([
                 Controls.button("Export…") { [weak self] in self?.export() },
                 Controls.button("Import…") { [weak self] in self?.importSettings() },
                 reset,
@@ -294,8 +300,9 @@ final class GeneralPane: NSStackView {
     }
 
     private static var accessibilityState: String {
-        if WindowControl.isTrusted { return "Allowed" }
-        return WindowControl.wasRevoked ? "Allowed, but stale since the update" : "Not allowed"
+        if WindowControl.isTrusted { return localized("Allowed") }
+        return WindowControl.wasRevoked ? localized("Allowed, but stale since the update")
+                                        : localized("Not allowed")
     }
 
     private func launchAtLoginToggle() -> NSSwitch {

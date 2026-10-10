@@ -139,17 +139,17 @@ final class CPUSettingsPage: NSView {
                 })
             })
 
-        let section = Controls.section("CPU", [
-            Controls.row("Show temperature",
+        let section = Controls.section(localized("CPU"), [
+            Controls.row(localized("Show temperature"),
                          Controls.toggle(CPUSettings.showsTemperature) { on in
                              CPUSettings.showsTemperature = on
                          }),
-            Controls.row("Chart history", Controls.choice(
+            Controls.row(localized("Chart history"), Controls.choice(
                 [("1 minute", "60"), ("2 minutes", "120"), ("5 minutes", "300")],
                 selected: "\(CPUSettings.historyLength)") { value in
                     CPUSettings.historyLength = Int(value) ?? 120
                 }),
-            Controls.row("Top processes", Controls.choice(
+            Controls.row(localized("Top processes"), Controls.choice(
                 [("None", "0"), ("5", "5"), ("8", "8"), ("12", "12")],
                 selected: "\(CPUSettings.processCount)") { value in
                     CPUSettings.processCount = Int(value) ?? 8

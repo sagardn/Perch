@@ -131,7 +131,15 @@ enum Controls {
         control.values = options.map { $0.1 }
         control.onChange = changed
         for (title, value) in options {
-            control.addItem(withTitle: title)
+            // Localised here rather than at every call site: a choice's
+            // options are pairs of (what to show, what to store), and only
+            // the first is ever read by a person. Doing it in one place is
+            // also what stops half the pickers in an app being translated.
+            //
+            // `localized` falls back to its argument, so an option whose
+            // title is a number -- the process counts are "5", "8", "12" --
+            // passes through untouched and needs no key.
+            control.addItem(withTitle: localized(title))
             if value == selected { control.select(control.lastItem) }
         }
         return control
@@ -205,7 +213,10 @@ enum Controls {
 
     static func button(_ title: String, _ pressed: @escaping () -> Void) -> NSButton {
         let control = ActionButton()
-        control.title = title
+        // Localised here for the same reason choice() is: a button's title is
+        // only ever read by a person, and doing it at the five call sites is
+        // how four of them end up translated.
+        control.title = localized(title)
         control.bezelStyle = .rounded
         control.controlSize = .small
         control.onPress = pressed

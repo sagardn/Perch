@@ -89,13 +89,13 @@ final class RAMSettingsPage: NSView {
         super.init(frame: .zero)
         self.translatesAutoresizingMaskIntoConstraints = false
 
-        let section = Controls.section("Memory", [
-            Controls.row("Chart history", Controls.choice(
+        let section = Controls.section(localized("Memory"), [
+            Controls.row(localized("Chart history"), Controls.choice(
                 [("1 minute", "60"), ("2 minutes", "120"), ("5 minutes", "300")],
                 selected: "\(RAMSettings.historyLength)") { value in
                     RAMSettings.historyLength = Int(value) ?? 120
                 }),
-            Controls.row("Top processes", Controls.choice(
+            Controls.row(localized("Top processes"), Controls.choice(
                 [("None", "0"), ("5", "5"), ("8", "8"), ("12", "12")],
                 selected: "\(RAMSettings.processCount)") { value in
                     RAMSettings.processCount = Int(value) ?? 8

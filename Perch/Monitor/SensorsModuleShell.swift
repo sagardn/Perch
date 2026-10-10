@@ -145,21 +145,21 @@ final class SensorsSettingsPage: NSView {
             + sensors.filter { SensorReadings.names[$0.id] != nil || $0.id.hasPrefix("hid:") }
                 .map { ($0.name, $0.id) }
 
-        let general = Controls.section("Sensors", [
-            Controls.row("Watch", Controls.choice(choices,
+        let general = Controls.section(localized("Sensors"), [
+            Controls.row(localized("Watch"), Controls.choice(choices,
                                                   selected: SensorsSettings.watched ?? "") { id in
                 SensorsSettings.watched = id.isEmpty ? nil : id
             }),
-            Controls.row("Read the HID sensors",
+            Controls.row(localized("Read the HID sensors"),
                          Controls.toggle(SensorsSettings.includesHID) { on in
                              SensorsSettings.includesHID = on
                          }),
-            Controls.row("Read every", Controls.choice(
+            Controls.row(localized("Read every"), Controls.choice(
                 [("1 second", "1"), ("3 seconds", "3"), ("10 seconds", "10")],
                 selected: "\(SensorsSettings.interval)") { value in
                     SensorsSettings.interval = Int(value) ?? 3
                 }),
-            Controls.row("List the keys nobody has named",
+            Controls.row(localized("List the keys nobody has named"),
                          Controls.toggle(SensorsSettings.showsUnnamed) { on in
                              SensorsSettings.showsUnnamed = on
                          }),

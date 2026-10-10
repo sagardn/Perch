@@ -412,6 +412,11 @@ private struct FooterButton: View {
                 if let label {
                     Text(label)
                         .font(.system(size: 11, weight: .medium))
+                        // Refuses to be compressed by its siblings. "Support"
+                        // fits the sidebar; "Поддержать" does not, and without
+                        // this it arrives as "Поддерж…" -- a truncation that
+                        // only appears in a language nobody here reads.
+                        .fixedSize(horizontal: true, vertical: false)
                 }
             }
             .foregroundStyle(foreground)

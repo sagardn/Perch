@@ -143,15 +143,15 @@ final class DiskSettingsPage: NSView {
             choices.append(("\(chosen) (\(localized("not mounted")))", chosen))
         }
 
-        let section = Controls.section("Disk", [
-            Controls.row("Watch", Controls.choice(choices, selected: chosen) { value in
+        let section = Controls.section(localized("Disk"), [
+            Controls.row(localized("Watch"), Controls.choice(choices, selected: chosen) { value in
                 DiskSettings.watchedVolume = value
             }),
-            Controls.row("Include removable drives",
+            Controls.row(localized("Include removable drives"),
                          Controls.toggle(DiskSettings.showsRemovable) { on in
                              DiskSettings.showsRemovable = on
                          }),
-            Controls.row("Chart history", Controls.choice(
+            Controls.row(localized("Chart history"), Controls.choice(
                 [("1 minute", "60"), ("2 minutes", "120"), ("5 minutes", "300")],
                 selected: "\(DiskSettings.historyLength)") { value in
                     DiskSettings.historyLength = Int(value) ?? 120

@@ -208,13 +208,13 @@ final class NetworkSettingsPage: NSView {
         super.init(frame: .zero)
         self.translatesAutoresizingMaskIntoConstraints = false
 
-        let section = Controls.section("Network", [
-            Controls.row("Top processes", Controls.choice(
+        let section = Controls.section(localized("Network"), [
+            Controls.row(localized("Top processes"), Controls.choice(
                 [("None", "0"), ("5", "5"), ("8", "8")],
                 selected: "\(NetworkSettings.processCount)") { value in
                     NetworkSettings.processCount = Int(value) ?? 8
                 }),
-            Controls.row("Look up the public address",
+            Controls.row(localized("Look up the public address"),
                          Controls.toggle(NetworkSettings.looksUpPublicIP) { on in
                              NetworkSettings.looksUpPublicIP = on
                          }),
