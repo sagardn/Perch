@@ -114,9 +114,12 @@ Releases are tag-driven: bump `MARKETING_VERSION` in the project **and**
 `CFBundleVersion` in `Perch/Supporting Files/Info.plist`, commit, then tag
 `vX.Y.Z`. CI fails the build if the tag and `MARKETING_VERSION` disagree.
 
-The app is **ad-hoc signed**, so every rebuild changes its code hash and macOS
-drops its Accessibility grant. Expect to re-grant it after installing a local
-build, and do not mistake it for a regression in the hotkeys.
+Releases are **ad-hoc signed**, so every release build changes its code hash
+and macOS drops its Accessibility grant. Local installs avoid that: install
+with `Tools/install-local.sh`, which signs with the self-signed "Perch Dev"
+identity in the login keychain, so the grant survives every rebuild. The
+plain `xcodebuild` above produces an *unsigned* app; installing that one
+revokes the grant, and is not a regression in the hotkeys.
 
 ## Licensing
 
