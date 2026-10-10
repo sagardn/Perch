@@ -330,3 +330,6 @@
 "%0, %1" = "%0, %1";
 "%0, %1, goes to the Bin. Nothing is erased — it can be put back from Finder." = "%0, %1, goes to the Bin. Nothing is erased — it can be put back from Finder.";
 "Move %0 to the Bin?" = "Move %0 to the Bin?";
+"What macOS can do" = "What macOS can do";
+"What Perch can find" = "What Perch can find";
+"Everything Perch removes goes to the Bin, so nothing is erased until you empty it." = "Everything Perch removes goes to the Bin, so nothing is erased until you empty it.";

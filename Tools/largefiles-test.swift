@@ -4,7 +4,7 @@
 //  Exercises the large-file finder: what it ranks, what it treats as one
 //  thing, and what it leaves alone.
 //
-//  Run:  cat Perch/UI/Localized.swift Perch/Monitor/LargeFiles.swift \
+//  Run:  cat Perch/UI/Localized.swift Perch/Cleanup/LargeFiles.swift \
 //            Tools/largefiles-test.swift | swift -
 //
 //  The walk itself is checked against a directory built here rather than

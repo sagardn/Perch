@@ -333,3 +333,6 @@
 "%0, %1" = "%0, %1";
 "%0, %1, goes to the Bin. Nothing is erased — it can be put back from Finder." = "%0, %1, πάει στον κάδο. Τίποτα δεν διαγράφεται — επιστρέφεται από το Finder.";
 "Move %0 to the Bin?" = "Μετακίνηση του %0 στον κάδο;";
+"What macOS can do" = "Τι μπορεί να κάνει το macOS";
+"What Perch can find" = "Τι μπορεί να βρει το Perch";
+"Everything Perch removes goes to the Bin, so nothing is erased until you empty it." = "Ό,τι αφαιρεί το Perch πάει στον κάδο — τίποτα δεν διαγράφεται μέχρι να τον αδειάσετε.";

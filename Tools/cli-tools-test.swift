@@ -4,9 +4,9 @@
 //  Exercises how command-line tools are identified and what is claimed as
 //  theirs.
 //
-//  Run:  cat Perch/UI/Localized.swift Perch/Monitor/LargeFiles.swift \
-//            Perch/Monitor/AppLeftovers.swift \
-//            Perch/Monitor/CommandLineTools.swift Tools/cli-tools-test.swift | swift -
+//  Run:  cat Perch/UI/Localized.swift Perch/Cleanup/LargeFiles.swift \
+//            Perch/Cleanup/AppLeftovers.swift \
+//            Perch/Cleanup/CommandLineTools.swift Tools/cli-tools-test.swift | swift -
 //
 //  A command-line tool has no bundle identifier, so every match here is a
 //  name match -- which is exactly the loose matching the app uninstaller

@@ -333,3 +333,6 @@
 "%0, %1" = "%0, %1";
 "%0, %1, goes to the Bin. Nothing is erased — it can be put back from Finder." = "%0，%1，将移到废纸篓。不会抹掉任何内容——可从访达放回。";
 "Move %0 to the Bin?" = "将 %0 移到废纸篓？";
+"What macOS can do" = "macOS 能做的";
+"What Perch can find" = "Perch 能找到的";
+"Everything Perch removes goes to the Bin, so nothing is erased until you empty it." = "Perch 移除的一切都会进入废纸篓——在你清倒之前不会抹掉任何内容。";

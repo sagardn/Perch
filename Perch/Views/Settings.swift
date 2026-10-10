@@ -18,6 +18,7 @@ final class SettingsWindow: NSWindow, NSWindowDelegate {
     private let model = SettingsModel()
 
     private lazy var dashboard = DashboardPane(width: SettingsMetrics.width)
+    private lazy var cleanup = CleanupPane(width: SettingsMetrics.width)
     private lazy var appSettings = GeneralPane(width: SettingsMetrics.width) {
         _ = restartPerch()
     }
@@ -120,6 +121,10 @@ final class SettingsWindow: NSWindow, NSWindowDelegate {
         case .appSettings:
             appSettings.viewWillAppear()
             view = appSettings
+
+        case .cleanup:
+            cleanup.viewWillAppear()
+            view = cleanup
         }
 
         NotificationCenter.default.post(

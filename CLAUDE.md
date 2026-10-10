@@ -12,7 +12,10 @@ the migration has got.
 
 **`Perch/Monitor/` is the real codebase. `Kit/` and `Modules/` are gone.**
 
-- Put new monitoring features in `Perch/Monitor/`.
+- Put new monitoring features in `Perch/Monitor/`. Finding and removing
+  things -- large files, apps, command-line tools -- is not monitoring and
+  lives in `Perch/Cleanup/`; see `docs/ARCHITECTURE.md` ▸ Cleanup for the
+  four rules that area holds to.
 - Never copy code out of the upstream project. Taking a file does not make it
   independent; it carries its authorship with it. Implement against the public
   macOS APIs instead — `host_statistics64`, `host_processor_info`,
@@ -43,7 +46,7 @@ Tools/run-tests.sh            # all of them, about 15 seconds
 Tools/run-tests.sh disk       # just Tools/disk-test.swift
 ```
 
-Thirteen suites, 493 assertions. `tests.yaml` runs the same script on every
+Twenty-four suites, 978 assertions. `tests.yaml` runs the same script on every
 push, so a suite that fails fails the build.
 
 Pure logic gets a test. The pattern is a script compiled against the app's

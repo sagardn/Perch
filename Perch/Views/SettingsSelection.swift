@@ -11,6 +11,10 @@ enum SettingsSelection: Equatable {
 
     case dashboard
     case appSettings
+    /// The Free up space page. Not a module: it configures nothing and has
+    /// no menu bar item, but it is a page of its own because it is about the
+    /// Mac rather than about any one reading.
+    case cleanup
     /// A module's own settings page, by module name.
     case module(String)
 
@@ -41,9 +45,10 @@ enum SettingsSelection: Equatable {
 
         if moduleNames.contains(name) { return .module(name) }
         switch name {
-        case "Dashboard": return .dashboard
-        case "Settings":  return .appSettings
-        default:          return nil
+        case "Dashboard":      return .dashboard
+        case "Settings":       return .appSettings
+        case "Free up space":  return .cleanup
+        default:               return nil
         }
     }
 
@@ -52,6 +57,7 @@ enum SettingsSelection: Equatable {
         switch self {
         case .dashboard:        return "Dashboard"
         case .appSettings:      return "Settings"
+        case .cleanup:          return "Free up space"
         case .module(let name): return name
         }
     }

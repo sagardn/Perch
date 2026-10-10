@@ -333,3 +333,6 @@
 "%0, %1" = "%0, %1";
 "%0, %1, goes to the Bin. Nothing is erased — it can be put back from Finder." = "%0, %1, va a la papelera. No se borra nada: se puede recuperar desde el Finder.";
 "Move %0 to the Bin?" = "¿Mover %0 a la papelera?";
+"What macOS can do" = "Lo que macOS puede hacer";
+"What Perch can find" = "Lo que Perch puede encontrar";
+"Everything Perch removes goes to the Bin, so nothing is erased until you empty it." = "Todo lo que Perch elimina va a la papelera: nada se borra hasta que la vacías.";

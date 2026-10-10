@@ -38,6 +38,7 @@ check("and the last one in the list, not just the first",
       resolve("Network") == .module("Network"))
 check("Dashboard opens the dashboard", resolve("Dashboard") == .dashboard)
 check("Settings opens the app's own page", resolve("Settings") == .appSettings)
+check("Free up space opens the cleanup page", resolve("Free up space") == .cleanup)
 
 // MARK: - The alias
 
@@ -71,6 +72,8 @@ check("a module shadows a built-in page of the same name",
       resolve("Dashboard", ["Dashboard"]) == .module("Dashboard"))
 check("the same for the app settings page",
       resolve("Settings", ["Settings"]) == .module("Settings"))
+check("and for the cleanup page",
+      resolve("Free up space", ["Free up space"]) == .module("Free up space"))
 // But the alias is translated before anything is matched, so a module could
 // not take it over by being named after it.
 check("the alias is translated before modules are matched",
@@ -83,6 +86,8 @@ print("\nSettingsSelection.name and .isModule")
 check("a module reports its own name", SettingsSelection.module("GPU").name == "GPU")
 check("the dashboard reports Dashboard", SettingsSelection.dashboard.name == "Dashboard")
 check("the app page reports Settings", SettingsSelection.appSettings.name == "Settings")
+check("the cleanup page reports Free up space",
+      SettingsSelection.cleanup.name == "Free up space")
 
 // .isModule decides the shape of the .openWindow notification: a module's
 // page brings that module's menu bar item forward, the other two pages must
@@ -90,12 +95,16 @@ check("the app page reports Settings", SettingsSelection.appSettings.name == "Se
 check("only a module is a module", SettingsSelection.module("RAM").isModule)
 check("the dashboard is not", !SettingsSelection.dashboard.isModule)
 check("the app settings page is not", !SettingsSelection.appSettings.isModule)
+// It has no menu bar item to bring forward: it configures nothing and
+// belongs to no reading.
+check("nor is the cleanup page", !SettingsSelection.cleanup.isModule)
 
 // MARK: - Round trip
 
 print("\nResolving a page's own name returns the same page")
 
-for selection in [SettingsSelection.dashboard, .appSettings] + modules.map({ SettingsSelection.module($0) }) {
+for selection in [SettingsSelection.dashboard, .appSettings, .cleanup]
+                 + modules.map({ SettingsSelection.module($0) }) {
     check("\(selection.name) survives a round trip",
           resolve(selection.name) == selection)
 }

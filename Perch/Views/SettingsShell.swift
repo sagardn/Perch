@@ -40,6 +40,7 @@ final class SettingsModel: ObservableObject {
 
     let dashboard = Item(id: "Dashboard", title: localized("Dashboard"), isModule: false)
     let appSettings = Item(id: "Settings", title: localized("Settings"), isModule: false)
+    let cleanup = Item(id: "Free up space", title: localized("Free up space"), isModule: false)
     private(set) var moduleItems: [Item] = []
 
     init() {
@@ -141,6 +142,8 @@ struct Glyph {
             return Glyph(symbol: available(["square.grid.2x2.fill"]), color: .indigo)
         case "Settings":
             return Glyph(symbol: available(["gearshape.fill"]), color: .gray)
+        case "Free up space":
+            return Glyph(symbol: available(["sparkles"]), color: .pink)
         case "CPU":
             return Glyph(symbol: available(["cpu.fill", "cpu"]), color: .blue)
         case "GPU":
@@ -260,6 +263,7 @@ struct SettingsShellView: View {
                 Section {
                     row(model.dashboard)
                     row(model.appSettings)
+                    row(model.cleanup)
                 }
                 Section(localized("Modules")) {
                     ForEach(model.filteredModules) { item in

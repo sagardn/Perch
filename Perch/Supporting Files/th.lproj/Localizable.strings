@@ -333,3 +333,6 @@
 "%0, %1" = "%0, %1";
 "%0, %1, goes to the Bin. Nothing is erased — it can be put back from Finder." = "%0 %1 จะไปที่ถังขยะ ไม่มีอะไรถูกลบ — กู้คืนได้จาก Finder";
 "Move %0 to the Bin?" = "ย้าย %0 ไปถังขยะไหม";
+"What macOS can do" = "สิ่งที่ macOS ทำได้";
+"What Perch can find" = "สิ่งที่ Perch หาเจอ";
+"Everything Perch removes goes to the Bin, so nothing is erased until you empty it." = "ทุกอย่างที่ Perch เอาออกจะไปที่ถังขยะ — ไม่มีอะไรถูกลบจนกว่าคุณจะล้างถังขยะ";

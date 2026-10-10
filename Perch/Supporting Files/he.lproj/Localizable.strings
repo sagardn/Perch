@@ -333,3 +333,6 @@
 "%0, %1" = "%0, %1";
 "%0, %1, goes to the Bin. Nothing is erased — it can be put back from Finder." = "%0, %1, עובר לאשפה. דבר אינו נמחק — אפשר להחזיר אותו מ‑Finder.";
 "Move %0 to the Bin?" = "להעביר את %0 לאשפה?";
+"What macOS can do" = "מה macOS יכול לעשות";
+"What Perch can find" = "מה Perch יכול למצוא";
+"Everything Perch removes goes to the Bin, so nothing is erased until you empty it." = "כל מה ש‑Perch מסיר עובר לאשפה — דבר אינו נמחק עד שתרוקן אותה.";

@@ -3,8 +3,8 @@
 //
 //  Exercises which files an uninstaller claims belong to an app.
 //
-//  Run:  cat Perch/UI/Localized.swift Perch/Monitor/LargeFiles.swift \
-//            Perch/Monitor/AppLeftovers.swift Tools/leftovers-test.swift | swift -
+//  Run:  cat Perch/UI/Localized.swift Perch/Cleanup/LargeFiles.swift \
+//            Perch/Cleanup/AppLeftovers.swift Tools/leftovers-test.swift | swift -
 //
 //  This is the file where a mistake deletes somebody else's data. The removal
 //  itself is one call; deciding what to remove is the part that goes wrong,

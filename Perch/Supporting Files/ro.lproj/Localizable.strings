@@ -333,3 +333,6 @@
 "%0, %1" = "%0, %1";
 "%0, %1, goes to the Bin. Nothing is erased — it can be put back from Finder." = "%0, %1, merge la coș. Nimic nu se șterge — poate fi pus la loc din Finder.";
 "Move %0 to the Bin?" = "Muți %0 la coș?";
+"What macOS can do" = "Ce poate face macOS";
+"What Perch can find" = "Ce poate găsi Perch";
+"Everything Perch removes goes to the Bin, so nothing is erased until you empty it." = "Tot ce elimină Perch merge la coș — nimic nu se șterge până nu îl goliți.";

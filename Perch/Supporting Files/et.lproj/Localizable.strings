@@ -333,3 +333,6 @@
 "%0, %1" = "%0, %1";
 "%0, %1, goes to the Bin. Nothing is erased — it can be put back from Finder." = "%0, %1, läheb prügikasti. Midagi ei kustutata – selle saab Finderist tagasi.";
 "Move %0 to the Bin?" = "Kas liigutada %0 prügikasti?";
+"What macOS can do" = "Mida macOS oskab";
+"What Perch can find" = "Mida Perch leiab";
+"Everything Perch removes goes to the Bin, so nothing is erased until you empty it." = "Kõik, mille Perch eemaldab, läheb prügikasti – midagi ei kustutata enne, kui selle tühjendad.";

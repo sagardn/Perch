@@ -333,3 +333,6 @@
 "%0, %1" = "%0, %1";
 "%0, %1, goes to the Bin. Nothing is erased — it can be put back from Finder." = "%0, %1, ide u smeće. Ništa se ne briše — može se vratiti iz Findera.";
 "Move %0 to the Bin?" = "Premjestiti %0 u smeće?";
+"What macOS can do" = "Što može macOS";
+"What Perch can find" = "Što pronalazi Perch";
+"Everything Perch removes goes to the Bin, so nothing is erased until you empty it." = "Sve što Perch ukloni ide u smeće — ništa se ne briše dok ga ne ispraznite.";

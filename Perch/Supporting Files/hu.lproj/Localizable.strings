@@ -333,3 +333,6 @@
 "%0, %1" = "%0, %1";
 "%0, %1, goes to the Bin. Nothing is erased — it can be put back from Finder." = "%0, %1, a kukába kerül. Semmi sem törlődik – visszatehető a Finderből.";
 "Move %0 to the Bin?" = "A kukába helyezed: %0?";
+"What macOS can do" = "Mit tud a macOS";
+"What Perch can find" = "Mit talál a Perch";
+"Everything Perch removes goes to the Bin, so nothing is erased until you empty it." = "Minden, amit a Perch eltávolít, a kukába kerül – semmi sem törlődik, amíg ki nem üríted.";

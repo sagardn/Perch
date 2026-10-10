@@ -18,6 +18,7 @@ The monitor half is mid-migration. This document says exactly where it is.
 |---|---|---|
 | `Perch/Launcher/` | written here | the launcher, start to finish |
 | `Perch/Monitor/` | written here | **the independent monitor — all new work goes here** |
+| `Perch/Cleanup/` | written here | finding and removing things: large files, apps, command-line tools |
 | `Perch/Views/` | written here | the settings window and the first-run window |
 | `Perch/AppDelegate.swift` | written here | application lifecycle and the four windows |
 | `Perch/Startup/` | written here | launch arguments, diagnostics, schedules, the support prompt, the popup shortcut |
@@ -499,6 +500,50 @@ case nobody has been able to run. `hardware-report` shouts if it sees one.
 | `MemoryReadings`, `DiskReadings`, `NetworkInfo` | none — kernel APIs that predate Apple silicon | unaffected |
 
 ---
+
+## Cleanup
+
+`Perch/Cleanup/` is not monitoring. It reads a disk to find what is on it and
+moves things to the Bin, which is a different job from sampling a counter
+every second, and it began as six files inside `Perch/Monitor/` only because
+that is where the Disk module was. The Free up space page in the settings
+sidebar is its front door; it used to be a section at the bottom of the Disk
+module's settings, where nobody looking to uninstall an app would think to
+look.
+
+| File | What it does |
+|---|---|
+| `DiskCleanup.swift` | opens Storage settings and the Bin -- the two jobs macOS does better |
+| `LargeFiles.swift` | finds the biggest files under the home folder, by category |
+| `LargeFilesWindow.swift` | the list, with checkboxes and a category filter |
+| `AppLeftovers.swift` | what an app scattered across `~/Library`, ranked by confidence |
+| `CommandLineTools.swift` | what Homebrew, npm and pipx installed, and the command that removes it |
+| `UninstallWindow.swift` | both of those, in two tabs |
+| `CleanupPane.swift` | the settings page |
+
+Four decisions hold the whole area up, and each was made against something
+that went wrong:
+
+- **`trashItem`, never `removeItem`.** Every mistake the matching can make
+  becomes a trip to Finder instead of lost data. Nothing here deletes.
+- **Confidence, not guessing.** A file matched by an app's bundle identifier
+  is certain and ticked; one matched by a child identifier is likely; one
+  matched by the app's *name* is shown in orange and never ticked for
+  somebody. `~/Library/Application Support/Notes` may be the app's or may be
+  somebody's notes.
+- **No Full Disk Access.** `~/.Trash`, `Saved Application State` and
+  `Cookies` need it, so they are not searched -- they would always come back
+  empty and read as nothing being there. Asking for the permission would make
+  Perch able to read every file on the Mac, to save a few hundred megabytes.
+- **A package manager removes what it installed.** Deleting `Cellar/ripgrep`
+  by hand leaves Homebrew's receipts claiming the formula is still there, so
+  a managed tool is removed by its own command, shown in full before it runs.
+  The command is an executable plus an argument array, never a string for a
+  shell: `; rm -rf ~` is a legal npm package name.
+
+There is no RAM cleaner and there will not be one. The "inactive" memory a
+cleaner frees is the file cache, and dropping it makes the next read slower
+for no gain; measured here, 3.3 GB of it.
 
 ## Adding a module
 
