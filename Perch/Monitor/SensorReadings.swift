@@ -101,6 +101,21 @@ enum SensorReadings {
         }
     }
 
+    /// One sensor read again, by id, without walking the rest.
+    ///
+    /// For the menu bar, which shows a single reading: re-reading every
+    /// sensor to refresh one was most of the Sensors module's cost. nil if
+    /// the sensor no longer answers plausibly.
+    static func reread(_ sensor: Sensor, includingHID hid: Bool = true,
+                       smc: SMCSource? = SMCKit.shared) -> Sensor? {
+        if sensor.id.hasPrefix("hid:") {
+            return hid ? hidSensors().first { $0.id == sensor.id } : nil
+        }
+        guard let smc, let value = smc.read(sensor.id), value.isFinite,
+              sensor.family.plausible.contains(value) else { return nil }
+        return Sensor(id: sensor.id, name: sensor.name, family: sensor.family, value: value)
+    }
+
     private static func order(_ family: Family) -> Int {
         switch family {
         case .temperature: return 0

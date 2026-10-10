@@ -107,6 +107,11 @@ final class SMCKit {
     /// known names: which keys exist differs by model and firmware, and a
     /// hard-coded table is wrong on the next Mac.
     func allKeys() -> [String] {
+        // The table is fixed for the life of the boot, and walking it is one
+        // round trip per key -- 1,763 on an M2 -- so it is walked once. It
+        // was walked on every sensor read, which made the key table, not the
+        // readings, the single largest cost of the Sensors module.
+        if let cachedKeys { return cachedKeys }
         guard let count = readUInt32(key: "#KEY") else { return [] }
 
         var keys: [String] = []
@@ -119,8 +124,11 @@ final class SMCKit {
             let name = Self.string(from: output.key)
             if !name.isEmpty { keys.append(name) }
         }
+        if !keys.isEmpty { cachedKeys = keys }
         return keys
     }
+
+    private var cachedKeys: [String]?
 
     // MARK: - Reading
 

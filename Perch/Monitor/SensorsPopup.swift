@@ -54,6 +54,8 @@ final class SensorsModule: PopupContent {
     private var watchedHistory: [Double] = []
     private var tile: SensorsTile?
     private var ticks = 0
+    /// Whether the popup is on screen, so the full table is worth reading.
+    private var isShowing = false
 
     // MARK: - View
 
@@ -91,13 +93,34 @@ final class SensorsModule: PopupContent {
 
     func willStop() {}
 
+    func willShow() {
+        isShowing = true
+        // Fresh on open: between full reads only the watched sensor moved.
+        sensors = SensorReadings.all(includingHID: SensorsSettings.includesHID)
+    }
+
+    func didHide() { isShowing = false }
+
     // MARK: - Sampling
 
     func menuBarContent() -> MenuBarReading? {
-        // Reading every sensor walks the whole SMC key table, which is a
-        // thousand round trips. Once every few seconds, not every tick.
-        if ticks % SensorsSettings.interval == 0 || sensors.isEmpty {
+        // The menu bar shows one reading, so with nobody looking at the
+        // list only that one is read again. Every sensor is read while the
+        // popup or tile is open, and once every half minute regardless, so
+        // "the hottest" can move to a different sensor. Reading all of them
+        // on every interval was 88% of the app's time on the tick (measured
+        // with `sample`: 338 of 386 samples), for one number.
+        let due = ticks % SensorsSettings.interval == 0
+        let looking = isShowing || tile?.window?.isVisible == true
+        if sensors.isEmpty || (due && (looking || ticks % 30 == 0)) {
             sensors = SensorReadings.all(includingHID: SensorsSettings.includesHID)
+        } else if due, let current = watched,
+                  let index = sensors.firstIndex(where: { $0.id == current.id }) {
+            if let fresh = SensorReadings.reread(current, includingHID: SensorsSettings.includesHID) {
+                sensors[index] = fresh
+            } else {
+                sensors = SensorReadings.all(includingHID: SensorsSettings.includesHID)
+            }
         }
         ticks += 1
 

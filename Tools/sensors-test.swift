@@ -277,5 +277,27 @@ do {
 }
 
 let note = skipped == 0 ? "" : " (\(skipped) skipped)"
+print("\nOne sensor read again")
+
+do {
+    // The menu bar refreshes only the sensor it shows; the rest of the
+    // table is read every half minute. Reading one must agree with reading
+    // all, and must not invent a reading the full walk would have dropped.
+    var values: [String: Double] = ["TC0P": 41, "PSTR": 12.5]
+    let first = SensorReadings.smcSensors(from: FakeSMC(values: values))
+    let cpu = first.first { $0.id == "TC0P" }!
+    values["TC0P"] = 57
+    let again = SensorReadings.reread(cpu, includingHID: false, smc: FakeSMC(values: values))
+    check("a re-read sees the new value", again?.value == 57)
+    check("and keeps the id, name and family", again?.id == cpu.id && again?.name == cpu.name
+          && again?.family == cpu.family)
+    values["TC0P"] = 900
+    check("an implausible re-read is nil, as the full walk would drop it",
+          SensorReadings.reread(cpu, includingHID: false, smc: FakeSMC(values: values)) == nil)
+    values.removeValue(forKey: "TC0P")
+    check("a sensor that stopped answering is nil",
+          SensorReadings.reread(cpu, includingHID: false, smc: FakeSMC(values: values)) == nil)
+}
+
 print(failures == 0 ? "\nall passed\(note)" : "\n\(failures) failed\(note)")
 exit(failures == 0 ? 0 : 1)
