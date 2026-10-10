@@ -291,6 +291,40 @@ do {
     }
 }
 
+// MARK: - What an age setting withholds
+
+print("\nWhat the age rule hides")
+
+// The number the window needs. A filter that hides everything and says
+// nothing looks like a broken scan, and on the Mac this was written against
+// a 90-day rule hides all of it: every one of these directories is one the
+// tool writes into constantly, so none of them is ever old.
+let now = Date()
+func aged(_ days: Int, _ kind: AIAssistants.Kind = .caches) -> AIAssistants.Item {
+    AIAssistants.Item(url: URL(fileURLWithPath: "/tmp/perch-age-\(days)-\(kind)"),
+                      kind: kind, bytes: 1_000_000,
+                      lastUsed: now.addingTimeInterval(-Double(days) * 86_400))
+}
+let mixed = [AIAssistants.Tool(name: "mixed", items: [aged(5), aged(120), aged(400)])]
+
+check("any age offers everything",
+      AIAssistants.offered(mixed, olderThan: nil, now: now)
+          .flatMap { $0.items }.count == 3)
+check("and hides nothing", AIAssistants.hidden(mixed, olderThan: nil, now: now) == 0)
+check("90 days offers the two older ones",
+      AIAssistants.offered(mixed, olderThan: 90, now: now)
+          .flatMap { $0.items }.count == 2)
+check("and hides the recent one's bytes",
+      AIAssistants.hidden(mixed, olderThan: 90, now: now) == 1_000_000)
+check("365 days hides two of the three",
+      AIAssistants.hidden(mixed, olderThan: 365, now: now) == 2_000_000)
+// The case that matters: everything hidden must be reportable as a number,
+// not as an empty list with no explanation.
+let allRecent = [AIAssistants.Tool(name: "live", items: [aged(1), aged(2)])]
+check("a rule that hides everything says how much",
+      AIAssistants.hidden(allRecent, olderThan: 30, now: now) == 2_000_000
+      && AIAssistants.offered(allRecent, olderThan: 30, now: now).isEmpty)
+
 print("")
 if failures == 0 { print("all passed") } else { print("\(failures) failed") }
 exit(failures == 0 ? 0 : 1)

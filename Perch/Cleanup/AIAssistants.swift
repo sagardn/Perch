@@ -296,6 +296,24 @@ enum AIAssistants {
 
     // MARK: - Age
 
+    /// What an age setting is withholding, in bytes.
+    ///
+    /// The window needs this to avoid the worst outcome a filter has, which
+    /// is looking like a failure. Measured on one Mac: the scan finds
+    /// 2.72 GB and a 90-day rule offers none of it, because every one of
+    /// these directories is one the tool writes into constantly -- the
+    /// oldest file in ~/.claude/projects is three weeks old and something in
+    /// it was written this morning, so all 462 MB counts as used today. An
+    /// empty list with no explanation reads as "the scan is broken"; "2.7 GB
+    /// hidden by the 90-day rule" reads as a setting, which is what it is.
+    static func hidden(_ tools: [Tool], olderThan days: Int?, now: Date = Date()) -> Int64 {
+        let shown = Set(offered(tools, olderThan: days, now: now)
+            .flatMap { $0.items }.map { $0.url })
+        return tools.flatMap { $0.items }
+            .filter { !shown.contains($0.url) }
+            .reduce(Int64(0)) { $0 + $1.bytes }
+    }
+
     /// The tools with only what the age rule lets through. nil is any age.
     static func offered(_ tools: [Tool], olderThan days: Int?, now: Date = Date()) -> [Tool] {
         tools.compactMap { tool in
