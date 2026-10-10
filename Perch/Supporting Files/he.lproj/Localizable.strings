@@ -113,6 +113,13 @@
 "Dashboard" = "לוח מחוונים";
 "Idle" = "במנוחה";
 "Process" = "תהליך";
+"Force Quit %0" = "אילוץ יציאה מ‑%0";
+"Force quit %0?" = "לאלץ יציאה מ‑%0?";
+"The process ends immediately. Anything it has not saved is lost." = "התהליך מסתיים מיד. כל מה שלא נשמר יאבד.";
+"Force Quit" = "אילוץ יציאה";
+"%0 had already quit" = "%0 כבר יצא";
+"%0 belongs to another user" = "%0 שייך למשתמש אחר";
+"Could not quit %0" = "לא ניתן לסגור את %0";
 "RAM" = "RAM";
 "Wired" = "קשיח";
 "Compressed" = "דחוס";

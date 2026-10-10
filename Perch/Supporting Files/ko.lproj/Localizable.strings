@@ -113,6 +113,13 @@
 "Dashboard" = "대시보드";
 "Idle" = "유휴";
 "Process" = "프로세스";
+"Force Quit %0" = "%0 강제 종료";
+"Force quit %0?" = "%0을(를) 강제 종료할까요?";
+"The process ends immediately. Anything it has not saved is lost." = "프로세스가 즉시 종료됩니다. 저장하지 않은 내용은 사라집니다.";
+"Force Quit" = "강제 종료";
+"%0 had already quit" = "%0은(는) 이미 종료되었습니다";
+"%0 belongs to another user" = "%0은(는) 다른 사용자의 것입니다";
+"Could not quit %0" = "%0을(를) 종료할 수 없습니다";
 "RAM" = "RAM";
 "Wired" = "와이어드";
 "Compressed" = "압축됨";

@@ -6,7 +6,9 @@
 //
 //  Run:  cat Perch/UI/Palette.swift Perch/UI/Localized.swift \
 //            Perch/Monitor/Readings.swift Perch/Monitor/CPUReadings.swift \
-//            Perch/Monitor/ProcessNetwork.swift Perch/Monitor/PopupSection.swift \
+//            Perch/Monitor/ProcessNetwork.swift Perch/UI/Alert.swift \
+//            Perch/Launcher/Notify.swift Perch/Monitor/ProcessControl.swift \
+//            Perch/Monitor/PopupSection.swift \
 //            Perch/Monitor/MemoryReadings.swift Perch/Monitor/CPUTile.swift \
 //            Perch/Monitor/RAMTile.swift Perch/Monitor/DiskReadings.swift \
 //            Perch/Monitor/DiskTile.swift Tools/tile-test.swift | swift -

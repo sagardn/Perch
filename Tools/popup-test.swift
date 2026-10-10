@@ -6,7 +6,9 @@
 //  Run:  cat Perch/UI/Palette.swift Perch/UI/Localized.swift \
 //            Perch/Settings/Preferences.swift Perch/Monitor/MenuBarStyle.swift \
 //            Perch/Monitor/MenuBarWidget.swift Perch/Monitor/Readings.swift \
-//            Perch/Monitor/ProcessNetwork.swift Perch/Monitor/PopupSection.swift \
+//            Perch/Monitor/ProcessNetwork.swift Perch/UI/Alert.swift \
+//            Perch/Launcher/Notify.swift Perch/Monitor/ProcessControl.swift \
+//            Perch/Monitor/PopupSection.swift \
 //            Perch/Monitor/PopupParts.swift Tools/popup-test.swift | swift -
 //
 //  The status line's word and its dot are worked out separately -- the word
@@ -140,6 +142,57 @@ do {
     check("switching it off is remembered", !PerchColors.menuBarColoured)
     PerchColors.menuBarColoured = true
     check("and on again", PerchColors.menuBarColoured)
+}
+
+// MARK: - The force-quit menu on a process row
+
+print("\nProcessRow context menu")
+
+/// A right-click somewhere inside the row.
+func rightClick(in view: NSView) -> NSEvent {
+    NSEvent.mouseEvent(with: .rightMouseDown,
+                       location: NSPoint(x: view.bounds.midX, y: view.bounds.midY),
+                       modifierFlags: [], timestamp: 0, windowNumber: 0,
+                       context: nil, eventNumber: 0, clickCount: 1, pressure: 1)!
+}
+
+do {
+    let row = ProcessRow()
+    row.layoutSubtreeIfNeeded()
+    row.set(name: "Google Chrome", pid: 4321, value: "330 MB")
+
+    let menu = row.menu(for: rightClick(in: row))
+    check("a row with a live pid offers a menu", menu != nil)
+    check("with exactly one item", menu?.items.count == 1)
+    check("naming the process", menu?.items.first?.title.contains("Google Chrome") == true)
+    check("and it is wired to something", menu?.items.first?.action != nil)
+    check("targeting the row, not whatever is first responder",
+          menu?.items.first?.target as? NSView === row)
+}
+
+do {
+    // An empty slot: the lists are built for more rows than are usually
+    // filled, and a menu on one would act on pid 0 -- every process in the
+    // group.
+    let row = ProcessRow()
+    row.layoutSubtreeIfNeeded()
+    check("an unfilled row offers no menu at all",
+          row.menu(for: rightClick(in: row)) == nil)
+}
+
+do {
+    // The row must answer the click itself. Its children are labels, and a
+    // label has no menu and does not pass the question up -- so if hit
+    // testing reaches one, right-clicking the process name does nothing,
+    // which is the part of the row anybody would aim at.
+    let row = ProcessRow()
+    row.layoutSubtreeIfNeeded()
+    row.set(name: "Discord Helper (Renderer)", pid: 777, value: "147 MB")
+    let onTheName = NSPoint(x: 40, y: row.bounds.midY)
+    check("a click on the name lands on the row, not a label",
+          row.hitTest(onTheName) === row)
+    check("and one outside it lands nowhere",
+          row.hitTest(NSPoint(x: -20, y: row.bounds.midY)) == nil)
 }
 
 print(failures == 0 ? "\nall passed" : "\n\(failures) failed")

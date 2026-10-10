@@ -113,6 +113,13 @@
 "Dashboard" = "Prehľad";
 "Idle" = "Nečinné";
 "Process" = "Proces";
+"Force Quit %0" = "Vynútiť ukončenie %0";
+"Force quit %0?" = "Vynútiť ukončenie %0?";
+"The process ends immediately. Anything it has not saved is lost." = "Proces skončí okamžite. Všetko neuložené sa stratí.";
+"Force Quit" = "Vynútiť ukončenie";
+"%0 had already quit" = "%0 už bol ukončený";
+"%0 belongs to another user" = "%0 patrí inému používateľovi";
+"Could not quit %0" = "%0 sa nepodarilo ukončiť";
 "RAM" = "RAM";
 "Wired" = "Pevná";
 "Compressed" = "Komprimovaná";

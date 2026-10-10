@@ -113,6 +113,13 @@
 "Dashboard" = "儀表板";
 "Idle" = "閒置";
 "Process" = "程序";
+"Force Quit %0" = "強制結束 %0";
+"Force quit %0?" = "要強制結束 %0 嗎？";
+"The process ends immediately. Anything it has not saved is lost." = "程序會立即結束，未儲存的內容將遺失。";
+"Force Quit" = "強制結束";
+"%0 had already quit" = "%0 已經結束";
+"%0 belongs to another user" = "%0 屬於其他使用者";
+"Could not quit %0" = "無法結束 %0";
 "RAM" = "RAM";
 "Wired" = "固定";
 "Compressed" = "已壓縮";

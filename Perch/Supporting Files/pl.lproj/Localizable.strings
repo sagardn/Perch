@@ -113,6 +113,13 @@
 "Dashboard" = "Pulpit";
 "Idle" = "Bezczynny";
 "Process" = "Proces";
+"Force Quit %0" = "Wymuś zakończenie %0";
+"Force quit %0?" = "Wymusić zakończenie %0?";
+"The process ends immediately. Anything it has not saved is lost." = "Proces kończy się natychmiast. Wszystko niezapisane zostanie utracone.";
+"Force Quit" = "Wymuś zakończenie";
+"%0 had already quit" = "%0 już zakończył działanie";
+"%0 belongs to another user" = "%0 należy do innego użytkownika";
+"Could not quit %0" = "Nie udało się zakończyć %0";
 "RAM" = "RAM";
 "Wired" = "Związana";
 "Compressed" = "Skompresowana";

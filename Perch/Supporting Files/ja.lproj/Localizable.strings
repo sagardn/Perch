@@ -113,6 +113,13 @@
 "Dashboard" = "ダッシュボード";
 "Idle" = "アイドル";
 "Process" = "プロセス";
+"Force Quit %0" = "%0 を強制終了";
+"Force quit %0?" = "%0 を強制終了しますか？";
+"The process ends immediately. Anything it has not saved is lost." = "プロセスは直ちに終了します。保存していないものは失われます。";
+"Force Quit" = "強制終了";
+"%0 had already quit" = "%0 はすでに終了していました";
+"%0 belongs to another user" = "%0 は別のユーザのものです";
+"Could not quit %0" = "%0 を終了できませんでした";
 "RAM" = "RAM";
 "Wired" = "確保中";
 "Compressed" = "圧縮";

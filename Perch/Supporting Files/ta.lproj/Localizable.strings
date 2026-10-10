@@ -113,6 +113,13 @@
 "Dashboard" = "டாஷ்போர்டு";
 "Idle" = "செயலற்றது";
 "Process" = "செயல்முறை";
+"Force Quit %0" = "%0 ஐ கட்டாயமாக வெளியேற்று";
+"Force quit %0?" = "%0 ஐ கட்டாயமாக வெளியேற்றவா?";
+"The process ends immediately. Anything it has not saved is lost." = "செயல்முறை உடனே முடிகிறது. சேமிக்கப்படாதவை அனைத்தும் இழக்கப்படும்.";
+"Force Quit" = "கட்டாயமாக வெளியேற்று";
+"%0 had already quit" = "%0 ஏற்கெனவே வெளியேறிவிட்டது";
+"%0 belongs to another user" = "%0 வேறு பயனருக்குச் சொந்தமானது";
+"Could not quit %0" = "%0 ஐ வெளியேற்ற முடியவில்லை";
 "RAM" = "RAM";
 "Wired" = "நிலையானது";
 "Compressed" = "சுருக்கப்பட்டது";

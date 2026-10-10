@@ -113,6 +113,13 @@
 "Dashboard" = "Painel";
 "Idle" = "Inativo";
 "Process" = "Processo";
+"Force Quit %0" = "Forçar a saída de %0";
+"Force quit %0?" = "Forçar a saída de %0?";
+"The process ends immediately. Anything it has not saved is lost." = "O processo termina de imediato. Tudo o que não foi guardado perde-se.";
+"Force Quit" = "Forçar saída";
+"%0 had already quit" = "%0 já tinha saído";
+"%0 belongs to another user" = "%0 pertence a outro utilizador";
+"Could not quit %0" = "Não foi possível sair de %0";
 "RAM" = "RAM";
 "Wired" = "Fixa";
 "Compressed" = "Comprimida";

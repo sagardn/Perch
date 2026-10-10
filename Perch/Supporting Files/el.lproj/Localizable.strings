@@ -113,6 +113,13 @@
 "Dashboard" = "Πίνακας";
 "Idle" = "Αδράνεια";
 "Process" = "Διεργασία";
+"Force Quit %0" = "Βίαιος τερματισμός %0";
+"Force quit %0?" = "Βίαιος τερματισμός του %0;";
+"The process ends immediately. Anything it has not saved is lost." = "Η διεργασία τερματίζεται αμέσως. Ό,τι δεν έχει αποθηκευτεί χάνεται.";
+"Force Quit" = "Βίαιος τερματισμός";
+"%0 had already quit" = "Το %0 είχε ήδη τερματιστεί";
+"%0 belongs to another user" = "Το %0 ανήκει σε άλλον χρήστη";
+"Could not quit %0" = "Δεν ήταν δυνατός ο τερματισμός του %0";
 "RAM" = "RAM";
 "Wired" = "Δεσμευμένη";
 "Compressed" = "Συμπιεσμένη";

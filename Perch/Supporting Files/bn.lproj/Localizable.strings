@@ -113,6 +113,13 @@
 "Dashboard" = "ড্যাশবোর্ড";
 "Idle" = "নিষ্ক্রিয়";
 "Process" = "প্রসেস";
+"Force Quit %0" = "%0 জোর করে বন্ধ করুন";
+"Force quit %0?" = "%0 জোর করে বন্ধ করবেন?";
+"The process ends immediately. Anything it has not saved is lost." = "প্রক্রিয়াটি সঙ্গে সঙ্গে শেষ হয়। যা সংরক্ষণ করা হয়নি তা হারিয়ে যাবে।";
+"Force Quit" = "জোর করে বন্ধ করুন";
+"%0 had already quit" = "%0 আগেই বন্ধ হয়েছিল";
+"%0 belongs to another user" = "%0 অন্য ব্যবহারকারীর";
+"Could not quit %0" = "%0 বন্ধ করা যায়নি";
 "RAM" = "RAM";
 "Wired" = "ওয়্যার্ড";
 "Compressed" = "সংকুচিত";

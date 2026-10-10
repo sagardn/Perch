@@ -113,6 +113,13 @@
 "Dashboard" = "Pano";
 "Idle" = "Boşta";
 "Process" = "İşlem";
+"Force Quit %0" = "%0 uygulamasından zorla çık";
+"Force quit %0?" = "%0 zorla kapatılsın mı?";
+"The process ends immediately. Anything it has not saved is lost." = "İşlem hemen sona erer. Kaydedilmemiş her şey kaybolur.";
+"Force Quit" = "Zorla çık";
+"%0 had already quit" = "%0 zaten kapanmıştı";
+"%0 belongs to another user" = "%0 başka bir kullanıcıya ait";
+"Could not quit %0" = "%0 kapatılamadı";
 "RAM" = "RAM";
 "Wired" = "Kalıcı";
 "Compressed" = "Sıkıştırılmış";

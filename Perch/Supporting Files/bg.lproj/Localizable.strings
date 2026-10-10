@@ -113,6 +113,13 @@
 "Dashboard" = "Табло";
 "Idle" = "Бездействие";
 "Process" = "Процес";
+"Force Quit %0" = "Принудително спиране на %0";
+"Force quit %0?" = "Принудително спиране на %0?";
+"The process ends immediately. Anything it has not saved is lost." = "Процесът спира веднага. Всичко незапазено се губи.";
+"Force Quit" = "Принудително спиране";
+"%0 had already quit" = "%0 вече беше спрян";
+"%0 belongs to another user" = "%0 принадлежи на друг потребител";
+"Could not quit %0" = "%0 не можа да бъде спрян";
 "RAM" = "RAM";
 "Wired" = "Фиксирана";
 "Compressed" = "Компресирана";

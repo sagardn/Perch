@@ -97,6 +97,7 @@
 		FEEDFACEB20F000000000000 /* RAMPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACEF20F000000000000 /* RAMPopup.swift */; };
 		FEEDFACEB210000000000000 /* MenuBarWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACEF210000000000000 /* MenuBarWidget.swift */; };
 		FEEDFACEB211000000000000 /* ProcessCPU.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACEF211000000000000 /* ProcessCPU.swift */; };
+		FEEDFACE0B10000000000000 /* ProcessControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0B11000000000000 /* ProcessControl.swift */; };
 		FEEDFACE0A40000000000000 /* LaunchArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0A50000000000000 /* LaunchArguments.swift */; };
 		FEEDFACE0A41000000000000 /* PauseState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0A51000000000000 /* PauseState.swift */; };
 		FEEDFACE0A42000000000000 /* PopupShortcut.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0A52000000000000 /* PopupShortcut.swift */; };
@@ -316,6 +317,7 @@
 		FEEDFACEF20F000000000000 /* RAMPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMPopup.swift; sourceTree = "<group>"; };
 		FEEDFACEF210000000000000 /* MenuBarWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBarWidget.swift; sourceTree = "<group>"; };
 		FEEDFACEF211000000000000 /* ProcessCPU.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessCPU.swift; sourceTree = "<group>"; };
+		FEEDFACE0B11000000000000 /* ProcessControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessControl.swift; sourceTree = "<group>"; };
 		9ABD6F7528561472009B8BC1 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9AC2FE652699E69F00EBE30A /* hr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hr; path = hr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FEEDFACE0A50000000000000 /* LaunchArguments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchArguments.swift; sourceTree = "<group>"; };
@@ -533,6 +535,7 @@
 				FEEDFACEF20F000000000000 /* RAMPopup.swift */,
 				FEEDFACEF210000000000000 /* MenuBarWidget.swift */,
 				FEEDFACEF211000000000000 /* ProcessCPU.swift */,
+				FEEDFACE0B11000000000000 /* ProcessControl.swift */,
 			);
 			path = Monitor;
 			sourceTree = "<group>";
@@ -841,6 +844,7 @@
 				FEEDFACEB20F000000000000 /* RAMPopup.swift in Sources */,
 				FEEDFACEB210000000000000 /* MenuBarWidget.swift in Sources */,
 				FEEDFACEB211000000000000 /* ProcessCPU.swift in Sources */,
+				FEEDFACE0B10000000000000 /* ProcessControl.swift in Sources */,
 				9A81C74E24499C7000825D92 /* Settings.swift in Sources */,
 				FEEDFACE0A20000000000000 /* SettingsSelection.swift in Sources */,
 				9A83526F2889A03100791BAC /* Setup.swift in Sources */,

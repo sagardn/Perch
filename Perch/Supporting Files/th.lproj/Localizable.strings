@@ -113,6 +113,13 @@
 "Dashboard" = "แดชบอร์ด";
 "Idle" = "ไม่ได้ใช้งาน";
 "Process" = "กระบวนการ";
+"Force Quit %0" = "บังคับออกจาก %0";
+"Force quit %0?" = "บังคับออกจาก %0 ไหม";
+"The process ends immediately. Anything it has not saved is lost." = "กระบวนการจะสิ้นสุดทันที สิ่งที่ยังไม่บันทึกจะสูญหาย";
+"Force Quit" = "บังคับออก";
+"%0 had already quit" = "%0 ออกไปแล้ว";
+"%0 belongs to another user" = "%0 เป็นของผู้ใช้อื่น";
+"Could not quit %0" = "ไม่สามารถปิด %0 ได้";
 "RAM" = "RAM";
 "Wired" = "ถูกตรึง";
 "Compressed" = "ถูกบีบอัด";

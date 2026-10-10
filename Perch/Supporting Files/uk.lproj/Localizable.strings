@@ -113,6 +113,13 @@
 "Dashboard" = "Панель";
 "Idle" = "Простій";
 "Process" = "Процес";
+"Force Quit %0" = "Завершити %0 примусово";
+"Force quit %0?" = "Завершити %0 примусово?";
+"The process ends immediately. Anything it has not saved is lost." = "Процес завершиться негайно. Усе незбережене буде втрачено.";
+"Force Quit" = "Завершити примусово";
+"%0 had already quit" = "%0 вже завершився";
+"%0 belongs to another user" = "%0 належить іншому користувачу";
+"Could not quit %0" = "Не вдалося завершити %0";
 "RAM" = "RAM";
 "Wired" = "Зарезервована";
 "Compressed" = "Стиснена";

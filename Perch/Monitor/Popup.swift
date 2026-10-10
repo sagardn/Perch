@@ -9,6 +9,8 @@ import AppKit
 ///
 /// One of these per module, created lazily and kept, so chart history and
 /// scroll position survive being closed and reopened.
+extension ReadingPopup: MenuHostingWindow {}
+
 final class ReadingPopup: NSPanel {
 
     private let content: PopupContent

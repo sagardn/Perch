@@ -429,12 +429,30 @@ final class SquaresGrid: NSView {
 // MARK: - Process row
 
 /// Icon, name, and the two rate columns under their colour chips.
+/// A window that must stay open while one of its own menus is up.
+///
+/// A popup closes when it stops being the key window, and opening a menu is
+/// exactly that. `ReadingPopup` already carried the flag for its header's
+/// gear menu; this is the part of it a row needs, named separately so a row
+/// does not have to know about the window class -- which lives behind the
+/// macOS 26 glass APIs and would drag all of them into every test that
+/// compiles a row.
+protocol MenuHostingWindow: AnyObject {
+    var isShowingOwnMenu: Bool { get set }
+}
+
 final class ProcessRow: NSView {
 
     private let icon = NSImageView()
     private let name = NSTextField(labelWithString: "")
     private let down = NSTextField(labelWithString: "")
     private let up = NSTextField(labelWithString: "")
+
+    /// Who this row is currently about. Rows are built once and reused as the
+    /// list resorts, so this is set on every update and read only inside the
+    /// menu it opens -- never cached by the menu, or a right-click would act
+    /// on whoever occupied the row two samples ago.
+    private var pid: Int32 = 0
 
     static let columnWidth: CGFloat = 62
 
@@ -485,6 +503,7 @@ final class ProcessRow: NSView {
 
     /// One value instead of two columns -- the CPU table's shape.
     func set(name: String, pid: Int32, value: String) {
+        self.pid = pid
         self.name.stringValue = name
         down.stringValue = ""
         up.stringValue = value
@@ -493,11 +512,78 @@ final class ProcessRow: NSView {
     }
 
     func set(_ entry: ProcessNetwork.Entry) {
+        pid = entry.pid
         name.stringValue = entry.name
         down.stringValue = Readings.rate(entry.download)
         up.stringValue = Readings.rate(entry.upload)
         icon.image = NSRunningApplication(processIdentifier: entry.pid)?.icon
             ?? NSImage(systemSymbolName: "terminal", accessibilityDescription: nil)
+    }
+
+    // MARK: - Force quit
+
+    /// The whole row answers a click, not whichever label is under it.
+    ///
+    /// Without this the menu works everywhere except on the process name --
+    /// which is the part anybody would aim at. A right-click is delivered to
+    /// the deepest view it hits, that is the NSTextField, and a label has no
+    /// menu of its own and does not pass the question to its superview. The
+    /// row's children are an icon and three labels, none of which wants a
+    /// click, so the row can take them all.
+    override func hitTest(_ point: NSPoint) -> NSView? {
+        bounds.contains(convert(point, from: superview)) ? self : nil
+    }
+
+    /// Right-click offers to end the process this row is about.
+    ///
+    /// Built per click rather than kept, so it is always about whoever is in
+    /// the row now. A row with no pid -- an empty slot in a list built for
+    /// more processes than are running -- offers no menu at all rather than
+    /// a menu that does nothing.
+    override func menu(for event: NSEvent) -> NSMenu? {
+        guard ProcessControl.isSignallable(pid) else { return nil }
+
+        let process = name.stringValue
+        let menu = NSMenu()
+        let item = NSMenuItem(title: localized("Force Quit %0", process),
+                              action: #selector(forceQuit), keyEquivalent: "")
+        item.target = self
+        menu.addItem(item)
+
+        // The popup closes when it stops being the key window, and opening a
+        // menu is exactly that. The flag is the window's own, already used by
+        // the header's gear menu.
+        (window as? MenuHostingWindow)?.isShowingOwnMenu = true
+        return menu
+    }
+
+    override func willOpenMenu(_ menu: NSMenu, with event: NSEvent) {
+        (window as? MenuHostingWindow)?.isShowingOwnMenu = true
+    }
+
+    override func didCloseMenu(_ menu: NSMenu, with event: NSEvent?) {
+        (window as? MenuHostingWindow)?.isShowingOwnMenu = false
+    }
+
+    @objc private func forceQuit() {
+        let target = pid
+        let process = name.stringValue
+        guard ProcessControl.isSignallable(target) else { return }
+
+        // Asked, because a force quit does not let the process save and the
+        // row is a one-pixel target next to seven others.
+        Alert.show(localized("Force quit %0?", process),
+                   // One literal, not two joined: the i18n scan reads the
+                   // argument as written, and a key split across a `+` is a
+                   // key it cannot find.
+                   localized("The process ends immediately. Anything it has not saved is lost."),
+                   style: .warning,
+                   actionTitle: localized("Force Quit")) {
+            let outcome = ProcessControl.forceQuit(pid: target)
+            if let message = ProcessControl.message(for: outcome, name: process) {
+                Notify.show(message, symbol: "exclamationmark.triangle")
+            }
+        }
     }
 }
 

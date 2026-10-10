@@ -113,6 +113,13 @@
 "Dashboard" = "داشبورد";
 "Idle" = "بیکار";
 "Process" = "فرایند";
+"Force Quit %0" = "خروج اجباری از %0";
+"Force quit %0?" = "%0 به‌اجبار بسته شود؟";
+"The process ends immediately. Anything it has not saved is lost." = "فرایند بی‌درنگ پایان می‌یابد. هرچه ذخیره نشده از دست می‌رود.";
+"Force Quit" = "خروج اجباری";
+"%0 had already quit" = "%0 پیش‌تر بسته شده بود";
+"%0 belongs to another user" = "%0 به کاربر دیگری تعلق دارد";
+"Could not quit %0" = "نتوانست %0 را ببندد";
 "RAM" = "RAM";
 "Wired" = "ثابت";
 "Compressed" = "فشرده";

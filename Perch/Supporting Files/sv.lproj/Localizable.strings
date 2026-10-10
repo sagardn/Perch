@@ -113,6 +113,13 @@
 "Dashboard" = "Översikt";
 "Idle" = "Inaktiv";
 "Process" = "Process";
+"Force Quit %0" = "Tvinga %0 att avsluta";
+"Force quit %0?" = "Tvinga %0 att avsluta?";
+"The process ends immediately. Anything it has not saved is lost." = "Processen avslutas omedelbart. Allt osparat går förlorat.";
+"Force Quit" = "Tvinga avsluta";
+"%0 had already quit" = "%0 hade redan avslutats";
+"%0 belongs to another user" = "%0 tillhör en annan användare";
+"Could not quit %0" = "Kunde inte avsluta %0";
 "RAM" = "RAM";
 "Wired" = "Fast";
 "Compressed" = "Komprimerat";

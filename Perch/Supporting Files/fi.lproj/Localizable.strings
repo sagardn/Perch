@@ -113,6 +113,13 @@
 "Dashboard" = "Yleiskatsaus";
 "Idle" = "Jouten";
 "Process" = "Prosessi";
+"Force Quit %0" = "Pakota %0 lopettamaan";
+"Force quit %0?" = "Pakotetaanko %0 lopettamaan?";
+"The process ends immediately. Anything it has not saved is lost." = "Prosessi päättyy heti. Kaikki tallentamaton menetetään.";
+"Force Quit" = "Pakota lopetus";
+"%0 had already quit" = "%0 oli jo lopettanut";
+"%0 belongs to another user" = "%0 kuuluu toiselle käyttäjälle";
+"Could not quit %0" = "Kohdetta %0 ei voitu lopettaa";
 "RAM" = "RAM";
 "Wired" = "Kiinteä";
 "Compressed" = "Pakattu";

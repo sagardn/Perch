@@ -113,6 +113,13 @@
 "Dashboard" = "Irányítópult";
 "Idle" = "Tétlen";
 "Process" = "Folyamat";
+"Force Quit %0" = "%0 kilépésének kényszerítése";
+"Force quit %0?" = "Kikényszeríti a(z) %0 kilépését?";
+"The process ends immediately. Anything it has not saved is lost." = "A folyamat azonnal leáll. Minden nem mentett adat elvész.";
+"Force Quit" = "Kilépés kényszerítése";
+"%0 had already quit" = "%0 már kilépett";
+"%0 belongs to another user" = "%0 másik felhasználóé";
+"Could not quit %0" = "%0 nem léptethető ki";
 "RAM" = "RAM";
 "Wired" = "Rögzített";
 "Compressed" = "Tömörített";

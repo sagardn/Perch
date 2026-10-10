@@ -113,6 +113,13 @@
 "Dashboard" = "Dasbor";
 "Idle" = "Diam";
 "Process" = "Proses";
+"Force Quit %0" = "Paksa keluar %0";
+"Force quit %0?" = "Paksa keluar %0?";
+"The process ends immediately. Anything it has not saved is lost." = "Proses berakhir seketika. Semua yang belum disimpan akan hilang.";
+"Force Quit" = "Paksa keluar";
+"%0 had already quit" = "%0 sudah keluar";
+"%0 belongs to another user" = "%0 milik pengguna lain";
+"Could not quit %0" = "Tidak dapat menutup %0";
 "RAM" = "RAM";
 "Wired" = "Wired";
 "Compressed" = "Dikompresi";

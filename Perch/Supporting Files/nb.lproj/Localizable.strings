@@ -113,6 +113,13 @@
 "Dashboard" = "Oversikt";
 "Idle" = "Inaktiv";
 "Process" = "Prosess";
+"Force Quit %0" = "Tvungen avslutning av %0";
+"Force quit %0?" = "Tvinge %0 til å avslutte?";
+"The process ends immediately. Anything it has not saved is lost." = "Prosessen avsluttes umiddelbart. Alt ulagret går tapt.";
+"Force Quit" = "Tvungen avslutning";
+"%0 had already quit" = "%0 var allerede avsluttet";
+"%0 belongs to another user" = "%0 tilhører en annen bruker";
+"Could not quit %0" = "Kunne ikke avslutte %0";
 "RAM" = "RAM";
 "Wired" = "Låst";
 "Compressed" = "Komprimert";

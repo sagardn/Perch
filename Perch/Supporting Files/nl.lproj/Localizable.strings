@@ -113,6 +113,13 @@
 "Dashboard" = "Dashboard";
 "Idle" = "Inactief";
 "Process" = "Proces";
+"Force Quit %0" = "Forceer stop van %0";
+"Force quit %0?" = "Stop %0 geforceerd?";
+"The process ends immediately. Anything it has not saved is lost." = "Het proces stopt onmiddellijk. Alles wat niet is bewaard gaat verloren.";
+"Force Quit" = "Forceer stop";
+"%0 had already quit" = "%0 was al gestopt";
+"%0 belongs to another user" = "%0 hoort bij een andere gebruiker";
+"Could not quit %0" = "Kon %0 niet stoppen";
 "RAM" = "RAM";
 "Wired" = "Vast";
 "Compressed" = "Gecomprimeerd";

@@ -113,6 +113,13 @@
 "Dashboard" = "Dashboard";
 "Idle" = "Inattivo";
 "Process" = "Processo";
+"Force Quit %0" = "Uscita forzata da %0";
+"Force quit %0?" = "Forzare l'uscita da %0?";
+"The process ends immediately. Anything it has not saved is lost." = "Il processo termina subito. Tutto ciò che non è stato salvato va perso.";
+"Force Quit" = "Uscita forzata";
+"%0 had already quit" = "%0 era già uscito";
+"%0 belongs to another user" = "%0 appartiene a un altro utente";
+"Could not quit %0" = "Impossibile uscire da %0";
 "RAM" = "RAM";
 "Wired" = "Wired";
 "Compressed" = "Compressa";

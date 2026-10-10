@@ -113,6 +113,13 @@
 "Dashboard" = "Oversigt";
 "Idle" = "Inaktiv";
 "Process" = "Proces";
+"Force Quit %0" = "Afbryd %0";
+"Force quit %0?" = "Afbryd %0?";
+"The process ends immediately. Anything it has not saved is lost." = "Processen stopper med det samme. Alt ugemt går tabt.";
+"Force Quit" = "Afbryd";
+"%0 had already quit" = "%0 var allerede afsluttet";
+"%0 belongs to another user" = "%0 tilhører en anden bruger";
+"Could not quit %0" = "Kunne ikke afslutte %0";
 "RAM" = "RAM";
 "Wired" = "Fast";
 "Compressed" = "Komprimeret";

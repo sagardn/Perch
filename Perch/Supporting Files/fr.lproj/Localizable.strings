@@ -113,6 +113,13 @@
 "Dashboard" = "Tableau de bord";
 "Idle" = "Inactif";
 "Process" = "Processus";
+"Force Quit %0" = "Forcer %0 à quitter";
+"Force quit %0?" = "Forcer %0 à quitter ?";
+"The process ends immediately. Anything it has not saved is lost." = "Le processus s'arrête immédiatement. Tout ce qui n'est pas enregistré est perdu.";
+"Force Quit" = "Forcer à quitter";
+"%0 had already quit" = "%0 avait déjà quitté";
+"%0 belongs to another user" = "%0 appartient à un autre utilisateur";
+"Could not quit %0" = "Impossible de quitter %0";
 "RAM" = "RAM";
 "Wired" = "Résidente";
 "Compressed" = "Compressée";

@@ -113,6 +113,13 @@
 "Dashboard" = "仪表盘";
 "Idle" = "闲置";
 "Process" = "进程";
+"Force Quit %0" = "强制退出 %0";
+"Force quit %0?" = "要强制退出 %0 吗？";
+"The process ends immediately. Anything it has not saved is lost." = "进程会立即结束，未保存的内容将丢失。";
+"Force Quit" = "强制退出";
+"%0 had already quit" = "%0 已经退出";
+"%0 belongs to another user" = "%0 属于其他用户";
+"Could not quit %0" = "无法退出 %0";
 "RAM" = "RAM";
 "Wired" = "联动";
 "Compressed" = "已压缩";

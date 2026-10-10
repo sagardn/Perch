@@ -113,6 +113,13 @@
 "Dashboard" = "Tablou de bord";
 "Idle" = "Inactiv";
 "Process" = "Proces";
+"Force Quit %0" = "Forțează închiderea %0";
+"Force quit %0?" = "Forțezi închiderea %0?";
+"The process ends immediately. Anything it has not saved is lost." = "Procesul se încheie imediat. Tot ce nu a fost salvat se pierde.";
+"Force Quit" = "Forțează închiderea";
+"%0 had already quit" = "%0 se închisese deja";
+"%0 belongs to another user" = "%0 aparține altui utilizator";
+"Could not quit %0" = "%0 nu a putut fi închis";
 "RAM" = "RAM";
 "Wired" = "Fixată";
 "Compressed" = "Comprimată";

@@ -113,6 +113,13 @@
 "Dashboard" = "डैशबोर्ड";
 "Idle" = "निष्क्रिय";
 "Process" = "प्रोसेस";
+"Force Quit %0" = "%0 को जबरन बंद करें";
+"Force quit %0?" = "%0 को जबरन बंद करें?";
+"The process ends immediately. Anything it has not saved is lost." = "प्रक्रिया तुरंत समाप्त हो जाती है। जो सहेजा नहीं गया वह चला जाएगा।";
+"Force Quit" = "जबरन बंद करें";
+"%0 had already quit" = "%0 पहले ही बंद हो चुका था";
+"%0 belongs to another user" = "%0 किसी अन्य उपयोगकर्ता का है";
+"Could not quit %0" = "%0 को बंद नहीं किया जा सका";
 "RAM" = "RAM";
 "Wired" = "वायर्ड";
 "Compressed" = "संपीड़ित";

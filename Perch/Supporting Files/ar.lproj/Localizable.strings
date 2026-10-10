@@ -113,6 +113,13 @@
 "Dashboard" = "لوحة المعلومات";
 "Idle" = "خامل";
 "Process" = "العملية";
+"Force Quit %0" = "إنهاء %0 إجباريًا";
+"Force quit %0?" = "إنهاء %0 إجباريًا؟";
+"The process ends immediately. Anything it has not saved is lost." = "تنتهي العملية فورًا. يُفقد كل ما لم يُحفظ.";
+"Force Quit" = "إنهاء إجباري";
+"%0 had already quit" = "%0 كان قد أُنهي بالفعل";
+"%0 belongs to another user" = "%0 يخص مستخدمًا آخر";
+"Could not quit %0" = "تعذّر إنهاء %0";
 "RAM" = "RAM";
 "Wired" = "مثبتة";
 "Compressed" = "مضغوطة";

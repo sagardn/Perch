@@ -113,6 +113,13 @@
 "Dashboard" = "Nadzorna ploča";
 "Idle" = "Neaktivno";
 "Process" = "Proces";
+"Force Quit %0" = "Prisilno zatvori %0";
+"Force quit %0?" = "Prisilno zatvoriti %0?";
+"The process ends immediately. Anything it has not saved is lost." = "Proces se odmah prekida. Sve nespremljeno bit će izgubljeno.";
+"Force Quit" = "Prisilno zatvori";
+"%0 had already quit" = "%0 se već zatvorio";
+"%0 belongs to another user" = "%0 pripada drugom korisniku";
+"Could not quit %0" = "Nije moguće zatvoriti %0";
 "RAM" = "RAM";
 "Wired" = "Fiksno";
 "Compressed" = "Komprimirano";

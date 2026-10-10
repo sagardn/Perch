@@ -113,6 +113,13 @@
 "Dashboard" = "Bảng điều khiển";
 "Idle" = "Rảnh";
 "Process" = "Tiến trình";
+"Force Quit %0" = "Buộc thoát %0";
+"Force quit %0?" = "Buộc thoát %0?";
+"The process ends immediately. Anything it has not saved is lost." = "Tiến trình kết thúc ngay lập tức. Mọi thứ chưa lưu sẽ mất.";
+"Force Quit" = "Buộc thoát";
+"%0 had already quit" = "%0 đã thoát trước đó";
+"%0 belongs to another user" = "%0 thuộc về người dùng khác";
+"Could not quit %0" = "Không thể thoát %0";
 "RAM" = "RAM";
 "Wired" = "Cố định";
 "Compressed" = "Đã nén";
