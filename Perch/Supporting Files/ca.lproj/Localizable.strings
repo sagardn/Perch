@@ -423,8 +423,6 @@
 "Record Shortcut" = "Enregistrar drecera";
 "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Fes clic i prem una combinació amb ⌃, ⌥ o ⌘. ⎋ cancel·la, ⌫ esborra.";
 "%0 already uses this shortcut" = "%0 ja utilitza aquesta drecera";
-
-// Views · Setup, window control
 "Allow…" = "Permetre…";
 "Cycle the apps you mark" = "Alternar entre les apps que marquis";
 "Minimise and bring back" = "Minimitzar i recuperar";
@@ -434,3 +432,4 @@
 "You're all set" = "Ja està tot a punt";
 "window_control_message" = "Les dreceres del Perch mouen i minimitzen finestres per tu. El macOS et demana que ho permetis un cop, a Privacitat i seguretat → Accessibilitat. Res del que escrius es registra ni s'envia enlloc.";
 "finish_setup_body" = "El Perch viu a la barra de menús. Fes clic en una lectura per veure'n els detalls, o prem ⌃Space per cercar. El Perch és gratuït i de codi obert; si et resulta útil, pots donar suport al seu desenvolupament.";
+"Diagnostics copied — paste them into the issue" = "Diagnòstic copiat: enganxeu-lo a l'informe";

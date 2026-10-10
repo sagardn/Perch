@@ -330,6 +330,14 @@ struct SettingsShellView: View {
 
             FooterButton(symbol: "ant.fill",
                          help: localized("Report a bug")) {
+                // The report goes to the clipboard on the way to the issue
+                // form, because the first reply to a bug report is always a
+                // request for it. It was written and tested months before
+                // this line, and reachable from nothing: `copyToPasteboard`
+                // had no callers at all.
+                Diagnostics.copyToPasteboard()
+                Notify.show(localized("Diagnostics copied — paste them into the issue"),
+                            symbol: "doc.on.doc")
                 if let url = AppLinks.issuesURL { NSWorkspace.shared.open(url) }
             }
             FooterButton(symbol: model.paused ? "play.fill" : "pause.fill",

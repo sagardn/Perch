@@ -423,8 +423,6 @@
 "Record Shortcut" = "Enregistrer un raccourci";
 "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Cliquez, puis appuyez sur une combinaison avec ⌃, ⌥ ou ⌘. ⎋ annule, ⌫ efface.";
 "%0 already uses this shortcut" = "%0 utilise déjà ce raccourci";
-
-// Views · Setup, window control
 "Allow…" = "Autoriser…";
 "Cycle the apps you mark" = "Parcourir les apps que vous marquez";
 "Minimise and bring back" = "Placer dans le Dock et ramener";
@@ -434,3 +432,4 @@
 "You're all set" = "Tout est prêt";
 "window_control_message" = "Les raccourcis de Perch déplacent et placent les fenêtres dans le Dock pour vous. macOS vous demande de l'autoriser une seule fois, dans Confidentialité et sécurité → Accessibilité. Rien de ce que vous tapez n'est enregistré ni envoyé nulle part.";
 "finish_setup_body" = "Perch se loge dans votre barre des menus. Cliquez sur une mesure pour en voir le détail, ou appuyez sur ⌃Space pour rechercher. Perch est gratuit et open source ; s'il vous est utile, vous pouvez soutenir son développement.";
+"Diagnostics copied — paste them into the issue" = "Diagnostic copié — collez-le dans le ticket";

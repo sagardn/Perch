@@ -423,8 +423,6 @@
 "Record Shortcut" = "Registra abbreviazione";
 "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Fai clic, poi premi una combinazione con ⌃, ⌥ o ⌘. ⎋ annulla, ⌫ cancella.";
 "%0 already uses this shortcut" = "%0 usa già questa abbreviazione";
-
-// Views · Setup, window control
 "Allow…" = "Consenti…";
 "Cycle the apps you mark" = "Scorri tra le app che contrassegni";
 "Minimise and bring back" = "Riduci e ripristina";
@@ -434,3 +432,4 @@
 "You're all set" = "Tutto pronto";
 "window_control_message" = "Le abbreviazioni di Perch spostano e riducono a icona le finestre al posto tuo. macOS ti chiede di consentirlo una sola volta, in Privacy e sicurezza → Accessibilità. Nulla di ciò che digiti viene registrato o inviato altrove.";
 "finish_setup_body" = "Perch vive nella barra dei menu. Fai clic su una lettura per i dettagli, oppure premi ⌃Space per cercare. Perch è gratuito e open source; se ti è utile, puoi sostenerne lo sviluppo.";
+"Diagnostics copied — paste them into the issue" = "Diagnostica copiata: incollala nella segnalazione";

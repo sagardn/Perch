@@ -423,8 +423,6 @@
 "Record Shortcut" = "Rekam Pintasan";
 "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Klik, lalu tekan kombinasi dengan ⌃, ⌥, atau ⌘. ⎋ membatalkan, ⌫ menghapus.";
 "%0 already uses this shortcut" = "%0 sudah menggunakan pintasan ini";
-
-// Views · Setup, window control
 "Allow…" = "Izinkan…";
 "Cycle the apps you mark" = "Beralih di antara app yang Anda tandai";
 "Minimise and bring back" = "Minimalkan dan kembalikan";
@@ -434,3 +432,4 @@
 "You're all set" = "Semua siap";
 "window_control_message" = "Pintasan Perch memindahkan dan meminimalkan jendela untuk Anda. macOS meminta Anda mengizinkannya sekali, di Privasi & Keamanan → Aksesibilitas. Tidak ada yang Anda ketik yang direkam atau dikirim ke mana pun.";
 "finish_setup_body" = "Perch tinggal di bar menu Anda. Klik sebuah bacaan untuk detailnya, atau tekan ⌃Space untuk mencari. Perch gratis dan sumber terbuka; jika bermanfaat bagi Anda, Anda dapat mendukung pengembangannya.";
+"Diagnostics copied — paste them into the issue" = "Diagnostik disalin — tempel ke laporan";

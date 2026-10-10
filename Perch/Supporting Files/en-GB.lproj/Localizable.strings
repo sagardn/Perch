@@ -420,8 +420,6 @@
 "Record Shortcut" = "Record Shortcut";
 "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears.";
 "%0 already uses this shortcut" = "%0 already uses this shortcut";
-
-// Views · Setup, window control
 "Allow…" = "Allow…";
 "Cycle the apps you mark" = "Cycle the apps you mark";
 "Minimise and bring back" = "Minimise and bring back";
@@ -431,3 +429,4 @@
 "You're all set" = "You're all set";
 "window_control_message" = "Perch's shortcuts move and minimise windows for you. macOS asks you to allow that once, under Privacy & Security → Accessibility. Nothing you type is recorded or sent anywhere.";
 "finish_setup_body" = "Perch lives in your menu bar. Click a reading for its details, or ⌃Space to search. Perch is free and open source; if it is useful to you, you can support its development.";
+"Diagnostics copied — paste them into the issue" = "Diagnostics copied — paste them into the issue";

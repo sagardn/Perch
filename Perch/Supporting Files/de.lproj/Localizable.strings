@@ -423,8 +423,6 @@
 "Record Shortcut" = "Kurzbefehl aufnehmen";
 "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Klicken, dann eine Kombination mit ⌃, ⌥ oder ⌘ drücken. ⎋ bricht ab, ⌫ löscht.";
 "%0 already uses this shortcut" = "%0 verwendet diesen Kurzbefehl bereits";
-
-// Views · Setup, window control
 "Allow…" = "Erlauben …";
 "Cycle the apps you mark" = "Durch markierte Apps wechseln";
 "Minimise and bring back" = "Minimieren und zurückholen";
@@ -434,3 +432,4 @@
 "You're all set" = "Alles bereit";
 "window_control_message" = "Die Kurzbefehle von Perch bewegen und minimieren Fenster für dich. macOS bittet dich einmalig, dies unter „Datenschutz & Sicherheit“ → „Bedienungshilfen“ zu erlauben. Nichts, was du tippst, wird aufgezeichnet oder irgendwohin gesendet.";
 "finish_setup_body" = "Perch wohnt in deiner Menüleiste. Klicke auf einen Messwert für Details oder drücke ⌃Space zum Suchen. Perch ist kostenlos und Open Source; wenn es dir nützt, kannst du seine Entwicklung unterstützen.";
+"Diagnostics copied — paste them into the issue" = "Diagnose kopiert – füge sie in den Bericht ein";

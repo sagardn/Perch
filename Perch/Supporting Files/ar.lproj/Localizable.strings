@@ -423,8 +423,6 @@
 "Record Shortcut" = "تسجيل اختصار";
 "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "انقر، ثم اضغط مجموعة مفاتيح مع ⌃ أو ⌥ أو ⌘. ⎋ للإلغاء، ⌫ للمسح.";
 "%0 already uses this shortcut" = "يستخدم %0 هذا الاختصار بالفعل";
-
-// Views · Setup, window control
 "Allow…" = "السماح…";
 "Cycle the apps you mark" = "التنقل بين التطبيقات التي تحددها";
 "Minimise and bring back" = "تصغير النافذة وإعادتها";
@@ -434,3 +432,4 @@
 "You're all set" = "كل شيء جاهز";
 "window_control_message" = "تنقل اختصارات Perch النوافذ وتصغّرها نيابةً عنك. يطلب منك macOS السماح بذلك مرة واحدة، من الخصوصية والأمن → تسهيلات الاستخدام. لا يُسجَّل أي شيء تكتبه ولا يُرسَل إلى أي مكان.";
 "finish_setup_body" = "يوجد Perch في شريط القائمة. انقر على أي قراءة لعرض تفاصيلها، أو اضغط ⌃Space للبحث. Perch مجاني ومفتوح المصدر؛ وإن كان مفيدًا لك، يمكنك دعم تطويره.";
+"Diagnostics copied — paste them into the issue" = "تم نسخ التشخيص — الصقه في البلاغ";

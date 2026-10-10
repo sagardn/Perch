@@ -423,8 +423,6 @@
 "Record Shortcut" = "Snimi prečac";
 "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Kliknite, zatim pritisnite kombinaciju s ⌃, ⌥ ili ⌘. ⎋ poništava, ⌫ briše.";
 "%0 already uses this shortcut" = "%0 već koristi ovaj prečac";
-
-// Views · Setup, window control
 "Allow…" = "Dopusti…";
 "Cycle the apps you mark" = "Kruži kroz označene aplikacije";
 "Minimise and bring back" = "Minimiziraj i vrati";
@@ -434,3 +432,4 @@
 "You're all set" = "Sve je spremno";
 "window_control_message" = "Perchovi prečaci premještaju i minimiziraju prozore umjesto vas. macOS traži da to jednom dopustite, u Privatnost i sigurnost → Pristupačnost. Ništa što upišete ne bilježi se niti se igdje šalje.";
 "finish_setup_body" = "Perch živi u vašoj traci izbornika. Kliknite očitanje za pojedinosti ili pritisnite ⌃Space za pretraživanje. Perch je besplatan i otvorenog koda; ako vam koristi, možete podržati njegov razvoj.";
+"Diagnostics copied — paste them into the issue" = "Dijagnostika kopirana — zalijepite je u prijavu";

@@ -423,8 +423,6 @@
 "Record Shortcut" = "Tallenna oikotie";
 "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Klikkaa ja paina yhdistelmää, jossa on ⌃, ⌥ tai ⌘. ⎋ kumoaa, ⌫ tyhjentää.";
 "%0 already uses this shortcut" = "%0 käyttää jo tätä oikotietä";
-
-// Views · Setup, window control
 "Allow…" = "Salli…";
 "Cycle the apps you mark" = "Vaihda merkitsemiesi appien välillä";
 "Minimise and bring back" = "Pienennä ja palauta";
@@ -434,3 +432,4 @@
 "You're all set" = "Kaikki valmista";
 "window_control_message" = "Perchin pikanäppäimet siirtävät ja pienentävät ikkunoita puolestasi. macOS pyytää sinua sallimaan tämän kerran kohdassa Tietosuoja ja suojaus → Käyttöapu. Mitään kirjoittamaasi ei tallenneta eikä lähetetä minnekään.";
 "finish_setup_body" = "Perch asuu valikkorivilläsi. Klikkaa lukemaa nähdäksesi sen tiedot tai paina ⌃Space hakeaksesi. Perch on ilmainen ja avointa lähdekoodia; jos siitä on sinulle hyötyä, voit tukea sen kehitystä.";
+"Diagnostics copied — paste them into the issue" = "Diagnostiikka kopioitu – liitä se raporttiin";

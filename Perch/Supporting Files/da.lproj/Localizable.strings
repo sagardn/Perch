@@ -423,8 +423,6 @@
 "Record Shortcut" = "Optag genvej";
 "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Klik, og tryk derefter på en kombination med ⌃, ⌥ eller ⌘. ⎋ annullerer, ⌫ rydder.";
 "%0 already uses this shortcut" = "%0 bruger allerede denne genvej";
-
-// Views · Setup, window control
 "Allow…" = "Tillad…";
 "Cycle the apps you mark" = "Skift mellem de apps, du markerer";
 "Minimise and bring back" = "Minimer og hent tilbage";
@@ -434,3 +432,4 @@
 "You're all set" = "Du er klar";
 "window_control_message" = "Perchs genveje flytter og minimerer vinduer for dig. macOS beder dig om at tillade det én gang under Anonymitet og sikkerhed → Tilgængelighed. Intet af det, du skriver, bliver registreret eller sendt nogen steder hen.";
 "finish_setup_body" = "Perch bor på din menulinje. Klik på en måling for at se detaljer, eller tryk på ⌃Space for at søge. Perch er gratis og open source; hvis du har gavn af det, kan du støtte udviklingen.";
+"Diagnostics copied — paste them into the issue" = "Diagnostik kopieret – sæt den ind i rapporten";

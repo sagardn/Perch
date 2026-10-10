@@ -6,8 +6,9 @@
 
 <p align="center">
   <strong>Your Mac, at a glance and a keystroke.</strong><br>
-  A native menu bar app that switches apps, places windows and watches your system —<br>
-  in one quiet process, with no account, no telemetry and nothing to pay.
+  A native menu bar app that switches apps, places windows, watches your system<br>
+  and clears the clutter off it — all in one quiet process, with no account,<br>
+  no telemetry and nothing to pay.
 </p>
 
 <p align="center">
@@ -20,6 +21,7 @@
 <p align="center">
   <a href="#install"><strong>Install</strong></a> ·
   <a href="#what-you-get"><strong>Features</strong></a> ·
+  <a href="#free-up-space"><strong>Free up space</strong></a> ·
   <a href="#keyboard-shortcuts"><strong>Shortcuts</strong></a> ·
   <a href="#privacy"><strong>Privacy</strong></a> ·
   <a href="docs/USER_MANUAL.md"><strong>Manual</strong></a> ·
@@ -46,19 +48,29 @@ of them has. Perch is all three, built as one native app.
 
 <table>
   <tr>
-    <td width="33%" valign="top">
+    <td width="50%" valign="top">
       <h3>⚡️ Switch in a keystroke</h3>
       <code>⌃Space</code> opens a search panel wherever your pointer is. Type,
       press Return, and Perch launches, focuses, minimises or restores the app —
-      whichever the moment needs.
+      whichever the moment needs. <code>⌃⌥←</code> and friends place the window
+      once you are there.
     </td>
-    <td width="33%" valign="top">
+    <td width="50%" valign="top">
       <h3>📊 See your Mac live</h3>
       CPU, GPU, memory, disk, network and sensors, drawn right in the menu bar
       and coloured by how hard each one is working. Click any reading for the
-      full picture.
+      full picture, including which app is responsible.
     </td>
-    <td width="33%" valign="top">
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>🧹 Take the space back</h3>
+      Find the files that are actually large, uninstall an app along with
+      everything it scattered around your Library, or clear out what your AI
+      tools have piled up. Everything goes to the Bin, so nothing is a one-way
+      door.
+    </td>
+    <td width="50%" valign="top">
       <h3>🪶 Stay out of the way</h3>
       No Dock icon, no window you did not ask for, no network calls behind your
       back. The expensive work runs only while you are looking at it.
@@ -120,6 +132,10 @@ Every popup opens the same way — a one-line verdict like **● Light load** or
 **● Pressure warning**, then the headline figures, then a picture of the reading
 — so learning one teaches you all six.
 
+Wherever a popup lists processes, **right-click one** to **Quit** it politely or
+**Force Quit** it when it has stopped answering. Quit is what ⌘Q does, so a
+document with unsaved changes still gets to ask.
+
 - **Nine shapes** for the menu bar: a figure, a line or bar chart, a ring, a
   gauge, a stacked pair, network rates and more. Mix them per module.
 - **Colours that mean something** — teal when all is well, amber when busy, red
@@ -128,8 +144,52 @@ Every popup opens the same way — a one-line verdict like **● Light load** or
 - **One item or many** — show each module separately, or combine them into a
   single compact menu bar item.
 - **Alerts** — get notified when a reading crosses a threshold you set, when
-  your network changes, when one app has held the CPU for five minutes (with a
-  **Quit** button), or when macOS starts slowing your Mac down to cool it.
+  your network changes, when one app has held the CPU for minutes on end (with
+  a **Quit** button), or when macOS starts slowing your Mac down to cool it.
+  The runaway alert stays quiet about macOS's own background work, which you
+  could not act on anyway, and names the process that is actually busy rather
+  than the app it happens to live inside.
+
+### Free up space
+
+<p align="center">
+  <img src="docs/screenshots/cleanup.png" width="900" alt="The Free up space page: Storage settings and Open Bin under 'What macOS can do', and large files, AI assistants and uninstall under 'What Perch can find'">
+</p>
+
+A full disk is the one problem a monitor can point at and then do something
+about. **Free up space** in the sidebar has four ways in, and a rule that
+covers all of them: **everything Perch removes goes to the Bin**, so a wrong
+guess costs you a trip to Finder rather than your data.
+
+- **Large files** — the biggest things in your home folder, sorted by size and
+  filtered by kind: video, audio, images, archives, installers, documents. It
+  skips the places that only look big — `node_modules`, `.git`, DerivedData —
+  because a thousand small files are not what filled your disk.
+- **Uninstall an app** — dragging an app to the Bin leaves its settings, caches
+  and saved state behind. Perch finds them by **bundle identifier**, which is
+  unique, and tells you how sure it is: files matched by the identifier are
+  ticked, a helper's files are *probably this app*, and anything matched only
+  by the app's *name* is shown in orange and never ticked for you. An app
+  called Notes must not take your notes with it.
+- **Uninstall a command-line tool** — Homebrew formulae and casks, npm globals,
+  pipx apps and loose binaries in `~/.local/bin`, `~/go/bin` and friends. Tools
+  a package manager installed are removed with **that manager's own command**,
+  shown in full with Copy and Run beside it, because deleting `Cellar/ripgrep`
+  by hand leaves Homebrew believing it is still there. Only what you actually
+  asked to install is listed — not the forty dependencies underneath it.
+- **AI assistants** — Claude, Codex, Copilot, Gemini, Grok, Cursor, opencode and
+  the rest quietly keep every conversation, every cached model and every
+  installer they ever downloaded. Perch adds it up and lets you choose by age.
+  Caches, logs and downloads come ticked, because the tool rebuilds them without
+  noticing; **conversations and downloaded models never come ticked**, however
+  large, because only you know whether you want them back.
+
+> **What it will not touch.** Matching is an allowlist, not a block list — a
+> file is only offered if its name follows a convention Perch recognises. That
+> is why no credential, settings file or installed plugin can ever appear on
+> the list. Perch also never asks for Full Disk Access, so a few corners stay
+> invisible to it; saving you a few hundred megabytes is not worth being able
+> to read every file you own.
 
 ---
 
@@ -212,8 +272,24 @@ clean. Run it as yourself, not with `sudo` — Perch installs no helper or daemo
 | `⌃⌥↩` · `⌃⌥C` · `⌃⌥⌫` | Fill the screen · centre · put it back |
 | `⌃⌥⌘←` `⌃⌥⌘→` | Move the window to the other display |
 
-Every module popup can have a shortcut of its own, and the search panel has
-more keys still. The [User Manual](docs/USER_MANUAL.md) lists them all.
+Once the panel is open, your hands never leave it:
+
+| Key | Action |
+|---|---|
+| *type* | Filter the list as you go |
+| `↓` or `⇥` | Next result |
+| `↑` or `⇧⇥` | Previous result |
+| `↩` | Activate the selected app |
+| `→` | Open that row's options menu |
+| `⎋` | Close the panel |
+
+`⇥` walks the list the way `⌘⇥` does, so switching apps is one key held and
+tapped rather than a reach for the arrows. With an empty query the list is
+already in most-recently-used order — so `⌃Space ⇥ ↩` flips you back to the
+last app, and that is the whole gesture.
+
+Every module popup can be given a shortcut of its own too. The
+[User Manual](docs/USER_MANUAL.md) lists every key in the app.
 
 ---
 
@@ -314,6 +390,20 @@ way, because reading every sensor walks the whole controller table.
 </details>
 
 More answers live in the [User Manual](docs/USER_MANUAL.md).
+
+---
+
+## Something to send with a bug report
+
+Press the **bug** button at the bottom of the Settings sidebar. It copies a
+diagnostics report to your clipboard and opens the issue form, so you can paste
+it straight in — it is the first thing anyone will ask for.
+
+The report says which macOS and Perch you are running, which Mac you have,
+which modules are on and which readings answered. It is built to carry nothing
+that identifies you: no serial number, no Wi-Fi name, no IP or MAC address, no
+volume names. The tests assert each of those by name. It is plain text, so read
+it before you send it.
 
 ---
 

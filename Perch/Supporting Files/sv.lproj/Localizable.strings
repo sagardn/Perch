@@ -423,8 +423,6 @@
 "Record Shortcut" = "Spela in kortkommando";
 "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Klicka och tryck sedan på en kombination med ⌃, ⌥ eller ⌘. ⎋ avbryter, ⌫ rensar.";
 "%0 already uses this shortcut" = "%0 använder redan det här kortkommandot";
-
-// Views · Setup, window control
 "Allow…" = "Tillåt…";
 "Cycle the apps you mark" = "Växla mellan apparna du markerar";
 "Minimise and bring back" = "Minimera och ta tillbaka";
@@ -434,3 +432,4 @@
 "You're all set" = "Allt är klart";
 "window_control_message" = "Perchs kortkommandon flyttar och minimerar fönster åt dig. macOS ber dig tillåta det en gång, under Integritet och säkerhet → Hjälpmedel. Inget du skriver registreras eller skickas någonstans.";
 "finish_setup_body" = "Perch bor i menyraden. Klicka på ett mätvärde för detaljer, eller tryck på ⌃Space för att söka. Perch är gratis och öppen källkod; om du har nytta av det kan du stödja utvecklingen.";
+"Diagnostics copied — paste them into the issue" = "Diagnostik kopierad – klistra in den i rapporten";

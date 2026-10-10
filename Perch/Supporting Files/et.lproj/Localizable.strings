@@ -423,8 +423,6 @@
 "Record Shortcut" = "Salvesta otsetee";
 "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Klõpsake, seejärel vajutage kombinatsiooni klahviga ⌃, ⌥ või ⌘. ⎋ tühistab, ⌫ kustutab.";
 "%0 already uses this shortcut" = "%0 kasutab seda otseteed juba";
-
-// Views · Setup, window control
 "Allow…" = "Luba…";
 "Cycle the apps you mark" = "Liigu märgitud rakenduste vahel";
 "Minimise and bring back" = "Minimeeri ja too tagasi";
@@ -434,3 +432,4 @@
 "You're all set" = "Kõik on valmis";
 "window_control_message" = "Perchi otseteed liigutavad ja minimeerivad aknaid sinu eest. macOS palub sul seda üks kord lubada jaotises Privaatsus ja turvalisus → Hõlbustusfunktsioonid. Midagi, mida sisestad, ei salvestata ega saadeta kuhugi.";
 "finish_setup_body" = "Perch elab sinu menüüribal. Klõpsa näidul, et näha üksikasju, või vajuta otsimiseks ⌃Space. Perch on tasuta ja avatud lähtekoodiga; kui see on sulle kasulik, saad toetada selle arendamist.";
+"Diagnostics copied — paste them into the issue" = "Diagnostika kopeeritud – kleebi see veateatesse";

@@ -423,8 +423,6 @@
 "Record Shortcut" = "录制快捷键";
 "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "点按，然后按下含 ⌃、⌥ 或 ⌘ 的组合键。⎋ 取消，⌫ 清除。";
 "%0 already uses this shortcut" = "%0 已在使用此快捷键";
-
-// Views · Setup, window control
 "Allow…" = "允许…";
 "Cycle the apps you mark" = "在你标记的 App 之间循环切换";
 "Minimise and bring back" = "最小化并恢复";
@@ -434,3 +432,4 @@
 "You're all set" = "一切就绪";
 "window_control_message" = "Perch 的快捷键会替你移动和最小化窗口。macOS 会要求你在“隐私与安全性”→“辅助功能”中允许一次。你输入的任何内容都不会被记录或发送到任何地方。";
 "finish_setup_body" = "Perch 位于菜单栏中。点按读数可查看详细信息，或按 ⌃Space 进行搜索。Perch 免费且开源；如果它对你有用，你可以支持它的开发。";
+"Diagnostics copied — paste them into the issue" = "已拷贝诊断信息——粘贴到问题报告中";

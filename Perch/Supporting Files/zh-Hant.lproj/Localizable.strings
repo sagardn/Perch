@@ -423,8 +423,6 @@
 "Record Shortcut" = "錄製快速鍵";
 "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "按一下，然後按下含 ⌃、⌥ 或 ⌘ 的組合鍵。⎋ 取消，⌫ 清除。";
 "%0 already uses this shortcut" = "%0 已在使用此快速鍵";
-
-// Views · Setup, window control
 "Allow…" = "允許⋯";
 "Cycle the apps you mark" = "在你標記的 App 之間循環切換";
 "Minimise and bring back" = "縮到最小並恢復";
@@ -434,3 +432,4 @@
 "You're all set" = "一切就緒";
 "window_control_message" = "Perch 的快速鍵會替你移動視窗並將其縮到最小。macOS 會要求你在「隱私權與安全性」→「輔助使用」中允許一次。你輸入的任何內容都不會被記錄或傳送到任何地方。";
 "finish_setup_body" = "Perch 位於選單列中。按一下讀數可查看詳細資訊，或按 ⌃Space 進行搜尋。Perch 免費且開放原始碼；如果它對你有幫助，你可以支持它的開發。";
+"Diagnostics copied — paste them into the issue" = "已拷貝診斷資訊——貼到問題回報中";

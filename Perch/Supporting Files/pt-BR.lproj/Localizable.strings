@@ -423,8 +423,6 @@
 "Record Shortcut" = "Gravar Atalho";
 "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Clique e pressione uma combinação com ⌃, ⌥ ou ⌘. ⎋ cancela, ⌫ limpa.";
 "%0 already uses this shortcut" = "%0 já usa este atalho";
-
-// Views · Setup, window control
 "Allow…" = "Permitir…";
 "Cycle the apps you mark" = "Alternar entre os apps que você marcar";
 "Minimise and bring back" = "Minimizar e trazer de volta";
@@ -434,3 +432,4 @@
 "You're all set" = "Tudo pronto";
 "window_control_message" = "Os atalhos do Perch movem e minimizam janelas para você. O macOS pede que você permita isso uma vez, em Privacidade e Segurança → Acessibilidade. Nada do que você digita é registrado ou enviado a lugar nenhum.";
 "finish_setup_body" = "O Perch fica na sua barra de menus. Clique em uma leitura para ver os detalhes, ou pressione ⌃Space para buscar. O Perch é gratuito e de código aberto; se ele for útil para você, você pode apoiar o seu desenvolvimento.";
+"Diagnostics copied — paste them into the issue" = "Diagnóstico copiado — cole no relatório";

@@ -423,8 +423,6 @@
 "Record Shortcut" = "Kısayolu Kaydet";
 "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Tıklayın, sonra ⌃, ⌥ veya ⌘ içeren bir kombinasyona basın. ⎋ vazgeçer, ⌫ temizler.";
 "%0 already uses this shortcut" = "%0 bu kısayolu zaten kullanıyor";
-
-// Views · Setup, window control
 "Allow…" = "İzin Ver…";
 "Cycle the apps you mark" = "İşaretlediğiniz uygulamalar arasında geçiş yapın";
 "Minimise and bring back" = "Küçült ve geri getir";
@@ -434,3 +432,4 @@
 "You're all set" = "Her şey hazır";
 "window_control_message" = "Perch'ün kestirmeleri pencereleri sizin için taşır ve küçültür. macOS bunun için bir kez Gizlilik ve Güvenlik → Erişilebilirlik bölümünden izin vermenizi ister. Yazdığınız hiçbir şey kaydedilmez veya bir yere gönderilmez.";
 "finish_setup_body" = "Perch menü çubuğunuzda yaşar. Ayrıntılar için bir ölçüme tıklayın ya da aramak için ⌃Space tuşlarına basın. Perch ücretsiz ve açık kaynaktır; işinize yarıyorsa geliştirilmesine destek olabilirsiniz.";
+"Diagnostics copied — paste them into the issue" = "Tanılama kopyalandı — bildirime yapıştırın";

@@ -423,8 +423,6 @@
 "Record Shortcut" = "Posnemi bližnjico";
 "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Kliknite in pritisnite kombinacijo s ⌃, ⌥ ali ⌘. ⎋ prekliče, ⌫ počisti.";
 "%0 already uses this shortcut" = "%0 že uporablja to bližnjico";
-
-// Views · Setup, window control
 "Allow…" = "Dovoli …";
 "Cycle the apps you mark" = "Kroži med označenimi aplikacijami";
 "Minimise and bring back" = "Pomanjšaj in vrni";
@@ -434,3 +432,4 @@
 "You're all set" = "Vse je pripravljeno";
 "window_control_message" = "Bližnjice aplikacije Perch namesto vas premikajo in pomanjšujejo okna. macOS vas enkrat prosi, da to dovolite v razdelku Zasebnost in varnost → Dostopnost. Nič, kar vtipkate, se ne beleži in se nikamor ne pošilja.";
 "finish_setup_body" = "Perch domuje v menijski vrstici. Kliknite odčitek za podrobnosti ali pritisnite ⌃Space za iskanje. Perch je brezplačen in odprtokoden; če vam koristi, lahko podprete njegov razvoj.";
+"Diagnostics copied — paste them into the issue" = "Diagnostika kopirana – prilepite jo v prijavo";

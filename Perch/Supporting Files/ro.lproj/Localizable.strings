@@ -423,8 +423,6 @@
 "Record Shortcut" = "Înregistrați scurtătura";
 "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Faceți clic, apoi apăsați o combinație cu ⌃, ⌥ sau ⌘. ⎋ anulează, ⌫ șterge.";
 "%0 already uses this shortcut" = "%0 utilizează deja această scurtătură";
-
-// Views · Setup, window control
 "Allow…" = "Permite…";
 "Cycle the apps you mark" = "Comută între aplicațiile marcate";
 "Minimise and bring back" = "Minimizează și readu";
@@ -434,3 +432,4 @@
 "You're all set" = "Totul este gata";
 "window_control_message" = "Scurtăturile Perch mută și minimizează ferestrele în locul tău. macOS îți cere să permiți acest lucru o singură dată, în Confidențialitate și securitate → Accesibilitate. Nimic din ce tastezi nu este înregistrat sau trimis nicăieri.";
 "finish_setup_body" = "Perch locuiește în bara de meniu. Fă clic pe o valoare pentru detalii sau apasă ⌃Space pentru a căuta. Perch este gratuit și open source; dacă îți este util, poți sprijini dezvoltarea sa.";
+"Diagnostics copied — paste them into the issue" = "Diagnostic copiat — lipește-l în raport";
