@@ -361,3 +361,12 @@
 "%0% CPU for %1 minutes." = "%0% protsessorit %1 minuti jooksul.";
 "One app stays this busy for 5 minutes" = "Üks rakendus on 5 minutit nii hõivatud";
 "Open Activity Monitor to see why." = "Põhjuse nägemiseks ava Activity Monitor.";
+
+// Monitor · Throttling
+"The Mac slows down to cool off" = "Mac aeglustub, et jahtuda";
+"Throttling" = "Soojuspiirang";
+"Throttling hard" = "Tugev soojuspiirang";
+"Your Mac is slowing down to cool off" = "Sinu Mac aeglustub, et jahtuda";
+"macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS vähendas protsessori kiirust. Koormatud rakendused on aeglasemad, kuni see jahtub.";
+"slowed down to cool off" = "aeglustatud jahtumiseks";
+"warming up" = "soojeneb";

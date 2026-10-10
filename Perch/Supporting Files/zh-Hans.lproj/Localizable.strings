@@ -361,3 +361,12 @@
 "%0% CPU for %1 minutes." = "%1 分钟内 CPU 占用 %0%。";
 "One app stays this busy for 5 minutes" = "某个应用持续这么忙 5 分钟";
 "Open Activity Monitor to see why." = "打开“活动监视器”查看原因。";
+
+// Monitor · Throttling
+"The Mac slows down to cool off" = "Mac 为降温而降速";
+"Throttling" = "降频";
+"Throttling hard" = "严重降频";
+"Your Mac is slowing down to cool off" = "你的 Mac 正在降速以降温";
+"macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS 已降低处理器速度。在 Mac 冷却前，繁忙的 App 会变慢。";
+"slowed down to cool off" = "已降速以降温";
+"warming up" = "正在升温";

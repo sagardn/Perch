@@ -361,3 +361,12 @@
 "%0% CPU for %1 minutes." = "%0% CPU timp de %1 minute.";
 "One app stays this busy for 5 minutes" = "O aplicație rămâne atât de ocupată 5 minute";
 "Open Activity Monitor to see why." = "Deschideți Monitor activitate pentru a vedea de ce.";
+
+// Monitor · Throttling
+"The Mac slows down to cool off" = "Mac-ul încetinește pentru a se răci";
+"Throttling" = "Limitare termică";
+"Throttling hard" = "Limitare puternică";
+"Your Mac is slowing down to cool off" = "Mac-ul tău încetinește pentru a se răci";
+"macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS a redus viteza procesorului. Aplicațiile solicitante vor fi mai lente până se răcește.";
+"slowed down to cool off" = "încetinit pentru răcire";
+"warming up" = "se încălzește";

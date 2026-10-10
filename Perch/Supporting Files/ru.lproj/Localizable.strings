@@ -361,3 +361,12 @@
 "%0% CPU for %1 minutes." = "%0% ЦП в течение %1 мин.";
 "One app stays this busy for 5 minutes" = "Одно приложение так загружено 5 минут";
 "Open Activity Monitor to see why." = "Откройте Мониторинг системы, чтобы узнать причину.";
+
+// Monitor · Throttling
+"The Mac slows down to cool off" = "Mac замедляется для охлаждения";
+"Throttling" = "Троттлинг";
+"Throttling hard" = "Сильный троттлинг";
+"Your Mac is slowing down to cool off" = "Mac замедляется, чтобы остыть";
+"macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS снизила частоту процессора. Нагруженные приложения будут работать медленнее, пока Mac не остынет.";
+"slowed down to cool off" = "замедлен для охлаждения";
+"warming up" = "нагревается";

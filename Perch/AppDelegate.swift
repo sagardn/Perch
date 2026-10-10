@@ -110,6 +110,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate,
         setup {
             ModuleRegistry.shared.startAll()
             RunawayApps.shared.start()
+            Throttling.startWatching()
             // After the modules: the menu bar is built from what they say
             // about themselves, so started first the combined row would be
             // laid out before there was anything in it.

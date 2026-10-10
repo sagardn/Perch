@@ -135,6 +135,8 @@ final class CPUSettingsPage: NSView {
             RunawayApps.threshold = level
             RunawayApps.isEnabled = on
         })
+        let throttling = Controls.row(localized("The Mac slows down to cool off"),
+                                      Controls.toggle(Throttling.alertsEnabled) { Throttling.alertsEnabled = $0 })
         let alerts = Controls.section(localized("Notify me when"),
             CPUThreshold.allCases.filter { $0.isAvailable }.map { threshold in
                 Controls.row(threshold.title,
@@ -146,7 +148,7 @@ final class CPUSettingsPage: NSView {
                     threshold.isWatched = on
                     threshold.level = level
                 })
-            } + [runaway])
+            } + [runaway, throttling])
 
         let section = Controls.section(localized("CPU"), [
             Controls.row(localized("Show temperature"),

@@ -361,3 +361,12 @@
 "%0% CPU for %1 minutes." = "%0٪ پردازنده به مدت %1 دقیقه.";
 "One app stays this busy for 5 minutes" = "یک برنامه ۵ دقیقه این‌قدر مشغول بماند";
 "Open Activity Monitor to see why." = "برای دیدن علت، Activity Monitor را باز کنید.";
+
+// Monitor · Throttling
+"The Mac slows down to cool off" = "Mac برای خنک شدن کند می‌شود";
+"Throttling" = "محدودسازی حرارتی";
+"Throttling hard" = "محدودسازی شدید";
+"Your Mac is slowing down to cool off" = "Mac شما برای خنک شدن کند می‌شود";
+"macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS سرعت پردازنده را کاهش داده است. برنامه‌های پرکار تا خنک شدن آن کندتر به نظر می‌رسند.";
+"slowed down to cool off" = "برای خنک شدن کند شده";
+"warming up" = "در حال گرم شدن";

@@ -361,3 +361,12 @@
 "%0% CPU for %1 minutes." = "%0% CPU για %1 λεπτά.";
 "One app stays this busy for 5 minutes" = "Μία εφαρμογή μένει τόσο απασχολημένη για 5 λεπτά";
 "Open Activity Monitor to see why." = "Ανοίξτε την Παρακολούθηση δραστηριότητας για να δείτε γιατί.";
+
+// Monitor · Throttling
+"The Mac slows down to cool off" = "Το Mac επιβραδύνεται για να κρυώσει";
+"Throttling" = "Θερμικός περιορισμός";
+"Throttling hard" = "Έντονος περιορισμός";
+"Your Mac is slowing down to cool off" = "Το Mac σας επιβραδύνεται για να κρυώσει";
+"macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "Το macOS μείωσε την ταχύτητα του επεξεργαστή. Οι απαιτητικές εφαρμογές θα είναι πιο αργές μέχρι να κρυώσει.";
+"slowed down to cool off" = "επιβραδύνθηκε για να κρυώσει";
+"warming up" = "ζεσταίνεται";

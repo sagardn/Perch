@@ -361,3 +361,12 @@
 "%0% CPU for %1 minutes." = "%0% מעבד במשך %1 דקות.";
 "One app stays this busy for 5 minutes" = "אפליקציה אחת נשארת עמוסה כך במשך 5 דקות";
 "Open Activity Monitor to see why." = "פתחו את ‚מוניטור הפעילות‘ כדי לראות למה.";
+
+// Monitor · Throttling
+"The Mac slows down to cool off" = "ה־Mac מאט כדי להתקרר";
+"Throttling" = "האטה תרמית";
+"Throttling hard" = "האטה תרמית חמורה";
+"Your Mac is slowing down to cool off" = "ה־Mac שלך מאט כדי להתקרר";
+"macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS הוריד את מהירות המעבד. יישומים עמוסים יפעלו לאט יותר עד שיתקרר.";
+"slowed down to cool off" = "הואט כדי להתקרר";
+"warming up" = "מתחמם";

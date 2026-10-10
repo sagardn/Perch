@@ -441,3 +441,12 @@
 "%0% CPU for %1 minutes." = "%0% CPU for %1 minutes.";
 "One app stays this busy for 5 minutes" = "One app stays this busy for 5 minutes";
 "Open Activity Monitor to see why." = "Open Activity Monitor to see why.";
+
+// Monitor · Throttling
+"The Mac slows down to cool off" = "The Mac slows down to cool off";
+"Throttling" = "Throttling";
+"Throttling hard" = "Throttling hard";
+"Your Mac is slowing down to cool off" = "Your Mac is slowing down to cool off";
+"macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS has reduced the processor's speed. Busy apps will feel slower until it cools.";
+"slowed down to cool off" = "slowed down to cool off";
+"warming up" = "warming up";

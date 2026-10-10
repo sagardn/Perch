@@ -124,8 +124,9 @@ Every popup opens the same way — a one-line verdict like **● Light load** or
   menu bar to plain white.
 - **One item or many** — show each module separately, or combine them into a
   single compact menu bar item.
-- **Alerts** — get notified when a reading crosses a threshold you set, or when
-  your network changes.
+- **Alerts** — get notified when a reading crosses a threshold you set, when
+  your network changes, when one app has held the CPU for five minutes (with a
+  **Quit** button), or when macOS starts slowing your Mac down to cool it.
 
 ---
 

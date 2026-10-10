@@ -361,3 +361,12 @@
 "%0% CPU for %1 minutes." = "%1 মিনিট ধরে %0% CPU।";
 "One app stays this busy for 5 minutes" = "একটি অ্যাপ ৫ মিনিট ধরে এতটা ব্যস্ত থাকলে";
 "Open Activity Monitor to see why." = "কারণ দেখতে Activity Monitor খুলুন।";
+
+// Monitor · Throttling
+"The Mac slows down to cool off" = "Mac ঠান্ডা হতে ধীর হয়";
+"Throttling" = "থ্রটলিং";
+"Throttling hard" = "তীব্র থ্রটলিং";
+"Your Mac is slowing down to cool off" = "আপনার Mac ঠান্ডা হতে ধীর হচ্ছে";
+"macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS প্রসেসরের গতি কমিয়েছে। ঠান্ডা না হওয়া পর্যন্ত ব্যস্ত অ্যাপগুলি ধীর মনে হবে।";
+"slowed down to cool off" = "ঠান্ডা হতে ধীর করা হয়েছে";
+"warming up" = "গরম হচ্ছে";

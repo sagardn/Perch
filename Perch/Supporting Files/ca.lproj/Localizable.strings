@@ -361,3 +361,12 @@
 "%0% CPU for %1 minutes." = "%0% de CPU durant %1 minuts.";
 "One app stays this busy for 5 minutes" = "Una app es manté així d'ocupada durant 5 minuts";
 "Open Activity Monitor to see why." = "Obre el Monitor d'Activitat per veure per què.";
+
+// Monitor · Throttling
+"The Mac slows down to cool off" = "El Mac s’alenteix per refredar-se";
+"Throttling" = "Limitació tèrmica";
+"Throttling hard" = "Limitació intensa";
+"Your Mac is slowing down to cool off" = "El Mac s’està alentint per refredar-se";
+"macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "El macOS ha reduït la velocitat del processador. Les apps ocupades aniran més lentes fins que es refredi.";
+"slowed down to cool off" = "alentit per refredar-se";
+"warming up" = "escalfant-se";

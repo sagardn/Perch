@@ -361,3 +361,12 @@
 "%0% CPU for %1 minutes." = "%0% CPU selama %1 menit.";
 "One app stays this busy for 5 minutes" = "Satu app tetap sesibuk ini selama 5 menit";
 "Open Activity Monitor to see why." = "Buka Monitor Aktivitas untuk melihat alasannya.";
+
+// Monitor · Throttling
+"The Mac slows down to cool off" = "Mac melambat untuk mendinginkan diri";
+"Throttling" = "Throttling";
+"Throttling hard" = "Throttling berat";
+"Your Mac is slowing down to cool off" = "Mac Anda melambat untuk mendinginkan diri";
+"macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS telah menurunkan kecepatan prosesor. App yang sibuk akan terasa lebih lambat hingga Mac dingin.";
+"slowed down to cool off" = "diperlambat agar dingin";
+"warming up" = "mulai panas";

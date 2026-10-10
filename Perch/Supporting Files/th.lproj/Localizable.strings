@@ -361,3 +361,12 @@
 "%0% CPU for %1 minutes." = "CPU %0% เป็นเวลา %1 นาที";
 "One app stays this busy for 5 minutes" = "แอปหนึ่งยังคงทำงานหนักขนาดนี้นาน 5 นาที";
 "Open Activity Monitor to see why." = "เปิดตัวตรวจสอบกิจกรรมเพื่อดูสาเหตุ";
+
+// Monitor · Throttling
+"The Mac slows down to cool off" = "Mac ลดความเร็วเพื่อระบายความร้อน";
+"Throttling" = "ลดความเร็ว";
+"Throttling hard" = "ลดความเร็วอย่างมาก";
+"Your Mac is slowing down to cool off" = "Mac ของคุณกำลังลดความเร็วเพื่อระบายความร้อน";
+"macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS ได้ลดความเร็วของโปรเซสเซอร์ แอปที่ทำงานหนักจะช้าลงจนกว่าเครื่องจะเย็นลง";
+"slowed down to cool off" = "ลดความเร็วเพื่อระบายความร้อน";
+"warming up" = "กำลังร้อนขึ้น";

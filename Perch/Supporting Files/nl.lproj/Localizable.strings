@@ -361,3 +361,12 @@
 "%0% CPU for %1 minutes." = "%0% CPU gedurende %1 minuten.";
 "One app stays this busy for 5 minutes" = "Eén app blijft 5 minuten zo druk";
 "Open Activity Monitor to see why." = "Open Activiteitenweergave om te zien waarom.";
+
+// Monitor · Throttling
+"The Mac slows down to cool off" = "De Mac vertraagt om af te koelen";
+"Throttling" = "Thermische beperking";
+"Throttling hard" = "Sterke beperking";
+"Your Mac is slowing down to cool off" = "Je Mac vertraagt om af te koelen";
+"macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS heeft de processorsnelheid verlaagd. Drukke apps voelen trager aan totdat hij is afgekoeld.";
+"slowed down to cool off" = "vertraagd om af te koelen";
+"warming up" = "wordt warm";

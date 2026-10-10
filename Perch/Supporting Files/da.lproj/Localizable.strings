@@ -361,3 +361,12 @@
 "%0% CPU for %1 minutes." = "%0 % CPU i %1 minutter.";
 "One app stays this busy for 5 minutes" = "Én app er så travl i 5 minutter";
 "Open Activity Monitor to see why." = "Åbn Aktivitetsovervågning for at se hvorfor.";
+
+// Monitor · Throttling
+"The Mac slows down to cool off" = "Mac’en sænker farten for at køle af";
+"Throttling" = "Termisk drosling";
+"Throttling hard" = "Kraftig drosling";
+"Your Mac is slowing down to cool off" = "Din Mac sænker farten for at køle af";
+"macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS har sænket processorens hastighed. Travle apps vil føles langsommere, indtil den er kølet af.";
+"slowed down to cool off" = "sat ned i fart for at køle af";
+"warming up" = "bliver varm";

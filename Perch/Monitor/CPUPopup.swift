@@ -186,6 +186,9 @@ final class CPUModule: PopupContent {
             label: "CPU",
             load: load.total,
             value: "\(Int((load.total * 100).rounded()))%",
+            // Raised while macOS is slowing the processor to cool it, so a
+            // held-back Mac shows in the menu bar even at a low load.
+            severity: Throttling.severity(load: .of(load: load.total), Throttling.current),
             history: usageHistory,
             bars: load.cores.map { $0.total },
             segments: [.init(load.system, .perchMagenta), .init(load.user, .perchBlue)])
@@ -211,9 +214,14 @@ final class CPUModule: PopupContent {
             history.values = usageHistory
             bars.loads = load.cores.map { $0.total }
 
-            status.set(StatusWords.load(load.total),
-                       tint: MenuBarReading.Severity.of(load: load.total).tint,
-                       details: [CPUReadings.brand, uptime.map { "up " + $0 }].compactMap { $0 })
+            let thermal = Throttling.current
+            let severity = Throttling.severity(load: .of(load: load.total), thermal)
+            status.set(thermal.verdict ?? StatusWords.load(load.total),
+                       tint: severity.tint,
+                       details: [thermal >= .throttled ? localized("slowed down to cool off") : nil,
+                                 thermal == .warm ? localized("warming up") : nil,
+                                 CPUReadings.brand,
+                                 uptime.map { "up " + $0 }].compactMap { $0 })
 
             splitBar.segments = [.init(fraction: load.user, color: .perchBlue),
                                  .init(fraction: load.system, color: .perchMagenta)]

@@ -361,3 +361,12 @@
 "%0% CPU for %1 minutes." = "%0 % procesora tijekom %1 minuta.";
 "One app stays this busy for 5 minutes" = "Jedna aplikacija ostaje ovako zauzeta 5 minuta";
 "Open Activity Monitor to see why." = "Otvorite Monitor aktivnosti da vidite zašto.";
+
+// Monitor · Throttling
+"The Mac slows down to cool off" = "Mac usporava kako bi se ohladio";
+"Throttling" = "Toplinsko ograničavanje";
+"Throttling hard" = "Jako ograničavanje";
+"Your Mac is slowing down to cool off" = "Vaš Mac usporava kako bi se ohladio";
+"macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS je smanjio brzinu procesora. Zauzete aplikacije bit će sporije dok se ne ohladi.";
+"slowed down to cool off" = "usporen radi hlađenja";
+"warming up" = "zagrijava se";

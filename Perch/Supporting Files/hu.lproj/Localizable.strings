@@ -361,3 +361,12 @@
 "%0% CPU for %1 minutes." = "%0% CPU %1 perce.";
 "One app stays this busy for 5 minutes" = "Egy app 5 percig ennyire leterhelt";
 "Open Activity Monitor to see why." = "A Tevékenységfigyelőben megnézheti, miért.";
+
+// Monitor · Throttling
+"The Mac slows down to cool off" = "A Mac lelassul, hogy lehűljön";
+"Throttling" = "Hőfojtás";
+"Throttling hard" = "Erős hőfojtás";
+"Your Mac is slowing down to cool off" = "A Mac lelassul, hogy lehűljön";
+"macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "A macOS csökkentette a processzor sebességét. A leterhelt appok lassabbak lesznek, amíg le nem hűl.";
+"slowed down to cool off" = "lelassult a hűlés érdekében";
+"warming up" = "melegszik";

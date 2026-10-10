@@ -387,6 +387,14 @@ command-line tool or system process is named, with a pointer to Activity
 Monitor, and no button. It is reported once per busy stretch, not every
 half minute.
 
+**Throttling.** When macOS slows the processor down to cool it -- a fanless
+MacBook Air under sustained load does -- the CPU popup's status line says
+**Throttling** (or **Throttling hard**), and the CPU figure in the menu bar
+turns amber or red even at a low load, because a held-back Mac feels slow
+whatever the percentage says. One step earlier it adds **warming up**. This is
+macOS's own thermal state, not a guess from a temperature. **The Mac slows
+down to cool off** on the CPU page sends one notification as it starts.
+
 **Network** works the other way, under **Tell me when**: it notifies you when
 the interface, the local IP, the Wi-Fi network or the public IP changes. The
 public IP is only looked up when **Look up the public address** is on; see

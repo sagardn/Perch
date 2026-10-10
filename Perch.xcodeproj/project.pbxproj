@@ -98,6 +98,7 @@
 		FEEDFACEB205000000000000 /* NetworkPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACEF205000000000000 /* NetworkPopup.swift */; };
 		FEEDFACEB2E0000000000000 /* PopupParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACEF2E0000000000000 /* PopupParts.swift */; };
 		FEEDFACEB2E5000000000000 /* RunawayApps.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACEF2E5000000000000 /* RunawayApps.swift */; };
+		FEEDFACEB2E6000000000000 /* Throttling.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACEF2E6000000000000 /* Throttling.swift */; };
 		FEEDFACEB206000000000000 /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACEF206000000000000 /* Popup.swift */; };
 		FEEDFACEB207000000000000 /* PopupSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACEF207000000000000 /* PopupSection.swift */; };
 		FEEDFACEB208000000000000 /* ProcessNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACEF208000000000000 /* ProcessNetwork.swift */; };
@@ -332,6 +333,7 @@
 		FEEDFACEF205000000000000 /* NetworkPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkPopup.swift; sourceTree = "<group>"; };
 		FEEDFACEF2E0000000000000 /* PopupParts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupParts.swift; sourceTree = "<group>"; };
 		FEEDFACEF2E5000000000000 /* RunawayApps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunawayApps.swift; sourceTree = "<group>"; };
+		FEEDFACEF2E6000000000000 /* Throttling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Throttling.swift; sourceTree = "<group>"; };
 		FEEDFACEF206000000000000 /* Popup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Popup.swift; sourceTree = "<group>"; };
 		FEEDFACEF207000000000000 /* PopupSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupSection.swift; sourceTree = "<group>"; };
 		FEEDFACEF208000000000000 /* ProcessNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessNetwork.swift; sourceTree = "<group>"; };
@@ -572,6 +574,7 @@
 				FEEDFACEF205000000000000 /* NetworkPopup.swift */,
 				FEEDFACEF2E0000000000000 /* PopupParts.swift */,
 				FEEDFACEF2E5000000000000 /* RunawayApps.swift */,
+				FEEDFACEF2E6000000000000 /* Throttling.swift */,
 				FEEDFACEF206000000000000 /* Popup.swift */,
 				FEEDFACEF207000000000000 /* PopupSection.swift */,
 				FEEDFACEF208000000000000 /* ProcessNetwork.swift */,
@@ -895,6 +898,7 @@
 				FEEDFACEB205000000000000 /* NetworkPopup.swift in Sources */,
 				FEEDFACEB2E0000000000000 /* PopupParts.swift in Sources */,
 				FEEDFACEB2E5000000000000 /* RunawayApps.swift in Sources */,
+				FEEDFACEB2E6000000000000 /* Throttling.swift in Sources */,
 				FEEDFACEB206000000000000 /* Popup.swift in Sources */,
 				FEEDFACEB207000000000000 /* PopupSection.swift in Sources */,
 				FEEDFACEB208000000000000 /* ProcessNetwork.swift in Sources */,
