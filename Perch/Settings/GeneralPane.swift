@@ -267,6 +267,15 @@ final class GeneralPane: NSStackView {
                 Controls.button("Import…") { [weak self] in self?.importSettings() },
                 reset,
             ])),
+            // Next to Export because it is the same kind of thing -- text
+            // about this install, for somewhere else. It carries no serial
+            // number, network name or address; see Diagnostics.
+            Controls.row(localized("Diagnostics"),
+                         Controls.button("Copy report") {
+                             Diagnostics.copyToPasteboard()
+                             Notify.show(localized("Diagnostics copied"),
+                                         symbol: "doc.on.clipboard")
+                         }),
         ])
     }
 
