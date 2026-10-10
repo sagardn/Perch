@@ -132,3 +132,34 @@ jobs:
 
             Perch checks this feed once per day and tells you when a release is
             newer. Settings → Check for updates changes or disables that.
+
+            ### On 1.0.5 or older? Update once by hand
+
+            If updating shows **"DMG signature validation failed: could not
+            read current team ID"**, you are on 1.0.0–1.0.5 and the updater in
+            that build cannot install any release we publish — including this
+            one.
+
+            Those versions check that the running app and the download are
+            signed by the same Apple Developer team. Perch is signed ad hoc,
+            so it has no team to read, and the check fails on the app's *own*
+            signature before it ever looks at the download. Nothing we publish
+            can satisfy it, which is why this needs one manual update rather
+            than waiting for a fix.
+
+            Paste this in Terminal. It replaces the app in place and keeps
+            your settings:
+
+            ```bash
+            curl -fsSL https://raw.githubusercontent.com/sagardn/Perch/main/Tools/install.sh | bash
+            ```
+
+            From 1.0.6 onward the updater verifies a SHA-256 checksum instead,
+            which works with an ad-hoc signature. Updating goes back to being
+            automatic after this once.
+
+            One thing to do afterwards: an ad-hoc signature changes with every
+            build, so macOS drops Perch's Accessibility permission when the app
+            is replaced. Remove Perch from **System Settings → Privacy &
+            Security → Accessibility** with **−**, then allow it again, or the
+            window and hotkey features stay silent.
