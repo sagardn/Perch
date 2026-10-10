@@ -38,6 +38,14 @@ else
     SIGNING=(CODE_SIGN_IDENTITY="-" CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM="")
 fi
 
+# The bundle, not the derived data: an incremental build leaves the previous
+# Perch.app in place and updates it, and a resource that changed outside the
+# compiler's view -- a .lproj rewritten between builds -- then fails
+# `codesign --verify` with "a sealed resource is missing or invalid", which
+# reads as a signing problem and is a staleness problem. Removing the bundle
+# costs a re-link and a re-sign; the compiled objects are kept.
+rm -rf "$APP"
+
 xcodebuild -project Perch.xcodeproj -scheme Perch -configuration Release \
     -derivedDataPath "$DERIVED" "${SIGNING[@]}" build -quiet
 
