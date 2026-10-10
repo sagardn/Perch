@@ -1,0 +1,7 @@
+.build/
+build/
+Perch.app/
+*.xcuserstate
+xcuserdata/
+.DS_Store
+launcher/Perch.iconset/

@@ -1,0 +1,235 @@
+/*
+ * Localizable.strings — Perch, French.
+ *
+ * The source every other language is checked against: `python3 Tools/i18n.py`
+ * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
+ * in step with the code. %0, %1 ... are filled in by `localized()` in
+ * Perch/UI/Localized.swift and must survive translation.
+ */
+
+// Monitor · CPUModuleShell
+"CPU" = "CPU";
+"None" = "Aucun";
+"2 minutes" = "2 minutes";
+"Chart history" = "Historique du graphique";
+"Top processes" = "Processus principaux";
+"1 minute" = "1 minute";
+"5 minutes" = "5 minutes";
+"Menu bar" = "Barre des menus";
+"Notify me when" = "M’avertir quand";
+
+// Monitor · CPUPopup
+"Clock" = "Fréquence";
+"Processor" = "Processeur";
+"Cores" = "Cœurs";
+"Uptime" = "Durée d’activité";
+"System" = "Système";
+"User" = "Utilisateur";
+"CPU usage threshold" = "Seuil d’utilisation du CPU";
+"Total" = "Total";
+"Temperature" = "Température";
+
+// Monitor · CombinedBar
+"No module has anything to show here yet." = "Aucun module n’a encore rien à afficher ici.";
+"Combined modules" = "Modules combinés";
+"Combined details" = "Détails combinés";
+
+// Monitor · DiskModuleShell
+"Disk" = "Disque";
+"Startup volume" = "Volume de démarrage";
+"not mounted" = "non monté";
+
+// Monitor · DiskPopup
+"Format" = "Format";
+"Used" = "Utilisé";
+"Free" = "Libre";
+"Disk usage threshold" = "Seuil d’utilisation du disque";
+
+// Monitor · DiskTile
+"free" = "libres";
+
+// Monitor · GPUModuleShell
+"GPU" = "GPU";
+
+// Monitor · GPUPopup
+"Memory" = "Mémoire";
+"Model" = "Modèle";
+"Utilization" = "Utilisation";
+"GPU usage threshold" = "Seuil d’utilisation du GPU";
+
+// Monitor · GPUTile
+"cores" = "cœurs";
+
+// Monitor · MemoryReadings
+"Normal" = "Normale";
+"Warning" = "Avertissement";
+"Critical" = "Critique";
+
+// Monitor · MenuBarStyle
+"Name" = "Nom";
+"Figure" = "Chiffre";
+"Ring" = "Anneau";
+"Gauge" = "Jauge";
+"Used and free" = "Utilisé et libre";
+"Rates" = "Débits";
+"Bar chart" = "Barres";
+"Line chart" = "Courbe";
+"Traffic chart" = "Trafic";
+
+// Monitor · NetworkModuleShell
+"Network" = "Réseau";
+"Internet connection lost" = "Connexion Internet perdue";
+"Internet connection established" = "Connexion Internet établie";
+"Tell me when" = "Me prévenir quand";
+"Connection comes or goes" = "La connexion apparaît ou disparaît";
+"Wi-Fi network changes" = "Le réseau Wi-Fi change";
+"Interface changes" = "L’interface change";
+"Local address changes" = "L’adresse locale change";
+"Public address changes" = "L’adresse publique change";
+
+// Monitor · NetworkPopup
+"Download" = "Réception";
+"Local IP" = "IP locale";
+"Interface" = "Interface";
+"Physical address" = "Adresse physique";
+"Online" = "En ligne";
+"Offline" = "Hors ligne";
+
+// Monitor · Popup
+"Dashboard" = "Tableau de bord";
+
+// Monitor · PopupParts
+"Idle" = "Inactif";
+
+// Monitor · PopupSection
+"Process" = "Processus";
+
+// Monitor · RAMModuleShell
+"RAM" = "RAM";
+
+// Monitor · RAMPopup
+"Wired" = "Résidente";
+"Compressed" = "Compressée";
+"Swap size" = "Taille du swap";
+"Memory threshold" = "Seuil de mémoire";
+
+// Monitor · RAMTile
+"App" = "App";
+"Swap" = "Swap";
+"Pressure" = "Pression mémoire";
+
+// Monitor · SensorReadings
+"Battery" = "Batterie";
+
+// Monitor · SensorsModuleShell
+"Sensors" = "Capteurs";
+"Show in the popup" = "Afficher dans la fenêtre";
+"Hottest temperature" = "Température maximale";
+
+// Monitor · SensorsPopup
+"History" = "Historique";
+
+// Monitor · SensorsTile
+"hottest" = "max.";
+"sensors" = "capteurs";
+"No sensors answered" = "Aucun capteur n’a répondu";
+
+// Monitor · Thresholds
+"Total load" = "Charge totale";
+"System load" = "Charge système";
+"User load" = "Charge utilisateur";
+"Efficiency cores load" = "Charge des cœurs à haute efficacité";
+"Performance cores load" = "Charge des cœurs de performance";
+"Memory pressure" = "Pression de la mémoire";
+"Memory used" = "Mémoire utilisée";
+"Memory free" = "Mémoire libre";
+"Swap in use" = "Swap utilisé";
+"Disk usage" = "Utilisation du disque";
+
+// Settings · GeneralPane
+"Reset" = "Réinitialiser";
+"Silent" = "Silencieux";
+"Settings" = "Réglages";
+"Check for updates" = "Rechercher des mises à jour";
+"Once per day" = "Une fois par jour";
+"Once per week" = "Une fois par semaine";
+"Never" = "Jamais";
+"Check for update" = "Rechercher une mise à jour";
+"Start at login" = "Ouvrir à la connexion";
+"Spacing" = "Espacement";
+"Celsius" = "Celsius";
+"Fahrenheit" = "Fahrenheit";
+
+// Settings · UpdateInterval
+"At start" = "Au démarrage";
+"Once per month" = "Une fois par mois";
+
+// Startup · Startup
+"Successfully updated" = "Mise à jour réussie";
+"Perch was updated to v" = "Perch a été mis à jour vers la version %0";
+
+// Startup · UpdateCheck
+"New version available" = "Nouvelle version disponible";
+"Click to install the new version of Perch" = "Cliquez pour installer la nouvelle version de Perch";
+
+// System · DashboardPane
+"Unknown" = "Inconnu";
+"Graphics" = "Graphisme";
+"Serial number" = "Numéro de série";
+"Model identifier" = "Identifiant du modèle";
+"Production year" = "Année de fabrication";
+"Number of cores" = "%0 cœurs";
+"Number of threads" = "%0 threads";
+"Number of e-cores" = "%0 cœurs à haute efficacité";
+"Number of p-cores" = "%0 cœurs de performance";
+"Disks" = "Disques";
+"Display" = "Écran";
+
+// UI · SupportWindow
+"Close" = "Fermer";
+"Support text" = "Merci d’utiliser Perch.\n\nPerch est gratuit et open source, développé et maintenu sur du temps libre. S’il vous facilite un peu la vie, une contribution aide à le faire vivre.";
+"Support Perch" = "Soutenir Perch";
+"Donate" = "Faire un don";
+
+// Update · UpdateWindow
+"Install" = "Installer";
+
+// Views · SettingsShell
+"Report a bug" = "Signaler un bug";
+"Support the application" = "Soutenir l’app";
+"Close application" = "Quitter l’app";
+"Toggle the module" = "Activer ou désactiver le module";
+"Modules" = "Modules";
+"Search" = "Rechercher";
+"Preview" = "Aperçu";
+"Support" = "Soutien";
+"Pause the Perch" = "Mettre Perch en pause";
+
+// Views · Setup
+"Perch Setup" = "Configuration de Perch";
+"Previous" = "Précédent";
+"Previous page" = "Page précédente";
+"Welcome to Perch" = "Bienvenue dans Perch";
+"welcome_message" = "Perch place un moniteur système, un lanceur d’apps et un sélecteur de fenêtres dans votre barre des menus. Cette courte configuration choisit ce qui s’affiche en premier.";
+"Select preset" = "Choisir un préréglage";
+"select_preset_message" = "Choisissez un ensemble de modules de départ. Vous pourrez tout modifier plus tard dans les Réglages.";
+"Start the application automatically when starting your Mac" = "Ouvrir l’app automatiquement au démarrage de votre Mac";
+"Do not start the application automatically when starting your Mac" = "Ne pas ouvrir l’app automatiquement au démarrage de votre Mac";
+"Do everything silently in the background (recommended)" = "Tout faire discrètement en arrière-plan (recommandé)";
+"Check for a new version on startup" = "Rechercher une nouvelle version au démarrage";
+"Check for a new version every day (once a day)" = "Rechercher une nouvelle version chaque jour (une fois par jour)";
+"Check for a new version every week (once a week)" = "Rechercher une nouvelle version chaque semaine (une fois par semaine)";
+"Check for a new version every month (once a month)" = "Rechercher une nouvelle version chaque mois (une fois par mois)";
+"Never check for updates (not recommended)" = "Ne jamais rechercher de mises à jour (déconseillé)";
+"The configuration is completed" = "La configuration est terminée";
+"finish_setup_message" = "Tout est prêt.\n\nPerch est gratuit et open source. S’il vous est utile, vous pouvez soutenir son développement.";
+
+// Views · SetupFlow
+"Next" = "Suivant";
+"Next page" = "Page suivante";
+"Finish" = "Terminer";
+"Finish setup" = "Terminer la configuration";
+"Default" = "Par défaut";
+"Basic" = "Essentiel";
+"Recommended" = "Recommandé";
+"Extended" = "Étendu";

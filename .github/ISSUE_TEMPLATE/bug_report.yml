@@ -1,0 +1,68 @@
+name: Bug report
+description: Something in Perch behaves incorrectly
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The in-app **Report a bug** button (the ant in the settings sidebar)
+        opens this form. The two fields below save a round trip, since almost
+        every answer starts with "which version, and which Mac".
+
+  - type: input
+    id: version
+    attributes:
+      label: Perch version
+      description: Settings → the version under the app name.
+      placeholder: "1.0.0"
+    validations:
+      required: true
+
+  - type: input
+    id: macos
+    attributes:
+      label: macOS version and Mac model
+      placeholder: "macOS 26.1, MacBook Pro M3"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Where does it happen?
+      options:
+        - Menu bar widget
+        - Module popup
+        - Settings window
+        - App search (Ctrl+Space)
+        - Sensors / temperatures
+        - Updates
+        - Somewhere else
+    validations:
+      required: true
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what did you expect instead?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open …
+        2. Click …
+        3. …
+    validations:
+      required: true
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Screenshot or log (optional)
+      description: |
+        A screenshot settles most UI reports. For a crash, Console.app →
+        Crash Reports → the newest Perch entry.

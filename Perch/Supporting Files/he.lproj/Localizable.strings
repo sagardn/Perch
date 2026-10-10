@@ -1,0 +1,235 @@
+/*
+ * Localizable.strings — Perch, Hebrew.
+ *
+ * The source every other language is checked against: `python3 Tools/i18n.py`
+ * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
+ * in step with the code. %0, %1 ... are filled in by `localized()` in
+ * Perch/UI/Localized.swift and must survive translation.
+ */
+
+// Monitor · CPUModuleShell
+"CPU" = "CPU";
+"None" = "ללא";
+"2 minutes" = "2 דקות";
+"Chart history" = "היסטוריית התרשים";
+"Top processes" = "תהליכים מובילים";
+"1 minute" = "דקה אחת";
+"5 minutes" = "5 דקות";
+"Menu bar" = "שורת התפריטים";
+"Notify me when" = "להודיע לי כאשר";
+
+// Monitor · CPUPopup
+"Clock" = "תדר";
+"Processor" = "מעבד";
+"Cores" = "ליבות";
+"Uptime" = "זמן פעולה";
+"System" = "מערכת";
+"User" = "משתמש";
+"CPU usage threshold" = "סף ניצול CPU";
+"Total" = "סה״כ";
+"Temperature" = "טמפרטורה";
+
+// Monitor · CombinedBar
+"No module has anything to show here yet." = "לאף מודול אין עדיין מה להציג כאן.";
+"Combined modules" = "מודולים משולבים";
+"Combined details" = "פרטים משולבים";
+
+// Monitor · DiskModuleShell
+"Disk" = "דיסק";
+"Startup volume" = "דיסק האתחול";
+"not mounted" = "לא מחובר";
+
+// Monitor · DiskPopup
+"Format" = "פורמט";
+"Used" = "בשימוש";
+"Free" = "פנוי";
+"Disk usage threshold" = "סף ניצול הדיסק";
+
+// Monitor · DiskTile
+"free" = "פנוי";
+
+// Monitor · GPUModuleShell
+"GPU" = "GPU";
+
+// Monitor · GPUPopup
+"Memory" = "זיכרון";
+"Model" = "דגם";
+"Utilization" = "ניצול";
+"GPU usage threshold" = "סף ניצול GPU";
+
+// Monitor · GPUTile
+"cores" = "ליבות";
+
+// Monitor · MemoryReadings
+"Normal" = "רגיל";
+"Warning" = "אזהרה";
+"Critical" = "קריטי";
+
+// Monitor · MenuBarStyle
+"Name" = "שם";
+"Figure" = "מספר";
+"Ring" = "טבעת";
+"Gauge" = "מד";
+"Used and free" = "בשימוש ופנוי";
+"Rates" = "קצבים";
+"Bar chart" = "תרשים עמודות";
+"Line chart" = "תרשים קווי";
+"Traffic chart" = "תרשים תעבורה";
+
+// Monitor · NetworkModuleShell
+"Network" = "רשת";
+"Internet connection lost" = "החיבור לאינטרנט אבד";
+"Internet connection established" = "החיבור לאינטרנט נוצר";
+"Tell me when" = "לעדכן אותי כאשר";
+"Connection comes or goes" = "החיבור נוצר או מתנתק";
+"Wi-Fi network changes" = "רשת ה-Wi-Fi משתנה";
+"Interface changes" = "הממשק משתנה";
+"Local address changes" = "הכתובת המקומית משתנה";
+"Public address changes" = "הכתובת הציבורית משתנה";
+
+// Monitor · NetworkPopup
+"Download" = "הורדה";
+"Local IP" = "כתובת IP מקומית";
+"Interface" = "ממשק";
+"Physical address" = "כתובת פיזית";
+"Online" = "מקוון";
+"Offline" = "לא מקוון";
+
+// Monitor · Popup
+"Dashboard" = "לוח מחוונים";
+
+// Monitor · PopupParts
+"Idle" = "לא פעיל";
+
+// Monitor · PopupSection
+"Process" = "תהליך";
+
+// Monitor · RAMModuleShell
+"RAM" = "RAM";
+
+// Monitor · RAMPopup
+"Wired" = "קבוע";
+"Compressed" = "דחוס";
+"Swap size" = "גודל החלפה";
+"Memory threshold" = "סף זיכרון";
+
+// Monitor · RAMTile
+"App" = "יישומים";
+"Swap" = "החלפה";
+"Pressure" = "לחץ";
+
+// Monitor · SensorReadings
+"Battery" = "סוללה";
+
+// Monitor · SensorsModuleShell
+"Sensors" = "חיישנים";
+"Show in the popup" = "הצגה בחלון הקופץ";
+"Hottest temperature" = "הטמפרטורה הגבוהה ביותר";
+
+// Monitor · SensorsPopup
+"History" = "היסטוריה";
+
+// Monitor · SensorsTile
+"hottest" = "הכי חם";
+"sensors" = "חיישנים";
+"No sensors answered" = "אף חיישן לא הגיב";
+
+// Monitor · Thresholds
+"Total load" = "עומס כולל";
+"System load" = "עומס מערכת";
+"User load" = "עומס משתמש";
+"Efficiency cores load" = "עומס ליבות יעילות";
+"Performance cores load" = "עומס ליבות ביצועים";
+"Memory pressure" = "לחץ זיכרון";
+"Memory used" = "זיכרון בשימוש";
+"Memory free" = "זיכרון פנוי";
+"Swap in use" = "החלפה בשימוש";
+"Disk usage" = "ניצול הדיסק";
+
+// Settings · GeneralPane
+"Reset" = "איפוס";
+"Silent" = "שקט";
+"Settings" = "הגדרות";
+"Check for updates" = "בדיקת עדכונים";
+"Once per day" = "פעם ביום";
+"Once per week" = "פעם בשבוע";
+"Never" = "אף פעם";
+"Check for update" = "בדיקת עדכון";
+"Start at login" = "הפעלה בהתחברות";
+"Spacing" = "ריווח";
+"Celsius" = "צלזיוס";
+"Fahrenheit" = "פרנהייט";
+
+// Settings · UpdateInterval
+"At start" = "בהפעלה";
+"Once per month" = "פעם בחודש";
+
+// Startup · Startup
+"Successfully updated" = "העדכון הצליח";
+"Perch was updated to v" = "Perch עודכן לגרסה %0";
+
+// Startup · UpdateCheck
+"New version available" = "גרסה חדשה זמינה";
+"Click to install the new version of Perch" = "יש ללחוץ כדי להתקין את הגרסה החדשה של Perch";
+
+// System · DashboardPane
+"Unknown" = "לא ידוע";
+"Graphics" = "גרפיקה";
+"Serial number" = "מספר סידורי";
+"Model identifier" = "מזהה דגם";
+"Production year" = "שנת ייצור";
+"Number of cores" = "%0 ליבות";
+"Number of threads" = "%0 תהליכונים";
+"Number of e-cores" = "%0 ליבות יעילות";
+"Number of p-cores" = "%0 ליבות ביצועים";
+"Disks" = "דיסקים";
+"Display" = "צג";
+
+// UI · SupportWindow
+"Close" = "סגירה";
+"Support text" = "תודה על השימוש ב-Perch.\n\nPerch חינמי ובקוד פתוח, והוא נבנה ומתוחזק בזמן הפנוי. אם הוא מקל מעט על היום שלך, תרומה עוזרת לו להמשיך.";
+"Support Perch" = "תמיכה ב-Perch";
+"Donate" = "תרומה";
+
+// Update · UpdateWindow
+"Install" = "התקנה";
+
+// Views · SettingsShell
+"Report a bug" = "דיווח על באג";
+"Support the application" = "תמיכה ביישום";
+"Close application" = "סגירת היישום";
+"Toggle the module" = "הפעלה או כיבוי של המודול";
+"Modules" = "מודולים";
+"Search" = "חיפוש";
+"Preview" = "תצוגה מקדימה";
+"Support" = "תמיכה";
+"Pause the Perch" = "השהיית Perch";
+
+// Views · Setup
+"Perch Setup" = "הגדרת Perch";
+"Previous" = "הקודם";
+"Previous page" = "העמוד הקודם";
+"Welcome to Perch" = "ברוכים הבאים ל-Perch";
+"welcome_message" = "Perch מוסיף לשורת התפריטים ניטור מערכת, משגר יישומים ומחליף חלונות. ההגדרה הקצרה הזו קובעת מה יוצג קודם.";
+"Select preset" = "בחירת ערכה מוכנה";
+"select_preset_message" = "יש לבחור ערכת מודולים להתחלה. אפשר לשנות כל חלק ממנה מאוחר יותר בהגדרות.";
+"Start the application automatically when starting your Mac" = "להפעיל את היישום אוטומטית עם הפעלת ה-Mac";
+"Do not start the application automatically when starting your Mac" = "לא להפעיל את היישום אוטומטית עם הפעלת ה-Mac";
+"Do everything silently in the background (recommended)" = "לבצע הכול בשקט ברקע (מומלץ)";
+"Check for a new version on startup" = "לבדוק אם יש גרסה חדשה בהפעלה";
+"Check for a new version every day (once a day)" = "לבדוק אם יש גרסה חדשה כל יום (פעם ביום)";
+"Check for a new version every week (once a week)" = "לבדוק אם יש גרסה חדשה כל שבוע (פעם בשבוע)";
+"Check for a new version every month (once a month)" = "לבדוק אם יש גרסה חדשה כל חודש (פעם בחודש)";
+"Never check for updates (not recommended)" = "לא לבדוק אף פעם אם יש עדכונים (לא מומלץ)";
+"The configuration is completed" = "ההגדרה הושלמה";
+"finish_setup_message" = "הכול מוכן.\n\nPerch חינמי ובקוד פתוח. אם הוא מועיל לך, אפשר לתמוך בפיתוח שלו.";
+
+// Views · SetupFlow
+"Next" = "הבא";
+"Next page" = "העמוד הבא";
+"Finish" = "סיום";
+"Finish setup" = "סיום ההגדרה";
+"Default" = "ברירת מחדל";
+"Basic" = "בסיסי";
+"Recommended" = "מומלץ";
+"Extended" = "מורחב";

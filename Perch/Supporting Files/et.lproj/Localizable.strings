@@ -1,0 +1,235 @@
+/*
+ * Localizable.strings — Perch, Estonian.
+ *
+ * The source every other language is checked against: `python3 Tools/i18n.py`
+ * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
+ * in step with the code. %0, %1 ... are filled in by `localized()` in
+ * Perch/UI/Localized.swift and must survive translation.
+ */
+
+// Monitor · CPUModuleShell
+"CPU" = "CPU";
+"None" = "Puudub";
+"2 minutes" = "2 minutit";
+"Chart history" = "Diagrammi ajalugu";
+"Top processes" = "Suurimad protsessid";
+"1 minute" = "1 minut";
+"5 minutes" = "5 minutit";
+"Menu bar" = "Menüüriba";
+"Notify me when" = "Teavita mind, kui";
+
+// Monitor · CPUPopup
+"Clock" = "Taktsagedus";
+"Processor" = "Protsessor";
+"Cores" = "Tuumad";
+"Uptime" = "Tööaeg";
+"System" = "Süsteem";
+"User" = "Kasutaja";
+"CPU usage threshold" = "CPU kasutuse lävi";
+"Total" = "Kokku";
+"Temperature" = "Temperatuur";
+
+// Monitor · CombinedBar
+"No module has anything to show here yet." = "Ühelgi moodulil pole siin veel midagi näidata.";
+"Combined modules" = "Ühendatud moodulid";
+"Combined details" = "Ühendatud üksikasjad";
+
+// Monitor · DiskModuleShell
+"Disk" = "Ketas";
+"Startup volume" = "Käivitusketas";
+"not mounted" = "pole ühendatud";
+
+// Monitor · DiskPopup
+"Format" = "Vorming";
+"Used" = "Kasutatud";
+"Free" = "Vaba";
+"Disk usage threshold" = "Ketta kasutuse lävi";
+
+// Monitor · DiskTile
+"free" = "vaba";
+
+// Monitor · GPUModuleShell
+"GPU" = "GPU";
+
+// Monitor · GPUPopup
+"Memory" = "Mälu";
+"Model" = "Mudel";
+"Utilization" = "Koormus";
+"GPU usage threshold" = "GPU kasutuse lävi";
+
+// Monitor · GPUTile
+"cores" = "tuuma";
+
+// Monitor · MemoryReadings
+"Normal" = "Normaalne";
+"Warning" = "Hoiatus";
+"Critical" = "Kriitiline";
+
+// Monitor · MenuBarStyle
+"Name" = "Nimi";
+"Figure" = "Arv";
+"Ring" = "Rõngas";
+"Gauge" = "Näidik";
+"Used and free" = "Kasutatud ja vaba";
+"Rates" = "Kiirused";
+"Bar chart" = "Tulpdiagramm";
+"Line chart" = "Joondiagramm";
+"Traffic chart" = "Liiklusdiagramm";
+
+// Monitor · NetworkModuleShell
+"Network" = "Võrk";
+"Internet connection lost" = "Internetiühendus katkes";
+"Internet connection established" = "Internetiühendus loodi";
+"Tell me when" = "Anna teada, kui";
+"Connection comes or goes" = "Ühendus tekib või kaob";
+"Wi-Fi network changes" = "Wi-Fi-võrk muutub";
+"Interface changes" = "Liides muutub";
+"Local address changes" = "Kohalik aadress muutub";
+"Public address changes" = "Avalik aadress muutub";
+
+// Monitor · NetworkPopup
+"Download" = "Allalaadimine";
+"Local IP" = "Kohalik IP";
+"Interface" = "Liides";
+"Physical address" = "Füüsiline aadress";
+"Online" = "Võrgus";
+"Offline" = "Võrguühenduseta";
+
+// Monitor · Popup
+"Dashboard" = "Ülevaade";
+
+// Monitor · PopupParts
+"Idle" = "Jõude";
+
+// Monitor · PopupSection
+"Process" = "Protsess";
+
+// Monitor · RAMModuleShell
+"RAM" = "RAM";
+
+// Monitor · RAMPopup
+"Wired" = "Fikseeritud";
+"Compressed" = "Tihendatud";
+"Swap size" = "Saalemälu suurus";
+"Memory threshold" = "Mälu lävi";
+
+// Monitor · RAMTile
+"App" = "Rakendus";
+"Swap" = "Saalemälu";
+"Pressure" = "Surve";
+
+// Monitor · SensorReadings
+"Battery" = "Aku";
+
+// Monitor · SensorsModuleShell
+"Sensors" = "Andurid";
+"Show in the popup" = "Kuva hüpikaknas";
+"Hottest temperature" = "Kõrgeim temperatuur";
+
+// Monitor · SensorsPopup
+"History" = "Ajalugu";
+
+// Monitor · SensorsTile
+"hottest" = "kuumim";
+"sensors" = "andurit";
+"No sensors answered" = "Ükski andur ei vastanud";
+
+// Monitor · Thresholds
+"Total load" = "Kogukoormus";
+"System load" = "Süsteemi koormus";
+"User load" = "Kasutaja koormus";
+"Efficiency cores load" = "Tõhusustuumade koormus";
+"Performance cores load" = "Jõudlustuumade koormus";
+"Memory pressure" = "Mälusurve";
+"Memory used" = "Kasutatud mälu";
+"Memory free" = "Vaba mälu";
+"Swap in use" = "Kasutusel saalemälu";
+"Disk usage" = "Ketta kasutus";
+
+// Settings · GeneralPane
+"Reset" = "Lähtesta";
+"Silent" = "Vaikselt";
+"Settings" = "Seaded";
+"Check for updates" = "Otsi uuendusi";
+"Once per day" = "Kord päevas";
+"Once per week" = "Kord nädalas";
+"Never" = "Mitte kunagi";
+"Check for update" = "Otsi uuendust";
+"Start at login" = "Käivita sisselogimisel";
+"Spacing" = "Vahe";
+"Celsius" = "Celsius";
+"Fahrenheit" = "Fahrenheit";
+
+// Settings · UpdateInterval
+"At start" = "Käivitamisel";
+"Once per month" = "Kord kuus";
+
+// Startup · Startup
+"Successfully updated" = "Uuendamine õnnestus";
+"Perch was updated to v" = "Perch on uuendatud versioonile %0";
+
+// Startup · UpdateCheck
+"New version available" = "Saadaval on uus versioon";
+"Click to install the new version of Perch" = "Klõpsa, et installida Perchi uus versioon";
+
+// System · DashboardPane
+"Unknown" = "Teadmata";
+"Graphics" = "Graafika";
+"Serial number" = "Seerianumber";
+"Model identifier" = "Mudeli identifikaator";
+"Production year" = "Tootmisaasta";
+"Number of cores" = "%0 tuuma";
+"Number of threads" = "%0 lõime";
+"Number of e-cores" = "%0 tõhusustuuma";
+"Number of p-cores" = "%0 jõudlustuuma";
+"Disks" = "Kettad";
+"Display" = "Ekraan";
+
+// UI · SupportWindow
+"Close" = "Sulge";
+"Support text" = "Aitäh, et kasutad Perchi.\n\nPerch on tasuta ja avatud lähtekoodiga ning seda arendatakse ja hoitakse töös vabal ajal. Kui see teeb su päeva natuke lihtsamaks, aitab annetus sel edasi elada.";
+"Support Perch" = "Toeta Perchi";
+"Donate" = "Anneta";
+
+// Update · UpdateWindow
+"Install" = "Installi";
+
+// Views · SettingsShell
+"Report a bug" = "Teata veast";
+"Support the application" = "Toeta rakendust";
+"Close application" = "Sulge rakendus";
+"Toggle the module" = "Lülita moodul sisse/välja";
+"Modules" = "Moodulid";
+"Search" = "Otsi";
+"Preview" = "Eelvaade";
+"Support" = "Toeta";
+"Pause the Perch" = "Peata Perch";
+
+// Views · Setup
+"Perch Setup" = "Perchi seadistamine";
+"Previous" = "Eelmine";
+"Previous page" = "Eelmine leht";
+"Welcome to Perch" = "Tere tulemast Perchi";
+"welcome_message" = "Perch paigutab menüüribale süsteemimonitori, rakenduste käivitaja ja akende vahetaja. Selles lühikeses seadistuses valitakse, mida esmalt näidata.";
+"Select preset" = "Vali eelseadistus";
+"select_preset_message" = "Vali moodulid, millega alustada. Saad kõike hiljem seadetes muuta.";
+"Start the application automatically when starting your Mac" = "Käivita rakendus automaatselt Maci käivitamisel";
+"Do not start the application automatically when starting your Mac" = "Ära käivita rakendust automaatselt Maci käivitamisel";
+"Do everything silently in the background (recommended)" = "Tee kõik vaikselt taustal (soovitatav)";
+"Check for a new version on startup" = "Otsi uut versiooni käivitamisel";
+"Check for a new version every day (once a day)" = "Otsi uut versiooni iga päev (kord päevas)";
+"Check for a new version every week (once a week)" = "Otsi uut versiooni iga nädal (kord nädalas)";
+"Check for a new version every month (once a month)" = "Otsi uut versiooni iga kuu (kord kuus)";
+"Never check for updates (not recommended)" = "Ära kunagi otsi uuendusi (pole soovitatav)";
+"The configuration is completed" = "Seadistamine on lõpetatud";
+"finish_setup_message" = "Kõik on valmis.\n\nPerch on tasuta ja avatud lähtekoodiga. Kui sellest on sulle kasu, saad selle arendust toetada.";
+
+// Views · SetupFlow
+"Next" = "Järgmine";
+"Next page" = "Järgmine leht";
+"Finish" = "Lõpeta";
+"Finish setup" = "Lõpeta seadistamine";
+"Default" = "Vaikimisi";
+"Basic" = "Põhiline";
+"Recommended" = "Soovitatud";
+"Extended" = "Laiendatud";

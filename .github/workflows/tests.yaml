@@ -1,0 +1,29 @@
+name: tests
+
+# Runs the assertion suites. Until this existed, nothing did: `build.yaml`
+# archives the app, which proves it compiles, and `xcodebuild test` ran a
+# test target with no sources in it and printed TEST SUCCEEDED -- a green
+# light for zero tests. The suites themselves had been passing locally and
+# were never once run by CI.
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  tests:
+    # macos-26 to match build.yaml: the suites compile the app's own source
+    # files, and some of those call into the macOS 26 SDK.
+    runs-on: macos-26
+
+    steps:
+      - uses: actions/checkout@v4
+      - run: Tools/run-tests.sh

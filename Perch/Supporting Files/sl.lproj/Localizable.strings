@@ -1,0 +1,235 @@
+/*
+ * Localizable.strings — Perch, Slovenian.
+ *
+ * The source every other language is checked against: `python3 Tools/i18n.py`
+ * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
+ * in step with the code. %0, %1 ... are filled in by `localized()` in
+ * Perch/UI/Localized.swift and must survive translation.
+ */
+
+// Monitor · CPUModuleShell
+"CPU" = "CPE";
+"None" = "Brez";
+"2 minutes" = "2 minuti";
+"Chart history" = "Zgodovina grafa";
+"Top processes" = "Najzahtevnejši procesi";
+"1 minute" = "1 minuta";
+"5 minutes" = "5 minut";
+"Menu bar" = "Menijska vrstica";
+"Notify me when" = "Obvesti me, ko";
+
+// Monitor · CPUPopup
+"Clock" = "Takt";
+"Processor" = "Procesor";
+"Cores" = "Jedra";
+"Uptime" = "Čas delovanja";
+"System" = "Sistem";
+"User" = "Uporabnik";
+"CPU usage threshold" = "Prag uporabe CPE";
+"Total" = "Skupaj";
+"Temperature" = "Temperatura";
+
+// Monitor · CombinedBar
+"No module has anything to show here yet." = "Noben modul tukaj še nima česa prikazati.";
+"Combined modules" = "Združeni moduli";
+"Combined details" = "Združene podrobnosti";
+
+// Monitor · DiskModuleShell
+"Disk" = "Disk";
+"Startup volume" = "Zagonski nosilec";
+"not mounted" = "ni priklopljen";
+
+// Monitor · DiskPopup
+"Format" = "Format";
+"Used" = "Zasedeno";
+"Free" = "Prosto";
+"Disk usage threshold" = "Prag zasedenosti diska";
+
+// Monitor · DiskTile
+"free" = "prosto";
+
+// Monitor · GPUModuleShell
+"GPU" = "GPE";
+
+// Monitor · GPUPopup
+"Memory" = "Pomnilnik";
+"Model" = "Model";
+"Utilization" = "Izkoriščenost";
+"GPU usage threshold" = "Prag uporabe GPE";
+
+// Monitor · GPUTile
+"cores" = "jeder";
+
+// Monitor · MemoryReadings
+"Normal" = "Normalno";
+"Warning" = "Opozorilo";
+"Critical" = "Kritično";
+
+// Monitor · MenuBarStyle
+"Name" = "Ime";
+"Figure" = "Število";
+"Ring" = "Obroč";
+"Gauge" = "Merilnik";
+"Used and free" = "Zasedeno in prosto";
+"Rates" = "Hitrosti";
+"Bar chart" = "Stolpčni graf";
+"Line chart" = "Črtni graf";
+"Traffic chart" = "Graf prometa";
+
+// Monitor · NetworkModuleShell
+"Network" = "Omrežje";
+"Internet connection lost" = "Povezava z internetom je prekinjena";
+"Internet connection established" = "Povezava z internetom je vzpostavljena";
+"Tell me when" = "Sporoči mi, ko";
+"Connection comes or goes" = "Povezava se vzpostavi ali prekine";
+"Wi-Fi network changes" = "Se spremeni omrežje Wi-Fi";
+"Interface changes" = "Se spremeni vmesnik";
+"Local address changes" = "Se spremeni lokalni naslov";
+"Public address changes" = "Se spremeni javni naslov";
+
+// Monitor · NetworkPopup
+"Download" = "Prenos";
+"Local IP" = "Lokalni IP";
+"Interface" = "Vmesnik";
+"Physical address" = "Fizični naslov";
+"Online" = "Povezano";
+"Offline" = "Brez povezave";
+
+// Monitor · Popup
+"Dashboard" = "Pregled";
+
+// Monitor · PopupParts
+"Idle" = "Nedejavno";
+
+// Monitor · PopupSection
+"Process" = "Proces";
+
+// Monitor · RAMModuleShell
+"RAM" = "RAM";
+
+// Monitor · RAMPopup
+"Wired" = "Rezerviran";
+"Compressed" = "Stisnjen";
+"Swap size" = "Velikost izmenjave";
+"Memory threshold" = "Prag pomnilnika";
+
+// Monitor · RAMTile
+"App" = "Aplikacije";
+"Swap" = "Izmenjava";
+"Pressure" = "Obremenitev";
+
+// Monitor · SensorReadings
+"Battery" = "Baterija";
+
+// Monitor · SensorsModuleShell
+"Sensors" = "Senzorji";
+"Show in the popup" = "Pokaži v pojavnem oknu";
+"Hottest temperature" = "Najvišja temperatura";
+
+// Monitor · SensorsPopup
+"History" = "Zgodovina";
+
+// Monitor · SensorsTile
+"hottest" = "najv.";
+"sensors" = "senzorjev";
+"No sensors answered" = "Noben senzor se ni odzval";
+
+// Monitor · Thresholds
+"Total load" = "Skupna obremenitev";
+"System load" = "Obremenitev sistema";
+"User load" = "Obremenitev uporabnika";
+"Efficiency cores load" = "Obremenitev učinkovitih jeder";
+"Performance cores load" = "Obremenitev zmogljivih jeder";
+"Memory pressure" = "Obremenitev pomnilnika";
+"Memory used" = "Uporabljen pomnilnik";
+"Memory free" = "Prost pomnilnik";
+"Swap in use" = "Uporabljena izmenjava";
+"Disk usage" = "Zasedenost diska";
+
+// Settings · GeneralPane
+"Reset" = "Ponastavi";
+"Silent" = "V ozadju";
+"Settings" = "Nastavitve";
+"Check for updates" = "Preverjaj posodobitve";
+"Once per day" = "Enkrat na dan";
+"Once per week" = "Enkrat na teden";
+"Never" = "Nikoli";
+"Check for update" = "Preveri posodobitve";
+"Start at login" = "Odpri ob prijavi";
+"Spacing" = "Razmik";
+"Celsius" = "Celzij";
+"Fahrenheit" = "Fahrenheit";
+
+// Settings · UpdateInterval
+"At start" = "Ob zagonu";
+"Once per month" = "Enkrat na mesec";
+
+// Startup · Startup
+"Successfully updated" = "Posodobitev je uspela";
+"Perch was updated to v" = "Perch je posodobljen na različico %0";
+
+// Startup · UpdateCheck
+"New version available" = "Na voljo je nova različica";
+"Click to install the new version of Perch" = "Kliknite za namestitev nove različice aplikacije Perch";
+
+// System · DashboardPane
+"Unknown" = "Neznano";
+"Graphics" = "Grafika";
+"Serial number" = "Serijska številka";
+"Model identifier" = "Identifikator modela";
+"Production year" = "Leto izdelave";
+"Number of cores" = "Jedra: %0";
+"Number of threads" = "Niti: %0";
+"Number of e-cores" = "Učinkovita jedra: %0";
+"Number of p-cores" = "Zmogljiva jedra: %0";
+"Disks" = "Diski";
+"Display" = "Zaslon";
+
+// UI · SupportWindow
+"Close" = "Zapri";
+"Support text" = "Hvala, ker uporabljate Perch.\n\nPerch je brezplačen in odprtokoden, nastaja in se vzdržuje v prostem času. Če vam vsaj malo olajša dan, bo prispevek pomagal pri njegovem nadaljnjem razvoju.";
+"Support Perch" = "Podprite Perch";
+"Donate" = "Prispevajte";
+
+// Update · UpdateWindow
+"Install" = "Namesti";
+
+// Views · SettingsShell
+"Report a bug" = "Prijavi napako";
+"Support the application" = "Podprite aplikacijo";
+"Close application" = "Zapri aplikacijo";
+"Toggle the module" = "Vklopi ali izklopi modul";
+"Modules" = "Moduli";
+"Search" = "Iskanje";
+"Preview" = "Predogled";
+"Support" = "Podpora";
+"Pause the Perch" = "Začasno ustavi Perch";
+
+// Views · Setup
+"Perch Setup" = "Nastavitev aplikacije Perch";
+"Previous" = "Nazaj";
+"Previous page" = "Prejšnja stran";
+"Welcome to Perch" = "Dobrodošli v aplikaciji Perch";
+"welcome_message" = "Perch v menijsko vrstico doda nadzornik sistema, zaganjalnik aplikacij in preklopnik oken. S to kratko nastavitvijo izberete, kaj naj se prikaže najprej.";
+"Select preset" = "Izberite nabor";
+"select_preset_message" = "Izberite začetni nabor modulov. Karkoli od tega lahko pozneje spremenite v Nastavitvah.";
+"Start the application automatically when starting your Mac" = "Samodejno odpiraj aplikacijo ob zagonu Maca";
+"Do not start the application automatically when starting your Mac" = "Ne odpiraj aplikacije samodejno ob zagonu Maca";
+"Do everything silently in the background (recommended)" = "Vse opravi neopazno v ozadju (priporočeno)";
+"Check for a new version on startup" = "Preveri novo različico ob zagonu";
+"Check for a new version every day (once a day)" = "Preverjaj novo različico vsak dan (enkrat na dan)";
+"Check for a new version every week (once a week)" = "Preverjaj novo različico vsak teden (enkrat na teden)";
+"Check for a new version every month (once a month)" = "Preverjaj novo različico vsak mesec (enkrat na mesec)";
+"Never check for updates (not recommended)" = "Nikoli ne preverjaj posodobitev (ni priporočeno)";
+"The configuration is completed" = "Nastavitev je končana";
+"finish_setup_message" = "Vse je pripravljeno.\n\nPerch je brezplačen in odprtokoden. Če vam je koristen, lahko podprete njegov razvoj.";
+
+// Views · SetupFlow
+"Next" = "Naprej";
+"Next page" = "Naslednja stran";
+"Finish" = "Končaj";
+"Finish setup" = "Končaj nastavitev";
+"Default" = "Privzeti";
+"Basic" = "Osnovni";
+"Recommended" = "Priporočeni";
+"Extended" = "Razširjeni";

@@ -1,0 +1,25 @@
+name: build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    # macos-26, not macos-15: the app calls NSGlassEffectView, which only
+    # exists in the macOS 26 SDK. An older image fails at compile time, not at
+    # runtime, so this cannot fall back to an older runner without dropping the
+    # glass -- see Perch/Monitor/Popup.swift.
+    runs-on: macos-26
+
+    steps:
+      - uses: actions/checkout@v4
+      - run: xcodebuild -scheme Perch -destination 'platform=macOS' -configuration Release archive CODE_SIGNING_ALLOWED=NO

@@ -1,0 +1,38 @@
+name: i18n check
+
+# Two different questions, and until this ran both, only the first was asked.
+#
+#   check  are the 41 translation files in step with en.lproj?
+#   scan   does every string the code localizes have a key at all, and does
+#          every key still answer to something in the code?
+#
+# `scan` is the one that catches a string shipping untranslatable. It also
+# needs the Swift paths below: a new localized("...") is a change to the code,
+# not to a .strings file, so on the old trigger the one workflow that could
+# have caught it never ran.
+
+on:
+  push:
+    paths:
+      - '.github/workflows/i18n.yaml'
+      - '**/*.strings'
+      - '**/*.swift'
+      - 'Tools/i18n.py'
+  pull_request:
+    paths:
+      - '.github/workflows/i18n.yaml'
+      - '**/*.strings'
+      - '**/*.swift'
+      - 'Tools/i18n.py'
+
+jobs:
+  i18n:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v2
+      - name: Every language is in step with en.lproj
+        run: python3 Tools/i18n.py
+      - name: Every localized string has a key, and every key is used
+        run: python3 Tools/i18n.py scan

@@ -1,0 +1,235 @@
+/*
+ * Localizable.strings — Perch, Dutch.
+ *
+ * The source every other language is checked against: `python3 Tools/i18n.py`
+ * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
+ * in step with the code. %0, %1 ... are filled in by `localized()` in
+ * Perch/UI/Localized.swift and must survive translation.
+ */
+
+// Monitor · CPUModuleShell
+"CPU" = "CPU";
+"None" = "Geen";
+"2 minutes" = "2 minuten";
+"Chart history" = "Grafiekgeschiedenis";
+"Top processes" = "Topprocessen";
+"1 minute" = "1 minuut";
+"5 minutes" = "5 minuten";
+"Menu bar" = "Menubalk";
+"Notify me when" = "Meld me als";
+
+// Monitor · CPUPopup
+"Clock" = "Kloksnelheid";
+"Processor" = "Processor";
+"Cores" = "Cores";
+"Uptime" = "Actief sinds";
+"System" = "Systeem";
+"User" = "Gebruiker";
+"CPU usage threshold" = "Drempel CPU-gebruik";
+"Total" = "Totaal";
+"Temperature" = "Temperatuur";
+
+// Monitor · CombinedBar
+"No module has anything to show here yet." = "Nog geen enkele module heeft hier iets te tonen.";
+"Combined modules" = "Gecombineerde modules";
+"Combined details" = "Gecombineerde details";
+
+// Monitor · DiskModuleShell
+"Disk" = "Schijf";
+"Startup volume" = "Opstartvolume";
+"not mounted" = "niet gekoppeld";
+
+// Monitor · DiskPopup
+"Format" = "Structuur";
+"Used" = "Gebruikt";
+"Free" = "Vrij";
+"Disk usage threshold" = "Drempel schijfgebruik";
+
+// Monitor · DiskTile
+"free" = "vrij";
+
+// Monitor · GPUModuleShell
+"GPU" = "GPU";
+
+// Monitor · GPUPopup
+"Memory" = "Geheugen";
+"Model" = "Model";
+"Utilization" = "Gebruik";
+"GPU usage threshold" = "Drempel GPU-gebruik";
+
+// Monitor · GPUTile
+"cores" = "cores";
+
+// Monitor · MemoryReadings
+"Normal" = "Normaal";
+"Warning" = "Waarschuwing";
+"Critical" = "Kritiek";
+
+// Monitor · MenuBarStyle
+"Name" = "Naam";
+"Figure" = "Getal";
+"Ring" = "Ring";
+"Gauge" = "Meter";
+"Used and free" = "Gebruikt en vrij";
+"Rates" = "Snelheden";
+"Bar chart" = "Staafdiagram";
+"Line chart" = "Lijndiagram";
+"Traffic chart" = "Verkeer";
+
+// Monitor · NetworkModuleShell
+"Network" = "Netwerk";
+"Internet connection lost" = "Internetverbinding verbroken";
+"Internet connection established" = "Internetverbinding gemaakt";
+"Tell me when" = "Laat me weten als";
+"Connection comes or goes" = "Verbinding komt of gaat";
+"Wi-Fi network changes" = "Wifinetwerk verandert";
+"Interface changes" = "Interface verandert";
+"Local address changes" = "Lokaal adres verandert";
+"Public address changes" = "Openbaar adres verandert";
+
+// Monitor · NetworkPopup
+"Download" = "Download";
+"Local IP" = "Lokaal IP";
+"Interface" = "Interface";
+"Physical address" = "Fysiek adres";
+"Online" = "Online";
+"Offline" = "Offline";
+
+// Monitor · Popup
+"Dashboard" = "Overzicht";
+
+// Monitor · PopupParts
+"Idle" = "Inactief";
+
+// Monitor · PopupSection
+"Process" = "Proces";
+
+// Monitor · RAMModuleShell
+"RAM" = "RAM";
+
+// Monitor · RAMPopup
+"Wired" = "Vast";
+"Compressed" = "Gecomprimeerd";
+"Swap size" = "Swapgrootte";
+"Memory threshold" = "Geheugendrempel";
+
+// Monitor · RAMTile
+"App" = "App";
+"Swap" = "Swap";
+"Pressure" = "Geheugendruk";
+
+// Monitor · SensorReadings
+"Battery" = "Batterij";
+
+// Monitor · SensorsModuleShell
+"Sensors" = "Sensoren";
+"Show in the popup" = "Toon in venster";
+"Hottest temperature" = "Hoogste temperatuur";
+
+// Monitor · SensorsPopup
+"History" = "Geschiedenis";
+
+// Monitor · SensorsTile
+"hottest" = "max.";
+"sensors" = "sensoren";
+"No sensors answered" = "Geen sensoren gaven antwoord";
+
+// Monitor · Thresholds
+"Total load" = "Totale belasting";
+"System load" = "Systeembelasting";
+"User load" = "Gebruikersbelasting";
+"Efficiency cores load" = "Belasting efficiëntiecores";
+"Performance cores load" = "Belasting prestatiecores";
+"Memory pressure" = "Geheugendruk";
+"Memory used" = "Gebruikt geheugen";
+"Memory free" = "Vrij geheugen";
+"Swap in use" = "Gebruikte swap";
+"Disk usage" = "Schijfgebruik";
+
+// Settings · GeneralPane
+"Reset" = "Herstel";
+"Silent" = "Stil";
+"Settings" = "Instellingen";
+"Check for updates" = "Zoek naar updates";
+"Once per day" = "Dagelijks";
+"Once per week" = "Wekelijks";
+"Never" = "Nooit";
+"Check for update" = "Zoek naar update";
+"Start at login" = "Open bij inloggen";
+"Spacing" = "Tussenruimte";
+"Celsius" = "Celsius";
+"Fahrenheit" = "Fahrenheit";
+
+// Settings · UpdateInterval
+"At start" = "Bij openen";
+"Once per month" = "Maandelijks";
+
+// Startup · Startup
+"Successfully updated" = "Bijwerken gelukt";
+"Perch was updated to v" = "Perch is bijgewerkt naar versie %0";
+
+// Startup · UpdateCheck
+"New version available" = "Nieuwe versie beschikbaar";
+"Click to install the new version of Perch" = "Klik om de nieuwe versie van Perch te installeren";
+
+// System · DashboardPane
+"Unknown" = "Onbekend";
+"Graphics" = "Grafisch";
+"Serial number" = "Serienummer";
+"Model identifier" = "Modelaanduiding";
+"Production year" = "Productiejaar";
+"Number of cores" = "%0 cores";
+"Number of threads" = "%0 threads";
+"Number of e-cores" = "%0 efficiëntiecores";
+"Number of p-cores" = "%0 prestatiecores";
+"Disks" = "Schijven";
+"Display" = "Beeldscherm";
+
+// UI · SupportWindow
+"Close" = "Sluit";
+"Support text" = "Bedankt dat je Perch gebruikt.\n\nPerch is gratis en open source, en wordt in vrije tijd gemaakt en onderhouden. Als het je dag een beetje makkelijker maakt, helpt een bijdrage om het draaiende te houden.";
+"Support Perch" = "Steun Perch";
+"Donate" = "Doneer";
+
+// Update · UpdateWindow
+"Install" = "Installeer";
+
+// Views · SettingsShell
+"Report a bug" = "Meld een bug";
+"Support the application" = "Steun de app";
+"Close application" = "Stop de app";
+"Toggle the module" = "Zet de module aan of uit";
+"Modules" = "Modules";
+"Search" = "Zoek";
+"Preview" = "Voorvertoning";
+"Support" = "Steun";
+"Pause the Perch" = "Pauzeer Perch";
+
+// Views · Setup
+"Perch Setup" = "Perch-configuratie";
+"Previous" = "Vorige";
+"Previous page" = "Vorige pagina";
+"Welcome to Perch" = "Welkom bij Perch";
+"welcome_message" = "Perch zet een systeemmonitor, een appstarter en een vensterwisselaar in je menubalk. Deze korte configuratie kiest wat er eerst wordt getoond.";
+"Select preset" = "Kies voorinstelling";
+"select_preset_message" = "Kies een startset modules. Je kunt alles later wijzigen in Instellingen.";
+"Start the application automatically when starting your Mac" = "Open de app automatisch bij het opstarten van je Mac";
+"Do not start the application automatically when starting your Mac" = "Open de app niet automatisch bij het opstarten van je Mac";
+"Do everything silently in the background (recommended)" = "Doe alles stil op de achtergrond (aanbevolen)";
+"Check for a new version on startup" = "Zoek bij het openen naar een nieuwe versie";
+"Check for a new version every day (once a day)" = "Zoek elke dag naar een nieuwe versie (één keer per dag)";
+"Check for a new version every week (once a week)" = "Zoek elke week naar een nieuwe versie (één keer per week)";
+"Check for a new version every month (once a month)" = "Zoek elke maand naar een nieuwe versie (één keer per maand)";
+"Never check for updates (not recommended)" = "Zoek nooit naar updates (niet aanbevolen)";
+"The configuration is completed" = "De configuratie is voltooid";
+"finish_setup_message" = "Je bent klaar.\n\nPerch is gratis en open source. Als je er iets aan hebt, kun je de ontwikkeling steunen.";
+
+// Views · SetupFlow
+"Next" = "Volgende";
+"Next page" = "Volgende pagina";
+"Finish" = "Voltooi";
+"Finish setup" = "Voltooi configuratie";
+"Default" = "Standaard";
+"Basic" = "Basis";
+"Recommended" = "Aanbevolen";
+"Extended" = "Uitgebreid";

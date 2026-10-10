@@ -1,0 +1,235 @@
+/*
+ * Localizable.strings — Perch, Arabic.
+ *
+ * The source every other language is checked against: `python3 Tools/i18n.py`
+ * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
+ * in step with the code. %0, %1 ... are filled in by `localized()` in
+ * Perch/UI/Localized.swift and must survive translation.
+ */
+
+// Monitor · CPUModuleShell
+"CPU" = "CPU";
+"None" = "بلا";
+"2 minutes" = "دقيقتان";
+"Chart history" = "سجل المخطط";
+"Top processes" = "أكثر العمليات استهلاكًا";
+"1 minute" = "دقيقة واحدة";
+"5 minutes" = "5 دقائق";
+"Menu bar" = "شريط القائمة";
+"Notify me when" = "أعلمني عند";
+
+// Monitor · CPUPopup
+"Clock" = "التردد";
+"Processor" = "المعالج";
+"Cores" = "النوى";
+"Uptime" = "مدة التشغيل";
+"System" = "النظام";
+"User" = "المستخدم";
+"CPU usage threshold" = "حد استخدام CPU";
+"Total" = "الإجمالي";
+"Temperature" = "درجة الحرارة";
+
+// Monitor · CombinedBar
+"No module has anything to show here yet." = "لا توجد وحدة لديها ما تعرضه هنا بعد.";
+"Combined modules" = "دمج الوحدات";
+"Combined details" = "تفاصيل مدمجة";
+
+// Monitor · DiskModuleShell
+"Disk" = "القرص";
+"Startup volume" = "قرص بدء التشغيل";
+"not mounted" = "غير محمّل";
+
+// Monitor · DiskPopup
+"Format" = "التنسيق";
+"Used" = "المستخدم";
+"Free" = "المتاح";
+"Disk usage threshold" = "حد استخدام القرص";
+
+// Monitor · DiskTile
+"free" = "متاح";
+
+// Monitor · GPUModuleShell
+"GPU" = "GPU";
+
+// Monitor · GPUPopup
+"Memory" = "الذاكرة";
+"Model" = "الطراز";
+"Utilization" = "الاستخدام";
+"GPU usage threshold" = "حد استخدام GPU";
+
+// Monitor · GPUTile
+"cores" = "نوى";
+
+// Monitor · MemoryReadings
+"Normal" = "عادي";
+"Warning" = "تحذير";
+"Critical" = "حرج";
+
+// Monitor · MenuBarStyle
+"Name" = "الاسم";
+"Figure" = "رقم";
+"Ring" = "حلقة";
+"Gauge" = "مقياس";
+"Used and free" = "المستخدم والمتاح";
+"Rates" = "المعدلات";
+"Bar chart" = "مخطط شريطي";
+"Line chart" = "مخطط خطي";
+"Traffic chart" = "مخطط حركة البيانات";
+
+// Monitor · NetworkModuleShell
+"Network" = "الشبكة";
+"Internet connection lost" = "انقطع الاتصال بالإنترنت";
+"Internet connection established" = "تم الاتصال بالإنترنت";
+"Tell me when" = "أخبرني عند";
+"Connection comes or goes" = "الاتصال أو الانقطاع";
+"Wi-Fi network changes" = "تغيير شبكة Wi-Fi";
+"Interface changes" = "تغيير الواجهة";
+"Local address changes" = "تغيير العنوان المحلي";
+"Public address changes" = "تغيير العنوان العام";
+
+// Monitor · NetworkPopup
+"Download" = "التنزيل";
+"Local IP" = "عنوان IP المحلي";
+"Interface" = "الواجهة";
+"Physical address" = "العنوان الفعلي";
+"Online" = "متصل";
+"Offline" = "غير متصل";
+
+// Monitor · Popup
+"Dashboard" = "لوحة المعلومات";
+
+// Monitor · PopupParts
+"Idle" = "خامل";
+
+// Monitor · PopupSection
+"Process" = "العملية";
+
+// Monitor · RAMModuleShell
+"RAM" = "RAM";
+
+// Monitor · RAMPopup
+"Wired" = "محجوزة";
+"Compressed" = "مضغوطة";
+"Swap size" = "حجم التبديل";
+"Memory threshold" = "حد الذاكرة";
+
+// Monitor · RAMTile
+"App" = "التطبيقات";
+"Swap" = "التبديل";
+"Pressure" = "الضغط";
+
+// Monitor · SensorReadings
+"Battery" = "البطارية";
+
+// Monitor · SensorsModuleShell
+"Sensors" = "المستشعرات";
+"Show in the popup" = "إظهار في النافذة المنبثقة";
+"Hottest temperature" = "أعلى درجة حرارة";
+
+// Monitor · SensorsPopup
+"History" = "السجل";
+
+// Monitor · SensorsTile
+"hottest" = "الأعلى";
+"sensors" = "مستشعرات";
+"No sensors answered" = "لم يستجب أي مستشعر";
+
+// Monitor · Thresholds
+"Total load" = "الحمل الإجمالي";
+"System load" = "حمل النظام";
+"User load" = "حمل المستخدم";
+"Efficiency cores load" = "حمل نوى الكفاءة";
+"Performance cores load" = "حمل نوى الأداء";
+"Memory pressure" = "ضغط الذاكرة";
+"Memory used" = "الذاكرة المستخدمة";
+"Memory free" = "الذاكرة المتاحة";
+"Swap in use" = "التبديل المستخدم";
+"Disk usage" = "استخدام القرص";
+
+// Settings · GeneralPane
+"Reset" = "إعادة تعيين";
+"Silent" = "صامت";
+"Settings" = "الإعدادات";
+"Check for updates" = "البحث عن تحديثات";
+"Once per day" = "مرة يوميًا";
+"Once per week" = "مرة أسبوعيًا";
+"Never" = "أبدًا";
+"Check for update" = "البحث عن تحديث";
+"Start at login" = "البدء عند تسجيل الدخول";
+"Spacing" = "التباعد";
+"Celsius" = "مئوية";
+"Fahrenheit" = "فهرنهايت";
+
+// Settings · UpdateInterval
+"At start" = "عند البدء";
+"Once per month" = "مرة شهريًا";
+
+// Startup · Startup
+"Successfully updated" = "تم التحديث بنجاح";
+"Perch was updated to v" = "تم تحديث Perch إلى الإصدار %0";
+
+// Startup · UpdateCheck
+"New version available" = "يتوفر إصدار جديد";
+"Click to install the new version of Perch" = "انقر لتثبيت الإصدار الجديد من Perch";
+
+// System · DashboardPane
+"Unknown" = "غير معروف";
+"Graphics" = "الرسومات";
+"Serial number" = "الرقم التسلسلي";
+"Model identifier" = "معرّف الطراز";
+"Production year" = "سنة الإنتاج";
+"Number of cores" = "عدد النوى: %0";
+"Number of threads" = "عدد مسارات التنفيذ: %0";
+"Number of e-cores" = "نوى الكفاءة: %0";
+"Number of p-cores" = "نوى الأداء: %0";
+"Disks" = "الأقراص";
+"Display" = "الشاشة";
+
+// UI · SupportWindow
+"Close" = "إغلاق";
+"Support text" = "شكرًا لاستخدامك Perch.\n\nPerch مجاني ومفتوح المصدر، ويُطوَّر ويُصان في أوقات الفراغ. إذا كان يجعل يومك أسهل قليلًا، فإن مساهمتك تساعد على استمراره.";
+"Support Perch" = "ادعم Perch";
+"Donate" = "تبرّع";
+
+// Update · UpdateWindow
+"Install" = "تثبيت";
+
+// Views · SettingsShell
+"Report a bug" = "الإبلاغ عن خطأ";
+"Support the application" = "دعم التطبيق";
+"Close application" = "إغلاق التطبيق";
+"Toggle the module" = "تشغيل الوحدة أو إيقافها";
+"Modules" = "الوحدات";
+"Search" = "بحث";
+"Preview" = "معاينة";
+"Support" = "الدعم";
+"Pause the Perch" = "إيقاف Perch مؤقتًا";
+
+// Views · Setup
+"Perch Setup" = "إعداد Perch";
+"Previous" = "السابق";
+"Previous page" = "الصفحة السابقة";
+"Welcome to Perch" = "مرحبًا بك في Perch";
+"welcome_message" = "يضع Perch في شريط القائمة مراقبًا للنظام ومشغّلًا للتطبيقات ومبدّلًا للنوافذ. يحدد هذا الإعداد القصير ما يظهر أولًا.";
+"Select preset" = "اختيار إعداد مسبق";
+"select_preset_message" = "اختر مجموعة أولية من الوحدات. يمكنك تغيير أي جزء منها لاحقًا في الإعدادات.";
+"Start the application automatically when starting your Mac" = "تشغيل التطبيق تلقائيًا عند بدء تشغيل جهاز Mac";
+"Do not start the application automatically when starting your Mac" = "عدم تشغيل التطبيق تلقائيًا عند بدء تشغيل جهاز Mac";
+"Do everything silently in the background (recommended)" = "تنفيذ كل شيء بصمت في الخلفية (مستحسن)";
+"Check for a new version on startup" = "البحث عن إصدار جديد عند بدء التشغيل";
+"Check for a new version every day (once a day)" = "البحث عن إصدار جديد كل يوم (مرة يوميًا)";
+"Check for a new version every week (once a week)" = "البحث عن إصدار جديد كل أسبوع (مرة أسبوعيًا)";
+"Check for a new version every month (once a month)" = "البحث عن إصدار جديد كل شهر (مرة شهريًا)";
+"Never check for updates (not recommended)" = "عدم البحث عن تحديثات أبدًا (غير مستحسن)";
+"The configuration is completed" = "اكتمل الإعداد";
+"finish_setup_message" = "كل شيء جاهز.\n\nPerch مجاني ومفتوح المصدر. إذا كان مفيدًا لك، يمكنك دعم تطويره.";
+
+// Views · SetupFlow
+"Next" = "التالي";
+"Next page" = "الصفحة التالية";
+"Finish" = "إنهاء";
+"Finish setup" = "إنهاء الإعداد";
+"Default" = "افتراضي";
+"Basic" = "أساسي";
+"Recommended" = "مستحسن";
+"Extended" = "موسّع";

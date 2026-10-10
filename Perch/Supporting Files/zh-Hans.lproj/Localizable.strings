@@ -1,0 +1,235 @@
+/*
+ * Localizable.strings — Perch, Chinese, Simplified.
+ *
+ * The source every other language is checked against: `python3 Tools/i18n.py`
+ * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
+ * in step with the code. %0, %1 ... are filled in by `localized()` in
+ * Perch/UI/Localized.swift and must survive translation.
+ */
+
+// Monitor · CPUModuleShell
+"CPU" = "CPU";
+"None" = "无";
+"2 minutes" = "2 分钟";
+"Chart history" = "图表历史";
+"Top processes" = "主要进程";
+"1 minute" = "1 分钟";
+"5 minutes" = "5 分钟";
+"Menu bar" = "菜单栏";
+"Notify me when" = "在以下情况通知我";
+
+// Monitor · CPUPopup
+"Clock" = "频率";
+"Processor" = "处理器";
+"Cores" = "核心";
+"Uptime" = "运行时间";
+"System" = "系统";
+"User" = "用户";
+"CPU usage threshold" = "CPU 使用率阈值";
+"Total" = "总计";
+"Temperature" = "温度";
+
+// Monitor · CombinedBar
+"No module has anything to show here yet." = "暂无可在此显示内容的模块。";
+"Combined modules" = "合并模块";
+"Combined details" = "合并详情";
+
+// Monitor · DiskModuleShell
+"Disk" = "磁盘";
+"Startup volume" = "启动宗卷";
+"not mounted" = "未装载";
+
+// Monitor · DiskPopup
+"Format" = "格式";
+"Used" = "已用";
+"Free" = "可用";
+"Disk usage threshold" = "磁盘使用率阈值";
+
+// Monitor · DiskTile
+"free" = "可用";
+
+// Monitor · GPUModuleShell
+"GPU" = "GPU";
+
+// Monitor · GPUPopup
+"Memory" = "内存";
+"Model" = "型号";
+"Utilization" = "利用率";
+"GPU usage threshold" = "GPU 使用率阈值";
+
+// Monitor · GPUTile
+"cores" = "核";
+
+// Monitor · MemoryReadings
+"Normal" = "正常";
+"Warning" = "警告";
+"Critical" = "严重";
+
+// Monitor · MenuBarStyle
+"Name" = "名称";
+"Figure" = "数字";
+"Ring" = "圆环";
+"Gauge" = "仪表";
+"Used and free" = "已用和可用";
+"Rates" = "速率";
+"Bar chart" = "柱状图";
+"Line chart" = "折线图";
+"Traffic chart" = "流量图";
+
+// Monitor · NetworkModuleShell
+"Network" = "网络";
+"Internet connection lost" = "互联网连接已断开";
+"Internet connection established" = "互联网已连接";
+"Tell me when" = "在以下情况提醒我";
+"Connection comes or goes" = "连接接通或断开时";
+"Wi-Fi network changes" = "Wi-Fi 网络更改时";
+"Interface changes" = "接口更改时";
+"Local address changes" = "本地地址更改时";
+"Public address changes" = "公网地址更改时";
+
+// Monitor · NetworkPopup
+"Download" = "下载";
+"Local IP" = "本地 IP";
+"Interface" = "接口";
+"Physical address" = "物理地址";
+"Online" = "在线";
+"Offline" = "离线";
+
+// Monitor · Popup
+"Dashboard" = "仪表板";
+
+// Monitor · PopupParts
+"Idle" = "闲置";
+
+// Monitor · PopupSection
+"Process" = "进程";
+
+// Monitor · RAMModuleShell
+"RAM" = "RAM";
+
+// Monitor · RAMPopup
+"Wired" = "联动内存";
+"Compressed" = "已压缩";
+"Swap size" = "交换区大小";
+"Memory threshold" = "内存阈值";
+
+// Monitor · RAMTile
+"App" = "App 内存";
+"Swap" = "交换";
+"Pressure" = "内存压力";
+
+// Monitor · SensorReadings
+"Battery" = "电池";
+
+// Monitor · SensorsModuleShell
+"Sensors" = "传感器";
+"Show in the popup" = "在弹出窗口中显示";
+"Hottest temperature" = "最高温度";
+
+// Monitor · SensorsPopup
+"History" = "历史记录";
+
+// Monitor · SensorsTile
+"hottest" = "最高";
+"sensors" = "个传感器";
+"No sensors answered" = "无传感器响应";
+
+// Monitor · Thresholds
+"Total load" = "总负载";
+"System load" = "系统负载";
+"User load" = "用户负载";
+"Efficiency cores load" = "能效核心负载";
+"Performance cores load" = "性能核心负载";
+"Memory pressure" = "内存压力";
+"Memory used" = "已用内存";
+"Memory free" = "可用内存";
+"Swap in use" = "已用交换";
+"Disk usage" = "磁盘使用率";
+
+// Settings · GeneralPane
+"Reset" = "重置";
+"Silent" = "静默";
+"Settings" = "设置";
+"Check for updates" = "检查更新";
+"Once per day" = "每天一次";
+"Once per week" = "每周一次";
+"Never" = "永不";
+"Check for update" = "检查更新";
+"Start at login" = "登录时启动";
+"Spacing" = "间距";
+"Celsius" = "摄氏";
+"Fahrenheit" = "华氏";
+
+// Settings · UpdateInterval
+"At start" = "启动时";
+"Once per month" = "每月一次";
+
+// Startup · Startup
+"Successfully updated" = "更新成功";
+"Perch was updated to v" = "Perch 已更新至版本 %0";
+
+// Startup · UpdateCheck
+"New version available" = "有新版本可用";
+"Click to install the new version of Perch" = "点按以安装新版本的 Perch";
+
+// System · DashboardPane
+"Unknown" = "未知";
+"Graphics" = "图形卡";
+"Serial number" = "序列号";
+"Model identifier" = "型号标识符";
+"Production year" = "生产年份";
+"Number of cores" = "%0 个核心";
+"Number of threads" = "%0 个线程";
+"Number of e-cores" = "%0 个能效核心";
+"Number of p-cores" = "%0 个性能核心";
+"Disks" = "磁盘";
+"Display" = "显示器";
+
+// UI · SupportWindow
+"Close" = "关闭";
+"Support text" = "感谢你使用 Perch。\n\nPerch 是免费的开源软件，由开发者利用业余时间构建和维护。如果它让你的日常更轻松一些，你的捐助将帮助它持续发展。";
+"Support Perch" = "支持 Perch";
+"Donate" = "捐助";
+
+// Update · UpdateWindow
+"Install" = "安装";
+
+// Views · SettingsShell
+"Report a bug" = "报告错误";
+"Support the application" = "支持此应用";
+"Close application" = "退出应用";
+"Toggle the module" = "打开或关闭模块";
+"Modules" = "模块";
+"Search" = "搜索";
+"Preview" = "预览";
+"Support" = "支持";
+"Pause the Perch" = "暂停 Perch";
+
+// Views · Setup
+"Perch Setup" = "Perch 设置";
+"Previous" = "上一步";
+"Previous page" = "上一页";
+"Welcome to Perch" = "欢迎使用 Perch";
+"welcome_message" = "Perch 将系统监视器、应用启动器和窗口切换器放进你的菜单栏。通过这个简短的设置，选择首先显示的内容。";
+"Select preset" = "选择预设";
+"select_preset_message" = "选择一组初始模块。之后你可以随时在“设置”中更改。";
+"Start the application automatically when starting your Mac" = "启动 Mac 时自动打开此应用";
+"Do not start the application automatically when starting your Mac" = "启动 Mac 时不自动打开此应用";
+"Do everything silently in the background (recommended)" = "在后台静默完成所有操作（推荐）";
+"Check for a new version on startup" = "启动时检查新版本";
+"Check for a new version every day (once a day)" = "每天检查新版本（每天一次）";
+"Check for a new version every week (once a week)" = "每周检查新版本（每周一次）";
+"Check for a new version every month (once a month)" = "每月检查新版本（每月一次）";
+"Never check for updates (not recommended)" = "从不检查更新（不推荐）";
+"The configuration is completed" = "设置已完成";
+"finish_setup_message" = "一切就绪。\n\nPerch 是免费的开源软件。如果它对你有用，你可以支持它的开发。";
+
+// Views · SetupFlow
+"Next" = "下一步";
+"Next page" = "下一页";
+"Finish" = "完成";
+"Finish setup" = "完成设置";
+"Default" = "默认";
+"Basic" = "基本";
+"Recommended" = "推荐";
+"Extended" = "扩展";

@@ -1,0 +1,235 @@
+/*
+ * Localizable.strings — Perch, Hungarian.
+ *
+ * The source every other language is checked against: `python3 Tools/i18n.py`
+ * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
+ * in step with the code. %0, %1 ... are filled in by `localized()` in
+ * Perch/UI/Localized.swift and must survive translation.
+ */
+
+// Monitor · CPUModuleShell
+"CPU" = "CPU";
+"None" = "Nincs";
+"2 minutes" = "2 perc";
+"Chart history" = "Diagramelőzmények";
+"Top processes" = "Legaktívabb folyamatok";
+"1 minute" = "1 perc";
+"5 minutes" = "5 perc";
+"Menu bar" = "Menüsor";
+"Notify me when" = "Értesítés, ha";
+
+// Monitor · CPUPopup
+"Clock" = "Órajel";
+"Processor" = "Processzor";
+"Cores" = "Magok";
+"Uptime" = "Üzemidő";
+"System" = "Rendszer";
+"User" = "Felhasználó";
+"CPU usage threshold" = "CPU-használati küszöb";
+"Total" = "Összesen";
+"Temperature" = "Hőmérséklet";
+
+// Monitor · CombinedBar
+"No module has anything to show here yet." = "Egyik modulnak sincs még itt mit megjelenítenie.";
+"Combined modules" = "Egyesített modulok";
+"Combined details" = "Egyesített részletek";
+
+// Monitor · DiskModuleShell
+"Disk" = "Lemez";
+"Startup volume" = "Indítókötet";
+"not mounted" = "nincs csatolva";
+
+// Monitor · DiskPopup
+"Format" = "Formátum";
+"Used" = "Használt";
+"Free" = "Szabad";
+"Disk usage threshold" = "Lemezhasználati küszöb";
+
+// Monitor · DiskTile
+"free" = "szabad";
+
+// Monitor · GPUModuleShell
+"GPU" = "GPU";
+
+// Monitor · GPUPopup
+"Memory" = "Memória";
+"Model" = "Modell";
+"Utilization" = "Kihasználtság";
+"GPU usage threshold" = "GPU-használati küszöb";
+
+// Monitor · GPUTile
+"cores" = "mag";
+
+// Monitor · MemoryReadings
+"Normal" = "Normál";
+"Warning" = "Figyelmeztetés";
+"Critical" = "Kritikus";
+
+// Monitor · MenuBarStyle
+"Name" = "Név";
+"Figure" = "Szám";
+"Ring" = "Gyűrű";
+"Gauge" = "Mérő";
+"Used and free" = "Használt és szabad";
+"Rates" = "Sebességek";
+"Bar chart" = "Oszlopdiagram";
+"Line chart" = "Vonaldiagram";
+"Traffic chart" = "Forgalmi diagram";
+
+// Monitor · NetworkModuleShell
+"Network" = "Hálózat";
+"Internet connection lost" = "Megszakadt az internetkapcsolat";
+"Internet connection established" = "Létrejött az internetkapcsolat";
+"Tell me when" = "Szólj, ha";
+"Connection comes or goes" = "A kapcsolat létrejön vagy megszakad";
+"Wi-Fi network changes" = "Megváltozik a Wi-Fi-hálózat";
+"Interface changes" = "Megváltozik az interfész";
+"Local address changes" = "Megváltozik a helyi cím";
+"Public address changes" = "Megváltozik a nyilvános cím";
+
+// Monitor · NetworkPopup
+"Download" = "Letöltés";
+"Local IP" = "Helyi IP";
+"Interface" = "Interfész";
+"Physical address" = "Fizikai cím";
+"Online" = "Online";
+"Offline" = "Offline";
+
+// Monitor · Popup
+"Dashboard" = "Áttekintés";
+
+// Monitor · PopupParts
+"Idle" = "Tétlen";
+
+// Monitor · PopupSection
+"Process" = "Folyamat";
+
+// Monitor · RAMModuleShell
+"RAM" = "RAM";
+
+// Monitor · RAMPopup
+"Wired" = "Rögzített";
+"Compressed" = "Tömörített";
+"Swap size" = "Swap mérete";
+"Memory threshold" = "Memóriaküszöb";
+
+// Monitor · RAMTile
+"App" = "App";
+"Swap" = "Swap";
+"Pressure" = "Nyomás";
+
+// Monitor · SensorReadings
+"Battery" = "Akkumulátor";
+
+// Monitor · SensorsModuleShell
+"Sensors" = "Érzékelők";
+"Show in the popup" = "Megjelenítés a felugró ablakban";
+"Hottest temperature" = "Legmagasabb hőmérséklet";
+
+// Monitor · SensorsPopup
+"History" = "Előzmények";
+
+// Monitor · SensorsTile
+"hottest" = "legforróbb";
+"sensors" = "érzékelő";
+"No sensors answered" = "Egy érzékelő sem válaszolt";
+
+// Monitor · Thresholds
+"Total load" = "Teljes terhelés";
+"System load" = "Rendszerterhelés";
+"User load" = "Felhasználói terhelés";
+"Efficiency cores load" = "Hatékonysági magok terhelése";
+"Performance cores load" = "Teljesítménymagok terhelése";
+"Memory pressure" = "Memórianyomás";
+"Memory used" = "Használt memória";
+"Memory free" = "Szabad memória";
+"Swap in use" = "Használt swap";
+"Disk usage" = "Lemezhasználat";
+
+// Settings · GeneralPane
+"Reset" = "Visszaállítás";
+"Silent" = "Csendes";
+"Settings" = "Beállítások";
+"Check for updates" = "Frissítések keresése";
+"Once per day" = "Naponta egyszer";
+"Once per week" = "Hetente egyszer";
+"Never" = "Soha";
+"Check for update" = "Frissítés keresése";
+"Start at login" = "Indítás bejelentkezéskor";
+"Spacing" = "Térköz";
+"Celsius" = "Celsius";
+"Fahrenheit" = "Fahrenheit";
+
+// Settings · UpdateInterval
+"At start" = "Indításkor";
+"Once per month" = "Havonta egyszer";
+
+// Startup · Startup
+"Successfully updated" = "Sikeres frissítés";
+"Perch was updated to v" = "A Perch frissült a(z) %0 verzióra";
+
+// Startup · UpdateCheck
+"New version available" = "Új verzió érhető el";
+"Click to install the new version of Perch" = "Kattints a Perch új verziójának telepítéséhez";
+
+// System · DashboardPane
+"Unknown" = "Ismeretlen";
+"Graphics" = "Grafika";
+"Serial number" = "Sorozatszám";
+"Model identifier" = "Modellazonosító";
+"Production year" = "Gyártási év";
+"Number of cores" = "%0 mag";
+"Number of threads" = "%0 szál";
+"Number of e-cores" = "%0 hatékonysági mag";
+"Number of p-cores" = "%0 teljesítménymag";
+"Disks" = "Lemezek";
+"Display" = "Kijelző";
+
+// UI · SupportWindow
+"Close" = "Bezárás";
+"Support text" = "Köszönjük, hogy a Perchet használod.\n\nA Perch ingyenes és nyílt forráskódú, fejlesztése és karbantartása szabadidőben történik. Ha egy kicsit is megkönnyíti a napodat, egy hozzájárulással segíthetsz, hogy folytatódhasson.";
+"Support Perch" = "A Perch támogatása";
+"Donate" = "Adományozás";
+
+// Update · UpdateWindow
+"Install" = "Telepítés";
+
+// Views · SettingsShell
+"Report a bug" = "Hiba jelentése";
+"Support the application" = "Az alkalmazás támogatása";
+"Close application" = "Kilépés az alkalmazásból";
+"Toggle the module" = "Modul be- és kikapcsolása";
+"Modules" = "Modulok";
+"Search" = "Keresés";
+"Preview" = "Előnézet";
+"Support" = "Támogatás";
+"Pause the Perch" = "A Perch szüneteltetése";
+
+// Views · Setup
+"Perch Setup" = "A Perch beállítása";
+"Previous" = "Előző";
+"Previous page" = "Előző oldal";
+"Welcome to Perch" = "Üdvözöl a Perch";
+"welcome_message" = "A Perch rendszerfigyelőt, alkalmazásindítót és ablakváltót helyez el a menüsorban. Ebben a rövid beállításban kiválaszthatod, mi jelenjen meg először.";
+"Select preset" = "Előbeállítás kiválasztása";
+"select_preset_message" = "Válaszd ki, mely modulokkal indulj. Később bármit módosíthatsz a Beállításokban.";
+"Start the application automatically when starting your Mac" = "Az alkalmazás automatikus indítása a Mac indításakor";
+"Do not start the application automatically when starting your Mac" = "Az alkalmazás ne induljon el automatikusan a Mac indításakor";
+"Do everything silently in the background (recommended)" = "Minden csendben, a háttérben történjen (ajánlott)";
+"Check for a new version on startup" = "Új verzió keresése indításkor";
+"Check for a new version every day (once a day)" = "Új verzió keresése minden nap (naponta egyszer)";
+"Check for a new version every week (once a week)" = "Új verzió keresése minden héten (hetente egyszer)";
+"Check for a new version every month (once a month)" = "Új verzió keresése minden hónapban (havonta egyszer)";
+"Never check for updates (not recommended)" = "Soha ne keressen frissítéseket (nem ajánlott)";
+"The configuration is completed" = "A beállítás befejeződött";
+"finish_setup_message" = "Minden készen áll.\n\nA Perch ingyenes és nyílt forráskódú. Ha hasznosnak találod, támogathatod a fejlesztését.";
+
+// Views · SetupFlow
+"Next" = "Következő";
+"Next page" = "Következő oldal";
+"Finish" = "Befejezés";
+"Finish setup" = "Beállítás befejezése";
+"Default" = "Alapértelmezett";
+"Basic" = "Alap";
+"Recommended" = "Ajánlott";
+"Extended" = "Bővített";

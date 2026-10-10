@@ -1,0 +1,134 @@
+name: release
+
+# Tag a version and this publishes the release the in-app updater reads.
+#
+# The updater fetches api.github.com/repos/<owner>/<repo>/releases/latest and
+# looks for an asset named exactly "Perch.dmg", then compares the tag against
+# the bundle's CFBundleShortVersionString (a leading "v" is stripped). So the
+# tag must match the version in the project: tag v1.0.1 when MARKETING_VERSION
+# is 1.0.1, or the app will never see the release.
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    # macos-26, not macos-15: the app calls NSGlassEffectView, which only
+    # exists in the macOS 26 SDK. An older image fails at compile time, not at
+    # runtime, so this cannot fall back to an older runner without dropping the
+    # glass -- see Perch/Monitor/Popup.swift.
+    runs-on: macos-26
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check the tag matches the project version
+        run: |
+          TAG="${GITHUB_REF_NAME#v}"
+          # Ask xcodebuild, do not grep the project file: project.pbxproj holds a
+          # MARKETING_VERSION per target (the helper, the widget, the modules),
+          # so the first match belongs to whichever target happens to be listed
+          # first -- which is how the v1.0.0 run failed this check while the app
+          # itself was correctly at 1.0.0.
+          VERSION=$(xcodebuild -project Perch.xcodeproj -scheme Perch \
+            -configuration Release -showBuildSettings 2>/dev/null \
+            | awk '/ MARKETING_VERSION = /{print $3; exit}')
+          echo "tag=$TAG app=$VERSION"
+          if [ -z "$VERSION" ]; then
+            echo "::error::Could not read MARKETING_VERSION from the Perch scheme"
+            exit 1
+          fi
+          if [ "$TAG" != "$VERSION" ]; then
+            echo "::error::Tag v$TAG does not match the app's version $VERSION"
+            exit 1
+          fi
+
+      - name: Build
+        run: |
+          xcodebuild \
+            -project Perch.xcodeproj \
+            -scheme Perch \
+            -configuration Release \
+            -derivedDataPath build \
+            CODE_SIGN_IDENTITY="-" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO \
+            build
+
+      - name: Sign ad hoc
+        # No Developer ID here, so the app is signed ad hoc: it runs, but macOS
+        # will quarantine it on download. The release notes tell people how to
+        # open it. Add a certificate and a notarytool step when you have one.
+        run: codesign --force --deep --sign - build/Build/Products/Release/Perch.app
+
+      - name: Package Perch.dmg
+        # hdiutil rather than create-dmg: no extra dependency to clone, and the
+        # updater only cares about the asset's name.
+        run: |
+          mkdir -p dist/stage
+          cp -R build/Build/Products/Release/Perch.app dist/stage/
+          ln -s /Applications dist/stage/Applications
+          hdiutil create \
+            -volname Perch \
+            -srcfolder dist/stage \
+            -ov -format UDZO \
+            dist/Perch.dmg
+          shasum -a 256 dist/Perch.dmg | tee dist/Perch.dmg.sha256
+
+      - name: Publish the release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/Perch.dmg
+            dist/Perch.dmg.sha256
+          generate_release_notes: true
+          body: |
+            ## Install
+
+            One command. Paste it in Terminal:
+
+            ```bash
+            curl -fsSL https://raw.githubusercontent.com/sagardn/Perch/main/Tools/install.sh | bash
+            ```
+
+            Perch is signed ad hoc rather than with a paid Apple Developer ID,
+            so macOS will not open it when it arrives through a browser.
+            Quarantine is attached by whatever downloads a file, not by the file
+            itself — `curl` does not attach it, so this path never meets
+            Gatekeeper.
+
+            <details>
+            <summary>If you downloaded the DMG below and macOS blocked it</summary>
+
+            You will see **"Perch.app" Not Opened — Apple could not verify…**
+            with only *Move to Trash* and *Done*. Click **Done**; the app is
+            fine, it simply is not notarised.
+
+            On macOS 15 and later the old right-click → Open trick is gone.
+            Instead: **System Settings → Privacy & Security → Security**, where
+            a line now offers **Open Anyway**. Click it, authenticate, then open
+            Perch again.
+
+            Or clear the flag on that one app:
+
+            ```bash
+            xattr -dr com.apple.quarantine /Applications/Perch.app
+            ```
+
+            </details>
+
+            Perch then needs Accessibility (System Settings → Privacy &
+            Security → Accessibility) to move and minimise windows.
+
+            In-app updates are not affected by any of this: Perch downloads the
+            DMG itself, and files an app writes are not quarantined.
+
+            ## Updating
+
+            Perch checks this feed once per day and tells you when a release is
+            newer. Settings → Check for updates changes or disables that.

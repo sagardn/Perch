@@ -1,0 +1,203 @@
+import AppKit
+
+/// What the application shell needs of the storage module.
+extension DiskModule: PerchModule {
+
+    var moduleName: String { "Disk" }
+
+    /// A Mac with no browsable volume is a Mac that is not running, but a
+    /// module that claims to be available and then shows a dash is worse
+    /// than one that says it has nothing.
+    var isAvailable: Bool { !DiskReadings.volumes(includingRemovable: true).isEmpty }
+
+    /// On, as the module it replaces was.
+    var isOnByDefault: Bool { true }
+
+    var hasPreview: Bool { false }
+
+    var isEnabled: Bool {
+        get { DiskSettings.isEnabled }
+        set {
+            guard newValue != DiskSettings.isEnabled else { return }
+            DiskSettings.isEnabled = newValue
+            newValue ? MonitorBar.shared.show(self) : MonitorBar.shared.hide(moduleName)
+        }
+    }
+
+    func start() {
+        guard isEnabled else { return }
+        MonitorBar.shared.show(self)
+    }
+
+    func stop() {
+        willStop()
+        MonitorBar.shared.hide(moduleName)
+    }
+
+    var popupShortcut: [UInt16] { DiskSettings.popupShortcut }
+
+    var menuBarWindow: NSWindow? { MonitorBar.shared.window(for: moduleName) }
+
+    func makePortal() -> NSView? { makeTile() }
+
+    func makeSettingsPage() -> NSView? { DiskSettingsPage() }
+}
+
+/// Storage's own preferences, under the keys the module it replaces used.
+enum DiskSettings {
+    private static let prefs = Preferences.shared
+
+    static var isEnabled: Bool {
+        get { prefs.bool("Disk_state", default: true) }
+        set { prefs.set("Disk_state", newValue) }
+    }
+
+    /// Whether to count removable drives. Off, as it was: a USB stick
+    /// plugged in for a minute should not rearrange the menu bar.
+    static var showsRemovable: Bool {
+        get { prefs.bool("Disk_removable", default: false) }
+        set { prefs.set("Disk_removable", newValue) }
+    }
+
+    static var historyLength: Int {
+        get { prefs.int("Disk_historyLength", default: 120) }
+        set { prefs.set("Disk_historyLength", newValue) }
+    }
+
+    /// Which volume the menu bar figure is about, as a mount point. Empty
+    /// means the startup volume.
+    ///
+    /// `Disk_volume` is canonical. Two other keys have held this setting and
+    /// both are read once and retired -- see `migrateChosenVolume`.
+    static var watchedVolume: String {
+        get {
+            migrateChosenVolume()
+            return prefs.string("Disk_volume", default: "")
+        }
+        set { prefs.set("Disk_volume", newValue) }
+    }
+
+    /// Brings a volume choice stored under an older key up to date.
+    ///
+    /// Three keys have held this setting, because it was built twice:
+    ///
+    /// - `Disk_volume` -- canonical, a mount point.
+    /// - `Disk_selectedDisk` -- a mount point, from a second implementation
+    ///   written in parallel. Anyone who ran that build has one.
+    /// - `Disk_disk` -- the original module's, and a **name** rather than a
+    ///   path. Two drives called "Backup" are entirely possible and a name
+    ///   cannot tell them apart, which is why neither rebuild kept it.
+    ///
+    /// The precedence is strict and the reason matters: a value already
+    /// under the canonical key is a choice the user made *here*, and is
+    /// never overwritten by an older key that also happens to exist. Only an
+    /// absent canonical value is filled in, newer source first.
+    ///
+    /// Both old keys are removed once read, whether or not they yielded
+    /// anything, so this costs one `object(forKey:)` after the first launch.
+    private static func migrateChosenVolume() {
+        let legacyNameKey = "Disk_disk"
+        let parallelPathKey = "Disk_selectedDisk"
+        guard prefs.exists(legacyNameKey) || prefs.exists(parallelPathKey) else { return }
+
+        defer {
+            prefs.set(legacyNameKey, nil)
+            prefs.set(parallelPathKey, nil)
+        }
+
+        // The decision itself is `DiskReadings.resolveWatchedVolume`, which
+        // is pure and tested; this reads the keys and writes the answer.
+        if let resolved = DiskReadings.resolveWatchedVolume(
+            canonical: prefs.string("Disk_volume", default: ""),
+            parallel: prefs.string(parallelPathKey, default: ""),
+            legacyName: prefs.string(legacyNameKey, default: ""),
+            mounted: DiskReadings.volumes(includingRemovable: true)) {
+            prefs.set("Disk_volume", resolved)
+        }
+    }
+
+    static var popupShortcut: [UInt16] {
+        (UserDefaults.standard.array(forKey: "Disk_popupShortcut") as? [Int])?
+            .map { UInt16($0) } ?? []
+    }
+}
+
+/// The storage page in Settings.
+final class DiskSettingsPage: NSView {
+
+    private var shown: Set<MenuBarStyle>
+    private let styles = DiskModule().menuBarStyles
+
+    init() {
+        self.shown = Set(MenuBarStyles.stored(for: "Disk"))
+        super.init(frame: .zero)
+        self.translatesAutoresizingMaskIntoConstraints = false
+
+        // The volumes that exist right now, plus whatever is stored, so a
+        // chosen drive that is currently unplugged still shows as chosen.
+        let mounted = DiskReadings.volumes(includingRemovable: true)
+        var choices: [(String, String)] = [(localized("Startup volume"), "")]
+        choices += mounted.map { ($0.name, $0.path) }
+        let chosen = DiskSettings.watchedVolume
+        if !chosen.isEmpty, !mounted.contains(where: { $0.path == chosen }) {
+            choices.append(("\(chosen) (\(localized("not mounted")))", chosen))
+        }
+
+        let section = Controls.section("Disk", [
+            Controls.row("Watch", Controls.choice(choices, selected: chosen) { value in
+                DiskSettings.watchedVolume = value
+            }),
+            Controls.row("Include removable drives",
+                         Controls.toggle(DiskSettings.showsRemovable) { on in
+                             DiskSettings.showsRemovable = on
+                         }),
+            Controls.row("Chart history", Controls.choice(
+                [("1 minute", "60"), ("2 minutes", "120"), ("5 minutes", "300")],
+                selected: "\(DiskSettings.historyLength)") { value in
+                    DiskSettings.historyLength = Int(value) ?? 120
+                }),
+        ])
+
+        let shapes = Controls.section(localized("Menu bar"), styles.map { style in
+            Controls.row(style.title, Controls.toggle(self.shown.contains(style)) { on in
+                if on {
+                    self.shown.insert(style)
+                } else {
+                    self.shown.remove(style)
+                }
+                MenuBarStyles.store(Array(self.shown), for: "Disk")
+            })
+        })
+
+        let alerts = Controls.section(localized("Notify me when"),
+            DiskThreshold.allCases.map { threshold in
+                Controls.row(threshold.title,
+                             Controls.threshold(on: threshold.isWatched,
+                                                value: threshold.level,
+                                                suffix: threshold.scale.suffix,
+                                                range: threshold.range,
+                                                step: threshold.step) { on, level in
+                    threshold.isWatched = on
+                    threshold.level = level
+                })
+            })
+
+        let column = NSStackView(views: [section, shapes, alerts])
+        column.orientation = .vertical
+        column.alignment = .leading
+        column.edgeInsets = NSEdgeInsets(top: 44, left: 18, bottom: 18, right: 18)
+        column.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(column)
+
+        NSLayoutConstraint.activate([
+            column.leadingAnchor.constraint(equalTo: leadingAnchor),
+            column.trailingAnchor.constraint(equalTo: trailingAnchor),
+            column.topAnchor.constraint(equalTo: topAnchor),
+            section.widthAnchor.constraint(equalTo: column.widthAnchor, constant: -36),
+            shapes.widthAnchor.constraint(equalTo: column.widthAnchor, constant: -36),
+            alerts.widthAnchor.constraint(equalTo: column.widthAnchor, constant: -36),
+        ])
+    }
+
+    required init?(coder: NSCoder) { fatalError("not used") }
+}

@@ -1,0 +1,235 @@
+/*
+ * Localizable.strings — Perch, Greek.
+ *
+ * The source every other language is checked against: `python3 Tools/i18n.py`
+ * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
+ * in step with the code. %0, %1 ... are filled in by `localized()` in
+ * Perch/UI/Localized.swift and must survive translation.
+ */
+
+// Monitor · CPUModuleShell
+"CPU" = "CPU";
+"None" = "Κανένα";
+"2 minutes" = "2 λεπτά";
+"Chart history" = "Ιστορικό γραφήματος";
+"Top processes" = "Κορυφαίες διεργασίες";
+"1 minute" = "1 λεπτό";
+"5 minutes" = "5 λεπτά";
+"Menu bar" = "Γραμμή μενού";
+"Notify me when" = "Ειδοποίηση όταν";
+
+// Monitor · CPUPopup
+"Clock" = "Συχνότητα";
+"Processor" = "Επεξεργαστής";
+"Cores" = "Πυρήνες";
+"Uptime" = "Χρόνος λειτουργίας";
+"System" = "Σύστημα";
+"User" = "Χρήστης";
+"CPU usage threshold" = "Όριο χρήσης CPU";
+"Total" = "Σύνολο";
+"Temperature" = "Θερμοκρασία";
+
+// Monitor · CombinedBar
+"No module has anything to show here yet." = "Καμία μονάδα δεν έχει ακόμη κάτι να εμφανίσει εδώ.";
+"Combined modules" = "Συνδυασμένες μονάδες";
+"Combined details" = "Συνδυασμένες λεπτομέρειες";
+
+// Monitor · DiskModuleShell
+"Disk" = "Δίσκος";
+"Startup volume" = "Τόμος εκκίνησης";
+"not mounted" = "μη προσαρτημένος";
+
+// Monitor · DiskPopup
+"Format" = "Μορφή";
+"Used" = "Σε χρήση";
+"Free" = "Ελεύθερα";
+"Disk usage threshold" = "Όριο χρήσης δίσκου";
+
+// Monitor · DiskTile
+"free" = "ελεύθερα";
+
+// Monitor · GPUModuleShell
+"GPU" = "GPU";
+
+// Monitor · GPUPopup
+"Memory" = "Μνήμη";
+"Model" = "Μοντέλο";
+"Utilization" = "Αξιοποίηση";
+"GPU usage threshold" = "Όριο χρήσης GPU";
+
+// Monitor · GPUTile
+"cores" = "πυρήνες";
+
+// Monitor · MemoryReadings
+"Normal" = "Κανονική";
+"Warning" = "Προειδοποίηση";
+"Critical" = "Κρίσιμη";
+
+// Monitor · MenuBarStyle
+"Name" = "Όνομα";
+"Figure" = "Αριθμός";
+"Ring" = "Δακτύλιος";
+"Gauge" = "Μετρητής";
+"Used and free" = "Σε χρήση και ελεύθερα";
+"Rates" = "Ταχύτητες";
+"Bar chart" = "Ραβδόγραμμα";
+"Line chart" = "Γράφημα γραμμής";
+"Traffic chart" = "Γράφημα κίνησης";
+
+// Monitor · NetworkModuleShell
+"Network" = "Δίκτυο";
+"Internet connection lost" = "Η σύνδεση στο Διαδίκτυο χάθηκε";
+"Internet connection established" = "Η σύνδεση στο Διαδίκτυο αποκαταστάθηκε";
+"Tell me when" = "Ενημέρωση όταν";
+"Connection comes or goes" = "Η σύνδεση διακόπτεται ή επανέρχεται";
+"Wi-Fi network changes" = "Αλλάζει το δίκτυο Wi-Fi";
+"Interface changes" = "Αλλάζει η διεπαφή";
+"Local address changes" = "Αλλάζει η τοπική διεύθυνση";
+"Public address changes" = "Αλλάζει η δημόσια διεύθυνση";
+
+// Monitor · NetworkPopup
+"Download" = "Λήψη";
+"Local IP" = "Τοπική IP";
+"Interface" = "Διεπαφή";
+"Physical address" = "Φυσική διεύθυνση";
+"Online" = "Σε σύνδεση";
+"Offline" = "Εκτός σύνδεσης";
+
+// Monitor · Popup
+"Dashboard" = "Επισκόπηση";
+
+// Monitor · PopupParts
+"Idle" = "Αδράνεια";
+
+// Monitor · PopupSection
+"Process" = "Διεργασία";
+
+// Monitor · RAMModuleShell
+"RAM" = "RAM";
+
+// Monitor · RAMPopup
+"Wired" = "Δεσμευμένη";
+"Compressed" = "Συμπιεσμένη";
+"Swap size" = "Μέγεθος swap";
+"Memory threshold" = "Όριο μνήμης";
+
+// Monitor · RAMTile
+"App" = "Εφαρμογές";
+"Swap" = "Swap";
+"Pressure" = "Πίεση";
+
+// Monitor · SensorReadings
+"Battery" = "Μπαταρία";
+
+// Monitor · SensorsModuleShell
+"Sensors" = "Αισθητήρες";
+"Show in the popup" = "Εμφάνιση στο αναδυόμενο παράθυρο";
+"Hottest temperature" = "Υψηλότερη θερμοκρασία";
+
+// Monitor · SensorsPopup
+"History" = "Ιστορικό";
+
+// Monitor · SensorsTile
+"hottest" = "μέγιστη";
+"sensors" = "αισθητήρες";
+"No sensors answered" = "Κανένας αισθητήρας δεν απάντησε";
+
+// Monitor · Thresholds
+"Total load" = "Συνολικό φορτίο";
+"System load" = "Φορτίο συστήματος";
+"User load" = "Φορτίο χρήστη";
+"Efficiency cores load" = "Φορτίο πυρήνων αποδοτικότητας";
+"Performance cores load" = "Φορτίο πυρήνων επιδόσεων";
+"Memory pressure" = "Πίεση μνήμης";
+"Memory used" = "Μνήμη σε χρήση";
+"Memory free" = "Ελεύθερη μνήμη";
+"Swap in use" = "Swap σε χρήση";
+"Disk usage" = "Χρήση δίσκου";
+
+// Settings · GeneralPane
+"Reset" = "Επαναφορά";
+"Silent" = "Αθόρυβα";
+"Settings" = "Ρυθμίσεις";
+"Check for updates" = "Έλεγχος για ενημερώσεις";
+"Once per day" = "Μία φορά την ημέρα";
+"Once per week" = "Μία φορά την εβδομάδα";
+"Never" = "Ποτέ";
+"Check for update" = "Έλεγχος για ενημέρωση";
+"Start at login" = "Άνοιγμα κατά τη σύνδεση";
+"Spacing" = "Απόσταση";
+"Celsius" = "Κελσίου";
+"Fahrenheit" = "Φαρενάιτ";
+
+// Settings · UpdateInterval
+"At start" = "Κατά την εκκίνηση";
+"Once per month" = "Μία φορά τον μήνα";
+
+// Startup · Startup
+"Successfully updated" = "Επιτυχής ενημέρωση";
+"Perch was updated to v" = "Το Perch ενημερώθηκε στην έκδοση %0";
+
+// Startup · UpdateCheck
+"New version available" = "Διαθέσιμη νέα έκδοση";
+"Click to install the new version of Perch" = "Κάντε κλικ για να εγκαταστήσετε τη νέα έκδοση του Perch";
+
+// System · DashboardPane
+"Unknown" = "Άγνωστο";
+"Graphics" = "Γραφικά";
+"Serial number" = "Σειριακός αριθμός";
+"Model identifier" = "Αναγνωριστικό μοντέλου";
+"Production year" = "Έτος παραγωγής";
+"Number of cores" = "%0 πυρήνες";
+"Number of threads" = "%0 νήματα";
+"Number of e-cores" = "%0 πυρήνες αποδοτικότητας";
+"Number of p-cores" = "%0 πυρήνες επιδόσεων";
+"Disks" = "Δίσκοι";
+"Display" = "Οθόνη";
+
+// UI · SupportWindow
+"Close" = "Κλείσιμο";
+"Support text" = "Σας ευχαριστούμε που χρησιμοποιείτε το Perch.\n\nΤο Perch είναι δωρεάν και ανοιχτού κώδικα, και αναπτύσσεται και συντηρείται στον ελεύθερο χρόνο. Αν κάνει τη μέρα σας λίγο πιο εύκολη, μια συνεισφορά βοηθά να συνεχιστεί.";
+"Support Perch" = "Υποστήριξη του Perch";
+"Donate" = "Δωρεά";
+
+// Update · UpdateWindow
+"Install" = "Εγκατάσταση";
+
+// Views · SettingsShell
+"Report a bug" = "Αναφορά σφάλματος";
+"Support the application" = "Υποστήριξη της εφαρμογής";
+"Close application" = "Κλείσιμο εφαρμογής";
+"Toggle the module" = "Ενεργοποίηση/απενεργοποίηση μονάδας";
+"Modules" = "Μονάδες";
+"Search" = "Αναζήτηση";
+"Preview" = "Προεπισκόπηση";
+"Support" = "Υποστήριξη";
+"Pause the Perch" = "Παύση του Perch";
+
+// Views · Setup
+"Perch Setup" = "Ρύθμιση του Perch";
+"Previous" = "Προηγούμενο";
+"Previous page" = "Προηγούμενη σελίδα";
+"Welcome to Perch" = "Καλώς ορίσατε στο Perch";
+"welcome_message" = "Το Perch φέρνει στη γραμμή μενού σας μια παρακολούθηση συστήματος, έναν εκκινητή εφαρμογών και έναν εναλλάκτη παραθύρων. Αυτή η σύντομη ρύθμιση επιλέγει τι θα εμφανίζεται πρώτα.";
+"Select preset" = "Επιλογή προρρύθμισης";
+"select_preset_message" = "Επιλέξτε τις μονάδες με τις οποίες θα ξεκινήσετε. Μπορείτε να αλλάξετε οτιδήποτε αργότερα στις Ρυθμίσεις.";
+"Start the application automatically when starting your Mac" = "Αυτόματο άνοιγμα της εφαρμογής κατά την εκκίνηση του Mac";
+"Do not start the application automatically when starting your Mac" = "Χωρίς αυτόματο άνοιγμα της εφαρμογής κατά την εκκίνηση του Mac";
+"Do everything silently in the background (recommended)" = "Όλα αθόρυβα στο παρασκήνιο (προτείνεται)";
+"Check for a new version on startup" = "Έλεγχος για νέα έκδοση κατά την εκκίνηση";
+"Check for a new version every day (once a day)" = "Έλεγχος για νέα έκδοση κάθε μέρα (μία φορά την ημέρα)";
+"Check for a new version every week (once a week)" = "Έλεγχος για νέα έκδοση κάθε εβδομάδα (μία φορά την εβδομάδα)";
+"Check for a new version every month (once a month)" = "Έλεγχος για νέα έκδοση κάθε μήνα (μία φορά τον μήνα)";
+"Never check for updates (not recommended)" = "Χωρίς έλεγχο για ενημερώσεις (δεν προτείνεται)";
+"The configuration is completed" = "Η ρύθμιση ολοκληρώθηκε";
+"finish_setup_message" = "Όλα είναι έτοιμα.\n\nΤο Perch είναι δωρεάν και ανοιχτού κώδικα. Αν σας είναι χρήσιμο, μπορείτε να υποστηρίξετε την ανάπτυξή του.";
+
+// Views · SetupFlow
+"Next" = "Επόμενο";
+"Next page" = "Επόμενη σελίδα";
+"Finish" = "Τέλος";
+"Finish setup" = "Ολοκλήρωση ρύθμισης";
+"Default" = "Προεπιλογή";
+"Basic" = "Βασικό";
+"Recommended" = "Προτεινόμενο";
+"Extended" = "Εκτεταμένο";

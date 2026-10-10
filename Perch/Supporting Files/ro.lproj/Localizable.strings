@@ -1,0 +1,235 @@
+/*
+ * Localizable.strings — Perch, Romanian.
+ *
+ * The source every other language is checked against: `python3 Tools/i18n.py`
+ * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
+ * in step with the code. %0, %1 ... are filled in by `localized()` in
+ * Perch/UI/Localized.swift and must survive translation.
+ */
+
+// Monitor · CPUModuleShell
+"CPU" = "CPU";
+"None" = "Niciunul";
+"2 minutes" = "2 minute";
+"Chart history" = "Istoric grafic";
+"Top processes" = "Procese principale";
+"1 minute" = "1 minut";
+"5 minutes" = "5 minute";
+"Menu bar" = "Bara de meniu";
+"Notify me when" = "Notificați-mă când";
+
+// Monitor · CPUPopup
+"Clock" = "Frecvență";
+"Processor" = "Procesor";
+"Cores" = "Nuclee";
+"Uptime" = "Timp de funcționare";
+"System" = "Sistem";
+"User" = "Utilizator";
+"CPU usage threshold" = "Prag de utilizare CPU";
+"Total" = "Total";
+"Temperature" = "Temperatură";
+
+// Monitor · CombinedBar
+"No module has anything to show here yet." = "Niciun modul nu are încă nimic de afișat aici.";
+"Combined modules" = "Module combinate";
+"Combined details" = "Detalii combinate";
+
+// Monitor · DiskModuleShell
+"Disk" = "Disc";
+"Startup volume" = "Volum de pornire";
+"not mounted" = "nemontat";
+
+// Monitor · DiskPopup
+"Format" = "Format";
+"Used" = "Utilizat";
+"Free" = "Liber";
+"Disk usage threshold" = "Prag de utilizare a discului";
+
+// Monitor · DiskTile
+"free" = "liberi";
+
+// Monitor · GPUModuleShell
+"GPU" = "GPU";
+
+// Monitor · GPUPopup
+"Memory" = "Memorie";
+"Model" = "Model";
+"Utilization" = "Utilizare";
+"GPU usage threshold" = "Prag de utilizare GPU";
+
+// Monitor · GPUTile
+"cores" = "nuclee";
+
+// Monitor · MemoryReadings
+"Normal" = "Normală";
+"Warning" = "Avertisment";
+"Critical" = "Critică";
+
+// Monitor · MenuBarStyle
+"Name" = "Nume";
+"Figure" = "Cifră";
+"Ring" = "Inel";
+"Gauge" = "Indicator";
+"Used and free" = "Utilizat și liber";
+"Rates" = "Viteze";
+"Bar chart" = "Grafic cu bare";
+"Line chart" = "Grafic liniar";
+"Traffic chart" = "Grafic de trafic";
+
+// Monitor · NetworkModuleShell
+"Network" = "Rețea";
+"Internet connection lost" = "Conexiunea la internet s-a pierdut";
+"Internet connection established" = "Conexiunea la internet a fost stabilită";
+"Tell me when" = "Anunțați-mă când";
+"Connection comes or goes" = "Conexiunea apare sau dispare";
+"Wi-Fi network changes" = "Rețeaua Wi-Fi se schimbă";
+"Interface changes" = "Interfața se schimbă";
+"Local address changes" = "Adresa locală se schimbă";
+"Public address changes" = "Adresa publică se schimbă";
+
+// Monitor · NetworkPopup
+"Download" = "Descărcare";
+"Local IP" = "IP local";
+"Interface" = "Interfață";
+"Physical address" = "Adresă fizică";
+"Online" = "Online";
+"Offline" = "Offline";
+
+// Monitor · Popup
+"Dashboard" = "Prezentare generală";
+
+// Monitor · PopupParts
+"Idle" = "Inactiv";
+
+// Monitor · PopupSection
+"Process" = "Proces";
+
+// Monitor · RAMModuleShell
+"RAM" = "RAM";
+
+// Monitor · RAMPopup
+"Wired" = "Fixată";
+"Compressed" = "Comprimată";
+"Swap size" = "Dimensiune swap";
+"Memory threshold" = "Prag de memorie";
+
+// Monitor · RAMTile
+"App" = "Aplicații";
+"Swap" = "Swap";
+"Pressure" = "Presiune";
+
+// Monitor · SensorReadings
+"Battery" = "Baterie";
+
+// Monitor · SensorsModuleShell
+"Sensors" = "Senzori";
+"Show in the popup" = "Afișează în fereastra pop-up";
+"Hottest temperature" = "Temperatura maximă";
+
+// Monitor · SensorsPopup
+"History" = "Istoric";
+
+// Monitor · SensorsTile
+"hottest" = "maxim";
+"sensors" = "senzori";
+"No sensors answered" = "Niciun senzor nu a răspuns";
+
+// Monitor · Thresholds
+"Total load" = "Încărcare totală";
+"System load" = "Încărcare sistem";
+"User load" = "Încărcare utilizator";
+"Efficiency cores load" = "Încărcare nuclee de eficiență";
+"Performance cores load" = "Încărcare nuclee de performanță";
+"Memory pressure" = "Presiune memorie";
+"Memory used" = "Memorie utilizată";
+"Memory free" = "Memorie liberă";
+"Swap in use" = "Swap utilizat";
+"Disk usage" = "Utilizare disc";
+
+// Settings · GeneralPane
+"Reset" = "Resetează";
+"Silent" = "Silențios";
+"Settings" = "Configurări";
+"Check for updates" = "Caută actualizări";
+"Once per day" = "O dată pe zi";
+"Once per week" = "O dată pe săptămână";
+"Never" = "Niciodată";
+"Check for update" = "Caută actualizare";
+"Start at login" = "Pornește la autentificare";
+"Spacing" = "Spațiere";
+"Celsius" = "Celsius";
+"Fahrenheit" = "Fahrenheit";
+
+// Settings · UpdateInterval
+"At start" = "La pornire";
+"Once per month" = "O dată pe lună";
+
+// Startup · Startup
+"Successfully updated" = "Actualizare reușită";
+"Perch was updated to v" = "Perch a fost actualizat la versiunea %0";
+
+// Startup · UpdateCheck
+"New version available" = "Versiune nouă disponibilă";
+"Click to install the new version of Perch" = "Faceți clic pentru a instala noua versiune Perch";
+
+// System · DashboardPane
+"Unknown" = "Necunoscut";
+"Graphics" = "Grafică";
+"Serial number" = "Număr de serie";
+"Model identifier" = "Identificator model";
+"Production year" = "An de fabricație";
+"Number of cores" = "%0 nuclee";
+"Number of threads" = "%0 fire de execuție";
+"Number of e-cores" = "%0 nuclee de eficiență";
+"Number of p-cores" = "%0 nuclee de performanță";
+"Disks" = "Discuri";
+"Display" = "Ecran";
+
+// UI · SupportWindow
+"Close" = "Închide";
+"Support text" = "Vă mulțumim că folosiți Perch.\n\nPerch este gratuit și open source și este dezvoltat și întreținut în timpul liber. Dacă vă face ziua puțin mai ușoară, o contribuție ajută ca proiectul să continue.";
+"Support Perch" = "Susține Perch";
+"Donate" = "Donează";
+
+// Update · UpdateWindow
+"Install" = "Instalează";
+
+// Views · SettingsShell
+"Report a bug" = "Raportează o eroare";
+"Support the application" = "Susține aplicația";
+"Close application" = "Închide aplicația";
+"Toggle the module" = "Activează/dezactivează modulul";
+"Modules" = "Module";
+"Search" = "Caută";
+"Preview" = "Previzualizare";
+"Support" = "Susținere";
+"Pause the Perch" = "Pune Perch în pauză";
+
+// Views · Setup
+"Perch Setup" = "Configurare Perch";
+"Previous" = "Înapoi";
+"Previous page" = "Pagina anterioară";
+"Welcome to Perch" = "Bun venit în Perch";
+"welcome_message" = "Perch adaugă în bara de meniu un monitor de sistem, un lansator de aplicații și un comutator de ferestre. Această scurtă configurare alege ce se afișează mai întâi.";
+"Select preset" = "Alegeți o presetare";
+"select_preset_message" = "Alegeți modulele cu care începeți. Puteți modifica orice mai târziu în Configurări.";
+"Start the application automatically when starting your Mac" = "Pornește aplicația automat la pornirea Mac-ului";
+"Do not start the application automatically when starting your Mac" = "Nu porni aplicația automat la pornirea Mac-ului";
+"Do everything silently in the background (recommended)" = "Fă totul silențios, în fundal (recomandat)";
+"Check for a new version on startup" = "Caută o versiune nouă la pornire";
+"Check for a new version every day (once a day)" = "Caută o versiune nouă în fiecare zi (o dată pe zi)";
+"Check for a new version every week (once a week)" = "Caută o versiune nouă în fiecare săptămână (o dată pe săptămână)";
+"Check for a new version every month (once a month)" = "Caută o versiune nouă în fiecare lună (o dată pe lună)";
+"Never check for updates (not recommended)" = "Nu căuta niciodată actualizări (nerecomandat)";
+"The configuration is completed" = "Configurarea este finalizată";
+"finish_setup_message" = "Totul este gata.\n\nPerch este gratuit și open source. Dacă vă este util, puteți susține dezvoltarea lui.";
+
+// Views · SetupFlow
+"Next" = "Înainte";
+"Next page" = "Pagina următoare";
+"Finish" = "Finalizează";
+"Finish setup" = "Finalizează configurarea";
+"Default" = "Implicit";
+"Basic" = "De bază";
+"Recommended" = "Recomandat";
+"Extended" = "Extins";

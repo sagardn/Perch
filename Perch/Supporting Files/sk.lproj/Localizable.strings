@@ -1,0 +1,235 @@
+/*
+ * Localizable.strings — Perch, Slovak.
+ *
+ * The source every other language is checked against: `python3 Tools/i18n.py`
+ * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
+ * in step with the code. %0, %1 ... are filled in by `localized()` in
+ * Perch/UI/Localized.swift and must survive translation.
+ */
+
+// Monitor · CPUModuleShell
+"CPU" = "CPU";
+"None" = "Žiadne";
+"2 minutes" = "2 minúty";
+"Chart history" = "História grafu";
+"Top processes" = "Najnáročnejšie procesy";
+"1 minute" = "1 minúta";
+"5 minutes" = "5 minút";
+"Menu bar" = "Lišta s ponukami";
+"Notify me when" = "Upozorniť, keď";
+
+// Monitor · CPUPopup
+"Clock" = "Frekvencia";
+"Processor" = "Procesor";
+"Cores" = "Jadrá";
+"Uptime" = "Doba behu";
+"System" = "Systém";
+"User" = "Používateľ";
+"CPU usage threshold" = "Prah využitia CPU";
+"Total" = "Celkom";
+"Temperature" = "Teplota";
+
+// Monitor · CombinedBar
+"No module has anything to show here yet." = "Žiadny modul tu zatiaľ nemá čo zobraziť.";
+"Combined modules" = "Zlúčené moduly";
+"Combined details" = "Zlúčené podrobnosti";
+
+// Monitor · DiskModuleShell
+"Disk" = "Disk";
+"Startup volume" = "Štartovací zväzok";
+"not mounted" = "nepripojený";
+
+// Monitor · DiskPopup
+"Format" = "Formát";
+"Used" = "Obsadené";
+"Free" = "Voľné";
+"Disk usage threshold" = "Prah zaplnenia disku";
+
+// Monitor · DiskTile
+"free" = "voľné";
+
+// Monitor · GPUModuleShell
+"GPU" = "GPU";
+
+// Monitor · GPUPopup
+"Memory" = "Pamäť";
+"Model" = "Model";
+"Utilization" = "Využitie";
+"GPU usage threshold" = "Prah využitia GPU";
+
+// Monitor · GPUTile
+"cores" = "jadier";
+
+// Monitor · MemoryReadings
+"Normal" = "Normálne";
+"Warning" = "Varovanie";
+"Critical" = "Kritické";
+
+// Monitor · MenuBarStyle
+"Name" = "Názov";
+"Figure" = "Číslo";
+"Ring" = "Prstenec";
+"Gauge" = "Ukazovateľ";
+"Used and free" = "Obsadené a voľné";
+"Rates" = "Rýchlosti";
+"Bar chart" = "Stĺpcový graf";
+"Line chart" = "Čiarový graf";
+"Traffic chart" = "Graf prevádzky";
+
+// Monitor · NetworkModuleShell
+"Network" = "Sieť";
+"Internet connection lost" = "Pripojenie k internetu sa stratilo";
+"Internet connection established" = "Pripojenie k internetu sa nadviazalo";
+"Tell me when" = "Oznámiť, keď";
+"Connection comes or goes" = "Pripojenie sa objaví alebo zmizne";
+"Wi-Fi network changes" = "Zmení sa sieť Wi-Fi";
+"Interface changes" = "Zmení sa rozhranie";
+"Local address changes" = "Zmení sa lokálna adresa";
+"Public address changes" = "Zmení sa verejná adresa";
+
+// Monitor · NetworkPopup
+"Download" = "Sťahovanie";
+"Local IP" = "Lokálna IP";
+"Interface" = "Rozhranie";
+"Physical address" = "Fyzická adresa";
+"Online" = "Online";
+"Offline" = "Offline";
+
+// Monitor · Popup
+"Dashboard" = "Prehľad";
+
+// Monitor · PopupParts
+"Idle" = "Nečinnosť";
+
+// Monitor · PopupSection
+"Process" = "Proces";
+
+// Monitor · RAMModuleShell
+"RAM" = "RAM";
+
+// Monitor · RAMPopup
+"Wired" = "Vyhradená";
+"Compressed" = "Komprimovaná";
+"Swap size" = "Veľkosť odkladania";
+"Memory threshold" = "Prah pamäte";
+
+// Monitor · RAMTile
+"App" = "Aplikácie";
+"Swap" = "Odkladanie";
+"Pressure" = "Zaťaženie";
+
+// Monitor · SensorReadings
+"Battery" = "Batéria";
+
+// Monitor · SensorsModuleShell
+"Sensors" = "Senzory";
+"Show in the popup" = "Zobraziť vo vyskakovacom okne";
+"Hottest temperature" = "Najvyššia teplota";
+
+// Monitor · SensorsPopup
+"History" = "História";
+
+// Monitor · SensorsTile
+"hottest" = "max.";
+"sensors" = "senzorov";
+"No sensors answered" = "Žiadny senzor neodpovedal";
+
+// Monitor · Thresholds
+"Total load" = "Celková záťaž";
+"System load" = "Záťaž systému";
+"User load" = "Záťaž používateľa";
+"Efficiency cores load" = "Záťaž efektívnych jadier";
+"Performance cores load" = "Záťaž výkonných jadier";
+"Memory pressure" = "Zaťaženie pamäte";
+"Memory used" = "Využitá pamäť";
+"Memory free" = "Voľná pamäť";
+"Swap in use" = "Využité odkladanie";
+"Disk usage" = "Zaplnenie disku";
+
+// Settings · GeneralPane
+"Reset" = "Resetovať";
+"Silent" = "Na pozadí";
+"Settings" = "Nastavenia";
+"Check for updates" = "Hľadať aktualizácie";
+"Once per day" = "Raz denne";
+"Once per week" = "Raz týždenne";
+"Never" = "Nikdy";
+"Check for update" = "Vyhľadať aktualizácie";
+"Start at login" = "Otvoriť pri prihlásení";
+"Spacing" = "Rozostupy";
+"Celsius" = "Celzius";
+"Fahrenheit" = "Fahrenheit";
+
+// Settings · UpdateInterval
+"At start" = "Pri spustení";
+"Once per month" = "Raz mesačne";
+
+// Startup · Startup
+"Successfully updated" = "Aktualizácia prebehla";
+"Perch was updated to v" = "Perch bol aktualizovaný na verziu %0";
+
+// Startup · UpdateCheck
+"New version available" = "K dispozícii je nová verzia";
+"Click to install the new version of Perch" = "Kliknutím nainštalujete novú verziu Perch";
+
+// System · DashboardPane
+"Unknown" = "Neznáme";
+"Graphics" = "Grafika";
+"Serial number" = "Sériové číslo";
+"Model identifier" = "Identifikátor modelu";
+"Production year" = "Rok výroby";
+"Number of cores" = "Jadrá: %0";
+"Number of threads" = "Vlákna: %0";
+"Number of e-cores" = "Efektívne jadrá: %0";
+"Number of p-cores" = "Výkonné jadrá: %0";
+"Disks" = "Disky";
+"Display" = "Displej";
+
+// UI · SupportWindow
+"Close" = "Zavrieť";
+"Support text" = "Ďakujeme, že používate Perch.\n\nPerch je bezplatný a má otvorený zdrojový kód. Vzniká a udržiava sa vo voľnom čase. Ak vám aspoň trochu uľahčuje deň, príspevok pomôže v jeho ďalšom vývoji.";
+"Support Perch" = "Podporiť Perch";
+"Donate" = "Prispieť";
+
+// Update · UpdateWindow
+"Install" = "Inštalovať";
+
+// Views · SettingsShell
+"Report a bug" = "Nahlásiť chybu";
+"Support the application" = "Podporiť aplikáciu";
+"Close application" = "Ukončiť aplikáciu";
+"Toggle the module" = "Zapnúť alebo vypnúť modul";
+"Modules" = "Moduly";
+"Search" = "Hľadať";
+"Preview" = "Náhľad";
+"Support" = "Podpora";
+"Pause the Perch" = "Pozastaviť Perch";
+
+// Views · Setup
+"Perch Setup" = "Nastavenie Perch";
+"Previous" = "Späť";
+"Previous page" = "Predchádzajúca stránka";
+"Welcome to Perch" = "Vitajte v Perch";
+"welcome_message" = "Perch pridá do lišty s ponukami monitor systému, spúšťač aplikácií a prepínač okien. V tomto krátkom nastavení vyberiete, čo sa má zobraziť najskôr.";
+"Select preset" = "Vyberte súpravu";
+"select_preset_message" = "Vyberte počiatočnú súpravu modulov. Čokoľvek z nej môžete neskôr zmeniť v Nastaveniach.";
+"Start the application automatically when starting your Mac" = "Otvárať aplikáciu automaticky pri spustení Macu";
+"Do not start the application automatically when starting your Mac" = "Neotvárať aplikáciu automaticky pri spustení Macu";
+"Do everything silently in the background (recommended)" = "Robiť všetko nenápadne na pozadí (odporúča sa)";
+"Check for a new version on startup" = "Hľadať novú verziu pri spustení";
+"Check for a new version every day (once a day)" = "Hľadať novú verziu každý deň (raz denne)";
+"Check for a new version every week (once a week)" = "Hľadať novú verziu každý týždeň (raz týždenne)";
+"Check for a new version every month (once a month)" = "Hľadať novú verziu každý mesiac (raz mesačne)";
+"Never check for updates (not recommended)" = "Nikdy nehľadať aktualizácie (neodporúča sa)";
+"The configuration is completed" = "Nastavenie je dokončené";
+"finish_setup_message" = "Všetko je pripravené.\n\nPerch je bezplatný a má otvorený zdrojový kód. Ak je pre vás užitočný, môžete podporiť jeho vývoj.";
+
+// Views · SetupFlow
+"Next" = "Ďalej";
+"Next page" = "Ďalšia stránka";
+"Finish" = "Dokončiť";
+"Finish setup" = "Dokončiť nastavenie";
+"Default" = "Predvolená";
+"Basic" = "Základná";
+"Recommended" = "Odporúčaná";
+"Extended" = "Rozšírená";

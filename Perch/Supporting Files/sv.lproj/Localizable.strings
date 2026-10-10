@@ -1,0 +1,235 @@
+/*
+ * Localizable.strings — Perch, Swedish.
+ *
+ * The source every other language is checked against: `python3 Tools/i18n.py`
+ * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
+ * in step with the code. %0, %1 ... are filled in by `localized()` in
+ * Perch/UI/Localized.swift and must survive translation.
+ */
+
+// Monitor · CPUModuleShell
+"CPU" = "CPU";
+"None" = "Ingen";
+"2 minutes" = "2 minuter";
+"Chart history" = "Diagramhistorik";
+"Top processes" = "Toppprocesser";
+"1 minute" = "1 minut";
+"5 minutes" = "5 minuter";
+"Menu bar" = "Menyrad";
+"Notify me when" = "Meddela mig när";
+
+// Monitor · CPUPopup
+"Clock" = "Klockfrekvens";
+"Processor" = "Processor";
+"Cores" = "Kärnor";
+"Uptime" = "Drifttid";
+"System" = "System";
+"User" = "Användare";
+"CPU usage threshold" = "Tröskel för CPU-användning";
+"Total" = "Totalt";
+"Temperature" = "Temperatur";
+
+// Monitor · CombinedBar
+"No module has anything to show here yet." = "Ingen modul har något att visa här än.";
+"Combined modules" = "Kombinerade moduler";
+"Combined details" = "Kombinerade detaljer";
+
+// Monitor · DiskModuleShell
+"Disk" = "Skiva";
+"Startup volume" = "Startvolym";
+"not mounted" = "inte monterad";
+
+// Monitor · DiskPopup
+"Format" = "Format";
+"Used" = "Använt";
+"Free" = "Ledigt";
+"Disk usage threshold" = "Tröskel för skivanvändning";
+
+// Monitor · DiskTile
+"free" = "ledigt";
+
+// Monitor · GPUModuleShell
+"GPU" = "GPU";
+
+// Monitor · GPUPopup
+"Memory" = "Minne";
+"Model" = "Modell";
+"Utilization" = "Användning";
+"GPU usage threshold" = "Tröskel för GPU-användning";
+
+// Monitor · GPUTile
+"cores" = "kärnor";
+
+// Monitor · MemoryReadings
+"Normal" = "Normalt";
+"Warning" = "Varning";
+"Critical" = "Kritiskt";
+
+// Monitor · MenuBarStyle
+"Name" = "Namn";
+"Figure" = "Siffra";
+"Ring" = "Ring";
+"Gauge" = "Mätare";
+"Used and free" = "Använt och ledigt";
+"Rates" = "Hastigheter";
+"Bar chart" = "Stapeldiagram";
+"Line chart" = "Linjediagram";
+"Traffic chart" = "Trafikdiagram";
+
+// Monitor · NetworkModuleShell
+"Network" = "Nätverk";
+"Internet connection lost" = "Internetanslutningen bröts";
+"Internet connection established" = "Internetanslutningen upprättades";
+"Tell me when" = "Säg till när";
+"Connection comes or goes" = "Anslutningen kommer eller går";
+"Wi-Fi network changes" = "Wi-Fi-nätverket ändras";
+"Interface changes" = "Gränssnittet ändras";
+"Local address changes" = "Den lokala adressen ändras";
+"Public address changes" = "Den publika adressen ändras";
+
+// Monitor · NetworkPopup
+"Download" = "Hämtning";
+"Local IP" = "Lokal IP";
+"Interface" = "Gränssnitt";
+"Physical address" = "Fysisk adress";
+"Online" = "Ansluten";
+"Offline" = "Frånkopplad";
+
+// Monitor · Popup
+"Dashboard" = "Översikt";
+
+// Monitor · PopupParts
+"Idle" = "Inaktiv";
+
+// Monitor · PopupSection
+"Process" = "Process";
+
+// Monitor · RAMModuleShell
+"RAM" = "RAM";
+
+// Monitor · RAMPopup
+"Wired" = "Fast";
+"Compressed" = "Komprimerat";
+"Swap size" = "Växlingsstorlek";
+"Memory threshold" = "Tröskel för minne";
+
+// Monitor · RAMTile
+"App" = "App";
+"Swap" = "Växling";
+"Pressure" = "Tryck";
+
+// Monitor · SensorReadings
+"Battery" = "Batteri";
+
+// Monitor · SensorsModuleShell
+"Sensors" = "Sensorer";
+"Show in the popup" = "Visa i popupfönstret";
+"Hottest temperature" = "Högsta temperatur";
+
+// Monitor · SensorsPopup
+"History" = "Historik";
+
+// Monitor · SensorsTile
+"hottest" = "varmast";
+"sensors" = "sensorer";
+"No sensors answered" = "Inga sensorer svarade";
+
+// Monitor · Thresholds
+"Total load" = "Total belastning";
+"System load" = "Systembelastning";
+"User load" = "Användarbelastning";
+"Efficiency cores load" = "Belastning på effektivitetskärnor";
+"Performance cores load" = "Belastning på prestandakärnor";
+"Memory pressure" = "Minnestryck";
+"Memory used" = "Använt minne";
+"Memory free" = "Ledigt minne";
+"Swap in use" = "Använt växlingsminne";
+"Disk usage" = "Skivanvändning";
+
+// Settings · GeneralPane
+"Reset" = "Återställ";
+"Silent" = "Tyst";
+"Settings" = "Inställningar";
+"Check for updates" = "Sök efter uppdateringar";
+"Once per day" = "En gång per dag";
+"Once per week" = "En gång per vecka";
+"Never" = "Aldrig";
+"Check for update" = "Sök efter uppdatering";
+"Start at login" = "Starta vid inloggning";
+"Spacing" = "Avstånd";
+"Celsius" = "Celsius";
+"Fahrenheit" = "Fahrenheit";
+
+// Settings · UpdateInterval
+"At start" = "Vid start";
+"Once per month" = "En gång per månad";
+
+// Startup · Startup
+"Successfully updated" = "Uppdateringen lyckades";
+"Perch was updated to v" = "Perch har uppdaterats till version %0";
+
+// Startup · UpdateCheck
+"New version available" = "Ny version tillgänglig";
+"Click to install the new version of Perch" = "Klicka för att installera den nya versionen av Perch";
+
+// System · DashboardPane
+"Unknown" = "Okänd";
+"Graphics" = "Grafik";
+"Serial number" = "Serienummer";
+"Model identifier" = "Modellidentifierare";
+"Production year" = "Tillverkningsår";
+"Number of cores" = "%0 kärnor";
+"Number of threads" = "%0 trådar";
+"Number of e-cores" = "%0 effektivitetskärnor";
+"Number of p-cores" = "%0 prestandakärnor";
+"Disks" = "Skivor";
+"Display" = "Skärm";
+
+// UI · SupportWindow
+"Close" = "Stäng";
+"Support text" = "Tack för att du använder Perch.\n\nPerch är gratis och har öppen källkod, och det byggs och underhålls på fritiden. Om det gör din dag lite enklare hjälper ett bidrag till att hålla det vid liv.";
+"Support Perch" = "Stöd Perch";
+"Donate" = "Donera";
+
+// Update · UpdateWindow
+"Install" = "Installera";
+
+// Views · SettingsShell
+"Report a bug" = "Rapportera en bugg";
+"Support the application" = "Stöd appen";
+"Close application" = "Stäng appen";
+"Toggle the module" = "Slå på/av modulen";
+"Modules" = "Moduler";
+"Search" = "Sök";
+"Preview" = "Förhandsvisning";
+"Support" = "Stöd";
+"Pause the Perch" = "Pausa Perch";
+
+// Views · Setup
+"Perch Setup" = "Konfigurera Perch";
+"Previous" = "Föregående";
+"Previous page" = "Föregående sida";
+"Welcome to Perch" = "Välkommen till Perch";
+"welcome_message" = "Perch lägger en systemövervakare, en appstartare och en fönsterväxlare i menyraden. Den här korta konfigurationen väljer vad som ska visas först.";
+"Select preset" = "Välj förinställning";
+"select_preset_message" = "Välj en uppsättning moduler att börja med. Du kan ändra allt senare i Inställningar.";
+"Start the application automatically when starting your Mac" = "Starta appen automatiskt när du startar din Mac";
+"Do not start the application automatically when starting your Mac" = "Starta inte appen automatiskt när du startar din Mac";
+"Do everything silently in the background (recommended)" = "Gör allt tyst i bakgrunden (rekommenderas)";
+"Check for a new version on startup" = "Sök efter en ny version vid start";
+"Check for a new version every day (once a day)" = "Sök efter en ny version varje dag (en gång om dagen)";
+"Check for a new version every week (once a week)" = "Sök efter en ny version varje vecka (en gång i veckan)";
+"Check for a new version every month (once a month)" = "Sök efter en ny version varje månad (en gång i månaden)";
+"Never check for updates (not recommended)" = "Sök aldrig efter uppdateringar (rekommenderas inte)";
+"The configuration is completed" = "Konfigurationen är klar";
+"finish_setup_message" = "Allt är klart.\n\nPerch är gratis och har öppen källkod. Om du har nytta av det kan du stödja utvecklingen.";
+
+// Views · SetupFlow
+"Next" = "Nästa";
+"Next page" = "Nästa sida";
+"Finish" = "Slutför";
+"Finish setup" = "Slutför konfigurationen";
+"Default" = "Standard";
+"Basic" = "Grundläggande";
+"Recommended" = "Rekommenderad";
+"Extended" = "Utökad";

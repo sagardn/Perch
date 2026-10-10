@@ -1,0 +1,235 @@
+/*
+ * Localizable.strings — Perch, Japanese.
+ *
+ * The source every other language is checked against: `python3 Tools/i18n.py`
+ * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
+ * in step with the code. %0, %1 ... are filled in by `localized()` in
+ * Perch/UI/Localized.swift and must survive translation.
+ */
+
+// Monitor · CPUModuleShell
+"CPU" = "CPU";
+"None" = "なし";
+"2 minutes" = "2分";
+"Chart history" = "グラフの履歴";
+"Top processes" = "上位のプロセス";
+"1 minute" = "1分";
+"5 minutes" = "5分";
+"Menu bar" = "メニューバー";
+"Notify me when" = "次の場合に通知";
+
+// Monitor · CPUPopup
+"Clock" = "クロック";
+"Processor" = "プロセッサ";
+"Cores" = "コア";
+"Uptime" = "稼働時間";
+"System" = "システム";
+"User" = "ユーザ";
+"CPU usage threshold" = "CPU使用率のしきい値";
+"Total" = "合計";
+"Temperature" = "温度";
+
+// Monitor · CombinedBar
+"No module has anything to show here yet." = "ここに表示できるモジュールはまだありません。";
+"Combined modules" = "モジュールを統合";
+"Combined details" = "詳細を統合";
+
+// Monitor · DiskModuleShell
+"Disk" = "ディスク";
+"Startup volume" = "起動ボリューム";
+"not mounted" = "未マウント";
+
+// Monitor · DiskPopup
+"Format" = "フォーマット";
+"Used" = "使用済み";
+"Free" = "空き";
+"Disk usage threshold" = "ディスク使用率のしきい値";
+
+// Monitor · DiskTile
+"free" = "空き";
+
+// Monitor · GPUModuleShell
+"GPU" = "GPU";
+
+// Monitor · GPUPopup
+"Memory" = "メモリ";
+"Model" = "モデル";
+"Utilization" = "使用率";
+"GPU usage threshold" = "GPU使用率のしきい値";
+
+// Monitor · GPUTile
+"cores" = "コア";
+
+// Monitor · MemoryReadings
+"Normal" = "正常";
+"Warning" = "警告";
+"Critical" = "危険";
+
+// Monitor · MenuBarStyle
+"Name" = "名前";
+"Figure" = "数値";
+"Ring" = "リング";
+"Gauge" = "ゲージ";
+"Used and free" = "使用済みと空き";
+"Rates" = "速度";
+"Bar chart" = "棒グラフ";
+"Line chart" = "折れ線グラフ";
+"Traffic chart" = "通信量グラフ";
+
+// Monitor · NetworkModuleShell
+"Network" = "ネットワーク";
+"Internet connection lost" = "インターネット接続が切断されました";
+"Internet connection established" = "インターネットに接続されました";
+"Tell me when" = "次の場合に知らせる";
+"Connection comes or goes" = "接続または切断したとき";
+"Wi-Fi network changes" = "Wi-Fiネットワークが変わったとき";
+"Interface changes" = "インターフェイスが変わったとき";
+"Local address changes" = "ローカルアドレスが変わったとき";
+"Public address changes" = "パブリックアドレスが変わったとき";
+
+// Monitor · NetworkPopup
+"Download" = "ダウンロード";
+"Local IP" = "ローカルIP";
+"Interface" = "インターフェイス";
+"Physical address" = "物理アドレス";
+"Online" = "オンライン";
+"Offline" = "オフライン";
+
+// Monitor · Popup
+"Dashboard" = "ダッシュボード";
+
+// Monitor · PopupParts
+"Idle" = "アイドル";
+
+// Monitor · PopupSection
+"Process" = "プロセス";
+
+// Monitor · RAMModuleShell
+"RAM" = "RAM";
+
+// Monitor · RAMPopup
+"Wired" = "確保されているメモリ";
+"Compressed" = "圧縮";
+"Swap size" = "スワップサイズ";
+"Memory threshold" = "メモリのしきい値";
+
+// Monitor · RAMTile
+"App" = "アプリメモリ";
+"Swap" = "スワップ";
+"Pressure" = "メモリプレッシャー";
+
+// Monitor · SensorReadings
+"Battery" = "バッテリー";
+
+// Monitor · SensorsModuleShell
+"Sensors" = "センサー";
+"Show in the popup" = "ポップアップに表示";
+"Hottest temperature" = "最高温度";
+
+// Monitor · SensorsPopup
+"History" = "履歴";
+
+// Monitor · SensorsTile
+"hottest" = "最高";
+"sensors" = "センサー";
+"No sensors answered" = "応答したセンサーはありません";
+
+// Monitor · Thresholds
+"Total load" = "合計負荷";
+"System load" = "システム負荷";
+"User load" = "ユーザ負荷";
+"Efficiency cores load" = "高効率コアの負荷";
+"Performance cores load" = "高性能コアの負荷";
+"Memory pressure" = "メモリプレッシャー";
+"Memory used" = "使用済みメモリ";
+"Memory free" = "空きメモリ";
+"Swap in use" = "使用済みスワップ";
+"Disk usage" = "ディスク使用率";
+
+// Settings · GeneralPane
+"Reset" = "リセット";
+"Silent" = "サイレント";
+"Settings" = "設定";
+"Check for updates" = "アップデートを確認";
+"Once per day" = "1日に1回";
+"Once per week" = "1週間に1回";
+"Never" = "しない";
+"Check for update" = "アップデートを確認";
+"Start at login" = "ログイン時に起動";
+"Spacing" = "間隔";
+"Celsius" = "摂氏";
+"Fahrenheit" = "華氏";
+
+// Settings · UpdateInterval
+"At start" = "起動時";
+"Once per month" = "1か月に1回";
+
+// Startup · Startup
+"Successfully updated" = "アップデートが完了しました";
+"Perch was updated to v" = "Perchはバージョン%0にアップデートされました";
+
+// Startup · UpdateCheck
+"New version available" = "新しいバージョンがあります";
+"Click to install the new version of Perch" = "クリックしてPerchの新しいバージョンをインストール";
+
+// System · DashboardPane
+"Unknown" = "不明";
+"Graphics" = "グラフィックス";
+"Serial number" = "シリアル番号";
+"Model identifier" = "機種ID";
+"Production year" = "製造年";
+"Number of cores" = "%0コア";
+"Number of threads" = "%0スレッド";
+"Number of e-cores" = "高効率コア%0個";
+"Number of p-cores" = "高性能コア%0個";
+"Disks" = "ディスク";
+"Display" = "ディスプレイ";
+
+// UI · SupportWindow
+"Close" = "閉じる";
+"Support text" = "Perchをご利用いただきありがとうございます。\n\nPerchは無料のオープンソースソフトウェアで、空き時間に開発・保守されています。毎日が少しでも快適になっているなら、寄付で開発を支えていただけると幸いです。";
+"Support Perch" = "Perchを支援";
+"Donate" = "寄付する";
+
+// Update · UpdateWindow
+"Install" = "インストール";
+
+// Views · SettingsShell
+"Report a bug" = "バグを報告";
+"Support the application" = "アプリを支援";
+"Close application" = "アプリを終了";
+"Toggle the module" = "モジュールのオン/オフ";
+"Modules" = "モジュール";
+"Search" = "検索";
+"Preview" = "プレビュー";
+"Support" = "支援";
+"Pause the Perch" = "Perchを一時停止";
+
+// Views · Setup
+"Perch Setup" = "Perchセットアップ";
+"Previous" = "戻る";
+"Previous page" = "前のページ";
+"Welcome to Perch" = "Perchへようこそ";
+"welcome_message" = "Perchは、システムモニタ、アプリランチャー、ウインドウスイッチャーをメニューバーにまとめます。この簡単なセットアップで、最初に表示する項目を選びます。";
+"Select preset" = "プリセットを選択";
+"select_preset_message" = "最初に使うモジュールのセットを選んでください。あとで「設定」からいつでも変更できます。";
+"Start the application automatically when starting your Mac" = "Macの起動時にアプリを自動的に起動する";
+"Do not start the application automatically when starting your Mac" = "Macの起動時にアプリを自動的に起動しない";
+"Do everything silently in the background (recommended)" = "すべてをバックグラウンドで自動的に行う（推奨）";
+"Check for a new version on startup" = "起動時に新しいバージョンを確認する";
+"Check for a new version every day (once a day)" = "新しいバージョンを毎日確認する（1日に1回）";
+"Check for a new version every week (once a week)" = "新しいバージョンを毎週確認する（1週間に1回）";
+"Check for a new version every month (once a month)" = "新しいバージョンを毎月確認する（1か月に1回）";
+"Never check for updates (not recommended)" = "アップデートを確認しない（非推奨）";
+"The configuration is completed" = "設定が完了しました";
+"finish_setup_message" = "準備が整いました。\n\nPerchは無料のオープンソースソフトウェアです。お役に立てていれば、開発を支援していただけます。";
+
+// Views · SetupFlow
+"Next" = "次へ";
+"Next page" = "次のページ";
+"Finish" = "完了";
+"Finish setup" = "セットアップを完了";
+"Default" = "デフォルト";
+"Basic" = "ベーシック";
+"Recommended" = "おすすめ";
+"Extended" = "拡張";

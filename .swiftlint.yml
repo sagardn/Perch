@@ -1,0 +1,70 @@
+# Perch's lint configuration.
+#
+# What this replaced was upstream's, and the part of it that was actually
+# wrong was the `identifier_name` exception list: all eighteen entries named
+# types and variables that do not exist in this app -- SensorsList,
+# BatteryInfo, FanValues, _uuidAddress and the rest went with the modules
+# they belonged to. A list of exceptions for code that is gone is a list
+# nobody can evaluate, so the rule is off instead.
+#
+# Every disabled rule below says what in this tree trips it, measured rather
+# than assumed. SwiftLint is not run locally here -- it is a CI-only tool in
+# this project -- so a rule switched on without a measurement behind it would
+# be a guess that turns the build red.
+
+disabled_rules:
+  # 3 sites, all `as!` on a value whose type the surrounding code has just
+  # checked. force_cast is an *error* by default, so enabling it is a build
+  # break until those three are rewritten -- worth doing, not worth doing
+  # blind in the same commit as the config.
+  - force_cast
+  # MonitorBar.state returns (combined:row:own:) and the disk counters return
+  # (total:byDevice:). large_tuple errors at three members, and both of those
+  # are deliberate: they are one reading each, destructured at the call site.
+  - large_tuple
+  # One-character names are right where this app uses them -- `x` and `y` in
+  # a drawing loop, `rx`/`tx` for a pair of byte counters. The rule cannot
+  # tell those from `let a =` in business logic, and the alternative is the
+  # exception list that just died of being unmaintainable.
+  - identifier_name
+  # These three were off upstream and I cannot measure them without running
+  # the linter. Left off rather than switched on untested; a style rule that
+  # fails the build on its first run teaches people to ignore the job.
+  - type_name
+  - cyclomatic_complexity
+  - opening_brace
+
+opt_in_rules:
+  - empty_count
+  - colon
+  - comma
+  - control_statement
+  - trailing_newline
+  - closure_spacing
+
+# 134 is the longest line in the tree, in a comment. 160 leaves room without
+# letting a line grow past what fits beside a diff.
+line_length:
+  warning: 160
+  error: 200
+
+# SearchPanel.swift is the largest at 806 lines. A warning once a file passes
+# the biggest thing here, an error at half as long again.
+file_length:
+  warning: 900
+  error: 1300
+
+type_body_length:
+  warning: 700
+  error: 1000
+
+# The longest function body is Notify.show at 109 lines. 120 warns on the
+# next one to grow past it; 200 is the point where it has clearly taken on a
+# second job.
+function_body_length:
+  warning: 120
+  error: 200
+
+excluded:
+  - Tools
+  - build

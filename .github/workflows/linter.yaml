@@ -1,0 +1,27 @@
+name: lint
+
+# Style only. The build and the assertion suites are separate workflows, so a
+# lint failure says "this reads wrong", never "this is broken".
+
+on:
+  push:
+    paths:
+      - '.github/workflows/linter.yaml'
+      - '.swiftlint.yml'
+      - '**/*.swift'
+  pull_request:
+    paths:
+      - '.github/workflows/linter.yaml'
+      - '.swiftlint.yml'
+      - '**/*.swift'
+
+jobs:
+  swiftlint:
+    # ubuntu, not macOS: SwiftLint parses the source and never builds it, so
+    # it needs no SDK and no Xcode. The macOS runners are the slow and
+    # contended ones, and this job has no reason to want them.
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: norio-nomura/action-swiftlint@3.2.1

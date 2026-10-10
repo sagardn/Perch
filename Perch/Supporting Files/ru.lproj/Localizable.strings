@@ -1,0 +1,235 @@
+/*
+ * Localizable.strings — Perch, Russian.
+ *
+ * The source every other language is checked against: `python3 Tools/i18n.py`
+ * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
+ * in step with the code. %0, %1 ... are filled in by `localized()` in
+ * Perch/UI/Localized.swift and must survive translation.
+ */
+
+// Monitor · CPUModuleShell
+"CPU" = "ЦП";
+"None" = "Нет";
+"2 minutes" = "2 минуты";
+"Chart history" = "История графика";
+"Top processes" = "Активные процессы";
+"1 minute" = "1 минута";
+"5 minutes" = "5 минут";
+"Menu bar" = "Строка меню";
+"Notify me when" = "Уведомлять, когда";
+
+// Monitor · CPUPopup
+"Clock" = "Частота";
+"Processor" = "Процессор";
+"Cores" = "Ядра";
+"Uptime" = "Время работы";
+"System" = "Система";
+"User" = "Пользователь";
+"CPU usage threshold" = "Порог загрузки ЦП";
+"Total" = "Всего";
+"Temperature" = "Температура";
+
+// Monitor · CombinedBar
+"No module has anything to show here yet." = "Модулям пока нечего здесь показать.";
+"Combined modules" = "Объединенные модули";
+"Combined details" = "Объединенные сведения";
+
+// Monitor · DiskModuleShell
+"Disk" = "Диск";
+"Startup volume" = "Загрузочный том";
+"not mounted" = "не подключен";
+
+// Monitor · DiskPopup
+"Format" = "Формат";
+"Used" = "Использовано";
+"Free" = "Свободно";
+"Disk usage threshold" = "Порог заполнения диска";
+
+// Monitor · DiskTile
+"free" = "свободно";
+
+// Monitor · GPUModuleShell
+"GPU" = "ГП";
+
+// Monitor · GPUPopup
+"Memory" = "Память";
+"Model" = "Модель";
+"Utilization" = "Загрузка";
+"GPU usage threshold" = "Порог загрузки ГП";
+
+// Monitor · GPUTile
+"cores" = "ядер";
+
+// Monitor · MemoryReadings
+"Normal" = "Норма";
+"Warning" = "Предупреждение";
+"Critical" = "Критично";
+
+// Monitor · MenuBarStyle
+"Name" = "Название";
+"Figure" = "Число";
+"Ring" = "Кольцо";
+"Gauge" = "Шкала";
+"Used and free" = "Занято и свободно";
+"Rates" = "Скорость";
+"Bar chart" = "Гистограмма";
+"Line chart" = "Линейный график";
+"Traffic chart" = "График трафика";
+
+// Monitor · NetworkModuleShell
+"Network" = "Сеть";
+"Internet connection lost" = "Подключение к интернету потеряно";
+"Internet connection established" = "Подключение к интернету установлено";
+"Tell me when" = "Сообщать, когда";
+"Connection comes or goes" = "Подключение появляется или пропадает";
+"Wi-Fi network changes" = "Меняется сеть Wi-Fi";
+"Interface changes" = "Меняется интерфейс";
+"Local address changes" = "Меняется локальный адрес";
+"Public address changes" = "Меняется внешний адрес";
+
+// Monitor · NetworkPopup
+"Download" = "Загрузка";
+"Local IP" = "Локальный IP";
+"Interface" = "Интерфейс";
+"Physical address" = "Физический адрес";
+"Online" = "В сети";
+"Offline" = "Не в сети";
+
+// Monitor · Popup
+"Dashboard" = "Обзор";
+
+// Monitor · PopupParts
+"Idle" = "Простой";
+
+// Monitor · PopupSection
+"Process" = "Процесс";
+
+// Monitor · RAMModuleShell
+"RAM" = "ОЗУ";
+
+// Monitor · RAMPopup
+"Wired" = "Зарезервированная";
+"Compressed" = "Сжатая";
+"Swap size" = "Размер подкачки";
+"Memory threshold" = "Порог памяти";
+
+// Monitor · RAMTile
+"App" = "Приложения";
+"Swap" = "Подкачка";
+"Pressure" = "Нагрузка";
+
+// Monitor · SensorReadings
+"Battery" = "Аккумулятор";
+
+// Monitor · SensorsModuleShell
+"Sensors" = "Датчики";
+"Show in the popup" = "Показывать во всплывающем окне";
+"Hottest temperature" = "Самая высокая температура";
+
+// Monitor · SensorsPopup
+"History" = "История";
+
+// Monitor · SensorsTile
+"hottest" = "макс.";
+"sensors" = "датчиков";
+"No sensors answered" = "Датчики не ответили";
+
+// Monitor · Thresholds
+"Total load" = "Общая нагрузка";
+"System load" = "Нагрузка системы";
+"User load" = "Нагрузка пользователя";
+"Efficiency cores load" = "Нагрузка ядер эффективности";
+"Performance cores load" = "Нагрузка ядер производительности";
+"Memory pressure" = "Нагрузка на память";
+"Memory used" = "Использовано памяти";
+"Memory free" = "Свободно памяти";
+"Swap in use" = "Использовано подкачки";
+"Disk usage" = "Заполнение диска";
+
+// Settings · GeneralPane
+"Reset" = "Сбросить";
+"Silent" = "В фоне";
+"Settings" = "Настройки";
+"Check for updates" = "Проверять обновления";
+"Once per day" = "Раз в день";
+"Once per week" = "Раз в неделю";
+"Never" = "Никогда";
+"Check for update" = "Проверить обновления";
+"Start at login" = "Открывать при входе";
+"Spacing" = "Интервал";
+"Celsius" = "Цельсий";
+"Fahrenheit" = "Фаренгейт";
+
+// Settings · UpdateInterval
+"At start" = "При запуске";
+"Once per month" = "Раз в месяц";
+
+// Startup · Startup
+"Successfully updated" = "Обновление выполнено";
+"Perch was updated to v" = "Perch обновлен до версии %0";
+
+// Startup · UpdateCheck
+"New version available" = "Доступна новая версия";
+"Click to install the new version of Perch" = "Нажмите, чтобы установить новую версию Perch";
+
+// System · DashboardPane
+"Unknown" = "Неизвестно";
+"Graphics" = "Графика";
+"Serial number" = "Серийный номер";
+"Model identifier" = "Идентификатор модели";
+"Production year" = "Год выпуска";
+"Number of cores" = "Ядер: %0";
+"Number of threads" = "Потоков: %0";
+"Number of e-cores" = "Ядер эффективности: %0";
+"Number of p-cores" = "Ядер производительности: %0";
+"Disks" = "Диски";
+"Display" = "Дисплей";
+
+// UI · SupportWindow
+"Close" = "Закрыть";
+"Support text" = "Спасибо, что пользуетесь Perch.\n\nPerch — бесплатное приложение с открытым исходным кодом, которое создается и поддерживается в свободное время. Если оно делает ваш день немного проще, пожертвование поможет его развитию.";
+"Support Perch" = "Поддержать Perch";
+"Donate" = "Пожертвовать";
+
+// Update · UpdateWindow
+"Install" = "Установить";
+
+// Views · SettingsShell
+"Report a bug" = "Сообщить об ошибке";
+"Support the application" = "Поддержать приложение";
+"Close application" = "Закрыть приложение";
+"Toggle the module" = "Включить или выключить модуль";
+"Modules" = "Модули";
+"Search" = "Поиск";
+"Preview" = "Предпросмотр";
+"Support" = "Поддержка";
+"Pause the Perch" = "Приостановить Perch";
+
+// Views · Setup
+"Perch Setup" = "Настройка Perch";
+"Previous" = "Назад";
+"Previous page" = "Предыдущая страница";
+"Welcome to Perch" = "Добро пожаловать в Perch";
+"welcome_message" = "Perch добавляет в строку меню системный монитор, запуск приложений и переключатель окон. В этой короткой настройке можно выбрать, что показывать в первую очередь.";
+"Select preset" = "Выберите набор";
+"select_preset_message" = "Выберите начальный набор модулей. Позже все это можно изменить в Настройках.";
+"Start the application automatically when starting your Mac" = "Открывать приложение автоматически при запуске Mac";
+"Do not start the application automatically when starting your Mac" = "Не открывать приложение автоматически при запуске Mac";
+"Do everything silently in the background (recommended)" = "Делать все незаметно в фоновом режиме (рекомендуется)";
+"Check for a new version on startup" = "Проверять наличие новой версии при запуске";
+"Check for a new version every day (once a day)" = "Проверять наличие новой версии ежедневно (раз в день)";
+"Check for a new version every week (once a week)" = "Проверять наличие новой версии еженедельно (раз в неделю)";
+"Check for a new version every month (once a month)" = "Проверять наличие новой версии ежемесячно (раз в месяц)";
+"Never check for updates (not recommended)" = "Никогда не проверять обновления (не рекомендуется)";
+"The configuration is completed" = "Настройка завершена";
+"finish_setup_message" = "Все готово.\n\nPerch — бесплатное приложение с открытым исходным кодом. Если оно вам полезно, вы можете поддержать его разработку.";
+
+// Views · SetupFlow
+"Next" = "Далее";
+"Next page" = "Следующая страница";
+"Finish" = "Готово";
+"Finish setup" = "Завершить настройку";
+"Default" = "По умолчанию";
+"Basic" = "Базовый";
+"Recommended" = "Рекомендуемый";
+"Extended" = "Расширенный";

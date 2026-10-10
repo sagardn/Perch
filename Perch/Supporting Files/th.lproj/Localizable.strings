@@ -1,0 +1,235 @@
+/*
+ * Localizable.strings — Perch, Thai.
+ *
+ * The source every other language is checked against: `python3 Tools/i18n.py`
+ * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
+ * in step with the code. %0, %1 ... are filled in by `localized()` in
+ * Perch/UI/Localized.swift and must survive translation.
+ */
+
+// Monitor · CPUModuleShell
+"CPU" = "CPU";
+"None" = "ไม่มี";
+"2 minutes" = "2 นาที";
+"Chart history" = "ประวัติกราฟ";
+"Top processes" = "กระบวนการสูงสุด";
+"1 minute" = "1 นาที";
+"5 minutes" = "5 นาที";
+"Menu bar" = "แถบเมนู";
+"Notify me when" = "แจ้งฉันเมื่อ";
+
+// Monitor · CPUPopup
+"Clock" = "สัญญาณนาฬิกา";
+"Processor" = "โปรเซสเซอร์";
+"Cores" = "คอร์";
+"Uptime" = "เวลาทำงาน";
+"System" = "ระบบ";
+"User" = "ผู้ใช้";
+"CPU usage threshold" = "เกณฑ์การใช้ CPU";
+"Total" = "รวม";
+"Temperature" = "อุณหภูมิ";
+
+// Monitor · CombinedBar
+"No module has anything to show here yet." = "ยังไม่มีโมดูลใดที่มีข้อมูลจะแสดงที่นี่";
+"Combined modules" = "รวมโมดูล";
+"Combined details" = "รวมรายละเอียด";
+
+// Monitor · DiskModuleShell
+"Disk" = "ดิสก์";
+"Startup volume" = "โวลุ่มเริ่มต้นระบบ";
+"not mounted" = "ไม่ได้เมาท์";
+
+// Monitor · DiskPopup
+"Format" = "รูปแบบ";
+"Used" = "ใช้แล้ว";
+"Free" = "ว่าง";
+"Disk usage threshold" = "เกณฑ์การใช้ดิสก์";
+
+// Monitor · DiskTile
+"free" = "ว่าง";
+
+// Monitor · GPUModuleShell
+"GPU" = "GPU";
+
+// Monitor · GPUPopup
+"Memory" = "หน่วยความจำ";
+"Model" = "รุ่น";
+"Utilization" = "การใช้งาน";
+"GPU usage threshold" = "เกณฑ์การใช้ GPU";
+
+// Monitor · GPUTile
+"cores" = "คอร์";
+
+// Monitor · MemoryReadings
+"Normal" = "ปกติ";
+"Warning" = "คำเตือน";
+"Critical" = "วิกฤต";
+
+// Monitor · MenuBarStyle
+"Name" = "ชื่อ";
+"Figure" = "ตัวเลข";
+"Ring" = "วงแหวน";
+"Gauge" = "มาตรวัด";
+"Used and free" = "ใช้แล้วและว่าง";
+"Rates" = "อัตรา";
+"Bar chart" = "แผนภูมิแท่ง";
+"Line chart" = "แผนภูมิเส้น";
+"Traffic chart" = "แผนภูมิปริมาณข้อมูล";
+
+// Monitor · NetworkModuleShell
+"Network" = "เครือข่าย";
+"Internet connection lost" = "การเชื่อมต่ออินเทอร์เน็ตขาดหาย";
+"Internet connection established" = "เชื่อมต่ออินเทอร์เน็ตแล้ว";
+"Tell me when" = "บอกฉันเมื่อ";
+"Connection comes or goes" = "เชื่อมต่อหรือตัดการเชื่อมต่อ";
+"Wi-Fi network changes" = "เครือข่าย Wi-Fi เปลี่ยน";
+"Interface changes" = "อินเทอร์เฟซเปลี่ยน";
+"Local address changes" = "ที่อยู่ภายในเปลี่ยน";
+"Public address changes" = "ที่อยู่สาธารณะเปลี่ยน";
+
+// Monitor · NetworkPopup
+"Download" = "ดาวน์โหลด";
+"Local IP" = "IP ภายใน";
+"Interface" = "อินเทอร์เฟซ";
+"Physical address" = "ที่อยู่ทางกายภาพ";
+"Online" = "ออนไลน์";
+"Offline" = "ออฟไลน์";
+
+// Monitor · Popup
+"Dashboard" = "แดชบอร์ด";
+
+// Monitor · PopupParts
+"Idle" = "ไม่ได้ใช้งาน";
+
+// Monitor · PopupSection
+"Process" = "กระบวนการ";
+
+// Monitor · RAMModuleShell
+"RAM" = "RAM";
+
+// Monitor · RAMPopup
+"Wired" = "หน่วยความจำที่สงวนไว้";
+"Compressed" = "บีบอัดแล้ว";
+"Swap size" = "ขนาด Swap";
+"Memory threshold" = "เกณฑ์หน่วยความจำ";
+
+// Monitor · RAMTile
+"App" = "หน่วยความจำแอป";
+"Swap" = "Swap";
+"Pressure" = "แรงกดดันหน่วยความจำ";
+
+// Monitor · SensorReadings
+"Battery" = "แบตเตอรี่";
+
+// Monitor · SensorsModuleShell
+"Sensors" = "เซ็นเซอร์";
+"Show in the popup" = "แสดงในหน้าต่างป๊อปอัพ";
+"Hottest temperature" = "อุณหภูมิสูงสุด";
+
+// Monitor · SensorsPopup
+"History" = "ประวัติ";
+
+// Monitor · SensorsTile
+"hottest" = "สูงสุด";
+"sensors" = "เซ็นเซอร์";
+"No sensors answered" = "ไม่มีเซ็นเซอร์ตอบสนอง";
+
+// Monitor · Thresholds
+"Total load" = "โหลดรวม";
+"System load" = "โหลดระบบ";
+"User load" = "โหลดผู้ใช้";
+"Efficiency cores load" = "โหลดคอร์ประหยัดพลังงาน";
+"Performance cores load" = "โหลดคอร์ประสิทธิภาพ";
+"Memory pressure" = "แรงกดดันหน่วยความจำ";
+"Memory used" = "หน่วยความจำที่ใช้";
+"Memory free" = "หน่วยความจำว่าง";
+"Swap in use" = "Swap ที่ใช้อยู่";
+"Disk usage" = "การใช้ดิสก์";
+
+// Settings · GeneralPane
+"Reset" = "รีเซ็ต";
+"Silent" = "เงียบ";
+"Settings" = "การตั้งค่า";
+"Check for updates" = "ตรวจหาอัปเดต";
+"Once per day" = "วันละครั้ง";
+"Once per week" = "สัปดาห์ละครั้ง";
+"Never" = "ไม่เลย";
+"Check for update" = "ตรวจหาอัปเดต";
+"Start at login" = "เปิดเมื่อเข้าสู่ระบบ";
+"Spacing" = "ระยะห่าง";
+"Celsius" = "เซลเซียส";
+"Fahrenheit" = "ฟาเรนไฮต์";
+
+// Settings · UpdateInterval
+"At start" = "เมื่อเริ่มต้น";
+"Once per month" = "เดือนละครั้ง";
+
+// Startup · Startup
+"Successfully updated" = "อัปเดตสำเร็จแล้ว";
+"Perch was updated to v" = "Perch ได้รับการอัปเดตเป็นเวอร์ชัน %0 แล้ว";
+
+// Startup · UpdateCheck
+"New version available" = "มีเวอร์ชันใหม่";
+"Click to install the new version of Perch" = "คลิกเพื่อติดตั้ง Perch เวอร์ชันใหม่";
+
+// System · DashboardPane
+"Unknown" = "ไม่ทราบ";
+"Graphics" = "กราฟิก";
+"Serial number" = "หมายเลขประจำเครื่อง";
+"Model identifier" = "ตัวระบุรุ่น";
+"Production year" = "ปีที่ผลิต";
+"Number of cores" = "%0 คอร์";
+"Number of threads" = "%0 เธรด";
+"Number of e-cores" = "คอร์ประหยัดพลังงาน %0 คอร์";
+"Number of p-cores" = "คอร์ประสิทธิภาพ %0 คอร์";
+"Disks" = "ดิสก์";
+"Display" = "จอภาพ";
+
+// UI · SupportWindow
+"Close" = "ปิด";
+"Support text" = "ขอบคุณที่ใช้ Perch\n\nPerch เป็นแอปฟรีและโอเพนซอร์ส สร้างและดูแลในเวลาว่าง หากแอปนี้ช่วยให้วันของคุณง่ายขึ้นสักหน่อย การสนับสนุนของคุณจะช่วยให้แอปพัฒนาต่อไปได้";
+"Support Perch" = "สนับสนุน Perch";
+"Donate" = "บริจาค";
+
+// Update · UpdateWindow
+"Install" = "ติดตั้ง";
+
+// Views · SettingsShell
+"Report a bug" = "รายงานข้อบกพร่อง";
+"Support the application" = "สนับสนุนแอปพลิเคชัน";
+"Close application" = "ออกจากแอปพลิเคชัน";
+"Toggle the module" = "เปิด/ปิดโมดูล";
+"Modules" = "โมดูล";
+"Search" = "ค้นหา";
+"Preview" = "แสดงตัวอย่าง";
+"Support" = "สนับสนุน";
+"Pause the Perch" = "หยุด Perch ชั่วคราว";
+
+// Views · Setup
+"Perch Setup" = "การตั้งค่า Perch";
+"Previous" = "ก่อนหน้า";
+"Previous page" = "หน้าก่อนหน้า";
+"Welcome to Perch" = "ยินดีต้อนรับสู่ Perch";
+"welcome_message" = "Perch รวมตัวตรวจสอบระบบ ตัวเปิดแอป และตัวสลับหน้าต่างไว้ในแถบเมนูของคุณ การตั้งค่าสั้นๆ นี้จะเลือกสิ่งที่จะแสดงก่อน";
+"Select preset" = "เลือกค่าที่ตั้งไว้ล่วงหน้า";
+"select_preset_message" = "เลือกชุดโมดูลเริ่มต้น คุณสามารถเปลี่ยนแปลงได้ทุกเมื่อในภายหลังในการตั้งค่า";
+"Start the application automatically when starting your Mac" = "เปิดแอปพลิเคชันโดยอัตโนมัติเมื่อเปิดเครื่อง Mac";
+"Do not start the application automatically when starting your Mac" = "ไม่ต้องเปิดแอปพลิเคชันโดยอัตโนมัติเมื่อเปิดเครื่อง Mac";
+"Do everything silently in the background (recommended)" = "ทำทุกอย่างอย่างเงียบๆ ในพื้นหลัง (แนะนำ)";
+"Check for a new version on startup" = "ตรวจหาเวอร์ชันใหม่เมื่อเริ่มต้น";
+"Check for a new version every day (once a day)" = "ตรวจหาเวอร์ชันใหม่ทุกวัน (วันละครั้ง)";
+"Check for a new version every week (once a week)" = "ตรวจหาเวอร์ชันใหม่ทุกสัปดาห์ (สัปดาห์ละครั้ง)";
+"Check for a new version every month (once a month)" = "ตรวจหาเวอร์ชันใหม่ทุกเดือน (เดือนละครั้ง)";
+"Never check for updates (not recommended)" = "ไม่ต้องตรวจหาอัปเดต (ไม่แนะนำ)";
+"The configuration is completed" = "การกำหนดค่าเสร็จสมบูรณ์";
+"finish_setup_message" = "คุณพร้อมแล้ว\n\nPerch เป็นแอปฟรีและโอเพนซอร์ส หากแอปนี้มีประโยชน์กับคุณ คุณสามารถสนับสนุนการพัฒนาได้";
+
+// Views · SetupFlow
+"Next" = "ถัดไป";
+"Next page" = "หน้าถัดไป";
+"Finish" = "เสร็จสิ้น";
+"Finish setup" = "ตั้งค่าให้เสร็จสิ้น";
+"Default" = "ค่าเริ่มต้น";
+"Basic" = "พื้นฐาน";
+"Recommended" = "แนะนำ";
+"Extended" = "ขยาย";

@@ -1,0 +1,235 @@
+/*
+ * Localizable.strings — Perch, Indonesian.
+ *
+ * The source every other language is checked against: `python3 Tools/i18n.py`
+ * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
+ * in step with the code. %0, %1 ... are filled in by `localized()` in
+ * Perch/UI/Localized.swift and must survive translation.
+ */
+
+// Monitor · CPUModuleShell
+"CPU" = "CPU";
+"None" = "Tidak Ada";
+"2 minutes" = "2 menit";
+"Chart history" = "Riwayat grafik";
+"Top processes" = "Proses teratas";
+"1 minute" = "1 menit";
+"5 minutes" = "5 menit";
+"Menu bar" = "Bar menu";
+"Notify me when" = "Beri tahu saya saat";
+
+// Monitor · CPUPopup
+"Clock" = "Clock";
+"Processor" = "Prosesor";
+"Cores" = "Inti";
+"Uptime" = "Waktu aktif";
+"System" = "Sistem";
+"User" = "Pengguna";
+"CPU usage threshold" = "Ambang penggunaan CPU";
+"Total" = "Total";
+"Temperature" = "Suhu";
+
+// Monitor · CombinedBar
+"No module has anything to show here yet." = "Belum ada modul yang dapat ditampilkan di sini.";
+"Combined modules" = "Gabungkan modul";
+"Combined details" = "Gabungkan detail";
+
+// Monitor · DiskModuleShell
+"Disk" = "Disk";
+"Startup volume" = "Volume startup";
+"not mounted" = "tidak dipasang";
+
+// Monitor · DiskPopup
+"Format" = "Format";
+"Used" = "Terpakai";
+"Free" = "Kosong";
+"Disk usage threshold" = "Ambang penggunaan disk";
+
+// Monitor · DiskTile
+"free" = "kosong";
+
+// Monitor · GPUModuleShell
+"GPU" = "GPU";
+
+// Monitor · GPUPopup
+"Memory" = "Memori";
+"Model" = "Model";
+"Utilization" = "Penggunaan";
+"GPU usage threshold" = "Ambang penggunaan GPU";
+
+// Monitor · GPUTile
+"cores" = "inti";
+
+// Monitor · MemoryReadings
+"Normal" = "Normal";
+"Warning" = "Peringatan";
+"Critical" = "Kritis";
+
+// Monitor · MenuBarStyle
+"Name" = "Nama";
+"Figure" = "Angka";
+"Ring" = "Cincin";
+"Gauge" = "Pengukur";
+"Used and free" = "Terpakai dan kosong";
+"Rates" = "Kecepatan";
+"Bar chart" = "Grafik batang";
+"Line chart" = "Grafik garis";
+"Traffic chart" = "Grafik lalu lintas";
+
+// Monitor · NetworkModuleShell
+"Network" = "Jaringan";
+"Internet connection lost" = "Koneksi internet terputus";
+"Internet connection established" = "Koneksi internet tersambung";
+"Tell me when" = "Kabari saya saat";
+"Connection comes or goes" = "Koneksi tersambung atau terputus";
+"Wi-Fi network changes" = "Jaringan Wi-Fi berubah";
+"Interface changes" = "Antarmuka berubah";
+"Local address changes" = "Alamat lokal berubah";
+"Public address changes" = "Alamat publik berubah";
+
+// Monitor · NetworkPopup
+"Download" = "Unduh";
+"Local IP" = "IP lokal";
+"Interface" = "Antarmuka";
+"Physical address" = "Alamat fisik";
+"Online" = "Online";
+"Offline" = "Offline";
+
+// Monitor · Popup
+"Dashboard" = "Dasbor";
+
+// Monitor · PopupParts
+"Idle" = "Diam";
+
+// Monitor · PopupSection
+"Process" = "Proses";
+
+// Monitor · RAMModuleShell
+"RAM" = "RAM";
+
+// Monitor · RAMPopup
+"Wired" = "Memori Wired";
+"Compressed" = "Dikompresi";
+"Swap size" = "Ukuran swap";
+"Memory threshold" = "Ambang memori";
+
+// Monitor · RAMTile
+"App" = "Memori App";
+"Swap" = "Swap";
+"Pressure" = "Tekanan Memori";
+
+// Monitor · SensorReadings
+"Battery" = "Baterai";
+
+// Monitor · SensorsModuleShell
+"Sensors" = "Sensor";
+"Show in the popup" = "Tampilkan di popup";
+"Hottest temperature" = "Suhu tertinggi";
+
+// Monitor · SensorsPopup
+"History" = "Riwayat";
+
+// Monitor · SensorsTile
+"hottest" = "tertinggi";
+"sensors" = "sensor";
+"No sensors answered" = "Tidak ada sensor yang merespons";
+
+// Monitor · Thresholds
+"Total load" = "Beban total";
+"System load" = "Beban sistem";
+"User load" = "Beban pengguna";
+"Efficiency cores load" = "Beban inti efisiensi";
+"Performance cores load" = "Beban inti performa";
+"Memory pressure" = "Tekanan memori";
+"Memory used" = "Memori terpakai";
+"Memory free" = "Memori kosong";
+"Swap in use" = "Swap terpakai";
+"Disk usage" = "Penggunaan disk";
+
+// Settings · GeneralPane
+"Reset" = "Atur Ulang";
+"Silent" = "Senyap";
+"Settings" = "Pengaturan";
+"Check for updates" = "Periksa pembaruan";
+"Once per day" = "Sekali sehari";
+"Once per week" = "Sekali seminggu";
+"Never" = "Jangan Pernah";
+"Check for update" = "Periksa pembaruan";
+"Start at login" = "Buka saat login";
+"Spacing" = "Jarak";
+"Celsius" = "Celsius";
+"Fahrenheit" = "Fahrenheit";
+
+// Settings · UpdateInterval
+"At start" = "Saat mulai";
+"Once per month" = "Sekali sebulan";
+
+// Startup · Startup
+"Successfully updated" = "Berhasil diperbarui";
+"Perch was updated to v" = "Perch telah diperbarui ke versi %0";
+
+// Startup · UpdateCheck
+"New version available" = "Versi baru tersedia";
+"Click to install the new version of Perch" = "Klik untuk menginstal versi baru Perch";
+
+// System · DashboardPane
+"Unknown" = "Tidak diketahui";
+"Graphics" = "Grafis";
+"Serial number" = "Nomor seri";
+"Model identifier" = "Pengenal model";
+"Production year" = "Tahun produksi";
+"Number of cores" = "%0 inti";
+"Number of threads" = "%0 thread";
+"Number of e-cores" = "%0 inti efisiensi";
+"Number of p-cores" = "%0 inti performa";
+"Disks" = "Disk";
+"Display" = "Layar";
+
+// UI · SupportWindow
+"Close" = "Tutup";
+"Support text" = "Terima kasih telah menggunakan Perch.\n\nPerch gratis dan open source, dibuat dan dikelola di waktu luang. Jika Perch membuat hari Anda sedikit lebih mudah, kontribusi Anda membantunya terus berjalan.";
+"Support Perch" = "Dukung Perch";
+"Donate" = "Donasi";
+
+// Update · UpdateWindow
+"Install" = "Instal";
+
+// Views · SettingsShell
+"Report a bug" = "Laporkan bug";
+"Support the application" = "Dukung aplikasi";
+"Close application" = "Tutup aplikasi";
+"Toggle the module" = "Nyalakan/matikan modul";
+"Modules" = "Modul";
+"Search" = "Cari";
+"Preview" = "Pratinjau";
+"Support" = "Dukung";
+"Pause the Perch" = "Jeda Perch";
+
+// Views · Setup
+"Perch Setup" = "Pengaturan Perch";
+"Previous" = "Sebelumnya";
+"Previous page" = "Halaman sebelumnya";
+"Welcome to Perch" = "Selamat datang di Perch";
+"welcome_message" = "Perch menghadirkan monitor sistem, peluncur app, dan pengalih jendela di bar menu Anda. Pengaturan singkat ini memilih apa yang ditampilkan lebih dulu.";
+"Select preset" = "Pilih preset";
+"select_preset_message" = "Pilih set modul awal. Anda dapat mengubahnya kapan saja nanti di Pengaturan.";
+"Start the application automatically when starting your Mac" = "Buka aplikasi secara otomatis saat Mac dinyalakan";
+"Do not start the application automatically when starting your Mac" = "Jangan buka aplikasi secara otomatis saat Mac dinyalakan";
+"Do everything silently in the background (recommended)" = "Lakukan semuanya secara senyap di latar belakang (disarankan)";
+"Check for a new version on startup" = "Periksa versi baru saat startup";
+"Check for a new version every day (once a day)" = "Periksa versi baru setiap hari (sekali sehari)";
+"Check for a new version every week (once a week)" = "Periksa versi baru setiap minggu (sekali seminggu)";
+"Check for a new version every month (once a month)" = "Periksa versi baru setiap bulan (sekali sebulan)";
+"Never check for updates (not recommended)" = "Jangan pernah periksa pembaruan (tidak disarankan)";
+"The configuration is completed" = "Konfigurasi selesai";
+"finish_setup_message" = "Semuanya siap.\n\nPerch gratis dan open source. Jika bermanfaat bagi Anda, Anda dapat mendukung pengembangannya.";
+
+// Views · SetupFlow
+"Next" = "Berikutnya";
+"Next page" = "Halaman berikutnya";
+"Finish" = "Selesai";
+"Finish setup" = "Selesaikan pengaturan";
+"Default" = "Default";
+"Basic" = "Dasar";
+"Recommended" = "Disarankan";
+"Extended" = "Diperluas";

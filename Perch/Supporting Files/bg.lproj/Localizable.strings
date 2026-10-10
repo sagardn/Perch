@@ -1,0 +1,235 @@
+/*
+ * Localizable.strings — Perch, Bulgarian.
+ *
+ * The source every other language is checked against: `python3 Tools/i18n.py`
+ * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
+ * in step with the code. %0, %1 ... are filled in by `localized()` in
+ * Perch/UI/Localized.swift and must survive translation.
+ */
+
+// Monitor · CPUModuleShell
+"CPU" = "CPU";
+"None" = "Няма";
+"2 minutes" = "2 минути";
+"Chart history" = "История на графиката";
+"Top processes" = "Най-натоварващи процеси";
+"1 minute" = "1 минута";
+"5 minutes" = "5 минути";
+"Menu bar" = "Лента с менюта";
+"Notify me when" = "Уведомявай ме, когато";
+
+// Monitor · CPUPopup
+"Clock" = "Честота";
+"Processor" = "Процесор";
+"Cores" = "Ядра";
+"Uptime" = "Време на работа";
+"System" = "Система";
+"User" = "Потребител";
+"CPU usage threshold" = "Праг на натоварване на CPU";
+"Total" = "Общо";
+"Temperature" = "Температура";
+
+// Monitor · CombinedBar
+"No module has anything to show here yet." = "Все още няма модул, който да показва нещо тук.";
+"Combined modules" = "Обединени модули";
+"Combined details" = "Обединени подробности";
+
+// Monitor · DiskModuleShell
+"Disk" = "Диск";
+"Startup volume" = "Стартов том";
+"not mounted" = "не е свързан";
+
+// Monitor · DiskPopup
+"Format" = "Формат";
+"Used" = "Заето";
+"Free" = "Свободно";
+"Disk usage threshold" = "Праг на заетост на диска";
+
+// Monitor · DiskTile
+"free" = "свободни";
+
+// Monitor · GPUModuleShell
+"GPU" = "GPU";
+
+// Monitor · GPUPopup
+"Memory" = "Памет";
+"Model" = "Модел";
+"Utilization" = "Натоварване";
+"GPU usage threshold" = "Праг на натоварване на GPU";
+
+// Monitor · GPUTile
+"cores" = "ядра";
+
+// Monitor · MemoryReadings
+"Normal" = "Нормално";
+"Warning" = "Предупреждение";
+"Critical" = "Критично";
+
+// Monitor · MenuBarStyle
+"Name" = "Име";
+"Figure" = "Число";
+"Ring" = "Пръстен";
+"Gauge" = "Скала";
+"Used and free" = "Заето и свободно";
+"Rates" = "Скорости";
+"Bar chart" = "Стълбовидна графика";
+"Line chart" = "Линейна графика";
+"Traffic chart" = "Графика на трафика";
+
+// Monitor · NetworkModuleShell
+"Network" = "Мрежа";
+"Internet connection lost" = "Връзката с интернет е прекъсната";
+"Internet connection established" = "Връзката с интернет е установена";
+"Tell me when" = "Съобщавай ми, когато";
+"Connection comes or goes" = "Връзката се появи или изчезне";
+"Wi-Fi network changes" = "Wi-Fi мрежата се смени";
+"Interface changes" = "Интерфейсът се смени";
+"Local address changes" = "Локалният адрес се смени";
+"Public address changes" = "Публичният адрес се смени";
+
+// Monitor · NetworkPopup
+"Download" = "Изтегляне";
+"Local IP" = "Локален IP";
+"Interface" = "Интерфейс";
+"Physical address" = "Физически адрес";
+"Online" = "Онлайн";
+"Offline" = "Офлайн";
+
+// Monitor · Popup
+"Dashboard" = "Преглед";
+
+// Monitor · PopupParts
+"Idle" = "Неактивно";
+
+// Monitor · PopupSection
+"Process" = "Процес";
+
+// Monitor · RAMModuleShell
+"RAM" = "RAM";
+
+// Monitor · RAMPopup
+"Wired" = "Резервирана";
+"Compressed" = "Компресирана";
+"Swap size" = "Размер на суапа";
+"Memory threshold" = "Праг на паметта";
+
+// Monitor · RAMTile
+"App" = "Приложения";
+"Swap" = "Суап";
+"Pressure" = "Натоварване";
+
+// Monitor · SensorReadings
+"Battery" = "Батерия";
+
+// Monitor · SensorsModuleShell
+"Sensors" = "Сензори";
+"Show in the popup" = "Показвай в изскачащия прозорец";
+"Hottest temperature" = "Най-висока температура";
+
+// Monitor · SensorsPopup
+"History" = "История";
+
+// Monitor · SensorsTile
+"hottest" = "макс.";
+"sensors" = "сензора";
+"No sensors answered" = "Нито един сензор не отговори";
+
+// Monitor · Thresholds
+"Total load" = "Общо натоварване";
+"System load" = "Натоварване от системата";
+"User load" = "Натоварване от потребителя";
+"Efficiency cores load" = "Натоварване на ефективните ядра";
+"Performance cores load" = "Натоварване на производителните ядра";
+"Memory pressure" = "Натоварване на паметта";
+"Memory used" = "Използвана памет";
+"Memory free" = "Свободна памет";
+"Swap in use" = "Използван суап";
+"Disk usage" = "Заетост на диска";
+
+// Settings · GeneralPane
+"Reset" = "Нулирай";
+"Silent" = "Във фонов режим";
+"Settings" = "Настройки";
+"Check for updates" = "Проверявай за актуализации";
+"Once per day" = "Веднъж дневно";
+"Once per week" = "Веднъж седмично";
+"Never" = "Никога";
+"Check for update" = "Провери за актуализации";
+"Start at login" = "Отваряй при влизане";
+"Spacing" = "Разстояние";
+"Celsius" = "Целзий";
+"Fahrenheit" = "Фаренхайт";
+
+// Settings · UpdateInterval
+"At start" = "При стартиране";
+"Once per month" = "Веднъж месечно";
+
+// Startup · Startup
+"Successfully updated" = "Актуализацията е успешна";
+"Perch was updated to v" = "Perch е актуализиран до версия %0";
+
+// Startup · UpdateCheck
+"New version available" = "Налична е нова версия";
+"Click to install the new version of Perch" = "Щракнете, за да инсталирате новата версия на Perch";
+
+// System · DashboardPane
+"Unknown" = "Неизвестно";
+"Graphics" = "Графика";
+"Serial number" = "Сериен номер";
+"Model identifier" = "Идентификатор на модела";
+"Production year" = "Година на производство";
+"Number of cores" = "Ядра: %0";
+"Number of threads" = "Нишки: %0";
+"Number of e-cores" = "Ефективни ядра: %0";
+"Number of p-cores" = "Производителни ядра: %0";
+"Disks" = "Дискове";
+"Display" = "Дисплей";
+
+// UI · SupportWindow
+"Close" = "Затвори";
+"Support text" = "Благодарим ви, че използвате Perch.\n\nPerch е безплатно приложение с отворен код, което се създава и поддържа в свободното време. Ако то ви улеснява поне малко, дарението помага за развитието му.";
+"Support Perch" = "Подкрепете Perch";
+"Donate" = "Дарете";
+
+// Update · UpdateWindow
+"Install" = "Инсталирай";
+
+// Views · SettingsShell
+"Report a bug" = "Съобщи за грешка";
+"Support the application" = "Подкрепете приложението";
+"Close application" = "Затвори приложението";
+"Toggle the module" = "Включи или изключи модула";
+"Modules" = "Модули";
+"Search" = "Търсене";
+"Preview" = "Визуализация";
+"Support" = "Поддръжка";
+"Pause the Perch" = "Пауза на Perch";
+
+// Views · Setup
+"Perch Setup" = "Настройка на Perch";
+"Previous" = "Назад";
+"Previous page" = "Предишна страница";
+"Welcome to Perch" = "Добре дошли в Perch";
+"welcome_message" = "Perch добавя в лентата с менюта системен монитор, стартер за приложения и превключвател на прозорци. С тази кратка настройка избирате какво да се показва първо.";
+"Select preset" = "Изберете набор";
+"select_preset_message" = "Изберете начален набор от модули. Всичко от него можете да промените по-късно в Настройки.";
+"Start the application automatically when starting your Mac" = "Отваряй приложението автоматично при стартиране на Mac";
+"Do not start the application automatically when starting your Mac" = "Не отваряй приложението автоматично при стартиране на Mac";
+"Do everything silently in the background (recommended)" = "Прави всичко незабележимо във фонов режим (препоръчително)";
+"Check for a new version on startup" = "Проверявай за нова версия при стартиране";
+"Check for a new version every day (once a day)" = "Проверявай за нова версия всеки ден (веднъж дневно)";
+"Check for a new version every week (once a week)" = "Проверявай за нова версия всяка седмица (веднъж седмично)";
+"Check for a new version every month (once a month)" = "Проверявай за нова версия всеки месец (веднъж месечно)";
+"Never check for updates (not recommended)" = "Никога не проверявай за актуализации (не се препоръчва)";
+"The configuration is completed" = "Настройката е завършена";
+"finish_setup_message" = "Всичко е готово.\n\nPerch е безплатно приложение с отворен код. Ако ви е полезно, можете да подкрепите разработката му.";
+
+// Views · SetupFlow
+"Next" = "Напред";
+"Next page" = "Следваща страница";
+"Finish" = "Готово";
+"Finish setup" = "Завърши настройката";
+"Default" = "Стандартен";
+"Basic" = "Основен";
+"Recommended" = "Препоръчителен";
+"Extended" = "Разширен";
