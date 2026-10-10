@@ -133,6 +133,56 @@ check("the ones measured are known",
 check("and nothing that is not an assistant is",
       !AIAssistants.known.contains("ssh") && !AIAssistants.known.contains("config"))
 
+// MARK: - Empty is not the same as unreadable
+
+print("\nA size that could not be read")
+
+let scratch = URL(fileURLWithPath: NSTemporaryDirectory())
+    .appendingPathComponent("perch-ai-test-\(getpid())")
+let fm = FileManager.default
+try? fm.createDirectory(at: scratch, withIntermediateDirectories: true)
+
+let empty = scratch.appendingPathComponent("empty-cache")
+try? fm.createDirectory(at: empty, withIntermediateDirectories: true)
+check("an empty folder measures zero, not unknown",
+      AppLeftovers.measure(empty, fm: fm) == 0)
+
+let holding = scratch.appendingPathComponent("holding")
+try? fm.createDirectory(at: holding, withIntermediateDirectories: true)
+try? Data(count: 4096).write(to: holding.appendingPathComponent("blob"))
+check("a folder with something in it measures it",
+      (AppLeftovers.measure(holding, fm: fm) ?? 0) > 0)
+
+// The case the optional exists for. A folder nobody may open is not a
+// small folder, and 0 B said it was.
+let shut = scratch.appendingPathComponent("shut")
+try? fm.createDirectory(at: shut, withIntermediateDirectories: true)
+try? Data(count: 4096).write(to: shut.appendingPathComponent("blob"))
+try? fm.setAttributes([.posixPermissions: 0o000], ofItemAtPath: shut.path)
+if getuid() == 0 {
+    print("  --   running as root, which can read it anyway; skipped")
+} else {
+    check("a folder that will not open measures as unknown",
+          AppLeftovers.measure(shut, fm: fm) == nil)
+    check("and that is not the same as zero",
+          AppLeftovers.measure(shut, fm: fm) != 0)
+}
+try? fm.setAttributes([.posixPermissions: 0o755], ofItemAtPath: shut.path)
+
+check("a path that is not there measures as unknown",
+      AppLeftovers.measure(scratch.appendingPathComponent("absent"), fm: fm) == nil)
+// Callers that only need a number to add up still get one: a total is a sum
+// and has nowhere to put "unknown".
+check("the summing form counts the unknown as nothing",
+      AppLeftovers.size(of: scratch.appendingPathComponent("absent"), fm: fm) == 0)
+
+check("an item is measured unless it says otherwise",
+      AppLeftovers.Item(url: empty, bytes: 0, confidence: .certain).isMeasured)
+check("and an AI item too",
+      AIAssistants.Item(url: empty, kind: .caches, bytes: 0).isMeasured)
+
+try? fm.removeItem(at: scratch)
+
 print("")
 if failures == 0 { print("all passed") } else { print("\(failures) failed") }
 exit(failures == 0 ? 0 : 1)

@@ -50,8 +50,20 @@ enum AIAssistants {
         let url: URL
         let kind: Kind
         let bytes: Int64
+        /// False when macOS would not say how big it is. Such an entry used
+        /// to be dropped from the list entirely, because it measured zero
+        /// and a zero was skipped as nothing to offer -- so a directory
+        /// Perch could not open simply did not appear, however large it was.
+        let isMeasured: Bool
 
         var name: String { url.lastPathComponent }
+
+        init(url: URL, kind: Kind, bytes: Int64, isMeasured: Bool = true) {
+            self.url = url
+            self.kind = kind
+            self.bytes = bytes
+            self.isMeasured = isMeasured
+        }
 
         static func == (a: Item, b: Item) -> Bool { a.url == b.url }
     }
@@ -155,11 +167,12 @@ enum AIAssistants {
                       isDirectory.boolValue else { continue }
 
                 if isWhollyCache(root, home: home) {
-                    let bytes = AppLeftovers.size(of: root, fm: fm)
-                    if bytes > 0 {
+                    let measured = AppLeftovers.measure(root, fm: fm)
+                    if measured != 0 {
                         items.append(Item(url: root,
                                           kind: root.path.contains("/Logs/") ? .logs : .caches,
-                                          bytes: bytes))
+                                          bytes: measured ?? 0,
+                                          isMeasured: measured != nil))
                     }
                     continue
                 }
@@ -167,10 +180,14 @@ enum AIAssistants {
                 for entry in (try? fm.contentsOfDirectory(atPath: root.path))?.sorted() ?? [] {
                     guard let kind = kind(of: entry) else { continue }
                     let url = root.appendingPathComponent(entry)
-                    let bytes = AppLeftovers.size(of: url, fm: fm)
-                    // A zero-byte store is nothing to offer and nothing to
-                    // free; it only lengthens the list.
-                    if bytes > 0 { items.append(Item(url: url, kind: kind, bytes: bytes)) }
+                    let measured = AppLeftovers.measure(url, fm: fm)
+                    // A store that really is empty is nothing to offer and
+                    // nothing to free; it only lengthens the list. One that
+                    // would not answer is kept, because the reason it would
+                    // not answer is not that it is small.
+                    guard measured != 0 else { continue }
+                    items.append(Item(url: url, kind: kind, bytes: measured ?? 0,
+                                      isMeasured: measured != nil))
                 }
             }
 

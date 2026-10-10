@@ -32,8 +32,19 @@ enum AppLeftovers {
         let url: URL
         let bytes: Int64
         let confidence: Confidence
+        /// False when macOS would not say how big it is. The row shows that
+        /// rather than `0 B`, which reads as "nothing here" for something
+        /// that may be a gigabyte.
+        let isMeasured: Bool
 
         var name: String { url.lastPathComponent }
+
+        init(url: URL, bytes: Int64, confidence: Confidence, isMeasured: Bool = true) {
+            self.url = url
+            self.bytes = bytes
+            self.confidence = confidence
+            self.isMeasured = isMeasured
+        }
     }
 
     /// The directories an app scatters itself across.
@@ -123,9 +134,9 @@ extension AppLeftovers {
         var found: [Item] = []
 
         if let bundle, fm.fileExists(atPath: bundle.path) {
-            found.append(Item(url: bundle,
-                              bytes: size(of: bundle, fm: fm),
-                              confidence: .certain))
+            let measured = measure(bundle, fm: fm)
+            found.append(Item(url: bundle, bytes: measured ?? 0,
+                              confidence: .certain, isMeasured: measured != nil))
         }
 
         for root in searchRoots(home: home) {
@@ -134,8 +145,9 @@ extension AppLeftovers {
                 guard let confidence = match(filename: name, bundleID: bundleID,
                                              appName: appName) else { continue }
                 let url = root.appendingPathComponent(name)
-                found.append(Item(url: url, bytes: size(of: url, fm: fm),
-                                  confidence: confidence))
+                let measured = measure(url, fm: fm)
+                found.append(Item(url: url, bytes: measured ?? 0,
+                                  confidence: confidence, isMeasured: measured != nil))
             }
         }
 
@@ -147,22 +159,49 @@ extension AppLeftovers {
         }
     }
 
-    static func size(of url: URL, fm: FileManager) -> Int64 {
+    /// What this file or folder occupies, or nil when macOS would not say.
+    ///
+    /// Optional, and the distinction is the point. Zero and "no answer" were
+    /// the same value here, so a row could read `0 B` for a folder that is
+    /// genuinely empty and for one Perch was refused permission to look
+    /// inside -- and the second is a folder that might hold a gigabyte. 23
+    /// of 80 leftovers on one Mac report zero; the ones sampled were real
+    /// empty sandbox script directories, so the figure was right that time
+    /// and no caller could have known.
+    ///
+    /// A folder is nil only when it cannot be opened at all. A folder that
+    /// opens and holds nothing is zero, which is a true answer.
+    static func measure(_ url: URL, fm: FileManager) -> Int64? {
         let values = try? url.resourceValues(forKeys: [.isDirectoryKey,
                                                        .totalFileAllocatedSizeKey])
-        if values?.isDirectory != true {
-            return Int64(values?.totalFileAllocatedSize ?? 0)
+        guard let values else { return nil }
+
+        if values.isDirectory != true {
+            return values.totalFileAllocatedSize.map(Int64.init)
         }
-        guard let walk = fm.enumerator(at: url,
+
+        // `contentsOfDirectory` rather than the enumerator's own failure,
+        // because the enumerator reports an unreadable directory by simply
+        // yielding nothing, which is indistinguishable from an empty one.
+        guard (try? fm.contentsOfDirectory(atPath: url.path)) != nil,
+              let walk = fm.enumerator(at: url,
                                        includingPropertiesForKeys: [.totalFileAllocatedSizeKey],
                                        options: [], errorHandler: { _, _ in true })
-        else { return 0 }
+        else { return nil }
+
         var total: Int64 = 0
         for case let child as URL in walk {
             total += Int64((try? child.resourceValues(
                 forKeys: [.totalFileAllocatedSizeKey]).totalFileAllocatedSize) ?? 0)
         }
         return total
+    }
+
+    /// The same measurement for callers that only need a number to add up.
+    /// An unreadable item counts as nothing, because guessing would be
+    /// worse: a total is a sum and has nowhere to put "unknown".
+    static func size(of url: URL, fm: FileManager) -> Int64 {
+        measure(url, fm: fm) ?? 0
     }
 
     /// Moves the chosen leftovers to the Bin.
