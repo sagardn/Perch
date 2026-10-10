@@ -1,7 +1,18 @@
 #!/usr/bin/env swift
 //
-//  Draws the Perch icon: a bird perched on the menu bar, with the load graph
-//  it watches rising behind it.
+//  Draws the Perch icon: a bird perched on the menu bar.
+//
+//  Two decisions worth keeping. The plate is Perch's own teal, #0E9BA8 --
+//  the colour a calm reading is drawn in, the one on the README badges, and
+//  a colour already validated for contrast and colour-vision deficiency in
+//  Palette.swift. The icon used a generic blue that appeared nowhere else in
+//  the app, so nothing on screen agreed with it.
+//
+//  And the load bars that used to sit behind the bird are gone. They were
+//  white at 17% over a gradient: invisible at 128pt, and at 32pt they only
+//  softened the one edge that has to survive -- the silhouette. An icon is
+//  read at 16 points far more often than at 512, so the mark is now a bird,
+//  a bar, and nothing else.
 //
 //  Run it from anywhere -- paths are resolved from this file's own location:
 //
@@ -19,12 +30,15 @@ import AppKit
 
 // MARK: - palette
 
-let skyTop    = NSColor(srgbRed: 0.35, green: 0.72, blue: 1.00, alpha: 1)
-let skyMid    = NSColor(srgbRed: 0.17, green: 0.40, blue: 0.88, alpha: 1)
-let skyBottom = NSColor(srgbRed: 0.07, green: 0.12, blue: 0.40, alpha: 1)
-let inkColor  = NSColor(srgbRed: 0.05, green: 0.09, blue: 0.30, alpha: 1)
+/// Perch's own colours. `skyMid` is #0E9BA8 and `beakColor` #CE7C00 exactly
+/// -- the calm and warning colours from `Palette.swift`, not approximations,
+/// so the icon and the menu bar it draws are the same two colours.
+let skyTop    = NSColor(srgbRed: 0.23, green: 0.80, blue: 0.85, alpha: 1)   // lifted #0E9BA8
+let skyMid    = NSColor(srgbRed: 0x0E / 255, green: 0x9B / 255, blue: 0xA8 / 255, alpha: 1)
+let skyBottom = NSColor(srgbRed: 0.02, green: 0.21, blue: 0.29, alpha: 1)   // deep teal, not navy
+let inkColor  = NSColor(srgbRed: 0.02, green: 0.16, blue: 0.22, alpha: 1)
 let birdColor = NSColor.white
-let beakColor = NSColor(srgbRed: 1.00, green: 0.73, blue: 0.22, alpha: 1)
+let beakColor = NSColor(srgbRed: 0xCE / 255, green: 0x7C / 255, blue: 0x00 / 255, alpha: 1)
 
 // MARK: - the plate
 
@@ -54,86 +68,93 @@ func squircle(in r: NSRect, n: CGFloat = 4.7) -> NSBezierPath {
 /// under a pixel wide and only muddy the silhouette.
 func drawGlyph(in r: NSRect, detailed: Bool) {
     let s = r.width
-    let dy: CGFloat = -0.048          // drops the whole scene to sit level in the plate
+    /// Scale about the plate's centre. The mark was drawn small inside its
+    /// plate and read as timid beside the system icons, which fill theirs.
+    let k: CGFloat = 1.12
+    /// Drops the scene so the space above the bird and below the bar match.
+    /// Measured off a render: it was 18% above and 33% below.
+    let dy: CGFloat = -0.088
+    func sx(_ x: CGFloat) -> CGFloat { 0.5 + (x - 0.5) * k }
+    func sy(_ y: CGFloat) -> CGFloat { 0.5 + (y - 0.5) * k + dy }
     func p(_ x: CGFloat, _ y: CGFloat) -> NSPoint {
-        NSPoint(x: r.minX + x * s, y: r.minY + (y + dy) * s)
+        NSPoint(x: r.minX + sx(x) * s, y: r.minY + sy(y) * s)
     }
     func box(_ x: CGFloat, _ y: CGFloat, _ w: CGFloat, _ h: CGFloat) -> NSRect {
-        NSRect(x: r.minX + x * s, y: r.minY + (y + dy) * s, width: w * s, height: h * s)
+        NSRect(x: r.minX + sx(x) * s, y: r.minY + sy(y) * s,
+               width: w * k * s, height: h * k * s)
     }
 
-    // the readout: the load graph rising behind the bird, off the perch
-    if detailed {
-        let colW: CGFloat = 0.092, gap: CGFloat = 0.038
-        let heights: [CGFloat] = [0.140, 0.235, 0.330, 0.190, 0.285]
-        var x = (1 - (colW * 5 + gap * 4)) / 2
-        for h in heights {
-            let rect = box(x, 0.350, colW, h)
-            let radius = colW * s * 0.28
-            NSColor.white.withAlphaComponent(0.17).setFill()
-            NSBezierPath(roundedRect: rect, xRadius: radius, yRadius: radius).fill()
-            x += colW + gap
-        }
-    }
-
-    // the perch: the menu bar the whole app lives on
-    let barH: CGFloat = 0.050
-    let bar = NSBezierPath(roundedRect: box(0.120, 0.300, 0.760, barH),
-                           xRadius: barH * s / 2, yRadius: barH * s / 2)
+    // The perch: the menu bar the whole app lives on. Thicker than it was,
+    // because it is now one of only two shapes and has to carry its half.
+    let barH: CGFloat = 0.058
+    let bar = NSBezierPath(roundedRect: box(0.140, 0.296, 0.720, barH),
+                           xRadius: barH * k * s / 2, yRadius: barH * k * s / 2)
     birdColor.setFill()
     bar.fill()
 
-    // legs
+    // Legs, short. A perched bird's legs are mostly hidden under it; the
+    // long ones this had made it read as a wader standing in water.
     let legs = NSBezierPath()
-    legs.lineWidth = 0.030 * s
+    legs.lineWidth = 0.034 * k * s
     legs.lineCapStyle = .round
-    legs.move(to: p(0.452, 0.362)); legs.line(to: p(0.452, 0.500))
-    legs.move(to: p(0.540, 0.362)); legs.line(to: p(0.540, 0.500))
+    legs.move(to: p(0.468, 0.368)); legs.line(to: p(0.468, 0.436))
+    legs.move(to: p(0.560, 0.368)); legs.line(to: p(0.560, 0.436))
     birdColor.setStroke()
     legs.stroke()
 
-    // body: one flowing teardrop -- chest to the right, tail swept back and up
-    let body = NSBezierPath()
-    body.move(to: p(0.556, 0.700))
-    body.curve(to: p(0.372, 0.575), controlPoint1: p(0.492, 0.706), controlPoint2: p(0.412, 0.646))
-    body.curve(to: p(0.248, 0.646), controlPoint1: p(0.326, 0.596), controlPoint2: p(0.286, 0.626))
-    body.line(to: p(0.304, 0.542))
-    body.curve(to: p(0.392, 0.504), controlPoint1: p(0.332, 0.528), controlPoint2: p(0.358, 0.514))
-    body.curve(to: p(0.532, 0.480), controlPoint1: p(0.420, 0.482), controlPoint2: p(0.470, 0.468))
-    body.curve(to: p(0.644, 0.606), controlPoint1: p(0.606, 0.492), controlPoint2: p(0.646, 0.544))
-    body.curve(to: p(0.556, 0.700), controlPoint1: p(0.642, 0.656), controlPoint2: p(0.604, 0.694))
-    body.close()
+    // Body and tail, built from two plain shapes rather than one clever
+    // path. Three attempts at a single flowing outline each produced
+    // something else at 128pt -- a paper dart, then a crescent -- because a
+    // concave edge anywhere along the back reads as a raised wing. An oval
+    // and a wedge cannot do that.
     birdColor.setFill()
-    body.fill()
+    NSBezierPath(ovalIn: box(0.356, 0.430, 0.396, 0.276)).fill()
 
-    // head
-    let headR: CGFloat = 0.104
-    NSBezierPath(ovalIn: box(0.574 - headR, 0.728 - headR, headR * 2, headR * 2)).fill()
+    let tail = NSBezierPath()
+    // The tip stays below the line of the back. Above it, the eye reads the
+    // tail as a raised wing instead, which was the fault in two earlier
+    // attempts at this shape.
+    tail.move(to: p(0.452, 0.640))
+    tail.line(to: p(0.252, 0.654))                       // tip, swept back
+    tail.line(to: p(0.424, 0.512))
+    tail.close()
+    tail.fill()
 
-    // wing: one soft cut so the profile still reads as a bird, not a blob
+    // Head, set into the shoulders rather than balanced on top.
+    let headR: CGFloat = 0.116
+    NSBezierPath(ovalIn: box(0.636 - headR, 0.700 - headR, headR * 2, headR * 2)).fill()
+
+    // Wing: a notch cut from the silhouette's own colour, not a grey slash
+    // across it. The old one was a pale fill that read as a smudge at any
+    // size below 128.
     if detailed {
         let wing = NSBezierPath()
-        wing.move(to: p(0.344, 0.588))
-        wing.curve(to: p(0.538, 0.548), controlPoint1: p(0.416, 0.612), controlPoint2: p(0.486, 0.586))
-        wing.curve(to: p(0.344, 0.588), controlPoint1: p(0.480, 0.510), controlPoint2: p(0.386, 0.530))
+        // Wholly inside the body, and a cut of the plate's own colour rather
+        // than a pale tint: a wing fold, not a smudge.
+        wing.move(to: p(0.452, 0.556))
+        wing.curve(to: p(0.654, 0.508),
+                   controlPoint1: p(0.520, 0.580), controlPoint2: p(0.598, 0.552))
+        wing.curve(to: p(0.452, 0.556),
+                   controlPoint1: p(0.600, 0.470), controlPoint2: p(0.506, 0.506))
         wing.close()
-        skyBottom.withAlphaComponent(0.16).setFill()
+        skyBottom.withAlphaComponent(0.20).setFill()
         wing.fill()
     }
 
-    // beak
+    // Beak: short and sharp. The old one was longer than the head was wide,
+    // which is a seagull; Perch is a small bird on a bar.
     let beak = NSBezierPath()
-    beak.move(to: p(0.656, 0.752))
-    beak.line(to: p(0.800, 0.714))
-    beak.line(to: p(0.656, 0.682))
+    beak.move(to: p(0.728, 0.742))
+    beak.line(to: p(0.838, 0.706))
+    beak.line(to: p(0.728, 0.678))
     beak.close()
     beakColor.setFill()
     beak.fill()
 
-    // eye
+    // Eye
     if detailed {
         inkColor.setFill()
-        NSBezierPath(ovalIn: box(0.600, 0.742, 0.034, 0.034)).fill()
+        NSBezierPath(ovalIn: box(0.658, 0.726, 0.038, 0.038)).fill()
     }
 }
 
