@@ -79,7 +79,24 @@
 "Accelerators" = "त्वरक";
 "Renderer · tiler" = "रेंडरर · टाइलर";
 "cores" = "कोर";
-"Largest files" = "सबसे बड़ी फ़ाइलें";
+"Folders" = "Folders";
+"List" = "List";
+"%0 items" = "%0 items";
+"Disk Cleaner" = "Disk Cleaner";
+"Find what is taking the room" = "Find what is taking the room";
+"Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back." = "Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back.";
+"Scan" = "Scan";
+"Stop" = "Stop";
+"Rescan" = "Rescan";
+"Scanning…" = "Scanning…";
+"Scanning %0…" = "Scanning %0…";
+"files scanned" = "files scanned";
+"used" = "used";
+"%0 free of %1" = "%0 free of %1";
+"%0 files scanned in %1 s" = "%0 files scanned in %1 s";
+"%0 selected · %1" = "%0 selected · %1";
+"Select all" = "Select all";
+"Select none" = "Select none";
 "Looking…" = "खोज रहे हैं…";
 "Reveal" = "दिखाएँ";
 "%0 items, %1 in total" = "%0 आइटम, कुल %1";
@@ -114,7 +131,6 @@
 "Network" = "नेटवर्क";
 "Internet connection lost" = "इंटरनेट कनेक्शन टूट गया";
 "Internet connection established" = "इंटरनेट कनेक्शन स्थापित हुआ";
-"Tell me when" = "मुझे बताएँ जब";
 "Connection comes or goes" = "कनेक्शन जुड़े या टूटे";
 "Wi-Fi network changes" = "Wi-Fi नेटवर्क बदले";
 "Interface changes" = "इंटरफ़ेस बदले";
@@ -138,6 +154,20 @@
 "Upload" = "अपलोड";
 "Wi-Fi name" = "Wi-Fi नाम";
 "Dashboard" = "डैशबोर्ड";
+"Network settings…" = "Network settings…";
+"Free up space…" = "Free up space…";
+"Light load" = "Light load";
+"Busy" = "Busy";
+"Heavy load" = "Heavy load";
+"Plenty of room" = "Plenty of room";
+"Filling up" = "Filling up";
+"Getting full" = "Getting full";
+"Almost full" = "Almost full";
+"Running hot" = "Running hot";
+"Too hot" = "Too hot";
+"Checking…" = "Checking…";
+"No internet" = "No internet";
+"No reading" = "No reading";
 "Idle" = "निष्क्रिय";
 "Process" = "प्रोसेस";
 "Force Quit %0" = "%0 को जबरन बंद करें";
@@ -189,6 +219,7 @@
 "Memory free" = "खाली मेमोरी";
 "Swap in use" = "उपयोग में स्वैप";
 "Disk usage" = "डिस्क उपयोग";
+"Size unknown: macOS would not let Perch look inside" = "Size unknown: macOS would not let Perch look inside";
 "%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0 आइटम, %1, रद्दी में जाएँगे। कुछ मिटाया नहीं जाता — सब कुछ Finder से वापस आ सकता है।";
 "%0 left nothing behind that Perch can see" = "%0 ने ऐसा कुछ नहीं छोड़ा जो Perch देख सके";
 "%0 — %1 items, %2 in total" = "%0 — %1 आइटम, कुल %2";
@@ -197,6 +228,11 @@
 "Search installed apps…" = "इंस्टॉल ऐप खोजें…";
 "matched by name only" = "केवल नाम से मिलान";
 "probably this app" = "शायद यही ऐप";
+"Permissions" = "Permissions";
+"Accessibility access, which the switcher needs to bring windows forward." = "Accessibility access, which the switcher needs to bring windows forward.";
+"For a bug report. No serial number, network name or address." = "For a bug report. No serial number, network name or address.";
+"How the readings sit in the menu bar. What each one shows is set on its own page." = "How the readings sit in the menu bar. What each one shows is set on its own page.";
+"Used by the menu bar figures and by every popup's dots, bars and charts." = "Used by the menu bar figures and by every popup's dots, bars and charts.";
 "Reset" = "रीसेट करें";
 "Silent" = "मौन";
 "Settings" = "सेटिंग्ज़";
@@ -255,6 +291,7 @@
 "Number of p-cores" = "%0 परफ़ॉर्मेंस कोर";
 "Disks" = "डिस्क";
 "Display" = "डिस्प्ले";
+"Pick one or more. They sit side by side in the menu bar, in this order." = "Pick one or more. They sit side by side in the menu bar, in this order.";
 "1 second" = "1 सेकंड";
 "10 seconds" = "10 सेकंड";
 "3 seconds" = "3 सेकंड";
@@ -336,6 +373,13 @@
 "No AI assistants found on this Mac" = "इस Mac पर कोई AI सहायक नहीं मिला";
 "%0 across %1 assistants" = "%1 सहायकों में %0";
 "Clean up %0?" = "%0 साफ़ करें?";
+"%0 conversations" = "%0 conversations";
+"Unused for" = "Unused for";
+"%0 days" = "%0 days";
+"Any age" = "Any age";
+"%0 hidden by the %1-day rule" = "%0 hidden by the %1-day rule";
+"Everything the assistants hold has been used more recently than that." = "Everything the assistants hold has been used more recently than that.";
+"Show everything" = "Show everything";
 "%0 goes to the Bin. The assistants stay installed and signed in, and rebuild what they need." = "%0 रद्दी में जाएगा। सहायक इंस्टॉल और साइन-इन बने रहेंगे और ज़रूरी चीज़ें फिर बना लेंगे।";
 "%0 goes to the Bin, including conversation history. The assistants stay installed and signed in, but old sessions will not be there to resume." = "%0 रद्दी में जाएगा, बातचीत का इतिहास भी। सहायक इंस्टॉल और साइन-इन बने रहेंगे, पर पुराने सत्र फिर से शुरू नहीं किए जा सकेंगे।";
 "conversations and memory" = "बातचीत और स्मृति";
@@ -353,14 +397,10 @@
 "Uninstall an app or tool" = "ऐप या टूल अनइंस्टॉल करें";
 "Removes the app and the files it left around the system, or a command-line tool and its settings." = "ऐप और उसने सिस्टम में जो फ़ाइलें छोड़ीं उन्हें हटाता है, या कमांड-लाइन टूल और उसकी सेटिंग्स।";
 "Uninstall…" = "अनइंस्टॉल…";
-
-// Monitor · RunawayApps
 "%0 is working hard" = "%0 बहुत मेहनत कर रहा है";
 "%0% CPU for %1 minutes." = "%1 मिनट से %0% CPU।";
 "One app stays this busy for 5 minutes" = "एक ऐप 5 मिनट तक इतना व्यस्त रहे";
 "Open Activity Monitor to see why." = "कारण देखने के लिए Activity Monitor खोलें।";
-
-// Monitor · Throttling
 "The Mac slows down to cool off" = "Mac ठंडा होने के लिए धीमा होता है";
 "Throttling" = "थ्रॉटलिंग";
 "Throttling hard" = "भारी थ्रॉटलिंग";
@@ -368,8 +408,6 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS ने प्रोसेसर की गति कम कर दी है। ठंडा होने तक व्यस्त ऐप्स धीमे लगेंगे।";
 "slowed down to cool off" = "ठंडा होने के लिए धीमा किया गया";
 "warming up" = "गर्म हो रहा है";
-
-// Launcher · QuickSearch
 "Cancel" = "रद्द करें";
 "Copied %0" = "%0 कॉपी किया गया";
 "Empty Bin" = "ट्रैश ख़ाली करें";
@@ -380,8 +418,6 @@
 "Sleep Display" = "डिस्प्ले को स्लीप करें";
 "Start Screen Saver" = "स्क्रीन सेवर शुरू करें";
 "Toggle Dark Mode" = "डार्क मोड टॉगल करें";
-
-// UI · ShortcutRecorder
 "Keyboard shortcut" = "कीबोर्ड शॉर्टकट";
 "Type shortcut…" = "शॉर्टकट टाइप करें…";
 "Record Shortcut" = "शॉर्टकट रिकॉर्ड करें";

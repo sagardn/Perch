@@ -79,7 +79,24 @@
 "Accelerators" = "Hızlandırıcılar";
 "Renderer · tiler" = "Renderer · tiler";
 "cores" = "çekirdek";
-"Largest files" = "En büyük dosyalar";
+"Folders" = "Folders";
+"List" = "List";
+"%0 items" = "%0 items";
+"Disk Cleaner" = "Disk Cleaner";
+"Find what is taking the room" = "Find what is taking the room";
+"Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back." = "Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back.";
+"Scan" = "Scan";
+"Stop" = "Stop";
+"Rescan" = "Rescan";
+"Scanning…" = "Scanning…";
+"Scanning %0…" = "Scanning %0…";
+"files scanned" = "files scanned";
+"used" = "used";
+"%0 free of %1" = "%0 free of %1";
+"%0 files scanned in %1 s" = "%0 files scanned in %1 s";
+"%0 selected · %1" = "%0 selected · %1";
+"Select all" = "Select all";
+"Select none" = "Select none";
 "Looking…" = "Aranıyor…";
 "Reveal" = "Göster";
 "%0 items, %1 in total" = "%0 öğe, toplam %1";
@@ -114,7 +131,6 @@
 "Network" = "Ağ";
 "Internet connection lost" = "İnternet bağlantısı kesildi";
 "Internet connection established" = "İnternet bağlantısı kuruldu";
-"Tell me when" = "Şu durumlarda haber ver";
 "Connection comes or goes" = "Bağlantı gelip gittiğinde";
 "Wi-Fi network changes" = "Wi-Fi ağı değiştiğinde";
 "Interface changes" = "Arayüz değiştiğinde";
@@ -138,6 +154,20 @@
 "Upload" = "Yükleme";
 "Wi-Fi name" = "Wi-Fi adı";
 "Dashboard" = "Pano";
+"Network settings…" = "Network settings…";
+"Free up space…" = "Free up space…";
+"Light load" = "Light load";
+"Busy" = "Busy";
+"Heavy load" = "Heavy load";
+"Plenty of room" = "Plenty of room";
+"Filling up" = "Filling up";
+"Getting full" = "Getting full";
+"Almost full" = "Almost full";
+"Running hot" = "Running hot";
+"Too hot" = "Too hot";
+"Checking…" = "Checking…";
+"No internet" = "No internet";
+"No reading" = "No reading";
 "Idle" = "Boşta";
 "Process" = "İşlem";
 "Force Quit %0" = "%0 uygulamasından zorla çık";
@@ -189,6 +219,7 @@
 "Memory free" = "Boş bellek";
 "Swap in use" = "Kullanılan takas";
 "Disk usage" = "Disk kullanımı";
+"Size unknown: macOS would not let Perch look inside" = "Size unknown: macOS would not let Perch look inside";
 "%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0 öğe, %1, Çöp Kutusu'na gider. Hiçbir şey silinmez — her şey Finder'dan geri alınabilir.";
 "%0 left nothing behind that Perch can see" = "%0 Perch'in görebileceği bir şey bırakmadı";
 "%0 — %1 items, %2 in total" = "%0 — %1 öğe, toplam %2";
@@ -197,6 +228,11 @@
 "Search installed apps…" = "Yüklü uygulamalarda ara…";
 "matched by name only" = "yalnızca ada göre eşleşti";
 "probably this app" = "muhtemelen bu uygulama";
+"Permissions" = "Permissions";
+"Accessibility access, which the switcher needs to bring windows forward." = "Accessibility access, which the switcher needs to bring windows forward.";
+"For a bug report. No serial number, network name or address." = "For a bug report. No serial number, network name or address.";
+"How the readings sit in the menu bar. What each one shows is set on its own page." = "How the readings sit in the menu bar. What each one shows is set on its own page.";
+"Used by the menu bar figures and by every popup's dots, bars and charts." = "Used by the menu bar figures and by every popup's dots, bars and charts.";
 "Reset" = "Sıfırla";
 "Silent" = "Sessiz";
 "Settings" = "Ayarlar";
@@ -255,6 +291,7 @@
 "Number of p-cores" = "%0 performans çekirdeği";
 "Disks" = "Diskler";
 "Display" = "Ekran";
+"Pick one or more. They sit side by side in the menu bar, in this order." = "Pick one or more. They sit side by side in the menu bar, in this order.";
 "1 second" = "1 saniye";
 "10 seconds" = "10 saniye";
 "3 seconds" = "3 saniye";
@@ -336,6 +373,13 @@
 "No AI assistants found on this Mac" = "Bu Mac'te yapay zekâ aracı bulunamadı";
 "%0 across %1 assistants" = "%1 araçta toplam %0";
 "Clean up %0?" = "%0 temizlensin mi?";
+"%0 conversations" = "%0 conversations";
+"Unused for" = "Unused for";
+"%0 days" = "%0 days";
+"Any age" = "Any age";
+"%0 hidden by the %1-day rule" = "%0 hidden by the %1-day rule";
+"Everything the assistants hold has been used more recently than that." = "Everything the assistants hold has been used more recently than that.";
+"Show everything" = "Show everything";
 "%0 goes to the Bin. The assistants stay installed and signed in, and rebuild what they need." = "%0 Çöp Kutusu'na gider. Araçlar kurulu ve oturumu açık kalır, ihtiyaç duyduklarını yeniden oluştururlar.";
 "%0 goes to the Bin, including conversation history. The assistants stay installed and signed in, but old sessions will not be there to resume." = "%0 Çöp Kutusu'na gider, konuşma geçmişi dahil. Araçlar kurulu ve oturumu açık kalır, ama eski oturumlar kaldığı yerden sürdürülemez.";
 "conversations and memory" = "konuşmalar ve bellek";
@@ -353,14 +397,10 @@
 "Uninstall an app or tool" = "Uygulamayı veya aracı kaldır";
 "Removes the app and the files it left around the system, or a command-line tool and its settings." = "Uygulamayı ve sistemde bıraktığı dosyaları, ya da bir komut satırı aracını ve ayarlarını kaldırır.";
 "Uninstall…" = "Kaldır…";
-
-// Monitor · RunawayApps
 "%0 is working hard" = "%0 yoğun çalışıyor";
 "%0% CPU for %1 minutes." = "%1 dakikadır %0% CPU.";
 "One app stays this busy for 5 minutes" = "Bir uygulama 5 dakika bu kadar meşgul kalırsa";
 "Open Activity Monitor to see why." = "Nedenini görmek için Etkinlik Monitörü’nü açın.";
-
-// Monitor · Throttling
 "The Mac slows down to cool off" = "Mac soğumak için yavaşlar";
 "Throttling" = "Termal kısıtlama";
 "Throttling hard" = "Ağır kısıtlama";
@@ -368,8 +408,6 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS işlemci hızını düşürdü. Yoğun uygulamalar soğuyana kadar daha yavaş çalışacak.";
 "slowed down to cool off" = "soğumak için yavaşladı";
 "warming up" = "ısınıyor";
-
-// Launcher · QuickSearch
 "Cancel" = "Vazgeç";
 "Copied %0" = "Kopyalandı: %0";
 "Empty Bin" = "Çöp Sepetini Boşalt";
@@ -380,8 +418,6 @@
 "Sleep Display" = "Ekranı Uyut";
 "Start Screen Saver" = "Ekran Koruyucuyu Başlat";
 "Toggle Dark Mode" = "Karanlık Modu Aç/Kapat";
-
-// UI · ShortcutRecorder
 "Keyboard shortcut" = "Klavye kısayolu";
 "Type shortcut…" = "Kısayolu yazın…";
 "Record Shortcut" = "Kısayolu Kaydet";

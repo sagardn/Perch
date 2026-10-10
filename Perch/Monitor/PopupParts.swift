@@ -36,11 +36,31 @@ enum StatusWords {
     /// other way round, would be the popup arguing with itself.
     static func load(_ fraction: Double) -> String {
         guard fraction.isFinite else { return "—" }
-        if fraction < idleBelow { return "Idle" }
+        if fraction < idleBelow { return localized("Idle") }
         switch MenuBarReading.Severity.of(load: fraction) {
-        case .calm:     return "Light load"
-        case .warning:  return "Busy"
-        case .critical: return "Heavy load"
+        case .calm:     return localized("Light load")
+        case .warning:  return localized("Busy")
+        case .critical: return localized("Heavy load")
+        }
+    }
+
+    /// Where calm stops reading as "plenty". The colour stays teal to 90%,
+    /// on purpose -- see `SeverityBands.disk` -- but "Plenty of room" over a
+    /// disk 87% full was read, correctly, as the popup contradicting its own
+    /// figure. Three quarters is where the word stops claiming plenty.
+    static let fillingUpFrom = 0.75
+
+    /// The disk's verdict. The colour still changes at exactly the disk
+    /// bands; the word adds one step inside calm rather than moving them,
+    /// because "Filling up" over a teal dot is a nuance, where "Getting full"
+    /// over one would be the argument `load` above avoids.
+    static func disk(_ used: Double) -> String {
+        guard used.isFinite else { return "—" }
+        switch MenuBarReading.Severity.ofDisk(used) {
+        case .calm:     return used < fillingUpFrom ? localized("Plenty of room")
+                                                    : localized("Filling up")
+        case .warning:  return localized("Getting full")
+        case .critical: return localized("Almost full")
         }
     }
 }
@@ -391,5 +411,61 @@ final class DisclosureButton: NSView {
         updateChevron()
         rows.forEach { $0.isHidden = !isOpen }
         onToggle?(isOpen)
+    }
+}
+
+// MARK: - The next step
+
+/// A quiet link at the foot of a popup, for the one thing worth doing next.
+///
+/// Only where a reading has an obvious remedy, and only while it does: a
+/// disk filling up has a cleaner, a Mac that is offline has its network
+/// settings. A link on every popup at all times is a footer nobody reads;
+/// one that appears when the verdict above it changes is the verdict
+/// finishing its sentence.
+final class PopupAction: NSView {
+
+    private let button = NSButton()
+    private let pressed: () -> Void
+
+    init(_ title: String, symbol: String, action: @escaping () -> Void) {
+        self.pressed = action
+        super.init(frame: .zero)
+        translatesAutoresizingMaskIntoConstraints = false
+
+        button.title = title
+        button.image = NSImage(systemSymbolName: symbol, accessibilityDescription: nil)?
+            .withSymbolConfiguration(.init(pointSize: 11, weight: .semibold))
+        button.imagePosition = .imageLeading
+        button.isBordered = false
+        button.font = .systemFont(ofSize: 12, weight: .medium)
+        button.contentTintColor = .controlAccentColor
+        button.target = self
+        button.action = #selector(press)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(button)
+
+        NSLayoutConstraint.activate([
+            button.leadingAnchor.constraint(equalTo: leadingAnchor),
+            button.topAnchor.constraint(equalTo: topAnchor, constant: 2),
+            button.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -2),
+            button.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor),
+        ])
+    }
+
+    required init?(coder: NSCoder) { fatalError("not used") }
+
+    @objc private func press() { pressed() }
+
+    /// Brings Perch forward on a Settings page. The popup closes itself when
+    /// the Settings window takes key, so nothing here has to find it.
+    static func openSettings(_ pane: String) {
+        if #available(macOS 14.0, *) {
+            NSApp.activate()
+        } else {
+            NSApp.activate(ignoringOtherApps: true)
+        }
+        NotificationCenter.default.post(name: .toggleSettings, object: nil,
+                                        userInfo: ["module": pane])
     }
 }

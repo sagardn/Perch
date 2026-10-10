@@ -79,7 +79,24 @@
 "Accelerators" = "ตัวเร่ง";
 "Renderer · tiler" = "ตัวเรนเดอร์ · ไทเลอร์";
 "cores" = "คอร์";
-"Largest files" = "ไฟล์ที่ใหญ่ที่สุด";
+"Folders" = "Folders";
+"List" = "List";
+"%0 items" = "%0 items";
+"Disk Cleaner" = "Disk Cleaner";
+"Find what is taking the room" = "Find what is taking the room";
+"Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back." = "Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back.";
+"Scan" = "Scan";
+"Stop" = "Stop";
+"Rescan" = "Rescan";
+"Scanning…" = "Scanning…";
+"Scanning %0…" = "Scanning %0…";
+"files scanned" = "files scanned";
+"used" = "used";
+"%0 free of %1" = "%0 free of %1";
+"%0 files scanned in %1 s" = "%0 files scanned in %1 s";
+"%0 selected · %1" = "%0 selected · %1";
+"Select all" = "Select all";
+"Select none" = "Select none";
 "Looking…" = "กำลังค้นหา…";
 "Reveal" = "แสดง";
 "%0 items, %1 in total" = "%0 รายการ รวม %1";
@@ -114,7 +131,6 @@
 "Network" = "เครือข่าย";
 "Internet connection lost" = "การเชื่อมต่ออินเทอร์เน็ตขาดหาย";
 "Internet connection established" = "เชื่อมต่ออินเทอร์เน็ตแล้ว";
-"Tell me when" = "บอกฉันเมื่อ";
 "Connection comes or goes" = "การเชื่อมต่อกลับมาหรือขาดหาย";
 "Wi-Fi network changes" = "เครือข่าย Wi-Fi เปลี่ยน";
 "Interface changes" = "อินเทอร์เฟซเปลี่ยน";
@@ -138,6 +154,20 @@
 "Upload" = "อัปโหลด";
 "Wi-Fi name" = "ชื่อ Wi-Fi";
 "Dashboard" = "แดชบอร์ด";
+"Network settings…" = "Network settings…";
+"Free up space…" = "Free up space…";
+"Light load" = "Light load";
+"Busy" = "Busy";
+"Heavy load" = "Heavy load";
+"Plenty of room" = "Plenty of room";
+"Filling up" = "Filling up";
+"Getting full" = "Getting full";
+"Almost full" = "Almost full";
+"Running hot" = "Running hot";
+"Too hot" = "Too hot";
+"Checking…" = "Checking…";
+"No internet" = "No internet";
+"No reading" = "No reading";
 "Idle" = "ไม่ได้ใช้งาน";
 "Process" = "กระบวนการ";
 "Force Quit %0" = "บังคับออกจาก %0";
@@ -189,6 +219,7 @@
 "Memory free" = "หน่วยความจำที่ว่าง";
 "Swap in use" = "พื้นที่สลับที่ใช้อยู่";
 "Disk usage" = "การใช้ดิสก์";
+"Size unknown: macOS would not let Perch look inside" = "Size unknown: macOS would not let Perch look inside";
 "%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0 รายการ %1 จะไปที่ถังขยะ ไม่มีอะไรถูกลบ — กู้คืนทั้งหมดได้จาก Finder";
 "%0 left nothing behind that Perch can see" = "%0 ไม่ได้ทิ้งอะไรที่ Perch มองเห็น";
 "%0 — %1 items, %2 in total" = "%0 — %1 รายการ รวม %2";
@@ -197,6 +228,11 @@
 "Search installed apps…" = "ค้นหาแอปที่ติดตั้ง…";
 "matched by name only" = "ตรงกับชื่อเท่านั้น";
 "probably this app" = "น่าจะเป็นแอปนี้";
+"Permissions" = "Permissions";
+"Accessibility access, which the switcher needs to bring windows forward." = "Accessibility access, which the switcher needs to bring windows forward.";
+"For a bug report. No serial number, network name or address." = "For a bug report. No serial number, network name or address.";
+"How the readings sit in the menu bar. What each one shows is set on its own page." = "How the readings sit in the menu bar. What each one shows is set on its own page.";
+"Used by the menu bar figures and by every popup's dots, bars and charts." = "Used by the menu bar figures and by every popup's dots, bars and charts.";
 "Reset" = "รีเซ็ต";
 "Silent" = "เงียบ";
 "Settings" = "การตั้งค่า";
@@ -255,6 +291,7 @@
 "Number of p-cores" = "%0 คอร์ประสิทธิภาพ";
 "Disks" = "ดิสก์";
 "Display" = "จอภาพ";
+"Pick one or more. They sit side by side in the menu bar, in this order." = "Pick one or more. They sit side by side in the menu bar, in this order.";
 "1 second" = "1 วินาที";
 "10 seconds" = "10 วินาที";
 "3 seconds" = "3 วินาที";
@@ -336,6 +373,13 @@
 "No AI assistants found on this Mac" = "ไม่พบผู้ช่วย AI บน Mac เครื่องนี้";
 "%0 across %1 assistants" = "%0 จากผู้ช่วย %1 ตัว";
 "Clean up %0?" = "ล้าง %0 ไหม";
+"%0 conversations" = "%0 conversations";
+"Unused for" = "Unused for";
+"%0 days" = "%0 days";
+"Any age" = "Any age";
+"%0 hidden by the %1-day rule" = "%0 hidden by the %1-day rule";
+"Everything the assistants hold has been used more recently than that." = "Everything the assistants hold has been used more recently than that.";
+"Show everything" = "Show everything";
 "%0 goes to the Bin. The assistants stay installed and signed in, and rebuild what they need." = "%0 จะไปที่ถังขยะ ผู้ช่วยยังติดตั้งและลงชื่อเข้าอยู่ และจะสร้างสิ่งที่ต้องการขึ้นใหม่";
 "%0 goes to the Bin, including conversation history. The assistants stay installed and signed in, but old sessions will not be there to resume." = "%0 จะไปที่ถังขยะ รวมถึงประวัติการสนทนา ผู้ช่วยยังติดตั้งและลงชื่อเข้าอยู่ แต่จะกลับไปทำต่อจากเซสชันเก่าไม่ได้";
 "conversations and memory" = "การสนทนาและความทรงจำ";
@@ -353,14 +397,10 @@
 "Uninstall an app or tool" = "ถอนการติดตั้งแอปหรือเครื่องมือ";
 "Removes the app and the files it left around the system, or a command-line tool and its settings." = "เอาแอปและไฟล์ที่ทิ้งไว้ในระบบออก หรือเครื่องมือบรรทัดคำสั่งพร้อมการตั้งค่า";
 "Uninstall…" = "ถอนการติดตั้ง…";
-
-// Monitor · RunawayApps
 "%0 is working hard" = "%0 กำลังทำงานหนัก";
 "%0% CPU for %1 minutes." = "CPU %0% เป็นเวลา %1 นาที";
 "One app stays this busy for 5 minutes" = "แอปหนึ่งยังคงทำงานหนักขนาดนี้นาน 5 นาที";
 "Open Activity Monitor to see why." = "เปิดตัวตรวจสอบกิจกรรมเพื่อดูสาเหตุ";
-
-// Monitor · Throttling
 "The Mac slows down to cool off" = "Mac ลดความเร็วเพื่อระบายความร้อน";
 "Throttling" = "ลดความเร็ว";
 "Throttling hard" = "ลดความเร็วอย่างมาก";
@@ -368,8 +408,6 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS ได้ลดความเร็วของโปรเซสเซอร์ แอปที่ทำงานหนักจะช้าลงจนกว่าเครื่องจะเย็นลง";
 "slowed down to cool off" = "ลดความเร็วเพื่อระบายความร้อน";
 "warming up" = "กำลังร้อนขึ้น";
-
-// Launcher · QuickSearch
 "Cancel" = "ยกเลิก";
 "Copied %0" = "คัดลอก %0 แล้ว";
 "Empty Bin" = "ล้างถังขยะ";
@@ -380,8 +418,6 @@
 "Sleep Display" = "พักหน้าจอ";
 "Start Screen Saver" = "เริ่มภาพพักหน้าจอ";
 "Toggle Dark Mode" = "สลับโหมดมืด";
-
-// UI · ShortcutRecorder
 "Keyboard shortcut" = "ปุ่มลัดแป้นพิมพ์";
 "Type shortcut…" = "ป้อนปุ่มลัด…";
 "Record Shortcut" = "บันทึกปุ่มลัด";

@@ -103,7 +103,24 @@
 "cores" = "cores";
 
 // Monitor · LargeFilesWindow
-"Largest files" = "Largest files";
+"Folders" = "Folders";
+"List" = "List";
+"%0 items" = "%0 items";
+"Disk Cleaner" = "Disk Cleaner";
+"Find what is taking the room" = "Find what is taking the room";
+"Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back." = "Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back.";
+"Scan" = "Scan";
+"Stop" = "Stop";
+"Rescan" = "Rescan";
+"Scanning…" = "Scanning…";
+"Scanning %0…" = "Scanning %0…";
+"files scanned" = "files scanned";
+"used" = "used";
+"%0 free of %1" = "%0 free of %1";
+"%0 files scanned in %1 s" = "%0 files scanned in %1 s";
+"%0 selected · %1" = "%0 selected · %1";
+"Select all" = "Select all";
+"Select none" = "Select none";
 "Looking…" = "Looking…";
 "Reveal" = "Reveal";
 "%0 items, %1 in total" = "%0 items, %1 in total";
@@ -144,7 +161,6 @@
 "Network" = "Network";
 "Internet connection lost" = "Internet connection lost";
 "Internet connection established" = "Internet connection established";
-"Tell me when" = "Tell me when";
 "Connection comes or goes" = "Connection comes or goes";
 "Wi-Fi network changes" = "Wi-Fi network changes";
 "Interface changes" = "Interface changes";
@@ -174,6 +190,20 @@
 "Dashboard" = "Dashboard";
 
 // Monitor · PopupParts
+"Network settings…" = "Network settings…";
+"Free up space…" = "Free up space…";
+"Light load" = "Light load";
+"Busy" = "Busy";
+"Heavy load" = "Heavy load";
+"Plenty of room" = "Plenty of room";
+"Filling up" = "Filling up";
+"Getting full" = "Getting full";
+"Almost full" = "Almost full";
+"Running hot" = "Running hot";
+"Too hot" = "Too hot";
+"Checking…" = "Checking…";
+"No internet" = "No internet";
+"No reading" = "No reading";
 "Idle" = "Idle";
 
 // Monitor · PopupSection
@@ -247,6 +277,7 @@
 "Disk usage" = "Disk usage";
 
 // Monitor · UninstallWindow
+"Size unknown: macOS would not let Perch look inside" = "Size unknown: macOS would not let Perch look inside";
 "%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder.";
 "%0 left nothing behind that Perch can see" = "%0 left nothing behind that Perch can see";
 "%0 — %1 items, %2 in total" = "%0 — %1 items, %2 in total";
@@ -257,6 +288,11 @@
 "probably this app" = "probably this app";
 
 // Settings · GeneralPane
+"Permissions" = "Permissions";
+"Accessibility access, which the switcher needs to bring windows forward." = "Accessibility access, which the switcher needs to bring windows forward.";
+"For a bug report. No serial number, network name or address." = "For a bug report. No serial number, network name or address.";
+"How the readings sit in the menu bar. What each one shows is set on its own page." = "How the readings sit in the menu bar. What each one shows is set on its own page.";
+"Used by the menu bar figures and by every popup's dots, bars and charts." = "Used by the menu bar figures and by every popup's dots, bars and charts.";
 "Reset" = "Reset";
 "Silent" = "Silent";
 "Settings" = "Settings";
@@ -325,6 +361,7 @@
 "Display" = "Display";
 
 // UI · Controls
+"Pick one or more. They sit side by side in the menu bar, in this order." = "Pick one or more. They sit side by side in the menu bar, in this order.";
 "1 second" = "1 second";
 "10 seconds" = "10 seconds";
 "3 seconds" = "3 seconds";
@@ -416,6 +453,13 @@
 "No AI assistants found on this Mac" = "No AI assistants found on this Mac";
 "%0 across %1 assistants" = "%0 across %1 assistants";
 "Clean up %0?" = "Clean up %0?";
+"%0 conversations" = "%0 conversations";
+"Unused for" = "Unused for";
+"%0 days" = "%0 days";
+"Any age" = "Any age";
+"%0 hidden by the %1-day rule" = "%0 hidden by the %1-day rule";
+"Everything the assistants hold has been used more recently than that." = "Everything the assistants hold has been used more recently than that.";
+"Show everything" = "Show everything";
 "%0 goes to the Bin. The assistants stay installed and signed in, and rebuild what they need." = "%0 goes to the Bin. The assistants stay installed and signed in, and rebuild what they need.";
 "%0 goes to the Bin, including conversation history. The assistants stay installed and signed in, but old sessions will not be there to resume." = "%0 goes to the Bin, including conversation history. The assistants stay installed and signed in, but old sessions will not be there to resume.";
 "conversations and memory" = "conversations and memory";

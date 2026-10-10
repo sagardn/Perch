@@ -79,7 +79,24 @@
 "Accelerators" = "アクセラレータ";
 "Renderer · tiler" = "レンダラ · タイラ";
 "cores" = "コア";
-"Largest files" = "最大のファイル";
+"Folders" = "Folders";
+"List" = "List";
+"%0 items" = "%0 items";
+"Disk Cleaner" = "Disk Cleaner";
+"Find what is taking the room" = "Find what is taking the room";
+"Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back." = "Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back.";
+"Scan" = "Scan";
+"Stop" = "Stop";
+"Rescan" = "Rescan";
+"Scanning…" = "Scanning…";
+"Scanning %0…" = "Scanning %0…";
+"files scanned" = "files scanned";
+"used" = "used";
+"%0 free of %1" = "%0 free of %1";
+"%0 files scanned in %1 s" = "%0 files scanned in %1 s";
+"%0 selected · %1" = "%0 selected · %1";
+"Select all" = "Select all";
+"Select none" = "Select none";
 "Looking…" = "検索中…";
 "Reveal" = "表示";
 "%0 items, %1 in total" = "%0 項目、合計 %1";
@@ -114,7 +131,6 @@
 "Network" = "ネットワーク";
 "Internet connection lost" = "インターネット接続が切断されました";
 "Internet connection established" = "インターネットに接続しました";
-"Tell me when" = "通知するタイミング";
 "Connection comes or goes" = "接続または切断されたとき";
 "Wi-Fi network changes" = "Wi-Fiネットワークが変わったとき";
 "Interface changes" = "インターフェイスが変わったとき";
@@ -138,6 +154,20 @@
 "Upload" = "アップロード";
 "Wi-Fi name" = "Wi-Fi 名";
 "Dashboard" = "ダッシュボード";
+"Network settings…" = "Network settings…";
+"Free up space…" = "Free up space…";
+"Light load" = "Light load";
+"Busy" = "Busy";
+"Heavy load" = "Heavy load";
+"Plenty of room" = "Plenty of room";
+"Filling up" = "Filling up";
+"Getting full" = "Getting full";
+"Almost full" = "Almost full";
+"Running hot" = "Running hot";
+"Too hot" = "Too hot";
+"Checking…" = "Checking…";
+"No internet" = "No internet";
+"No reading" = "No reading";
 "Idle" = "アイドル";
 "Process" = "プロセス";
 "Force Quit %0" = "%0 を強制終了";
@@ -189,6 +219,7 @@
 "Memory free" = "空きメモリ";
 "Swap in use" = "使用中のスワップ";
 "Disk usage" = "ディスク使用率";
+"Size unknown: macOS would not let Perch look inside" = "Size unknown: macOS would not let Perch look inside";
 "%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0 項目、%1 がゴミ箱に入ります。消去はされません — すべて Finder から戻せます。";
 "%0 left nothing behind that Perch can see" = "%0 は Perch から見える残留物を残しませんでした";
 "%0 — %1 items, %2 in total" = "%0 — %1 項目、合計 %2";
@@ -197,6 +228,11 @@
 "Search installed apps…" = "インストール済みの App を検索…";
 "matched by name only" = "名前だけで一致";
 "probably this app" = "おそらくこの App";
+"Permissions" = "Permissions";
+"Accessibility access, which the switcher needs to bring windows forward." = "Accessibility access, which the switcher needs to bring windows forward.";
+"For a bug report. No serial number, network name or address." = "For a bug report. No serial number, network name or address.";
+"How the readings sit in the menu bar. What each one shows is set on its own page." = "How the readings sit in the menu bar. What each one shows is set on its own page.";
+"Used by the menu bar figures and by every popup's dots, bars and charts." = "Used by the menu bar figures and by every popup's dots, bars and charts.";
 "Reset" = "リセット";
 "Silent" = "サイレント";
 "Settings" = "設定";
@@ -255,6 +291,7 @@
 "Number of p-cores" = "高性能コア%0個";
 "Disks" = "ディスク";
 "Display" = "ディスプレイ";
+"Pick one or more. They sit side by side in the menu bar, in this order." = "Pick one or more. They sit side by side in the menu bar, in this order.";
 "1 second" = "1秒";
 "10 seconds" = "10秒";
 "3 seconds" = "3秒";
@@ -336,6 +373,13 @@
 "No AI assistants found on this Mac" = "この Mac に AI アシスタントは見つかりません";
 "%0 across %1 assistants" = "%1 個のアシスタントで %0";
 "Clean up %0?" = "%0 を整理しますか？";
+"%0 conversations" = "%0 conversations";
+"Unused for" = "Unused for";
+"%0 days" = "%0 days";
+"Any age" = "Any age";
+"%0 hidden by the %1-day rule" = "%0 hidden by the %1-day rule";
+"Everything the assistants hold has been used more recently than that." = "Everything the assistants hold has been used more recently than that.";
+"Show everything" = "Show everything";
 "%0 goes to the Bin. The assistants stay installed and signed in, and rebuild what they need." = "%0 がゴミ箱に入ります。アシスタントはインストールされたまま、サインインしたままで、必要なものは作り直します。";
 "%0 goes to the Bin, including conversation history. The assistants stay installed and signed in, but old sessions will not be there to resume." = "%0 がゴミ箱に入ります（会話履歴を含む）。アシスタントはインストールとサインインのままですが、古いセッションは再開できなくなります。";
 "conversations and memory" = "会話と記憶";
@@ -353,14 +397,10 @@
 "Uninstall an app or tool" = "App やツールをアンインストール";
 "Removes the app and the files it left around the system, or a command-line tool and its settings." = "App とそれがシステムに残したファイル、またはコマンドラインツールとその設定を削除します。";
 "Uninstall…" = "アンインストール…";
-
-// Monitor · RunawayApps
 "%0 is working hard" = "%0 が高負荷で動作しています";
 "%0% CPU for %1 minutes." = "%1 分間 CPU %0%。";
 "One app stays this busy for 5 minutes" = "1 つのアプリが 5 分間この負荷を続けたとき";
 "Open Activity Monitor to see why." = "理由はアクティビティモニタで確認できます。";
-
-// Monitor · Throttling
 "The Mac slows down to cool off" = "Macが冷却のために速度を落とす";
 "Throttling" = "スロットリング";
 "Throttling hard" = "強いスロットリング";
@@ -368,8 +408,6 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOSがプロセッサの速度を下げました。冷えるまで負荷の高いアプリの動作が遅くなります。";
 "slowed down to cool off" = "冷却のため減速中";
 "warming up" = "温度上昇中";
-
-// Launcher · QuickSearch
 "Cancel" = "キャンセル";
 "Copied %0" = "%0をコピーしました";
 "Empty Bin" = "ゴミ箱を空にする";
@@ -380,8 +418,6 @@
 "Sleep Display" = "ディスプレイをスリープ";
 "Start Screen Saver" = "スクリーンセーバを開始";
 "Toggle Dark Mode" = "ダークモードを切り替える";
-
-// UI · ShortcutRecorder
 "Keyboard shortcut" = "キーボードショートカット";
 "Type shortcut…" = "ショートカットを入力…";
 "Record Shortcut" = "ショートカットを記録";

@@ -145,7 +145,7 @@ final class SensorsSettingsPage: NSView {
             + sensors.filter { SensorReadings.names[$0.id] != nil || $0.id.hasPrefix("hid:") }
                 .map { ($0.name, $0.id) }
 
-        let general = Controls.section(localized("Sensors"), [
+        let general = Controls.section(localized("Sensors"), symbol: "thermometer.medium", tint: .systemRed, [
             Controls.row(localized("Keyboard shortcut"), ShortcutRecorder(module: "Sensors")),
             Controls.row(localized("Watch"), Controls.choice(choices,
                                                   selected: SensorsSettings.watched ?? "") { id in
@@ -166,16 +166,17 @@ final class SensorsSettingsPage: NSView {
                          }),
         ])
 
-        let shapes = Controls.section(localized("Menu bar"), styles.map { style in
-            Controls.row(self.titles(style), Controls.toggle(self.shown.contains(style)) { on in
-                if on {
-                    self.shown.insert(style)
-                } else {
-                    self.shown.remove(style)
-                }
-                MenuBarStyles.store(Array(self.shown), for: "Sensors")
-            })
-        })
+        let shapes = Controls.section(
+            localized("Menu bar"), symbol: "menubar.rectangle", tint: .systemBlue,
+            footer: localized("Pick one or more. They sit side by side in the menu bar, in this order."),
+            [Controls.shapes(self.styles, shown: self.shown, label: SensorsModule().menuBarLabel,
+                             value: "62°",
+                            title: self.titles,) { chosen in
+                self.shown = chosen
+                // In the order the tiles are laid out, not the order they
+                // were clicked, so the menu bar matches the page.
+                MenuBarStyles.store(self.styles.filter(chosen.contains), for: "Sensors")
+            }])
 
         // One switch per sensor, grouped by family -- but only the ones with
         // names unless the switch above says otherwise. Building a row is
@@ -188,19 +189,25 @@ final class SensorsSettingsPage: NSView {
         for family in SensorReadings.Family.allCases {
             let group = listed.filter { $0.family == family }
             guard !group.isEmpty else { continue }
-            listRows.append(Controls.label(family.rawValue.uppercased()))
+            listRows.append(Controls.subheading(family.rawValue))
+            // The reading beside its switch, not run into its name: "Battery
+            // 34°" as one string put the figure wherever the name ended.
             listRows += group.map { sensor in
-                Controls.row("\(sensor.name)   \(sensor.formatted)",
-                             Controls.toggle(SensorsSettings.isShown(sensor.id)) { on in
-                    SensorsSettings.setShown(sensor.id, on)
-                })
+                Controls.row(sensor.name, Controls.group([
+                    Controls.label(sensor.formatted),
+                    Controls.toggle(SensorsSettings.isShown(sensor.id)) { on in
+                        SensorsSettings.setShown(sensor.id, on)
+                    },
+                ]))
             }
         }
-        let list = Controls.section(localized("Show in the popup"), listRows)
+        let list = Controls.section(localized("Show in the popup"), symbol: "list.bullet",
+                                    tint: .systemGray, listRows)
 
         let column = NSStackView(views: [general, shapes, list])
         column.orientation = .vertical
         column.alignment = .leading
+        column.spacing = 18
         column.edgeInsets = NSEdgeInsets(top: 44, left: 18, bottom: 18, right: 18)
         column.translatesAutoresizingMaskIntoConstraints = false
         addSubview(column)

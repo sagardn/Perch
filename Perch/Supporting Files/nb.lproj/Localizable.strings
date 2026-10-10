@@ -79,7 +79,24 @@
 "Accelerators" = "Akseleratorer";
 "Renderer · tiler" = "Renderer · tiler";
 "cores" = "kjerner";
-"Largest files" = "Største filer";
+"Folders" = "Folders";
+"List" = "List";
+"%0 items" = "%0 items";
+"Disk Cleaner" = "Disk Cleaner";
+"Find what is taking the room" = "Find what is taking the room";
+"Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back." = "Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back.";
+"Scan" = "Scan";
+"Stop" = "Stop";
+"Rescan" = "Rescan";
+"Scanning…" = "Scanning…";
+"Scanning %0…" = "Scanning %0…";
+"files scanned" = "files scanned";
+"used" = "used";
+"%0 free of %1" = "%0 free of %1";
+"%0 files scanned in %1 s" = "%0 files scanned in %1 s";
+"%0 selected · %1" = "%0 selected · %1";
+"Select all" = "Select all";
+"Select none" = "Select none";
 "Looking…" = "Søker…";
 "Reveal" = "Vis";
 "%0 items, %1 in total" = "%0 objekter, %1 totalt";
@@ -114,7 +131,6 @@
 "Network" = "Nettverk";
 "Internet connection lost" = "Internettforbindelsen ble brutt";
 "Internet connection established" = "Internettforbindelsen er opprettet";
-"Tell me when" = "Si fra når";
 "Connection comes or goes" = "Forbindelsen kommer eller går";
 "Wi-Fi network changes" = "Wi-Fi-nettverket endres";
 "Interface changes" = "Grensesnittet endres";
@@ -138,6 +154,20 @@
 "Upload" = "Opplasting";
 "Wi-Fi name" = "Wi-Fi-navn";
 "Dashboard" = "Oversikt";
+"Network settings…" = "Network settings…";
+"Free up space…" = "Free up space…";
+"Light load" = "Light load";
+"Busy" = "Busy";
+"Heavy load" = "Heavy load";
+"Plenty of room" = "Plenty of room";
+"Filling up" = "Filling up";
+"Getting full" = "Getting full";
+"Almost full" = "Almost full";
+"Running hot" = "Running hot";
+"Too hot" = "Too hot";
+"Checking…" = "Checking…";
+"No internet" = "No internet";
+"No reading" = "No reading";
 "Idle" = "Inaktiv";
 "Process" = "Prosess";
 "Force Quit %0" = "Tvungen avslutning av %0";
@@ -189,6 +219,7 @@
 "Memory free" = "Minne ledig";
 "Swap in use" = "Swap i bruk";
 "Disk usage" = "Diskbruk";
+"Size unknown: macOS would not let Perch look inside" = "Size unknown: macOS would not let Perch look inside";
 "%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0 objekter, %1, går i papirkurven. Ingenting slettes – alt kan legges tilbake fra Finder.";
 "%0 left nothing behind that Perch can see" = "%0 la ikke igjen noe Perch kan se";
 "%0 — %1 items, %2 in total" = "%0 — %1 objekter, %2 totalt";
@@ -197,6 +228,11 @@
 "Search installed apps…" = "Søk i installerte apper…";
 "matched by name only" = "funnet bare via navnet";
 "probably this app" = "sannsynligvis denne appen";
+"Permissions" = "Permissions";
+"Accessibility access, which the switcher needs to bring windows forward." = "Accessibility access, which the switcher needs to bring windows forward.";
+"For a bug report. No serial number, network name or address." = "For a bug report. No serial number, network name or address.";
+"How the readings sit in the menu bar. What each one shows is set on its own page." = "How the readings sit in the menu bar. What each one shows is set on its own page.";
+"Used by the menu bar figures and by every popup's dots, bars and charts." = "Used by the menu bar figures and by every popup's dots, bars and charts.";
 "Reset" = "Nullstill";
 "Silent" = "Stille";
 "Settings" = "Innstillinger";
@@ -255,6 +291,7 @@
 "Number of p-cores" = "%0 ytelseskjerner";
 "Disks" = "Disker";
 "Display" = "Skjerm";
+"Pick one or more. They sit side by side in the menu bar, in this order." = "Pick one or more. They sit side by side in the menu bar, in this order.";
 "1 second" = "1 sekund";
 "10 seconds" = "10 sekunder";
 "3 seconds" = "3 sekunder";
@@ -336,6 +373,13 @@
 "No AI assistants found on this Mac" = "Fant ingen KI-assistenter på denne Macen";
 "%0 across %1 assistants" = "%0 fordelt på %1 assistenter";
 "Clean up %0?" = "Rydde opp i %0?";
+"%0 conversations" = "%0 conversations";
+"Unused for" = "Unused for";
+"%0 days" = "%0 days";
+"Any age" = "Any age";
+"%0 hidden by the %1-day rule" = "%0 hidden by the %1-day rule";
+"Everything the assistants hold has been used more recently than that." = "Everything the assistants hold has been used more recently than that.";
+"Show everything" = "Show everything";
 "%0 goes to the Bin. The assistants stay installed and signed in, and rebuild what they need." = "%0 går i papirkurven. Assistentene forblir installert og innlogget, og bygger opp igjen det de trenger.";
 "%0 goes to the Bin, including conversation history. The assistants stay installed and signed in, but old sessions will not be there to resume." = "%0 går i papirkurven, inkludert samtalehistorikk. Assistentene forblir installert og innlogget, men gamle økter kan ikke gjenopptas.";
 "conversations and memory" = "samtaler og minne";
@@ -353,14 +397,10 @@
 "Uninstall an app or tool" = "Avinstaller app eller verktøy";
 "Removes the app and the files it left around the system, or a command-line tool and its settings." = "Fjerner appen og filene den la igjen i systemet, eller et kommandolinjeverktøy og innstillingene det har.";
 "Uninstall…" = "Avinstaller…";
-
-// Monitor · RunawayApps
 "%0 is working hard" = "%0 jobber hardt";
 "%0% CPU for %1 minutes." = "%0 % CPU i %1 minutter.";
 "One app stays this busy for 5 minutes" = "Én app holder seg så travel i 5 minutter";
 "Open Activity Monitor to see why." = "Åpne Aktivitetsmonitor for å se hvorfor.";
-
-// Monitor · Throttling
 "The Mac slows down to cool off" = "Macen senker farten for å kjøles ned";
 "Throttling" = "Struping";
 "Throttling hard" = "Kraftig struping";
@@ -368,8 +408,6 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS har redusert prosessorhastigheten. Krevende apper vil føles tregere til den er avkjølt.";
 "slowed down to cool off" = "senket farten for å kjøles ned";
 "warming up" = "blir varm";
-
-// Launcher · QuickSearch
 "Cancel" = "Avbryt";
 "Copied %0" = "Kopiert: %0";
 "Empty Bin" = "Tøm papirkurven";
@@ -380,8 +418,6 @@
 "Sleep Display" = "Sett skjermen i dvale";
 "Start Screen Saver" = "Start skjermsparer";
 "Toggle Dark Mode" = "Slå mørk modus av/på";
-
-// UI · ShortcutRecorder
 "Keyboard shortcut" = "Tastatursnarvei";
 "Type shortcut…" = "Skriv inn snarvei…";
 "Record Shortcut" = "Ta opp snarvei";

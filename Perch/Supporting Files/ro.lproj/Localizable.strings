@@ -79,7 +79,24 @@
 "Accelerators" = "Acceleratoare";
 "Renderer · tiler" = "Renderer · tiler";
 "cores" = "nuclee";
-"Largest files" = "Cele mai mari fișiere";
+"Folders" = "Folders";
+"List" = "List";
+"%0 items" = "%0 items";
+"Disk Cleaner" = "Disk Cleaner";
+"Find what is taking the room" = "Find what is taking the room";
+"Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back." = "Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back.";
+"Scan" = "Scan";
+"Stop" = "Stop";
+"Rescan" = "Rescan";
+"Scanning…" = "Scanning…";
+"Scanning %0…" = "Scanning %0…";
+"files scanned" = "files scanned";
+"used" = "used";
+"%0 free of %1" = "%0 free of %1";
+"%0 files scanned in %1 s" = "%0 files scanned in %1 s";
+"%0 selected · %1" = "%0 selected · %1";
+"Select all" = "Select all";
+"Select none" = "Select none";
 "Looking…" = "Se caută…";
 "Reveal" = "Arată";
 "%0 items, %1 in total" = "%0 elemente, %1 în total";
@@ -114,7 +131,6 @@
 "Network" = "Rețea";
 "Internet connection lost" = "Conexiunea la internet s-a pierdut";
 "Internet connection established" = "Conexiunea la internet a fost stabilită";
-"Tell me when" = "Anunță-mă când";
 "Connection comes or goes" = "Conexiunea apare sau dispare";
 "Wi-Fi network changes" = "Rețeaua Wi-Fi se schimbă";
 "Interface changes" = "Interfața se schimbă";
@@ -138,6 +154,20 @@
 "Upload" = "Încărcare";
 "Wi-Fi name" = "Numele rețelei Wi-Fi";
 "Dashboard" = "Tablou de bord";
+"Network settings…" = "Network settings…";
+"Free up space…" = "Free up space…";
+"Light load" = "Light load";
+"Busy" = "Busy";
+"Heavy load" = "Heavy load";
+"Plenty of room" = "Plenty of room";
+"Filling up" = "Filling up";
+"Getting full" = "Getting full";
+"Almost full" = "Almost full";
+"Running hot" = "Running hot";
+"Too hot" = "Too hot";
+"Checking…" = "Checking…";
+"No internet" = "No internet";
+"No reading" = "No reading";
 "Idle" = "Inactiv";
 "Process" = "Proces";
 "Force Quit %0" = "Forțează închiderea %0";
@@ -189,6 +219,7 @@
 "Memory free" = "Memorie liberă";
 "Swap in use" = "Swap utilizat";
 "Disk usage" = "Utilizare disc";
+"Size unknown: macOS would not let Perch look inside" = "Size unknown: macOS would not let Perch look inside";
 "%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0 elemente, %1, merg la coș. Nimic nu se șterge — totul poate fi pus la loc din Finder.";
 "%0 left nothing behind that Perch can see" = "%0 nu a lăsat nimic pe care Perch să îl vadă";
 "%0 — %1 items, %2 in total" = "%0 — %1 elemente, %2 în total";
@@ -197,6 +228,11 @@
 "Search installed apps…" = "Caută aplicații instalate…";
 "matched by name only" = "potrivit doar după nume";
 "probably this app" = "probabil această aplicație";
+"Permissions" = "Permissions";
+"Accessibility access, which the switcher needs to bring windows forward." = "Accessibility access, which the switcher needs to bring windows forward.";
+"For a bug report. No serial number, network name or address." = "For a bug report. No serial number, network name or address.";
+"How the readings sit in the menu bar. What each one shows is set on its own page." = "How the readings sit in the menu bar. What each one shows is set on its own page.";
+"Used by the menu bar figures and by every popup's dots, bars and charts." = "Used by the menu bar figures and by every popup's dots, bars and charts.";
 "Reset" = "Resetează";
 "Silent" = "Silențios";
 "Settings" = "Configurări";
@@ -255,6 +291,7 @@
 "Number of p-cores" = "Nuclee de performanță: %0";
 "Disks" = "Discuri";
 "Display" = "Ecran";
+"Pick one or more. They sit side by side in the menu bar, in this order." = "Pick one or more. They sit side by side in the menu bar, in this order.";
 "1 second" = "1 secundă";
 "10 seconds" = "10 secunde";
 "3 seconds" = "3 secunde";
@@ -336,6 +373,13 @@
 "No AI assistants found on this Mac" = "Niciun asistent AI găsit pe acest Mac";
 "%0 across %1 assistants" = "%0 în %1 asistenți";
 "Clean up %0?" = "Cureți %0?";
+"%0 conversations" = "%0 conversations";
+"Unused for" = "Unused for";
+"%0 days" = "%0 days";
+"Any age" = "Any age";
+"%0 hidden by the %1-day rule" = "%0 hidden by the %1-day rule";
+"Everything the assistants hold has been used more recently than that." = "Everything the assistants hold has been used more recently than that.";
+"Show everything" = "Show everything";
 "%0 goes to the Bin. The assistants stay installed and signed in, and rebuild what they need." = "%0 merge la coș. Asistenții rămân instalați și conectați și reconstruiesc ce le trebuie.";
 "%0 goes to the Bin, including conversation history. The assistants stay installed and signed in, but old sessions will not be there to resume." = "%0 merge la coș, inclusiv istoricul conversațiilor. Asistenții rămân instalați și conectați, dar sesiunile vechi nu vor mai putea fi reluate.";
 "conversations and memory" = "conversații și memorie";
@@ -353,14 +397,10 @@
 "Uninstall an app or tool" = "Dezinstalează o aplicație sau unealtă";
 "Removes the app and the files it left around the system, or a command-line tool and its settings." = "Elimină aplicația și fișierele lăsate în sistem, sau o unealtă de linie de comandă și setările ei.";
 "Uninstall…" = "Dezinstalează…";
-
-// Monitor · RunawayApps
 "%0 is working hard" = "%0 lucrează intens";
 "%0% CPU for %1 minutes." = "%0% CPU timp de %1 minute.";
 "One app stays this busy for 5 minutes" = "O aplicație rămâne atât de ocupată 5 minute";
 "Open Activity Monitor to see why." = "Deschideți Monitor activitate pentru a vedea de ce.";
-
-// Monitor · Throttling
 "The Mac slows down to cool off" = "Mac-ul încetinește pentru a se răci";
 "Throttling" = "Limitare termică";
 "Throttling hard" = "Limitare puternică";
@@ -368,8 +408,6 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS a redus viteza procesorului. Aplicațiile solicitante vor fi mai lente până se răcește.";
 "slowed down to cool off" = "încetinit pentru răcire";
 "warming up" = "se încălzește";
-
-// Launcher · QuickSearch
 "Cancel" = "Anulează";
 "Copied %0" = "Copiat: %0";
 "Empty Bin" = "Golește coșul";
@@ -380,8 +418,6 @@
 "Sleep Display" = "Pune monitorul în repaus";
 "Start Screen Saver" = "Pornește protectorul de ecran";
 "Toggle Dark Mode" = "Comută modul întunecat";
-
-// UI · ShortcutRecorder
 "Keyboard shortcut" = "Scurtătură de tastatură";
 "Type shortcut…" = "Tastați scurtătura…";
 "Record Shortcut" = "Înregistrați scurtătura";

@@ -79,7 +79,24 @@
 "Accelerators" = "加速器";
 "Renderer · tiler" = "渲染器 · 分块器";
 "cores" = "核";
-"Largest files" = "最大的文件";
+"Folders" = "Folders";
+"List" = "List";
+"%0 items" = "%0 items";
+"Disk Cleaner" = "Disk Cleaner";
+"Find what is taking the room" = "Find what is taking the room";
+"Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back." = "Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back.";
+"Scan" = "Scan";
+"Stop" = "Stop";
+"Rescan" = "Rescan";
+"Scanning…" = "Scanning…";
+"Scanning %0…" = "Scanning %0…";
+"files scanned" = "files scanned";
+"used" = "used";
+"%0 free of %1" = "%0 free of %1";
+"%0 files scanned in %1 s" = "%0 files scanned in %1 s";
+"%0 selected · %1" = "%0 selected · %1";
+"Select all" = "Select all";
+"Select none" = "Select none";
 "Looking…" = "正在查找…";
 "Reveal" = "显示";
 "%0 items, %1 in total" = "%0 个项目，共 %1";
@@ -114,7 +131,6 @@
 "Network" = "网络";
 "Internet connection lost" = "互联网连接已断开";
 "Internet connection established" = "互联网连接已建立";
-"Tell me when" = "在以下情况告诉我";
 "Connection comes or goes" = "连接建立或断开";
 "Wi-Fi network changes" = "Wi-Fi 网络更改";
 "Interface changes" = "接口更改";
@@ -138,6 +154,20 @@
 "Upload" = "上传";
 "Wi-Fi name" = "Wi-Fi 名称";
 "Dashboard" = "仪表盘";
+"Network settings…" = "Network settings…";
+"Free up space…" = "Free up space…";
+"Light load" = "Light load";
+"Busy" = "Busy";
+"Heavy load" = "Heavy load";
+"Plenty of room" = "Plenty of room";
+"Filling up" = "Filling up";
+"Getting full" = "Getting full";
+"Almost full" = "Almost full";
+"Running hot" = "Running hot";
+"Too hot" = "Too hot";
+"Checking…" = "Checking…";
+"No internet" = "No internet";
+"No reading" = "No reading";
 "Idle" = "闲置";
 "Process" = "进程";
 "Force Quit %0" = "强制退出 %0";
@@ -189,6 +219,7 @@
 "Memory free" = "可用内存";
 "Swap in use" = "已用交换";
 "Disk usage" = "磁盘使用率";
+"Size unknown: macOS would not let Perch look inside" = "Size unknown: macOS would not let Perch look inside";
 "%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0 个项目，%1，将移到废纸篓。不会抹掉任何内容——都可从访达放回。";
 "%0 left nothing behind that Perch can see" = "%0 没有留下 Perch 能看到的内容";
 "%0 — %1 items, %2 in total" = "%0 — %1 个项目，共 %2";
@@ -197,6 +228,11 @@
 "Search installed apps…" = "搜索已安装的 App…";
 "matched by name only" = "仅按名称匹配";
 "probably this app" = "可能属于此 App";
+"Permissions" = "Permissions";
+"Accessibility access, which the switcher needs to bring windows forward." = "Accessibility access, which the switcher needs to bring windows forward.";
+"For a bug report. No serial number, network name or address." = "For a bug report. No serial number, network name or address.";
+"How the readings sit in the menu bar. What each one shows is set on its own page." = "How the readings sit in the menu bar. What each one shows is set on its own page.";
+"Used by the menu bar figures and by every popup's dots, bars and charts." = "Used by the menu bar figures and by every popup's dots, bars and charts.";
 "Reset" = "重置";
 "Silent" = "静默";
 "Settings" = "设置";
@@ -255,6 +291,7 @@
 "Number of p-cores" = "%0 个性能核心";
 "Disks" = "磁盘";
 "Display" = "显示器";
+"Pick one or more. They sit side by side in the menu bar, in this order." = "Pick one or more. They sit side by side in the menu bar, in this order.";
 "1 second" = "1 秒";
 "10 seconds" = "10 秒";
 "3 seconds" = "3 秒";
@@ -336,6 +373,13 @@
 "No AI assistants found on this Mac" = "此 Mac 上未找到 AI 助手";
 "%0 across %1 assistants" = "%1 个助手，共 %0";
 "Clean up %0?" = "清理 %0？";
+"%0 conversations" = "%0 conversations";
+"Unused for" = "Unused for";
+"%0 days" = "%0 days";
+"Any age" = "Any age";
+"%0 hidden by the %1-day rule" = "%0 hidden by the %1-day rule";
+"Everything the assistants hold has been used more recently than that." = "Everything the assistants hold has been used more recently than that.";
+"Show everything" = "Show everything";
 "%0 goes to the Bin. The assistants stay installed and signed in, and rebuild what they need." = "%0 将移到废纸篓。助手仍保持安装和登录状态，需要的内容会重新生成。";
 "%0 goes to the Bin, including conversation history. The assistants stay installed and signed in, but old sessions will not be there to resume." = "%0 将移到废纸篓，包括对话记录。助手仍保持安装和登录状态，但旧会话将无法继续。";
 "conversations and memory" = "对话与记忆";
@@ -353,14 +397,10 @@
 "Uninstall an app or tool" = "卸载 App 或工具";
 "Removes the app and the files it left around the system, or a command-line tool and its settings." = "移除 App 及其留在系统中的文件，或一个命令行工具及其设置。";
 "Uninstall…" = "卸载…";
-
-// Monitor · RunawayApps
 "%0 is working hard" = "“%0”正在高负荷运行";
 "%0% CPU for %1 minutes." = "%1 分钟内 CPU 占用 %0%。";
 "One app stays this busy for 5 minutes" = "某个应用持续这么忙 5 分钟";
 "Open Activity Monitor to see why." = "打开“活动监视器”查看原因。";
-
-// Monitor · Throttling
 "The Mac slows down to cool off" = "Mac 为降温而降速";
 "Throttling" = "降频";
 "Throttling hard" = "严重降频";
@@ -368,8 +408,6 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS 已降低处理器速度。在 Mac 冷却前，繁忙的 App 会变慢。";
 "slowed down to cool off" = "已降速以降温";
 "warming up" = "正在升温";
-
-// Launcher · QuickSearch
 "Cancel" = "取消";
 "Copied %0" = "已拷贝 %0";
 "Empty Bin" = "清倒废纸篓";
@@ -380,8 +418,6 @@
 "Sleep Display" = "使显示器进入睡眠";
 "Start Screen Saver" = "启动屏幕保护程序";
 "Toggle Dark Mode" = "切换深色模式";
-
-// UI · ShortcutRecorder
 "Keyboard shortcut" = "键盘快捷键";
 "Type shortcut…" = "键入快捷键…";
 "Record Shortcut" = "录制快捷键";

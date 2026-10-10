@@ -16,6 +16,18 @@ final class NetworkModule: PopupContent {
 
     // Rows held so a refresh can set their text rather than rebuild the view.
     private let status = StatusLine()
+    /// Shown only while there is no way out: offline, or connected with no
+    /// internet behind it. Online, it would be a link to a page nobody needs.
+    private let networkSettings = PopupAction(localized("Network settings…"), symbol: "network") {
+        for identifier in ["x-apple.systempreferences:com.apple.Network-Settings.extension",
+                           "x-apple.systempreferences:com.apple.preference.network"] {
+            if let url = URL(string: identifier),
+               NSWorkspace.shared.urlForApplication(toOpen: url) != nil {
+                NSWorkspace.shared.open(url)
+                return
+            }
+        }
+    }
     private let downloadReading = BigReading(caption: localized("Download"), symbol: "arrow.down",
                                              tint: .systemIndigo)
     private let uploadReading = BigReading(caption: localized("Upload"), symbol: "arrow.up",
@@ -73,7 +85,10 @@ final class NetworkModule: PopupContent {
         stack.translatesAutoresizingMaskIntoConstraints = false
 
         stack.addArrangedSubview(status)
-        stack.setCustomSpacing(12, after: status)
+        stack.setCustomSpacing(4, after: status)
+        networkSettings.isHidden = true
+        stack.addArrangedSubview(networkSettings)
+        stack.setCustomSpacing(12, after: networkSettings)
 
         // Upload first, as everywhere else: the menu bar, the chart and the
         // totals all lead with it.
@@ -253,19 +268,20 @@ final class NetworkModule: PopupContent {
     }
 
     private func setStatus(_ health: NetworkInfo.Health, medium: String, latency: Double?) {
+        networkSettings.isHidden = !(health == .noInternet || health == .offline)
         switch health {
         case .checking:
-            status.set("Checking…", tint: .tertiaryLabelColor, details: [medium])
+            status.set(localized("Checking…"), tint: .tertiaryLabelColor, details: [medium])
         case .online:
-            status.set("Online", tint: .perchCalm,
+            status.set(localized("Online"), tint: .perchCalm,
                        details: [medium] + [latency.map { String(format: "%.0f ms", $0) }]
                            .compactMap { $0 })
         case .noInternet:
-            status.set("No internet", tint: .perchWarning, details: [medium])
+            status.set(localized("No internet"), tint: .perchWarning, details: [medium])
         case .offline:
             // No medium: the interface it last used is not necessarily the
             // one it will come back on.
-            status.set("Offline", tint: .perchCritical, details: [])
+            status.set(localized("Offline"), tint: .perchCritical, details: [])
         }
     }
 

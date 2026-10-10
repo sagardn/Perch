@@ -79,7 +79,24 @@
 "Accelerators" = "অ্যাক্সিলারেটর";
 "Renderer · tiler" = "রেন্ডারার · টাইলার";
 "cores" = "কোর";
-"Largest files" = "সবচেয়ে বড় ফাইল";
+"Folders" = "Folders";
+"List" = "List";
+"%0 items" = "%0 items";
+"Disk Cleaner" = "Disk Cleaner";
+"Find what is taking the room" = "Find what is taking the room";
+"Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back." = "Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back.";
+"Scan" = "Scan";
+"Stop" = "Stop";
+"Rescan" = "Rescan";
+"Scanning…" = "Scanning…";
+"Scanning %0…" = "Scanning %0…";
+"files scanned" = "files scanned";
+"used" = "used";
+"%0 free of %1" = "%0 free of %1";
+"%0 files scanned in %1 s" = "%0 files scanned in %1 s";
+"%0 selected · %1" = "%0 selected · %1";
+"Select all" = "Select all";
+"Select none" = "Select none";
 "Looking…" = "খুঁজছি…";
 "Reveal" = "দেখান";
 "%0 items, %1 in total" = "%0টি আইটেম, মোট %1";
@@ -114,7 +131,6 @@
 "Network" = "নেটওয়ার্ক";
 "Internet connection lost" = "ইন্টারনেট সংযোগ বিচ্ছিন্ন হয়েছে";
 "Internet connection established" = "ইন্টারনেট সংযোগ স্থাপিত হয়েছে";
-"Tell me when" = "আমাকে বলুন যখন";
 "Connection comes or goes" = "সংযোগ আসে বা যায়";
 "Wi-Fi network changes" = "Wi-Fi নেটওয়ার্ক বদলায়";
 "Interface changes" = "ইন্টারফেস বদলায়";
@@ -138,6 +154,20 @@
 "Upload" = "আপলোড";
 "Wi-Fi name" = "Wi-Fi নাম";
 "Dashboard" = "ড্যাশবোর্ড";
+"Network settings…" = "Network settings…";
+"Free up space…" = "Free up space…";
+"Light load" = "Light load";
+"Busy" = "Busy";
+"Heavy load" = "Heavy load";
+"Plenty of room" = "Plenty of room";
+"Filling up" = "Filling up";
+"Getting full" = "Getting full";
+"Almost full" = "Almost full";
+"Running hot" = "Running hot";
+"Too hot" = "Too hot";
+"Checking…" = "Checking…";
+"No internet" = "No internet";
+"No reading" = "No reading";
 "Idle" = "নিষ্ক্রিয়";
 "Process" = "প্রসেস";
 "Force Quit %0" = "%0 জোর করে বন্ধ করুন";
@@ -189,6 +219,7 @@
 "Memory free" = "খালি মেমরি";
 "Swap in use" = "ব্যবহৃত সোয়াপ";
 "Disk usage" = "ডিস্ক ব্যবহার";
+"Size unknown: macOS would not let Perch look inside" = "Size unknown: macOS would not let Perch look inside";
 "%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0টি আইটেম, %1, ট্র্যাশে যাবে। কিছুই মোছা হয় না — সব Finder থেকে ফেরানো যায়।";
 "%0 left nothing behind that Perch can see" = "%0 এমন কিছু রাখেনি যা Perch দেখতে পায়";
 "%0 — %1 items, %2 in total" = "%0 — %1টি আইটেম, মোট %2";
@@ -197,6 +228,11 @@
 "Search installed apps…" = "ইনস্টল করা অ্যাপ খুঁজুন…";
 "matched by name only" = "শুধু নাম মিলেছে";
 "probably this app" = "সম্ভবত এই অ্যাপ";
+"Permissions" = "Permissions";
+"Accessibility access, which the switcher needs to bring windows forward." = "Accessibility access, which the switcher needs to bring windows forward.";
+"For a bug report. No serial number, network name or address." = "For a bug report. No serial number, network name or address.";
+"How the readings sit in the menu bar. What each one shows is set on its own page." = "How the readings sit in the menu bar. What each one shows is set on its own page.";
+"Used by the menu bar figures and by every popup's dots, bars and charts." = "Used by the menu bar figures and by every popup's dots, bars and charts.";
 "Reset" = "রিসেট";
 "Silent" = "নীরব";
 "Settings" = "সেটিংস";
@@ -255,6 +291,7 @@
 "Number of p-cores" = "%0টি পারফরম্যান্স কোর";
 "Disks" = "ডিস্ক";
 "Display" = "ডিসপ্লে";
+"Pick one or more. They sit side by side in the menu bar, in this order." = "Pick one or more. They sit side by side in the menu bar, in this order.";
 "1 second" = "১ সেকেন্ড";
 "10 seconds" = "১০ সেকেন্ড";
 "3 seconds" = "৩ সেকেন্ড";
@@ -336,6 +373,13 @@
 "No AI assistants found on this Mac" = "এই Mac-এ কোনো AI সহায়ক পাওয়া যায়নি";
 "%0 across %1 assistants" = "%1টি সহায়কে %0";
 "Clean up %0?" = "%0 পরিষ্কার করবেন?";
+"%0 conversations" = "%0 conversations";
+"Unused for" = "Unused for";
+"%0 days" = "%0 days";
+"Any age" = "Any age";
+"%0 hidden by the %1-day rule" = "%0 hidden by the %1-day rule";
+"Everything the assistants hold has been used more recently than that." = "Everything the assistants hold has been used more recently than that.";
+"Show everything" = "Show everything";
 "%0 goes to the Bin. The assistants stay installed and signed in, and rebuild what they need." = "%0 ট্র্যাশে যাবে। সহায়কগুলো ইনস্টল ও সাইন-ইন থাকবে এবং যা দরকার তা আবার বানিয়ে নেবে।";
 "%0 goes to the Bin, including conversation history. The assistants stay installed and signed in, but old sessions will not be there to resume." = "%0 ট্র্যাশে যাবে, কথোপকথনের ইতিহাসসহ। সহায়কগুলো ইনস্টল ও সাইন-ইন থাকবে, তবে পুরোনো সেশন আর চালু করা যাবে না।";
 "conversations and memory" = "কথোপকথন ও স্মৃতি";
@@ -353,14 +397,10 @@
 "Uninstall an app or tool" = "অ্যাপ বা টুল আনইনস্টল";
 "Removes the app and the files it left around the system, or a command-line tool and its settings." = "অ্যাপ এবং সিস্টেমে রেখে যাওয়া ফাইল সরায়, বা কমান্ড-লাইন টুল ও তার সেটিংস।";
 "Uninstall…" = "আনইনস্টল…";
-
-// Monitor · RunawayApps
 "%0 is working hard" = "%0 খুব বেশি কাজ করছে";
 "%0% CPU for %1 minutes." = "%1 মিনিট ধরে %0% CPU।";
 "One app stays this busy for 5 minutes" = "একটি অ্যাপ ৫ মিনিট ধরে এতটা ব্যস্ত থাকলে";
 "Open Activity Monitor to see why." = "কারণ দেখতে Activity Monitor খুলুন।";
-
-// Monitor · Throttling
 "The Mac slows down to cool off" = "Mac ঠান্ডা হতে ধীর হয়";
 "Throttling" = "থ্রটলিং";
 "Throttling hard" = "তীব্র থ্রটলিং";
@@ -368,8 +408,6 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS প্রসেসরের গতি কমিয়েছে। ঠান্ডা না হওয়া পর্যন্ত ব্যস্ত অ্যাপগুলি ধীর মনে হবে।";
 "slowed down to cool off" = "ঠান্ডা হতে ধীর করা হয়েছে";
 "warming up" = "গরম হচ্ছে";
-
-// Launcher · QuickSearch
 "Cancel" = "বাতিল";
 "Copied %0" = "%0 কপি করা হয়েছে";
 "Empty Bin" = "ট্র্যাশ খালি করুন";
@@ -380,8 +418,6 @@
 "Sleep Display" = "ডিসপ্লে স্লিপ করুন";
 "Start Screen Saver" = "স্ক্রিন সেভার চালু করুন";
 "Toggle Dark Mode" = "ডার্ক মোড টগল করুন";
-
-// UI · ShortcutRecorder
 "Keyboard shortcut" = "কীবোর্ড শর্টকাট";
 "Type shortcut…" = "শর্টকাট টাইপ করুন…";
 "Record Shortcut" = "শর্টকাট রেকর্ড করুন";

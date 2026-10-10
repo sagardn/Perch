@@ -79,7 +79,24 @@
 "Accelerators" = "가속기";
 "Renderer · tiler" = "렌더러 · 타일러";
 "cores" = "코어";
-"Largest files" = "가장 큰 파일";
+"Folders" = "Folders";
+"List" = "List";
+"%0 items" = "%0 items";
+"Disk Cleaner" = "Disk Cleaner";
+"Find what is taking the room" = "Find what is taking the room";
+"Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back." = "Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back.";
+"Scan" = "Scan";
+"Stop" = "Stop";
+"Rescan" = "Rescan";
+"Scanning…" = "Scanning…";
+"Scanning %0…" = "Scanning %0…";
+"files scanned" = "files scanned";
+"used" = "used";
+"%0 free of %1" = "%0 free of %1";
+"%0 files scanned in %1 s" = "%0 files scanned in %1 s";
+"%0 selected · %1" = "%0 selected · %1";
+"Select all" = "Select all";
+"Select none" = "Select none";
 "Looking…" = "찾는 중…";
 "Reveal" = "보기";
 "%0 items, %1 in total" = "%0개 항목, 총 %1";
@@ -114,7 +131,6 @@
 "Network" = "네트워크";
 "Internet connection lost" = "인터넷 연결이 끊어짐";
 "Internet connection established" = "인터넷에 연결됨";
-"Tell me when" = "알림 조건";
 "Connection comes or goes" = "연결되거나 끊어질 때";
 "Wi-Fi network changes" = "Wi-Fi 네트워크가 변경될 때";
 "Interface changes" = "인터페이스가 변경될 때";
@@ -138,6 +154,20 @@
 "Upload" = "업로드";
 "Wi-Fi name" = "Wi-Fi 이름";
 "Dashboard" = "대시보드";
+"Network settings…" = "Network settings…";
+"Free up space…" = "Free up space…";
+"Light load" = "Light load";
+"Busy" = "Busy";
+"Heavy load" = "Heavy load";
+"Plenty of room" = "Plenty of room";
+"Filling up" = "Filling up";
+"Getting full" = "Getting full";
+"Almost full" = "Almost full";
+"Running hot" = "Running hot";
+"Too hot" = "Too hot";
+"Checking…" = "Checking…";
+"No internet" = "No internet";
+"No reading" = "No reading";
 "Idle" = "유휴";
 "Process" = "프로세스";
 "Force Quit %0" = "%0 강제 종료";
@@ -189,6 +219,7 @@
 "Memory free" = "여유 메모리";
 "Swap in use" = "사용 중인 스왑";
 "Disk usage" = "디스크 사용량";
+"Size unknown: macOS would not let Perch look inside" = "Size unknown: macOS would not let Perch look inside";
 "%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0개 항목, %1이(가) 휴지통으로 갑니다. 지워지지 않으며 Finder에서 모두 되돌릴 수 있습니다.";
 "%0 left nothing behind that Perch can see" = "%0은(는) Perch가 볼 수 있는 항목을 남기지 않았습니다";
 "%0 — %1 items, %2 in total" = "%0 — %1개 항목, 총 %2";
@@ -197,6 +228,11 @@
 "Search installed apps…" = "설치된 앱 검색…";
 "matched by name only" = "이름으로만 일치";
 "probably this app" = "아마 이 앱";
+"Permissions" = "Permissions";
+"Accessibility access, which the switcher needs to bring windows forward." = "Accessibility access, which the switcher needs to bring windows forward.";
+"For a bug report. No serial number, network name or address." = "For a bug report. No serial number, network name or address.";
+"How the readings sit in the menu bar. What each one shows is set on its own page." = "How the readings sit in the menu bar. What each one shows is set on its own page.";
+"Used by the menu bar figures and by every popup's dots, bars and charts." = "Used by the menu bar figures and by every popup's dots, bars and charts.";
 "Reset" = "재설정";
 "Silent" = "무음";
 "Settings" = "설정";
@@ -255,6 +291,7 @@
 "Number of p-cores" = "성능 코어 %0개";
 "Disks" = "디스크";
 "Display" = "디스플레이";
+"Pick one or more. They sit side by side in the menu bar, in this order." = "Pick one or more. They sit side by side in the menu bar, in this order.";
 "1 second" = "1초";
 "10 seconds" = "10초";
 "3 seconds" = "3초";
@@ -336,6 +373,13 @@
 "No AI assistants found on this Mac" = "이 Mac에서 AI 도우미를 찾을 수 없습니다";
 "%0 across %1 assistants" = "도우미 %1개에서 %0";
 "Clean up %0?" = "%0을(를) 정리할까요?";
+"%0 conversations" = "%0 conversations";
+"Unused for" = "Unused for";
+"%0 days" = "%0 days";
+"Any age" = "Any age";
+"%0 hidden by the %1-day rule" = "%0 hidden by the %1-day rule";
+"Everything the assistants hold has been used more recently than that." = "Everything the assistants hold has been used more recently than that.";
+"Show everything" = "Show everything";
 "%0 goes to the Bin. The assistants stay installed and signed in, and rebuild what they need." = "%0이(가) 휴지통으로 갑니다. 도우미는 설치된 채 로그인 상태로 남고, 필요한 것은 다시 만듭니다.";
 "%0 goes to the Bin, including conversation history. The assistants stay installed and signed in, but old sessions will not be there to resume." = "대화 기록을 포함해 %0이(가) 휴지통으로 갑니다. 도우미는 설치된 채 로그인 상태로 남지만, 이전 세션은 이어서 쓸 수 없습니다.";
 "conversations and memory" = "대화와 기억";
@@ -353,14 +397,10 @@
 "Uninstall an app or tool" = "앱 또는 도구 제거";
 "Removes the app and the files it left around the system, or a command-line tool and its settings." = "앱과 그것이 시스템에 남긴 파일, 또는 명령줄 도구와 그 설정을 제거합니다.";
 "Uninstall…" = "제거…";
-
-// Monitor · RunawayApps
 "%0 is working hard" = "%0 앱이 많이 작업하고 있습니다";
 "%0% CPU for %1 minutes." = "%1분 동안 CPU %0%.";
 "One app stays this busy for 5 minutes" = "앱 하나가 5분 동안 이만큼 바쁠 때";
 "Open Activity Monitor to see why." = "원인을 보려면 활성 상태 보기를 여십시오.";
-
-// Monitor · Throttling
 "The Mac slows down to cool off" = "Mac이 열을 식히기 위해 느려질 때";
 "Throttling" = "스로틀링";
 "Throttling hard" = "심한 스로틀링";
@@ -368,8 +408,6 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS가 프로세서 속도를 낮췄습니다. 식을 때까지 부하가 큰 앱이 느려질 수 있습니다.";
 "slowed down to cool off" = "냉각을 위해 감속됨";
 "warming up" = "온도 상승 중";
-
-// Launcher · QuickSearch
 "Cancel" = "취소";
 "Copied %0" = "%0 복사됨";
 "Empty Bin" = "휴지통 비우기";
@@ -380,8 +418,6 @@
 "Sleep Display" = "디스플레이 잠자기";
 "Start Screen Saver" = "화면 보호기 시작";
 "Toggle Dark Mode" = "다크 모드 전환";
-
-// UI · ShortcutRecorder
 "Keyboard shortcut" = "키보드 단축키";
 "Type shortcut…" = "단축키 입력…";
 "Record Shortcut" = "단축키 기록";

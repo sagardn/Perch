@@ -79,7 +79,24 @@
 "Accelerators" = "מאיצים";
 "Renderer · tiler" = "Renderer · tiler";
 "cores" = "ליבות";
-"Largest files" = "הקבצים הגדולים ביותר";
+"Folders" = "Folders";
+"List" = "List";
+"%0 items" = "%0 items";
+"Disk Cleaner" = "Disk Cleaner";
+"Find what is taking the room" = "Find what is taking the room";
+"Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back." = "Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back.";
+"Scan" = "Scan";
+"Stop" = "Stop";
+"Rescan" = "Rescan";
+"Scanning…" = "Scanning…";
+"Scanning %0…" = "Scanning %0…";
+"files scanned" = "files scanned";
+"used" = "used";
+"%0 free of %1" = "%0 free of %1";
+"%0 files scanned in %1 s" = "%0 files scanned in %1 s";
+"%0 selected · %1" = "%0 selected · %1";
+"Select all" = "Select all";
+"Select none" = "Select none";
 "Looking…" = "מחפש…";
 "Reveal" = "הצגה";
 "%0 items, %1 in total" = "%0 פריטים, %1 בסך הכול";
@@ -114,7 +131,6 @@
 "Network" = "רשת";
 "Internet connection lost" = "החיבור לאינטרנט אבד";
 "Internet connection established" = "החיבור לאינטרנט חודש";
-"Tell me when" = "עדכן אותי כאשר";
 "Connection comes or goes" = "החיבור מתחבר או מתנתק";
 "Wi-Fi network changes" = "רשת ה‑Wi-Fi משתנה";
 "Interface changes" = "הממשק משתנה";
@@ -138,6 +154,20 @@
 "Upload" = "העלאה";
 "Wi-Fi name" = "שם רשת Wi-Fi";
 "Dashboard" = "לוח מחוונים";
+"Network settings…" = "Network settings…";
+"Free up space…" = "Free up space…";
+"Light load" = "Light load";
+"Busy" = "Busy";
+"Heavy load" = "Heavy load";
+"Plenty of room" = "Plenty of room";
+"Filling up" = "Filling up";
+"Getting full" = "Getting full";
+"Almost full" = "Almost full";
+"Running hot" = "Running hot";
+"Too hot" = "Too hot";
+"Checking…" = "Checking…";
+"No internet" = "No internet";
+"No reading" = "No reading";
 "Idle" = "במנוחה";
 "Process" = "תהליך";
 "Force Quit %0" = "אילוץ יציאה מ‑%0";
@@ -189,6 +219,7 @@
 "Memory free" = "זיכרון פנוי";
 "Swap in use" = "Swap בשימוש";
 "Disk usage" = "ניצולת דיסק";
+"Size unknown: macOS would not let Perch look inside" = "Size unknown: macOS would not let Perch look inside";
 "%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0 פריטים, %1, עוברים לאשפה. דבר אינו נמחק — אפשר להחזיר הכול מ‑Finder.";
 "%0 left nothing behind that Perch can see" = "%0 לא השאיר דבר ש‑Perch רואה";
 "%0 — %1 items, %2 in total" = "%0 — %1 פריטים, %2 בסך הכול";
@@ -197,6 +228,11 @@
 "Search installed apps…" = "חיפוש יישומים מותקנים…";
 "matched by name only" = "זוהה לפי השם בלבד";
 "probably this app" = "כנראה היישום הזה";
+"Permissions" = "Permissions";
+"Accessibility access, which the switcher needs to bring windows forward." = "Accessibility access, which the switcher needs to bring windows forward.";
+"For a bug report. No serial number, network name or address." = "For a bug report. No serial number, network name or address.";
+"How the readings sit in the menu bar. What each one shows is set on its own page." = "How the readings sit in the menu bar. What each one shows is set on its own page.";
+"Used by the menu bar figures and by every popup's dots, bars and charts." = "Used by the menu bar figures and by every popup's dots, bars and charts.";
 "Reset" = "איפוס";
 "Silent" = "שקט";
 "Settings" = "הגדרות";
@@ -255,6 +291,7 @@
 "Number of p-cores" = "%0 ליבות ביצועים";
 "Disks" = "דיסקים";
 "Display" = "מסך";
+"Pick one or more. They sit side by side in the menu bar, in this order." = "Pick one or more. They sit side by side in the menu bar, in this order.";
 "1 second" = "שנייה אחת";
 "10 seconds" = "10 שניות";
 "3 seconds" = "3 שניות";
@@ -336,6 +373,13 @@
 "No AI assistants found on this Mac" = "לא נמצאו עוזרי AI במחשב הזה";
 "%0 across %1 assistants" = "%0 ב‑%1 עוזרים";
 "Clean up %0?" = "לנקות %0?";
+"%0 conversations" = "%0 conversations";
+"Unused for" = "Unused for";
+"%0 days" = "%0 days";
+"Any age" = "Any age";
+"%0 hidden by the %1-day rule" = "%0 hidden by the %1-day rule";
+"Everything the assistants hold has been used more recently than that." = "Everything the assistants hold has been used more recently than that.";
+"Show everything" = "Show everything";
 "%0 goes to the Bin. The assistants stay installed and signed in, and rebuild what they need." = "%0 עובר לאשפה. העוזרים נשארים מותקנים ומחוברים ובונים מחדש את מה שהם צריכים.";
 "%0 goes to the Bin, including conversation history. The assistants stay installed and signed in, but old sessions will not be there to resume." = "%0 עובר לאשפה, כולל היסטוריית שיחות. העוזרים נשארים מותקנים ומחוברים, אבל לא יהיה אפשר להמשיך שיחות ישנות.";
 "conversations and memory" = "שיחות וזיכרון";
@@ -353,14 +397,10 @@
 "Uninstall an app or tool" = "הסרת יישום או כלי";
 "Removes the app and the files it left around the system, or a command-line tool and its settings." = "מסיר את היישום ואת הקבצים שהשאיר במערכת, או כלי שורת פקודה וההגדרות שלו.";
 "Uninstall…" = "הסרה…";
-
-// Monitor · RunawayApps
 "%0 is working hard" = "%0 עובד קשה";
 "%0% CPU for %1 minutes." = "%0% מעבד במשך %1 דקות.";
 "One app stays this busy for 5 minutes" = "אפליקציה אחת נשארת עמוסה כך במשך 5 דקות";
 "Open Activity Monitor to see why." = "פתחו את ‚מוניטור הפעילות‘ כדי לראות למה.";
-
-// Monitor · Throttling
 "The Mac slows down to cool off" = "ה־Mac מאט כדי להתקרר";
 "Throttling" = "האטה תרמית";
 "Throttling hard" = "האטה תרמית חמורה";
@@ -368,8 +408,6 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS הוריד את מהירות המעבד. יישומים עמוסים יפעלו לאט יותר עד שיתקרר.";
 "slowed down to cool off" = "הואט כדי להתקרר";
 "warming up" = "מתחמם";
-
-// Launcher · QuickSearch
 "Cancel" = "ביטול";
 "Copied %0" = "הועתק: %0";
 "Empty Bin" = "ריקון הפח";
@@ -380,8 +418,6 @@
 "Sleep Display" = "הרדמת המסך";
 "Start Screen Saver" = "הפעלת שומר המסך";
 "Toggle Dark Mode" = "החלפת מצב כהה";
-
-// UI · ShortcutRecorder
 "Keyboard shortcut" = "קיצור מקלדת";
 "Type shortcut…" = "הקלד/י קיצור…";
 "Record Shortcut" = "הקלטת קיצור";

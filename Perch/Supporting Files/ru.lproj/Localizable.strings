@@ -79,7 +79,24 @@
 "Accelerators" = "Ускорители";
 "Renderer · tiler" = "Рендерер · тайлер";
 "cores" = "ядер";
-"Largest files" = "Самые большие файлы";
+"Folders" = "Folders";
+"List" = "List";
+"%0 items" = "%0 items";
+"Disk Cleaner" = "Disk Cleaner";
+"Find what is taking the room" = "Find what is taking the room";
+"Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back." = "Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back.";
+"Scan" = "Scan";
+"Stop" = "Stop";
+"Rescan" = "Rescan";
+"Scanning…" = "Scanning…";
+"Scanning %0…" = "Scanning %0…";
+"files scanned" = "files scanned";
+"used" = "used";
+"%0 free of %1" = "%0 free of %1";
+"%0 files scanned in %1 s" = "%0 files scanned in %1 s";
+"%0 selected · %1" = "%0 selected · %1";
+"Select all" = "Select all";
+"Select none" = "Select none";
 "Looking…" = "Поиск…";
 "Reveal" = "Показать";
 "%0 items, %1 in total" = "%0 объектов, %1 всего";
@@ -114,7 +131,6 @@
 "Network" = "Сеть";
 "Internet connection lost" = "Подключение к интернету потеряно";
 "Internet connection established" = "Подключение к интернету установлено";
-"Tell me when" = "Сообщать, когда";
 "Connection comes or goes" = "Подключение появляется или пропадает";
 "Wi-Fi network changes" = "Меняется сеть Wi-Fi";
 "Interface changes" = "Меняется интерфейс";
@@ -138,6 +154,20 @@
 "Upload" = "Отдача";
 "Wi-Fi name" = "Имя сети Wi-Fi";
 "Dashboard" = "Панель";
+"Network settings…" = "Network settings…";
+"Free up space…" = "Free up space…";
+"Light load" = "Light load";
+"Busy" = "Busy";
+"Heavy load" = "Heavy load";
+"Plenty of room" = "Plenty of room";
+"Filling up" = "Filling up";
+"Getting full" = "Getting full";
+"Almost full" = "Almost full";
+"Running hot" = "Running hot";
+"Too hot" = "Too hot";
+"Checking…" = "Checking…";
+"No internet" = "No internet";
+"No reading" = "No reading";
 "Idle" = "Простой";
 "Process" = "Процесс";
 "Force Quit %0" = "Завершить %0 принудительно";
@@ -189,6 +219,7 @@
 "Memory free" = "Свободно памяти";
 "Swap in use" = "Используемая подкачка";
 "Disk usage" = "Использование диска";
+"Size unknown: macOS would not let Perch look inside" = "Size unknown: macOS would not let Perch look inside";
 "%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0 объектов, %1, отправятся в корзину. Ничего не стирается — всё можно вернуть из Finder.";
 "%0 left nothing behind that Perch can see" = "%0 не оставило ничего, что видит Perch";
 "%0 — %1 items, %2 in total" = "%0 — %1 объектов, %2 всего";
@@ -197,6 +228,11 @@
 "Search installed apps…" = "Поиск установленных приложений…";
 "matched by name only" = "совпало только по имени";
 "probably this app" = "вероятно, это приложение";
+"Permissions" = "Permissions";
+"Accessibility access, which the switcher needs to bring windows forward." = "Accessibility access, which the switcher needs to bring windows forward.";
+"For a bug report. No serial number, network name or address." = "For a bug report. No serial number, network name or address.";
+"How the readings sit in the menu bar. What each one shows is set on its own page." = "How the readings sit in the menu bar. What each one shows is set on its own page.";
+"Used by the menu bar figures and by every popup's dots, bars and charts." = "Used by the menu bar figures and by every popup's dots, bars and charts.";
 "Reset" = "Сбросить";
 "Silent" = "Тихо";
 "Settings" = "Настройки";
@@ -255,6 +291,7 @@
 "Number of p-cores" = "Производительных ядер: %0";
 "Disks" = "Диски";
 "Display" = "Дисплей";
+"Pick one or more. They sit side by side in the menu bar, in this order." = "Pick one or more. They sit side by side in the menu bar, in this order.";
 "1 second" = "1 секунда";
 "10 seconds" = "10 секунд";
 "3 seconds" = "3 секунды";
@@ -336,6 +373,13 @@
 "No AI assistants found on this Mac" = "На этом Mac ИИ-ассистенты не найдены";
 "%0 across %1 assistants" = "%0 в %1 ассистентах";
 "Clean up %0?" = "Очистить %0?";
+"%0 conversations" = "%0 conversations";
+"Unused for" = "Unused for";
+"%0 days" = "%0 days";
+"Any age" = "Any age";
+"%0 hidden by the %1-day rule" = "%0 hidden by the %1-day rule";
+"Everything the assistants hold has been used more recently than that." = "Everything the assistants hold has been used more recently than that.";
+"Show everything" = "Show everything";
 "%0 goes to the Bin. The assistants stay installed and signed in, and rebuild what they need." = "%0 отправится в корзину. Ассистенты останутся установленными, вход сохранится, а нужное они создадут заново.";
 "%0 goes to the Bin, including conversation history. The assistants stay installed and signed in, but old sessions will not be there to resume." = "%0 отправится в корзину, включая историю переписки. Ассистенты останутся установленными, вход сохранится, но старые сессии продолжить не получится.";
 "conversations and memory" = "переписка и память";
@@ -353,14 +397,10 @@
 "Uninstall an app or tool" = "Удалить приложение или инструмент";
 "Removes the app and the files it left around the system, or a command-line tool and its settings." = "Удаляет приложение и файлы, оставленные им в системе, либо инструмент командной строки с его настройками.";
 "Uninstall…" = "Удалить…";
-
-// Monitor · RunawayApps
 "%0 is working hard" = "%0 сильно нагружает систему";
 "%0% CPU for %1 minutes." = "%0% ЦП в течение %1 мин.";
 "One app stays this busy for 5 minutes" = "Одно приложение так загружено 5 минут";
 "Open Activity Monitor to see why." = "Откройте Мониторинг системы, чтобы узнать причину.";
-
-// Monitor · Throttling
 "The Mac slows down to cool off" = "Mac замедляется для охлаждения";
 "Throttling" = "Троттлинг";
 "Throttling hard" = "Сильный троттлинг";
@@ -368,8 +408,6 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS снизила частоту процессора. Нагруженные приложения будут работать медленнее, пока Mac не остынет.";
 "slowed down to cool off" = "замедлен для охлаждения";
 "warming up" = "нагревается";
-
-// Launcher · QuickSearch
 "Cancel" = "Отменить";
 "Copied %0" = "Скопировано: %0";
 "Empty Bin" = "Очистить Корзину";
@@ -380,8 +418,6 @@
 "Sleep Display" = "Перевести дисплей в режим сна";
 "Start Screen Saver" = "Запустить заставку";
 "Toggle Dark Mode" = "Переключить тёмный режим";
-
-// UI · ShortcutRecorder
 "Keyboard shortcut" = "Сочетание клавиш";
 "Type shortcut…" = "Введите сочетание…";
 "Record Shortcut" = "Записать сочетание";

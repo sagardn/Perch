@@ -105,6 +105,26 @@ enum LargeFiles {
             .prefix(limit))
     }
 
+    /// Bytes per category, largest first, with empty categories left out.
+    ///
+    /// What the cleaner's bar is drawn from. Ties fall back to the order the
+    /// categories are declared in, for the same reason `largest` keeps ties
+    /// stable: a bar whose segments swap places between scans looks broken.
+    static func breakdown(_ items: [Item]) -> [(category: Category, bytes: Int64)] {
+        var totals: [Category: Int64] = [:]
+        for item in items { totals[item.category, default: 0] += item.bytes }
+        // A loop and a stable insertion, not a chain of enumerated / compactMap
+        // / sorted over tuples: that chain took 1175ms to type-check, which is
+        // the shape that once kept a suite from compiling on CI at all.
+        var parts: [(category: Category, bytes: Int64)] = []
+        for category in Category.allCases {
+            guard let bytes = totals[category] else { continue }
+            let index = parts.firstIndex { $0.bytes < bytes } ?? parts.count
+            parts.insert((category: category, bytes: bytes), at: index)
+        }
+        return parts
+    }
+
     /// Whether to treat a directory as one item and stop descending.
     ///
     /// A `.app`, a `.photoslibrary` or an `.xcodeproj` is one thing to the
@@ -181,14 +201,26 @@ extension LargeFiles {
     /// ball.
     ///
     /// Blocking, and meant to be called off the main thread.
+    ///
+    /// `progress` is called on the scanning thread, at each root and then
+    /// every `Progress.every` files -- not per file, because a hundred
+    /// thousand main-thread hops cost more than the walk they report on.
+    /// `shouldStop` is polled at the same points as the deadline, so a
+    /// cancelled scan returns what it had rather than finishing first.
     static func scan(roots: [URL], limit: Int = 20,
-                     deadline: Date = Date().addingTimeInterval(8)) -> [Item] {
+                     deadline: Date = Date().addingTimeInterval(8),
+                     shouldStop: () -> Bool = { false },
+                     progress: ((Progress) -> Void)? = nil) -> [Item] {
         let fm = FileManager.default
         var found: [Item] = []
+        var report = Progress()
 
-        for root in roots {
-            guard Date() < deadline else { break }
+        for (index, root) in roots.enumerated() {
+            guard Date() < deadline, !shouldStop() else { break }
             guard !isSkipped(root) else { continue }
+
+            report.root = index
+            progress?(report)
 
             // `skipsHiddenFiles` because a dotfile is not what anybody means
             // by a large file, and because it keeps the walk out of the
@@ -203,6 +235,12 @@ extension LargeFiles {
 
             for case let url as URL in walk {
                 if Date() >= deadline { break }
+                report.files += 1
+                if report.files % Progress.every == 0 {
+                    if shouldStop() { break }
+                    report.folder = url.deletingLastPathComponent().lastPathComponent
+                    progress?(report)
+                }
 
                 if isSkipped(url) {
                     walk.skipDescendants()
@@ -220,6 +258,7 @@ extension LargeFiles {
                     walk.skipDescendants()
                     if let size = directorySize(of: url, fm: fm, deadline: deadline), size > 0 {
                         found.append(Item(url: url, bytes: size))
+                        report.bytes += size
                     }
                     continue
                 }
@@ -227,11 +266,29 @@ extension LargeFiles {
 
                 if let size = values?.totalFileAllocatedSize, size > 0 {
                     found.append(Item(url: url, bytes: Int64(size)))
+                    report.bytes += Int64(size)
                 }
             }
         }
 
+        report.root = roots.count
+        progress?(report)
         return largest(found, limit: limit)
+    }
+
+    /// How far a scan has got, for something to draw while it works.
+    struct Progress: Equatable {
+        /// Often enough that the count visibly climbs, rarely enough that
+        /// reporting stays a rounding error on the walk.
+        static let every = 250
+
+        /// Index into the roots being walked; equal to their count once done.
+        var root = 0
+        var files = 0
+        /// Everything seen so far, not just what will make the list.
+        var bytes: Int64 = 0
+        /// The folder the walk is in, by name, for a line of status.
+        var folder = ""
     }
 
     /// What a bundle adds up to, with the same deadline over it.
@@ -301,5 +358,136 @@ extension LargeFiles {
         }
         return localized("%0 moved, %1 could not be",
                          String(removal.moved.count), String(removal.failed.count))
+    }
+}
+
+// MARK: - Folders
+
+extension LargeFiles {
+
+    /// What was found, arranged by where it lives.
+    ///
+    /// The flat list repeats the same long path on row after row -- forty
+    /// results measured here came from nine folders, one of them
+    /// `~/Desktop/project/shield/nocapdash-next/node_modules`, written out in
+    /// full six times. Grouped, each folder appears once with its total,
+    /// which is also the more useful answer: a project's build output is one
+    /// decision, not six.
+    struct Folder: Equatable {
+        /// What the row says. Usually one path component; several, joined
+        /// with "/", where a chain of folders held nothing but each other.
+        var name: String
+        var url: URL
+        var folders: [Folder] = []
+        var files: [Item] = []
+        /// Everything beneath, at any depth.
+        var bytes: Int64 = 0
+        var count: Int = 0
+
+        /// Every file beneath, at any depth -- what ticking the folder ticks.
+        var allFiles: [Item] { files + folders.flatMap(\.allFiles) }
+    }
+
+    /// The tree of `items`, rooted at `base`.
+    ///
+    /// Two rules shape it, and both are about what a person scans:
+    ///
+    /// - **Biggest first, folders before files**, at every level, with ties
+    ///   in arrival order -- the same stability `largest` keeps.
+    /// - **Chains collapse.** A folder whose only content is one other folder
+    ///   is not a decision anybody makes, and three levels of disclosure
+    ///   triangles to reach `project/shield/code` is three clicks of nothing.
+    ///   Such folders merge into one row named by the joined path. The root's
+    ///   own children never merge into it, so Desktop, Documents and
+    ///   Downloads stay recognisable at the top.
+    ///
+    /// A file outside `base` is placed by its absolute path, so nothing found
+    /// is ever dropped from the tree.
+    static func tree(_ items: [Item], under base: URL) -> Folder {
+        final class Node {
+            let url: URL
+            var order: [String] = []
+            var children: [String: Node] = [:]
+            var files: [Item] = []
+            init(_ url: URL) { self.url = url }
+            func child(_ name: String) -> Node {
+                if let found = children[name] { return found }
+                let made = Node(url.appendingPathComponent(name, isDirectory: true))
+                children[name] = made
+                order.append(name)
+                return made
+            }
+        }
+
+        let basePath = base.standardizedFileURL.path
+        let root = Node(base)
+        for item in items {
+            let parent = item.url.deletingLastPathComponent().standardizedFileURL.path
+            let relative: String
+            if parent == basePath {
+                relative = ""
+            } else if parent.hasPrefix(basePath.hasSuffix("/") ? basePath : basePath + "/") {
+                relative = String(parent.dropFirst(basePath.count))
+            } else {
+                relative = parent
+            }
+            var node = root
+            for part in relative.split(separator: "/") { node = node.child(String(part)) }
+            node.files.append(item)
+        }
+
+        func build(_ node: Node, name: String, isRoot: Bool) -> Folder {
+            var folders = node.order.map { build(node.children[$0]!, name: $0, isRoot: false) }
+            let files = largest(node.files, limit: node.files.count)
+
+            var folder = Folder(name: name, url: node.url)
+            if !isRoot, files.isEmpty, folders.count == 1 {
+                let only = folders.removeFirst()
+                folder = only
+                folder.name = name + "/" + only.name
+                return folder
+            }
+            folders = Array(folders.enumerated()
+                .sorted { $0.element.bytes != $1.element.bytes
+                            ? $0.element.bytes > $1.element.bytes : $0.offset < $1.offset }
+                .map(\.element))
+            folder.folders = folders
+            folder.files = files
+            folder.bytes = files.reduce(0) { $0 + $1.bytes } + folders.reduce(0) { $0 + $1.bytes }
+            folder.count = files.count + folders.reduce(0) { $0 + $1.count }
+            return folder
+        }
+
+        return build(root, name: "~", isRoot: true)
+    }
+
+    /// One visible line of a tree: a folder or a file, and how deep it sits.
+    enum Line: Equatable {
+        case folder(Folder, depth: Int)
+        case file(Item, depth: Int)
+
+        var id: URL {
+            switch self {
+            case .folder(let folder, _): return folder.url
+            case .file(let item, _):     return item.url
+            }
+        }
+    }
+
+    /// The tree's lines, top to bottom, with only `expanded` folders open.
+    ///
+    /// The root itself is not a line: "~" over everything is a row that can
+    /// only ever be open.
+    static func lines(_ root: Folder, expanded: Set<URL>) -> [Line] {
+        var out: [Line] = []
+        func walk(_ folder: Folder, depth: Int) {
+            for child in folder.folders {
+                out.append(.folder(child, depth: depth))
+                if expanded.contains(child.url) { walk(child, depth: depth + 1) }
+            }
+            for file in folder.files { out.append(.file(file, depth: depth)) }
+        }
+        walk(root, depth: 0)
+        return out
     }
 }

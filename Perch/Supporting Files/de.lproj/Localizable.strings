@@ -79,7 +79,24 @@
 "Accelerators" = "Beschleuniger";
 "Renderer · tiler" = "Renderer · Tiler";
 "cores" = "Kerne";
-"Largest files" = "Größte Dateien";
+"Folders" = "Folders";
+"List" = "List";
+"%0 items" = "%0 items";
+"Disk Cleaner" = "Disk Cleaner";
+"Find what is taking the room" = "Find what is taking the room";
+"Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back." = "Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back.";
+"Scan" = "Scan";
+"Stop" = "Stop";
+"Rescan" = "Rescan";
+"Scanning…" = "Scanning…";
+"Scanning %0…" = "Scanning %0…";
+"files scanned" = "files scanned";
+"used" = "used";
+"%0 free of %1" = "%0 free of %1";
+"%0 files scanned in %1 s" = "%0 files scanned in %1 s";
+"%0 selected · %1" = "%0 selected · %1";
+"Select all" = "Select all";
+"Select none" = "Select none";
 "Looking…" = "Suche…";
 "Reveal" = "Zeigen";
 "%0 items, %1 in total" = "%0 Objekte, %1 insgesamt";
@@ -114,7 +131,6 @@
 "Network" = "Netzwerk";
 "Internet connection lost" = "Internetverbindung getrennt";
 "Internet connection established" = "Internetverbindung hergestellt";
-"Tell me when" = "Mitteilen, wenn";
 "Connection comes or goes" = "Verbindung hergestellt oder getrennt wird";
 "Wi-Fi network changes" = "WLAN-Netzwerk wechselt";
 "Interface changes" = "Schnittstelle wechselt";
@@ -138,6 +154,20 @@
 "Upload" = "Upload";
 "Wi-Fi name" = "WLAN-Name";
 "Dashboard" = "Übersicht";
+"Network settings…" = "Network settings…";
+"Free up space…" = "Free up space…";
+"Light load" = "Light load";
+"Busy" = "Busy";
+"Heavy load" = "Heavy load";
+"Plenty of room" = "Plenty of room";
+"Filling up" = "Filling up";
+"Getting full" = "Getting full";
+"Almost full" = "Almost full";
+"Running hot" = "Running hot";
+"Too hot" = "Too hot";
+"Checking…" = "Checking…";
+"No internet" = "No internet";
+"No reading" = "No reading";
 "Idle" = "Inaktiv";
 "Process" = "Prozess";
 "Force Quit %0" = "%0 sofort beenden";
@@ -189,6 +219,7 @@
 "Memory free" = "Speicher frei";
 "Swap in use" = "Auslagerung belegt";
 "Disk usage" = "Festplattenbelegung";
+"Size unknown: macOS would not let Perch look inside" = "Size unknown: macOS would not let Perch look inside";
 "%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0 Objekte, %1, wandern in den Papierkorb. Nichts wird gelöscht – alles lässt sich im Finder zurücklegen.";
 "%0 left nothing behind that Perch can see" = "%0 hat nichts hinterlassen, was Perch sieht";
 "%0 — %1 items, %2 in total" = "%0 — %1 Objekte, %2 insgesamt";
@@ -197,6 +228,11 @@
 "Search installed apps…" = "Installierte Apps suchen…";
 "matched by name only" = "nur über den Namen erkannt";
 "probably this app" = "wahrscheinlich diese App";
+"Permissions" = "Permissions";
+"Accessibility access, which the switcher needs to bring windows forward." = "Accessibility access, which the switcher needs to bring windows forward.";
+"For a bug report. No serial number, network name or address." = "For a bug report. No serial number, network name or address.";
+"How the readings sit in the menu bar. What each one shows is set on its own page." = "How the readings sit in the menu bar. What each one shows is set on its own page.";
+"Used by the menu bar figures and by every popup's dots, bars and charts." = "Used by the menu bar figures and by every popup's dots, bars and charts.";
 "Reset" = "Zurücksetzen";
 "Silent" = "Still";
 "Settings" = "Einstellungen";
@@ -255,6 +291,7 @@
 "Number of p-cores" = "%0 Leistungskerne";
 "Disks" = "Festplatten";
 "Display" = "Display";
+"Pick one or more. They sit side by side in the menu bar, in this order." = "Pick one or more. They sit side by side in the menu bar, in this order.";
 "1 second" = "1 Sekunde";
 "10 seconds" = "10 Sekunden";
 "3 seconds" = "3 Sekunden";
@@ -336,6 +373,13 @@
 "No AI assistants found on this Mac" = "Keine KI-Assistenten auf diesem Mac gefunden";
 "%0 across %1 assistants" = "%0 auf %1 Assistenten";
 "Clean up %0?" = "%0 aufräumen?";
+"%0 conversations" = "%0 conversations";
+"Unused for" = "Unused for";
+"%0 days" = "%0 days";
+"Any age" = "Any age";
+"%0 hidden by the %1-day rule" = "%0 hidden by the %1-day rule";
+"Everything the assistants hold has been used more recently than that." = "Everything the assistants hold has been used more recently than that.";
+"Show everything" = "Show everything";
 "%0 goes to the Bin. The assistants stay installed and signed in, and rebuild what they need." = "%0 wandert in den Papierkorb. Die Assistenten bleiben installiert und angemeldet und bauen wieder auf, was sie brauchen.";
 "%0 goes to the Bin, including conversation history. The assistants stay installed and signed in, but old sessions will not be there to resume." = "%0 wandert in den Papierkorb, einschließlich Gesprächsverlauf. Die Assistenten bleiben installiert und angemeldet, aber alte Sitzungen lassen sich nicht mehr fortsetzen.";
 "conversations and memory" = "Gespräche und Erinnerungen";
@@ -353,14 +397,10 @@
 "Uninstall an app or tool" = "App oder Tool deinstallieren";
 "Removes the app and the files it left around the system, or a command-line tool and its settings." = "Entfernt die App und die Dateien, die sie im System hinterlassen hat, oder ein Kommandozeilen-Tool samt Einstellungen.";
 "Uninstall…" = "Deinstallieren…";
-
-// Monitor · RunawayApps
 "%0 is working hard" = "%0 arbeitet auf Hochtouren";
 "%0% CPU for %1 minutes." = "%0 % CPU seit %1 Minuten.";
 "One app stays this busy for 5 minutes" = "Eine App bleibt 5 Minuten so stark ausgelastet";
 "Open Activity Monitor to see why." = "Öffne die Aktivitätsanzeige, um den Grund zu sehen.";
-
-// Monitor · Throttling
 "The Mac slows down to cool off" = "Der Mac wird zum Abkühlen gedrosselt";
 "Throttling" = "Drosselung";
 "Throttling hard" = "Starke Drosselung";
@@ -368,8 +408,6 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS hat die Prozessorgeschwindigkeit reduziert. Ausgelastete Apps reagieren langsamer, bis er abgekühlt ist.";
 "slowed down to cool off" = "zum Abkühlen gedrosselt";
 "warming up" = "wird warm";
-
-// Launcher · QuickSearch
 "Cancel" = "Abbrechen";
 "Copied %0" = "%0 kopiert";
 "Empty Bin" = "Papierkorb entleeren";
@@ -380,8 +418,6 @@
 "Sleep Display" = "Display in Ruhezustand";
 "Start Screen Saver" = "Bildschirmschoner starten";
 "Toggle Dark Mode" = "Dunkelmodus umschalten";
-
-// UI · ShortcutRecorder
 "Keyboard shortcut" = "Tastaturkurzbefehl";
 "Type shortcut…" = "Kurzbefehl eingeben …";
 "Record Shortcut" = "Kurzbefehl aufnehmen";

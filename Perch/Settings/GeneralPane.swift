@@ -58,7 +58,11 @@ final class GeneralPane: NSStackView {
         // with .leading alignment gives every card its natural width, so the
         // cards came out ~380pt wide inside a 1,100pt pane and labels
         // truncated while most of the pane sat empty.
-        let sections = [identity(), general(), menuBar(), colours(), searchAndSwitcher(), backup()]
+        // Ordered by how often each is reached for: how Perch starts, then
+        // how it looks, then the launcher, then the two things somebody
+        // comes here once for -- a permission and a backup.
+        let sections = [identity(), general(), menuBar(), colours(), searchAndSwitcher(),
+                        permissions(), backup()]
         for section in sections {
             column.addArrangedSubview(section)
             section.widthAnchor.constraint(equalTo: column.widthAnchor,
@@ -126,13 +130,16 @@ final class GeneralPane: NSStackView {
         row.orientation = .horizontal
         row.alignment = .centerY
         row.spacing = 10
+        row.edgeInsets = NSEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
         row.translatesAutoresizingMaskIntoConstraints = false
-        return row
+        // On a card like every section under it, so the page reads as one
+        // set of surfaces rather than a loose header over a stack of them.
+        return Controls.section(nil, [row])
     }
 
     private func general() -> NSView {
         // Switches first, then the two menus, so like controls line up.
-        Controls.section(localized("General"), [
+        Controls.section(localized("General"), symbol: "gearshape.fill", tint: .systemGray, [
             Controls.row(localized("Start at login"), launchAtLoginToggle()),
             Controls.row(localized("Show in Dock"), Controls.toggle(prefs.dockIcon) { [weak self] on in
                 self?.prefs.dockIcon = on
@@ -171,7 +178,8 @@ final class GeneralPane: NSStackView {
 
         // Combine first, so the rows that only exist while it is on sit
         // directly under it rather than under the unrelated position switch.
-        return Controls.section(localized("Menu bar"), [
+        return Controls.section(localized("Menu bar"), symbol: "menubar.rectangle", tint: .systemBlue,
+                                footer: localized("How the readings sit in the menu bar. What each one shows is set on its own page."), [
             Controls.row(localized("Combine modules into one item"),
                          Controls.toggle(prefs.combinedModules) { [weak self] on in
                              self?.prefs.combinedModules = on
@@ -190,7 +198,8 @@ final class GeneralPane: NSStackView {
     /// the upload series, which the label says rather than leaving a user
     /// to wonder why their arrows changed.
     private func colours() -> NSView {
-        Controls.section(localized("Colours"), [
+        Controls.section(localized("Colours"), symbol: "paintpalette.fill", tint: .systemOrange,
+                         footer: localized("Used by the menu bar figures and by every popup's dots, bars and charts."), [
             Controls.row(localized("Colour the menu bar"),
                          Controls.toggle(PerchColors.menuBarColoured) { PerchColors.menuBarColoured = $0 }),
             Controls.row(localized("Normal"), Controls.colour(.calm)),
@@ -200,14 +209,6 @@ final class GeneralPane: NSStackView {
     }
 
     private func searchAndSwitcher() -> NSView {
-        let status = Controls.label(Self.accessibilityState)
-        accessibilityStatus = status
-        let allow = Controls.button("Allow…") { [weak self] in
-            Launcher.shared.grantAccessibility()
-            self?.syncAccessibility()
-        }
-        accessibilityButton = allow
-
         // Two fingers is not offered: macOS makes a two-finger tap a secondary
         // click and the pair Smart Zoom, so TapRecognizer refuses anything
         // below three. A row for it would be a switch that cannot turn on.
@@ -226,7 +227,7 @@ final class GeneralPane: NSStackView {
             return row
         }
 
-        let section = Controls.section(localized("Search & switcher"), [
+        return Controls.section(localized("Search & switcher"), symbol: "magnifyingglass", tint: .systemPurple, [
             Controls.row(localized("Open where the pointer is"),
                          Controls.toggle(Prefs.openAtPointer) { Prefs.openAtPointer = $0 }),
             Controls.row(localized("Close when it loses focus"),
@@ -242,10 +243,27 @@ final class GeneralPane: NSStackView {
                              Launcher.shared.applyGesture(userAsked: true)
                              self?.syncDependentRows()
                          }),
-        ] + fingerRows + [
+        ] + fingerRows)
+    }
+
+    /// Its own section rather than the last row of Search & switcher, where
+    /// it sat: it is the one setting here macOS owns rather than Perch, and
+    /// the one whose state can change behind the pane's back.
+    private func permissions() -> NSView {
+        let status = Controls.label(Self.accessibilityState)
+        accessibilityStatus = status
+        let allow = Controls.button("Allow…") { [weak self] in
+            Launcher.shared.grantAccessibility()
+            self?.syncAccessibility()
+        }
+        accessibilityButton = allow
+
+        let section = Controls.section(localized("Permissions"), symbol: "lock.shield.fill",
+                                       tint: .systemGreen, [
             // The state and the way to change it on one row, rather than a
             // status row and a full-width button bar under it.
-            Controls.row(localized("Window control"), Controls.group([status, allow])),
+            Controls.row(localized("Window control"), Controls.group([status, allow]),
+                         detail: localized("Accessibility access, which the switcher needs to bring windows forward.")),
         ])
         syncAccessibility()
         return section
@@ -261,7 +279,7 @@ final class GeneralPane: NSStackView {
             .foregroundColor: NSColor.systemRed,
             .font: NSFont.systemFont(ofSize: NSFont.smallSystemFontSize),
         ])
-        return Controls.section(localized("Backup"), [
+        return Controls.section(localized("Backup"), symbol: "archivebox.fill", tint: .systemIndigo, [
             Controls.row(localized("Your settings"), Controls.group([
                 Controls.button("Export…") { [weak self] in self?.export() },
                 Controls.button("Import…") { [weak self] in self?.importSettings() },
@@ -275,7 +293,8 @@ final class GeneralPane: NSStackView {
                              Diagnostics.copyToPasteboard()
                              Notify.show(localized("Diagnostics copied"),
                                          symbol: "doc.on.clipboard")
-                         }),
+                         },
+                         detail: localized("For a bug report. No serial number, network name or address.")),
         ])
     }
 

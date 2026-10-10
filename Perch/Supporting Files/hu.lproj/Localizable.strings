@@ -79,7 +79,24 @@
 "Accelerators" = "Gyorsítók";
 "Renderer · tiler" = "Renderer · tiler";
 "cores" = "mag";
-"Largest files" = "Legnagyobb fájlok";
+"Folders" = "Folders";
+"List" = "List";
+"%0 items" = "%0 items";
+"Disk Cleaner" = "Disk Cleaner";
+"Find what is taking the room" = "Find what is taking the room";
+"Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back." = "Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back.";
+"Scan" = "Scan";
+"Stop" = "Stop";
+"Rescan" = "Rescan";
+"Scanning…" = "Scanning…";
+"Scanning %0…" = "Scanning %0…";
+"files scanned" = "files scanned";
+"used" = "used";
+"%0 free of %1" = "%0 free of %1";
+"%0 files scanned in %1 s" = "%0 files scanned in %1 s";
+"%0 selected · %1" = "%0 selected · %1";
+"Select all" = "Select all";
+"Select none" = "Select none";
 "Looking…" = "Keresés…";
 "Reveal" = "Megmutatás";
 "%0 items, %1 in total" = "%0 elem, összesen %1";
@@ -114,7 +131,6 @@
 "Network" = "Hálózat";
 "Internet connection lost" = "Az internetkapcsolat megszakadt";
 "Internet connection established" = "Az internetkapcsolat létrejött";
-"Tell me when" = "Szólj, ha";
 "Connection comes or goes" = "A kapcsolat létrejön vagy megszakad";
 "Wi-Fi network changes" = "Megváltozik a Wi-Fi-hálózat";
 "Interface changes" = "Megváltozik az interfész";
@@ -138,6 +154,20 @@
 "Upload" = "Feltöltés";
 "Wi-Fi name" = "Wi-Fi neve";
 "Dashboard" = "Irányítópult";
+"Network settings…" = "Network settings…";
+"Free up space…" = "Free up space…";
+"Light load" = "Light load";
+"Busy" = "Busy";
+"Heavy load" = "Heavy load";
+"Plenty of room" = "Plenty of room";
+"Filling up" = "Filling up";
+"Getting full" = "Getting full";
+"Almost full" = "Almost full";
+"Running hot" = "Running hot";
+"Too hot" = "Too hot";
+"Checking…" = "Checking…";
+"No internet" = "No internet";
+"No reading" = "No reading";
 "Idle" = "Tétlen";
 "Process" = "Folyamat";
 "Force Quit %0" = "%0 kilépésének kényszerítése";
@@ -189,6 +219,7 @@
 "Memory free" = "Szabad memória";
 "Swap in use" = "Használt swap";
 "Disk usage" = "Lemezhasználat";
+"Size unknown: macOS would not let Perch look inside" = "Size unknown: macOS would not let Perch look inside";
 "%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0 elem, %1, a kukába kerül. Semmi sem törlődik – minden visszatehető a Finderből.";
 "%0 left nothing behind that Perch can see" = "A(z) %0 nem hagyott hátra semmit, amit a Perch lát";
 "%0 — %1 items, %2 in total" = "%0 — %1 elem, összesen %2";
@@ -197,6 +228,11 @@
 "Search installed apps…" = "Telepített appok keresése…";
 "matched by name only" = "csak név alapján egyezik";
 "probably this app" = "valószínűleg ez az app";
+"Permissions" = "Permissions";
+"Accessibility access, which the switcher needs to bring windows forward." = "Accessibility access, which the switcher needs to bring windows forward.";
+"For a bug report. No serial number, network name or address." = "For a bug report. No serial number, network name or address.";
+"How the readings sit in the menu bar. What each one shows is set on its own page." = "How the readings sit in the menu bar. What each one shows is set on its own page.";
+"Used by the menu bar figures and by every popup's dots, bars and charts." = "Used by the menu bar figures and by every popup's dots, bars and charts.";
 "Reset" = "Visszaállítás";
 "Silent" = "Csendes";
 "Settings" = "Beállítások";
@@ -255,6 +291,7 @@
 "Number of p-cores" = "%0 teljesítménymag";
 "Disks" = "Lemezek";
 "Display" = "Kijelző";
+"Pick one or more. They sit side by side in the menu bar, in this order." = "Pick one or more. They sit side by side in the menu bar, in this order.";
 "1 second" = "1 másodperc";
 "10 seconds" = "10 másodperc";
 "3 seconds" = "3 másodperc";
@@ -336,6 +373,13 @@
 "No AI assistants found on this Mac" = "Nem található AI-asszisztens ezen a Macen";
 "%0 across %1 assistants" = "%0 összesen %1 asszisztensnél";
 "Clean up %0?" = "Rendbe teszed: %0?";
+"%0 conversations" = "%0 conversations";
+"Unused for" = "Unused for";
+"%0 days" = "%0 days";
+"Any age" = "Any age";
+"%0 hidden by the %1-day rule" = "%0 hidden by the %1-day rule";
+"Everything the assistants hold has been used more recently than that." = "Everything the assistants hold has been used more recently than that.";
+"Show everything" = "Show everything";
 "%0 goes to the Bin. The assistants stay installed and signed in, and rebuild what they need." = "%0 a kukába kerül. Az asszisztensek telepítve és bejelentkezve maradnak, és újraépítik, amire szükségük van.";
 "%0 goes to the Bin, including conversation history. The assistants stay installed and signed in, but old sessions will not be there to resume." = "%0 a kukába kerül, a beszélgetési előzményekkel együtt. Az asszisztensek telepítve és bejelentkezve maradnak, de a régi munkamenetek nem folytathatók.";
 "conversations and memory" = "beszélgetések és memória";
@@ -353,14 +397,10 @@
 "Uninstall an app or tool" = "Alkalmazás vagy eszköz eltávolítása";
 "Removes the app and the files it left around the system, or a command-line tool and its settings." = "Eltávolítja az alkalmazást és a rendszerben hagyott fájljait, vagy egy parancssori eszközt a beállításaival.";
 "Uninstall…" = "Eltávolítás…";
-
-// Monitor · RunawayApps
 "%0 is working hard" = "A(z) %0 keményen dolgozik";
 "%0% CPU for %1 minutes." = "%0% CPU %1 perce.";
 "One app stays this busy for 5 minutes" = "Egy app 5 percig ennyire leterhelt";
 "Open Activity Monitor to see why." = "A Tevékenységfigyelőben megnézheti, miért.";
-
-// Monitor · Throttling
 "The Mac slows down to cool off" = "A Mac lelassul, hogy lehűljön";
 "Throttling" = "Hőfojtás";
 "Throttling hard" = "Erős hőfojtás";
@@ -368,8 +408,6 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "A macOS csökkentette a processzor sebességét. A leterhelt appok lassabbak lesznek, amíg le nem hűl.";
 "slowed down to cool off" = "lelassult a hűlés érdekében";
 "warming up" = "melegszik";
-
-// Launcher · QuickSearch
 "Cancel" = "Mégsem";
 "Copied %0" = "Kimásolva: %0";
 "Empty Bin" = "Kuka ürítése";
@@ -380,8 +418,6 @@
 "Sleep Display" = "Kijelző altatása";
 "Start Screen Saver" = "Képernyővédő indítása";
 "Toggle Dark Mode" = "Sötét mód be/ki";
-
-// UI · ShortcutRecorder
 "Keyboard shortcut" = "Billentyűparancs";
 "Type shortcut…" = "Írja be a billentyűparancsot…";
 "Record Shortcut" = "Billentyűparancs rögzítése";

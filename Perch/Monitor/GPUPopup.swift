@@ -152,7 +152,7 @@ final class GPUModule: PopupContent {
         }
 
         let load = (reading.utilization ?? 0) / 100
-        status.set(reading.utilization == nil ? "No reading" : StatusWords.load(load),
+        status.set(reading.utilization == nil ? localized("No reading") : StatusWords.load(load),
                    tint: reading.utilization == nil ? .tertiaryLabelColor
                        : MenuBarReading.Severity.of(load: load).tint,
                    details: [reading.name] + [GPUStats.coreCount.map { "\($0) cores" }]

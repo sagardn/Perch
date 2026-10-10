@@ -79,7 +79,24 @@
 "Accelerators" = "முடுக்கிகள்";
 "Renderer · tiler" = "ரெண்டரர் · டைலர்";
 "cores" = "கோர்கள்";
-"Largest files" = "மிகப் பெரிய கோப்புகள்";
+"Folders" = "Folders";
+"List" = "List";
+"%0 items" = "%0 items";
+"Disk Cleaner" = "Disk Cleaner";
+"Find what is taking the room" = "Find what is taking the room";
+"Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back." = "Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back.";
+"Scan" = "Scan";
+"Stop" = "Stop";
+"Rescan" = "Rescan";
+"Scanning…" = "Scanning…";
+"Scanning %0…" = "Scanning %0…";
+"files scanned" = "files scanned";
+"used" = "used";
+"%0 free of %1" = "%0 free of %1";
+"%0 files scanned in %1 s" = "%0 files scanned in %1 s";
+"%0 selected · %1" = "%0 selected · %1";
+"Select all" = "Select all";
+"Select none" = "Select none";
 "Looking…" = "தேடுகிறது…";
 "Reveal" = "காட்டு";
 "%0 items, %1 in total" = "%0 உருப்படிகள், மொத்தம் %1";
@@ -114,7 +131,6 @@
 "Network" = "நெட்வொர்க்";
 "Internet connection lost" = "இணைய இணைப்பு துண்டிக்கப்பட்டது";
 "Internet connection established" = "இணைய இணைப்பு ஏற்படுத்தப்பட்டது";
-"Tell me when" = "இவை நிகழும்போது சொல்";
 "Connection comes or goes" = "இணைப்பு வரும்போது அல்லது போகும்போது";
 "Wi-Fi network changes" = "Wi-Fi நெட்வொர்க் மாறும்போது";
 "Interface changes" = "இடைமுகம் மாறும்போது";
@@ -138,6 +154,20 @@
 "Upload" = "பதிவேற்றம்";
 "Wi-Fi name" = "Wi-Fi பெயர்";
 "Dashboard" = "டாஷ்போர்டு";
+"Network settings…" = "Network settings…";
+"Free up space…" = "Free up space…";
+"Light load" = "Light load";
+"Busy" = "Busy";
+"Heavy load" = "Heavy load";
+"Plenty of room" = "Plenty of room";
+"Filling up" = "Filling up";
+"Getting full" = "Getting full";
+"Almost full" = "Almost full";
+"Running hot" = "Running hot";
+"Too hot" = "Too hot";
+"Checking…" = "Checking…";
+"No internet" = "No internet";
+"No reading" = "No reading";
 "Idle" = "செயலற்றது";
 "Process" = "செயல்முறை";
 "Force Quit %0" = "%0 ஐ கட்டாயமாக வெளியேற்று";
@@ -189,6 +219,7 @@
 "Memory free" = "காலி நினைவகம்";
 "Swap in use" = "பயன்பாட்டில் உள்ள ஸ்வாப்";
 "Disk usage" = "வட்டு பயன்பாடு";
+"Size unknown: macOS would not let Perch look inside" = "Size unknown: macOS would not let Perch look inside";
 "%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0 உருப்படிகள், %1, குப்பைக்குச் செல்லும். எதுவும் அழிக்கப்படாது — அனைத்தையும் Finder இலிருந்து மீட்கலாம்.";
 "%0 left nothing behind that Perch can see" = "%0 Perch பார்க்கக்கூடிய எதையும் விட்டுச் செல்லவில்லை";
 "%0 — %1 items, %2 in total" = "%0 — %1 உருப்படிகள், மொத்தம் %2";
@@ -197,6 +228,11 @@
 "Search installed apps…" = "நிறுவிய பயன்பாடுகளைத் தேடு…";
 "matched by name only" = "பெயரால் மட்டும் பொருந்தியது";
 "probably this app" = "அநேகமாக இந்தப் பயன்பாடு";
+"Permissions" = "Permissions";
+"Accessibility access, which the switcher needs to bring windows forward." = "Accessibility access, which the switcher needs to bring windows forward.";
+"For a bug report. No serial number, network name or address." = "For a bug report. No serial number, network name or address.";
+"How the readings sit in the menu bar. What each one shows is set on its own page." = "How the readings sit in the menu bar. What each one shows is set on its own page.";
+"Used by the menu bar figures and by every popup's dots, bars and charts." = "Used by the menu bar figures and by every popup's dots, bars and charts.";
 "Reset" = "மீட்டமை";
 "Silent" = "அமைதி";
 "Settings" = "அமைப்புகள்";
@@ -255,6 +291,7 @@
 "Number of p-cores" = "%0 செயல்திறன் கோர்கள்";
 "Disks" = "வட்டுகள்";
 "Display" = "டிஸ்ப்ளே";
+"Pick one or more. They sit side by side in the menu bar, in this order." = "Pick one or more. They sit side by side in the menu bar, in this order.";
 "1 second" = "1 வினாடி";
 "10 seconds" = "10 வினாடிகள்";
 "3 seconds" = "3 வினாடிகள்";
@@ -336,6 +373,13 @@
 "No AI assistants found on this Mac" = "இந்த Mac இல் AI உதவியாளர்கள் இல்லை";
 "%0 across %1 assistants" = "%1 உதவியாளர்களில் %0";
 "Clean up %0?" = "%0 ஐ சுத்தம் செய்யவா?";
+"%0 conversations" = "%0 conversations";
+"Unused for" = "Unused for";
+"%0 days" = "%0 days";
+"Any age" = "Any age";
+"%0 hidden by the %1-day rule" = "%0 hidden by the %1-day rule";
+"Everything the assistants hold has been used more recently than that." = "Everything the assistants hold has been used more recently than that.";
+"Show everything" = "Show everything";
 "%0 goes to the Bin. The assistants stay installed and signed in, and rebuild what they need." = "%0 குப்பைக்குச் செல்லும். உதவியாளர்கள் நிறுவப்பட்டும் உள்நுழைந்தும் இருப்பார்கள், தேவையானதை மீண்டும் உருவாக்கிக்கொள்வார்கள்.";
 "%0 goes to the Bin, including conversation history. The assistants stay installed and signed in, but old sessions will not be there to resume." = "%0 குப்பைக்குச் செல்லும், உரையாடல் வரலாறு உட்பட. உதவியாளர்கள் நிறுவப்பட்டும் உள்நுழைந்தும் இருப்பார்கள், ஆனால் பழைய அமர்வுகளைத் தொடர முடியாது.";
 "conversations and memory" = "உரையாடல்களும் நினைவகமும்";
@@ -353,14 +397,10 @@
 "Uninstall an app or tool" = "பயன்பாடு அல்லது கருவியை நிறுவல்நீக்கு";
 "Removes the app and the files it left around the system, or a command-line tool and its settings." = "பயன்பாட்டையும் அது கணினியில் விட்டுச் சென்ற கோப்புகளையும், அல்லது கட்டளை வரி கருவியையும் அதன் அமைப்புகளையும் நீக்கும்.";
 "Uninstall…" = "நிறுவல்நீக்கு…";
-
-// Monitor · RunawayApps
 "%0 is working hard" = "%0 கடுமையாக இயங்குகிறது";
 "%0% CPU for %1 minutes." = "%1 நிமிடங்களாக %0% CPU.";
 "One app stays this busy for 5 minutes" = "ஒரு ஆப் 5 நிமிடங்கள் இவ்வளவு பிஸியாக இருந்தால்";
 "Open Activity Monitor to see why." = "காரணத்தைக் காண Activity Monitor-ஐத் திறக்கவும்.";
-
-// Monitor · Throttling
 "The Mac slows down to cool off" = "Mac குளிர்வதற்காக வேகம் குறைகிறது";
 "Throttling" = "த்ராட்லிங்";
 "Throttling hard" = "கடும் த்ராட்லிங்";
@@ -368,8 +408,6 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS செயலியின் வேகத்தைக் குறைத்துள்ளது. குளிரும் வரை அதிகச் சுமையுள்ள ஆப்கள் மெதுவாக இயங்கும்.";
 "slowed down to cool off" = "குளிர்வதற்காக வேகம் குறைக்கப்பட்டது";
 "warming up" = "சூடாகிறது";
-
-// Launcher · QuickSearch
 "Cancel" = "ரத்துசெய்";
 "Copied %0" = "%0 நகலெடுக்கப்பட்டது";
 "Empty Bin" = "குப்பையைக் காலியாக்கு";
@@ -380,8 +418,6 @@
 "Sleep Display" = "டிஸ்ப்ளேவை உறங்கவை";
 "Start Screen Saver" = "ஸ்கிரீன் சேவரைத் தொடங்கு";
 "Toggle Dark Mode" = "டார்க் மோடை மாற்று";
-
-// UI · ShortcutRecorder
 "Keyboard shortcut" = "விசைப்பலகை குறுக்குவழி";
 "Type shortcut…" = "குறுக்குவழியை உள்ளிடவும்…";
 "Record Shortcut" = "குறுக்குவழியைப் பதிவுசெய்";

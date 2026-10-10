@@ -163,6 +163,29 @@ do {
                                    deadline: Date().addingTimeInterval(-1))
     check("a scan out of time returns rather than running on", timedOut.isEmpty)
 
+    // Progress: the cleaner's ring is drawn from these, so a report that
+    // never finishes leaves it spinning over a list that is already there.
+    var reports: [LargeFiles.Progress] = []
+    let watched = LargeFiles.scan(roots: [root, root], limit: 10,
+                                  progress: { reports.append($0) })
+    check("progress is reported", !reports.isEmpty)
+    check("starting at the first root", reports.first?.root == 0)
+    check("and reaching the second", reports.contains { $0.root == 1 })
+    check("the last report says every root is done", reports.last?.root == 2)
+    check("files are counted", (reports.last?.files ?? 0) >= 4)
+    check("bytes seen cover everything listed",
+          (reports.last?.bytes ?? 0) >= watched.reduce(Int64(0)) { $0 + $1.bytes } / 2)
+    check("the count never goes backwards",
+          zip(reports, reports.dropFirst()).allSatisfy { $0.files <= $1.files })
+
+    // Cancelled before it starts: nothing walked, and it still returns.
+    var stoppedReports = 0
+    let stopped = LargeFiles.scan(roots: [root], limit: 10,
+                                  shouldStop: { true },
+                                  progress: { _ in stoppedReports += 1 })
+    check("a stopped scan returns nothing it did not reach", stopped.isEmpty)
+    check("and still reports that it finished", stoppedReports == 1)
+
     check("a folder that does not exist is not a crash",
           LargeFiles.scan(roots: [root.appendingPathComponent("nope")], limit: 5).isEmpty)
 }
@@ -249,6 +272,86 @@ do {
 
 check("an empty selection moves nothing",
       LargeFiles.moveToBin([]) == LargeFiles.Removal())
+
+print("\nLargeFiles.breakdown")
+
+do {
+    let mixed = [item("/a.mov", 500), item("/b.zip", 100), item("/c.mp4", 300),
+                 item("/d.pdf", 100), item("/e", 50)]
+    let parts = LargeFiles.breakdown(mixed)
+    check("one entry per category present", parts.count == 4)
+    check("summed within a category", parts.first?.bytes == 800)
+    check("largest category first", parts.first?.category == .video)
+    // archive and document are both 100: declaration order breaks the tie.
+    check("ties keep declaration order",
+          parts.map(\.category) == [.video, .archive, .document, .other])
+    check("the parts add up to the whole",
+          parts.reduce(Int64(0)) { $0 + $1.bytes } == 1050)
+    check("nothing in, nothing out", LargeFiles.breakdown([]).isEmpty)
+}
+
+print("\nLargeFiles.tree")
+
+do {
+    let home = URL(fileURLWithPath: "/Users/me")
+    let items = [
+        item("/Users/me/Documents/amit.zip", 7_400),
+        item("/Users/me/Downloads/os.img.xz", 1_600),
+        item("/Users/me/Downloads/chrome.zip", 166),
+        // A chain: project/shield holds nothing but other folders.
+        item("/Users/me/Desktop/project/shield/code/billing/rest.exe", 58),
+        item("/Users/me/Desktop/project/shield/code/billing/rpc.exe", 36),
+        item("/Users/me/Desktop/project/shield/next/node_modules/a/swc.node", 139),
+        item("/Users/me/Desktop/loose.mov", 10),
+        item("/Users/me/top.bin", 5),
+    ]
+    let tree = LargeFiles.tree(items, under: home)
+    let top: [String] = tree.folders.map(\.name)
+
+    check("the root holds everything", tree.count == items.count)
+    check("and its size is the sum", tree.bytes == items.reduce(Int64(0)) { $0 + $1.bytes })
+    check("top-level folders, biggest first", top == ["Documents", "Downloads", "Desktop"])
+    check("a file at the root stays at the root", tree.files.map(\.name) == ["top.bin"])
+
+    let desktop = tree.folders[2]
+    check("a top-level folder is never merged away", desktop.name == "Desktop")
+    check("a chain of lone folders collapses into one row",
+          desktop.folders.map(\.name) == ["project/shield"])
+    let shield = desktop.folders[0]
+    check("the collapsed row points at the deepest folder",
+          shield.url.path == "/Users/me/Desktop/project/shield")
+    check("a folder that branches does not collapse", shield.folders.count == 2)
+    check("its children are sorted by size",
+          shield.folders.map(\.name) == ["next/node_modules/a", "code/billing"])
+    check("a collapsed chain still totals what is inside",
+          shield.bytes == 58 + 36 + 139)
+    check("files inside a folder are biggest first",
+          shield.folders[1].files.map(\.name) == ["rest.exe", "rpc.exe"])
+    check("a folder lists every file beneath it", desktop.allFiles.count == 4)
+    check("folders come before files at the same level",
+          desktop.files.map(\.name) == ["loose.mov"])
+
+    let outside = LargeFiles.tree([item("/Volumes/X/big.iso", 9)], under: home)
+    check("a file outside the base is still in the tree", outside.count == 1)
+    check("nothing in, an empty tree", LargeFiles.tree([], under: home).count == 0)
+
+    print("\nLargeFiles.lines")
+
+    let closed = LargeFiles.lines(tree, expanded: [])
+    check("closed, only the top level shows", closed.count == 4)
+    check("the root itself is not a line",
+          !closed.contains { $0.id == home })
+    let opened = LargeFiles.lines(tree, expanded: [desktop.url])
+    check("opening a folder shows what is in it", opened.count == 4 + 2)
+    check("indented one level",
+          opened.contains(.folder(shield, depth: 1)) && opened.contains(.file(desktop.files[0], depth: 1)))
+    check("directly under its folder",
+          opened.firstIndex { $0.id == shield.url } == (opened.firstIndex { $0.id == desktop.url } ?? -9) + 1)
+    let deep = LargeFiles.lines(tree, expanded: [desktop.url, shield.url])
+    check("folders nest", deep.contains { if case .folder(_, 2) = $0 { return true }; return false })
+    check("an open folder inside a closed one stays hidden",
+          LargeFiles.lines(tree, expanded: [shield.url]).count == 4)
+}
 
 print("\nLargeFiles.message")
 

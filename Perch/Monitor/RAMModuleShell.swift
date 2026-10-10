@@ -89,7 +89,7 @@ final class RAMSettingsPage: NSView {
         super.init(frame: .zero)
         self.translatesAutoresizingMaskIntoConstraints = false
 
-        let section = Controls.section(localized("Memory"), [
+        let section = Controls.section(localized("Memory"), symbol: "memorychip.fill", tint: .systemGreen, [
             Controls.row(localized("Keyboard shortcut"), ShortcutRecorder(module: "RAM")),
             Controls.row(localized("Chart history"), Controls.choice(
                 [("1 minute", "60"), ("2 minutes", "120"), ("5 minutes", "300")],
@@ -103,18 +103,19 @@ final class RAMSettingsPage: NSView {
                 }),
         ])
 
-        let shapes = Controls.section(localized("Menu bar"), styles.map { style in
-            Controls.row(style.title, Controls.toggle(self.shown.contains(style)) { on in
-                if on {
-                    self.shown.insert(style)
-                } else {
-                    self.shown.remove(style)
-                }
-                MenuBarStyles.store(Array(self.shown), for: "RAM")
-            })
-        })
+        let shapes = Controls.section(
+            localized("Menu bar"), symbol: "menubar.rectangle", tint: .systemBlue,
+            footer: localized("Pick one or more. They sit side by side in the menu bar, in this order."),
+            [Controls.shapes(self.styles, shown: self.shown, label: RAMModule().menuBarLabel,
+                             value: "42%",) { chosen in
+                self.shown = chosen
+                // In the order the tiles are laid out, not the order they
+                // were clicked, so the menu bar matches the page.
+                MenuBarStyles.store(self.styles.filter(chosen.contains), for: "RAM")
+            }])
 
-        let alerts = Controls.section(localized("Notify me when"),
+        let alerts = Controls.section(localized("Notify me when"), symbol: "bell.badge.fill",
+                                      tint: .systemRed,
             RAMThreshold.allCases.filter { $0.isAvailable }.map { threshold in
                 Controls.row(threshold.title, control(for: threshold))
             })
@@ -122,6 +123,7 @@ final class RAMSettingsPage: NSView {
         let column = NSStackView(views: [section, shapes, alerts])
         column.orientation = .vertical
         column.alignment = .leading
+        column.spacing = 18
         column.edgeInsets = NSEdgeInsets(top: 44, left: 18, bottom: 18, right: 18)
         column.translatesAutoresizingMaskIntoConstraints = false
         addSubview(column)

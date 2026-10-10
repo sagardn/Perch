@@ -177,9 +177,9 @@ final class SensorsModule: PopupContent {
             let severity = MenuBarReading.Severity.ofTemperature(hot.value)
             let word: String
             switch severity {
-            case .calm:     word = "Normal"
-            case .warning:  word = "Running hot"
-            case .critical: word = "Too hot"
+            case .calm:     word = localized("Normal")
+            case .warning:  word = localized("Running hot")
+            case .critical: word = localized("Too hot")
             }
             status.set(word, tint: severity.tint,
                        // Not the hottest sensor's name: many are bare SMC

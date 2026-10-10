@@ -79,7 +79,24 @@
 "Accelerators" = "Pospeševalniki";
 "Renderer · tiler" = "Upodabljalnik · tiler";
 "cores" = "jeder";
-"Largest files" = "Največje datoteke";
+"Folders" = "Folders";
+"List" = "List";
+"%0 items" = "%0 items";
+"Disk Cleaner" = "Disk Cleaner";
+"Find what is taking the room" = "Find what is taking the room";
+"Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back." = "Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back.";
+"Scan" = "Scan";
+"Stop" = "Stop";
+"Rescan" = "Rescan";
+"Scanning…" = "Scanning…";
+"Scanning %0…" = "Scanning %0…";
+"files scanned" = "files scanned";
+"used" = "used";
+"%0 free of %1" = "%0 free of %1";
+"%0 files scanned in %1 s" = "%0 files scanned in %1 s";
+"%0 selected · %1" = "%0 selected · %1";
+"Select all" = "Select all";
+"Select none" = "Select none";
 "Looking…" = "Iskanje…";
 "Reveal" = "Pokaži";
 "%0 items, %1 in total" = "%0 elementov, %1 skupaj";
@@ -114,7 +131,6 @@
 "Network" = "Omrežje";
 "Internet connection lost" = "Internetna povezava je prekinjena";
 "Internet connection established" = "Internetna povezava je vzpostavljena";
-"Tell me when" = "Sporoči mi, ko";
 "Connection comes or goes" = "Povezava se vzpostavi ali prekine";
 "Wi-Fi network changes" = "Omrežje Wi-Fi se spremeni";
 "Interface changes" = "Vmesnik se spremeni";
@@ -138,6 +154,20 @@
 "Upload" = "Pošiljanje";
 "Wi-Fi name" = "Ime omrežja Wi-Fi";
 "Dashboard" = "Nadzorna plošča";
+"Network settings…" = "Network settings…";
+"Free up space…" = "Free up space…";
+"Light load" = "Light load";
+"Busy" = "Busy";
+"Heavy load" = "Heavy load";
+"Plenty of room" = "Plenty of room";
+"Filling up" = "Filling up";
+"Getting full" = "Getting full";
+"Almost full" = "Almost full";
+"Running hot" = "Running hot";
+"Too hot" = "Too hot";
+"Checking…" = "Checking…";
+"No internet" = "No internet";
+"No reading" = "No reading";
 "Idle" = "Nedejavno";
 "Process" = "Proces";
 "Force Quit %0" = "Vsili končanje %0";
@@ -189,6 +219,7 @@
 "Memory free" = "Prost pomnilnik";
 "Swap in use" = "Uporabljen swap";
 "Disk usage" = "Uporaba diska";
+"Size unknown: macOS would not let Perch look inside" = "Size unknown: macOS would not let Perch look inside";
 "%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0 elementov, %1, gre v koš. Nič se ne izbriše – vse lahko vrnete iz Finderja.";
 "%0 left nothing behind that Perch can see" = "%0 ni pustila ničesar, kar Perch vidi";
 "%0 — %1 items, %2 in total" = "%0 — %1 elementov, %2 skupaj";
@@ -197,6 +228,11 @@
 "Search installed apps…" = "Iskanje nameščenih aplikacij…";
 "matched by name only" = "najdeno samo po imenu";
 "probably this app" = "verjetno ta aplikacija";
+"Permissions" = "Permissions";
+"Accessibility access, which the switcher needs to bring windows forward." = "Accessibility access, which the switcher needs to bring windows forward.";
+"For a bug report. No serial number, network name or address." = "For a bug report. No serial number, network name or address.";
+"How the readings sit in the menu bar. What each one shows is set on its own page." = "How the readings sit in the menu bar. What each one shows is set on its own page.";
+"Used by the menu bar figures and by every popup's dots, bars and charts." = "Used by the menu bar figures and by every popup's dots, bars and charts.";
 "Reset" = "Ponastavi";
 "Silent" = "Tiho";
 "Settings" = "Nastavitve";
@@ -255,6 +291,7 @@
 "Number of p-cores" = "Zmogljiva jedra: %0";
 "Disks" = "Diski";
 "Display" = "Zaslon";
+"Pick one or more. They sit side by side in the menu bar, in this order." = "Pick one or more. They sit side by side in the menu bar, in this order.";
 "1 second" = "1 sekunda";
 "10 seconds" = "10 sekund";
 "3 seconds" = "3 sekunde";
@@ -336,6 +373,13 @@
 "No AI assistants found on this Mac" = "Na tem Macu ni bilo najdenih pomočnikov UI";
 "%0 across %1 assistants" = "%0 v %1 pomočnikih";
 "Clean up %0?" = "Počistim %0?";
+"%0 conversations" = "%0 conversations";
+"Unused for" = "Unused for";
+"%0 days" = "%0 days";
+"Any age" = "Any age";
+"%0 hidden by the %1-day rule" = "%0 hidden by the %1-day rule";
+"Everything the assistants hold has been used more recently than that." = "Everything the assistants hold has been used more recently than that.";
+"Show everything" = "Show everything";
 "%0 goes to the Bin. The assistants stay installed and signed in, and rebuild what they need." = "%0 gre v koš. Pomočniki ostanejo nameščeni in prijavljeni ter si znova zgradijo, kar potrebujejo.";
 "%0 goes to the Bin, including conversation history. The assistants stay installed and signed in, but old sessions will not be there to resume." = "%0 gre v koš, vključno z zgodovino pogovorov. Pomočniki ostanejo nameščeni in prijavljeni, starih sej pa ne bo mogoče nadaljevati.";
 "conversations and memory" = "pogovori in spomin";
@@ -353,14 +397,10 @@
 "Uninstall an app or tool" = "Odstrani aplikacijo ali orodje";
 "Removes the app and the files it left around the system, or a command-line tool and its settings." = "Odstrani aplikacijo in datoteke, ki jih je pustila v sistemu, ali orodje ukazne vrstice in njegove nastavitve.";
 "Uninstall…" = "Odstrani…";
-
-// Monitor · RunawayApps
 "%0 is working hard" = "%0 močno dela";
 "%0% CPU for %1 minutes." = "%0 % CPE že %1 min.";
 "One app stays this busy for 5 minutes" = "Ena aplikacija ostane tako zasedena 5 minut";
 "Open Activity Monitor to see why." = "Odprite Monitor dejavnosti, da vidite zakaj.";
-
-// Monitor · Throttling
 "The Mac slows down to cool off" = "Mac se upočasni, da se ohladi";
 "Throttling" = "Toplotno omejevanje";
 "Throttling hard" = "Močno omejevanje";
@@ -368,8 +408,6 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS je zmanjšal hitrost procesorja. Zasedene aplikacije bodo počasnejše, dokler se ne ohladi.";
 "slowed down to cool off" = "upočasnjen zaradi hlajenja";
 "warming up" = "se segreva";
-
-// Launcher · QuickSearch
 "Cancel" = "Prekliči";
 "Copied %0" = "Kopirano: %0";
 "Empty Bin" = "Izprazni Smeti";
@@ -380,8 +418,6 @@
 "Sleep Display" = "Zaslon v mirovanje";
 "Start Screen Saver" = "Zaženi ohranjevalnik zaslona";
 "Toggle Dark Mode" = "Preklopi temni način";
-
-// UI · ShortcutRecorder
 "Keyboard shortcut" = "Bližnjica na tipkovnici";
 "Type shortcut…" = "Vnesite bližnjico…";
 "Record Shortcut" = "Posnemi bližnjico";

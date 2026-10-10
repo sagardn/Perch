@@ -79,7 +79,24 @@
 "Accelerators" = "المسرّعات";
 "Renderer · tiler" = "Renderer · tiler";
 "cores" = "نوى";
-"Largest files" = "أكبر الملفات";
+"Folders" = "Folders";
+"List" = "List";
+"%0 items" = "%0 items";
+"Disk Cleaner" = "Disk Cleaner";
+"Find what is taking the room" = "Find what is taking the room";
+"Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back." = "Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back.";
+"Scan" = "Scan";
+"Stop" = "Stop";
+"Rescan" = "Rescan";
+"Scanning…" = "Scanning…";
+"Scanning %0…" = "Scanning %0…";
+"files scanned" = "files scanned";
+"used" = "used";
+"%0 free of %1" = "%0 free of %1";
+"%0 files scanned in %1 s" = "%0 files scanned in %1 s";
+"%0 selected · %1" = "%0 selected · %1";
+"Select all" = "Select all";
+"Select none" = "Select none";
 "Looking…" = "جارٍ البحث…";
 "Reveal" = "إظهار";
 "%0 items, %1 in total" = "%0 عنصرًا، %1 إجمالًا";
@@ -114,7 +131,6 @@
 "Network" = "الشبكة";
 "Internet connection lost" = "انقطع الاتصال بالإنترنت";
 "Internet connection established" = "تم الاتصال بالإنترنت";
-"Tell me when" = "أخبرني عندما";
 "Connection comes or goes" = "يتوفر الاتصال أو ينقطع";
 "Wi-Fi network changes" = "تتغير شبكة Wi-Fi";
 "Interface changes" = "تتغير الواجهة";
@@ -138,6 +154,20 @@
 "Upload" = "الرفع";
 "Wi-Fi name" = "اسم شبكة Wi-Fi";
 "Dashboard" = "لوحة المعلومات";
+"Network settings…" = "Network settings…";
+"Free up space…" = "Free up space…";
+"Light load" = "Light load";
+"Busy" = "Busy";
+"Heavy load" = "Heavy load";
+"Plenty of room" = "Plenty of room";
+"Filling up" = "Filling up";
+"Getting full" = "Getting full";
+"Almost full" = "Almost full";
+"Running hot" = "Running hot";
+"Too hot" = "Too hot";
+"Checking…" = "Checking…";
+"No internet" = "No internet";
+"No reading" = "No reading";
 "Idle" = "خامل";
 "Process" = "العملية";
 "Force Quit %0" = "إنهاء %0 إجباريًا";
@@ -189,6 +219,7 @@
 "Memory free" = "الذاكرة المتاحة";
 "Swap in use" = "التبديل المستخدم";
 "Disk usage" = "استخدام القرص";
+"Size unknown: macOS would not let Perch look inside" = "Size unknown: macOS would not let Perch look inside";
 "%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0 عنصرًا، %1، تذهب إلى المهملات. لا يُمحى شيء — يمكن إرجاع كل شيء من Finder.";
 "%0 left nothing behind that Perch can see" = "لم يترك %0 شيئًا يستطيع Perch رؤيته";
 "%0 — %1 items, %2 in total" = "%0 — %1 عنصرًا، %2 إجمالًا";
@@ -197,6 +228,11 @@
 "Search installed apps…" = "البحث في التطبيقات المثبتة…";
 "matched by name only" = "مطابق بالاسم فقط";
 "probably this app" = "على الأرجح هذا التطبيق";
+"Permissions" = "Permissions";
+"Accessibility access, which the switcher needs to bring windows forward." = "Accessibility access, which the switcher needs to bring windows forward.";
+"For a bug report. No serial number, network name or address." = "For a bug report. No serial number, network name or address.";
+"How the readings sit in the menu bar. What each one shows is set on its own page." = "How the readings sit in the menu bar. What each one shows is set on its own page.";
+"Used by the menu bar figures and by every popup's dots, bars and charts." = "Used by the menu bar figures and by every popup's dots, bars and charts.";
 "Reset" = "إعادة تعيين";
 "Silent" = "صامت";
 "Settings" = "الإعدادات";
@@ -255,6 +291,7 @@
 "Number of p-cores" = "نوى الأداء: %0";
 "Disks" = "الأقراص";
 "Display" = "الشاشة";
+"Pick one or more. They sit side by side in the menu bar, in this order." = "Pick one or more. They sit side by side in the menu bar, in this order.";
 "1 second" = "ثانية واحدة";
 "10 seconds" = "10 ثوانٍ";
 "3 seconds" = "3 ثوانٍ";
@@ -336,6 +373,13 @@
 "No AI assistants found on this Mac" = "لم يُعثر على مساعدي ذكاء اصطناعي على هذا الـ Mac";
 "%0 across %1 assistants" = "%0 في %1 مساعدين";
 "Clean up %0?" = "تنظيف %0؟";
+"%0 conversations" = "%0 conversations";
+"Unused for" = "Unused for";
+"%0 days" = "%0 days";
+"Any age" = "Any age";
+"%0 hidden by the %1-day rule" = "%0 hidden by the %1-day rule";
+"Everything the assistants hold has been used more recently than that." = "Everything the assistants hold has been used more recently than that.";
+"Show everything" = "Show everything";
 "%0 goes to the Bin. The assistants stay installed and signed in, and rebuild what they need." = "ينتقل %0 إلى المهملات. يبقى المساعدون مثبّتين ومسجّلي الدخول ويعيدون بناء ما يحتاجونه.";
 "%0 goes to the Bin, including conversation history. The assistants stay installed and signed in, but old sessions will not be there to resume." = "ينتقل %0 إلى المهملات، بما في ذلك سجل المحادثات. يبقى المساعدون مثبّتين ومسجّلي الدخول، لكن الجلسات القديمة لن تكون متاحة للمتابعة.";
 "conversations and memory" = "المحادثات والذاكرة";
@@ -353,14 +397,10 @@
 "Uninstall an app or tool" = "إزالة تطبيق أو أداة";
 "Removes the app and the files it left around the system, or a command-line tool and its settings." = "يزيل التطبيق والملفات التي تركها في النظام، أو أداة سطر أوامر وإعداداتها.";
 "Uninstall…" = "إزالة…";
-
-// Monitor · RunawayApps
 "%0 is working hard" = "%0 يعمل بجهد كبير";
 "%0% CPU for %1 minutes." = "%0% من المعالج لمدة %1 دقائق.";
 "One app stays this busy for 5 minutes" = "يبقى تطبيق واحد بهذا الانشغال لمدة 5 دقائق";
 "Open Activity Monitor to see why." = "افتح مراقب النشاط لمعرفة السبب.";
-
-// Monitor · Throttling
 "The Mac slows down to cool off" = "يبطئ Mac ليبرد";
 "Throttling" = "تقييد حراري";
 "Throttling hard" = "تقييد حراري شديد";
@@ -368,8 +408,6 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "خفّض macOS سرعة المعالج. ستبدو التطبيقات المشغولة أبطأ حتى يبرد.";
 "slowed down to cool off" = "أُبطئ ليبرد";
 "warming up" = "يزداد سخونة";
-
-// Launcher · QuickSearch
 "Cancel" = "إلغاء";
 "Copied %0" = "تم نسخ %0";
 "Empty Bin" = "إفراغ سلة المهملات";
@@ -380,8 +418,6 @@
 "Sleep Display" = "إسبات شاشة العرض";
 "Start Screen Saver" = "بدء شاشة التوقف";
 "Toggle Dark Mode" = "تبديل الوضع الداكن";
-
-// UI · ShortcutRecorder
 "Keyboard shortcut" = "اختصار لوحة المفاتيح";
 "Type shortcut…" = "اكتب الاختصار…";
 "Record Shortcut" = "تسجيل اختصار";

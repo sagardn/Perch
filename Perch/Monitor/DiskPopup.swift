@@ -32,6 +32,10 @@ final class DiskModule: PopupContent {
     // so its chart was a flat line ninety points tall saying "86%".
     private let capacityRow = ValueRow("")
     private let capacityBar = ShareBar(height: 10)
+    /// Shown from "Filling up" on, under the bar that says so.
+    private let freeUpSpace = PopupAction(localized("Free up space…"), symbol: "sparkles") {
+        PopupAction.openSettings("Free up space")
+    }
 
     private let traffic = SplitTrafficChart()
     private let peaks = PeakLegend(upperName: localized("write"), lowerName: localized("read"))
@@ -93,7 +97,10 @@ final class DiskModule: PopupContent {
         stack.addArrangedSubview(capacityRow)
         stack.setCustomSpacing(4, after: capacityRow)
         stack.addArrangedSubview(capacityBar)
-        stack.setCustomSpacing(14, after: capacityBar)
+        stack.setCustomSpacing(6, after: capacityBar)
+        freeUpSpace.isHidden = true
+        stack.addArrangedSubview(freeUpSpace)
+        stack.setCustomSpacing(14, after: freeUpSpace)
 
         stack.addArrangedSubview(SectionHeader(localized("Activity")))
         stack.addArrangedSubview(traffic)
@@ -207,14 +214,13 @@ final class DiskModule: PopupContent {
         guard let volume = latest else { return }
 
         let severity = MenuBarReading.Severity.ofDisk(volume.percent)
-        let word: String
-        switch severity {
-        case .calm:     word = "Plenty of room"
-        case .warning:  word = "Getting full"
-        case .critical: word = "Almost full"
-        }
-        status.set(word, tint: severity.tint,
+        status.set(StatusWords.disk(volume.percent), tint: severity.tint,
                    details: [volume.name] + [volume.format].compactMap { $0 })
+
+        // The startup volume only, as `DiskCleanup` reasons: an external
+        // drive that full is usually an archive doing its job, and the
+        // cleaner only looks in the home folder anyway.
+        freeUpSpace.isHidden = !(volume.path == "/" && volume.percent >= StatusWords.fillingUpFrom)
 
         usedReading.set(percent: volume.percent)
         freeReading.set(bytes: volume.free)

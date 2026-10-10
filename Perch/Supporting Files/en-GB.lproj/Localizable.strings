@@ -76,7 +76,24 @@
 "Accelerators" = "Accelerators";
 "Renderer · tiler" = "Renderer · tiler";
 "cores" = "cores";
-"Largest files" = "Largest files";
+"Folders" = "Folders";
+"List" = "List";
+"%0 items" = "%0 items";
+"Disk Cleaner" = "Disk Cleaner";
+"Find what is taking the room" = "Find what is taking the room";
+"Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back." = "Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back.";
+"Scan" = "Scan";
+"Stop" = "Stop";
+"Rescan" = "Rescan";
+"Scanning…" = "Scanning…";
+"Scanning %0…" = "Scanning %0…";
+"files scanned" = "files scanned";
+"used" = "used";
+"%0 free of %1" = "%0 free of %1";
+"%0 files scanned in %1 s" = "%0 files scanned in %1 s";
+"%0 selected · %1" = "%0 selected · %1";
+"Select all" = "Select all";
+"Select none" = "Select none";
 "Looking…" = "Looking…";
 "Reveal" = "Reveal";
 "%0 items, %1 in total" = "%0 items, %1 in total";
@@ -111,7 +128,6 @@
 "Network" = "Network";
 "Internet connection lost" = "Internet connection lost";
 "Internet connection established" = "Internet connection established";
-"Tell me when" = "Tell me when";
 "Connection comes or goes" = "Connection comes or goes";
 "Wi-Fi network changes" = "Wi-Fi network changes";
 "Interface changes" = "Interface changes";
@@ -135,6 +151,20 @@
 "Upload" = "Upload";
 "Wi-Fi name" = "Wi-Fi name";
 "Dashboard" = "Dashboard";
+"Network settings…" = "Network settings…";
+"Free up space…" = "Free up space…";
+"Light load" = "Light load";
+"Busy" = "Busy";
+"Heavy load" = "Heavy load";
+"Plenty of room" = "Plenty of room";
+"Filling up" = "Filling up";
+"Getting full" = "Getting full";
+"Almost full" = "Almost full";
+"Running hot" = "Running hot";
+"Too hot" = "Too hot";
+"Checking…" = "Checking…";
+"No internet" = "No internet";
+"No reading" = "No reading";
 "Idle" = "Idle";
 "Process" = "Process";
 "Force Quit %0" = "Force Quit %0";
@@ -186,6 +216,7 @@
 "Memory free" = "Memory free";
 "Swap in use" = "Swap in use";
 "Disk usage" = "Disk usage";
+"Size unknown: macOS would not let Perch look inside" = "Size unknown: macOS would not let Perch look inside";
 "%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder.";
 "%0 left nothing behind that Perch can see" = "%0 left nothing behind that Perch can see";
 "%0 — %1 items, %2 in total" = "%0 — %1 items, %2 in total";
@@ -194,6 +225,11 @@
 "Search installed apps…" = "Search installed apps…";
 "matched by name only" = "matched by name only";
 "probably this app" = "probably this app";
+"Permissions" = "Permissions";
+"Accessibility access, which the switcher needs to bring windows forward." = "Accessibility access, which the switcher needs to bring windows forward.";
+"For a bug report. No serial number, network name or address." = "For a bug report. No serial number, network name or address.";
+"How the readings sit in the menu bar. What each one shows is set on its own page." = "How the readings sit in the menu bar. What each one shows is set on its own page.";
+"Used by the menu bar figures and by every popup's dots, bars and charts." = "Used by the menu bar figures and by every popup's dots, bars and charts.";
 "Reset" = "Reset";
 "Silent" = "Silent";
 "Settings" = "Settings";
@@ -252,6 +288,7 @@
 "Number of p-cores" = "%0 performance cores";
 "Disks" = "Disks";
 "Display" = "Display";
+"Pick one or more. They sit side by side in the menu bar, in this order." = "Pick one or more. They sit side by side in the menu bar, in this order.";
 "1 second" = "1 second";
 "10 seconds" = "10 seconds";
 "3 seconds" = "3 seconds";
@@ -333,6 +370,13 @@
 "No AI assistants found on this Mac" = "No AI assistants found on this Mac";
 "%0 across %1 assistants" = "%0 across %1 assistants";
 "Clean up %0?" = "Clean up %0?";
+"%0 conversations" = "%0 conversations";
+"Unused for" = "Unused for";
+"%0 days" = "%0 days";
+"Any age" = "Any age";
+"%0 hidden by the %1-day rule" = "%0 hidden by the %1-day rule";
+"Everything the assistants hold has been used more recently than that." = "Everything the assistants hold has been used more recently than that.";
+"Show everything" = "Show everything";
 "%0 goes to the Bin. The assistants stay installed and signed in, and rebuild what they need." = "%0 goes to the Bin. The assistants stay installed and signed in, and rebuild what they need.";
 "%0 goes to the Bin, including conversation history. The assistants stay installed and signed in, but old sessions will not be there to resume." = "%0 goes to the Bin, including conversation history. The assistants stay installed and signed in, but old sessions will not be there to resume.";
 "conversations and memory" = "conversations and memory";
@@ -350,14 +394,10 @@
 "Uninstall an app or tool" = "Uninstall an app or tool";
 "Removes the app and the files it left around the system, or a command-line tool and its settings." = "Removes the app and the files it left around the system, or a command-line tool and its settings.";
 "Uninstall…" = "Uninstall…";
-
-// Monitor · RunawayApps
 "%0 is working hard" = "%0 is working hard";
 "%0% CPU for %1 minutes." = "%0% CPU for %1 minutes.";
 "One app stays this busy for 5 minutes" = "One app stays this busy for 5 minutes";
 "Open Activity Monitor to see why." = "Open Activity Monitor to see why.";
-
-// Monitor · Throttling
 "The Mac slows down to cool off" = "The Mac slows down to cool off";
 "Throttling" = "Throttling";
 "Throttling hard" = "Throttling hard";
@@ -365,8 +405,6 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS has reduced the processor's speed. Busy apps will feel slower until it cools.";
 "slowed down to cool off" = "slowed down to cool off";
 "warming up" = "warming up";
-
-// Launcher · QuickSearch
 "Cancel" = "Cancel";
 "Copied %0" = "Copied %0";
 "Empty Bin" = "Empty Bin";
@@ -377,8 +415,6 @@
 "Sleep Display" = "Sleep Display";
 "Start Screen Saver" = "Start Screen Saver";
 "Toggle Dark Mode" = "Toggle Dark Mode";
-
-// UI · ShortcutRecorder
 "Keyboard shortcut" = "Keyboard shortcut";
 "Type shortcut…" = "Type shortcut…";
 "Record Shortcut" = "Record Shortcut";

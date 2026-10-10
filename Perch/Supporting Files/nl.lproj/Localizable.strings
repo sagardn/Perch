@@ -79,7 +79,24 @@
 "Accelerators" = "Versnellers";
 "Renderer · tiler" = "Renderer · tiler";
 "cores" = "cores";
-"Largest files" = "Grootste bestanden";
+"Folders" = "Folders";
+"List" = "List";
+"%0 items" = "%0 items";
+"Disk Cleaner" = "Disk Cleaner";
+"Find what is taking the room" = "Find what is taking the room";
+"Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back." = "Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back.";
+"Scan" = "Scan";
+"Stop" = "Stop";
+"Rescan" = "Rescan";
+"Scanning…" = "Scanning…";
+"Scanning %0…" = "Scanning %0…";
+"files scanned" = "files scanned";
+"used" = "used";
+"%0 free of %1" = "%0 free of %1";
+"%0 files scanned in %1 s" = "%0 files scanned in %1 s";
+"%0 selected · %1" = "%0 selected · %1";
+"Select all" = "Select all";
+"Select none" = "Select none";
 "Looking…" = "Zoeken…";
 "Reveal" = "Toon";
 "%0 items, %1 in total" = "%0 onderdelen, %1 in totaal";
@@ -114,7 +131,6 @@
 "Network" = "Netwerk";
 "Internet connection lost" = "Internetverbinding verbroken";
 "Internet connection established" = "Internetverbinding tot stand gebracht";
-"Tell me when" = "Meld wanneer";
 "Connection comes or goes" = "De verbinding komt of gaat";
 "Wi-Fi network changes" = "Het wifinetwerk verandert";
 "Interface changes" = "De interface verandert";
@@ -138,6 +154,20 @@
 "Upload" = "Upload";
 "Wi-Fi name" = "Wifi-naam";
 "Dashboard" = "Dashboard";
+"Network settings…" = "Network settings…";
+"Free up space…" = "Free up space…";
+"Light load" = "Light load";
+"Busy" = "Busy";
+"Heavy load" = "Heavy load";
+"Plenty of room" = "Plenty of room";
+"Filling up" = "Filling up";
+"Getting full" = "Getting full";
+"Almost full" = "Almost full";
+"Running hot" = "Running hot";
+"Too hot" = "Too hot";
+"Checking…" = "Checking…";
+"No internet" = "No internet";
+"No reading" = "No reading";
 "Idle" = "Inactief";
 "Process" = "Proces";
 "Force Quit %0" = "Forceer stop van %0";
@@ -189,6 +219,7 @@
 "Memory free" = "Geheugen vrij";
 "Swap in use" = "Swap in gebruik";
 "Disk usage" = "Schijfgebruik";
+"Size unknown: macOS would not let Perch look inside" = "Size unknown: macOS would not let Perch look inside";
 "%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0 onderdelen, %1, gaan naar de prullenmand. Er wordt niets gewist — alles kan terug via Finder.";
 "%0 left nothing behind that Perch can see" = "%0 liet niets achter dat Perch kan zien";
 "%0 — %1 items, %2 in total" = "%0 — %1 onderdelen, %2 in totaal";
@@ -197,6 +228,11 @@
 "Search installed apps…" = "Zoek geïnstalleerde apps…";
 "matched by name only" = "alleen op naam herkend";
 "probably this app" = "waarschijnlijk deze app";
+"Permissions" = "Permissions";
+"Accessibility access, which the switcher needs to bring windows forward." = "Accessibility access, which the switcher needs to bring windows forward.";
+"For a bug report. No serial number, network name or address." = "For a bug report. No serial number, network name or address.";
+"How the readings sit in the menu bar. What each one shows is set on its own page." = "How the readings sit in the menu bar. What each one shows is set on its own page.";
+"Used by the menu bar figures and by every popup's dots, bars and charts." = "Used by the menu bar figures and by every popup's dots, bars and charts.";
 "Reset" = "Herstel";
 "Silent" = "Stil";
 "Settings" = "Instellingen";
@@ -255,6 +291,7 @@
 "Number of p-cores" = "%0 performance-cores";
 "Disks" = "Schijven";
 "Display" = "Beeldscherm";
+"Pick one or more. They sit side by side in the menu bar, in this order." = "Pick one or more. They sit side by side in the menu bar, in this order.";
 "1 second" = "1 seconde";
 "10 seconds" = "10 seconden";
 "3 seconds" = "3 seconden";
@@ -336,6 +373,13 @@
 "No AI assistants found on this Mac" = "Geen AI-assistenten gevonden op deze Mac";
 "%0 across %1 assistants" = "%0 over %1 assistenten";
 "Clean up %0?" = "%0 opschonen?";
+"%0 conversations" = "%0 conversations";
+"Unused for" = "Unused for";
+"%0 days" = "%0 days";
+"Any age" = "Any age";
+"%0 hidden by the %1-day rule" = "%0 hidden by the %1-day rule";
+"Everything the assistants hold has been used more recently than that." = "Everything the assistants hold has been used more recently than that.";
+"Show everything" = "Show everything";
 "%0 goes to the Bin. The assistants stay installed and signed in, and rebuild what they need." = "%0 gaat naar de prullenmand. De assistenten blijven geïnstalleerd en ingelogd, en bouwen weer op wat ze nodig hebben.";
 "%0 goes to the Bin, including conversation history. The assistants stay installed and signed in, but old sessions will not be there to resume." = "%0 gaat naar de prullenmand, inclusief gespreksgeschiedenis. De assistenten blijven geïnstalleerd en ingelogd, maar oude sessies zijn niet meer te hervatten.";
 "conversations and memory" = "gesprekken en geheugen";
@@ -353,14 +397,10 @@
 "Uninstall an app or tool" = "App of tool verwijderen";
 "Removes the app and the files it left around the system, or a command-line tool and its settings." = "Verwijdert de app en de bestanden die die achterliet, of een opdrachtregelprogramma en zijn instellingen.";
 "Uninstall…" = "Verwijderen…";
-
-// Monitor · RunawayApps
 "%0 is working hard" = "%0 werkt hard";
 "%0% CPU for %1 minutes." = "%0% CPU gedurende %1 minuten.";
 "One app stays this busy for 5 minutes" = "Eén app blijft 5 minuten zo druk";
 "Open Activity Monitor to see why." = "Open Activiteitenweergave om te zien waarom.";
-
-// Monitor · Throttling
 "The Mac slows down to cool off" = "De Mac vertraagt om af te koelen";
 "Throttling" = "Thermische beperking";
 "Throttling hard" = "Sterke beperking";
@@ -368,8 +408,6 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS heeft de processorsnelheid verlaagd. Drukke apps voelen trager aan totdat hij is afgekoeld.";
 "slowed down to cool off" = "vertraagd om af te koelen";
 "warming up" = "wordt warm";
-
-// Launcher · QuickSearch
 "Cancel" = "Annuleer";
 "Copied %0" = "%0 gekopieerd";
 "Empty Bin" = "Leeg prullenmand";
@@ -380,8 +418,6 @@
 "Sleep Display" = "Zet beeldscherm in sluimerstand";
 "Start Screen Saver" = "Start schermbeveiliging";
 "Toggle Dark Mode" = "Schakel donkere modus in/uit";
-
-// UI · ShortcutRecorder
 "Keyboard shortcut" = "Toetscombinatie";
 "Type shortcut…" = "Typ toetscombinatie…";
 "Record Shortcut" = "Neem toetscombinatie op";

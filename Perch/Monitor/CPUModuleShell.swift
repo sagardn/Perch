@@ -114,17 +114,16 @@ final class CPUSettingsPage: NSView {
         super.init(frame: .zero)
         self.translatesAutoresizingMaskIntoConstraints = false
 
-        let shapes = Controls.section(localized("Menu bar"),
-            self.styles.map { style in
-                Controls.row(style.title, Controls.toggle(self.shown.contains(style)) { on in
-                    if on {
-                        self.shown.insert(style)
-                    } else {
-                        self.shown.remove(style)
-                    }
-                    MenuBarStyles.store(Array(self.shown), for: "CPU")
-                })
-            })
+        let shapes = Controls.section(
+            localized("Menu bar"), symbol: "menubar.rectangle", tint: .systemBlue,
+            footer: localized("Pick one or more. They sit side by side in the menu bar, in this order."),
+            [Controls.shapes(self.styles, shown: self.shown, label: CPUModule().menuBarLabel,
+                             value: "42%",) { chosen in
+                self.shown = chosen
+                // In the order the tiles are laid out, not the order they
+                // were clicked, so the menu bar matches the page.
+                MenuBarStyles.store(self.styles.filter(chosen.contains), for: "CPU")
+            }])
 
         // One app on its own, not the machine: the case this is for was an
         // app holding 59% of a core while the total sat at a modest 30%.
@@ -137,7 +136,8 @@ final class CPUSettingsPage: NSView {
         })
         let throttling = Controls.row(localized("The Mac slows down to cool off"),
                                       Controls.toggle(Throttling.alertsEnabled) { Throttling.alertsEnabled = $0 })
-        let alerts = Controls.section(localized("Notify me when"),
+        let alerts = Controls.section(localized("Notify me when"), symbol: "bell.badge.fill",
+                                      tint: .systemRed,
             CPUThreshold.allCases.filter { $0.isAvailable }.map { threshold in
                 Controls.row(threshold.title,
                              Controls.threshold(on: threshold.isWatched,
@@ -150,7 +150,7 @@ final class CPUSettingsPage: NSView {
                 })
             } + [runaway, throttling])
 
-        let section = Controls.section(localized("CPU"), [
+        let section = Controls.section(localized("CPU"), symbol: "cpu.fill", tint: .systemBlue, [
             Controls.row(localized("Keyboard shortcut"), ShortcutRecorder(module: "CPU")),
             Controls.row(localized("Show temperature"),
                          Controls.toggle(CPUSettings.showsTemperature) { on in
@@ -171,6 +171,7 @@ final class CPUSettingsPage: NSView {
         let column = NSStackView(views: [section, shapes, alerts])
         column.orientation = .vertical
         column.alignment = .leading
+        column.spacing = 18
         column.edgeInsets = NSEdgeInsets(top: 44, left: 18, bottom: 18, right: 18)
         column.translatesAutoresizingMaskIntoConstraints = false
         addSubview(column)

@@ -79,7 +79,24 @@
 "Accelerators" = "شتاب‌دهنده‌ها";
 "Renderer · tiler" = "Renderer · tiler";
 "cores" = "هسته";
-"Largest files" = "بزرگ‌ترین پرونده‌ها";
+"Folders" = "Folders";
+"List" = "List";
+"%0 items" = "%0 items";
+"Disk Cleaner" = "Disk Cleaner";
+"Find what is taking the room" = "Find what is taking the room";
+"Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back." = "Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back.";
+"Scan" = "Scan";
+"Stop" = "Stop";
+"Rescan" = "Rescan";
+"Scanning…" = "Scanning…";
+"Scanning %0…" = "Scanning %0…";
+"files scanned" = "files scanned";
+"used" = "used";
+"%0 free of %1" = "%0 free of %1";
+"%0 files scanned in %1 s" = "%0 files scanned in %1 s";
+"%0 selected · %1" = "%0 selected · %1";
+"Select all" = "Select all";
+"Select none" = "Select none";
 "Looking…" = "در حال جستجو…";
 "Reveal" = "نمایش";
 "%0 items, %1 in total" = "%0 مورد، %1 در مجموع";
@@ -114,7 +131,6 @@
 "Network" = "شبکه";
 "Internet connection lost" = "اتصال اینترنت قطع شد";
 "Internet connection established" = "اتصال اینترنت برقرار شد";
-"Tell me when" = "به من بگو وقتی";
 "Connection comes or goes" = "اتصال برقرار یا قطع می‌شود";
 "Wi-Fi network changes" = "شبکهٔ Wi-Fi تغییر می‌کند";
 "Interface changes" = "رابط تغییر می‌کند";
@@ -138,6 +154,20 @@
 "Upload" = "بارگذاری";
 "Wi-Fi name" = "نام Wi-Fi";
 "Dashboard" = "داشبورد";
+"Network settings…" = "Network settings…";
+"Free up space…" = "Free up space…";
+"Light load" = "Light load";
+"Busy" = "Busy";
+"Heavy load" = "Heavy load";
+"Plenty of room" = "Plenty of room";
+"Filling up" = "Filling up";
+"Getting full" = "Getting full";
+"Almost full" = "Almost full";
+"Running hot" = "Running hot";
+"Too hot" = "Too hot";
+"Checking…" = "Checking…";
+"No internet" = "No internet";
+"No reading" = "No reading";
 "Idle" = "بیکار";
 "Process" = "فرایند";
 "Force Quit %0" = "خروج اجباری از %0";
@@ -189,6 +219,7 @@
 "Memory free" = "حافظهٔ آزاد";
 "Swap in use" = "Swap در حال استفاده";
 "Disk usage" = "مصرف دیسک";
+"Size unknown: macOS would not let Perch look inside" = "Size unknown: macOS would not let Perch look inside";
 "%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0 مورد، %1، به سطل زباله می‌رود. چیزی پاک نمی‌شود — همه‌چیز از Finder بازگردانی‌پذیر است.";
 "%0 left nothing behind that Perch can see" = "%0 چیزی که Perch ببیند برجای نگذاشت";
 "%0 — %1 items, %2 in total" = "%0 — %1 مورد، %2 در مجموع";
@@ -197,6 +228,11 @@
 "Search installed apps…" = "جستجوی برنامه‌های نصب‌شده…";
 "matched by name only" = "فقط با نام مطابقت دارد";
 "probably this app" = "احتمالاً همین برنامه";
+"Permissions" = "Permissions";
+"Accessibility access, which the switcher needs to bring windows forward." = "Accessibility access, which the switcher needs to bring windows forward.";
+"For a bug report. No serial number, network name or address." = "For a bug report. No serial number, network name or address.";
+"How the readings sit in the menu bar. What each one shows is set on its own page." = "How the readings sit in the menu bar. What each one shows is set on its own page.";
+"Used by the menu bar figures and by every popup's dots, bars and charts." = "Used by the menu bar figures and by every popup's dots, bars and charts.";
 "Reset" = "بازنشانی";
 "Silent" = "بی‌صدا";
 "Settings" = "تنظیمات";
@@ -255,6 +291,7 @@
 "Number of p-cores" = "%0 هستهٔ کارایی";
 "Disks" = "دیسک‌ها";
 "Display" = "نمایشگر";
+"Pick one or more. They sit side by side in the menu bar, in this order." = "Pick one or more. They sit side by side in the menu bar, in this order.";
 "1 second" = "۱ ثانیه";
 "10 seconds" = "۱۰ ثانیه";
 "3 seconds" = "۳ ثانیه";
@@ -336,6 +373,13 @@
 "No AI assistants found on this Mac" = "هیچ دستیار هوش مصنوعی در این Mac پیدا نشد";
 "%0 across %1 assistants" = "%0 در %1 دستیار";
 "Clean up %0?" = "%0 پاک‌سازی شود؟";
+"%0 conversations" = "%0 conversations";
+"Unused for" = "Unused for";
+"%0 days" = "%0 days";
+"Any age" = "Any age";
+"%0 hidden by the %1-day rule" = "%0 hidden by the %1-day rule";
+"Everything the assistants hold has been used more recently than that." = "Everything the assistants hold has been used more recently than that.";
+"Show everything" = "Show everything";
 "%0 goes to the Bin. The assistants stay installed and signed in, and rebuild what they need." = "%0 به سطل زباله می‌رود. دستیارها نصب و واردشده باقی می‌مانند و آنچه لازم دارند را دوباره می‌سازند.";
 "%0 goes to the Bin, including conversation history. The assistants stay installed and signed in, but old sessions will not be there to resume." = "%0 به سطل زباله می‌رود، از جمله تاریخچهٔ گفتگوها. دستیارها نصب و واردشده باقی می‌مانند، اما نشست‌های قدیمی قابل ادامه نخواهند بود.";
 "conversations and memory" = "گفتگوها و حافظه";
@@ -353,14 +397,10 @@
 "Uninstall an app or tool" = "حذف برنامه یا ابزار";
 "Removes the app and the files it left around the system, or a command-line tool and its settings." = "برنامه و فایل‌هایی که در سیستم گذاشته را حذف می‌کند، یا یک ابزار خط فرمان و تنظیماتش را.";
 "Uninstall…" = "حذف…";
-
-// Monitor · RunawayApps
 "%0 is working hard" = "%0 سخت در حال کار است";
 "%0% CPU for %1 minutes." = "%0٪ پردازنده به مدت %1 دقیقه.";
 "One app stays this busy for 5 minutes" = "یک برنامه ۵ دقیقه این‌قدر مشغول بماند";
 "Open Activity Monitor to see why." = "برای دیدن علت، Activity Monitor را باز کنید.";
-
-// Monitor · Throttling
 "The Mac slows down to cool off" = "Mac برای خنک شدن کند می‌شود";
 "Throttling" = "محدودسازی حرارتی";
 "Throttling hard" = "محدودسازی شدید";
@@ -368,8 +408,6 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS سرعت پردازنده را کاهش داده است. برنامه‌های پرکار تا خنک شدن آن کندتر به نظر می‌رسند.";
 "slowed down to cool off" = "برای خنک شدن کند شده";
 "warming up" = "در حال گرم شدن";
-
-// Launcher · QuickSearch
 "Cancel" = "لغو";
 "Copied %0" = "%0 کپی شد";
 "Empty Bin" = "خالی کردن سطل زباله";
@@ -380,8 +418,6 @@
 "Sleep Display" = "خواباندن نمایشگر";
 "Start Screen Saver" = "شروع محافظ صفحه";
 "Toggle Dark Mode" = "تغییر حالت تیره";
-
-// UI · ShortcutRecorder
 "Keyboard shortcut" = "میان‌بر صفحه‌کلید";
 "Type shortcut…" = "میان‌بر را وارد کنید…";
 "Record Shortcut" = "ضبط میان‌بر";

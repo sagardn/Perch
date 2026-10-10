@@ -79,7 +79,24 @@
 "Accelerators" = "Bộ tăng tốc";
 "Renderer · tiler" = "Renderer · tiler";
 "cores" = "lõi";
-"Largest files" = "Tệp lớn nhất";
+"Folders" = "Folders";
+"List" = "List";
+"%0 items" = "%0 items";
+"Disk Cleaner" = "Disk Cleaner";
+"Find what is taking the room" = "Find what is taking the room";
+"Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back." = "Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back.";
+"Scan" = "Scan";
+"Stop" = "Stop";
+"Rescan" = "Rescan";
+"Scanning…" = "Scanning…";
+"Scanning %0…" = "Scanning %0…";
+"files scanned" = "files scanned";
+"used" = "used";
+"%0 free of %1" = "%0 free of %1";
+"%0 files scanned in %1 s" = "%0 files scanned in %1 s";
+"%0 selected · %1" = "%0 selected · %1";
+"Select all" = "Select all";
+"Select none" = "Select none";
 "Looking…" = "Đang tìm…";
 "Reveal" = "Hiện";
 "%0 items, %1 in total" = "%0 mục, tổng %1";
@@ -114,7 +131,6 @@
 "Network" = "Mạng";
 "Internet connection lost" = "Mất kết nối Internet";
 "Internet connection established" = "Đã kết nối Internet";
-"Tell me when" = "Báo cho tôi khi";
 "Connection comes or goes" = "Có hoặc mất kết nối";
 "Wi-Fi network changes" = "Mạng Wi-Fi thay đổi";
 "Interface changes" = "Giao diện mạng thay đổi";
@@ -138,6 +154,20 @@
 "Upload" = "Tải lên";
 "Wi-Fi name" = "Tên Wi-Fi";
 "Dashboard" = "Bảng điều khiển";
+"Network settings…" = "Network settings…";
+"Free up space…" = "Free up space…";
+"Light load" = "Light load";
+"Busy" = "Busy";
+"Heavy load" = "Heavy load";
+"Plenty of room" = "Plenty of room";
+"Filling up" = "Filling up";
+"Getting full" = "Getting full";
+"Almost full" = "Almost full";
+"Running hot" = "Running hot";
+"Too hot" = "Too hot";
+"Checking…" = "Checking…";
+"No internet" = "No internet";
+"No reading" = "No reading";
 "Idle" = "Rảnh";
 "Process" = "Tiến trình";
 "Force Quit %0" = "Buộc thoát %0";
@@ -189,6 +219,7 @@
 "Memory free" = "Bộ nhớ trống";
 "Swap in use" = "Hoán đổi đang dùng";
 "Disk usage" = "Mức sử dụng ổ đĩa";
+"Size unknown: macOS would not let Perch look inside" = "Size unknown: macOS would not let Perch look inside";
 "%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0 mục, %1, vào Thùng rác. Không gì bị xóa — mọi thứ khôi phục được từ Finder.";
 "%0 left nothing behind that Perch can see" = "%0 không để lại gì mà Perch thấy được";
 "%0 — %1 items, %2 in total" = "%0 — %1 mục, tổng %2";
@@ -197,6 +228,11 @@
 "Search installed apps…" = "Tìm ứng dụng đã cài…";
 "matched by name only" = "chỉ khớp theo tên";
 "probably this app" = "có lẽ là ứng dụng này";
+"Permissions" = "Permissions";
+"Accessibility access, which the switcher needs to bring windows forward." = "Accessibility access, which the switcher needs to bring windows forward.";
+"For a bug report. No serial number, network name or address." = "For a bug report. No serial number, network name or address.";
+"How the readings sit in the menu bar. What each one shows is set on its own page." = "How the readings sit in the menu bar. What each one shows is set on its own page.";
+"Used by the menu bar figures and by every popup's dots, bars and charts." = "Used by the menu bar figures and by every popup's dots, bars and charts.";
 "Reset" = "Đặt lại";
 "Silent" = "Im lặng";
 "Settings" = "Cài đặt";
@@ -255,6 +291,7 @@
 "Number of p-cores" = "%0 lõi hiệu năng";
 "Disks" = "Ổ đĩa";
 "Display" = "Màn hình";
+"Pick one or more. They sit side by side in the menu bar, in this order." = "Pick one or more. They sit side by side in the menu bar, in this order.";
 "1 second" = "1 giây";
 "10 seconds" = "10 giây";
 "3 seconds" = "3 giây";
@@ -336,6 +373,13 @@
 "No AI assistants found on this Mac" = "Không tìm thấy trợ lý AI nào trên máy Mac này";
 "%0 across %1 assistants" = "%0 trên %1 trợ lý";
 "Clean up %0?" = "Dọn %0?";
+"%0 conversations" = "%0 conversations";
+"Unused for" = "Unused for";
+"%0 days" = "%0 days";
+"Any age" = "Any age";
+"%0 hidden by the %1-day rule" = "%0 hidden by the %1-day rule";
+"Everything the assistants hold has been used more recently than that." = "Everything the assistants hold has been used more recently than that.";
+"Show everything" = "Show everything";
 "%0 goes to the Bin. The assistants stay installed and signed in, and rebuild what they need." = "%0 vào Thùng rác. Các trợ lý vẫn được cài và đăng nhập, và dựng lại những gì cần.";
 "%0 goes to the Bin, including conversation history. The assistants stay installed and signed in, but old sessions will not be there to resume." = "%0 vào Thùng rác, kể cả lịch sử trò chuyện. Các trợ lý vẫn được cài và đăng nhập, nhưng không thể tiếp tục các phiên cũ.";
 "conversations and memory" = "trò chuyện và bộ nhớ";
@@ -353,14 +397,10 @@
 "Uninstall an app or tool" = "Gỡ ứng dụng hoặc công cụ";
 "Removes the app and the files it left around the system, or a command-line tool and its settings." = "Gỡ ứng dụng và các tệp nó để lại trong hệ thống, hoặc một công cụ dòng lệnh cùng thiết lập của nó.";
 "Uninstall…" = "Gỡ…";
-
-// Monitor · RunawayApps
 "%0 is working hard" = "%0 đang hoạt động nặng";
 "%0% CPU for %1 minutes." = "%0% CPU trong %1 phút.";
 "One app stays this busy for 5 minutes" = "Một ứng dụng bận như vậy trong 5 phút";
 "Open Activity Monitor to see why." = "Mở Giám sát hoạt động để xem lý do.";
-
-// Monitor · Throttling
 "The Mac slows down to cool off" = "Mac chạy chậm lại để hạ nhiệt";
 "Throttling" = "Bóp xung";
 "Throttling hard" = "Bóp xung mạnh";
@@ -368,8 +408,6 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS đã giảm tốc độ bộ xử lý. Các ứng dụng nặng sẽ chậm hơn cho đến khi máy nguội.";
 "slowed down to cool off" = "đã chậm lại để hạ nhiệt";
 "warming up" = "đang nóng lên";
-
-// Launcher · QuickSearch
 "Cancel" = "Hủy";
 "Copied %0" = "Đã sao chép %0";
 "Empty Bin" = "Dọn sạch Thùng rác";
@@ -380,8 +418,6 @@
 "Sleep Display" = "Cho màn hình ngủ";
 "Start Screen Saver" = "Bắt đầu trình bảo vệ màn hình";
 "Toggle Dark Mode" = "Bật/tắt Chế độ tối";
-
-// UI · ShortcutRecorder
 "Keyboard shortcut" = "Phím tắt bàn phím";
 "Type shortcut…" = "Nhập phím tắt…";
 "Record Shortcut" = "Ghi phím tắt";

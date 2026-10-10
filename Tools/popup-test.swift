@@ -3,7 +3,7 @@
 //
 //  Exercises the words the popups lead with.
 //
-//  Run:  cat Perch/UI/Palette.swift Perch/UI/Localized.swift \
+//  Run:  cat Perch/UI/Palette.swift Perch/UI/Localized.swift Perch/UI/Events.swift \
 //            Perch/Settings/Preferences.swift Perch/Monitor/MenuBarStyle.swift \
 //            Perch/Monitor/MenuBarWidget.swift Perch/Monitor/Readings.swift \
 //            Perch/Monitor/ProcessNetwork.swift Perch/UI/Alert.swift \
@@ -27,6 +27,30 @@ func check(_ name: String, _ condition: Bool) {
         print("  FAIL \(name)")
         failures += 1
     }
+}
+
+print("StatusWords.disk")
+
+do {
+    check("a half-empty disk has plenty of room", StatusWords.disk(0.5) == "Plenty of room")
+    check("just under three quarters still does", StatusWords.disk(0.749) == "Plenty of room")
+    // The bug: 87% read "Plenty of room".
+    check("87% is filling up, not plenty", StatusWords.disk(0.87) == "Filling up")
+    check("and its dot is still calm",
+          MenuBarReading.Severity.ofDisk(0.87) == .calm)
+    check("at the warning band it is getting full", StatusWords.disk(0.90) == "Getting full")
+    check("at the critical band it is almost full", StatusWords.disk(0.95) == "Almost full")
+    check("a NaN prints a dash", StatusWords.disk(.nan) == "—")
+    // The word may add a step inside calm, but never crosses the colour.
+    var crossed = false
+    for step in 0...100 {
+        let used = Double(step) / 100
+        let severity = MenuBarReading.Severity.ofDisk(used)
+        let word = StatusWords.disk(used)
+        let calmWords: Set<String> = ["Plenty of room", "Filling up"]
+        if (severity == .calm) != calmWords.contains(word) { crossed = true }
+    }
+    check("every calm reading gets a calm word, and only those", !crossed)
 }
 
 print("StatusWords.load")

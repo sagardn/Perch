@@ -79,7 +79,24 @@
 "Accelerators" = "Akselerator";
 "Renderer · tiler" = "Renderer · tiler";
 "cores" = "inti";
-"Largest files" = "Berkas terbesar";
+"Folders" = "Folders";
+"List" = "List";
+"%0 items" = "%0 items";
+"Disk Cleaner" = "Disk Cleaner";
+"Find what is taking the room" = "Find what is taking the room";
+"Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back." = "Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back.";
+"Scan" = "Scan";
+"Stop" = "Stop";
+"Rescan" = "Rescan";
+"Scanning…" = "Scanning…";
+"Scanning %0…" = "Scanning %0…";
+"files scanned" = "files scanned";
+"used" = "used";
+"%0 free of %1" = "%0 free of %1";
+"%0 files scanned in %1 s" = "%0 files scanned in %1 s";
+"%0 selected · %1" = "%0 selected · %1";
+"Select all" = "Select all";
+"Select none" = "Select none";
 "Looking…" = "Mencari…";
 "Reveal" = "Tampilkan";
 "%0 items, %1 in total" = "%0 item, %1 total";
@@ -114,7 +131,6 @@
 "Network" = "Jaringan";
 "Internet connection lost" = "Koneksi internet terputus";
 "Internet connection established" = "Koneksi internet tersambung";
-"Tell me when" = "Beri tahu saya saat";
 "Connection comes or goes" = "Koneksi tersambung atau terputus";
 "Wi-Fi network changes" = "Jaringan Wi-Fi berubah";
 "Interface changes" = "Antarmuka berubah";
@@ -138,6 +154,20 @@
 "Upload" = "Unggah";
 "Wi-Fi name" = "Nama Wi-Fi";
 "Dashboard" = "Dasbor";
+"Network settings…" = "Network settings…";
+"Free up space…" = "Free up space…";
+"Light load" = "Light load";
+"Busy" = "Busy";
+"Heavy load" = "Heavy load";
+"Plenty of room" = "Plenty of room";
+"Filling up" = "Filling up";
+"Getting full" = "Getting full";
+"Almost full" = "Almost full";
+"Running hot" = "Running hot";
+"Too hot" = "Too hot";
+"Checking…" = "Checking…";
+"No internet" = "No internet";
+"No reading" = "No reading";
 "Idle" = "Diam";
 "Process" = "Proses";
 "Force Quit %0" = "Paksa keluar %0";
@@ -189,6 +219,7 @@
 "Memory free" = "Memori kosong";
 "Swap in use" = "Swap terpakai";
 "Disk usage" = "Penggunaan disk";
+"Size unknown: macOS would not let Perch look inside" = "Size unknown: macOS would not let Perch look inside";
 "%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0 item, %1, masuk Tong Sampah. Tidak ada yang dihapus — semua bisa dikembalikan dari Finder.";
 "%0 left nothing behind that Perch can see" = "%0 tidak meninggalkan apa pun yang bisa dilihat Perch";
 "%0 — %1 items, %2 in total" = "%0 — %1 item, %2 total";
@@ -197,6 +228,11 @@
 "Search installed apps…" = "Cari aplikasi terpasang…";
 "matched by name only" = "cocok hanya berdasarkan nama";
 "probably this app" = "kemungkinan aplikasi ini";
+"Permissions" = "Permissions";
+"Accessibility access, which the switcher needs to bring windows forward." = "Accessibility access, which the switcher needs to bring windows forward.";
+"For a bug report. No serial number, network name or address." = "For a bug report. No serial number, network name or address.";
+"How the readings sit in the menu bar. What each one shows is set on its own page." = "How the readings sit in the menu bar. What each one shows is set on its own page.";
+"Used by the menu bar figures and by every popup's dots, bars and charts." = "Used by the menu bar figures and by every popup's dots, bars and charts.";
 "Reset" = "Atur ulang";
 "Silent" = "Senyap";
 "Settings" = "Pengaturan";
@@ -255,6 +291,7 @@
 "Number of p-cores" = "%0 inti performa";
 "Disks" = "Disk";
 "Display" = "Layar";
+"Pick one or more. They sit side by side in the menu bar, in this order." = "Pick one or more. They sit side by side in the menu bar, in this order.";
 "1 second" = "1 detik";
 "10 seconds" = "10 detik";
 "3 seconds" = "3 detik";
@@ -336,6 +373,13 @@
 "No AI assistants found on this Mac" = "Tidak ada asisten AI di Mac ini";
 "%0 across %1 assistants" = "%0 pada %1 asisten";
 "Clean up %0?" = "Bersihkan %0?";
+"%0 conversations" = "%0 conversations";
+"Unused for" = "Unused for";
+"%0 days" = "%0 days";
+"Any age" = "Any age";
+"%0 hidden by the %1-day rule" = "%0 hidden by the %1-day rule";
+"Everything the assistants hold has been used more recently than that." = "Everything the assistants hold has been used more recently than that.";
+"Show everything" = "Show everything";
 "%0 goes to the Bin. The assistants stay installed and signed in, and rebuild what they need." = "%0 masuk Tong Sampah. Asisten tetap terpasang dan masuk akun, dan membangun kembali yang diperlukan.";
 "%0 goes to the Bin, including conversation history. The assistants stay installed and signed in, but old sessions will not be there to resume." = "%0 masuk Tong Sampah, termasuk riwayat percakapan. Asisten tetap terpasang dan masuk akun, tetapi sesi lama tidak bisa dilanjutkan.";
 "conversations and memory" = "percakapan dan memori";
@@ -353,14 +397,10 @@
 "Uninstall an app or tool" = "Hapus aplikasi atau alat";
 "Removes the app and the files it left around the system, or a command-line tool and its settings." = "Menghapus aplikasi dan berkas yang ditinggalkannya di sistem, atau alat baris perintah beserta pengaturannya.";
 "Uninstall…" = "Hapus…";
-
-// Monitor · RunawayApps
 "%0 is working hard" = "%0 bekerja keras";
 "%0% CPU for %1 minutes." = "%0% CPU selama %1 menit.";
 "One app stays this busy for 5 minutes" = "Satu app tetap sesibuk ini selama 5 menit";
 "Open Activity Monitor to see why." = "Buka Monitor Aktivitas untuk melihat alasannya.";
-
-// Monitor · Throttling
 "The Mac slows down to cool off" = "Mac melambat untuk mendinginkan diri";
 "Throttling" = "Throttling";
 "Throttling hard" = "Throttling berat";
@@ -368,8 +408,6 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS telah menurunkan kecepatan prosesor. App yang sibuk akan terasa lebih lambat hingga Mac dingin.";
 "slowed down to cool off" = "diperlambat agar dingin";
 "warming up" = "mulai panas";
-
-// Launcher · QuickSearch
 "Cancel" = "Batalkan";
 "Copied %0" = "Disalin: %0";
 "Empty Bin" = "Kosongkan Tong Sampah";
@@ -380,8 +418,6 @@
 "Sleep Display" = "Tidurkan Layar";
 "Start Screen Saver" = "Mulai Penghemat Layar";
 "Toggle Dark Mode" = "Alihkan Mode Gelap";
-
-// UI · ShortcutRecorder
 "Keyboard shortcut" = "Pintasan papan ketik";
 "Type shortcut…" = "Ketik pintasan…";
 "Record Shortcut" = "Rekam Pintasan";

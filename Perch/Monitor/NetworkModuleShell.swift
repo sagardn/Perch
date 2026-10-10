@@ -208,7 +208,7 @@ final class NetworkSettingsPage: NSView {
         super.init(frame: .zero)
         self.translatesAutoresizingMaskIntoConstraints = false
 
-        let section = Controls.section(localized("Network"), [
+        let section = Controls.section(localized("Network"), symbol: "network", tint: .systemTeal, [
             Controls.row(localized("Keyboard shortcut"), ShortcutRecorder(module: "Network")),
             Controls.row(localized("Top processes"), Controls.choice(
                 [("None", "0"), ("5", "5"), ("8", "8")],
@@ -221,18 +221,19 @@ final class NetworkSettingsPage: NSView {
                          }),
         ])
 
-        let shapes = Controls.section(localized("Menu bar"), styles.map { style in
-            Controls.row(style.title, Controls.toggle(self.shown.contains(style)) { on in
-                if on {
-                    self.shown.insert(style)
-                } else {
-                    self.shown.remove(style)
-                }
-                MenuBarStyles.store(Array(self.shown), for: "Network")
-            })
-        })
+        let shapes = Controls.section(
+            localized("Menu bar"), symbol: "menubar.rectangle", tint: .systemBlue,
+            footer: localized("Pick one or more. They sit side by side in the menu bar, in this order."),
+            [Controls.shapes(self.styles, shown: self.shown, label: "NET",
+                             value: "1.2 MB/s",) { chosen in
+                self.shown = chosen
+                // In the order the tiles are laid out, not the order they
+                // were clicked, so the menu bar matches the page.
+                MenuBarStyles.store(self.styles.filter(chosen.contains), for: "Network")
+            }])
 
-        let alerts = Controls.section(localized("Tell me when"),
+        let alerts = Controls.section(localized("Notify me when"), symbol: "bell.badge.fill",
+                                      tint: .systemRed,
             NetworkAlert.allCases.map { alert in
                 Controls.row(alert.title, Controls.toggle(alert.isWatched) { on in
                     alert.isWatched = on
@@ -242,6 +243,7 @@ final class NetworkSettingsPage: NSView {
         let column = NSStackView(views: [section, shapes, alerts])
         column.orientation = .vertical
         column.alignment = .leading
+        column.spacing = 18
         column.edgeInsets = NSEdgeInsets(top: 44, left: 18, bottom: 18, right: 18)
         column.translatesAutoresizingMaskIntoConstraints = false
         addSubview(column)

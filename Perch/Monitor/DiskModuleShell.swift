@@ -143,7 +143,8 @@ final class DiskSettingsPage: NSView {
             choices.append(("\(chosen) (\(localized("not mounted")))", chosen))
         }
 
-        let section = Controls.section(localized("Disk"), [
+        let section = Controls.section(localized("Disk"), symbol: "internaldrive.fill",
+                                       tint: .systemOrange, [
             Controls.row(localized("Keyboard shortcut"), ShortcutRecorder(module: "Disk")),
             Controls.row(localized("Watch"), Controls.choice(choices, selected: chosen) { value in
                 DiskSettings.watchedVolume = value
@@ -159,18 +160,18 @@ final class DiskSettingsPage: NSView {
                 }),
         ])
 
-        let shapes = Controls.section(localized("Menu bar"), styles.map { style in
-            Controls.row(style.title, Controls.toggle(self.shown.contains(style)) { on in
-                if on {
-                    self.shown.insert(style)
-                } else {
-                    self.shown.remove(style)
-                }
-                MenuBarStyles.store(Array(self.shown), for: "Disk")
-            })
-        })
+        let shapes = Controls.section(
+            localized("Menu bar"), symbol: "menubar.rectangle", tint: .systemBlue,
+            footer: localized("Pick one or more. They sit side by side in the menu bar, in this order."),
+            [Controls.shapes(styles, shown: shown, label: DiskModule().menuBarLabel) { chosen in
+                self.shown = chosen
+                // In the order the tiles are laid out, not the order they
+                // were clicked, so the menu bar matches the page.
+                MenuBarStyles.store(self.styles.filter(chosen.contains), for: "Disk")
+            }])
 
-        let alerts = Controls.section(localized("Notify me when"),
+        let alerts = Controls.section(localized("Notify me when"), symbol: "bell.badge.fill",
+                                      tint: .systemRed,
             DiskThreshold.allCases.map { threshold in
                 Controls.row(threshold.title,
                              Controls.threshold(on: threshold.isWatched,
@@ -186,6 +187,7 @@ final class DiskSettingsPage: NSView {
         let column = NSStackView(views: [section, shapes, alerts])
         column.orientation = .vertical
         column.alignment = .leading
+        column.spacing = 18
         column.edgeInsets = NSEdgeInsets(top: 44, left: 18, bottom: 18, right: 18)
         column.translatesAutoresizingMaskIntoConstraints = false
         addSubview(column)

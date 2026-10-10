@@ -79,7 +79,24 @@
 "Accelerators" = "Acceleradors";
 "Renderer · tiler" = "Renderitzador · tiler";
 "cores" = "nuclis";
-"Largest files" = "Fitxers més grans";
+"Folders" = "Folders";
+"List" = "List";
+"%0 items" = "%0 items";
+"Disk Cleaner" = "Disk Cleaner";
+"Find what is taking the room" = "Find what is taking the room";
+"Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back." = "Perch looks through Downloads, Documents, Desktop, Movies, Music and Pictures for the largest files. Nothing is deleted: what you choose goes to the Bin, where it can be put back.";
+"Scan" = "Scan";
+"Stop" = "Stop";
+"Rescan" = "Rescan";
+"Scanning…" = "Scanning…";
+"Scanning %0…" = "Scanning %0…";
+"files scanned" = "files scanned";
+"used" = "used";
+"%0 free of %1" = "%0 free of %1";
+"%0 files scanned in %1 s" = "%0 files scanned in %1 s";
+"%0 selected · %1" = "%0 selected · %1";
+"Select all" = "Select all";
+"Select none" = "Select none";
 "Looking…" = "Cercant…";
 "Reveal" = "Mostra";
 "%0 items, %1 in total" = "%0 ítems, %1 en total";
@@ -114,7 +131,6 @@
 "Network" = "Xarxa";
 "Internet connection lost" = "S'ha perdut la connexió a Internet";
 "Internet connection established" = "S'ha establert la connexió a Internet";
-"Tell me when" = "Digues-me quan";
 "Connection comes or goes" = "La connexió apareix o desapareix";
 "Wi-Fi network changes" = "Canvia la xarxa Wi-Fi";
 "Interface changes" = "Canvia la interfície";
@@ -138,6 +154,20 @@
 "Upload" = "Pujada";
 "Wi-Fi name" = "Nom de la Wi-Fi";
 "Dashboard" = "Tauler";
+"Network settings…" = "Network settings…";
+"Free up space…" = "Free up space…";
+"Light load" = "Light load";
+"Busy" = "Busy";
+"Heavy load" = "Heavy load";
+"Plenty of room" = "Plenty of room";
+"Filling up" = "Filling up";
+"Getting full" = "Getting full";
+"Almost full" = "Almost full";
+"Running hot" = "Running hot";
+"Too hot" = "Too hot";
+"Checking…" = "Checking…";
+"No internet" = "No internet";
+"No reading" = "No reading";
 "Idle" = "Inactiu";
 "Process" = "Procés";
 "Force Quit %0" = "Forçar la sortida de %0";
@@ -189,6 +219,7 @@
 "Memory free" = "Memòria lliure";
 "Swap in use" = "Intercanvi en ús";
 "Disk usage" = "Ús del disc";
+"Size unknown: macOS would not let Perch look inside" = "Size unknown: macOS would not let Perch look inside";
 "%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0 ítems, %1, van a la paperera. No s'esborra res: tot es pot recuperar des del Finder.";
 "%0 left nothing behind that Perch can see" = "%0 no ha deixat res que el Perch pugui veure";
 "%0 — %1 items, %2 in total" = "%0 — %1 ítems, %2 en total";
@@ -197,6 +228,11 @@
 "Search installed apps…" = "Cerca apps instal·lades…";
 "matched by name only" = "coincideix només pel nom";
 "probably this app" = "probablement aquesta app";
+"Permissions" = "Permissions";
+"Accessibility access, which the switcher needs to bring windows forward." = "Accessibility access, which the switcher needs to bring windows forward.";
+"For a bug report. No serial number, network name or address." = "For a bug report. No serial number, network name or address.";
+"How the readings sit in the menu bar. What each one shows is set on its own page." = "How the readings sit in the menu bar. What each one shows is set on its own page.";
+"Used by the menu bar figures and by every popup's dots, bars and charts." = "Used by the menu bar figures and by every popup's dots, bars and charts.";
 "Reset" = "Restableix";
 "Silent" = "Silenciós";
 "Settings" = "Configuració";
@@ -255,6 +291,7 @@
 "Number of p-cores" = "%0 nuclis de rendiment";
 "Disks" = "Discs";
 "Display" = "Pantalla";
+"Pick one or more. They sit side by side in the menu bar, in this order." = "Pick one or more. They sit side by side in the menu bar, in this order.";
 "1 second" = "1 segon";
 "10 seconds" = "10 segons";
 "3 seconds" = "3 segons";
@@ -336,6 +373,13 @@
 "No AI assistants found on this Mac" = "No s'ha trobat cap assistent d'IA en aquest Mac";
 "%0 across %1 assistants" = "%0 en %1 assistents";
 "Clean up %0?" = "Voleu netejar %0?";
+"%0 conversations" = "%0 conversations";
+"Unused for" = "Unused for";
+"%0 days" = "%0 days";
+"Any age" = "Any age";
+"%0 hidden by the %1-day rule" = "%0 hidden by the %1-day rule";
+"Everything the assistants hold has been used more recently than that." = "Everything the assistants hold has been used more recently than that.";
+"Show everything" = "Show everything";
 "%0 goes to the Bin. The assistants stay installed and signed in, and rebuild what they need." = "%0 va a la paperera. Els assistents segueixen instal·lats i amb la sessió iniciada, i refan el que els calgui.";
 "%0 goes to the Bin, including conversation history. The assistants stay installed and signed in, but old sessions will not be there to resume." = "%0 va a la paperera, inclòs l'historial de converses. Els assistents segueixen instal·lats i amb la sessió iniciada, però les sessions antigues no es podran reprendre.";
 "conversations and memory" = "converses i memòria";
@@ -353,14 +397,10 @@
 "Uninstall an app or tool" = "Desinstal·la una app o eina";
 "Removes the app and the files it left around the system, or a command-line tool and its settings." = "Elimina l'app i els fitxers que ha deixat al sistema, o una eina de línia d'ordres i la seva configuració.";
 "Uninstall…" = "Desinstal·la…";
-
-// Monitor · RunawayApps
 "%0 is working hard" = "%0 està treballant molt";
 "%0% CPU for %1 minutes." = "%0% de CPU durant %1 minuts.";
 "One app stays this busy for 5 minutes" = "Una app es manté així d'ocupada durant 5 minuts";
 "Open Activity Monitor to see why." = "Obre el Monitor d'Activitat per veure per què.";
-
-// Monitor · Throttling
 "The Mac slows down to cool off" = "El Mac s’alenteix per refredar-se";
 "Throttling" = "Limitació tèrmica";
 "Throttling hard" = "Limitació intensa";
@@ -368,8 +408,6 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "El macOS ha reduït la velocitat del processador. Les apps ocupades aniran més lentes fins que es refredi.";
 "slowed down to cool off" = "alentit per refredar-se";
 "warming up" = "escalfant-se";
-
-// Launcher · QuickSearch
 "Cancel" = "Cancel·lar";
 "Copied %0" = "S’ha copiat %0";
 "Empty Bin" = "Buidar la paperera";
@@ -380,8 +418,6 @@
 "Sleep Display" = "Posar la pantalla en repòs";
 "Start Screen Saver" = "Iniciar el protector de pantalla";
 "Toggle Dark Mode" = "Activar o desactivar el mode fosc";
-
-// UI · ShortcutRecorder
 "Keyboard shortcut" = "Drecera de teclat";
 "Type shortcut…" = "Escriu la drecera…";
 "Record Shortcut" = "Enregistrar drecera";
