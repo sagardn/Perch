@@ -58,6 +58,8 @@
 "Space macOS can reclaim" = "macOS が解放できる容量";
 "Find large files…" = "大きいファイルを探す…";
 "What is taking the room" = "容量を使っているもの";
+"An app you no longer want" = "もう使わない App";
+"Remove an app…" = "App を削除…";
 "Format" = "フォーマット";
 "Used" = "使用済み";
 "Free" = "空き";
@@ -190,6 +192,15 @@
 "Memory free" = "空きメモリ";
 "Swap in use" = "使用中のスワップ";
 "Disk usage" = "ディスク使用率";
+"%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0 項目、%1 がゴミ箱に入ります。消去はされません — すべて Finder から戻せます。";
+"%0 left nothing behind that Perch can see" = "%0 は Perch から見える残留物を残しませんでした";
+"%0 — %1 items, %2 in total" = "%0 — %1 項目、合計 %2";
+"Pick an app to see what it left behind" = "App を選ぶと残したものが表示されます";
+"Remove %0?" = "%0 を削除しますか？";
+"Remove an app" = "App を削除";
+"Search installed apps…" = "インストール済みの App を検索…";
+"matched by name only" = "名前だけで一致";
+"probably this app" = "おそらくこの App";
 "Reset" = "リセット";
 "Silent" = "サイレント";
 "Settings" = "設定";

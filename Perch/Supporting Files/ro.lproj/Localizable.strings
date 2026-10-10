@@ -58,6 +58,8 @@
 "Space macOS can reclaim" = "Spațiu pe care macOS îl poate recupera";
 "Find large files…" = "Găsește fișiere mari…";
 "What is taking the room" = "Ce ocupă spațiul";
+"An app you no longer want" = "O aplicație pe care nu o mai vrei";
+"Remove an app…" = "Elimină o aplicație…";
 "Format" = "Format";
 "Used" = "Utilizat";
 "Free" = "Liber";
@@ -190,6 +192,15 @@
 "Memory free" = "Memorie liberă";
 "Swap in use" = "Swap utilizat";
 "Disk usage" = "Utilizare disc";
+"%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0 elemente, %1, merg la coș. Nimic nu se șterge — totul poate fi pus la loc din Finder.";
+"%0 left nothing behind that Perch can see" = "%0 nu a lăsat nimic pe care Perch să îl vadă";
+"%0 — %1 items, %2 in total" = "%0 — %1 elemente, %2 în total";
+"Pick an app to see what it left behind" = "Alege o aplicație ca să vezi ce a lăsat în urmă";
+"Remove %0?" = "Elimini %0?";
+"Remove an app" = "Elimină o aplicație";
+"Search installed apps…" = "Caută aplicații instalate…";
+"matched by name only" = "potrivit doar după nume";
+"probably this app" = "probabil această aplicație";
 "Reset" = "Resetează";
 "Silent" = "Silențios";
 "Settings" = "Configurări";

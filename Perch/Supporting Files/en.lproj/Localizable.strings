@@ -70,6 +70,8 @@
 "Space macOS can reclaim" = "Space macOS can reclaim";
 "Find large files…" = "Find large files…";
 "What is taking the room" = "What is taking the room";
+"An app you no longer want" = "An app you no longer want";
+"Remove an app…" = "Remove an app…";
 
 // Monitor · DiskPopup
 "Format" = "Format";
@@ -246,6 +248,17 @@
 "Memory free" = "Memory free";
 "Swap in use" = "Swap in use";
 "Disk usage" = "Disk usage";
+
+// Monitor · UninstallWindow
+"%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder.";
+"%0 left nothing behind that Perch can see" = "%0 left nothing behind that Perch can see";
+"%0 — %1 items, %2 in total" = "%0 — %1 items, %2 in total";
+"Pick an app to see what it left behind" = "Pick an app to see what it left behind";
+"Remove %0?" = "Remove %0?";
+"Remove an app" = "Remove an app";
+"Search installed apps…" = "Search installed apps…";
+"matched by name only" = "matched by name only";
+"probably this app" = "probably this app";
 
 // Settings · GeneralPane
 "Reset" = "Reset";

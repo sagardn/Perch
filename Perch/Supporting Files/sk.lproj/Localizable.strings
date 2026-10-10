@@ -58,6 +58,8 @@
 "Space macOS can reclaim" = "Miesto, ktoré môže macOS uvoľniť";
 "Find large files…" = "Nájsť veľké súbory…";
 "What is taking the room" = "Čo zaberá miesto";
+"An app you no longer want" = "Aplikácia, ktorú už nechcete";
+"Remove an app…" = "Odstrániť aplikáciu…";
 "Format" = "Formát";
 "Used" = "Použité";
 "Free" = "Voľné";
@@ -190,6 +192,15 @@
 "Memory free" = "Voľná pamäť";
 "Swap in use" = "Použitý swap";
 "Disk usage" = "Využitie disku";
+"%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0 položiek, %1, pôjde do koša. Nič sa nemaže – všetko sa dá vrátiť z Findera.";
+"%0 left nothing behind that Perch can see" = "%0 nenechala nič, čo Perch vidí";
+"%0 — %1 items, %2 in total" = "%0 — %1 položiek, %2 celkovo";
+"Pick an app to see what it left behind" = "Vyberte aplikáciu a uvidíte, čo po sebe nechala";
+"Remove %0?" = "Odstrániť %0?";
+"Remove an app" = "Odstrániť aplikáciu";
+"Search installed apps…" = "Hľadať nainštalované aplikácie…";
+"matched by name only" = "nájdené len podľa názvu";
+"probably this app" = "pravdepodobne táto aplikácia";
 "Reset" = "Resetovať";
 "Silent" = "Potichu";
 "Settings" = "Nastavenia";

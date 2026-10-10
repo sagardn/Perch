@@ -58,6 +58,8 @@
 "Space macOS can reclaim" = "macOS மீட்டெடுக்கக்கூடிய இடம்";
 "Find large files…" = "பெரிய கோப்புகளைக் கண்டறி…";
 "What is taking the room" = "இடத்தை எது எடுக்கிறது";
+"An app you no longer want" = "இனி வேண்டாத பயன்பாடு";
+"Remove an app…" = "ஒரு பயன்பாட்டை நீக்கு…";
 "Format" = "வடிவம்";
 "Used" = "பயன்படுத்தியது";
 "Free" = "காலி";
@@ -190,6 +192,15 @@
 "Memory free" = "காலி நினைவகம்";
 "Swap in use" = "பயன்பாட்டில் உள்ள ஸ்வாப்";
 "Disk usage" = "வட்டு பயன்பாடு";
+"%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0 உருப்படிகள், %1, குப்பைக்குச் செல்லும். எதுவும் அழிக்கப்படாது — அனைத்தையும் Finder இலிருந்து மீட்கலாம்.";
+"%0 left nothing behind that Perch can see" = "%0 Perch பார்க்கக்கூடிய எதையும் விட்டுச் செல்லவில்லை";
+"%0 — %1 items, %2 in total" = "%0 — %1 உருப்படிகள், மொத்தம் %2";
+"Pick an app to see what it left behind" = "என்ன விட்டுச் சென்றது எனப் பார்க்க ஒரு பயன்பாட்டைத் தேர்வுசெய்";
+"Remove %0?" = "%0 ஐ நீக்கவா?";
+"Remove an app" = "ஒரு பயன்பாட்டை நீக்கு";
+"Search installed apps…" = "நிறுவிய பயன்பாடுகளைத் தேடு…";
+"matched by name only" = "பெயரால் மட்டும் பொருந்தியது";
+"probably this app" = "அநேகமாக இந்தப் பயன்பாடு";
 "Reset" = "மீட்டமை";
 "Silent" = "அமைதி";
 "Settings" = "அமைப்புகள்";

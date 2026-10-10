@@ -58,6 +58,8 @@
 "Space macOS can reclaim" = "Місце, яке macOS може звільнити";
 "Find large files…" = "Знайти великі файли…";
 "What is taking the room" = "Що займає місце";
+"An app you no longer want" = "Програма, яка більше не потрібна";
+"Remove an app…" = "Вилучити програму…";
 "Format" = "Формат";
 "Used" = "Використано";
 "Free" = "Вільно";
@@ -190,6 +192,15 @@
 "Memory free" = "Вільно пам’яті";
 "Swap in use" = "Використано свопу";
 "Disk usage" = "Використання диска";
+"%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0 об'єктів, %1, підуть у кошик. Нічого не стирається — усе можна повернути з Finder.";
+"%0 left nothing behind that Perch can see" = "%0 не залишила нічого, що бачить Perch";
+"%0 — %1 items, %2 in total" = "%0 — %1 об'єктів, %2 загалом";
+"Pick an app to see what it left behind" = "Виберіть програму, щоб побачити, що вона залишила";
+"Remove %0?" = "Вилучити %0?";
+"Remove an app" = "Вилучити програму";
+"Search installed apps…" = "Пошук встановлених програм…";
+"matched by name only" = "збіг лише за назвою";
+"probably this app" = "імовірно, ця програма";
 "Reset" = "Скинути";
 "Silent" = "Без звуку";
 "Settings" = "Параметри";

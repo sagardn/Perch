@@ -58,6 +58,8 @@
 "Space macOS can reclaim" = "macOS'un geri kazanabileceği alan";
 "Find large files…" = "Büyük dosyaları bul…";
 "What is taking the room" = "Yeri ne kaplıyor";
+"An app you no longer want" = "Artık istemediğin bir uygulama";
+"Remove an app…" = "Bir uygulamayı kaldır…";
 "Format" = "Biçim";
 "Used" = "Kullanılan";
 "Free" = "Boş";
@@ -190,6 +192,15 @@
 "Memory free" = "Boş bellek";
 "Swap in use" = "Kullanılan takas";
 "Disk usage" = "Disk kullanımı";
+"%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0 öğe, %1, Çöp Kutusu'na gider. Hiçbir şey silinmez — her şey Finder'dan geri alınabilir.";
+"%0 left nothing behind that Perch can see" = "%0 Perch'in görebileceği bir şey bırakmadı";
+"%0 — %1 items, %2 in total" = "%0 — %1 öğe, toplam %2";
+"Pick an app to see what it left behind" = "Ne bıraktığını görmek için bir uygulama seç";
+"Remove %0?" = "%0 kaldırılsın mı?";
+"Remove an app" = "Bir uygulamayı kaldır";
+"Search installed apps…" = "Yüklü uygulamalarda ara…";
+"matched by name only" = "yalnızca ada göre eşleşti";
+"probably this app" = "muhtemelen bu uygulama";
 "Reset" = "Sıfırla";
 "Silent" = "Sessiz";
 "Settings" = "Ayarlar";

@@ -58,6 +58,8 @@
 "Space macOS can reclaim" = "Место, которое macOS может освободить";
 "Find large files…" = "Найти большие файлы…";
 "What is taking the room" = "Что занимает место";
+"An app you no longer want" = "Приложение, которое больше не нужно";
+"Remove an app…" = "Удалить приложение…";
 "Format" = "Формат";
 "Used" = "Занято";
 "Free" = "Свободно";
@@ -190,6 +192,15 @@
 "Memory free" = "Свободно памяти";
 "Swap in use" = "Используемая подкачка";
 "Disk usage" = "Использование диска";
+"%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0 объектов, %1, отправятся в корзину. Ничего не стирается — всё можно вернуть из Finder.";
+"%0 left nothing behind that Perch can see" = "%0 не оставило ничего, что видит Perch";
+"%0 — %1 items, %2 in total" = "%0 — %1 объектов, %2 всего";
+"Pick an app to see what it left behind" = "Выберите приложение, чтобы увидеть, что оно оставило";
+"Remove %0?" = "Удалить %0?";
+"Remove an app" = "Удалить приложение";
+"Search installed apps…" = "Поиск установленных приложений…";
+"matched by name only" = "совпало только по имени";
+"probably this app" = "вероятно, это приложение";
 "Reset" = "Сбросить";
 "Silent" = "Тихо";
 "Settings" = "Настройки";

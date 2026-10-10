@@ -58,6 +58,8 @@
 "Space macOS can reclaim" = "Χώρος που μπορεί να ανακτήσει το macOS";
 "Find large files…" = "Εύρεση μεγάλων αρχείων…";
 "What is taking the room" = "Τι καταλαμβάνει τον χώρο";
+"An app you no longer want" = "Μια εφαρμογή που δεν θέλετε πια";
+"Remove an app…" = "Αφαίρεση εφαρμογής…";
 "Format" = "Μορφή";
 "Used" = "Σε χρήση";
 "Free" = "Ελεύθερα";
@@ -190,6 +192,15 @@
 "Memory free" = "Ελεύθερη μνήμη";
 "Swap in use" = "Swap σε χρήση";
 "Disk usage" = "Χρήση δίσκου";
+"%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0 στοιχεία, %1, πάνε στον κάδο. Τίποτα δεν διαγράφεται — όλα επιστρέφονται από το Finder.";
+"%0 left nothing behind that Perch can see" = "Το %0 δεν άφησε τίποτα που βλέπει το Perch";
+"%0 — %1 items, %2 in total" = "%0 — %1 στοιχεία, %2 συνολικά";
+"Pick an app to see what it left behind" = "Επιλέξτε εφαρμογή για να δείτε τι άφησε";
+"Remove %0?" = "Αφαίρεση του %0;";
+"Remove an app" = "Αφαίρεση εφαρμογής";
+"Search installed apps…" = "Αναζήτηση εγκατεστημένων εφαρμογών…";
+"matched by name only" = "αντιστοιχία μόνο με το όνομα";
+"probably this app" = "πιθανότατα αυτή η εφαρμογή";
 "Reset" = "Επαναφορά";
 "Silent" = "Αθόρυβα";
 "Settings" = "Ρυθμίσεις";

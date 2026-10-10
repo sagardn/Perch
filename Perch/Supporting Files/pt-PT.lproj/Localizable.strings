@@ -58,6 +58,8 @@
 "Space macOS can reclaim" = "Espaço que o macOS pode recuperar";
 "Find large files…" = "Localizar ficheiros grandes…";
 "What is taking the room" = "O que está a ocupar espaço";
+"An app you no longer want" = "Uma app que já não quer";
+"Remove an app…" = "Remover uma app…";
 "Format" = "Formato";
 "Used" = "Usado";
 "Free" = "Livre";
@@ -190,6 +192,15 @@
 "Memory free" = "Memória livre";
 "Swap in use" = "Swap em uso";
 "Disk usage" = "Utilização do disco";
+"%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0 itens, %1, vão para o lixo. Nada é apagado — tudo pode voltar pelo Finder.";
+"%0 left nothing behind that Perch can see" = "%0 não deixou nada que o Perch consiga ver";
+"%0 — %1 items, %2 in total" = "%0 — %1 itens, %2 no total";
+"Pick an app to see what it left behind" = "Escolha uma app para ver o que deixou";
+"Remove %0?" = "Remover %0?";
+"Remove an app" = "Remover uma app";
+"Search installed apps…" = "Procurar apps instaladas…";
+"matched by name only" = "identificado só pelo nome";
+"probably this app" = "provavelmente esta app";
 "Reset" = "Repor";
 "Silent" = "Silencioso";
 "Settings" = "Definições";

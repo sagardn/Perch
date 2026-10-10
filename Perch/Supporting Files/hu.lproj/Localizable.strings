@@ -58,6 +58,8 @@
 "Space macOS can reclaim" = "A macOS által felszabadítható hely";
 "Find large files…" = "Nagy fájlok keresése…";
 "What is taking the room" = "Mi foglalja a helyet";
+"An app you no longer want" = "Egy alkalmazás, amit már nem akarsz";
+"Remove an app…" = "Alkalmazás eltávolítása…";
 "Format" = "Formátum";
 "Used" = "Foglalt";
 "Free" = "Szabad";
@@ -190,6 +192,15 @@
 "Memory free" = "Szabad memória";
 "Swap in use" = "Használt swap";
 "Disk usage" = "Lemezhasználat";
+"%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0 elem, %1, a kukába kerül. Semmi sem törlődik – minden visszatehető a Finderből.";
+"%0 left nothing behind that Perch can see" = "A(z) %0 nem hagyott hátra semmit, amit a Perch lát";
+"%0 — %1 items, %2 in total" = "%0 — %1 elem, összesen %2";
+"Pick an app to see what it left behind" = "Válassz egy appot, hogy lásd, mit hagyott hátra";
+"Remove %0?" = "Eltávolítod: %0?";
+"Remove an app" = "Alkalmazás eltávolítása";
+"Search installed apps…" = "Telepített appok keresése…";
+"matched by name only" = "csak név alapján egyezik";
+"probably this app" = "valószínűleg ez az app";
 "Reset" = "Visszaállítás";
 "Silent" = "Csendes";
 "Settings" = "Beállítások";

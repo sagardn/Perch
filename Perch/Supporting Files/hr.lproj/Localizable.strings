@@ -58,6 +58,8 @@
 "Space macOS can reclaim" = "Prostor koji macOS može osloboditi";
 "Find large files…" = "Pronađi velike datoteke…";
 "What is taking the room" = "Što zauzima prostor";
+"An app you no longer want" = "Aplikacija koju više ne želite";
+"Remove an app…" = "Ukloni aplikaciju…";
 "Format" = "Format";
 "Used" = "Iskorišteno";
 "Free" = "Slobodno";
@@ -190,6 +192,15 @@
 "Memory free" = "Slobodna memorija";
 "Swap in use" = "Swap u upotrebi";
 "Disk usage" = "Upotreba diska";
+"%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0 stavki, %1, ide u smeće. Ništa se ne briše — sve se može vratiti iz Findera.";
+"%0 left nothing behind that Perch can see" = "%0 nije ostavila ništa što Perch vidi";
+"%0 — %1 items, %2 in total" = "%0 — %1 stavki, %2 ukupno";
+"Pick an app to see what it left behind" = "Odaberite aplikaciju da vidite što je ostavila";
+"Remove %0?" = "Ukloniti %0?";
+"Remove an app" = "Ukloni aplikaciju";
+"Search installed apps…" = "Pretraži instalirane aplikacije…";
+"matched by name only" = "pronađeno samo po imenu";
+"probably this app" = "vjerojatno ova aplikacija";
 "Reset" = "Resetiraj";
 "Silent" = "Tiho";
 "Settings" = "Postavke";

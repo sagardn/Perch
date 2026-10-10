@@ -58,6 +58,8 @@
 "Space macOS can reclaim" = "שטח ש‑macOS יכול לפנות";
 "Find large files…" = "איתור קבצים גדולים…";
 "What is taking the room" = "מה תופס את המקום";
+"An app you no longer want" = "יישום שכבר אינך רוצה";
+"Remove an app…" = "הסרת יישום…";
 "Format" = "פורמט";
 "Used" = "בשימוש";
 "Free" = "פנוי";
@@ -190,6 +192,15 @@
 "Memory free" = "זיכרון פנוי";
 "Swap in use" = "Swap בשימוש";
 "Disk usage" = "ניצולת דיסק";
+"%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0 פריטים, %1, עוברים לאשפה. דבר אינו נמחק — אפשר להחזיר הכול מ‑Finder.";
+"%0 left nothing behind that Perch can see" = "%0 לא השאיר דבר ש‑Perch רואה";
+"%0 — %1 items, %2 in total" = "%0 — %1 פריטים, %2 בסך הכול";
+"Pick an app to see what it left behind" = "בחר יישום כדי לראות מה הוא השאיר";
+"Remove %0?" = "להסיר את %0?";
+"Remove an app" = "הסרת יישום";
+"Search installed apps…" = "חיפוש יישומים מותקנים…";
+"matched by name only" = "זוהה לפי השם בלבד";
+"probably this app" = "כנראה היישום הזה";
 "Reset" = "איפוס";
 "Silent" = "שקט";
 "Settings" = "הגדרות";

@@ -58,6 +58,8 @@
 "Space macOS can reclaim" = "Tila jonka macOS voi vapauttaa";
 "Find large files…" = "Etsi suuria tiedostoja…";
 "What is taking the room" = "Mikä vie tilan";
+"An app you no longer want" = "Appi jota et enää halua";
+"Remove an app…" = "Poista appi…";
 "Format" = "Muoto";
 "Used" = "Käytössä";
 "Free" = "Vapaana";
@@ -190,6 +192,15 @@
 "Memory free" = "Muistia vapaana";
 "Swap in use" = "Sivutusta käytössä";
 "Disk usage" = "Levyn käyttö";
+"%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0 kohdetta, %1, siirtyy roskakoriin. Mitään ei poisteta – kaiken voi palauttaa Finderista.";
+"%0 left nothing behind that Perch can see" = "%0 ei jättänyt mitään jonka Perch näkee";
+"%0 — %1 items, %2 in total" = "%0 — %1 kohdetta, %2 yhteensä";
+"Pick an app to see what it left behind" = "Valitse appi nähdäksesi mitä se jätti";
+"Remove %0?" = "Poistetaanko %0?";
+"Remove an app" = "Poista appi";
+"Search installed apps…" = "Hae asennettuja appeja…";
+"matched by name only" = "tunnistettu vain nimestä";
+"probably this app" = "luultavasti tämä appi";
 "Reset" = "Nollaa";
 "Silent" = "Hiljainen";
 "Settings" = "Asetukset";

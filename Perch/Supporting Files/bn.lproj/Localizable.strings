@@ -58,6 +58,8 @@
 "Space macOS can reclaim" = "macOS যে জায়গা ফিরিয়ে নিতে পারে";
 "Find large files…" = "বড় ফাইল খুঁজুন…";
 "What is taking the room" = "জায়গা কী নিচ্ছে";
+"An app you no longer want" = "যে অ্যাপ আর চান না";
+"Remove an app…" = "একটি অ্যাপ সরান…";
 "Format" = "ফরম্যাট";
 "Used" = "ব্যবহৃত";
 "Free" = "খালি";
@@ -190,6 +192,15 @@
 "Memory free" = "খালি মেমরি";
 "Swap in use" = "ব্যবহৃত সোয়াপ";
 "Disk usage" = "ডিস্ক ব্যবহার";
+"%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0টি আইটেম, %1, ট্র্যাশে যাবে। কিছুই মোছা হয় না — সব Finder থেকে ফেরানো যায়।";
+"%0 left nothing behind that Perch can see" = "%0 এমন কিছু রাখেনি যা Perch দেখতে পায়";
+"%0 — %1 items, %2 in total" = "%0 — %1টি আইটেম, মোট %2";
+"Pick an app to see what it left behind" = "কী রেখে গেছে দেখতে একটি অ্যাপ বাছুন";
+"Remove %0?" = "%0 সরাবেন?";
+"Remove an app" = "একটি অ্যাপ সরান";
+"Search installed apps…" = "ইনস্টল করা অ্যাপ খুঁজুন…";
+"matched by name only" = "শুধু নাম মিলেছে";
+"probably this app" = "সম্ভবত এই অ্যাপ";
 "Reset" = "রিসেট";
 "Silent" = "নীরব";
 "Settings" = "সেটিংস";

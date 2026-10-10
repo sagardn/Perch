@@ -58,6 +58,8 @@
 "Space macOS can reclaim" = "Ruang yang dapat dipulihkan macOS";
 "Find large files…" = "Cari berkas besar…";
 "What is taking the room" = "Apa yang memakan ruang";
+"An app you no longer want" = "Aplikasi yang tidak Anda inginkan lagi";
+"Remove an app…" = "Hapus aplikasi…";
 "Format" = "Format";
 "Used" = "Terpakai";
 "Free" = "Kosong";
@@ -190,6 +192,15 @@
 "Memory free" = "Memori kosong";
 "Swap in use" = "Swap terpakai";
 "Disk usage" = "Penggunaan disk";
+"%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0 item, %1, masuk Tong Sampah. Tidak ada yang dihapus — semua bisa dikembalikan dari Finder.";
+"%0 left nothing behind that Perch can see" = "%0 tidak meninggalkan apa pun yang bisa dilihat Perch";
+"%0 — %1 items, %2 in total" = "%0 — %1 item, %2 total";
+"Pick an app to see what it left behind" = "Pilih aplikasi untuk melihat apa yang ditinggalkan";
+"Remove %0?" = "Hapus %0?";
+"Remove an app" = "Hapus aplikasi";
+"Search installed apps…" = "Cari aplikasi terpasang…";
+"matched by name only" = "cocok hanya berdasarkan nama";
+"probably this app" = "kemungkinan aplikasi ini";
 "Reset" = "Atur ulang";
 "Silent" = "Senyap";
 "Settings" = "Pengaturan";

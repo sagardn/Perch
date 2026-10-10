@@ -58,6 +58,8 @@
 "Space macOS can reclaim" = "macOS 可回收的空間";
 "Find large files…" = "尋找大型檔案…";
 "What is taking the room" = "什麼佔了空間";
+"An app you no longer want" = "不再需要的 App";
+"Remove an app…" = "移除 App…";
 "Format" = "格式";
 "Used" = "已使用";
 "Free" = "可用";
@@ -190,6 +192,15 @@
 "Memory free" = "可用記憶體";
 "Swap in use" = "使用中的交換";
 "Disk usage" = "磁碟使用率";
+"%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0 個項目，%1，將移到垃圾桶。不會抹除任何內容——都可從 Finder 放回。";
+"%0 left nothing behind that Perch can see" = "%0 沒有留下 Perch 能看到的內容";
+"%0 — %1 items, %2 in total" = "%0 — %1 個項目，共 %2";
+"Pick an app to see what it left behind" = "選擇一個 App 以查看它留下了什麼";
+"Remove %0?" = "移除 %0？";
+"Remove an app" = "移除 App";
+"Search installed apps…" = "搜尋已安裝的 App…";
+"matched by name only" = "僅依名稱比對";
+"probably this app" = "可能屬於此 App";
 "Reset" = "重置";
 "Silent" = "靜默";
 "Settings" = "設定";

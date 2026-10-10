@@ -58,6 +58,8 @@
 "Space macOS can reclaim" = "พื้นที่ที่ macOS เรียกคืนได้";
 "Find large files…" = "ค้นหาไฟล์ขนาดใหญ่…";
 "What is taking the room" = "อะไรกินพื้นที่";
+"An app you no longer want" = "แอปที่คุณไม่ต้องการแล้ว";
+"Remove an app…" = "เอาแอปออก…";
 "Format" = "รูปแบบ";
 "Used" = "ใช้แล้ว";
 "Free" = "ว่าง";
@@ -190,6 +192,15 @@
 "Memory free" = "หน่วยความจำที่ว่าง";
 "Swap in use" = "พื้นที่สลับที่ใช้อยู่";
 "Disk usage" = "การใช้ดิสก์";
+"%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0 รายการ %1 จะไปที่ถังขยะ ไม่มีอะไรถูกลบ — กู้คืนทั้งหมดได้จาก Finder";
+"%0 left nothing behind that Perch can see" = "%0 ไม่ได้ทิ้งอะไรที่ Perch มองเห็น";
+"%0 — %1 items, %2 in total" = "%0 — %1 รายการ รวม %2";
+"Pick an app to see what it left behind" = "เลือกแอปเพื่อดูว่าทิ้งอะไรไว้";
+"Remove %0?" = "เอา %0 ออกไหม";
+"Remove an app" = "เอาแอปออก";
+"Search installed apps…" = "ค้นหาแอปที่ติดตั้ง…";
+"matched by name only" = "ตรงกับชื่อเท่านั้น";
+"probably this app" = "น่าจะเป็นแอปนี้";
 "Reset" = "รีเซ็ต";
 "Silent" = "เงียบ";
 "Settings" = "การตั้งค่า";

@@ -58,6 +58,8 @@
 "Space macOS can reclaim" = "فضایی که macOS می‌تواند آزاد کند";
 "Find large files…" = "یافتن پرونده‌های بزرگ…";
 "What is taking the room" = "چه چیزی فضا را گرفته";
+"An app you no longer want" = "برنامه‌ای که دیگر نمی‌خواهید";
+"Remove an app…" = "حذف یک برنامه…";
 "Format" = "قالب";
 "Used" = "استفاده‌شده";
 "Free" = "آزاد";
@@ -190,6 +192,15 @@
 "Memory free" = "حافظهٔ آزاد";
 "Swap in use" = "Swap در حال استفاده";
 "Disk usage" = "مصرف دیسک";
+"%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0 مورد، %1، به سطل زباله می‌رود. چیزی پاک نمی‌شود — همه‌چیز از Finder بازگردانی‌پذیر است.";
+"%0 left nothing behind that Perch can see" = "%0 چیزی که Perch ببیند برجای نگذاشت";
+"%0 — %1 items, %2 in total" = "%0 — %1 مورد، %2 در مجموع";
+"Pick an app to see what it left behind" = "برنامه‌ای را انتخاب کنید تا ببینید چه برجای گذاشته";
+"Remove %0?" = "%0 حذف شود؟";
+"Remove an app" = "حذف یک برنامه";
+"Search installed apps…" = "جستجوی برنامه‌های نصب‌شده…";
+"matched by name only" = "فقط با نام مطابقت دارد";
+"probably this app" = "احتمالاً همین برنامه";
 "Reset" = "بازنشانی";
 "Silent" = "بی‌صدا";
 "Settings" = "تنظیمات";

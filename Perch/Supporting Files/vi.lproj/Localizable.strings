@@ -58,6 +58,8 @@
 "Space macOS can reclaim" = "Dung lượng macOS có thể thu hồi";
 "Find large files…" = "Tìm tệp lớn…";
 "What is taking the room" = "Cái gì đang chiếm chỗ";
+"An app you no longer want" = "Ứng dụng bạn không còn muốn";
+"Remove an app…" = "Gỡ một ứng dụng…";
 "Format" = "Định dạng";
 "Used" = "Đã dùng";
 "Free" = "Trống";
@@ -190,6 +192,15 @@
 "Memory free" = "Bộ nhớ trống";
 "Swap in use" = "Hoán đổi đang dùng";
 "Disk usage" = "Mức sử dụng ổ đĩa";
+"%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0 mục, %1, vào Thùng rác. Không gì bị xóa — mọi thứ khôi phục được từ Finder.";
+"%0 left nothing behind that Perch can see" = "%0 không để lại gì mà Perch thấy được";
+"%0 — %1 items, %2 in total" = "%0 — %1 mục, tổng %2";
+"Pick an app to see what it left behind" = "Chọn một ứng dụng để xem nó để lại gì";
+"Remove %0?" = "Gỡ %0?";
+"Remove an app" = "Gỡ một ứng dụng";
+"Search installed apps…" = "Tìm ứng dụng đã cài…";
+"matched by name only" = "chỉ khớp theo tên";
+"probably this app" = "có lẽ là ứng dụng này";
 "Reset" = "Đặt lại";
 "Silent" = "Im lặng";
 "Settings" = "Cài đặt";

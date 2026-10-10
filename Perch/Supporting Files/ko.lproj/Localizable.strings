@@ -58,6 +58,8 @@
 "Space macOS can reclaim" = "macOS가 회수할 수 있는 공간";
 "Find large files…" = "큰 파일 찾기…";
 "What is taking the room" = "무엇이 공간을 차지하는지";
+"An app you no longer want" = "더 이상 원하지 않는 앱";
+"Remove an app…" = "앱 제거…";
 "Format" = "포맷";
 "Used" = "사용됨";
 "Free" = "여유";
@@ -190,6 +192,15 @@
 "Memory free" = "여유 메모리";
 "Swap in use" = "사용 중인 스왑";
 "Disk usage" = "디스크 사용량";
+"%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0개 항목, %1이(가) 휴지통으로 갑니다. 지워지지 않으며 Finder에서 모두 되돌릴 수 있습니다.";
+"%0 left nothing behind that Perch can see" = "%0은(는) Perch가 볼 수 있는 항목을 남기지 않았습니다";
+"%0 — %1 items, %2 in total" = "%0 — %1개 항목, 총 %2";
+"Pick an app to see what it left behind" = "앱을 선택하면 남긴 항목이 표시됩니다";
+"Remove %0?" = "%0을(를) 제거할까요?";
+"Remove an app" = "앱 제거";
+"Search installed apps…" = "설치된 앱 검색…";
+"matched by name only" = "이름으로만 일치";
+"probably this app" = "아마 이 앱";
 "Reset" = "재설정";
 "Silent" = "무음";
 "Settings" = "설정";

@@ -207,7 +207,10 @@ extension AppDelegate {
         DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
             let subject = request.subject
 
-            if subject == "files" {
+            if subject == "uninstall" {
+                self.renderWindow(of: UninstallWindow.self, to: request.path,
+                                  after: 6, present: UninstallWindow.present)
+            } else if subject == "files" {
                 self.renderLargeFiles(to: request.path)
             } else if subject == "setup:window" {
                 self.renderSetupWindow(to: request.path)
@@ -358,11 +361,19 @@ extension AppDelegate {
     /// before it has anything to draw -- capturing at two seconds reliably
     /// photographs the word "Looking…".
     private func renderLargeFiles(to path: String) {
-        LargeFilesWindow.present()
+        renderWindow(of: LargeFilesWindow.self, to: path, after: 12,
+                     present: LargeFilesWindow.present)
+    }
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 12) {
+    /// Captures one of Perch's own windows once it has settled.
+    private func renderWindow<W: NSWindow>(of type: W.Type, to path: String,
+                                           after seconds: TimeInterval,
+                                           present: () -> Void) {
+        present()
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             defer { NSApp.terminate(nil) }
-            guard let window = NSApp.windows.first(where: { $0 is LargeFilesWindow }),
+            guard let window = NSApp.windows.first(where: { $0 is W }),
                   window.windowNumber > 0,
                   let image = CGWindowListCreateImage(
                     .null, .optionIncludingWindow,
@@ -374,7 +385,7 @@ extension AppDelegate {
             let bitmap = NSBitmapImageRep(cgImage: image)
             guard let png = bitmap.representation(using: .png, properties: [:]) else { return }
             try? png.write(to: URL(fileURLWithPath: path))
-            NSLog("Perch: rendered the large files window to \(path), "
+            NSLog("Perch: rendered \(type) to \(path), "
                   + "\(image.width)x\(image.height)")
         }
     }

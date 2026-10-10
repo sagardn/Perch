@@ -58,6 +58,8 @@
 "Space macOS can reclaim" = "Utrymme macOS kan frigöra";
 "Find large files…" = "Hitta stora filer…";
 "What is taking the room" = "Vad som tar plats";
+"An app you no longer want" = "En app du inte längre vill ha";
+"Remove an app…" = "Ta bort en app…";
 "Format" = "Format";
 "Used" = "Använt";
 "Free" = "Ledigt";
@@ -190,6 +192,15 @@
 "Memory free" = "Ledigt minne";
 "Swap in use" = "Växling som används";
 "Disk usage" = "Diskanvändning";
+"%0 items, %1, go to the Bin. Nothing is erased — everything can be put back from Finder." = "%0 objekt, %1, hamnar i papperskorgen. Inget raderas – allt kan läggas tillbaka från Finder.";
+"%0 left nothing behind that Perch can see" = "%0 lämnade inget som Perch kan se";
+"%0 — %1 items, %2 in total" = "%0 — %1 objekt, %2 totalt";
+"Pick an app to see what it left behind" = "Välj en app för att se vad den lämnade kvar";
+"Remove %0?" = "Ta bort %0?";
+"Remove an app" = "Ta bort en app";
+"Search installed apps…" = "Sök installerade appar…";
+"matched by name only" = "matchad enbart på namn";
+"probably this app" = "troligen den här appen";
 "Reset" = "Återställ";
 "Silent" = "Tyst";
 "Settings" = "Inställningar";

@@ -21,6 +21,8 @@
 		FEEDFACE0471000000000000 /* DiskReadings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0470000000000000 /* DiskReadings.swift */; };
 		FEEDFACE0B40000000000000 /* DiskCleanup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0B41000000000000 /* DiskCleanup.swift */; };
 		FEEDFACE0B50000000000000 /* LargeFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0B51000000000000 /* LargeFiles.swift */; };
+		FEEDFACE0B70000000000000 /* AppLeftovers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0B71000000000000 /* AppLeftovers.swift */; };
+		FEEDFACE0B80000000000000 /* UninstallWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0B81000000000000 /* UninstallWindow.swift */; };
 		FEEDFACE0B60000000000000 /* LargeFilesWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0B61000000000000 /* LargeFilesWindow.swift */; };
 		FEEDFACE0481000000000000 /* DiskPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0480000000000000 /* DiskPopup.swift */; };
 		FEEDFACE0491000000000000 /* DiskModuleShell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0490000000000000 /* DiskModuleShell.swift */; };
@@ -206,6 +208,8 @@
 		FEEDFACE0470000000000000 /* DiskReadings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskReadings.swift; sourceTree = "<group>"; };
 		FEEDFACE0B41000000000000 /* DiskCleanup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskCleanup.swift; sourceTree = "<group>"; };
 		FEEDFACE0B51000000000000 /* LargeFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeFiles.swift; sourceTree = "<group>"; };
+		FEEDFACE0B71000000000000 /* AppLeftovers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLeftovers.swift; sourceTree = "<group>"; };
+		FEEDFACE0B81000000000000 /* UninstallWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UninstallWindow.swift; sourceTree = "<group>"; };
 		FEEDFACE0B61000000000000 /* LargeFilesWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeFilesWindow.swift; sourceTree = "<group>"; };
 		FEEDFACE0480000000000000 /* DiskPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskPopup.swift; sourceTree = "<group>"; };
 		FEEDFACE0490000000000000 /* DiskModuleShell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskModuleShell.swift; sourceTree = "<group>"; };
@@ -511,6 +515,8 @@
 				FEEDFACE0470000000000000 /* DiskReadings.swift */,
 				FEEDFACE0B41000000000000 /* DiskCleanup.swift */,
 				FEEDFACE0B51000000000000 /* LargeFiles.swift */,
+				FEEDFACE0B71000000000000 /* AppLeftovers.swift */,
+				FEEDFACE0B81000000000000 /* UninstallWindow.swift */,
 				FEEDFACE0B61000000000000 /* LargeFilesWindow.swift */,
 				FEEDFACE0480000000000000 /* DiskPopup.swift */,
 				FEEDFACE0490000000000000 /* DiskModuleShell.swift */,
@@ -794,6 +800,8 @@
 				FEEDFACE0471000000000000 /* DiskReadings.swift in Sources */,
 				FEEDFACE0B40000000000000 /* DiskCleanup.swift in Sources */,
 				FEEDFACE0B50000000000000 /* LargeFiles.swift in Sources */,
+				FEEDFACE0B70000000000000 /* AppLeftovers.swift in Sources */,
+				FEEDFACE0B80000000000000 /* UninstallWindow.swift in Sources */,
 				FEEDFACE0B60000000000000 /* LargeFilesWindow.swift in Sources */,
 				FEEDFACE0481000000000000 /* DiskPopup.swift in Sources */,
 				FEEDFACE0491000000000000 /* DiskModuleShell.swift in Sources */,
