@@ -370,3 +370,15 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS heeft de processorsnelheid verlaagd. Drukke apps voelen trager aan totdat hij is afgekoeld.";
 "slowed down to cool off" = "vertraagd om af te koelen";
 "warming up" = "wordt warm";
+
+// Launcher · QuickSearch
+"Cancel" = "Annuleer";
+"Copied %0" = "%0 gekopieerd";
+"Empty Bin" = "Leeg prullenmand";
+"Empty the Bin?" = "Prullenmand legen?";
+"Everything in the Bin is deleted for good. This cannot be undone." = "Alles in de prullenmand wordt definitief verwijderd. Dit kan niet ongedaan worden gemaakt.";
+"Lock Screen" = "Vergrendel scherm";
+"Sleep" = "Sluimer";
+"Sleep Display" = "Zet beeldscherm in sluimerstand";
+"Start Screen Saver" = "Start schermbeveiliging";
+"Toggle Dark Mode" = "Schakel donkere modus in/uit";

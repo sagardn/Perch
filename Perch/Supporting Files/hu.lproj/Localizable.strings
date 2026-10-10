@@ -370,3 +370,15 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "A macOS csökkentette a processzor sebességét. A leterhelt appok lassabbak lesznek, amíg le nem hűl.";
 "slowed down to cool off" = "lelassult a hűlés érdekében";
 "warming up" = "melegszik";
+
+// Launcher · QuickSearch
+"Cancel" = "Mégsem";
+"Copied %0" = "Kimásolva: %0";
+"Empty Bin" = "Kuka ürítése";
+"Empty the Bin?" = "Üríti a kukát?";
+"Everything in the Bin is deleted for good. This cannot be undone." = "A kukában lévő összes elem véglegesen törlődik. Ez a művelet nem vonható vissza.";
+"Lock Screen" = "Képernyő zárolása";
+"Sleep" = "Altatás";
+"Sleep Display" = "Kijelző altatása";
+"Start Screen Saver" = "Képernyővédő indítása";
+"Toggle Dark Mode" = "Sötét mód be/ki";

@@ -370,3 +370,15 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS vähendas protsessori kiirust. Koormatud rakendused on aeglasemad, kuni see jahtub.";
 "slowed down to cool off" = "aeglustatud jahtumiseks";
 "warming up" = "soojeneb";
+
+// Launcher · QuickSearch
+"Cancel" = "Tühista";
+"Copied %0" = "Kopeeritud: %0";
+"Empty Bin" = "Tühjenda prügikast";
+"Empty the Bin?" = "Kas tühjendada prügikast?";
+"Everything in the Bin is deleted for good. This cannot be undone." = "Kõik prügikastis olev kustutatakse jäädavalt. Seda toimingut ei saa tagasi võtta.";
+"Lock Screen" = "Lukusta ekraan";
+"Sleep" = "Unerežiim";
+"Sleep Display" = "Lülita kuva unerežiimi";
+"Start Screen Saver" = "Käivita ekraanisäästja";
+"Toggle Dark Mode" = "Lülita tume režiim sisse/välja";

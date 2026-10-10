@@ -200,6 +200,26 @@ Each row shows the app icon, its name and a dot for its window state: ● runnin
 with a window on screen, ○ running but minimised or hidden, nothing when it is
 not running. Apps in your ⌃Tab cycle are marked `⌃⇥`.
 
+### Sums, conversions and actions
+
+When the query is unmistakably one of these, a row appears above the apps:
+
+| You type | The row | ↩ does |
+|---|---|---|
+| `12*8+5`, `(2+3)*4`, `2^10`, `sqrt(2)`, `10%3` | `12*8+5 = 101` | Copies `101` |
+| `5 km in miles`, `72 f to c`, `2 gb in mb`, `10 kg to lb` | `5 km in miles = 3.107 mi` | Copies `3.107 mi` |
+| `lock` · `sleep` · `sleep display` · `screen saver` · `dark` · `empty bin` | The action | Runs it |
+
+Sums take `+ - * / % ^`, brackets, `pi`, `e`, and `sqrt abs round floor ceil
+sin cos tan ln log`. Conversions cover length, weight, temperature, data,
+volume, speed and time, with `in`, `to`, `as` or `into` between the units.
+
+A plain number is not a sum, and actions need three letters, so `sa` still
+finds Safari and `sl` still finds Slack. **Empty Bin** asks first, with
+Cancel as the default, because it cannot be undone. **Toggle Dark Mode** and
+**Empty Bin** go through System Events and Finder, so macOS asks once
+whether Perch may control them; **Lock Screen** uses the Accessibility grant.
+
 ### The options menu
 
 Right-click a row, or press → , or click the ▸ arrow:

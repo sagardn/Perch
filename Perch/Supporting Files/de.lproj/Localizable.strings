@@ -370,3 +370,15 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS hat die Prozessorgeschwindigkeit reduziert. Ausgelastete Apps reagieren langsamer, bis er abgekühlt ist.";
 "slowed down to cool off" = "zum Abkühlen gedrosselt";
 "warming up" = "wird warm";
+
+// Launcher · QuickSearch
+"Cancel" = "Abbrechen";
+"Copied %0" = "%0 kopiert";
+"Empty Bin" = "Papierkorb entleeren";
+"Empty the Bin?" = "Papierkorb entleeren?";
+"Everything in the Bin is deleted for good. This cannot be undone." = "Alle Objekte im Papierkorb werden endgültig gelöscht. Dieser Vorgang kann nicht widerrufen werden.";
+"Lock Screen" = "Bildschirm sperren";
+"Sleep" = "Ruhezustand";
+"Sleep Display" = "Display in Ruhezustand";
+"Start Screen Saver" = "Bildschirmschoner starten";
+"Toggle Dark Mode" = "Dunkelmodus umschalten";

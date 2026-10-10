@@ -370,3 +370,15 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS işlemci hızını düşürdü. Yoğun uygulamalar soğuyana kadar daha yavaş çalışacak.";
 "slowed down to cool off" = "soğumak için yavaşladı";
 "warming up" = "ısınıyor";
+
+// Launcher · QuickSearch
+"Cancel" = "Vazgeç";
+"Copied %0" = "Kopyalandı: %0";
+"Empty Bin" = "Çöp Sepetini Boşalt";
+"Empty the Bin?" = "Çöp Sepeti boşaltılsın mı?";
+"Everything in the Bin is deleted for good. This cannot be undone." = "Çöp Sepeti’ndeki her şey kalıcı olarak silinecek. Bu işlem geri alınamaz.";
+"Lock Screen" = "Ekranı Kilitle";
+"Sleep" = "Uyut";
+"Sleep Display" = "Ekranı Uyut";
+"Start Screen Saver" = "Ekran Koruyucuyu Başlat";
+"Toggle Dark Mode" = "Karanlık Modu Aç/Kapat";

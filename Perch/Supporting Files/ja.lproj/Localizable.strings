@@ -370,3 +370,15 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOSがプロセッサの速度を下げました。冷えるまで負荷の高いアプリの動作が遅くなります。";
 "slowed down to cool off" = "冷却のため減速中";
 "warming up" = "温度上昇中";
+
+// Launcher · QuickSearch
+"Cancel" = "キャンセル";
+"Copied %0" = "%0をコピーしました";
+"Empty Bin" = "ゴミ箱を空にする";
+"Empty the Bin?" = "ゴミ箱を空にしますか？";
+"Everything in the Bin is deleted for good. This cannot be undone." = "ゴミ箱内のすべての項目が完全に削除されます。この操作は取り消せません。";
+"Lock Screen" = "画面をロック";
+"Sleep" = "スリープ";
+"Sleep Display" = "ディスプレイをスリープ";
+"Start Screen Saver" = "スクリーンセーバを開始";
+"Toggle Dark Mode" = "ダークモードを切り替える";

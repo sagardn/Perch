@@ -370,3 +370,15 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS đã giảm tốc độ bộ xử lý. Các ứng dụng nặng sẽ chậm hơn cho đến khi máy nguội.";
 "slowed down to cool off" = "đã chậm lại để hạ nhiệt";
 "warming up" = "đang nóng lên";
+
+// Launcher · QuickSearch
+"Cancel" = "Hủy";
+"Copied %0" = "Đã sao chép %0";
+"Empty Bin" = "Dọn sạch Thùng rác";
+"Empty the Bin?" = "Dọn sạch Thùng rác?";
+"Everything in the Bin is deleted for good. This cannot be undone." = "Mọi thứ trong Thùng rác sẽ bị xóa vĩnh viễn. Bạn không thể hoàn tác thao tác này.";
+"Lock Screen" = "Khóa màn hình";
+"Sleep" = "Ngủ";
+"Sleep Display" = "Cho màn hình ngủ";
+"Start Screen Saver" = "Bắt đầu trình bảo vệ màn hình";
+"Toggle Dark Mode" = "Bật/tắt Chế độ tối";

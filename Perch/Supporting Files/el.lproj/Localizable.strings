@@ -370,3 +370,15 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "Το macOS μείωσε την ταχύτητα του επεξεργαστή. Οι απαιτητικές εφαρμογές θα είναι πιο αργές μέχρι να κρυώσει.";
 "slowed down to cool off" = "επιβραδύνθηκε για να κρυώσει";
 "warming up" = "ζεσταίνεται";
+
+// Launcher · QuickSearch
+"Cancel" = "Ακύρωση";
+"Copied %0" = "Αντιγράφηκε: %0";
+"Empty Bin" = "Άδειασμα κάδου";
+"Empty the Bin?" = "Άδειασμα του κάδου;";
+"Everything in the Bin is deleted for good. This cannot be undone." = "Όλα τα στοιχεία στον κάδο θα διαγραφούν οριστικά. Αυτή η ενέργεια δεν μπορεί να αναιρεθεί.";
+"Lock Screen" = "Κλείδωμα οθόνης";
+"Sleep" = "Αδράνεια";
+"Sleep Display" = "Αδράνεια οθόνης";
+"Start Screen Saver" = "Έναρξη προφύλαξης οθόνης";
+"Toggle Dark Mode" = "Εναλλαγή σκούρου θέματος";

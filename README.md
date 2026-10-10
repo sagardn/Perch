@@ -78,6 +78,9 @@ of them has. Perch is all three, built as one native app.
 
 - **Search panel** — `⌃Space` opens a floating panel at the pointer. Fuzzy-filter
   as you type; recently used apps rise to the top on their own.
+- **Answers in the same panel** — type `12*8+5` or `5 km in miles` and the answer
+  sits above your apps; ↩ copies it. Type `lock`, `sleep`, `dark` or `empty bin`
+  for the system action. A query that could be an app's name stays an app search.
 - **One click, the right action** — Perch reads each app's state and does what you meant:
 
   | When the app is… | Clicking it… |

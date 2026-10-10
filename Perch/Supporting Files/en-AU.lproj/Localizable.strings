@@ -367,3 +367,15 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS has reduced the processor's speed. Busy apps will feel slower until it cools.";
 "slowed down to cool off" = "slowed down to cool off";
 "warming up" = "warming up";
+
+// Launcher · QuickSearch
+"Cancel" = "Cancel";
+"Copied %0" = "Copied %0";
+"Empty Bin" = "Empty Bin";
+"Empty the Bin?" = "Empty the Bin?";
+"Everything in the Bin is deleted for good. This cannot be undone." = "Everything in the Bin is deleted for good. This cannot be undone.";
+"Lock Screen" = "Lock Screen";
+"Sleep" = "Sleep";
+"Sleep Display" = "Sleep Display";
+"Start Screen Saver" = "Start Screen Saver";
+"Toggle Dark Mode" = "Toggle Dark Mode";

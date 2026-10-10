@@ -370,3 +370,15 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS প্রসেসরের গতি কমিয়েছে। ঠান্ডা না হওয়া পর্যন্ত ব্যস্ত অ্যাপগুলি ধীর মনে হবে।";
 "slowed down to cool off" = "ঠান্ডা হতে ধীর করা হয়েছে";
 "warming up" = "গরম হচ্ছে";
+
+// Launcher · QuickSearch
+"Cancel" = "বাতিল";
+"Copied %0" = "%0 কপি করা হয়েছে";
+"Empty Bin" = "ট্র্যাশ খালি করুন";
+"Empty the Bin?" = "ট্র্যাশ খালি করবেন?";
+"Everything in the Bin is deleted for good. This cannot be undone." = "ট্র্যাশের সবকিছু স্থায়ীভাবে মুছে ফেলা হবে। এটি পূর্বাবস্থায় ফেরানো যাবে না।";
+"Lock Screen" = "স্ক্রিন লক করুন";
+"Sleep" = "স্লিপ";
+"Sleep Display" = "ডিসপ্লে স্লিপ করুন";
+"Start Screen Saver" = "স্ক্রিন সেভার চালু করুন";
+"Toggle Dark Mode" = "ডার্ক মোড টগল করুন";

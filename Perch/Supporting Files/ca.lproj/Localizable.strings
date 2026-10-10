@@ -370,3 +370,15 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "El macOS ha reduït la velocitat del processador. Les apps ocupades aniran més lentes fins que es refredi.";
 "slowed down to cool off" = "alentit per refredar-se";
 "warming up" = "escalfant-se";
+
+// Launcher · QuickSearch
+"Cancel" = "Cancel·lar";
+"Copied %0" = "S’ha copiat %0";
+"Empty Bin" = "Buidar la paperera";
+"Empty the Bin?" = "Vols buidar la paperera?";
+"Everything in the Bin is deleted for good. This cannot be undone." = "Tot el que hi ha a la paperera s’eliminarà definitivament. Aquesta acció no es pot desfer.";
+"Lock Screen" = "Bloquejar la pantalla";
+"Sleep" = "Repòs";
+"Sleep Display" = "Posar la pantalla en repòs";
+"Start Screen Saver" = "Iniciar el protector de pantalla";
+"Toggle Dark Mode" = "Activar o desactivar el mode fosc";

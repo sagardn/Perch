@@ -370,3 +370,15 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS знизила швидкість процесора. Навантажені програми працюватимуть повільніше, доки Mac не охолоне.";
 "slowed down to cool off" = "сповільнено для охолодження";
 "warming up" = "нагрівається";
+
+// Launcher · QuickSearch
+"Cancel" = "Скасувати";
+"Copied %0" = "Скопійовано: %0";
+"Empty Bin" = "Очистити смітник";
+"Empty the Bin?" = "Очистити смітник?";
+"Everything in the Bin is deleted for good. This cannot be undone." = "Усе в смітнику буде видалено назавжди. Цю дію не можна скасувати.";
+"Lock Screen" = "Замкнути екран";
+"Sleep" = "Режим сну";
+"Sleep Display" = "Перевести дисплей у режим сну";
+"Start Screen Saver" = "Запустити заставку";
+"Toggle Dark Mode" = "Перемкнути темний режим";

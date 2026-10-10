@@ -370,3 +370,15 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS har sänkt processorns hastighet. Krävande appar känns långsammare tills den har svalnat.";
 "slowed down to cool off" = "nedsaktad för att svalna";
 "warming up" = "blir varm";
+
+// Launcher · QuickSearch
+"Cancel" = "Avbryt";
+"Copied %0" = "Kopierade %0";
+"Empty Bin" = "Töm papperskorgen";
+"Empty the Bin?" = "Vill du tömma papperskorgen?";
+"Everything in the Bin is deleted for good. This cannot be undone." = "Allt i papperskorgen raderas permanent. Det går inte att ångra.";
+"Lock Screen" = "Lås skärmen";
+"Sleep" = "Viloläge";
+"Sleep Display" = "Försätt skärmen i viloläge";
+"Start Screen Saver" = "Starta skärmsläckaren";
+"Toggle Dark Mode" = "Växla mörkt läge";

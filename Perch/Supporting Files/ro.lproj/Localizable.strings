@@ -370,3 +370,15 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS a redus viteza procesorului. Aplicațiile solicitante vor fi mai lente până se răcește.";
 "slowed down to cool off" = "încetinit pentru răcire";
 "warming up" = "se încălzește";
+
+// Launcher · QuickSearch
+"Cancel" = "Anulează";
+"Copied %0" = "Copiat: %0";
+"Empty Bin" = "Golește coșul";
+"Empty the Bin?" = "Golești coșul?";
+"Everything in the Bin is deleted for good. This cannot be undone." = "Tot conținutul coșului va fi șters definitiv. Această acțiune nu poate fi anulată.";
+"Lock Screen" = "Blochează ecranul";
+"Sleep" = "Repaus";
+"Sleep Display" = "Pune monitorul în repaus";
+"Start Screen Saver" = "Pornește protectorul de ecran";
+"Toggle Dark Mode" = "Comută modul întunecat";

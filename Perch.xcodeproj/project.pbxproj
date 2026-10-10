@@ -80,6 +80,8 @@
 		FEEDFACEB101000000000000 /* AppEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACEF101000000000000 /* AppEntry.swift */; };
 		FEEDFACEB102000000000000 /* AppsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACEF102000000000000 /* AppsWindow.swift */; };
 		FEEDFACEB103000000000000 /* Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACEF103000000000000 /* Gesture.swift */; };
+		FEEDFACEB2E7000000000000 /* QuickSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACEF2E7000000000000 /* QuickSearch.swift */; };
+		FEEDFACEB2E8000000000000 /* QuickActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACEF2E8000000000000 /* QuickActions.swift */; };
 		FEEDFACEB2E3000000000000 /* Snap.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACEF2E3000000000000 /* Snap.swift */; };
 		FEEDFACEB2E4000000000000 /* WindowSnapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACEF2E4000000000000 /* WindowSnapper.swift */; };
 		FEEDFACEB104000000000000 /* Hotkey.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACEF104000000000000 /* Hotkey.swift */; };
@@ -315,6 +317,8 @@
 		FEEDFACEF101000000000000 /* AppEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppEntry.swift; sourceTree = "<group>"; };
 		FEEDFACEF102000000000000 /* AppsWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsWindow.swift; sourceTree = "<group>"; };
 		FEEDFACEF103000000000000 /* Gesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gesture.swift; sourceTree = "<group>"; };
+		FEEDFACEF2E7000000000000 /* QuickSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickSearch.swift; sourceTree = "<group>"; };
+		FEEDFACEF2E8000000000000 /* QuickActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickActions.swift; sourceTree = "<group>"; };
 		FEEDFACEF2E3000000000000 /* Snap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snap.swift; sourceTree = "<group>"; };
 		FEEDFACEF2E4000000000000 /* WindowSnapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowSnapper.swift; sourceTree = "<group>"; };
 		FEEDFACEF104000000000000 /* Hotkey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hotkey.swift; sourceTree = "<group>"; };
@@ -503,6 +507,8 @@
 				FEEDFACEF101000000000000 /* AppEntry.swift */,
 				FEEDFACEF102000000000000 /* AppsWindow.swift */,
 				FEEDFACEF103000000000000 /* Gesture.swift */,
+				FEEDFACEF2E7000000000000 /* QuickSearch.swift */,
+				FEEDFACEF2E8000000000000 /* QuickActions.swift */,
 				FEEDFACEF2E3000000000000 /* Snap.swift */,
 				FEEDFACEF2E4000000000000 /* WindowSnapper.swift */,
 				FEEDFACEF104000000000000 /* Hotkey.swift */,
@@ -880,6 +886,8 @@
 				FEEDFACEB101000000000000 /* AppEntry.swift in Sources */,
 				FEEDFACEB102000000000000 /* AppsWindow.swift in Sources */,
 				FEEDFACEB103000000000000 /* Gesture.swift in Sources */,
+				FEEDFACEB2E7000000000000 /* QuickSearch.swift in Sources */,
+				FEEDFACEB2E8000000000000 /* QuickActions.swift in Sources */,
 				FEEDFACEB2E3000000000000 /* Snap.swift in Sources */,
 				FEEDFACEB2E4000000000000 /* WindowSnapper.swift in Sources */,
 				FEEDFACEB104000000000000 /* Hotkey.swift in Sources */,

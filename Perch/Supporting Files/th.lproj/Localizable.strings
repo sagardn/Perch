@@ -370,3 +370,15 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS ได้ลดความเร็วของโปรเซสเซอร์ แอปที่ทำงานหนักจะช้าลงจนกว่าเครื่องจะเย็นลง";
 "slowed down to cool off" = "ลดความเร็วเพื่อระบายความร้อน";
 "warming up" = "กำลังร้อนขึ้น";
+
+// Launcher · QuickSearch
+"Cancel" = "ยกเลิก";
+"Copied %0" = "คัดลอก %0 แล้ว";
+"Empty Bin" = "ล้างถังขยะ";
+"Empty the Bin?" = "ล้างถังขยะหรือไม่";
+"Everything in the Bin is deleted for good. This cannot be undone." = "ทุกอย่างในถังขยะจะถูกลบอย่างถาวร คุณไม่สามารถเลิกทำการกระทำนี้ได้";
+"Lock Screen" = "ล็อคหน้าจอ";
+"Sleep" = "พักเครื่อง";
+"Sleep Display" = "พักหน้าจอ";
+"Start Screen Saver" = "เริ่มภาพพักหน้าจอ";
+"Toggle Dark Mode" = "สลับโหมดมืด";

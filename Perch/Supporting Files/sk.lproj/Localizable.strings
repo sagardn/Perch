@@ -370,3 +370,15 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS znížil rýchlosť procesora. Vyťažené aplikácie budú pomalšie, kým nevychladne.";
 "slowed down to cool off" = "spomalené kvôli chladeniu";
 "warming up" = "zahrieva sa";
+
+// Launcher · QuickSearch
+"Cancel" = "Zrušiť";
+"Copied %0" = "Skopírované: %0";
+"Empty Bin" = "Vyprázdniť kôš";
+"Empty the Bin?" = "Vyprázdniť kôš?";
+"Everything in the Bin is deleted for good. This cannot be undone." = "Všetko v koši bude natrvalo vymazané. Túto akciu nie je možné vrátiť.";
+"Lock Screen" = "Zamknúť obrazovku";
+"Sleep" = "Uspať";
+"Sleep Display" = "Uspať monitor";
+"Start Screen Saver" = "Spustiť šetrič obrazovky";
+"Toggle Dark Mode" = "Prepnúť tmavý režim";

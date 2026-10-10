@@ -370,3 +370,15 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS a réduit la vitesse du processeur. Les apps gourmandes seront plus lentes jusqu’à ce qu’il refroidisse.";
 "slowed down to cool off" = "ralenti pour refroidir";
 "warming up" = "en chauffe";
+
+// Launcher · QuickSearch
+"Cancel" = "Annuler";
+"Copied %0" = "Copié : %0";
+"Empty Bin" = "Vider la corbeille";
+"Empty the Bin?" = "Vider la corbeille ?";
+"Everything in the Bin is deleted for good. This cannot be undone." = "Tous les éléments de la corbeille seront supprimés définitivement. Cette action est irréversible.";
+"Lock Screen" = "Verrouiller l’écran";
+"Sleep" = "Suspendre l’activité";
+"Sleep Display" = "Mettre l’écran en veille";
+"Start Screen Saver" = "Lancer l’économiseur d’écran";
+"Toggle Dark Mode" = "Activer/désactiver le mode sombre";

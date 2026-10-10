@@ -370,3 +370,15 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS 已降低處理器速度。在 Mac 冷卻前，忙碌的 App 會變慢。";
 "slowed down to cool off" = "已降速以降溫";
 "warming up" = "正在升溫";
+
+// Launcher · QuickSearch
+"Cancel" = "取消";
+"Copied %0" = "已拷貝 %0";
+"Empty Bin" = "清空垃圾桶";
+"Empty the Bin?" = "要清空垃圾桶嗎？";
+"Everything in the Bin is deleted for good. This cannot be undone." = "垃圾桶中的所有項目將被永久刪除。此動作無法還原。";
+"Lock Screen" = "鎖定螢幕";
+"Sleep" = "睡眠";
+"Sleep Display" = "讓顯示器進入睡眠";
+"Start Screen Saver" = "啟動螢幕保護程式";
+"Toggle Dark Mode" = "切換深色模式";

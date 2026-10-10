@@ -370,3 +370,15 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS on laskenut suorittimen nopeutta. Raskaat apit tuntuvat hitaammilta, kunnes se jäähtyy.";
 "slowed down to cool off" = "hidastettu jäähtymiseksi";
 "warming up" = "lämpenee";
+
+// Launcher · QuickSearch
+"Cancel" = "Kumoa";
+"Copied %0" = "Kopioitu: %0";
+"Empty Bin" = "Tyhjennä roskakori";
+"Empty the Bin?" = "Tyhjennetäänkö roskakori?";
+"Everything in the Bin is deleted for good. This cannot be undone." = "Kaikki roskakorissa oleva poistetaan pysyvästi. Tätä ei voi kumota.";
+"Lock Screen" = "Lukitse näyttö";
+"Sleep" = "Nuku";
+"Sleep Display" = "Laita näyttö nukkumaan";
+"Start Screen Saver" = "Käynnistä näytönsäästäjä";
+"Toggle Dark Mode" = "Vaihda tumma tila";

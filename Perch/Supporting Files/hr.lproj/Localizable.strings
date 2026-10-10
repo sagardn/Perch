@@ -370,3 +370,15 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS je smanjio brzinu procesora. Zauzete aplikacije bit će sporije dok se ne ohladi.";
 "slowed down to cool off" = "usporen radi hlađenja";
 "warming up" = "zagrijava se";
+
+// Launcher · QuickSearch
+"Cancel" = "Odustani";
+"Copied %0" = "Kopirano: %0";
+"Empty Bin" = "Isprazni smeće";
+"Empty the Bin?" = "Isprazniti smeće?";
+"Everything in the Bin is deleted for good. This cannot be undone." = "Sve u smeću bit će trajno obrisano. Ova se radnja ne može poništiti.";
+"Lock Screen" = "Zaključaj zaslon";
+"Sleep" = "Mirovanje";
+"Sleep Display" = "Zaslon u mirovanje";
+"Start Screen Saver" = "Pokreni čuvar zaslona";
+"Toggle Dark Mode" = "Uključi/isključi tamni način rada";

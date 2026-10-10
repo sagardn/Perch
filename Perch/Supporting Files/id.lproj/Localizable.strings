@@ -370,3 +370,15 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS telah menurunkan kecepatan prosesor. App yang sibuk akan terasa lebih lambat hingga Mac dingin.";
 "slowed down to cool off" = "diperlambat agar dingin";
 "warming up" = "mulai panas";
+
+// Launcher · QuickSearch
+"Cancel" = "Batalkan";
+"Copied %0" = "Disalin: %0";
+"Empty Bin" = "Kosongkan Tong Sampah";
+"Empty the Bin?" = "Kosongkan Tong Sampah?";
+"Everything in the Bin is deleted for good. This cannot be undone." = "Semua isi Tong Sampah akan dihapus secara permanen. Tindakan ini tidak dapat diurungkan.";
+"Lock Screen" = "Kunci Layar";
+"Sleep" = "Tidurkan";
+"Sleep Display" = "Tidurkan Layar";
+"Start Screen Saver" = "Mulai Penghemat Layar";
+"Toggle Dark Mode" = "Alihkan Mode Gelap";

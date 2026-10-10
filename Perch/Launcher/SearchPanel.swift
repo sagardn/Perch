@@ -73,6 +73,8 @@ final class SearchPanel: NSPanel, NSTableViewDataSource, NSTableViewDelegate, NS
         var pinned: Bool = false
         /// In the ⌃Tab cycle.
         var marked: Bool = false
+        /// A sum, a conversion or an action rather than an app.
+        var quick: QuickSearch.Result? = nil
     }
 
     private let field = NSTextField()
@@ -379,6 +381,17 @@ final class SearchPanel: NSPanel, NSTableViewDataSource, NSTableViewDelegate, NS
             return lhs.name.localizedCaseInsensitiveCompare(rhs.name) == .orderedAscending
         }
 
+        // Above every app, but only for a query that is unmistakably a sum,
+        // a conversion or an action -- QuickSearch never answers a query
+        // that could be the start of an app's name.
+        let quick = QuickSearch.results(for: query).enumerated().map { index, result in
+            Row(name: result.title, bundleID: "perch.quick.\(index)",
+                icon: NSImage(systemSymbolName: result.symbol, accessibilityDescription: nil)?
+                    .withSymbolConfiguration(.init(pointSize: 20, weight: .regular)),
+                state: .notRunning, score: Int.max, quick: result)
+        }
+        rows = quick + rows
+
         table.reloadData()
         let restored = previous.flatMap { id in rows.firstIndex { $0.bundleID == id } }
         if let index = restored ?? (numberOfRows(in: table) > 0 ? 0 : nil) {
@@ -499,6 +512,7 @@ final class SearchPanel: NSPanel, NSTableViewDataSource, NSTableViewDelegate, NS
         view.isCurrent = (row == table.selectedRow)
         view.arrow.target = self
         view.arrow.action = #selector(arrowClicked(_:))
+        view.arrow.isHidden = entry.quick != nil   // no options for a sum
         return view
     }
 
@@ -529,6 +543,10 @@ final class SearchPanel: NSPanel, NSTableViewDataSource, NSTableViewDelegate, NS
         }
         guard rows.indices.contains(index) else { return }
         let row = rows[index]
+        if let quick = row.quick {
+            dismissThen { quick.perform() }
+            return
+        }
         dismissThen { [onPick] in
             onPick(AppEntry(name: row.name, bundleID: row.bundleID))
         }
@@ -595,7 +613,7 @@ final class SearchPanel: NSPanel, NSTableViewDataSource, NSTableViewDelegate, NS
     /// Everything you might want to do to the highlighted app, rather than
     /// only the one thing Return does.
     private func showOptions(for index: Int) {
-        guard rows.indices.contains(index) else { return }
+        guard rows.indices.contains(index), rows[index].quick == nil else { return }
         table.selectRowIndexes([index], byExtendingSelection: false)
         table.scrollRowToVisible(index)
 

@@ -370,3 +370,15 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "macOS செயலியின் வேகத்தைக் குறைத்துள்ளது. குளிரும் வரை அதிகச் சுமையுள்ள ஆப்கள் மெதுவாக இயங்கும்.";
 "slowed down to cool off" = "குளிர்வதற்காக வேகம் குறைக்கப்பட்டது";
 "warming up" = "சூடாகிறது";
+
+// Launcher · QuickSearch
+"Cancel" = "ரத்துசெய்";
+"Copied %0" = "%0 நகலெடுக்கப்பட்டது";
+"Empty Bin" = "குப்பையைக் காலியாக்கு";
+"Empty the Bin?" = "குப்பையைக் காலியாக்கவா?";
+"Everything in the Bin is deleted for good. This cannot be undone." = "குப்பையில் உள்ள அனைத்தும் நிரந்தரமாக நீக்கப்படும். இதைச் செயல்தவிர்க்க முடியாது.";
+"Lock Screen" = "திரையைப் பூட்டு";
+"Sleep" = "உறக்கம்";
+"Sleep Display" = "டிஸ்ப்ளேவை உறங்கவை";
+"Start Screen Saver" = "ஸ்கிரீன் சேவரைத் தொடங்கு";
+"Toggle Dark Mode" = "டார்க் மோடை மாற்று";

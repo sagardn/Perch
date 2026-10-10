@@ -370,3 +370,15 @@
 "macOS has reduced the processor's speed. Busy apps will feel slower until it cools." = "خفّض macOS سرعة المعالج. ستبدو التطبيقات المشغولة أبطأ حتى يبرد.";
 "slowed down to cool off" = "أُبطئ ليبرد";
 "warming up" = "يزداد سخونة";
+
+// Launcher · QuickSearch
+"Cancel" = "إلغاء";
+"Copied %0" = "تم نسخ %0";
+"Empty Bin" = "إفراغ سلة المهملات";
+"Empty the Bin?" = "هل تريد إفراغ سلة المهملات؟";
+"Everything in the Bin is deleted for good. This cannot be undone." = "سيتم حذف كل ما في سلة المهملات نهائيًا. لا يمكن التراجع عن هذا الإجراء.";
+"Lock Screen" = "قفل الشاشة";
+"Sleep" = "إسبات";
+"Sleep Display" = "إسبات شاشة العرض";
+"Start Screen Saver" = "بدء شاشة التوقف";
+"Toggle Dark Mode" = "تبديل الوضع الداكن";
