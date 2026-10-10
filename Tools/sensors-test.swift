@@ -191,7 +191,21 @@ do {
 
 print("\nOn this Mac")
 
-do {
+onThisMac: do {
+    // Same gate as the decoding block above, and it is here because leaving
+    // it out is what made tests.yaml red on every run from the day it was
+    // added. A CI runner is a virtual machine: no AppleSMC, no HID
+    // temperature sensors, so `all()` returns nothing and "something
+    // answered" fails -- not because the reader is broken but because there
+    // is nothing on the other end of it.
+    //
+    // Gated on the controller rather than on the result. An empty list on a
+    // Mac that *has* an SMC is a real failure and still fails.
+    guard SMCKit.shared.isAvailable else {
+        skip("the readings on this Mac", "no AppleSMC on this machine")
+        break onThisMac
+    }
+
     let live = SensorReadings.all()
     check("something answered", !live.isEmpty)
     check("every reading is a number", live.allSatisfy { $0.value.isFinite })
