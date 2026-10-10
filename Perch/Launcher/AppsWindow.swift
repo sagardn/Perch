@@ -23,7 +23,7 @@ final class AppsWindow: NSWindowController, NSTableViewDataSource, NSTableViewDe
                               styleMask: [.titled, .closable, .resizable],
                               backing: .buffered,
                               defer: false)
-        window.title = "Perch Apps"
+        window.title = localized("Perch Apps")
         window.center()
         super.init(window: window)
 
@@ -53,7 +53,7 @@ final class AppsWindow: NSWindowController, NSTableViewDataSource, NSTableViewDe
         remove.translatesAutoresizingMaskIntoConstraints = false
         remove.bezelStyle = .rounded
 
-        let hint = NSTextField(labelWithString: "Drag to reorder · ⌃1–⌃9 follow the first nine")
+        let hint = NSTextField(labelWithString: localized("Drag to reorder · ⌃1–⌃9 follow the first nine"))
         hint.font = .systemFont(ofSize: 11)
         hint.textColor = .secondaryLabelColor
         hint.translatesAutoresizingMaskIntoConstraints = false
@@ -187,7 +187,7 @@ final class AppsWindow: NSWindowController, NSTableViewDataSource, NSTableViewDe
 
         // First, because the running apps below cannot cover an app that has
         // never been opened -- which is most of what you come here to add.
-        let browse = NSMenuItem(title: "Choose from Applications…",
+        let browse = NSMenuItem(title: localized("Choose from Applications…"),
                                 action: nil, keyEquivalent: "")
         browse.tag = Self.browseTag
         button.menu?.addItem(browse)

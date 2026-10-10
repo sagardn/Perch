@@ -16,35 +16,35 @@ final class NetworkModule: PopupContent {
 
     // Rows held so a refresh can set their text rather than rebuild the view.
     private let status = StatusLine()
-    private let downloadReading = BigReading(caption: "Download", symbol: "arrow.down",
+    private let downloadReading = BigReading(caption: localized("Download"), symbol: "arrow.down",
                                              tint: .systemIndigo)
-    private let uploadReading = BigReading(caption: "Upload", symbol: "arrow.up",
+    private let uploadReading = BigReading(caption: localized("Upload"), symbol: "arrow.up",
                                            tint: .perchAmber)
     private let chart = SplitTrafficChart()
     private let peaks = PeakLegend()
-    private let reachability = ValueRow("Probes answered")
+    private let reachability = ValueRow(localized("Probes answered"))
     private let strip = ReachabilityStrip()
 
-    private let latency = ValueRow("Latency · jitter")
+    private let latency = ValueRow(localized("Latency · jitter"))
     private let signal = SignalRow()
     // Only shown when the name is missing for want of Location permission:
     // otherwise the status line already says it, and a row repeating it is
     // the duplication this layout was made to remove.
-    private let ssidBlocked = ValueRow("Wi-Fi name")
-    private let localIP = ValueRow("Local IP")
-    private let interfaceName = ValueRow("Interface")
+    private let ssidBlocked = ValueRow(localized("Wi-Fi name"))
+    private let localIP = ValueRow(localized("Local IP"))
+    private let interfaceName = ValueRow(localized("Interface"))
     // Since launch, which is what the counter measures: the baseline is
     // taken on the first sample and nothing resets it. "Total" alone did
     // not say since when.
-    private let sinceLaunch = ValueRow("Sent · received since launch")
+    private let sinceLaunch = ValueRow(localized("Sent · received since launch"))
 
     private let processRows = (0..<8).map { _ in ProcessRow() }
 
     private let detailsToggle = DisclosureButton(key: "Network_popupDetails")
-    private let macAddress = ValueRow("Physical address")
-    private let router = ValueRow("Router")
-    private let dns = ValueRow("DNS")
-    private let channel = ValueRow("Channel · link rate")
+    private let macAddress = ValueRow(localized("Physical address"))
+    private let router = ValueRow(localized("Router"))
+    private let dns = ValueRow(localized("DNS"))
+    private let channel = ValueRow(localized("Channel · link rate"))
     private var detailRows: [NSView] { [macAddress, router, dns, channel] }
 
     /// Ticks since the popup opened, used to throttle the two expensive jobs
@@ -91,12 +91,12 @@ final class NetworkModule: PopupContent {
         stack.addArrangedSubview(strip)
         stack.setCustomSpacing(14, after: strip)
 
-        stack.addArrangedSubview(SectionHeader("Connection"))
+        stack.addArrangedSubview(SectionHeader(localized("Connection")))
         for row in [latency, signal, ssidBlocked, localIP, interfaceName, sinceLaunch] {
             stack.addArrangedSubview(row)
         }
 
-        stack.addArrangedSubview(SectionHeader("Top processes"))
+        stack.addArrangedSubview(SectionHeader(localized("Top processes")))
         stack.addArrangedSubview(ProcessHeader())
         for row in processRows {
             row.isHidden = true
@@ -351,7 +351,7 @@ private final class SignalRow: NSView {
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
 
-        let name = NSTextField(labelWithString: "Signal")
+        let name = NSTextField(labelWithString: localized("Signal"))
         name.font = .systemFont(ofSize: 11)
         name.textColor = .secondaryLabelColor
         name.translatesAutoresizingMaskIntoConstraints = false

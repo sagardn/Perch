@@ -23,9 +23,9 @@ final class SensorsModule: PopupContent {
         style == .lineChart ? localized("History") : style.title
     }
 
-    private let headline = BigReading(caption: "Watched", symbol: "thermometer.medium",
+    private let headline = BigReading(caption: localized("Watched"), symbol: "thermometer.medium",
                                       tint: .perchAmber)
-    private let hottest = BigReading(caption: "Hottest", symbol: "flame", tint: .perchCritical)
+    private let hottest = BigReading(caption: localized("Hottest"), symbol: "flame", tint: .perchCritical)
     private let status = StatusLine()
     private let history = HistoryChart(height: 60)
 

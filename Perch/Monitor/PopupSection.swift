@@ -509,7 +509,7 @@ final class ProcessHeader: NSView {
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
 
-        let label = NSTextField(labelWithString: "Process")
+        let label = NSTextField(labelWithString: localized("Process"))
         label.font = .systemFont(ofSize: 10)
         label.textColor = .secondaryLabelColor
         label.translatesAutoresizingMaskIntoConstraints = false

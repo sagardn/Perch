@@ -10,6 +10,13 @@
  */
 
 // Monitor · CPUModuleShell
+"Add Apps to Perch" = "Add Apps to Perch";
+"Choose from Applications…" = "Choose from Applications…";
+"Drag to reorder · ⌃1–⌃9 follow the first nine" = "Drag to reorder · ⌃1–⌃9 follow the first nine";
+"Perch Apps" = "Perch Apps";
+"Search apps…" = "Search apps…";
+"Windows" = "Windows";
+"App options (→)" = "App options (→)";
 "CPU" = "CPU";
 "None" = "Ingen";
 "2 minutes" = "2 minutter";
@@ -19,8 +26,6 @@
 "5 minutes" = "5 minutter";
 "Menu bar" = "Menylinje";
 "Notify me when" = "Varsle meg når";
-
-// Monitor · CPUPopup
 "Clock" = "Klokkefrekvens";
 "Processor" = "Prosessor";
 "Cores" = "Kjerner";
@@ -30,44 +35,43 @@
 "CPU usage threshold" = "Terskel for CPU-bruk";
 "Total" = "Totalt";
 "Temperature" = "Temperatur";
-
-// Monitor · CombinedBar
+"Clock ceiling" = "Clock ceiling";
+"Cores available" = "Cores available";
+"Efficiency · performance" = "Efficiency · performance";
+"Limits" = "Limits";
+"Load average · 1, 5, 15 min" = "Load average · 1, 5, 15 min";
+"Scheduler" = "Scheduler";
+"Top processes · % of one core" = "Top processes · % of one core";
 "No module has anything to show here yet." = "Ingen moduler har noe å vise her ennå.";
 "Combined modules" = "Kombinerte moduler";
 "Combined details" = "Kombinerte detaljer";
-
-// Monitor · DiskModuleShell
 "Disk" = "Disk";
 "Startup volume" = "Startvolum";
 "not mounted" = "ikke montert";
-
-// Monitor · DiskPopup
 "Format" = "Format";
 "Used" = "Brukt";
 "Free" = "Ledig";
 "Disk usage threshold" = "Terskel for diskbruk";
-
-// Monitor · DiskTile
+"Activity" = "Activity";
+"Capacity" = "Capacity";
+"Mounted at" = "Mounted at";
+"Now" = "Now";
+"Other volumes" = "Other volumes";
+"Since launch" = "Since launch";
+"read" = "read";
+"write" = "write";
 "free" = "ledig";
-
-// Monitor · GPUModuleShell
 "GPU" = "GPU";
-
-// Monitor · GPUPopup
 "Memory" = "Minne";
 "Model" = "Modell";
 "Utilization" = "Utnyttelse";
 "GPU usage threshold" = "Terskel for GPU-bruk";
-
-// Monitor · GPUTile
+"Accelerators" = "Accelerators";
+"Renderer · tiler" = "Renderer · tiler";
 "cores" = "kjerner";
-
-// Monitor · MemoryReadings
 "Normal" = "Normal";
 "Warning" = "Advarsel";
 "Critical" = "Kritisk";
-
-// Monitor · MenuBarStyle
 "Name" = "Navn";
 "Figure" = "Tall";
 "Ring" = "Ring";
@@ -77,8 +81,6 @@
 "Bar chart" = "Søylediagram";
 "Line chart" = "Linjediagram";
 "Traffic chart" = "Trafikkdiagram";
-
-// Monitor · NetworkModuleShell
 "Network" = "Nettverk";
 "Internet connection lost" = "Internettforbindelsen ble brutt";
 "Internet connection established" = "Internettforbindelsen er opprettet";
@@ -88,55 +90,50 @@
 "Interface changes" = "Grensesnittet endres";
 "Local address changes" = "Den lokale adressen endres";
 "Public address changes" = "Den offentlige adressen endres";
-
-// Monitor · NetworkPopup
 "Download" = "Nedlasting";
 "Local IP" = "Lokal IP";
 "Interface" = "Grensesnitt";
 "Physical address" = "Fysisk adresse";
 "Online" = "Tilkoblet";
 "Offline" = "Frakoblet";
-
-// Monitor · Popup
+"Channel · link rate" = "Channel · link rate";
+"Connection" = "Connection";
+"DNS" = "DNS";
+"Latency · jitter" = "Latency · jitter";
+"Probes answered" = "Probes answered";
+"Router" = "Router";
+"Sent · received since launch" = "Sent · received since launch";
+"Signal" = "Signal";
+"Upload" = "Upload";
+"Wi-Fi name" = "Wi-Fi name";
 "Dashboard" = "Oversikt";
-
-// Monitor · PopupParts
 "Idle" = "Inaktiv";
-
-// Monitor · PopupSection
 "Process" = "Prosess";
-
-// Monitor · RAMModuleShell
 "RAM" = "RAM";
-
-// Monitor · RAMPopup
 "Wired" = "Låst";
 "Compressed" = "Komprimert";
 "Swap size" = "Størrelse på swap";
 "Memory threshold" = "Minneterskel";
-
-// Monitor · RAMTile
+"App memory" = "App memory";
+"Available" = "Available";
+"Breakdown" = "Breakdown";
+"Cached files" = "Cached files";
+"Physical" = "Physical";
+"Swap used" = "Swap used";
+"Top processes · resident" = "Top processes · resident";
 "App" = "App";
 "Swap" = "Swap";
 "Pressure" = "Press";
-
-// Monitor · SensorReadings
 "Battery" = "Batteri";
-
-// Monitor · SensorsModuleShell
 "Sensors" = "Sensorer";
 "Show in the popup" = "Vis i popupvinduet";
 "Hottest temperature" = "Høyeste temperatur";
-
-// Monitor · SensorsPopup
 "History" = "Historikk";
-
-// Monitor · SensorsTile
+"Hottest" = "Hottest";
+"Watched" = "Watched";
 "hottest" = "varmest";
 "sensors" = "sensorer";
 "No sensors answered" = "Ingen sensorer svarte";
-
-// Monitor · Thresholds
 "Total load" = "Total belastning";
 "System load" = "Systembelastning";
 "User load" = "Brukerbelastning";
@@ -147,8 +144,6 @@
 "Memory free" = "Minne ledig";
 "Swap in use" = "Swap i bruk";
 "Disk usage" = "Diskbruk";
-
-// Settings · GeneralPane
 "Reset" = "Nullstill";
 "Silent" = "Stille";
 "Settings" = "Innstillinger";
@@ -161,20 +156,12 @@
 "Spacing" = "Mellomrom";
 "Celsius" = "Celsius";
 "Fahrenheit" = "Fahrenheit";
-
-// Settings · UpdateInterval
 "At start" = "Ved oppstart";
 "Once per month" = "Én gang i måneden";
-
-// Startup · Startup
 "Successfully updated" = "Oppdateringen er fullført";
 "Perch was updated to v" = "Perch er oppdatert til versjon %0";
-
-// Startup · UpdateCheck
 "New version available" = "Ny versjon tilgjengelig";
 "Click to install the new version of Perch" = "Klikk for å installere den nye versjonen av Perch";
-
-// System · DashboardPane
 "Unknown" = "Ukjent";
 "Graphics" = "Grafikk";
 "Serial number" = "Serienummer";
@@ -186,17 +173,18 @@
 "Number of p-cores" = "%0 ytelseskjerner";
 "Disks" = "Disker";
 "Display" = "Skjerm";
-
-// UI · SupportWindow
 "Close" = "Lukk";
 "Support text" = "Takk for at du bruker Perch.\n\nPerch er gratis og åpen kildekode, og utvikles og vedlikeholdes på fritiden. Hvis den gjør hverdagen din litt enklere, hjelper et bidrag med å holde den i gang.";
 "Support Perch" = "Støtt Perch";
 "Donate" = "Doner";
-
-// Update · UpdateWindow
 "Install" = "Installer";
-
-// Views · SettingsShell
+"Could not check for updates" = "Could not check for updates";
+"Download failed." = "Download failed.";
+"Downloading…" = "Downloading…";
+"Installing…" = "Installing…";
+"Later" = "Later";
+"Perch is up to date" = "Perch is up to date";
+"Verified. Perch will restart." = "Verified. Perch will restart.";
 "Report a bug" = "Rapporter en feil";
 "Support the application" = "Støtt programmet";
 "Close application" = "Avslutt programmet";
@@ -206,8 +194,6 @@
 "Preview" = "Forhåndsvisning";
 "Support" = "Støtte";
 "Pause the Perch" = "Sett Perch på pause";
-
-// Views · Setup
 "Perch Setup" = "Oppsett av Perch";
 "Previous" = "Forrige";
 "Previous page" = "Forrige side";
@@ -225,8 +211,6 @@
 "Never check for updates (not recommended)" = "Aldri se etter oppdateringer (anbefales ikke)";
 "The configuration is completed" = "Konfigureringen er fullført";
 "finish_setup_message" = "Alt er klart.\n\nPerch er gratis og åpen kildekode. Hvis du har nytte av den, kan du støtte utviklingen.";
-
-// Views · SetupFlow
 "Next" = "Neste";
 "Next page" = "Neste side";
 "Finish" = "Fullfør";

@@ -13,12 +13,12 @@ final class RAMModule: PopupContent {
     let title = "RAM"
     var menuBarLabel: String { "RAM" }
 
-    private let usedReading = BigReading(caption: "Used", symbol: "memorychip",
+    private let usedReading = BigReading(caption: localized("Used"), symbol: "memorychip",
                                          tint: .systemIndigo)
     // "Available", not "Free": the figure is free plus cached files, which
     // the kernel hands back on demand. Labelled "Free" it sat above a
     // breakdown row also called "Free" showing a tenth of it.
-    private let freeReading = BigReading(caption: "Available", symbol: "square.dashed",
+    private let freeReading = BigReading(caption: localized("Available"), symbol: "square.dashed",
                                          tint: .perchAmber)
 
     private let status = StatusLine()
@@ -26,16 +26,16 @@ final class RAMModule: PopupContent {
     // The breakdown as one bar with a chip per row, in the colours the menu
     // bar's segments already use for the same three shares.
     private let breakdownBar = ShareBar(height: 10)
-    private let appRow = ValueRow("App memory", symbol: "square.fill", tint: .perchBlue)
-    private let wiredRow = ValueRow("Wired", symbol: "square.fill", tint: .perchMagenta)
-    private let compressedRow = ValueRow("Compressed", symbol: "square.fill", tint: .perchOlive)
-    private let cachedRow = ValueRow("Cached files", symbol: "square.fill", tint: RAMModule.cachedTint)
-    private let freeRow = ValueRow("Free", symbol: "square", tint: .tertiaryLabelColor)
+    private let appRow = ValueRow(localized("App memory"), symbol: "square.fill", tint: .perchBlue)
+    private let wiredRow = ValueRow(localized("Wired"), symbol: "square.fill", tint: .perchMagenta)
+    private let compressedRow = ValueRow(localized("Compressed"), symbol: "square.fill", tint: .perchOlive)
+    private let cachedRow = ValueRow(localized("Cached files"), symbol: "square.fill", tint: RAMModule.cachedTint)
+    private let freeRow = ValueRow(localized("Free"), symbol: "square", tint: .tertiaryLabelColor)
     private static let cachedTint = NSColor.secondaryLabelColor.withAlphaComponent(0.45)
 
-    private let swapUsedRow = ValueRow("Swap used")
-    private let totalRow = ValueRow("Physical")
-    private let swapTotalRow = ValueRow("Swap size")
+    private let swapUsedRow = ValueRow(localized("Swap used"))
+    private let totalRow = ValueRow(localized("Physical"))
+    private let swapTotalRow = ValueRow(localized("Swap size"))
     private let detailsToggle = DisclosureButton(key: "RAM_popupDetails")
 
     private let history = HistoryChart(height: 60)
@@ -87,14 +87,14 @@ final class RAMModule: PopupContent {
         stack.addArrangedSubview(history)
         stack.setCustomSpacing(14, after: history)
 
-        stack.addArrangedSubview(SectionHeader("Breakdown"))
+        stack.addArrangedSubview(SectionHeader(localized("Breakdown")))
         stack.addArrangedSubview(breakdownBar)
         stack.setCustomSpacing(6, after: breakdownBar)
         for row in [appRow, wiredRow, compressedRow, cachedRow, freeRow, swapUsedRow] {
             stack.addArrangedSubview(row)
         }
 
-        stack.addArrangedSubview(SectionHeader("Top processes · resident"))
+        stack.addArrangedSubview(SectionHeader(localized("Top processes · resident")))
         for row in processRows {
             row.isHidden = true
             stack.addArrangedSubview(row)

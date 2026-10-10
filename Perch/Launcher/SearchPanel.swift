@@ -159,7 +159,7 @@ final class SearchPanel: NSPanel, NSTableViewDataSource, NSTableViewDelegate, NS
         contentView = background
 
         field.font = .systemFont(ofSize: 22, weight: .regular)
-        field.placeholderString = "Search apps…"
+        field.placeholderString = localized("Search apps…")
         field.isBordered = false
         field.drawsBackground = false
         field.focusRingType = .none
@@ -651,7 +651,7 @@ final class SearchPanel: NSPanel, NSTableViewDataSource, NSTableViewDelegate, NS
             let windows = WindowControl.windowList(for: running)
             if windows.count > 1 {
                 menu.addItem(.separator())
-                let header = NSMenuItem(title: "Windows", action: nil, keyEquivalent: "")
+                let header = NSMenuItem(title: localized("Windows"), action: nil, keyEquivalent: "")
                 header.isEnabled = false
                 menu.addItem(header)
                 for window in windows {

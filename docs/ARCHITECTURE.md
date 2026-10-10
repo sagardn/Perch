@@ -335,30 +335,27 @@ so here if you do.
 
 ### What is not localised
 
-The rebuilt popups mostly hand a literal straight to the view instead of
-passing it through `localized()`. Measured across `Perch/`: 116 strings go
-through `localized()`, and **122 reach a view without it**.
+Everything user-facing now goes through `localized()`. The rebuilt popups
+used to hand literals straight to the view — 122 of them at the worst point,
+including a `UpdateWindow` that called `localized()` zero times, so the whole
+update flow was English on a Japanese machine. 182 strings go through it
+today and fourteen literals remain, every one of them deliberate:
 
-| File | Bare literals |
-|---|---:|
-| `Perch/Monitor/CPUPopup.swift` | 25 |
-| `Perch/Monitor/NetworkPopup.swift` | 20 |
-| `Perch/Monitor/RAMPopup.swift` | 16 |
-| `Perch/Update/UpdateWindow.swift` | 15 |
-| `Perch/Monitor/DiskPopup.swift` | 14 |
-| `Perch/Monitor/GPUPopup.swift` | 13 |
-| everything else | 19 |
+| Still a literal | Why |
+|---|---|
+| `"Perch"` in `GeneralPane` and `UpdateWindow` | the product name; it is not translated anywhere |
+| `"CPU"`, `"GPU"`, `"RAM"`, `"NET"` | menu bar labels, where the space is a few points wide and the abbreviation is read the same in every language the app ships |
+| `"↓ "`, `"↑ "` | direction arrows |
+| `"⌃-"` | a keyboard glyph standing in for an unset shortcut |
+| `com.sagar.perch.*` ×4 | dispatch queue labels, which no one ever sees |
 
-`UpdateWindow.swift` is the sharpest version: it calls `localized()` zero
-times, so the entire update flow — "Downloading", "Installing", the version
-rows, the changelog — is English on a Japanese machine. The old module had
-keys for all of it; they were in the 376, because the window that reads them
-was rewritten and does not.
+They are listed because the obvious next contribution is to "finish the job"
+by wrapping them, and each one would be a small regression: a translated
+product name, a menu bar item that no longer fits, or a queue label that
+changes with the user's locale.
 
-A clean `scan` therefore means "nothing that *is* localised is missing a
-key". It does not mean the app is translated. Wrapping the 122 is its own
-piece of work, and the right order is to wrap first and add the keys second,
-because `scan` will then name every key the wrapping needs.
+A clean `scan` means every string the code localises has a key. It still
+does not mean the app is *translated* — see below.
 
 ### How the translations were made
 
@@ -376,6 +373,20 @@ each language translated by a model from `en.lproj` alone, told not to open
 any existing translation or any history. en-GB and en-AU are `en` with
 British spelling. Each file's header says it is machine-translated, dated,
 and unreviewed.
+
+### The fifty keys added after that pass
+
+Wrapping the remaining literals added 50 keys, and they are **English in all
+38 translated files**. `Tools/i18n.py fix` fills a missing key with the
+English text, which is what keeps `check` green; it is not a translation and
+does not pretend to be.
+
+This is not a regression. Those strings were hard-coded English a commit
+earlier, so nobody loses a translation they had — what changes is that they
+are now *translatable*, and a translation pass has something to find. Run
+`scan` and `check` after any such pass; the keys are listed under their own
+source file in `en.lproj`, so the new ones are the sections named for the
+popups and `Launcher ·`.
 
 "Replaced every value" does not mean every value differs. Diff the two passes
 and about three quarters are byte-identical, because most of a 159-string UI

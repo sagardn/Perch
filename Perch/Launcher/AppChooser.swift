@@ -31,7 +31,7 @@ enum AppChooser {
     /// means cancelled.
     static func run(completion: @escaping ([AppEntry]) -> Void) {
         let panel = NSOpenPanel()
-        panel.title = "Add Apps to Perch"
+        panel.title = localized("Add Apps to Perch")
         panel.prompt = "Add"
         panel.message = "Choose one or more applications."
         panel.allowsMultipleSelection = true

@@ -10,6 +10,13 @@
  */
 
 // Monitor · CPUModuleShell
+"Add Apps to Perch" = "Add Apps to Perch";
+"Choose from Applications…" = "Choose from Applications…";
+"Drag to reorder · ⌃1–⌃9 follow the first nine" = "Drag to reorder · ⌃1–⌃9 follow the first nine";
+"Perch Apps" = "Perch Apps";
+"Search apps…" = "Search apps…";
+"Windows" = "Windows";
+"App options (→)" = "App options (→)";
 "CPU" = "CPU";
 "None" = "Няма";
 "2 minutes" = "2 минути";
@@ -19,8 +26,6 @@
 "5 minutes" = "5 минути";
 "Menu bar" = "Лента с менюта";
 "Notify me when" = "Уведомявай ме, когато";
-
-// Monitor · CPUPopup
 "Clock" = "Честота";
 "Processor" = "Процесор";
 "Cores" = "Ядра";
@@ -30,44 +35,43 @@
 "CPU usage threshold" = "Праг на натоварване на CPU";
 "Total" = "Общо";
 "Temperature" = "Температура";
-
-// Monitor · CombinedBar
+"Clock ceiling" = "Clock ceiling";
+"Cores available" = "Cores available";
+"Efficiency · performance" = "Efficiency · performance";
+"Limits" = "Limits";
+"Load average · 1, 5, 15 min" = "Load average · 1, 5, 15 min";
+"Scheduler" = "Scheduler";
+"Top processes · % of one core" = "Top processes · % of one core";
 "No module has anything to show here yet." = "Все още няма модул с данни за показване тук.";
 "Combined modules" = "Комбинирани модули";
 "Combined details" = "Комбинирани подробности";
-
-// Monitor · DiskModuleShell
 "Disk" = "Диск";
 "Startup volume" = "Стартов том";
 "not mounted" = "не е монтиран";
-
-// Monitor · DiskPopup
 "Format" = "Формат";
 "Used" = "Използвано";
 "Free" = "Свободно";
 "Disk usage threshold" = "Праг на използване на диска";
-
-// Monitor · DiskTile
+"Activity" = "Activity";
+"Capacity" = "Capacity";
+"Mounted at" = "Mounted at";
+"Now" = "Now";
+"Other volumes" = "Other volumes";
+"Since launch" = "Since launch";
+"read" = "read";
+"write" = "write";
 "free" = "свободно";
-
-// Monitor · GPUModuleShell
 "GPU" = "GPU";
-
-// Monitor · GPUPopup
 "Memory" = "Памет";
 "Model" = "Модел";
 "Utilization" = "Натоварване";
 "GPU usage threshold" = "Праг на натоварване на GPU";
-
-// Monitor · GPUTile
+"Accelerators" = "Accelerators";
+"Renderer · tiler" = "Renderer · tiler";
 "cores" = "ядра";
-
-// Monitor · MemoryReadings
 "Normal" = "Нормално";
 "Warning" = "Предупреждение";
 "Critical" = "Критично";
-
-// Monitor · MenuBarStyle
 "Name" = "Име";
 "Figure" = "Число";
 "Ring" = "Пръстен";
@@ -77,8 +81,6 @@
 "Bar chart" = "Стълбовидна диаграма";
 "Line chart" = "Линейна диаграма";
 "Traffic chart" = "Диаграма на трафика";
-
-// Monitor · NetworkModuleShell
 "Network" = "Мрежа";
 "Internet connection lost" = "Връзката с интернет е загубена";
 "Internet connection established" = "Връзката с интернет е установена";
@@ -88,55 +90,50 @@
 "Interface changes" = "Интерфейсът се смени";
 "Local address changes" = "Локалният адрес се смени";
 "Public address changes" = "Публичният адрес се смени";
-
-// Monitor · NetworkPopup
 "Download" = "Изтегляне";
 "Local IP" = "Локален IP";
 "Interface" = "Интерфейс";
 "Physical address" = "Физически адрес";
 "Online" = "Онлайн";
 "Offline" = "Офлайн";
-
-// Monitor · Popup
+"Channel · link rate" = "Channel · link rate";
+"Connection" = "Connection";
+"DNS" = "DNS";
+"Latency · jitter" = "Latency · jitter";
+"Probes answered" = "Probes answered";
+"Router" = "Router";
+"Sent · received since launch" = "Sent · received since launch";
+"Signal" = "Signal";
+"Upload" = "Upload";
+"Wi-Fi name" = "Wi-Fi name";
 "Dashboard" = "Табло";
-
-// Monitor · PopupParts
 "Idle" = "Бездействие";
-
-// Monitor · PopupSection
 "Process" = "Процес";
-
-// Monitor · RAMModuleShell
 "RAM" = "RAM";
-
-// Monitor · RAMPopup
 "Wired" = "Фиксирана";
 "Compressed" = "Компресирана";
 "Swap size" = "Размер на суапа";
 "Memory threshold" = "Праг на паметта";
-
-// Monitor · RAMTile
+"App memory" = "App memory";
+"Available" = "Available";
+"Breakdown" = "Breakdown";
+"Cached files" = "Cached files";
+"Physical" = "Physical";
+"Swap used" = "Swap used";
+"Top processes · resident" = "Top processes · resident";
 "App" = "Приложение";
 "Swap" = "Суап";
 "Pressure" = "Натиск";
-
-// Monitor · SensorReadings
 "Battery" = "Батерия";
-
-// Monitor · SensorsModuleShell
 "Sensors" = "Сензори";
 "Show in the popup" = "Показване в изскачащия прозорец";
 "Hottest temperature" = "Най-висока температура";
-
-// Monitor · SensorsPopup
 "History" = "История";
-
-// Monitor · SensorsTile
+"Hottest" = "Hottest";
+"Watched" = "Watched";
 "hottest" = "най-висока";
 "sensors" = "сензори";
 "No sensors answered" = "Няма отговорили сензори";
-
-// Monitor · Thresholds
 "Total load" = "Общо натоварване";
 "System load" = "Натоварване от системата";
 "User load" = "Натоварване от потребителя";
@@ -147,8 +144,6 @@
 "Memory free" = "Свободна памет";
 "Swap in use" = "Използван суап";
 "Disk usage" = "Използване на диска";
-
-// Settings · GeneralPane
 "Reset" = "Нулиране";
 "Silent" = "Безшумно";
 "Settings" = "Настройки";
@@ -161,20 +156,12 @@
 "Spacing" = "Разстояние";
 "Celsius" = "Целзий";
 "Fahrenheit" = "Фаренхайт";
-
-// Settings · UpdateInterval
 "At start" = "При стартиране";
 "Once per month" = "Веднъж месечно";
-
-// Startup · Startup
 "Successfully updated" = "Актуализирано успешно";
 "Perch was updated to v" = "Perch е актуализиран до версия %0";
-
-// Startup · UpdateCheck
 "New version available" = "Налична е нова версия";
 "Click to install the new version of Perch" = "Щракнете, за да инсталирате новата версия на Perch";
-
-// System · DashboardPane
 "Unknown" = "Неизвестно";
 "Graphics" = "Графика";
 "Serial number" = "Сериен номер";
@@ -186,17 +173,18 @@
 "Number of p-cores" = "%0 производителни ядра";
 "Disks" = "Дискове";
 "Display" = "Дисплей";
-
-// UI · SupportWindow
 "Close" = "Затваряне";
 "Support text" = "Благодарим ви, че използвате Perch.\n\nPerch е безплатен и с отворен код, създава се и се поддържа в свободното време. Ако прави деня ви малко по-лесен, един принос помага той да продължи.";
 "Support Perch" = "Подкрепете Perch";
 "Donate" = "Дарение";
-
-// Update · UpdateWindow
 "Install" = "Инсталиране";
-
-// Views · SettingsShell
+"Could not check for updates" = "Could not check for updates";
+"Download failed." = "Download failed.";
+"Downloading…" = "Downloading…";
+"Installing…" = "Installing…";
+"Later" = "Later";
+"Perch is up to date" = "Perch is up to date";
+"Verified. Perch will restart." = "Verified. Perch will restart.";
 "Report a bug" = "Докладване на грешка";
 "Support the application" = "Подкрепа за приложението";
 "Close application" = "Затваряне на приложението";
@@ -206,8 +194,6 @@
 "Preview" = "Преглед";
 "Support" = "Подкрепа";
 "Pause the Perch" = "Пауза на Perch";
-
-// Views · Setup
 "Perch Setup" = "Настройка на Perch";
 "Previous" = "Назад";
 "Previous page" = "Предишна страница";
@@ -225,8 +211,6 @@
 "Never check for updates (not recommended)" = "Без проверка за актуализации (не се препоръчва)";
 "The configuration is completed" = "Настройката е завършена";
 "finish_setup_message" = "Всичко е готово.\n\nPerch е безплатен и с отворен код. Ако ви е полезен, можете да подкрепите разработката му.";
-
-// Views · SetupFlow
 "Next" = "Напред";
 "Next page" = "Следваща страница";
 "Finish" = "Готово";

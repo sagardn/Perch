@@ -10,6 +10,13 @@
  */
 
 // Monitor · CPUModuleShell
+"Add Apps to Perch" = "Add Apps to Perch";
+"Choose from Applications…" = "Choose from Applications…";
+"Drag to reorder · ⌃1–⌃9 follow the first nine" = "Drag to reorder · ⌃1–⌃9 follow the first nine";
+"Perch Apps" = "Perch Apps";
+"Search apps…" = "Search apps…";
+"Windows" = "Windows";
+"App options (→)" = "App options (→)";
 "CPU" = "CPU";
 "None" = "কোনোটি নয়";
 "2 minutes" = "২ মিনিট";
@@ -19,8 +26,6 @@
 "5 minutes" = "৫ মিনিট";
 "Menu bar" = "মেনু বার";
 "Notify me when" = "আমাকে জানান যখন";
-
-// Monitor · CPUPopup
 "Clock" = "ফ্রিকোয়েন্সি";
 "Processor" = "প্রসেসর";
 "Cores" = "কোর";
@@ -30,44 +35,43 @@
 "CPU usage threshold" = "CPU ব্যবহারের সীমা";
 "Total" = "মোট";
 "Temperature" = "তাপমাত্রা";
-
-// Monitor · CombinedBar
+"Clock ceiling" = "Clock ceiling";
+"Cores available" = "Cores available";
+"Efficiency · performance" = "Efficiency · performance";
+"Limits" = "Limits";
+"Load average · 1, 5, 15 min" = "Load average · 1, 5, 15 min";
+"Scheduler" = "Scheduler";
+"Top processes · % of one core" = "Top processes · % of one core";
 "No module has anything to show here yet." = "এখানে দেখানোর মতো কিছু এখনও কোনো মডিউলে নেই।";
 "Combined modules" = "সম্মিলিত মডিউল";
 "Combined details" = "সম্মিলিত বিবরণ";
-
-// Monitor · DiskModuleShell
 "Disk" = "ডিস্ক";
 "Startup volume" = "স্টার্টআপ ভলিউম";
 "not mounted" = "মাউন্ট করা নেই";
-
-// Monitor · DiskPopup
 "Format" = "ফরম্যাট";
 "Used" = "ব্যবহৃত";
 "Free" = "খালি";
 "Disk usage threshold" = "ডিস্ক ব্যবহারের সীমা";
-
-// Monitor · DiskTile
+"Activity" = "Activity";
+"Capacity" = "Capacity";
+"Mounted at" = "Mounted at";
+"Now" = "Now";
+"Other volumes" = "Other volumes";
+"Since launch" = "Since launch";
+"read" = "read";
+"write" = "write";
 "free" = "খালি";
-
-// Monitor · GPUModuleShell
 "GPU" = "GPU";
-
-// Monitor · GPUPopup
 "Memory" = "মেমরি";
 "Model" = "মডেল";
 "Utilization" = "ব্যবহার";
 "GPU usage threshold" = "GPU ব্যবহারের সীমা";
-
-// Monitor · GPUTile
+"Accelerators" = "Accelerators";
+"Renderer · tiler" = "Renderer · tiler";
 "cores" = "কোর";
-
-// Monitor · MemoryReadings
 "Normal" = "স্বাভাবিক";
 "Warning" = "সতর্কতা";
 "Critical" = "সংকটজনক";
-
-// Monitor · MenuBarStyle
 "Name" = "নাম";
 "Figure" = "সংখ্যা";
 "Ring" = "রিং";
@@ -77,8 +81,6 @@
 "Bar chart" = "বার চার্ট";
 "Line chart" = "লাইন চার্ট";
 "Traffic chart" = "ট্রাফিক চার্ট";
-
-// Monitor · NetworkModuleShell
 "Network" = "নেটওয়ার্ক";
 "Internet connection lost" = "ইন্টারনেট সংযোগ বিচ্ছিন্ন হয়েছে";
 "Internet connection established" = "ইন্টারনেট সংযোগ স্থাপিত হয়েছে";
@@ -88,55 +90,50 @@
 "Interface changes" = "ইন্টারফেস বদলায়";
 "Local address changes" = "স্থানীয় ঠিকানা বদলায়";
 "Public address changes" = "পাবলিক ঠিকানা বদলায়";
-
-// Monitor · NetworkPopup
 "Download" = "ডাউনলোড";
 "Local IP" = "স্থানীয় IP";
 "Interface" = "ইন্টারফেস";
 "Physical address" = "ফিজিক্যাল ঠিকানা";
 "Online" = "অনলাইন";
 "Offline" = "অফলাইন";
-
-// Monitor · Popup
+"Channel · link rate" = "Channel · link rate";
+"Connection" = "Connection";
+"DNS" = "DNS";
+"Latency · jitter" = "Latency · jitter";
+"Probes answered" = "Probes answered";
+"Router" = "Router";
+"Sent · received since launch" = "Sent · received since launch";
+"Signal" = "Signal";
+"Upload" = "Upload";
+"Wi-Fi name" = "Wi-Fi name";
 "Dashboard" = "ড্যাশবোর্ড";
-
-// Monitor · PopupParts
 "Idle" = "নিষ্ক্রিয়";
-
-// Monitor · PopupSection
 "Process" = "প্রসেস";
-
-// Monitor · RAMModuleShell
 "RAM" = "RAM";
-
-// Monitor · RAMPopup
 "Wired" = "ওয়্যার্ড";
 "Compressed" = "সংকুচিত";
 "Swap size" = "সোয়াপের আকার";
 "Memory threshold" = "মেমরির সীমা";
-
-// Monitor · RAMTile
+"App memory" = "App memory";
+"Available" = "Available";
+"Breakdown" = "Breakdown";
+"Cached files" = "Cached files";
+"Physical" = "Physical";
+"Swap used" = "Swap used";
+"Top processes · resident" = "Top processes · resident";
 "App" = "অ্যাপ";
 "Swap" = "সোয়াপ";
 "Pressure" = "চাপ";
-
-// Monitor · SensorReadings
 "Battery" = "ব্যাটারি";
-
-// Monitor · SensorsModuleShell
 "Sensors" = "সেন্সর";
 "Show in the popup" = "পপআপে দেখান";
 "Hottest temperature" = "সর্বোচ্চ তাপমাত্রা";
-
-// Monitor · SensorsPopup
 "History" = "ইতিহাস";
-
-// Monitor · SensorsTile
+"Hottest" = "Hottest";
+"Watched" = "Watched";
 "hottest" = "সর্বোচ্চ";
 "sensors" = "সেন্সর";
 "No sensors answered" = "কোনো সেন্সর সাড়া দেয়নি";
-
-// Monitor · Thresholds
 "Total load" = "মোট লোড";
 "System load" = "সিস্টেম লোড";
 "User load" = "ব্যবহারকারী লোড";
@@ -147,8 +144,6 @@
 "Memory free" = "খালি মেমরি";
 "Swap in use" = "ব্যবহৃত সোয়াপ";
 "Disk usage" = "ডিস্ক ব্যবহার";
-
-// Settings · GeneralPane
 "Reset" = "রিসেট";
 "Silent" = "নীরব";
 "Settings" = "সেটিংস";
@@ -161,20 +156,12 @@
 "Spacing" = "ব্যবধান";
 "Celsius" = "সেলসিয়াস";
 "Fahrenheit" = "ফারেনহাইট";
-
-// Settings · UpdateInterval
 "At start" = "চালু হওয়ার সময়";
 "Once per month" = "মাসে একবার";
-
-// Startup · Startup
 "Successfully updated" = "সফলভাবে আপডেট হয়েছে";
 "Perch was updated to v" = "Perch সংস্করণ %0-এ আপডেট হয়েছে";
-
-// Startup · UpdateCheck
 "New version available" = "নতুন সংস্করণ উপলব্ধ";
 "Click to install the new version of Perch" = "Perch-এর নতুন সংস্করণ ইনস্টল করতে ক্লিক করুন";
-
-// System · DashboardPane
 "Unknown" = "অজানা";
 "Graphics" = "গ্রাফিক্স";
 "Serial number" = "সিরিয়াল নম্বর";
@@ -186,17 +173,18 @@
 "Number of p-cores" = "%0টি পারফরম্যান্স কোর";
 "Disks" = "ডিস্ক";
 "Display" = "ডিসপ্লে";
-
-// UI · SupportWindow
 "Close" = "বন্ধ করুন";
 "Support text" = "Perch ব্যবহার করার জন্য ধন্যবাদ।\n\nPerch বিনামূল্যে ও ওপেন সোর্স, এবং অবসর সময়ে তৈরি ও রক্ষণাবেক্ষণ করা হয়। এটি যদি আপনার দিনকে একটু সহজ করে, তবে আপনার অবদান এটিকে চালু রাখতে সাহায্য করে।";
 "Support Perch" = "Perch-কে সমর্থন করুন";
 "Donate" = "দান করুন";
-
-// Update · UpdateWindow
 "Install" = "ইনস্টল করুন";
-
-// Views · SettingsShell
+"Could not check for updates" = "Could not check for updates";
+"Download failed." = "Download failed.";
+"Downloading…" = "Downloading…";
+"Installing…" = "Installing…";
+"Later" = "Later";
+"Perch is up to date" = "Perch is up to date";
+"Verified. Perch will restart." = "Verified. Perch will restart.";
 "Report a bug" = "বাগ রিপোর্ট করুন";
 "Support the application" = "অ্যাপ্লিকেশনটিকে সমর্থন করুন";
 "Close application" = "অ্যাপ্লিকেশন বন্ধ করুন";
@@ -206,8 +194,6 @@
 "Preview" = "প্রিভিউ";
 "Support" = "সমর্থন";
 "Pause the Perch" = "Perch বিরতি দিন";
-
-// Views · Setup
 "Perch Setup" = "Perch সেটআপ";
 "Previous" = "পূর্ববর্তী";
 "Previous page" = "পূর্ববর্তী পৃষ্ঠা";
@@ -225,8 +211,6 @@
 "Never check for updates (not recommended)" = "কখনো আপডেট দেখবেন না (প্রস্তাবিত নয়)";
 "The configuration is completed" = "কনফিগারেশন সম্পন্ন হয়েছে";
 "finish_setup_message" = "সব প্রস্তুত।\n\nPerch বিনামূল্যে ও ওপেন সোর্স। এটি আপনার কাজে লাগলে এর উন্নয়নে সহায়তা করতে পারেন।";
-
-// Views · SetupFlow
 "Next" = "পরবর্তী";
 "Next page" = "পরবর্তী পৃষ্ঠা";
 "Finish" = "শেষ করুন";

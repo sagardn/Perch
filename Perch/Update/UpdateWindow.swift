@@ -64,7 +64,7 @@ final class UpdateWindow: NSWindow, NSWindowDelegate {
         progress.isHidden = true
 
         dismiss.bezelStyle = .rounded
-        dismiss.title = "Close"
+        dismiss.title = localized("Close")
         dismiss.target = self
         dismiss.action = #selector(closeWindow)
 
@@ -112,8 +112,8 @@ final class UpdateWindow: NSWindow, NSWindowDelegate {
         notesScroll.isHidden = false
         progress.isHidden = true
         progress.doubleValue = 0
-        dismiss.title = "Later"
-        act.title = "Download"
+        dismiss.title = localized("Later")
+        act.title = localized("Download")
         act.isHidden = false
         present()
     }
@@ -121,11 +121,11 @@ final class UpdateWindow: NSWindow, NSWindowDelegate {
     /// Nothing to do -- shown only when the user asked.
     func reportUpToDate() {
         pending = nil
-        title_.stringValue = "Perch is up to date"
+        title_.stringValue = localized("Perch is up to date")
         detail.stringValue = Version.current.map { "Version \($0)" } ?? ""
         notesScroll.isHidden = true
         progress.isHidden = true
-        dismiss.title = "Close"
+        dismiss.title = localized("Close")
         act.isHidden = true
         present()
     }
@@ -134,11 +134,11 @@ final class UpdateWindow: NSWindow, NSWindowDelegate {
     /// the behaviour this whole component exists to change.
     func report(_ error: Error) {
         pending = nil
-        title_.stringValue = "Could not check for updates"
+        title_.stringValue = localized("Could not check for updates")
         detail.stringValue = (error as? LocalizedError)?.errorDescription ?? error.localizedDescription
         notesScroll.isHidden = true
         progress.isHidden = true
-        dismiss.title = "Close"
+        dismiss.title = localized("Close")
         act.isHidden = true
         present()
     }
@@ -154,12 +154,12 @@ final class UpdateWindow: NSWindow, NSWindowDelegate {
     @objc private func primary() {
         if let image = downloaded {
             act.isEnabled = false
-            act.title = "Installing…"
+            act.title = localized("Installing…")
             updater.install(image) { [weak self] error in
                 guard let error else { return }   // on success the app is replaced and relaunched
                 DispatchQueue.main.async {
                     self?.act.isEnabled = true
-                    self?.act.title = "Install"
+                    self?.act.title = localized("Install")
                     Alert.show("Could not install the update", error: error)
                 }
             }
@@ -168,7 +168,7 @@ final class UpdateWindow: NSWindow, NSWindowDelegate {
 
         guard let release = pending else { return }
         act.isEnabled = false
-        act.title = "Downloading…"
+        act.title = localized("Downloading…")
         progress.isHidden = false
 
         updater.download(release, progress: { [weak self] fraction in
@@ -183,12 +183,12 @@ final class UpdateWindow: NSWindow, NSWindowDelegate {
                 switch result {
                 case .success(let file):
                     self.downloaded = file
-                    self.detail.stringValue = "Verified. Perch will restart."
-                    self.act.title = "Install"
+                    self.detail.stringValue = localized("Verified. Perch will restart.")
+                    self.act.title = localized("Install")
                 case .failure(let error):
                     self.progress.isHidden = true
-                    self.act.title = "Download"
-                    self.detail.stringValue = "Download failed."
+                    self.act.title = localized("Download")
+                    self.detail.stringValue = localized("Download failed.")
                     Alert.show("Could not download the update", error: error)
                 }
             }

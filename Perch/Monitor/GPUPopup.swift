@@ -11,22 +11,22 @@ final class GPUModule: PopupContent {
     let title = "GPU"
     var menuBarLabel: String { "GPU" }
 
-    private let usageReading = BigReading(caption: "Utilization", symbol: "cpu",
+    private let usageReading = BigReading(caption: localized("Utilization"), symbol: "cpu",
                                           tint: .systemIndigo)
-    private let memoryReading = BigReading(caption: "Memory", symbol: "memorychip",
+    private let memoryReading = BigReading(caption: localized("Memory"), symbol: "memorychip",
                                            tint: .perchAmber)
 
     private let status = StatusLine()
     private let history = HistoryChart(height: 60)
 
     // One row: the two stages are only read against each other.
-    private let splitRow = ValueRow("Renderer · tiler")
+    private let splitRow = ValueRow(localized("Renderer · tiler"))
 
     // No "Memory in use" row: it repeated the headline figure exactly.
-    private let modelRow = ValueRow("Model")
-    private let coresRow = ValueRow("Cores")
+    private let modelRow = ValueRow(localized("Model"))
+    private let coresRow = ValueRow(localized("Cores"))
     private let detailsToggle = DisclosureButton(key: "GPU_popupDetails")
-    private let acceleratorsHeader = SectionHeader("Accelerators")
+    private let acceleratorsHeader = SectionHeader(localized("Accelerators"))
 
     /// One row per accelerator, for a Mac with more than one. Built for a
     /// handful and the surplus hidden, so a machine that gains an eGPU does

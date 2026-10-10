@@ -12,39 +12,39 @@ final class CPUModule: PopupContent {
     let title = "CPU"
     var menuBarLabel: String { "CPU" }
 
-    private let temperatureReading = BigReading(caption: "Temperature",
+    private let temperatureReading = BigReading(caption: localized("Temperature"),
                                                 symbol: "thermometer.medium",
                                                 tint: .perchAmber)
-    private let totalReading = BigReading(caption: "Total", symbol: "cpu", tint: .systemIndigo)
+    private let totalReading = BigReading(caption: localized("Total"), symbol: "cpu", tint: .systemIndigo)
 
     private let status = StatusLine()
     private let history = HistoryChart(height: 60)
     private let bars = CoreBars()
-    private let clusterRow = ValueRow("Efficiency · performance")
+    private let clusterRow = ValueRow(localized("Efficiency · performance"))
 
     // The user/system split as a bar with a chip per row, the same colours
     // the menu bar's ring divides into. Idle is the track the bar leaves.
     private let splitBar = ShareBar(height: 8)
-    private let userRow = ValueRow("User", symbol: "square.fill", tint: .perchBlue)
-    private let systemRow = ValueRow("System", symbol: "square.fill", tint: .perchMagenta)
+    private let userRow = ValueRow(localized("User"), symbol: "square.fill", tint: .perchBlue)
+    private let systemRow = ValueRow(localized("System"), symbol: "square.fill", tint: .perchMagenta)
 
     // One row, not three under their own header: the three figures are only
     // ever read against each other, rising or falling.
-    private let averageRow = ValueRow("Load average · 1, 5, 15 min")
+    private let averageRow = ValueRow(localized("Load average · 1, 5, 15 min"))
 
-    private let brandRow = ValueRow("Processor")
-    private let coresRow = ValueRow("Cores")
-    private let frequencyRow = ValueRow("Clock")
-    private let uptimeRow = ValueRow("Uptime")
+    private let brandRow = ValueRow(localized("Processor"))
+    private let coresRow = ValueRow(localized("Cores"))
+    private let frequencyRow = ValueRow(localized("Clock"))
+    private let uptimeRow = ValueRow(localized("Uptime"))
     private let detailsToggle = DisclosureButton(key: "CPU_popupDetails")
 
     /// Shown only on a Mac that is being held back. See `CPUReadings.Limits`:
     /// macOS reports these once it has had cause to, and an idle machine has
     /// nothing to report.
-    private let limitsHeader = SectionHeader("Limits")
-    private let schedulerRow = ValueRow("Scheduler")
-    private let availableCoresRow = ValueRow("Cores available")
-    private let speedRow = ValueRow("Clock ceiling")
+    private let limitsHeader = SectionHeader(localized("Limits"))
+    private let schedulerRow = ValueRow(localized("Scheduler"))
+    private let availableCoresRow = ValueRow(localized("Cores available"))
+    private let speedRow = ValueRow(localized("Clock ceiling"))
 
     /// Built for the largest the setting allows, and the surplus hidden, so
     /// changing the count does not mean rebuilding the view.
@@ -91,7 +91,7 @@ final class CPUModule: PopupContent {
         stack.addArrangedSubview(history)
         stack.setCustomSpacing(14, after: history)
 
-        stack.addArrangedSubview(SectionHeader("Cores"))
+        stack.addArrangedSubview(SectionHeader(localized("Cores")))
         stack.addArrangedSubview(bars)
         stack.addArrangedSubview(clusterRow)
         stack.setCustomSpacing(10, after: clusterRow)
@@ -106,7 +106,7 @@ final class CPUModule: PopupContent {
         }
         setLimits(CPUReadings.Limits())
 
-        stack.addArrangedSubview(SectionHeader("Top processes · % of one core"))
+        stack.addArrangedSubview(SectionHeader(localized("Top processes · % of one core")))
         for row in processRows {
             row.isHidden = true
             stack.addArrangedSubview(row)

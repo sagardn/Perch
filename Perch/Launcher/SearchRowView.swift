@@ -66,7 +66,7 @@ final class SearchRowView: NSView {
         arrow.image = NSImage(systemSymbolName: "chevron.right",
                               accessibilityDescription: "App options")
         arrow.imageScaling = .scaleNone
-        arrow.toolTip = "App options (→)"
+        arrow.toolTip = localized("App options (→)")
         arrow.alphaValue = 0
         arrow.translatesAutoresizingMaskIntoConstraints = false
 

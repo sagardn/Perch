@@ -10,6 +10,13 @@
  */
 
 // Monitor · CPUModuleShell
+"Add Apps to Perch" = "Add Apps to Perch";
+"Choose from Applications…" = "Choose from Applications…";
+"Drag to reorder · ⌃1–⌃9 follow the first nine" = "Drag to reorder · ⌃1–⌃9 follow the first nine";
+"Perch Apps" = "Perch Apps";
+"Search apps…" = "Search apps…";
+"Windows" = "Windows";
+"App options (→)" = "App options (→)";
 "CPU" = "CPU";
 "None" = "Yok";
 "2 minutes" = "2 dakika";
@@ -19,8 +26,6 @@
 "5 minutes" = "5 dakika";
 "Menu bar" = "Menü çubuğu";
 "Notify me when" = "Şu durumlarda bildir";
-
-// Monitor · CPUPopup
 "Clock" = "Saat hızı";
 "Processor" = "İşlemci";
 "Cores" = "Çekirdekler";
@@ -30,44 +35,43 @@
 "CPU usage threshold" = "CPU kullanım eşiği";
 "Total" = "Toplam";
 "Temperature" = "Sıcaklık";
-
-// Monitor · CombinedBar
+"Clock ceiling" = "Clock ceiling";
+"Cores available" = "Cores available";
+"Efficiency · performance" = "Efficiency · performance";
+"Limits" = "Limits";
+"Load average · 1, 5, 15 min" = "Load average · 1, 5, 15 min";
+"Scheduler" = "Scheduler";
+"Top processes · % of one core" = "Top processes · % of one core";
 "No module has anything to show here yet." = "Henüz burada gösterecek bir şeyi olan modül yok.";
 "Combined modules" = "Birleşik modüller";
 "Combined details" = "Birleşik ayrıntılar";
-
-// Monitor · DiskModuleShell
 "Disk" = "Disk";
 "Startup volume" = "Başlangıç birimi";
 "not mounted" = "bağlı değil";
-
-// Monitor · DiskPopup
 "Format" = "Biçim";
 "Used" = "Kullanılan";
 "Free" = "Boş";
 "Disk usage threshold" = "Disk kullanım eşiği";
-
-// Monitor · DiskTile
+"Activity" = "Activity";
+"Capacity" = "Capacity";
+"Mounted at" = "Mounted at";
+"Now" = "Now";
+"Other volumes" = "Other volumes";
+"Since launch" = "Since launch";
+"read" = "read";
+"write" = "write";
 "free" = "boş";
-
-// Monitor · GPUModuleShell
 "GPU" = "GPU";
-
-// Monitor · GPUPopup
 "Memory" = "Bellek";
 "Model" = "Model";
 "Utilization" = "Kullanım";
 "GPU usage threshold" = "GPU kullanım eşiği";
-
-// Monitor · GPUTile
+"Accelerators" = "Accelerators";
+"Renderer · tiler" = "Renderer · tiler";
 "cores" = "çekirdek";
-
-// Monitor · MemoryReadings
 "Normal" = "Normal";
 "Warning" = "Uyarı";
 "Critical" = "Kritik";
-
-// Monitor · MenuBarStyle
 "Name" = "Ad";
 "Figure" = "Sayı";
 "Ring" = "Halka";
@@ -77,8 +81,6 @@
 "Bar chart" = "Çubuk grafik";
 "Line chart" = "Çizgi grafik";
 "Traffic chart" = "Trafik grafiği";
-
-// Monitor · NetworkModuleShell
 "Network" = "Ağ";
 "Internet connection lost" = "İnternet bağlantısı kesildi";
 "Internet connection established" = "İnternet bağlantısı kuruldu";
@@ -88,55 +90,50 @@
 "Interface changes" = "Arayüz değiştiğinde";
 "Local address changes" = "Yerel adres değiştiğinde";
 "Public address changes" = "Genel adres değiştiğinde";
-
-// Monitor · NetworkPopup
 "Download" = "İndirme";
 "Local IP" = "Yerel IP";
 "Interface" = "Arayüz";
 "Physical address" = "Fiziksel adres";
 "Online" = "Çevrimiçi";
 "Offline" = "Çevrimdışı";
-
-// Monitor · Popup
+"Channel · link rate" = "Channel · link rate";
+"Connection" = "Connection";
+"DNS" = "DNS";
+"Latency · jitter" = "Latency · jitter";
+"Probes answered" = "Probes answered";
+"Router" = "Router";
+"Sent · received since launch" = "Sent · received since launch";
+"Signal" = "Signal";
+"Upload" = "Upload";
+"Wi-Fi name" = "Wi-Fi name";
 "Dashboard" = "Pano";
-
-// Monitor · PopupParts
 "Idle" = "Boşta";
-
-// Monitor · PopupSection
 "Process" = "İşlem";
-
-// Monitor · RAMModuleShell
 "RAM" = "RAM";
-
-// Monitor · RAMPopup
 "Wired" = "Kalıcı";
 "Compressed" = "Sıkıştırılmış";
 "Swap size" = "Takas boyutu";
 "Memory threshold" = "Bellek eşiği";
-
-// Monitor · RAMTile
+"App memory" = "App memory";
+"Available" = "Available";
+"Breakdown" = "Breakdown";
+"Cached files" = "Cached files";
+"Physical" = "Physical";
+"Swap used" = "Swap used";
+"Top processes · resident" = "Top processes · resident";
 "App" = "Uygulama";
 "Swap" = "Takas";
 "Pressure" = "Baskı";
-
-// Monitor · SensorReadings
 "Battery" = "Pil";
-
-// Monitor · SensorsModuleShell
 "Sensors" = "Sensörler";
 "Show in the popup" = "Açılır pencerede göster";
 "Hottest temperature" = "En yüksek sıcaklık";
-
-// Monitor · SensorsPopup
 "History" = "Geçmiş";
-
-// Monitor · SensorsTile
+"Hottest" = "Hottest";
+"Watched" = "Watched";
 "hottest" = "en sıcak";
 "sensors" = "sensör";
 "No sensors answered" = "Hiçbir sensör yanıt vermedi";
-
-// Monitor · Thresholds
 "Total load" = "Toplam yük";
 "System load" = "Sistem yükü";
 "User load" = "Kullanıcı yükü";
@@ -147,8 +144,6 @@
 "Memory free" = "Boş bellek";
 "Swap in use" = "Kullanılan takas";
 "Disk usage" = "Disk kullanımı";
-
-// Settings · GeneralPane
 "Reset" = "Sıfırla";
 "Silent" = "Sessiz";
 "Settings" = "Ayarlar";
@@ -161,20 +156,12 @@
 "Spacing" = "Aralık";
 "Celsius" = "Celsius";
 "Fahrenheit" = "Fahrenheit";
-
-// Settings · UpdateInterval
 "At start" = "Başlangıçta";
 "Once per month" = "Ayda bir kez";
-
-// Startup · Startup
 "Successfully updated" = "Başarıyla güncellendi";
 "Perch was updated to v" = "Perch, %0 sürümüne güncellendi";
-
-// Startup · UpdateCheck
 "New version available" = "Yeni sürüm var";
 "Click to install the new version of Perch" = "Perch’ün yeni sürümünü yüklemek için tıklayın";
-
-// System · DashboardPane
 "Unknown" = "Bilinmiyor";
 "Graphics" = "Grafik";
 "Serial number" = "Seri numarası";
@@ -186,17 +173,18 @@
 "Number of p-cores" = "%0 performans çekirdeği";
 "Disks" = "Diskler";
 "Display" = "Ekran";
-
-// UI · SupportWindow
 "Close" = "Kapat";
 "Support text" = "Perch’ü kullandığınız için teşekkürler.\n\nPerch ücretsiz ve açık kaynaktır; boş zamanlarda geliştirilip bakımı yapılır. Gününüzü biraz olsun kolaylaştırıyorsa, yapacağınız katkı onun devam etmesine yardımcı olur.";
 "Support Perch" = "Perch’ü destekle";
 "Donate" = "Bağış yap";
-
-// Update · UpdateWindow
 "Install" = "Yükle";
-
-// Views · SettingsShell
+"Could not check for updates" = "Could not check for updates";
+"Download failed." = "Download failed.";
+"Downloading…" = "Downloading…";
+"Installing…" = "Installing…";
+"Later" = "Later";
+"Perch is up to date" = "Perch is up to date";
+"Verified. Perch will restart." = "Verified. Perch will restart.";
 "Report a bug" = "Hata bildir";
 "Support the application" = "Uygulamayı destekle";
 "Close application" = "Uygulamayı kapat";
@@ -206,8 +194,6 @@
 "Preview" = "Önizleme";
 "Support" = "Destek";
 "Pause the Perch" = "Perch’ü duraklat";
-
-// Views · Setup
 "Perch Setup" = "Perch Kurulumu";
 "Previous" = "Önceki";
 "Previous page" = "Önceki sayfa";
@@ -225,8 +211,6 @@
 "Never check for updates (not recommended)" = "Güncellemeleri hiçbir zaman denetleme (önerilmez)";
 "The configuration is completed" = "Yapılandırma tamamlandı";
 "finish_setup_message" = "Her şey hazır.\n\nPerch ücretsiz ve açık kaynaktır. İşinize yarıyorsa geliştirilmesine destek olabilirsiniz.";
-
-// Views · SetupFlow
 "Next" = "Sonraki";
 "Next page" = "Sonraki sayfa";
 "Finish" = "Bitir";

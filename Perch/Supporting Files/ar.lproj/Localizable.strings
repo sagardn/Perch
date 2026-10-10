@@ -10,6 +10,13 @@
  */
 
 // Monitor · CPUModuleShell
+"Add Apps to Perch" = "Add Apps to Perch";
+"Choose from Applications…" = "Choose from Applications…";
+"Drag to reorder · ⌃1–⌃9 follow the first nine" = "Drag to reorder · ⌃1–⌃9 follow the first nine";
+"Perch Apps" = "Perch Apps";
+"Search apps…" = "Search apps…";
+"Windows" = "Windows";
+"App options (→)" = "App options (→)";
 "CPU" = "CPU";
 "None" = "بلا";
 "2 minutes" = "دقيقتان";
@@ -19,8 +26,6 @@
 "5 minutes" = "5 دقائق";
 "Menu bar" = "شريط القائمة";
 "Notify me when" = "أعلمني عندما";
-
-// Monitor · CPUPopup
 "Clock" = "التردد";
 "Processor" = "المعالج";
 "Cores" = "النوى";
@@ -30,44 +35,43 @@
 "CPU usage threshold" = "حد استخدام CPU";
 "Total" = "الإجمالي";
 "Temperature" = "درجة الحرارة";
-
-// Monitor · CombinedBar
+"Clock ceiling" = "Clock ceiling";
+"Cores available" = "Cores available";
+"Efficiency · performance" = "Efficiency · performance";
+"Limits" = "Limits";
+"Load average · 1, 5, 15 min" = "Load average · 1, 5, 15 min";
+"Scheduler" = "Scheduler";
+"Top processes · % of one core" = "Top processes · % of one core";
 "No module has anything to show here yet." = "لا توجد وحدة لديها ما تعرضه هنا بعد.";
 "Combined modules" = "الوحدات المدمجة";
 "Combined details" = "التفاصيل المدمجة";
-
-// Monitor · DiskModuleShell
 "Disk" = "القرص";
 "Startup volume" = "وحدة تخزين بدء التشغيل";
 "not mounted" = "غير مُركَّب";
-
-// Monitor · DiskPopup
 "Format" = "التنسيق";
 "Used" = "مستخدم";
 "Free" = "متاح";
 "Disk usage threshold" = "حد استخدام القرص";
-
-// Monitor · DiskTile
+"Activity" = "Activity";
+"Capacity" = "Capacity";
+"Mounted at" = "Mounted at";
+"Now" = "Now";
+"Other volumes" = "Other volumes";
+"Since launch" = "Since launch";
+"read" = "read";
+"write" = "write";
 "free" = "متاح";
-
-// Monitor · GPUModuleShell
 "GPU" = "GPU";
-
-// Monitor · GPUPopup
 "Memory" = "الذاكرة";
 "Model" = "الطراز";
 "Utilization" = "الاستخدام";
 "GPU usage threshold" = "حد استخدام GPU";
-
-// Monitor · GPUTile
+"Accelerators" = "Accelerators";
+"Renderer · tiler" = "Renderer · tiler";
 "cores" = "نوى";
-
-// Monitor · MemoryReadings
 "Normal" = "عادي";
 "Warning" = "تحذير";
 "Critical" = "حرج";
-
-// Monitor · MenuBarStyle
 "Name" = "الاسم";
 "Figure" = "رقم";
 "Ring" = "حلقة";
@@ -77,8 +81,6 @@
 "Bar chart" = "مخطط شريطي";
 "Line chart" = "مخطط خطي";
 "Traffic chart" = "مخطط حركة البيانات";
-
-// Monitor · NetworkModuleShell
 "Network" = "الشبكة";
 "Internet connection lost" = "انقطع الاتصال بالإنترنت";
 "Internet connection established" = "تم الاتصال بالإنترنت";
@@ -88,55 +90,50 @@
 "Interface changes" = "تتغير الواجهة";
 "Local address changes" = "يتغير العنوان المحلي";
 "Public address changes" = "يتغير العنوان العام";
-
-// Monitor · NetworkPopup
 "Download" = "التنزيل";
 "Local IP" = "عنوان IP المحلي";
 "Interface" = "الواجهة";
 "Physical address" = "العنوان الفعلي";
 "Online" = "متصل";
 "Offline" = "غير متصل";
-
-// Monitor · Popup
+"Channel · link rate" = "Channel · link rate";
+"Connection" = "Connection";
+"DNS" = "DNS";
+"Latency · jitter" = "Latency · jitter";
+"Probes answered" = "Probes answered";
+"Router" = "Router";
+"Sent · received since launch" = "Sent · received since launch";
+"Signal" = "Signal";
+"Upload" = "Upload";
+"Wi-Fi name" = "Wi-Fi name";
 "Dashboard" = "لوحة المعلومات";
-
-// Monitor · PopupParts
 "Idle" = "خامل";
-
-// Monitor · PopupSection
 "Process" = "العملية";
-
-// Monitor · RAMModuleShell
 "RAM" = "RAM";
-
-// Monitor · RAMPopup
 "Wired" = "مثبتة";
 "Compressed" = "مضغوطة";
 "Swap size" = "حجم التبديل";
 "Memory threshold" = "حد الذاكرة";
-
-// Monitor · RAMTile
+"App memory" = "App memory";
+"Available" = "Available";
+"Breakdown" = "Breakdown";
+"Cached files" = "Cached files";
+"Physical" = "Physical";
+"Swap used" = "Swap used";
+"Top processes · resident" = "Top processes · resident";
 "App" = "التطبيق";
 "Swap" = "التبديل";
 "Pressure" = "الضغط";
-
-// Monitor · SensorReadings
 "Battery" = "البطارية";
-
-// Monitor · SensorsModuleShell
 "Sensors" = "المستشعرات";
 "Show in the popup" = "إظهار في النافذة المنبثقة";
 "Hottest temperature" = "أعلى درجة حرارة";
-
-// Monitor · SensorsPopup
 "History" = "السجل";
-
-// Monitor · SensorsTile
+"Hottest" = "Hottest";
+"Watched" = "Watched";
 "hottest" = "الأعلى";
 "sensors" = "مستشعرات";
 "No sensors answered" = "لم يستجب أي مستشعر";
-
-// Monitor · Thresholds
 "Total load" = "الحمل الإجمالي";
 "System load" = "حمل النظام";
 "User load" = "حمل المستخدم";
@@ -147,8 +144,6 @@
 "Memory free" = "الذاكرة المتاحة";
 "Swap in use" = "التبديل المستخدم";
 "Disk usage" = "استخدام القرص";
-
-// Settings · GeneralPane
 "Reset" = "إعادة تعيين";
 "Silent" = "صامت";
 "Settings" = "الإعدادات";
@@ -161,20 +156,12 @@
 "Spacing" = "التباعد";
 "Celsius" = "مئوية";
 "Fahrenheit" = "فهرنهايت";
-
-// Settings · UpdateInterval
 "At start" = "عند البدء";
 "Once per month" = "مرة شهريًا";
-
-// Startup · Startup
 "Successfully updated" = "تم التحديث بنجاح";
 "Perch was updated to v" = "تم تحديث Perch إلى الإصدار %0";
-
-// Startup · UpdateCheck
 "New version available" = "يتوفر إصدار جديد";
 "Click to install the new version of Perch" = "انقر لتثبيت الإصدار الجديد من Perch";
-
-// System · DashboardPane
 "Unknown" = "غير معروف";
 "Graphics" = "الرسومات";
 "Serial number" = "الرقم التسلسلي";
@@ -186,17 +173,18 @@
 "Number of p-cores" = "نوى الأداء: %0";
 "Disks" = "الأقراص";
 "Display" = "الشاشة";
-
-// UI · SupportWindow
 "Close" = "إغلاق";
 "Support text" = "شكرًا لاستخدامك Perch.\n\nPerch مجاني ومفتوح المصدر، ويُطوَّر ويُصان في أوقات الفراغ. إذا كان يجعل يومك أسهل قليلًا، فإن مساهمتك تساعد على استمراره.";
 "Support Perch" = "ادعم Perch";
 "Donate" = "تبرّع";
-
-// Update · UpdateWindow
 "Install" = "تثبيت";
-
-// Views · SettingsShell
+"Could not check for updates" = "Could not check for updates";
+"Download failed." = "Download failed.";
+"Downloading…" = "Downloading…";
+"Installing…" = "Installing…";
+"Later" = "Later";
+"Perch is up to date" = "Perch is up to date";
+"Verified. Perch will restart." = "Verified. Perch will restart.";
 "Report a bug" = "الإبلاغ عن خطأ";
 "Support the application" = "دعم التطبيق";
 "Close application" = "إغلاق التطبيق";
@@ -206,8 +194,6 @@
 "Preview" = "معاينة";
 "Support" = "الدعم";
 "Pause the Perch" = "إيقاف Perch مؤقتًا";
-
-// Views · Setup
 "Perch Setup" = "إعداد Perch";
 "Previous" = "السابق";
 "Previous page" = "الصفحة السابقة";
@@ -225,8 +211,6 @@
 "Never check for updates (not recommended)" = "عدم التحقق من وجود تحديثات أبدًا (غير موصى به)";
 "The configuration is completed" = "اكتمل الإعداد";
 "finish_setup_message" = "كل شيء جاهز.\n\nPerch مجاني ومفتوح المصدر. إذا كان مفيدًا لك، يمكنك دعم تطويره.";
-
-// Views · SetupFlow
 "Next" = "التالي";
 "Next page" = "الصفحة التالية";
 "Finish" = "إنهاء";

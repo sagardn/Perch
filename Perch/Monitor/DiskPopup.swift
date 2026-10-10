@@ -21,9 +21,9 @@ final class DiskModule: PopupContent {
     /// and a mirrored chart.
     var menuBarStyles: [MenuBarStyle] { MenuBarStyle.allCases }
 
-    private let usedReading = BigReading(caption: "Used", symbol: "internaldrive",
+    private let usedReading = BigReading(caption: localized("Used"), symbol: "internaldrive",
                                          tint: .systemIndigo)
-    private let freeReading = BigReading(caption: "Free", symbol: "square.dashed",
+    private let freeReading = BigReading(caption: localized("Free"), symbol: "square.dashed",
                                          tint: .perchAmber)
 
     private let status = StatusLine()
@@ -34,19 +34,19 @@ final class DiskModule: PopupContent {
     private let capacityBar = ShareBar(height: 10)
 
     private let traffic = SplitTrafficChart()
-    private let peaks = PeakLegend(upperName: "write", lowerName: "read")
-    private let nowRow = ValueRow("Now")
-    private let sessionRow = ValueRow("Since launch")
+    private let peaks = PeakLegend(upperName: localized("write"), lowerName: localized("read"))
+    private let nowRow = ValueRow(localized("Now"))
+    private let sessionRow = ValueRow(localized("Since launch"))
 
     /// One per volume and one per device. Built for a handful and the
     /// surplus hidden, so plugging a drive in does not rebuild the view.
-    private let othersHeader = SectionHeader("Other volumes")
+    private let othersHeader = SectionHeader(localized("Other volumes"))
     private let volumeRows = (0..<6).map { _ in VolumeRow() }
     private let deviceRows = (0..<6).map { _ in ValueRow("") }
 
-    private let formatRow = ValueRow("Format")
-    private let totalRow = ValueRow("Capacity")
-    private let mountRow = ValueRow("Mounted at")
+    private let formatRow = ValueRow(localized("Format"))
+    private let totalRow = ValueRow(localized("Capacity"))
+    private let mountRow = ValueRow(localized("Mounted at"))
     private let detailsToggle = DisclosureButton(key: "Disk_popupDetails")
 
     // MARK: - State
@@ -92,7 +92,7 @@ final class DiskModule: PopupContent {
         stack.addArrangedSubview(capacityBar)
         stack.setCustomSpacing(14, after: capacityBar)
 
-        stack.addArrangedSubview(SectionHeader("Activity"))
+        stack.addArrangedSubview(SectionHeader(localized("Activity")))
         stack.addArrangedSubview(traffic)
         stack.setCustomSpacing(4, after: traffic)
         stack.addArrangedSubview(peaks)
