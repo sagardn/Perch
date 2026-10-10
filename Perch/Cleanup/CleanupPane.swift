@@ -1,20 +1,17 @@
 import AppKit
 
-/// The Free up space page: the four ways Perch can help with a full disk.
+/// The Free up space page: the five ways Perch can help with a full disk.
 ///
 /// It was a section at the bottom of the Disk module's settings, which is
 /// where it was written and the wrong place for it. That page configures the
 /// Disk *module* -- which volume it watches, which shapes it draws in the
 /// menu bar, when it warns. These rows configure nothing; they are actions,
-/// and they are about the Mac rather than about a module. Somebody wanting
-/// to uninstall an app had no reason to open a monitoring module's settings
-/// to find it, and nobody did.
+/// and they are about the Mac rather than about a module.
 ///
-/// The order is by how much is asked of the person, lightest first: macOS
-/// can be asked to do it, the Bin can be emptied, the big files can be
-/// looked at, an app can be taken away. The two rows that remove anything
-/// open a window that lists what it is going to remove, with checkboxes, and
-/// everything Perch removes itself goes to the Bin.
+/// Each row carries an icon, a title and a line saying what it does, rather
+/// than a bare label and a button. The labels alone were not enough: the one
+/// that uninstalls an app read "An app or tool you no longer want", which
+/// says what it is for but not what it does, and it was looked straight past.
 final class CleanupPane: NSStackView {
 
     init(width: CGFloat) {
@@ -22,24 +19,37 @@ final class CleanupPane: NSStackView {
         translatesAutoresizingMaskIntoConstraints = false
 
         // Perch asks for no disk permission of its own. The first two rows
-        // hand the job to something that already has one, and the last two
-        // search only what macOS lets any app read.
+        // hand the job to something that already has one; the rest search
+        // only what macOS lets any app read.
         let macOSCan = Controls.section(localized("What macOS can do"), [
-            Controls.row(localized("Space macOS can reclaim"), Controls.group([
-                Controls.button("Storage settings…") { DiskCleanup.openStorageSettings() },
-            ])),
-            Controls.row(localized("Deleted files"), Controls.group([
-                Controls.button("Open Bin") { DiskCleanup.openBin() },
-            ])),
+            CleanupRow(symbol: "internaldrive.fill", tint: .systemOrange,
+                       title: localized("Space macOS can reclaim"),
+                       detail: localized("Backups and caches the system can hand back on its own."),
+                       button: localized("Storage settings…"),
+                       action: DiskCleanup.openStorageSettings),
+            CleanupRow(symbol: "trash.fill", tint: .systemGray,
+                       title: localized("Deleted files"),
+                       detail: localized("Nothing is really gone until the Bin is emptied."),
+                       button: localized("Open Bin"),
+                       action: DiskCleanup.openBin),
         ])
 
         let perchCan = Controls.section(localized("What Perch can find"), [
-            Controls.row(localized("What is taking the room"), Controls.group([
-                Controls.button("Find large files…") { LargeFilesWindow.present() },
-            ])),
-            Controls.row(localized("An app or tool you no longer want"), Controls.group([
-                Controls.button("Remove an app or tool…") { UninstallWindow.present() },
-            ])),
+            CleanupRow(symbol: "doc.viewfinder.fill", tint: .systemIndigo,
+                       title: localized("Large files"),
+                       detail: localized("The biggest files in your home folder, by kind: video, audio, archives, installers."),
+                       button: localized("Find large files…"),
+                       action: LargeFilesWindow.present),
+            CleanupRow(symbol: "sparkles", tint: .systemPink,
+                       title: localized("AI assistants"),
+                       detail: localized("Conversation history, caches, logs and downloaded updates. The tools stay installed and signed in."),
+                       button: localized("Clean up…"),
+                       action: AICleanupWindow.present),
+            CleanupRow(symbol: "xmark.bin.fill", tint: .systemRed,
+                       title: localized("Uninstall an app or tool"),
+                       detail: localized("Removes the app and the files it left around the system, or a command-line tool and its settings."),
+                       button: localized("Uninstall…"),
+                       action: UninstallWindow.present),
         ])
 
         let note = NSTextField(wrappingLabelWithString:
@@ -68,6 +78,100 @@ final class CleanupPane: NSStackView {
 
     required init?(coder: NSCoder) { fatalError("not used") }
 
-    /// Nothing to refresh: the page holds no reading, only four ways in.
+    /// Nothing to refresh: the page holds no reading, only five ways in.
     func viewWillAppear() {}
+}
+
+/// An icon, a title, a line of explanation, and the button that does it.
+///
+/// The icon is drawn the way the sidebar draws its own: a rounded tinted
+/// tile with a white glyph, so a row here and a row there read as the same
+/// kind of thing.
+private final class CleanupRow: NSView {
+
+    private let pressed: () -> Void
+
+    init(symbol: String, tint: NSColor, title: String, detail: String,
+         button: String, action: @escaping () -> Void) {
+        self.pressed = action
+        super.init(frame: .zero)
+        translatesAutoresizingMaskIntoConstraints = false
+
+        let tile = TintedTile(symbol: symbol, tint: tint)
+
+        let name = NSTextField(labelWithString: title)
+        name.font = .systemFont(ofSize: 13)
+        name.translatesAutoresizingMaskIntoConstraints = false
+
+        let note = NSTextField(wrappingLabelWithString: detail)
+        note.font = .systemFont(ofSize: 11)
+        note.textColor = .secondaryLabelColor
+        note.translatesAutoresizingMaskIntoConstraints = false
+
+        let text = NSStackView(views: [name, note])
+        text.orientation = .vertical
+        text.alignment = .leading
+        text.spacing = 1
+        text.translatesAutoresizingMaskIntoConstraints = false
+
+        let control = NSButton(title: button, target: self, action: #selector(press))
+        control.bezelStyle = .rounded
+        control.translatesAutoresizingMaskIntoConstraints = false
+        control.setContentHuggingPriority(.required, for: .horizontal)
+        control.setContentCompressionResistancePriority(.required, for: .horizontal)
+
+        for view in [tile, text, control] { addSubview(view) }
+        NSLayoutConstraint.activate([
+            heightAnchor.constraint(greaterThanOrEqualToConstant: 46),
+
+            tile.leadingAnchor.constraint(equalTo: leadingAnchor),
+            tile.centerYAnchor.constraint(equalTo: centerYAnchor),
+
+            text.leadingAnchor.constraint(equalTo: tile.trailingAnchor, constant: 10),
+            text.topAnchor.constraint(equalTo: topAnchor, constant: 6),
+            text.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -6),
+            text.trailingAnchor.constraint(lessThanOrEqualTo: control.leadingAnchor,
+                                           constant: -12),
+
+            control.trailingAnchor.constraint(equalTo: trailingAnchor),
+            control.centerYAnchor.constraint(equalTo: centerYAnchor),
+        ])
+        note.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+    }
+
+    @objc private func press() { pressed() }
+
+    required init?(coder: NSCoder) { fatalError("not used") }
+}
+
+/// The sidebar's icon tile, in a settings row.
+private final class TintedTile: NSView {
+
+    init(symbol: String, tint: NSColor) {
+        super.init(frame: .zero)
+        translatesAutoresizingMaskIntoConstraints = false
+        wantsLayer = true
+        layer?.backgroundColor = tint.cgColor
+        layer?.cornerRadius = 6
+        layer?.cornerCurve = .continuous
+
+        let image = NSImageView()
+        // A symbol macOS does not have draws nothing at all, and an empty
+        // coloured square is worse than no icon.
+        image.image = NSImage(systemSymbolName: symbol, accessibilityDescription: nil)
+            ?? NSImage(systemSymbolName: "circle.fill", accessibilityDescription: nil)
+        image.contentTintColor = .white
+        image.symbolConfiguration = NSImage.SymbolConfiguration(pointSize: 13, weight: .medium)
+        image.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(image)
+
+        NSLayoutConstraint.activate([
+            widthAnchor.constraint(equalToConstant: 26),
+            heightAnchor.constraint(equalToConstant: 26),
+            image.centerXAnchor.constraint(equalTo: centerXAnchor),
+            image.centerYAnchor.constraint(equalTo: centerYAnchor),
+        ])
+    }
+
+    required init?(coder: NSCoder) { fatalError("not used") }
 }

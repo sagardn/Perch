@@ -228,6 +228,9 @@ extension AppDelegate {
                     (NSApp.windows.first { $0 is UninstallWindow } as? UninstallWindow)?
                         .selectTools()
                 }
+            } else if subject == "ai" {
+                self.renderWindow(of: AICleanupWindow.self, to: request.path,
+                                  after: 12, present: AICleanupWindow.present)
             } else if subject == "files" {
                 self.renderLargeFiles(to: request.path)
             } else if subject == "setup:window" {

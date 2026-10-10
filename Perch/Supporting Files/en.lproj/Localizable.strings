@@ -69,7 +69,6 @@
 "Deleted files" = "Deleted files";
 "Space macOS can reclaim" = "Space macOS can reclaim";
 "Find large files…" = "Find large files…";
-"What is taking the room" = "What is taking the room";
 
 // Monitor · DiskPopup
 "Format" = "Format";
@@ -389,7 +388,6 @@
 "Recommended" = "Recommended";
 "Extended" = "Extended";
 "Remove an app or tool" = "Remove an app or tool";
-"Remove an app or tool…" = "Remove an app or tool…";
 "An app or tool you no longer want" = "An app or tool you no longer want";
 "Apps" = "Apps";
 "Command-line tools" = "Command-line tools";
@@ -416,3 +414,23 @@
 "What macOS can do" = "What macOS can do";
 "What Perch can find" = "What Perch can find";
 "Everything Perch removes goes to the Bin, so nothing is erased until you empty it." = "Everything Perch removes goes to the Bin, so nothing is erased until you empty it.";
+"Clean up AI assistants" = "Clean up AI assistants";
+"No AI assistants found on this Mac" = "No AI assistants found on this Mac";
+"%0 across %1 assistants" = "%0 across %1 assistants";
+"Clean up %0?" = "Clean up %0?";
+"%0 goes to the Bin. The assistants stay installed and signed in, and rebuild what they need." = "%0 goes to the Bin. The assistants stay installed and signed in, and rebuild what they need.";
+"%0 goes to the Bin, including conversation history. The assistants stay installed and signed in, but old sessions will not be there to resume." = "%0 goes to the Bin, including conversation history. The assistants stay installed and signed in, but old sessions will not be there to resume.";
+"conversations and memory" = "conversations and memory";
+"cache" = "cache";
+"logs" = "logs";
+"downloaded updates" = "downloaded updates";
+"Backups and caches the system can hand back on its own." = "Backups and caches the system can hand back on its own.";
+"Nothing is really gone until the Bin is emptied." = "Nothing is really gone until the Bin is emptied.";
+"Large files" = "Large files";
+"The biggest files in your home folder, by kind: video, audio, archives, installers." = "The biggest files in your home folder, by kind: video, audio, archives, installers.";
+"AI assistants" = "AI assistants";
+"Conversation history, caches, logs and downloaded updates. The tools stay installed and signed in." = "Conversation history, caches, logs and downloaded updates. The tools stay installed and signed in.";
+"Clean up…" = "Clean up…";
+"Uninstall an app or tool" = "Uninstall an app or tool";
+"Removes the app and the files it left around the system, or a command-line tool and its settings." = "Removes the app and the files it left around the system, or a command-line tool and its settings.";
+"Uninstall…" = "Uninstall…";
