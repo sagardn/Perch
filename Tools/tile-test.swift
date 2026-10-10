@@ -166,6 +166,7 @@ diskTile.frame = NSRect(x: 0, y: 0, width: width, height: DiskTile.height)
 // The machine this was written on: 182 GiB of container with 4.6 left.
 let volume = DiskReadings.Volume(name: "Macintosh HD", path: "/",
                                  total: 195_383_263_232, free: 4_888_379_392,
+                                 freeNow: 4_888_379_392,
                                  isRemovable: false, isInternal: true, format: "APFS")
 diskTile.update(volume,
                 activity: .init(read: 4_200_000, written: 1_100_000),
@@ -196,6 +197,7 @@ do {
     broken.translatesAutoresizingMaskIntoConstraints = true
     broken.frame = NSRect(x: 0, y: 0, width: width, height: DiskTile.height)
     broken.update(DiskReadings.Volume(name: "?", path: "/x", total: 0, free: 0,
+                                      freeNow: 0,
                                       isRemovable: false, isInternal: false, format: nil),
                   activity: .init(read: .nan, written: .infinity), history: [.nan])
     check("a volume reporting nothing does not crash",

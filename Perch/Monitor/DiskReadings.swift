@@ -24,12 +24,26 @@ enum DiskReadings {
         /// Space available for important usage: what Finder shows as free,
         /// after purgeable space is accounted for.
         let free: UInt64
+        /// What is free this instant, before anything is reclaimed -- the
+        /// number `df` prints.
+        let freeNow: UInt64
         let isRemovable: Bool
         let isInternal: Bool
         /// "APFS", "exFAT", and so on. nil where the system does not say.
         let format: String?
 
         var used: UInt64 { total > free ? total - free : 0 }
+
+        /// Space macOS is holding but will give back when something needs it:
+        /// local Time Machine snapshots, caches, already-watched downloads.
+        ///
+        /// This is the difference between the two numbers above, and it is
+        /// the reason a disk reads 26 GB free in `df` and 27.6 GB in Finder.
+        /// Worth showing because the gap is otherwise unexplainable from
+        /// inside the app, and because it is the honest answer to "where did
+        /// my space go" -- it has not gone anywhere, and nothing needs
+        /// cleaning.
+        var purgeable: UInt64 { free > freeNow ? free - freeNow : 0 }
 
         /// 0...1, and nothing on a volume reporting no capacity at all --
         /// an autofs stub reports zero, and zero over zero is not full.
@@ -51,6 +65,7 @@ enum DiskReadings {
     static func volumes(includingRemovable removable: Bool = false) -> [Volume] {
         let keys: [URLResourceKey] = [
             .volumeNameKey, .volumeTotalCapacityKey,
+            .volumeAvailableCapacityKey,
             .volumeAvailableCapacityForImportantUsageKey,
             .volumeIsRemovableKey, .volumeIsInternalKey, .volumeIsBrowsableKey,
             .volumeLocalizedFormatDescriptionKey
@@ -69,11 +84,16 @@ enum DiskReadings {
             guard removable || !isRemovable else { return nil }
 
             let available = values.volumeAvailableCapacityForImportantUsage ?? 0
+            // Falls back to the important-usage figure rather than zero: a
+            // volume that reports one and not the other has no purgeable
+            // space to show, which is better than claiming all of it is.
+            let now = values.volumeAvailableCapacity.map { Int64($0) } ?? available
             return Volume(
                 name: values.volumeName ?? url.lastPathComponent,
                 path: url.path,
                 total: UInt64(total),
                 free: UInt64(max(0, available)),
+                freeNow: UInt64(max(0, min(now, available))),
                 isRemovable: isRemovable,
                 isInternal: values.volumeIsInternal ?? !isRemovable,
                 format: values.volumeLocalizedFormatDescription)

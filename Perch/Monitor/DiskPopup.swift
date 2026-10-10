@@ -44,6 +44,9 @@ final class DiskModule: PopupContent {
     private let volumeRows = (0..<6).map { _ in VolumeRow() }
     private let deviceRows = (0..<6).map { _ in ValueRow("") }
 
+    /// Only shown when there is some -- a row reading "0 B" would be noise on
+    /// every Mac that has nothing held back.
+    private let purgeableRow = ValueRow(localized("Purgeable"))
     private let formatRow = ValueRow(localized("Format"))
     private let totalRow = ValueRow(localized("Capacity"))
     private let mountRow = ValueRow(localized("Mounted at"))
@@ -110,7 +113,8 @@ final class DiskModule: PopupContent {
 
         // The per-device counters run from when the device attached, which
         // on an internal disk is boot -- weeks of totals, interesting once.
-        detailsToggle.install(in: stack, rows: [formatRow, totalRow, mountRow] + deviceRows)
+        detailsToggle.install(in: stack,
+                              rows: [purgeableRow, formatRow, totalRow, mountRow] + deviceRows)
         detailsToggle.onToggle = { [weak self] _ in self?.refresh() }
 
         return stack
@@ -227,6 +231,12 @@ final class DiskModule: PopupContent {
         // everywhere this module draws.
         nowRow.value = "↑ \(Readings.rate(activity.written))   ↓ \(Readings.rate(activity.read))"
         sessionRow.value = "↑ \(Readings.bytes(sessionWritten))   ↓ \(Readings.bytes(sessionRead))"
+
+        // Space macOS will hand back when something needs it. Hidden at zero,
+        // because the row exists to explain a gap and there is no gap to
+        // explain then.
+        purgeableRow.isHidden = !detailsToggle.isOpen || volume.purgeable == 0
+        purgeableRow.value = Readings.bytes(volume.purgeable)
 
         formatRow.value = volume.format ?? "—"
         totalRow.value = Readings.bytes(volume.total)

@@ -5,6 +5,7 @@
 //  and the rate the device counters are differenced into.
 //
 //  Run:  cat Perch/Monitor/Readings.swift Perch/Monitor/DiskReadings.swift \
+//            Perch/Monitor/DiskCleanup.swift \
 //            Tools/disk-test.swift | swift -
 //
 //  Two of these are the kind of wrong that looks right. A rate taken across a
@@ -27,11 +28,54 @@ func check(_ name: String, _ ok: Bool) {
 let gigabyte: UInt64 = 1_073_741_824
 
 func volume(name: String = "Macintosh HD", path: String = "/",
-            total: UInt64, free: UInt64,
+            total: UInt64, free: UInt64, freeNow: UInt64? = nil,
             removable: Bool = false) -> DiskReadings.Volume {
     DiskReadings.Volume(name: name, path: path, total: total, free: free,
+                        freeNow: freeNow ?? free,
                         isRemovable: removable, isInternal: true, format: "APFS")
 }
+
+// MARK: - When a tidy-up is worth suggesting
+
+print("DiskCleanup.isWorthSuggesting")
+
+check("the boot volume nearly full is worth saying something about",
+      DiskCleanup.isWorthSuggesting(path: "/", percentUsed: 0.94))
+check("exactly at the threshold counts",
+      DiskCleanup.isWorthSuggesting(path: "/", percentUsed: 0.90))
+check("just under it does not",
+      !DiskCleanup.isWorthSuggesting(path: "/", percentUsed: 0.89))
+// An external drive at 92% is usually an archive doing its job. Saying
+// something about it is noise, and noise is what gets a prompt ignored when
+// it finally matters.
+check("a full external drive is not the same problem",
+      !DiskCleanup.isWorthSuggesting(path: "/Volumes/Archive", percentUsed: 0.99))
+check("nor a full disk image",
+      !DiskCleanup.isWorthSuggesting(path: "/Volumes/Installer", percentUsed: 1.0))
+check("an empty boot volume is fine",
+      !DiskCleanup.isWorthSuggesting(path: "/", percentUsed: 0.1))
+
+// MARK: - Purgeable space
+
+print("DiskReadings.Volume.purgeable")
+
+do {
+    // The gap between what `df` prints and what Finder shows: snapshots,
+    // caches, downloads already watched. It is why one tool says 26 GB and
+    // another says 27.6 GB on the same disk.
+    let v = volume(total: 100, free: 30, freeNow: 26)
+    check("purgeable is the gap between the two free figures", v.purgeable == 4)
+    check("and used is still measured against the Finder figure", v.used == 70)
+}
+
+check("a volume with nothing held back has none",
+      volume(total: 100, free: 30, freeNow: 30).purgeable == 0)
+// freeNow is clamped to free when it is read, so this cannot arise from the
+// filesystem -- but the arithmetic must not underflow if it ever does.
+check("more free now than important usage is not negative purgeable",
+      volume(total: 100, free: 26, freeNow: 30).purgeable == 0)
+check("a full disk has no purgeable space",
+      volume(total: 100, free: 0, freeNow: 0).purgeable == 0)
 
 // MARK: - Capacity arithmetic
 
