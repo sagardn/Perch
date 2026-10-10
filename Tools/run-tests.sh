@@ -64,6 +64,21 @@ total=0
 log=$(mktemp -t perch-suite)
 trap 'rm -f "$log"' EXIT
 
+# On a CI runner, say what went wrong somewhere that can be read back.
+#
+# A failed job's log needs an authenticated request; its *annotations* do
+# not, and `::error::` is what produces one. This workflow spent a day red
+# with nobody able to see why, while `GET /actions/runs` happily reported
+# the failure it could not explain.
+#
+# Newlines have to be encoded or the annotation stops at the first one.
+annotate() {
+    [ -n "${GITHUB_ACTIONS:-}" ] || return 0
+    local title=$1 body=$2
+    body=$(printf '%s' "$body" | sed 's/%/%25/g' | awk '{printf "%s%%0A", $0}')
+    printf '::error title=%s::%s\n' "$title" "$body"
+}
+
 for suite in "${suites[@]}"; do
     if [ ! -f "$suite" ]; then
         echo "no such suite: $suite" >&2
@@ -87,13 +102,23 @@ for suite in "${suites[@]}"; do
     status=${PIPESTATUS[0]}
 
     if grep -qE '^(all passed|[0-9]+ failed)' "$log"; then
-        [ "$status" -eq 0 ] || failed+=("$suite")
+        if [ "$status" -ne 0 ]; then
+            failed+=("$suite")
+            # The assertion lines themselves, not just the suite name: an
+            # annotation is the only part of a failed run that can be read
+            # back without a token, and "disk-test failed" sends the next
+            # person to the log they cannot open.
+            annotate "$suite failed" "$(grep '^  FAIL' "$log" | head -20)"
+        fi
     elif [ "$status" -ne 0 ]; then
         incomplete+=("$suite (exit $status)")
+        annotate "$suite did not run to completion (exit $status)" \
+                 "$(tail -20 "$log")"
     else
         # Exited clean without a marker: either the suite forgot to print one
         # or it is not a suite. Either way its result means nothing.
         incomplete+=("$suite (no completion marker)")
+        annotate "$suite printed no completion marker" "$(tail -5 "$log")"
     fi
 done
 
