@@ -36,7 +36,8 @@ enum DeviceInfo {
         // and shown as Unknown rather than guessed at.
         let year = name.range(of: #"\b20\d{2}\b"#, options: .regularExpression)
             .flatMap { Int(name[$0]) }
-        return Model(name: name, identifier: identifier, year: year, icon: modelIcon())
+        return Model(name: name, identifier: identifier, year: year,
+                     icon: modelIcon(identifier))
     }()
 
     /// The readable name: "MacBook Air (M2, 2022)".
@@ -67,38 +68,23 @@ enum DeviceInfo {
 
     /// The picture of this Mac that Finder and About This Mac show.
     ///
-    /// macOS ships them in CoreTypes.bundle, named after the model --
-    /// `com.apple.macbookair-13-2022-midnight.icns`. There is no public call
-    /// that maps a model identifier to one, so the marketing name is matched
-    /// against the file names: "MacBook Air (M2, 2022)" yields `macbookair`
-    /// and `2022`, which together pick the right family and year. The colour
-    /// is not determined -- several files differ only by it and any of them
-    /// shows the right machine. A generic Mac icon is the fallback, which is
-    /// what an unrecognised model gets rather than nothing.
-    private static func modelIcon() -> NSImage? {
-        let resources = "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources"
-        let name = (marketingName() ?? "").lowercased()
-        let words = name.components(separatedBy: CharacterSet.alphanumerics.inverted)
-                        .filter { !$0.isEmpty }
-        // The family is the words before the first bracket -- "macbook air"
-        // becomes "macbookair" -- and the year is the only other part of the
-        // name that appears in the file names. The chip ("m2") does not, which
-        // is why requiring every word matched nothing.
-        let family = words.prefix(while: { Int($0) == nil && $0.count > 1 && !$0.hasPrefix("m") || $0 == "macbook" })
-                          .joined()
-        let year = words.first { $0.count == 4 && Int($0) != nil }
-
-        if !family.isEmpty,
-           let files = try? FileManager.default.contentsOfDirectory(atPath: resources) {
-            let candidates = files.filter { file in
-                let lower = file.lowercased()
-                guard lower.hasSuffix(".icns"), lower.contains(family) else { return false }
-                return year.map { lower.contains($0) } ?? true
-            }
-            if let best = candidates.sorted().first,
-               let image = NSImage(contentsOfFile: "\(resources)/\(best)") {
-                return image
-            }
+    /// Asked of Launch Services by hardware identifier: the system declares
+    /// a type for every Mac model, tagged with its identifier under
+    /// `com.apple.device-model-code` ("MacBookAir10,1" is
+    /// `com.apple.macbookair-late-2020`), and the icon for that type is the
+    /// machine's own picture -- the mapping Finder itself uses.
+    ///
+    /// This replaced matching the marketing name against the icon files in
+    /// CoreTypes.bundle, which guessed: "MacBook Air (M1, 2020)" looked for a
+    /// file with both "macbookair" and "2020" in its name, but the M1 Air
+    /// shares the 2018 design and its files say 2018, so it got the generic
+    /// iMac picture. An identifier the system does not know comes back as a
+    /// dynamic type, and gets the generic Mac icon rather than a wrong one.
+    private static func modelIcon(_ identifier: String) -> NSImage? {
+        let modelCode = UTTagClass(rawValue: "com.apple.device-model-code")
+        if let type = UTType(tag: identifier, tagClass: modelCode, conformingTo: nil),
+           !type.isDynamic {
+            return NSWorkspace.shared.icon(for: type)
         }
         guard let type = UTType("com.apple.mac") else { return nil }
         let generic = NSWorkspace.shared.icon(for: type)
