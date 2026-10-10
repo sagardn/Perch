@@ -99,6 +99,35 @@ check("an ordinary name has no shorter form",
 check("a shortened name that is protected is still dropped",
       !paths("config-cli").contains("/Users/someone/.config"))
 
+// MARK: - Settings files, not only settings directories
+
+print("\nA tool's settings file beside its directory")
+
+// The case this exists for: ~/.claude is 515 MB and ~/.claude.json sat next
+// to it matched by nothing, because the search only looked for directories.
+check("the JSON file beside the dot directory",
+      paths("claude").contains("/Users/someone/.claude.json"))
+check("a YAML one too", paths("tool").contains("/Users/someone/.tool.yaml"))
+check("and a TOML one", paths("tool").contains("/Users/someone/.tool.toml"))
+// The convention is .npmrc, not .npm.rc, so rc carries no dot of its own.
+check("an rc file has no dot before it",
+      paths("tool").contains("/Users/someone/.toolrc")
+      && !paths("tool").contains("/Users/someone/.tool.rc"))
+check("the dot directory is still offered",
+      paths("tool").contains("/Users/someone/.tool"))
+
+// A suffix can reach something shared that the bare name never would.
+check("a tool called zsh is not offered .zshrc",
+      !paths("zsh").contains("/Users/someone/.zshrc"))
+check("nor is a tool called git offered .gitconfig",
+      !paths("git").contains("/Users/someone/.gitconfig"))
+check("the whole name is checked before the suffix is stripped",
+      CommandLineTools.isProtected(URL(fileURLWithPath: "/Users/someone/.zshrc")))
+check("a tool's own rc file is not protected by that",
+      !CommandLineTools.isProtected(URL(fileURLWithPath: "/Users/someone/.toolrc")))
+check("nor is its json",
+      !CommandLineTools.isProtected(URL(fileURLWithPath: "/Users/someone/.claude.json")))
+
 // MARK: - The command
 
 print("\nThe removal command")

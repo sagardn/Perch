@@ -268,8 +268,13 @@ enum CommandLineTools {
                                                                .isDirectoryKey])
                 if values?.isSymbolicLink == true {
                     let target = (try? fm.destinationOfSymbolicLink(atPath: url.path)) ?? ""
+                    // What the link points at, not the link, which is a few
+                    // bytes. The install it belongs to is usually larger
+                    // still and turns up as a leftover under its own name.
                     tools.append(Tool(name: name, kind: .link, location: url,
-                                      bytes: 0, detail: target, command: nil))
+                                      bytes: AppLeftovers.size(of: url.resolvingSymlinksInPath(),
+                                                               fm: fm),
+                                      detail: target, command: nil))
                 } else if values?.isExecutable == true, values?.isDirectory != true {
                     tools.append(Tool(name: name, kind: .loose, location: url,
                                       bytes: AppLeftovers.size(of: url, fm: fm),
@@ -323,6 +328,29 @@ extension CommandLineTools {
         "icloud", "keychains",
     ]
 
+    /// The shapes a settings file in the home folder takes.
+    ///
+    /// `rc` carries no dot of its own -- the convention is `.npmrc`, not
+    /// `.npm.rc`.
+    static let configSuffixes = [".json", ".yaml", ".yml", ".toml", ".conf",
+                                 ".ini", ".cfg", "rc"]
+
+    /// Whether this path is one of the shared ones, however it was reached.
+    ///
+    /// Both forms are checked, and the order matters. `.zshrc` is protected
+    /// under its whole name; stripping `rc` first leaves `zsh`, which is not
+    /// on the list, and a tool called `zsh` would have been offered
+    /// somebody's shell configuration.
+    static func isProtected(_ url: URL) -> Bool {
+        var name = url.lastPathComponent.lowercased()
+        if name.hasPrefix(".") { name.removeFirst() }
+        if protectedNames.contains(name) { return true }
+        for suffix in configSuffixes where name.hasSuffix(suffix) && name.count > suffix.count {
+            return protectedNames.contains(String(name.dropLast(suffix.count)))
+        }
+        return false
+    }
+
     /// Suffixes a tool's command name carries that its data directory does
     /// not. A cask called `something-code` keeps its settings in
     /// `~/.something`, which no exact-name match will ever find.
@@ -350,12 +378,24 @@ extension CommandLineTools {
         // `certain`, which is why none of it is ticked for somebody.
         func add(_ name: String, _ confidence: AppLeftovers.Confidence) {
             guard !protectedNames.contains(name.lowercased()) else { return }
-            let relative = [".\(name)", ".config/\(name)", ".cache/\(name)",
+            var relative = [".\(name)", ".config/\(name)", ".cache/\(name)",
                             ".local/share/\(name)", ".local/state/\(name)",
                             "Library/Application Support/\(name)",
                             "Library/Caches/\(name)", "Library/Logs/\(name)",
                             "Library/Preferences/\(name).plist"]
-            candidates += relative.map { (home.appendingPathComponent($0), confidence) }
+
+            // A dot *file*, not only a dot directory. Half the tools that
+            // keep a directory in the home folder keep a settings file
+            // beside it -- ~/.claude is 515 MB here and ~/.claude.json sat
+            // next to it, matched by nothing, because the search only ever
+            // looked for directories.
+            relative += configSuffixes.map { ".\(name)\($0)" }
+
+            candidates += relative
+                .map { (home.appendingPathComponent($0), confidence) }
+                // A suffixed name can land on something shared that the bare
+                // name never would: a tool called `zsh` reaching `.zshrc`.
+                .filter { !isProtected($0.0) }
         }
 
         add(name, .likely)
