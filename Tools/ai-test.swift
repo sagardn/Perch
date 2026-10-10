@@ -183,6 +183,114 @@ check("and an AI item too",
 
 try? fm.removeItem(at: scratch)
 
+// MARK: - Age, models, app caches, and the check before the Bin
+
+print("\nAge, models and app caches, on a real folder")
+
+do {
+    let fm = FileManager.default
+    let sandbox = fm.temporaryDirectory.appendingPathComponent("ai-age-\(UUID().uuidString)")
+    let fake = sandbox.appendingPathComponent("home")
+    defer { try? fm.removeItem(at: sandbox) }
+    let old = Date().addingTimeInterval(-200 * 86_400)
+    let recent = Date().addingTimeInterval(-2 * 86_400)
+
+    func put(_ path: String, _ date: Date, root: URL = fake) {
+        let url = root.appendingPathComponent(path)
+        try! fm.createDirectory(at: url.deletingLastPathComponent(), withIntermediateDirectories: true)
+        try! Data(repeating: 7, count: 4096).write(to: url)
+        try! fm.setAttributes([.modificationDate: date], ofItemAtPath: url.path)
+    }
+
+    put(".claude/cache/old.bin", old)
+    put(".claude/projects/p/s.jsonl", old)
+    put(".claude/logs/new.log", recent)
+    put(".claude/auth.json", old)
+    put("Library/Application Support/Claude/Code Cache/js/a", old)
+    put("Library/Application Support/Claude/claude_desktop_config.json", old)
+    put("Library/Caches/com.openai.chat/Cache.db", old)
+    put(".cache/huggingface/hub/models--org--small/blobs/x", old)
+    put(".cache/huggingface/hub/.locks/x", old)
+    put(".ollama/models/blobs/sha256-1", old)
+    put("outside.txt", old, root: sandbox)
+    try! fm.createSymbolicLink(at: fake.appendingPathComponent(".claude/escape-cache"),
+                               withDestinationURL: sandbox)
+    // Creating files dates their folders today, which the age rule rightly
+    // reads as use. Back-date every folder; the files keep their own dates.
+    if let walk = fm.enumerator(at: fake, includingPropertiesForKeys: [.isDirectoryKey]) {
+        for case let url as URL in walk
+            where (try? url.resourceValues(forKeys: [.isDirectoryKey]))?.isDirectory == true {
+            try? fm.setAttributes([.modificationDate: old], ofItemAtPath: url.path)
+        }
+    }
+
+    let tools = AIAssistants.find(home: fake)
+    let items = tools.flatMap(\.items)
+    func item(_ path: String) -> AIAssistants.Item? {
+        let want = fake.appendingPathComponent(path).standardizedFileURL.path.lowercased()
+        return items.first { $0.url.standardizedFileURL.path.lowercased() == want }
+    }
+
+    check("an Electron Code Cache is offered as a cache",
+          item("Library/Application Support/Claude/Code Cache")?.kind == .caches)
+    check("but not the desktop app's config beside it",
+          item("Library/Application Support/Claude/claude_desktop_config.json") == nil)
+    check("an app's own Caches folder, by bundle id, is offered whole",
+          item("Library/Caches/com.openai.chat")?.kind == .caches)
+    check("a Hugging Face model is offered, as a model",
+          item(".cache/huggingface/hub/models--org--small")?.kind == .models)
+    check("but not the hub's lock folder", item(".cache/huggingface/hub/.locks") == nil)
+    check("Ollama's store is one entry", item(".ollama/models")?.kind == .models)
+    check("models are never ticked", !AIAssistants.Kind.models.isTickedByDefault)
+    check("conversations still never ticked", !AIAssistants.Kind.conversations.isTickedByDefault)
+    check("a login is still never offered", item(".claude/auth.json") == nil)
+    check("each item knows when it was last used",
+          (item(".claude/cache")?.lastUsed ?? Date()) < Date().addingTimeInterval(-100 * 86_400))
+
+    let at90 = AIAssistants.offered(tools, olderThan: 90).flatMap(\.items)
+    check("at 90 days the old cache is offered",
+          at90.contains { $0.url.lastPathComponent == "cache" })
+    check("at 90 days the logs written two days ago are not",
+          !at90.contains { $0.url.lastPathComponent == "logs" })
+    check("with no age rule, they are",
+          AIAssistants.offered(tools, olderThan: nil).flatMap(\.items).contains { $0.url.lastPathComponent == "logs" })
+    check("a tool with nothing old enough drops out", AIAssistants.offered(tools, olderThan: 100_000).isEmpty)
+    check("unknown age is never old enough",
+          !AIAssistants.Item(url: fake, kind: .caches, bytes: 1).isOld(enough: 1))
+
+    print("\nChecked again before the Bin")
+    let session = item(".claude/projects")!
+    put(".claude/projects/p/s.jsonl", Date())   // written to after the scan
+    let busy = AIAssistants.moveToBin([session], olderThan: 90, home: fake)
+    check("written to since the scan: refused", busy.moved.isEmpty && busy.failed == [session.url])
+    check("and left where it was", fm.fileExists(atPath: session.url.path))
+
+    let login = AIAssistants.Item(url: fake.appendingPathComponent(".claude/auth.json"),
+                                  kind: .caches, bytes: 1, lastUsed: old)
+    check("a login handed in directly is refused",
+          AIAssistants.moveToBin([login], olderThan: nil, home: fake).moved.isEmpty
+            && fm.fileExists(atPath: login.url.path))
+
+    let escape = AIAssistants.Item(url: fake.appendingPathComponent(".claude/escape-cache"),
+                                   kind: .caches, bytes: 1, lastUsed: old)
+    check("a cache-named link out of home is refused",
+          AIAssistants.moveToBin([escape], olderThan: nil, home: fake).moved.isEmpty
+            && fm.fileExists(atPath: sandbox.appendingPathComponent("outside.txt").path))
+
+    let cache = item(".claude/cache")!
+    let done = AIAssistants.moveToBin([cache], olderThan: 90, home: fake)
+    check("an old cache goes to the Bin", done.moved.count == 1 && !fm.fileExists(atPath: cache.url.path))
+    // Out of the real Bin again, matched by the test's own file and content.
+    let bin = fm.homeDirectoryForCurrentUser.appendingPathComponent(".Trash")
+    for name in ["cache"] + (1...9).map({ "cache \($0)" }) {
+        let probe = bin.appendingPathComponent(name).appendingPathComponent("old.bin")
+        if (try? Data(contentsOf: probe)) == Data(repeating: 7, count: 4096) {
+            try? fm.removeItem(at: probe.deletingLastPathComponent())
+            break
+        }
+    }
+}
+
 print("")
 if failures == 0 { print("all passed") } else { print("\(failures) failed") }
 exit(failures == 0 ? 0 : 1)

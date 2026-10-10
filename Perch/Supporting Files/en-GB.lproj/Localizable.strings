@@ -341,6 +341,7 @@
 "cache" = "cache";
 "logs" = "logs";
 "downloaded updates" = "downloaded updates";
+"downloaded models" = "downloaded models";
 "Backups and caches the system can hand back on its own." = "Backups and caches the system can hand back on its own.";
 "Nothing is really gone until the Bin is emptied." = "Nothing is really gone until the Bin is emptied.";
 "Large files" = "Large files";

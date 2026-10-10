@@ -344,6 +344,7 @@
 "cache" = "vahemälu";
 "logs" = "logid";
 "downloaded updates" = "alla laaditud uuendused";
+"downloaded models" = "alla laaditud mudelid";
 "Backups and caches the system can hand back on its own." = "Varukoopiad ja vahemälud, mille süsteem ise vabastab.";
 "Nothing is really gone until the Bin is emptied." = "Miski pole päriselt kadunud enne, kui prügikasti tühjendad.";
 "Large files" = "Suured failid";

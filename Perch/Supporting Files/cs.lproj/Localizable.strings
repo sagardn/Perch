@@ -344,6 +344,7 @@
 "cache" = "mezipaměť";
 "logs" = "protokoly";
 "downloaded updates" = "stažené aktualizace";
+"downloaded models" = "stažené modely";
 "Backups and caches the system can hand back on its own." = "Zálohy a mezipaměti, které systém uvolní sám.";
 "Nothing is really gone until the Bin is emptied." = "Nic není opravdu pryč, dokud nevysypete koš.";
 "Large files" = "Velké soubory";

@@ -344,6 +344,7 @@
 "cache" = "حافظهٔ نهان";
 "logs" = "گزارش‌ها";
 "downloaded updates" = "به‌روزرسانی‌های دانلودشده";
+"downloaded models" = "مدل‌های دانلودشده";
 "Backups and caches the system can hand back on its own." = "پشتیبان‌ها و حافظه‌های نهانی که سیستم خودش آزاد می‌کند.";
 "Nothing is really gone until the Bin is emptied." = "تا سطل زباله را خالی نکنید چیزی واقعاً از بین نمی‌رود.";
 "Large files" = "فایل‌های بزرگ";

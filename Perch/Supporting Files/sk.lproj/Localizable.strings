@@ -344,6 +344,7 @@
 "cache" = "vyrovnávacia pamäť";
 "logs" = "denníky";
 "downloaded updates" = "stiahnuté aktualizácie";
+"downloaded models" = "stiahnuté modely";
 "Backups and caches the system can hand back on its own." = "Zálohy a vyrovnávacie pamäte, ktoré systém uvoľní sám.";
 "Nothing is really gone until the Bin is emptied." = "Nič nie je naozaj preč, kým nevysypete kôš.";
 "Large files" = "Veľké súbory";

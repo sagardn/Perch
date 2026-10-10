@@ -344,6 +344,7 @@
 "cache" = "singgahan";
 "logs" = "log";
 "downloaded updates" = "pembaruan terunduh";
+"downloaded models" = "model terunduh";
 "Backups and caches the system can hand back on its own." = "Cadangan dan singgahan yang bisa dibebaskan sistem sendiri.";
 "Nothing is really gone until the Bin is emptied." = "Tidak ada yang benar-benar hilang sampai Tong Sampah dikosongkan.";
 "Large files" = "Berkas besar";

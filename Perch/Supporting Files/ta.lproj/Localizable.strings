@@ -344,6 +344,7 @@
 "cache" = "தற்காலிகச் சேமிப்பு";
 "logs" = "பதிவுகள்";
 "downloaded updates" = "பதிவிறக்கிய புதுப்பிப்புகள்";
+"downloaded models" = "பதிவிறக்கிய மாதிரிகள்";
 "Backups and caches the system can hand back on its own." = "கணினி தானே திருப்பித் தரக்கூடிய காப்புகளும் தற்காலிகச் சேமிப்புகளும்.";
 "Nothing is really gone until the Bin is emptied." = "குப்பையைக் காலி செய்யும் வரை எதுவும் உண்மையில் போகாது.";
 "Large files" = "பெரிய கோப்புகள்";

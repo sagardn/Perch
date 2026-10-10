@@ -344,6 +344,7 @@
 "cache" = "pamięć podręczna";
 "logs" = "dzienniki";
 "downloaded updates" = "pobrane aktualizacje";
+"downloaded models" = "pobrane modele";
 "Backups and caches the system can hand back on its own." = "Kopie i pamięci podręczne, które system zwolni sam.";
 "Nothing is really gone until the Bin is emptied." = "Nic nie znika naprawdę, dopóki nie opróżnisz Kosza.";
 "Large files" = "Duże pliki";

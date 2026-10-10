@@ -344,6 +344,7 @@
 "cache" = "memòria cau";
 "logs" = "registres";
 "downloaded updates" = "actualitzacions baixades";
+"downloaded models" = "models baixats";
 "Backups and caches the system can hand back on its own." = "Còpies i memòries cau que el sistema pot alliberar pel seu compte.";
 "Nothing is really gone until the Bin is emptied." = "Res no marxa de debò fins que buideu la paperera.";
 "Large files" = "Fitxers grans";

@@ -344,6 +344,7 @@
 "cache" = "кэш";
 "logs" = "журналы";
 "downloaded updates" = "загруженные обновления";
+"downloaded models" = "загруженные модели";
 "Backups and caches the system can hand back on its own." = "Резервные копии и кэши, которые система освобождает сама.";
 "Nothing is really gone until the Bin is emptied." = "Ничего не исчезает по-настоящему, пока корзина не очищена.";
 "Large files" = "Большие файлы";

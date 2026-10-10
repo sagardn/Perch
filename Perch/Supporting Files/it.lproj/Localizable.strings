@@ -344,6 +344,7 @@
 "cache" = "cache";
 "logs" = "log";
 "downloaded updates" = "aggiornamenti scaricati";
+"downloaded models" = "modelli scaricati";
 "Backups and caches the system can hand back on its own." = "Backup e cache che il sistema può liberare da solo.";
 "Nothing is really gone until the Bin is emptied." = "Niente se ne va davvero finché non svuoti il cestino.";
 "Large files" = "File grandi";

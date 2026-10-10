@@ -344,6 +344,7 @@
 "cache" = "προσωρινά αρχεία";
 "logs" = "αρχεία καταγραφής";
 "downloaded updates" = "ληφθείσες ενημερώσεις";
+"downloaded models" = "ληφθέντα μοντέλα";
 "Backups and caches the system can hand back on its own." = "Αντίγραφα και προσωρινά αρχεία που το σύστημα ελευθερώνει μόνο του.";
 "Nothing is really gone until the Bin is emptied." = "Τίποτα δεν χάνεται πραγματικά μέχρι να αδειάσει ο κάδος.";
 "Large files" = "Μεγάλα αρχεία";

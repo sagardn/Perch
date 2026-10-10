@@ -344,6 +344,7 @@
 "cache" = "gyorsítótár";
 "logs" = "naplók";
 "downloaded updates" = "letöltött frissítések";
+"downloaded models" = "letöltött modellek";
 "Backups and caches the system can hand back on its own." = "Biztonsági másolatok és gyorsítótárak, amelyeket a rendszer magától felszabadít.";
 "Nothing is really gone until the Bin is emptied." = "Semmi sem tűnik el igazán, amíg ki nem üríted a kukát.";
 "Large files" = "Nagy fájlok";

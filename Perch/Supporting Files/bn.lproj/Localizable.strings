@@ -344,6 +344,7 @@
 "cache" = "ক্যাশ";
 "logs" = "লগ";
 "downloaded updates" = "ডাউনলোড করা আপডেট";
+"downloaded models" = "ডাউনলোড করা মডেল";
 "Backups and caches the system can hand back on its own." = "ব্যাকআপ ও ক্যাশ, যা সিস্টেম নিজেই ফিরিয়ে দিতে পারে।";
 "Nothing is really gone until the Bin is emptied." = "ট্র্যাশ খালি না করা পর্যন্ত কিছুই সত্যিই যায় না।";
 "Large files" = "বড় ফাইল";

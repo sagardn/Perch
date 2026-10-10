@@ -344,6 +344,7 @@
 "cache" = "מטמון";
 "logs" = "יומנים";
 "downloaded updates" = "עדכונים שהורדו";
+"downloaded models" = "מודלים שהורדו";
 "Backups and caches the system can hand back on its own." = "גיבויים ומטמונים שהמערכת משחררת בעצמה.";
 "Nothing is really gone until the Bin is emptied." = "שום דבר לא באמת נעלם עד שמרוקנים את האשפה.";
 "Large files" = "קבצים גדולים";

@@ -344,6 +344,7 @@
 "cache" = "hurtigbuffer";
 "logs" = "logger";
 "downloaded updates" = "nedlastede oppdateringer";
+"downloaded models" = "nedlastede modeller";
 "Backups and caches the system can hand back on its own." = "Sikkerhetskopier og hurtigbuffere systemet kan frigjøre selv.";
 "Nothing is really gone until the Bin is emptied." = "Ingenting er virkelig borte før papirkurven tømmes.";
 "Large files" = "Store filer";

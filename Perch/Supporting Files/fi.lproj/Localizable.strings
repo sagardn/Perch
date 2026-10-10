@@ -344,6 +344,7 @@
 "cache" = "välimuisti";
 "logs" = "lokit";
 "downloaded updates" = "ladatut päivitykset";
+"downloaded models" = "ladatut mallit";
 "Backups and caches the system can hand back on its own." = "Varmuuskopiot ja välimuistit, jotka järjestelmä voi vapauttaa itse.";
 "Nothing is really gone until the Bin is emptied." = "Mikään ei katoa oikeasti ennen kuin tyhjennät roskakorin.";
 "Large files" = "Suuret tiedostot";

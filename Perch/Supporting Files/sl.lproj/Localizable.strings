@@ -344,6 +344,7 @@
 "cache" = "predpomnilnik";
 "logs" = "dnevniki";
 "downloaded updates" = "prenesene posodobitve";
+"downloaded models" = "preneseni modeli";
 "Backups and caches the system can hand back on its own." = "Varnostne kopije in predpomnilniki, ki jih sistem sprosti sam.";
 "Nothing is really gone until the Bin is emptied." = "Nič ni zares izginilo, dokler koša ne izpraznite.";
 "Large files" = "Velike datoteke";

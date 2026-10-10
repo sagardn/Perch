@@ -32,6 +32,10 @@ enum AIAssistants {
         /// Installers the tool fetched to update itself. Ticked: it will
         /// fetch them again if it ever needs them.
         case downloads
+        /// Downloaded model weights -- Hugging Face, Ollama, LM Studio.
+        /// Removable, but they cost bandwidth and time to fetch again, not
+        /// only space, so they are shown and never ticked.
+        case models
 
         var label: String {
             switch self {
@@ -39,11 +43,12 @@ enum AIAssistants {
             case .caches:        return localized("cache")
             case .logs:          return localized("logs")
             case .downloads:     return localized("downloaded updates")
+            case .models:        return localized("downloaded models")
             }
         }
 
-        /// Only what the tool can rebuild by itself.
-        var isTickedByDefault: Bool { self != .conversations }
+        /// Only what the tool can rebuild by itself, quickly and for free.
+        var isTickedByDefault: Bool { self != .conversations && self != .models }
     }
 
     struct Item: Equatable {
@@ -55,14 +60,27 @@ enum AIAssistants {
         /// and a zero was skipped as nothing to offer -- so a directory
         /// Perch could not open simply did not appear, however large it was.
         let isMeasured: Bool
+        /// The newest modification anywhere inside -- so a folder with one
+        /// file written this morning counts as used this morning, however
+        /// old the rest is. Unknown is treated as now: an entry whose age
+        /// cannot be read is never offered by age.
+        let lastUsed: Date
 
         var name: String { url.lastPathComponent }
 
-        init(url: URL, kind: Kind, bytes: Int64, isMeasured: Bool = true) {
+        init(url: URL, kind: Kind, bytes: Int64, isMeasured: Bool = true,
+             lastUsed: Date = Date()) {
             self.url = url
             self.kind = kind
             self.bytes = bytes
             self.isMeasured = isMeasured
+            self.lastUsed = lastUsed
+        }
+
+        /// Whether the age rule lets this be offered. nil is "any age".
+        func isOld(enough days: Int?, now: Date = Date()) -> Bool {
+            guard let days else { return true }
+            return lastUsed < now.addingTimeInterval(-Double(days) * 86_400)
         }
 
         static func == (a: Item, b: Item) -> Bool { a.url == b.url }
@@ -84,7 +102,45 @@ enum AIAssistants {
     /// `.ssh` one rule away from a checkbox. Adding one is a line.
     static let known = ["claude", "codex", "grok", "gemini", "copilot",
                         "opencode", "cursor", "windsurf", "aider", "continue",
-                        "amp", "qwen", "goose", "crush"]
+                        "amp", "qwen", "goose", "crush", "antigravity", "chatgpt"]
+
+    /// Folders a tool keeps under a name other than its own -- an app's
+    /// bundle identifier, or a second product name. Relative to home.
+    static let extraRoots: [String: [String]] = [
+        "claude": ["Library/Caches/com.anthropic.claudefordesktop",
+                   "Library/Caches/claude-cli-nodejs"],
+        "chatgpt": ["Library/Application Support/com.openai.chat",
+                    "Library/Caches/com.openai.chat"],
+        "cursor": ["Library/Caches/com.todesktop.230313mzl4w4u92"],
+        "antigravity": ["Library/Application Support/Antigravity IDE",
+                        "Library/Caches/com.google.antigravity-ide"],
+        "windsurf": ["Library/Caches/com.exafunction.windsurf"],
+    ]
+
+    /// Where downloaded models live, and what counts as one model.
+    ///
+    /// Named exactly, never matched: a model store is the largest thing an
+    /// AI tool keeps and the costliest to get back, so nothing is offered
+    /// from anywhere but these.
+    struct ModelStore {
+        let tool: String
+        /// Relative to home.
+        let path: String
+        /// nil: the whole store is one entry. Otherwise each child whose
+        /// name starts with one of these is one.
+        let unitPrefixes: [String]?
+    }
+
+    static let modelStores: [ModelStore] = [
+        // hub/models--org--name is self-contained: blobs, refs, snapshots.
+        ModelStore(tool: "huggingface", path: ".cache/huggingface/hub",
+                   unitPrefixes: ["models--", "datasets--", "spaces--"]),
+        // Whole, never per blob: blobs are shared between models, and
+        // removing one breaks every model whose manifest names it.
+        ModelStore(tool: "ollama", path: ".ollama/models", unitPrefixes: nil),
+        // models/<publisher>/<model>; a publisher folder is the unit.
+        ModelStore(tool: "lm studio", path: ".lmstudio/models", unitPrefixes: [""]),
+    ]
 
     // MARK: - The rules
 
@@ -102,6 +158,12 @@ enum AIAssistants {
         "projects", "sessions", "session-env", "shell-snapshots", "plans",
         "file-history", "active_sessions", "history", "prompt-history",
         "memories", "goals", "queue", "thread_history", "todos",
+    ]
+
+    static let electronCacheNames: Set<String> = [
+        "code cache", "gpucache", "cacheddata", "cachedextensionvsixs",
+        "cachedprofilesdata", "dawncache", "dawngraphitecache", "dawnwebgpucache",
+        "shadercache", "grshadercache",
     ]
 
     /// `memories_1.sqlite` and `thread_history_1.sqlite` are the same thing
@@ -124,6 +186,11 @@ enum AIAssistants {
         if ["logs", "log", "telemetry"].contains(stem) { return .logs }
         if stem == "cache" || stem == "caches"
             || base.hasSuffix("-cache") || base.hasSuffix("_cache") { return .caches }
+        // Electron and VS Code keep their caches under these exact names in
+        // Application Support -- Claude, ChatGPT, Cursor, Antigravity and
+        // Windsurf all do. Named one by one, like everything else here.
+        if electronCacheNames.contains(name.lowercased()) { return .caches }
+        if name.lowercased() == "crashpad" { return .logs }
         if conversationNames.contains(stem)
             || base.hasSuffix("-history") || base.hasSuffix("_history") { return .conversations }
         return nil
@@ -137,10 +204,11 @@ enum AIAssistants {
     /// home folder, the XDG directories under it, and the macOS ones under
     /// `~/Library`.
     static func roots(for name: String, home: URL) -> [URL] {
-        [".\(name)", ".config/\(name)", ".local/state/\(name)",
-         ".local/share/\(name)", ".cache/\(name)",
-         "Library/Application Support/\(name)", "Library/Caches/\(name)",
-         "Library/Logs/\(name)"].map { home.appendingPathComponent($0) }
+        ([".\(name)", ".config/\(name)", ".local/state/\(name)",
+          ".local/share/\(name)", ".cache/\(name)",
+          "Library/Application Support/\(name)", "Library/Caches/\(name)",
+          "Library/Logs/\(name)"] + (extraRoots[name] ?? []))
+            .map { home.appendingPathComponent($0) }
     }
 
     /// A root that is a cache in its entirety, so its contents need no
@@ -172,7 +240,8 @@ enum AIAssistants {
                         items.append(Item(url: root,
                                           kind: root.path.contains("/Logs/") ? .logs : .caches,
                                           bytes: measured ?? 0,
-                                          isMeasured: measured != nil))
+                                          isMeasured: measured != nil,
+                                          lastUsed: lastModified(root)))
                     }
                     continue
                 }
@@ -187,7 +256,8 @@ enum AIAssistants {
                     // not answer is not that it is small.
                     guard measured != 0 else { continue }
                     items.append(Item(url: url, kind: kind, bytes: measured ?? 0,
-                                      isMeasured: measured != nil))
+                                      isMeasured: measured != nil,
+                                      lastUsed: lastModified(url)))
                 }
             }
 
@@ -196,12 +266,116 @@ enum AIAssistants {
             }
         }
 
+        for store in modelStores {
+            let items = modelUnits(store, home: home).compactMap { url -> Item? in
+                let measured = AppLeftovers.measure(url, fm: fm)
+                guard measured != 0 else { return nil }
+                return Item(url: url, kind: .models, bytes: measured ?? 0,
+                            isMeasured: measured != nil, lastUsed: lastModified(url))
+            }
+            if !items.isEmpty {
+                tools.append(Tool(name: store.tool, items: items.sorted { $0.bytes > $1.bytes }))
+            }
+        }
+
         return tools.sorted { $0.bytes > $1.bytes }
+    }
+
+    /// The entries one model store is split into.
+    static func modelUnits(_ store: ModelStore, home: URL) -> [URL] {
+        let root = home.appendingPathComponent(store.path)
+        var isDirectory: ObjCBool = false
+        guard FileManager.default.fileExists(atPath: root.path, isDirectory: &isDirectory),
+              isDirectory.boolValue else { return [] }
+        guard let prefixes = store.unitPrefixes else { return [root] }
+        return ((try? FileManager.default.contentsOfDirectory(atPath: root.path)) ?? [])
+            .sorted()
+            .filter { name in !name.hasPrefix(".") && prefixes.contains { name.hasPrefix($0) } }
+            .map { root.appendingPathComponent($0) }
+    }
+
+    // MARK: - Age
+
+    /// The tools with only what the age rule lets through. nil is any age.
+    static func offered(_ tools: [Tool], olderThan days: Int?, now: Date = Date()) -> [Tool] {
+        tools.compactMap { tool in
+            let items = tool.items.filter { $0.isOld(enough: days, now: now) }
+            return items.isEmpty ? nil : Tool(name: tool.name, items: items)
+        }
+    }
+
+    /// The newest modification anywhere inside `url`, read from the disk now.
+    ///
+    /// A fresh URL every time, never the one passed in: Foundation caches
+    /// resource values on a URL object, so re-reading a URL that the scan
+    /// already read gives back the scan's dates -- and the check before the
+    /// Bin passed a session written to a second earlier. Symlinks are not
+    /// followed: a link counts as a link.
+    static func lastModified(_ url: URL) -> Date {
+        let url = URL(fileURLWithPath: url.path)
+        let key: URLResourceKey = .contentModificationDateKey
+        var newest = (try? url.resourceValues(forKeys: [key]))?.contentModificationDate ?? .distantPast
+        if let walk = FileManager.default.enumerator(at: url, includingPropertiesForKeys: [key],
+                                                     options: [], errorHandler: { _, _ in true }) {
+            for case let child as URL in walk {
+                if let date = (try? child.resourceValues(forKeys: [key]))?.contentModificationDate,
+                   date > newest { newest = date }
+            }
+        }
+        return newest
+    }
+
+    // MARK: - Checked again before the Bin
+
+    /// Whether `url` is still something this offers: inside home once every
+    /// symlink is resolved, and reached by the same allowlist the scan uses
+    /// -- a recognised name directly inside a known root, a root that is a
+    /// cache in its entirety, or a unit of a named model store.
+    static func isOfferable(_ url: URL, home: URL) -> Bool {
+        let resolved = url.resolvingSymlinksInPath().standardizedFileURL
+        let homePath = home.resolvingSymlinksInPath().standardizedFileURL.path
+        guard resolved.path.hasPrefix(homePath + "/") else { return false }
+
+        let path = url.standardizedFileURL.path
+        let parent = url.deletingLastPathComponent().standardizedFileURL.path
+        for name in known {
+            for root in roots(for: name, home: home) {
+                let rootPath = root.standardizedFileURL.path
+                if path == rootPath, isWhollyCache(root, home: home) { return true }
+                if parent == rootPath, !isWhollyCache(root, home: home),
+                   kind(of: url.lastPathComponent) != nil { return true }
+            }
+        }
+        return modelStores.contains { modelUnits($0, home: home).map(\.standardizedFileURL.path).contains(path) }
+    }
+
+    /// Every item checked again against the disk as it is now -- still
+    /// offerable, still inside home, and still old enough -- and only those
+    /// moved. The rest are reported as failed and left exactly where they
+    /// were. The list on screen can be minutes old; the disk is not.
+    static func moveToBin(_ items: [Item], olderThan days: Int?,
+                          home: URL = FileManager.default.homeDirectoryForCurrentUser,
+                          now: Date = Date()) -> LargeFiles.Removal {
+        var refused: [URL] = []
+        var cleared: [Item] = []
+        for item in items {
+            let stillOld = days.map { lastModified(item.url) < now.addingTimeInterval(-Double($0) * 86_400) } ?? true
+            if FileManager.default.fileExists(atPath: item.url.path),
+               isOfferable(item.url, home: home), stillOld {
+                cleared.append(item)
+            } else {
+                refused.append(item.url)
+            }
+        }
+        var removal = LargeFiles.moveToBin(cleared.map { LargeFiles.Item(url: $0.url, bytes: $0.bytes) })
+        removal.failed += refused
+        return removal
     }
 
     /// To the Bin, like everything else Perch removes. A conversation store
     /// somebody wanted back is then a trip to Finder.
+    /// Any age, but every other check still made -- see the full form.
     static func moveToBin(_ items: [Item]) -> LargeFiles.Removal {
-        LargeFiles.moveToBin(items.map { LargeFiles.Item(url: $0.url, bytes: $0.bytes) })
+        moveToBin(items, olderThan: nil)
     }
 }

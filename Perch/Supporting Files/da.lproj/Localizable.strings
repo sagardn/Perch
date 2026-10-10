@@ -344,6 +344,7 @@
 "cache" = "cache";
 "logs" = "logfiler";
 "downloaded updates" = "hentede opdateringer";
+"downloaded models" = "hentede modeller";
 "Backups and caches the system can hand back on its own." = "Sikkerhedskopier og caches, systemet selv kan give tilbage.";
 "Nothing is really gone until the Bin is emptied." = "Intet er rigtig væk, før papirkurven tømmes.";
 "Large files" = "Store filer";

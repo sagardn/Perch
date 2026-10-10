@@ -344,6 +344,7 @@
 "cache" = "キャッシュ";
 "logs" = "ログ";
 "downloaded updates" = "ダウンロード済みのアップデート";
+"downloaded models" = "ダウンロード済みのモデル";
 "Backups and caches the system can hand back on its own." = "システムが自分で解放できるバックアップとキャッシュ。";
 "Nothing is really gone until the Bin is emptied." = "ゴミ箱を空にするまで、何も本当には消えません。";
 "Large files" = "大きいファイル";

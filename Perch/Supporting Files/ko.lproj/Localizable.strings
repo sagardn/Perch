@@ -344,6 +344,7 @@
 "cache" = "캐시";
 "logs" = "로그";
 "downloaded updates" = "다운로드한 업데이트";
+"downloaded models" = "다운로드한 모델";
 "Backups and caches the system can hand back on its own." = "시스템이 스스로 돌려줄 수 있는 백업과 캐시입니다.";
 "Nothing is really gone until the Bin is emptied." = "휴지통을 비우기 전까지는 아무것도 정말 사라지지 않습니다.";
 "Large files" = "큰 파일";

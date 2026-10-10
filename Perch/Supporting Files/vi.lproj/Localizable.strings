@@ -344,6 +344,7 @@
 "cache" = "bộ đệm";
 "logs" = "nhật ký";
 "downloaded updates" = "bản cập nhật đã tải";
+"downloaded models" = "mô hình đã tải";
 "Backups and caches the system can hand back on its own." = "Bản sao lưu và bộ đệm mà hệ thống tự giải phóng được.";
 "Nothing is really gone until the Bin is emptied." = "Chưa có gì mất thật cho đến khi bạn dọn Thùng rác.";
 "Large files" = "Tệp lớn";

@@ -344,6 +344,7 @@
 "cache" = "ذاكرة مؤقتة";
 "logs" = "سجلات";
 "downloaded updates" = "تحديثات مُنزَّلة";
+"downloaded models" = "نماذج مُنزَّلة";
 "Backups and caches the system can hand back on its own." = "نسخ احتياطية وذواكر مؤقتة يستطيع النظام تحريرها بنفسه.";
 "Nothing is really gone until the Bin is emptied." = "لا شيء يزول فعلًا حتى تُفرغ المهملات.";
 "Large files" = "الملفات الكبيرة";

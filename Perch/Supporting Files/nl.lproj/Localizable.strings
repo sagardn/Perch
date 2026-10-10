@@ -344,6 +344,7 @@
 "cache" = "cache";
 "logs" = "logbestanden";
 "downloaded updates" = "gedownloade updates";
+"downloaded models" = "gedownloade modellen";
 "Backups and caches the system can hand back on its own." = "Reservekopieën en caches die het systeem zelf kan vrijgeven.";
 "Nothing is really gone until the Bin is emptied." = "Niets is echt weg tot je de prullenmand leegt.";
 "Large files" = "Grote bestanden";

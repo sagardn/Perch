@@ -344,6 +344,7 @@
 "cache" = "แคช";
 "logs" = "บันทึก";
 "downloaded updates" = "อัปเดตที่ดาวน์โหลด";
+"downloaded models" = "โมเดลที่ดาวน์โหลด";
 "Backups and caches the system can hand back on its own." = "ข้อมูลสำรองและแคชที่ระบบคืนให้ได้เอง";
 "Nothing is really gone until the Bin is emptied." = "ไม่มีอะไรหายไปจริงจนกว่าจะล้างถังขยะ";
 "Large files" = "ไฟล์ขนาดใหญ่";

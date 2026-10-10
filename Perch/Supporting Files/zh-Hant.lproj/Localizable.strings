@@ -344,6 +344,7 @@
 "cache" = "快取";
 "logs" = "日誌";
 "downloaded updates" = "已下載的更新";
+"downloaded models" = "已下載的模型";
 "Backups and caches the system can hand back on its own." = "系統可以自行釋出的備份與快取。";
 "Nothing is really gone until the Bin is emptied." = "在清空垃圾桶之前，什麼都不會真正消失。";
 "Large files" = "大型檔案";
