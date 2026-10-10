@@ -272,8 +272,15 @@ final class PopupHeader: NSView {
 
     static let height: CGFloat = 38
 
-    var onChartToggle: (() -> Void)?
+    /// Nothing sets this yet, so the chart button stays hidden until
+    /// something does. It was shown unconditionally, and clicking it did
+    /// nothing in every popup.
+    var onChartToggle: (() -> Void)? {
+        didSet { chartButton?.isHidden = onChartToggle == nil }
+    }
     var onSettings: (() -> Void)?
+
+    private weak var chartButton: NSButton?
 
     init(title: String) {
         super.init(frame: .zero)
@@ -286,11 +293,13 @@ final class PopupHeader: NSView {
         let chart = Self.button("chart.line.uptrend.xyaxis", "Toggle charts")
         chart.target = self
         chart.action = #selector(chartClicked)
+        chart.isHidden = true
 
         let gear = Self.button("gearshape", "Module settings")
         gear.target = self
         gear.action = #selector(settingsClicked)
 
+        chartButton = chart
         let controls = NSStackView(views: [chart, gear])
         controls.spacing = 2
         controls.translatesAutoresizingMaskIntoConstraints = false

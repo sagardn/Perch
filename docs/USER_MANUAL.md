@@ -1,15 +1,14 @@
 # Perch — User Manual
 
-Perch is two apps sharing one menu bar icon:
+Perch is two apps sharing one process:
 
-- **a system monitor** — CPU, GPU, memory, disk, network, battery, sensors,
-  Bluetooth and clock readings drawn as widgets in the menu bar, each with a
-  popup of detail behind it. This half is the module system.
-- **an app launcher and switcher** — a Ctrl+Space search panel, per-app
-  hotkeys, a minimize/restore key and a trackpad gesture.
+- **a launcher and switcher** — a ⌃Space search panel, per-app hotkeys, your
+  own ⌃Tab cycle, a minimise/restore key and a trackpad gesture.
+- **a system monitor** — CPU, GPU, memory, disk, network and sensor readings
+  drawn in the menu bar, each with a popup of detail behind it.
 
 The two halves know nothing about each other, so you can use either one and
-ignore the other: turn every module off and Perch is a launcher; ignore the
+ignore the other: switch every module off and Perch is a launcher; ignore the
 hotkeys and it is a system monitor.
 
 ---
@@ -21,10 +20,10 @@ hotkeys and it is a system monitor.
 - [The search panel](#the-search-panel)
 - [Managing your app list](#managing-your-app-list)
 - [The trackpad gesture](#the-trackpad-gesture)
-- [Launcher settings](#launcher-settings)
 - [The system monitor](#the-system-monitor)
-- [Application settings](#application-settings)
+- [Settings](#settings)
 - [Where Perch keeps things](#where-perch-keeps-things)
+- [Privacy](#privacy)
 - [Troubleshooting](#troubleshooting)
 - [Uninstalling](#uninstalling)
 
@@ -32,22 +31,30 @@ hotkeys and it is a system monitor.
 
 ## First run
 
-Perch has no dock icon by default — it lives in the menu bar. If no module is
-showing a widget, the Settings window opens by itself at launch so there is
-something to click.
+Perch has no Dock icon by default — it lives in the menu bar. If no module has
+anything to show in the menu bar, the Settings window opens by itself at launch
+so there is something to click.
 
 ### Permissions
 
 | Permission | What needs it | Where to grant it |
 |---|---|---|
-| **Accessibility** | Minimizing, restoring, raising a specific window, and "New Window". *Raising* an app needs no permission, so the launcher partly works without it. | System Settings → Privacy & Security → Accessibility |
-| **Input Monitoring** | The trackpad gesture only. | System Settings → Privacy & Security → Input Monitoring |
+| **Accessibility** | Minimising, restoring and raising a specific window, and **New Window**. *Bringing an app forward* needs no permission, so the launcher partly works without it. | System Settings → Privacy & Security → Accessibility, or **Settings → Search & switcher → Window control → Allow…** |
+| **Input Monitoring** | Module popup shortcuts only, and only once you set one. | System Settings → Privacy & Security → Input Monitoring |
 | **Menu Bar** (macOS 26 and newer) | Showing any menu bar item at all. | System Settings → Menu Bar → turn Perch **on** |
 
-Perch asks for Accessibility on first launch and shows a HUD explaining what is
-missing. The global hotkeys are registered through Carbon rather than an event
-tap, so **they keep working even before Accessibility is granted** — you get a
-HUD instead of silence.
+Perch does not ask for anything at launch. It checks quietly, and asks for
+Accessibility only when you do something that needs it. The global hotkeys are
+registered through Carbon rather than an event tap, so **they work before
+Accessibility is granted** — you get a notice instead of silence.
+
+The trackpad gesture needs no permission at all; see
+[The trackpad gesture](#the-trackpad-gesture).
+
+> **Updating can make Accessibility look granted when it is not.** macOS ties
+> the grant to the app's code signature, and Perch's ad-hoc signature changes
+> with every build. If window control stops working after an update, select
+> Perch in the Accessibility list, click **−**, then grant it again.
 
 ---
 
@@ -60,21 +67,21 @@ These work from any app.
 | Shortcut | Action |
 |---|---|
 | **⌃Space** | Open / close the search panel |
-| **⌃`** | Minimize the frontmost window. Press again to bring back the last window you put away. |
-| **⌃Tab** | Step back through recently used apps, one press per step. On by default — [it can be turned off](#launcher-settings). |
+| **⌃`** | Minimise the frontmost window. Press again to bring back the last window you put away. |
+| **⌃Tab** | Cycle the apps you marked for it, most recently used first. With nothing marked, it cycles recent apps. On by default — [it can be turned off](#search--switcher). |
 | **⌃1** … **⌃9**, **⌃0** | Jump straight to the app holding that shortcut — no panel, no menu |
 
 A per-app shortcut is a single character pressed with Control. The characters
 Perch accepts are `0`–`9`, `` ` ``, `;` and `space`; anything else is ignored.
 
 > **Careful with `` ` ``, `;` and `space`.** ⌃Space and ⌃` are already the panel
-> and the minimize key. macOS gives a hotkey to whoever registers it first, so
-> assigning one of those to an app means one of the two silently loses (the
-> loser is logged, not shown).
+> and the minimise key. macOS gives a hotkey to whoever registers it first, so
+> assigning one of those to an app means one of the two silently loses.
 
-**⌃Tab is a global hotkey**, which means it is taken away from every app that
-uses it for tab switching — Chrome, Safari, terminals. If that bites, turn it
-off; see [Launcher settings](#launcher-settings).
+**⌃Tab is a global hotkey**, so while Perch holds it, browsers and terminals
+lose it for tab switching. If another app registered ⌃Tab first, Perch notices,
+moves its cycle to **⌥Tab** and says so at launch. To give ⌃Tab back entirely,
+switch the cycle off in [Settings → Search & switcher](#search--switcher).
 
 ### What a shortcut or a ↩ actually does
 
@@ -83,13 +90,13 @@ away:
 
 | The app is… | What happens |
 |---|---|
-| not running | it launches (a HUD says so if it is not installed) |
+| not running | it launches (a notice says so if it is not installed) |
 | hidden | it unhides and comes forward |
-| minimized | it restores and comes forward |
+| minimised | it restores and comes forward |
 | running but not frontmost | it comes forward |
-| already frontmost | its window minimizes |
-| already frontmost and full-screen | a HUD: macOS cannot minimize a full-screen window |
-| marked **launch-only** (Launchpad) | it only ever comes forward, never minimizes |
+| already frontmost | its window minimises |
+| already frontmost and full-screen | a notice: macOS cannot minimise a full-screen window |
+| marked **launch-only** (Launchpad) | it only ever comes forward, never minimises |
 
 ### Inside the search panel
 
@@ -111,13 +118,29 @@ The mouse: **click** a row to activate it, **right-click** it for the options
 menu (with Quit first), or click the **▸** at the row's right edge for the same
 menu without Quit at the top.
 
-### Per-module popup shortcuts
+### Module popup shortcuts
 
-Every module can be given its own global shortcut that opens that module's
-popup — any combination of ⌃ ⇧ ⌘ ⌥ plus a key.
+Each monitor module can have a global shortcut that opens its popup. Perch ships
+none, and there is no recorder in Settings yet, so a shortcut is set from
+Terminal. It is stored as a list of virtual key codes: the modifiers first, in
+the order **⌃ 59, ⇧ 60, ⌘ 55, ⌥ 58**, then the key.
 
-Set it in **the module's own settings → Keyboard shortcut**, by recording the
-combination you want. These are yours to choose; Perch ships none.
+```bash
+# ⌃⌥C opens the CPU popup (C is key code 8)
+defaults write com.sagar.perch CPU_popupShortcut -array 59 58 8
+
+# remove it again
+defaults delete com.sagar.perch CPU_popupShortcut
+```
+
+The keys are `CPU_popupShortcut`, `GPU_popupShortcut`, `RAM_popupShortcut`,
+`Disk_popupShortcut`, `Network_popupShortcut` and `Sensors_popupShortcut`.
+Restart Perch after changing one. A shortcut that lists the modifiers in any
+other order never matches.
+
+Setting the first shortcut is what makes macOS ask for **Input Monitoring**:
+watching for a key pressed in another app needs it. With no popup shortcut set,
+Perch does not watch the keyboard at all.
 
 ### The Settings window
 
@@ -125,7 +148,7 @@ combination you want. These are yours to choose; Perch ships none.
 |---|---|
 | **⌘W** | Close the Settings window |
 | **⌘Q** | Also closes the Settings window — it does **not** quit Perch |
-| **⌘M** | Minimize the Settings window |
+| **⌘M** | Minimise the Settings window |
 
 To quit Perch, use the **power button** in the Settings window footer.
 
@@ -134,8 +157,8 @@ To quit Perch, use the **power button** in the Settings window footer.
 ## The search panel
 
 ⌃Space (or the trackpad gesture) brings up a Spotlight-like panel. By default it
-appears **at the pointer**, not centred — that is how the menu it replaced
-behaved, and it can be changed.
+appears **at the pointer**, not centred; that can be changed in
+[Settings](#search--switcher).
 
 **What it lists:** every app on your list, plus every regular app currently
 running, deduplicated. So an app does not have to be on your list to be
@@ -149,7 +172,9 @@ switched to — the list is for ordering, pinning and hotkeys.
 3. With no query — **most recently used**, so the app you just came from is the
    top hit.
 
-Each row shows the app icon, its name and a dot for its window state.
+Each row shows the app icon, its name and a dot for its window state: ● running
+with a window on screen, ○ running but minimised or hidden, nothing when it is
+not running. Apps in your ⌃Tab cycle are marked `⌃⇥`.
 
 ### The options menu
 
@@ -158,10 +183,11 @@ Right-click a row, or press → , or click the ▸ arrow:
 | Item | Notes |
 |---|---|
 | **Open** / **Bring to Front** | Depending on whether it is running |
-| **New Window** | Presses the app's own New Window menu item. A HUD says so if the app has none. |
-| **Windows** | Listed when the app has more than one. ● is visible, ○ is minimized. Pick one to raise it. |
-| **Restore** / **Minimize** / **Hide** | Whichever applies to the current state |
+| **New Window** | Presses the app's own New Window menu item. A notice says so if the app has none. |
+| **Windows** | Listed when the app has more than one. ● is visible, ○ is minimised. Pick one to raise it. |
+| **Restore** / **Minimise** / **Hide** | Whichever applies to the current state |
 | **Quit** | First in the menu on a right-click |
+| **Add to / Remove from ⌃Tab Switcher** | Puts the app in, or takes it out of, the ⌃Tab cycle |
 | **Add to / Remove from My Apps** | Puts the app on, or takes it off, your list |
 | **Reveal in Finder** | |
 | **Copy Bundle ID** | |
@@ -202,7 +228,7 @@ It is written with the defaults the first time Perch runs. Each entry:
 | `name` | string | What the row says |
 | `bundleID` | string | The app's bundle identifier |
 | `shortcut` | string or absent | One character, pressed with Control. `"2"` means ⌃2 goes straight here. |
-| `launchOnly` | bool | Only ever launch or come forward, never minimize. Launchpad is one of these. |
+| `launchOnly` | bool | Only ever launch or come forward, never minimise. Launchpad is one of these. |
 | `pinned` | bool | Held at the top of the panel regardless of recency or search score |
 
 If the file cannot be read, Perch logs the reason and falls back to the
@@ -213,7 +239,8 @@ defaults rather than starting empty.
 ## The trackpad gesture
 
 A trackpad tap opens the search panel. **Three-finger double tap** by default,
-with **four-finger** available alongside it in **Settings → Search & switcher**.
+with **four-finger** available alongside it in
+[Settings → Search & switcher](#search--switcher).
 
 Two fingers is deliberately not offered. macOS makes a two-finger tap a
 secondary click and a two-finger double tap Smart Zoom, and this layer can only
@@ -227,9 +254,9 @@ Deliberately accepted consequences:
 
 - it is undocumented, and Apple can change or remove it
 - an app using it cannot ship through the Mac App Store
-- it reads finger counts, not events, so it needs no permission (measured on
-  macOS 27 with Input Monitoring explicitly denied: 459 contact frames in six
-  seconds, and no dialog)
+- it reads finger counts, not events, so it needs no permission (measured with
+  Input Monitoring explicitly denied: 459 contact frames in six seconds, and no
+  dialog)
 
 To keep the risk small, Perch reads *only* the finger count it is handed, and
 never parses the touch struct whose layout changes between macOS releases.
@@ -242,51 +269,9 @@ tap. Multi-finger *swipes* keep fingers down far longer, which is what keeps
 Mission Control and space switching out of it.
 
 > **macOS claims three-finger taps too** — a three-finger tap is Look Up, and
-> this layer cannot swallow it, so it still fires. It is far less disruptive
-> than the two-finger overlap that got two fingers dropped. If it bothers you,
-> switch three off and leave **four-finger double tap** on: four is the one
-> count nothing stock claims.
-
-**No permission is asked for.** Reading the finger count out of
-MultitouchSupport is not an event tap, so Input Monitoring does not govern it —
-verified with the grant denied. If the gesture does nothing, the cause is the
-finger count, not a permission: check which counts are switched on.
-
----
-
-## Launcher settings
-
-> These live in **Settings → Search & switcher**. The search panel itself is
-> reached by hotkey or by the trackpad gesture; there is no menu bar item for
-> it.
-
-The launcher half has **no settings UI in the merged app**. These live in
-UserDefaults, under the domain `com.sagar.perch`, and are read at launch —
-change one, then **restart Perch**.
-
-| Key | Type | Default | What it does |
-|---|---|---|---|
-| `gestureEnabled` | bool | `true` | Whether the trackpad gesture opens the panel |
-| `gestureFingerCounts` | array of int | `[2, 3]` | Finger counts the gesture answers to; 2, 3 and 4 are allowed |
-| `gestureTaps` | int | `2` | Taps the gesture wants |
-| `cycleHotkeyEnabled` | bool | `true` | Whether ⌃Tab cycles recent apps |
-| `openAtPointer` | bool | `true` | Panel opens at the pointer; `false` centres it |
-| `hideOnOutsideClick` | bool | `true` | Panel closes when it loses focus, as Spotlight does. `false` keeps it up while you click around elsewhere — ⎋ and ⌃Space still close it. |
-
-```bash
-# four-finger double tap only, leaving two and three to macOS
-defaults write com.sagar.perch gestureFingerCounts -array 4
-
-# give Ctrl+Tab back to your browser
-defaults write com.sagar.perch cycleHotkeyEnabled -bool false
-
-# centre the search panel instead of following the pointer
-defaults write com.sagar.perch openAtPointer -bool false
-
-# then restart Perch
-```
-
-To read one back: `defaults read com.sagar.perch gestureFingerCounts`.
+> this layer cannot swallow it, so it still fires. If it bothers you, switch
+> three off and leave **four-finger double tap** on: four is the one count
+> nothing stock claims.
 
 ---
 
@@ -294,102 +279,185 @@ To read one back: `defaults read com.sagar.perch gestureFingerCounts`.
 
 ### Modules
 
-| Module | Reads |
+Six modules, each switched on or off in the Settings sidebar:
+
+| Module | In the menu bar by default | In its popup |
+|---|---|---|
+| **CPU** | total load | load history, every core (efficiency and performance clusters apart), user/system split, load average, temperature, limits when macOS is throttling, top processes |
+| **GPU** | utilisation | utilisation history, renderer and tiler, memory in use, every accelerator on a Mac with more than one |
+| **RAM** | used % | breakdown bar (app, wired, compressed, cached, free), memory pressure, swap, top processes |
+| **Disk** | used % of the watched volume | capacity bar, read/write activity, every other volume, per-device totals |
+| **Network** | upload and download | online status and latency, Wi-Fi signal, traffic history, reachability, local IP, top processes |
+| **Sensors** | the watched sensor | every temperature, voltage, current, power and fan reading your Mac publishes, grouped by kind |
+
+Sensors is the expensive one: reading every sensor walks the whole controller
+table. If you want to cut Perch's energy use, switch it off first.
+
+### Menu bar shapes
+
+Each module draws one or more shapes, chosen on its page in Settings. Not every
+shape suits every reading, so each module offers only the ones it can fill:
+
+| Shape | Shows |
 |---|---|
-| **CPU** | Utilization, per-core load, frequency, top processes, temperature |
-| **GPU** | Utilization, temperature, fan, render/tiler usage |
-| **RAM** | Used / free / cached, pressure, swap, top processes |
-| **Disk** | Free space, read/write activity, SMART where available |
-| **Network** | Upload/download, interface, local and public IP, top processes |
-| **Battery** | Charge, time remaining, cycles, health, power source |
-| **Sensors** | Temperature, voltage, power and current from the SMC; fan control (legacy) |
-| **Bluetooth** | Connected devices and their battery levels |
-| **Clock** | One or more time zones |
-
-A **Remote** module exists in the source but is disabled in this fork — the
-protocol, the accounts and the servers are upstream's, and a fork has nothing
-to talk to.
-
-Sensors and Bluetooth are the expensive ones. If you want to cut Perch's energy
-impact, turn those off first — it can halve the CPU cost.
-
-### Widgets
-
-Each module draws one or more widgets in the menu bar. Turn them on per module
-in that module's settings. The kinds:
-
-| Widget | Shows |
-|---|---|
-| **Mini** | A label and one number |
+| **Name** | The module's short label |
+| **Figure** | A caption over one number — the default for most modules |
 | **Line chart** | A rolling line of recent values |
-| **Bar chart** | One bar per core, disk or interface |
-| **Pie chart** | A filled ring |
-| **Network chart** | Up and down as two stacked lines |
-| **Speed** | Upload/download figures, with or without an arrow |
-| **Battery** | A battery glyph, optionally with the percentage |
-| **Battery details** | Time remaining or percentage as text |
-| **Memory** | Used and free side by side |
-| **Sensors** | A stack of chosen sensor readings |
-| **Label** | A vertical two-line label to prefix another widget |
-| **Tachometer** | A dial |
-| **State** | A dot whose colour tracks a threshold |
-| **Text** | A formatted line you compose yourself |
+| **Bar chart** | One bar per core |
+| **Ring** | A filled ring, split into parts where the reading has them |
+| **Gauge** | A dial |
+| **Used and free** | Two figures stacked |
+| **Rates** | Upload and download, each with its arrow |
+| **Traffic chart** | Upload above a line, download below it |
 
-Widgets are separate menu bar items, so **macOS decides their order**, not
-Perch. To rearrange: hold **⌘** and drag the icon along the menu bar.
+Numbers are coloured by how hard the reading is working — **teal** when calm,
+**amber** when busy, **red** when it needs you — and turn bold once they are
+flagged. Each module judges by its own scale: a disk is flagged at 90% full,
+not 50%; memory follows macOS's own memory pressure rather than the percentage;
+a temperature is flagged at 85 °C. The three colours, and whether the menu bar
+is coloured at all, are in [Settings → Colours](#colours).
+
+Separate items are ordered by macOS, not Perch. To rearrange them, hold **⌘**
+and drag an item along the menu bar.
 
 ### Popups
 
-**Click a widget** — left or right — to open its popup. In the popup header:
+**Click a reading** to open its popup. Every popup opens the same way: a
+one-line verdict with a coloured dot (**● Light load**, **● Pressure warning**,
+**● Online · Wi-Fi · 65 ms**), the headline figures, then a chart or bar of the
+reading, then the detail. Rows you need once — a model name, a mount point, a
+hardware address — are folded under **More details**, which remembers whether
+you left it open.
 
-- **⚙︎ gear** — open that module's settings
-- **✕** — close the popup
+The **⚙︎ gear** in the popup header opens that module's page in Settings.
+
+A popup closes when you click anywhere else or press **⎋**. It scrolls with the
+trackpad or wheel when it is taller than the screen allows.
 
 ### Combined modules
 
-Turn **Combined modules** on to fold several modules into a single menu bar
-item, with a chosen order, spacing, an optional separator, and an optional
-combined popup showing all of them at once.
+**Settings → Menu bar → Combine modules into one item** folds the modules into
+a single menu bar item. Once it is on, you can choose the **Spacing**, add
+**Separators**, and turn on **One popup for all**, which opens a single popup
+showing every module at once.
+
+### Alerts
+
+A module can notify you when a reading crosses a line you set, under **Notify
+me when** on its page in Settings:
+
+| Module | Thresholds |
+|---|---|
+| **CPU** | total, system, user, efficiency-cores and performance-cores load |
+| **RAM** | memory used, memory free, memory pressure, swap |
+| **GPU** | utilisation |
+| **Disk** | disk usage |
+
+**Network** works the other way, under **Tell me when**: it notifies you when
+the interface, the local IP, the Wi-Fi network or the public IP changes. The
+public IP is only looked up when **Look up the public address** is on; see
+[Privacy](#privacy).
+
+Alerts keep working while every popup is closed — that is when a change is most
+likely to go unnoticed.
 
 ---
 
-## Application settings
+## Settings
 
-The Settings window has a sidebar: **Dashboard**, one entry per module, and
-**Settings** for everything app-wide.
+Open Settings from the **⚙︎** in any popup. The window has a sidebar:
+**Dashboard**, **Settings**, then one page per module with its on/off switch.
 
-### Settings
+### Dashboard
+
+A summary of this Mac: processor, memory, graphics, disks, displays, model
+identifier, production year, serial number and uptime.
+
+### Module pages
+
+Each module's page has its menu bar shapes, its alerts, and settings of its
+own — chart history length and how many top processes to list for most;
+**Show temperature** for CPU; the watched volume and **Include removable
+drives** for Disk; the watched sensor, the reading interval, which sensors show
+in the popup and **Read the HID sensors** for Sensors.
+
+### General
 
 | Setting | Default | Notes |
 |---|---|---|
-| **Check for updates** | Once per day | Also: At start, Once per week, Once per month, Never, and **Silent**. |
-| **Temperature** | System | Celsius / Fahrenheit / System |
-| **Show icon in dock** | Off | Perch is a menu bar app; this gives it a dock icon too |
 | **Start at login** | Off | |
-| **Keep the menubar items position** | Off | Remembers where each widget sat, rather than letting macOS reshuffle |
-| **macOS widgets** | Off | Needed for the desktop/Notification Centre widgets. Off by default because the system process that carries the data (`chronod`) struggles with the load. |
-| **Combined modules** | Off | Plus module selector, **Spacing**, **Separator** and **Combined details** |
-| **Export settings** | — | Writes your whole configuration to a file |
-| **Import settings** | — | Reads one back |
-| **Reset settings** | — | Back to defaults, after a confirmation |
-| **Uninstall fan helper** | — | Removes the privileged SMC helper |
-| **Stress tests** | — | Loads efficiency, performance or "super" cores, or the GPU, so you can watch the readings move |
+| **Show in Dock** | Off | Perch is a menu bar app; this gives it a Dock icon too |
+| **Check for updates** | Once per day | Also: Never, Once per hour, Once per week, and **Silent** |
+| **Temperature unit** | System | Celsius, Fahrenheit, or whatever macOS uses |
 
 > **"Silent" is not a quiet check.** It downloads the release and installs it,
 > replacing the running application without asking. The default is a daily
 > check that tells you and waits.
 
+### Menu bar
+
+| Setting | Default | Notes |
+|---|---|---|
+| **Combine modules into one item** | Off | Then **Spacing**, **Separators** and **One popup for all** — see [Combined modules](#combined-modules) |
+| **Keep item positions** | Off | Remembers where each item sat, rather than letting macOS reshuffle them |
+
+### Colours
+
+| Setting | Default | Notes |
+|---|---|---|
+| **Colour the menu bar** | On | Off draws every figure and arrow in the menu bar's own colour. The popups keep their colours either way. |
+| **Normal** | `#0E9BA8` teal | A calm reading |
+| **Busy · upload and write** | `#CE7C00` amber | A busy reading; also the upload and disk-write series |
+| **Critical** | `#C9302C` red | A reading that needs you |
+
+Each colour has a colour well, which opens the macOS colour picker, and a field
+that takes a hex code (`#RRGGBB` or `#RGB`). The reset arrow beside a changed
+colour restores the default. Changes apply immediately.
+
+### Search & switcher
+
+| Setting | Default | Notes |
+|---|---|---|
+| **Open where the pointer is** | On | Off centres the panel on the screen |
+| **Close when it loses focus** | On | Off keeps the panel up while you click elsewhere; ⎋ and ⌃Space still close it |
+| **⌃Tab cycles your marked apps** | On | Off gives ⌃Tab back to every other app |
+| **Trackpad gesture opens the search** | On | Then **Three-finger double tap** (on) and **Four-finger double tap** (off) |
+| **Window control** | — | Shows whether Accessibility is granted, with **Allow…** when it is not |
+
+These are also plain preferences, if you would rather use Terminal — change
+one, then restart Perch:
+
+| Key | Type | Default |
+|---|---|---|
+| `openAtPointer` | bool | `true` |
+| `hideOnOutsideClick` | bool | `true` |
+| `cycleHotkeyEnabled` | bool | `true` |
+| `gestureEnabled` | bool | `true` |
+| `gestureFingerCounts` | array of int | `[3]` — 3 and 4 are allowed |
+| `gestureTaps` | int | `2` |
+
+```bash
+# four-finger double tap only, leaving three to macOS's Look Up
+defaults write com.sagar.perch gestureFingerCounts -array 4
+
+# give Ctrl+Tab back to your browser
+defaults write com.sagar.perch cycleHotkeyEnabled -bool false
+```
+
+### Backup
+
+**Export…** writes every Perch setting to a file. **Import…** reads one back and
+offers to restart Perch so every setting takes effect. **Reset…** returns
+everything to the defaults after a confirmation, and restarts Perch.
+
 ### The footer
 
 | Button | Action |
 |---|---|
-| ♥ **Support** | Opens the Ko-fi page |
+| ♥ **Support** | Opens Perch's Ko-fi page |
 | 🐜 **Report a bug** | Opens a new GitHub issue |
-| ⏸ **Pause** | Disables every module and leaves a single Perch icon in the menu bar; click it to reopen Settings. Press again to resume — the modules that were on come back on. |
+| ⏸ **Pause** | Switches every module off and leaves a single Perch icon in the menu bar; click it to reopen Settings. Press again to resume — the modules that were on come back on. |
 | ⏻ | Quits Perch |
-
-Modules with a preview also get a preview toggle in the window's toolbar,
-beside the enable switch.
 
 ---
 
@@ -399,52 +467,76 @@ beside the enable switch.
 |---|---|
 | `~/Library/Application Support/Perch/apps.json` | The launcher's app list |
 | `com.sagar.perch` (UserDefaults) | Every setting — both halves |
-| `~/Library/Containers/…WidgetsExtension…` | The macOS widget extension's container |
-| `/Library/PrivilegedHelperTools/com.sagar.perch.SMC.Helper` | The SMC helper, if fan control was used |
-| `/Library/LaunchDaemons/com.sagar.perch.SMC.Helper.plist` | Its launch daemon |
 
-Perch collects no telemetry or analytics. The only external requests are the
-update check against this repository's releases, and `https://ifconfig.co/ip`
-for the public IP shown in the Network popup — made only when that popup asks
-for it. `ifconfig.co` runs [echoip](https://github.com/mpolden/echoip), which is
-MIT licensed and self-hostable if you would rather not depend on someone else's
-server; repoint the endpoint in `Perch/Monitor/NetworkInfo.swift`.
+Perch installs no helper, daemon or extension.
+
+---
+
+## Privacy
+
+Perch collects no telemetry or analytics and has no account. It talks to the
+network in three cases:
+
+- **Update check** — a plain read of
+  `https://api.github.com/repos/sagardn/Perch/releases/latest`, on the schedule
+  set in **Check for updates**. Nothing about your Mac is sent. **Never** stops it.
+- **Connectivity check** — while the Network popup is open, a TCP handshake
+  with `1.1.1.1` on port 53, every few seconds, to measure latency and whether
+  the internet answers. No data is sent over it.
+- **Public IP** — `https://ifconfig.co/ip`, only when **Look up the public
+  address** is on and you have asked to be told when the public IP changes;
+  then once every two minutes. `ifconfig.co` runs
+  [echoip](https://github.com/mpolden/echoip), which is open source and
+  self-hostable if you would rather not depend on someone else's server;
+  repoint the endpoint in `Perch/Monitor/NetworkInfo.swift`.
 
 ---
 
 ## Troubleshooting
 
-**No Perch icons in the menu bar at all.** macOS 26 added a privacy control:
-System Settings → Menu Bar → turn Perch on. This is almost always the cause if
-Perch is running with a module enabled and a widget active.
+**No Perch items in the menu bar at all.** On macOS 26 and newer: System
+Settings → Menu Bar → turn Perch on. If you see `«` among your menu bar icons,
+macOS is hiding items that do not fit, newest first — quit another menu bar app
+or ⌘-drag items to make room. Finally, check the module is switched on in the
+Settings sidebar.
 
-**Nothing minimizes; apps only come forward.** Accessibility is not granted.
-Raising a window needs no permission, minimizing one does.
+**Nothing minimises; apps only come forward.** Accessibility is not granted, or
+was granted to an earlier build — see [Permissions](#permissions). Raising an
+app needs no permission, minimising one does.
 
-**The gesture does nothing.** Check Input Monitoring. If Perch could not read
-the trackpad at all it will have turned the setting off and said so.
+**The gesture does nothing.** Check which finger counts are switched on in
+Settings → Search & switcher: the default is three, not two or four. No
+permission is involved. If Perch could not read the trackpad at all, it turns
+the setting off and says so.
 
 **⌃Tab stopped working in my browser.** That is Perch holding it globally.
-`defaults write com.sagar.perch cycleHotkeyEnabled -bool false`, then restart.
+Switch off **⌃Tab cycles your marked apps** in Settings → Search & switcher.
 
-**A ⌃digit shortcut does nothing.** Another app registered that hotkey first —
-macOS gives it to whoever asked first. Pick a different character in Perch Apps.
+**A hotkey does nothing.** Another app registered it first — macOS gives a
+global hotkey to whoever asked first and tells the loser nothing. Perch names
+the shortcuts it could not claim in a notice at launch. Quit the app that owns
+the key, pick a different character in Perch Apps, or look for a clash in
+System Settings → Keyboard → Keyboard Shortcuts….
 
-**"macOS can't minimize a full-screen window."** It cannot, and hiding the app
+**A popup shortcut does nothing.** Check the key codes are in the order ⌃ ⇧ ⌘ ⌥
+then the key, that Perch was restarted, and that Input Monitoring is granted —
+see [Module popup shortcuts](#module-popup-shortcuts).
+
+**"macOS can't minimise a full-screen window."** It cannot, and hiding the app
 instead was tried and rejected: ⌘H tears down the full-screen space, after
 which the app reports no windows and nothing can bring it back.
 
-**Desktop widgets show no data.** Turn **macOS widgets** on in Settings.
+**Perch uses too much CPU or battery.** Switch off the modules you do not need,
+starting with Sensors.
 
-**Perch uses too much CPU / battery.** Disable modules you do not need,
-starting with Sensors and Bluetooth.
+**Sensors show the wrong core count.** CPU and GPU sensors are thermal zones,
+not cores. "CPU Efficient Core 1" is one sensor inside the efficiency cluster,
+not one core's temperature.
 
-**Sensors show the wrong core count.** CPU/GPU sensors are thermal zones, not
-cores. "CPU Efficient Core 1" is one sensor inside the efficiency cluster, not
-one core's temperature.
-
-**Fan control is odd.** It is in legacy mode: no updates, no fixes. It stays in
-because it still works acceptably on older Macs.
+**A sensor shows an impossible reading** (−2 °C, or a jump far above its
+neighbours). Some sensor keys report raw or uncalibrated values. Hide it under
+the Sensors page's popup list, and if another sensor beside it agrees with the
+high value, the reading is real.
 
 ---
 
@@ -459,8 +551,8 @@ sh /Applications/Perch.app/Contents/Resources/Scripts/uninstall.sh
 
 It quits Perch and removes `Perch.app`, the application data and preferences
 listed above, and the Accessibility and notification permissions macOS keeps
-for it. If the app has already
-gone to the Trash, the same script can be run from the repository:
+for it. If the app has already gone to the Trash, the same script can be run
+from the repository:
 
 ```bash
 sh Tools/uninstall.sh
