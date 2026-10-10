@@ -63,6 +63,13 @@
 "not mounted" = "not mounted";
 "Include removable drives" = "Include removable drives";
 "Watch" = "Watch";
+"Free up space" = "Free up space";
+"Open Bin" = "Open Bin";
+"Storage settings…" = "Storage settings…";
+"Deleted files" = "Deleted files";
+"Space macOS can reclaim" = "Space macOS can reclaim";
+"Find large files…" = "Find large files…";
+"What is taking the room" = "What is taking the room";
 
 // Monitor · DiskPopup
 "Format" = "Format";
@@ -77,6 +84,7 @@
 "Since launch" = "Since launch";
 "read" = "read";
 "write" = "write";
+"Purgeable" = "Purgeable";
 
 // Monitor · DiskTile
 "free" = "free";
@@ -94,6 +102,28 @@
 
 // Monitor · GPUTile
 "cores" = "cores";
+
+// Monitor · LargeFilesWindow
+"Largest files" = "Largest files";
+"Looking…" = "Looking…";
+"Reveal" = "Reveal";
+"%0 items, %1 in total" = "%0 items, %1 in total";
+"Nothing found. macOS may not have let Perch look — the folders it searches are the ones it guards." = "Nothing found. macOS may not have let Perch look — the folders it searches are the ones it guards.";
+"%0 moved to the Bin" = "%0 moved to the Bin";
+"%0 moved, %1 could not be" = "%0 moved, %1 could not be";
+"%0 will be freed once the Bin is emptied. Until then everything can be put back from Finder." = "%0 will be freed once the Bin is emptied. Until then everything can be put back from Finder.";
+"Archives" = "Archives";
+"Audio" = "Audio";
+"Documents" = "Documents";
+"Everything" = "Everything";
+"Images" = "Images";
+"Installers" = "Installers";
+"Move %0 items to the Bin?" = "Move %0 items to the Bin?";
+"Move %0 to Bin" = "Move %0 to Bin";
+"Move to Bin" = "Move to Bin";
+"Nothing could be moved to the Bin" = "Nothing could be moved to the Bin";
+"Other" = "Other";
+"Video" = "Video";
 
 // Monitor · MemoryReadings
 "Normal" = "Normal";
@@ -256,6 +286,9 @@
 "Three-finger double tap" = "Three-finger double tap";
 "Export…" = "Export…";
 "Import…" = "Import…";
+"Copy report" = "Copy report";
+"Diagnostics" = "Diagnostics";
+"Diagnostics copied" = "Diagnostics copied";
 
 // Settings · UpdateInterval
 "At start" = "At start";

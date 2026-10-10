@@ -182,7 +182,28 @@ final class DiskSettingsPage: NSView {
                 })
             })
 
-        let column = NSStackView(views: [section, shapes, alerts])
+        // Its own section, below the settings, because these are actions and
+        // the rows above are preferences. Mixing the two means a list where
+        // some rows remember what you did and others did something -- which
+        // is the shape the General pane already avoids by keeping Backup
+        // separate.
+        //
+        // Perch does not delete anything and does not ask for the permission
+        // it would need to; see DiskCleanup. Both buttons open somewhere that
+        // already has it.
+        let cleanup = Controls.section(localized("Free up space"), [
+            Controls.row(localized("Space macOS can reclaim"), Controls.group([
+                Controls.button("Storage settings…") { DiskCleanup.openStorageSettings() },
+            ])),
+            Controls.row(localized("Deleted files"), Controls.group([
+                Controls.button("Open Bin") { DiskCleanup.openBin() },
+            ])),
+            Controls.row(localized("What is taking the room"), Controls.group([
+                Controls.button("Find large files…") { LargeFilesWindow.present() },
+            ])),
+        ])
+
+        let column = NSStackView(views: [section, shapes, alerts, cleanup])
         column.orientation = .vertical
         column.alignment = .leading
         column.edgeInsets = NSEdgeInsets(top: 44, left: 18, bottom: 18, right: 18)
@@ -196,6 +217,7 @@ final class DiskSettingsPage: NSView {
             section.widthAnchor.constraint(equalTo: column.widthAnchor, constant: -36),
             shapes.widthAnchor.constraint(equalTo: column.widthAnchor, constant: -36),
             alerts.widthAnchor.constraint(equalTo: column.widthAnchor, constant: -36),
+            cleanup.widthAnchor.constraint(equalTo: column.widthAnchor, constant: -36),
         ])
     }
 

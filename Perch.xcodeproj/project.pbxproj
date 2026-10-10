@@ -19,6 +19,9 @@
 		FEEDFACE0511000000000000 /* SensorsModuleShell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0510000000000000 /* SensorsModuleShell.swift */; };
 		FEEDFACE0521000000000000 /* SensorsTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0520000000000000 /* SensorsTile.swift */; };
 		FEEDFACE0471000000000000 /* DiskReadings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0470000000000000 /* DiskReadings.swift */; };
+		FEEDFACE0B40000000000000 /* DiskCleanup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0B41000000000000 /* DiskCleanup.swift */; };
+		FEEDFACE0B50000000000000 /* LargeFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0B51000000000000 /* LargeFiles.swift */; };
+		FEEDFACE0B60000000000000 /* LargeFilesWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0B61000000000000 /* LargeFilesWindow.swift */; };
 		FEEDFACE0481000000000000 /* DiskPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0480000000000000 /* DiskPopup.swift */; };
 		FEEDFACE0491000000000000 /* DiskModuleShell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0490000000000000 /* DiskModuleShell.swift */; };
 		FEEDFACE04A1000000000000 /* DiskTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE04A0000000000000 /* DiskTile.swift */; };
@@ -42,6 +45,8 @@
 		FEEDFACE0341000000000000 /* AppLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0340000000000000 /* AppLinks.swift */; };
 		FEEDFACE0343000000000000 /* SupportWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0342000000000000 /* SupportWindow.swift */; };
 		FEEDFACE0331000000000000 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0330000000000000 /* DeviceInfo.swift */; };
+		FEEDFACE0B20000000000000 /* SystemReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0B21000000000000 /* SystemReport.swift */; };
+		FEEDFACE0B30000000000000 /* SystemReportLive.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0B31000000000000 /* SystemReportLive.swift */; };
 		FEEDFACE0333000000000000 /* DashboardPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0332000000000000 /* DashboardPane.swift */; };
 		FEEDFACE0335000000000000 /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0334000000000000 /* Localized.swift */; };
 		FEEDFACE0328000000000000 /* LoginItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0327000000000000 /* LoginItem.swift */; };
@@ -199,6 +204,9 @@
 		FEEDFACE0510000000000000 /* SensorsModuleShell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorsModuleShell.swift; sourceTree = "<group>"; };
 		FEEDFACE0520000000000000 /* SensorsTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorsTile.swift; sourceTree = "<group>"; };
 		FEEDFACE0470000000000000 /* DiskReadings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskReadings.swift; sourceTree = "<group>"; };
+		FEEDFACE0B41000000000000 /* DiskCleanup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskCleanup.swift; sourceTree = "<group>"; };
+		FEEDFACE0B51000000000000 /* LargeFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeFiles.swift; sourceTree = "<group>"; };
+		FEEDFACE0B61000000000000 /* LargeFilesWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeFilesWindow.swift; sourceTree = "<group>"; };
 		FEEDFACE0480000000000000 /* DiskPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskPopup.swift; sourceTree = "<group>"; };
 		FEEDFACE0490000000000000 /* DiskModuleShell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskModuleShell.swift; sourceTree = "<group>"; };
 		FEEDFACE04A0000000000000 /* DiskTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskTile.swift; sourceTree = "<group>"; };
@@ -222,6 +230,8 @@
 		FEEDFACE0340000000000000 /* AppLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLinks.swift; sourceTree = "<group>"; };
 		FEEDFACE0342000000000000 /* SupportWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportWindow.swift; sourceTree = "<group>"; };
 		FEEDFACE0330000000000000 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
+		FEEDFACE0B21000000000000 /* SystemReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemReport.swift; sourceTree = "<group>"; };
+		FEEDFACE0B31000000000000 /* SystemReportLive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemReportLive.swift; sourceTree = "<group>"; };
 		FEEDFACE0332000000000000 /* DashboardPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardPane.swift; sourceTree = "<group>"; };
 		FEEDFACE0334000000000000 /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
 		FEEDFACE0327000000000000 /* LoginItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginItem.swift; sourceTree = "<group>"; };
@@ -361,6 +371,8 @@
 			isa = PBXGroup;
 			children = (
 				FEEDFACE0330000000000000 /* DeviceInfo.swift */,
+				FEEDFACE0B21000000000000 /* SystemReport.swift */,
+				FEEDFACE0B31000000000000 /* SystemReportLive.swift */,
 				FEEDFACE0332000000000000 /* DashboardPane.swift */,
 			);
 			path = System;
@@ -497,6 +509,9 @@
 				FEEDFACE0510000000000000 /* SensorsModuleShell.swift */,
 				FEEDFACE0520000000000000 /* SensorsTile.swift */,
 				FEEDFACE0470000000000000 /* DiskReadings.swift */,
+				FEEDFACE0B41000000000000 /* DiskCleanup.swift */,
+				FEEDFACE0B51000000000000 /* LargeFiles.swift */,
+				FEEDFACE0B61000000000000 /* LargeFilesWindow.swift */,
 				FEEDFACE0480000000000000 /* DiskPopup.swift */,
 				FEEDFACE0490000000000000 /* DiskModuleShell.swift */,
 				FEEDFACE04A0000000000000 /* DiskTile.swift */,
@@ -777,6 +792,9 @@
 				FEEDFACE0511000000000000 /* SensorsModuleShell.swift in Sources */,
 				FEEDFACE0521000000000000 /* SensorsTile.swift in Sources */,
 				FEEDFACE0471000000000000 /* DiskReadings.swift in Sources */,
+				FEEDFACE0B40000000000000 /* DiskCleanup.swift in Sources */,
+				FEEDFACE0B50000000000000 /* LargeFiles.swift in Sources */,
+				FEEDFACE0B60000000000000 /* LargeFilesWindow.swift in Sources */,
 				FEEDFACE0481000000000000 /* DiskPopup.swift in Sources */,
 				FEEDFACE0491000000000000 /* DiskModuleShell.swift in Sources */,
 				FEEDFACE04A1000000000000 /* DiskTile.swift in Sources */,
@@ -799,6 +817,8 @@
 				FEEDFACE0341000000000000 /* AppLinks.swift in Sources */,
 				FEEDFACE0343000000000000 /* SupportWindow.swift in Sources */,
 				FEEDFACE0331000000000000 /* DeviceInfo.swift in Sources */,
+				FEEDFACE0B20000000000000 /* SystemReport.swift in Sources */,
+				FEEDFACE0B30000000000000 /* SystemReportLive.swift in Sources */,
 				FEEDFACE0333000000000000 /* DashboardPane.swift in Sources */,
 				FEEDFACE0335000000000000 /* Localized.swift in Sources */,
 				FEEDFACE0328000000000000 /* LoginItem.swift in Sources */,
