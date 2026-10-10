@@ -82,13 +82,35 @@ enum DeviceInfo {
     /// dynamic type, and gets the generic Mac icon rather than a wrong one.
     private static func modelIcon(_ identifier: String) -> NSImage? {
         let modelCode = UTTagClass(rawValue: "com.apple.device-model-code")
-        if let type = UTType(tag: identifier, tagClass: modelCode, conformingTo: nil),
-           !type.isDynamic {
-            return NSWorkspace.shared.icon(for: type)
+        for tag in [identifier] + colouredTags(of: identifier) {
+            if let type = UTType(tag: tag, tagClass: modelCode, conformingTo: nil),
+               !type.isDynamic {
+                return NSWorkspace.shared.icon(for: type)
+            }
         }
         guard let type = UTType("com.apple.mac") else { return nil }
         let generic = NSWorkspace.shared.icon(for: type)
         return generic.size.width > 0 ? generic : nil
+    }
+
+    /// The colour variants the system declares for a model -- tags like
+    /// `MacBook10,1@ECOLOR=225,225,223`.
+    ///
+    /// For when the bare identifier is not declared at all. Of the 248 Mac
+    /// model tags CoreTypes declares, one model, the 2017 12" MacBook, exists
+    /// only with a colour attached, so its plain identifier resolved to
+    /// nothing and it got the generic icon. Any colour of the right model is
+    /// the right machine.
+    private static func colouredTags(of identifier: String) -> [String] {
+        let info = "/System/Library/CoreServices/CoreTypes.bundle/Contents/Info.plist"
+        guard let plist = NSDictionary(contentsOfFile: info),
+              let types = plist["UTExportedTypeDeclarations"] as? [[String: Any]]
+        else { return [] }
+        return types.flatMap { declaration -> [String] in
+            let spec = declaration["UTTypeTagSpecification"] as? [String: Any]
+            let tags = spec?["com.apple.device-model-code"]
+            return (tags as? [String]) ?? [(tags as? String)].compactMap { $0 }
+        }.filter { $0.hasPrefix(identifier + "@") }
     }
 
     /// A string property from the platform expert — model, serial, and the
