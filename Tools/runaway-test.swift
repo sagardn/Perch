@@ -59,19 +59,48 @@ do {
     check("a command-line tool is named by its file, with no app", tool.name == "node" && tool.bundle == nil)
     let system = RunawayApps.owner(of: "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder")
     check("a system app is still an app", system.name == "Finder")
+    // perch-06's real paths: a toolchain binary inside Xcode is not Xcode.
+    for tool in ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend",
+                 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang",
+                 "/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild"] {
+        let o = RunawayApps.owner(of: tool)
+        check("\((tool as NSString).lastPathComponent) is itself, not Xcode, and has no Quit",
+              o.name == (tool as NSString).lastPathComponent && o.bundle == nil)
+    }
+    check("Xcode's own executable is still Xcode",
+          RunawayApps.owner(of: "/Applications/Xcode.app/Contents/MacOS/Xcode").bundle?.lastPathComponent == "Xcode.app")
+
+print("\nmacOS's own processes")
+    check("StorageManagementService is never reported",
+          RunawayApps.isSystem("/System/Library/PrivateFrameworks/StorageManagement.framework/Versions/A/Resources/StorageManagementService.app/Contents/MacOS/StorageManagementService"))
+    check("nor Apple's parts of /usr", RunawayApps.isSystem("/usr/libexec/trustd")
+          && RunawayApps.isSystem("/usr/bin/yes") && RunawayApps.isSystem("/usr/sbin/cfprefsd"))
+    check("but Homebrew on Intel, in /usr/local, is reported", !RunawayApps.isSystem("/usr/local/bin/node"))
+    check("an app in /Applications is", !RunawayApps.isSystem("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"))
+    check("a Homebrew tool is", !RunawayApps.isSystem("/opt/homebrew/bin/node"))
 }
 
 print("\nThe kernel's numbers, in the right unit")
 do {
     // A child that does nothing but burn CPU, read two ways: through
     // RunawayApps' conversion, and by ps, which converts for itself.
+    // A busy loop compiled here, outside /usr/bin: `yes` itself is macOS's
+    // own and excluded from the alert -- the point of the exclusion -- and a
+    // copied system binary loses its signature and will not run.
+    let copy = FileManager.default.temporaryDirectory.appendingPathComponent("perch-burner-\(getpid())")
+    let source = copy.appendingPathExtension("c")
+    try! "int main(void) { volatile unsigned long n = 0; for (;;) n++; }".write(to: source, atomically: true, encoding: .utf8)
+    let cc = Process()
+    cc.executableURL = URL(fileURLWithPath: "/usr/bin/cc")
+    cc.arguments = ["-O0", "-o", copy.path, source.path]
+    try! cc.run(); cc.waitUntilExit()
+    defer { try? FileManager.default.removeItem(at: copy); try? FileManager.default.removeItem(at: source) }
     let burner = Process()
-    burner.executableURL = URL(fileURLWithPath: "/usr/bin/yes")
-    burner.standardOutput = FileHandle.nullDevice
+    burner.executableURL = copy
     try! burner.run()
     Thread.sleep(forTimeInterval: 2)
 
-    let ours = RunawayApps.cpuByApp().first { $0.key == "yes" }?.cpuNanoseconds ?? 0
+    let ours = RunawayApps.cpuByApp().first { $0.key == copy.lastPathComponent }?.cpuNanoseconds ?? 0
     let ps = Process()
     ps.executableURL = URL(fileURLWithPath: "/bin/ps")
     ps.arguments = ["-o", "time=", "-p", "\(burner.processIdentifier)"]

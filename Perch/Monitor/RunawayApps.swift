@@ -154,7 +154,8 @@ final class RunawayApps {
         let own = getpid()
         var totals: [String: AppTime] = [:]
         for pid in allPIDs() where pid > 0 && pid != own {
-            guard let cpu = cpuTime(pid), let path = executablePath(pid) else { continue }
+            guard let cpu = cpuTime(pid), let path = executablePath(pid),
+                  !isSystem(path) else { continue }
             let owner = Self.owner(of: path)
             let key = owner.bundle?.path ?? owner.name
             let sum = (totals[key]?.cpuNanoseconds ?? 0) + cpu
@@ -166,14 +167,40 @@ final class RunawayApps {
     /// The app an executable belongs to: the outermost `.app` in its path,
     /// so `Google Chrome.app/…/Google Chrome Helper (Renderer).app/…` is
     /// Google Chrome. A process outside any app is named by its file.
+    ///
+    /// Only when the executable is itself an app's -- sitting in some
+    /// `<name>.app/Contents/MacOS/`. A toolchain binary merely *lives* inside
+    /// an app: `Xcode.app/Contents/Developer/…/swift-frontend` is a compiler,
+    /// usually run from a terminal, and folding it into Xcode produced
+    /// "Xcode is working hard" with a Quit button that would close somebody's
+    /// editor and leave the compile running. perch-06 found it, running this
+    /// on real paths.
     static func owner(of path: String) -> (name: String, bundle: URL?) {
         let parts = path.split(separator: "/", omittingEmptySubsequences: false)
-        if let index = parts.firstIndex(where: { $0.hasSuffix(".app") }) {
+        let isAppExecutable = parts.count >= 4 && parts[parts.count - 2] == "MacOS"
+            && parts[parts.count - 3] == "Contents" && parts[parts.count - 4].hasSuffix(".app")
+        if isAppExecutable, let index = parts.firstIndex(where: { $0.hasSuffix(".app") }) {
             let bundlePath = parts[...index].joined(separator: "/")
             let name = String(parts[index].dropLast(4))
             return (name, URL(fileURLWithPath: bundlePath))
         }
         return (String(parts.last ?? Substring(path)), nil)
+    }
+
+    /// macOS's own processes. They are never reported: nothing a person can
+    /// do will stop Spotlight indexing or StorageManagementService sizing
+    /// the disk, so an alert about them is noise that teaches people to
+    /// ignore the alert. Measured: StorageManagementService held half a core
+    /// for ten samples in a row on an ordinary machine. The same rule drops
+    /// Shortcuts' BackgroundShortcutRunner, the case that prompted this --
+    /// accepted, because the alternative is a list of system services to
+    /// make exceptions for, and that list is never finished.
+    static func isSystem(_ path: String) -> Bool {
+        // /usr/local is not Apple's: it is Homebrew's prefix on Intel, where
+        // a runaway `node` lives -- the case this is for. So /usr is listed
+        // by the directories Apple owns, never whole.
+        ["/System/", "/Library/Apple/", "/usr/bin/", "/usr/sbin/", "/usr/libexec/",
+         "/bin/", "/sbin/"].contains { path.hasPrefix($0) }
     }
 
     private static func allPIDs() -> [pid_t] {
