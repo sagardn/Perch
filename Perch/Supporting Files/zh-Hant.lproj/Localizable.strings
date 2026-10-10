@@ -1,10 +1,12 @@
 /*
- * Localizable.strings — Perch, Chinese, Traditional.
+ * Localizable.strings — Perch, Chinese (Traditional).
  *
- * The source every other language is checked against: `python3 Tools/i18n.py`
- * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
- * in step with the code. %0, %1 ... are filled in by `localized()` in
- * Perch/UI/Localized.swift and must survive translation.
+ * Translated from en.lproj, which is the source: `python3 Tools/i18n.py`
+ * keeps this file in step with it. %0, %1 ... are filled in by
+ * `localized()` in Perch/UI/Localized.swift and must survive translation.
+ *
+ * Machine-translated on 2026-10-10, from the English alone, and not yet
+ * reviewed by a native speaker. Corrections are welcome.
  */
 
 // Monitor · CPUModuleShell
@@ -12,14 +14,14 @@
 "None" = "無";
 "2 minutes" = "2 分鐘";
 "Chart history" = "圖表歷史記錄";
-"Top processes" = "主要處理程序";
+"Top processes" = "佔用最高的程序";
 "1 minute" = "1 分鐘";
 "5 minutes" = "5 分鐘";
 "Menu bar" = "選單列";
-"Notify me when" = "在下列情況通知我";
+"Notify me when" = "在以下情況通知我";
 
 // Monitor · CPUPopup
-"Clock" = "時脈";
+"Clock" = "頻率";
 "Processor" = "處理器";
 "Cores" = "核心";
 "Uptime" = "運作時間";
@@ -30,13 +32,13 @@
 "Temperature" = "溫度";
 
 // Monitor · CombinedBar
-"No module has anything to show here yet." = "目前沒有模組可在此顯示內容。";
+"No module has anything to show here yet." = "尚無模組可在此顯示內容。";
 "Combined modules" = "合併模組";
 "Combined details" = "合併詳細資訊";
 
 // Monitor · DiskModuleShell
 "Disk" = "磁碟";
-"Startup volume" = "啟動卷宗";
+"Startup volume" = "啟動磁碟區";
 "not mounted" = "未裝載";
 
 // Monitor · DiskPopup
@@ -70,7 +72,7 @@
 "Figure" = "數字";
 "Ring" = "圓環";
 "Gauge" = "儀表";
-"Used and free" = "已使用和可用";
+"Used and free" = "已使用與可用";
 "Rates" = "速率";
 "Bar chart" = "長條圖";
 "Line chart" = "折線圖";
@@ -79,13 +81,13 @@
 // Monitor · NetworkModuleShell
 "Network" = "網路";
 "Internet connection lost" = "網際網路連線已中斷";
-"Internet connection established" = "已連線至網際網路";
-"Tell me when" = "在下列情況提醒我";
-"Connection comes or goes" = "連線或中斷時";
-"Wi-Fi network changes" = "Wi-Fi 網路變更時";
-"Interface changes" = "介面變更時";
-"Local address changes" = "本機位址變更時";
-"Public address changes" = "公用位址變更時";
+"Internet connection established" = "網際網路連線已建立";
+"Tell me when" = "在以下情況告訴我";
+"Connection comes or goes" = "連線建立或中斷";
+"Wi-Fi network changes" = "Wi-Fi 網路變更";
+"Interface changes" = "介面變更";
+"Local address changes" = "本機位址變更";
+"Public address changes" = "公用位址變更";
 
 // Monitor · NetworkPopup
 "Download" = "下載";
@@ -102,21 +104,21 @@
 "Idle" = "閒置";
 
 // Monitor · PopupSection
-"Process" = "處理程序";
+"Process" = "程序";
 
 // Monitor · RAMModuleShell
 "RAM" = "RAM";
 
 // Monitor · RAMPopup
-"Wired" = "固定記憶體";
+"Wired" = "固定";
 "Compressed" = "已壓縮";
-"Swap size" = "置換空間大小";
+"Swap size" = "交換大小";
 "Memory threshold" = "記憶體臨界值";
 
 // Monitor · RAMTile
-"App" = "App 記憶體";
-"Swap" = "置換空間";
-"Pressure" = "記憶體壓力";
+"App" = "App";
+"Swap" = "交換";
+"Pressure" = "壓力";
 
 // Monitor · SensorReadings
 "Battery" = "電池";
@@ -130,8 +132,8 @@
 "History" = "歷史記錄";
 
 // Monitor · SensorsTile
-"hottest" = "最高";
-"sensors" = "個感測器";
+"hottest" = "最熱";
+"sensors" = "感測器";
 "No sensors answered" = "沒有感測器回應";
 
 // Monitor · Thresholds
@@ -143,14 +145,14 @@
 "Memory pressure" = "記憶體壓力";
 "Memory used" = "已使用記憶體";
 "Memory free" = "可用記憶體";
-"Swap in use" = "已使用置換空間";
+"Swap in use" = "使用中的交換";
 "Disk usage" = "磁碟使用率";
 
 // Settings · GeneralPane
 "Reset" = "重置";
 "Silent" = "靜默";
 "Settings" = "設定";
-"Check for updates" = "檢查更新";
+"Check for updates" = "檢查更新項目";
 "Once per day" = "每天一次";
 "Once per week" = "每週一次";
 "Never" = "永不";
@@ -174,7 +176,7 @@
 
 // System · DashboardPane
 "Unknown" = "未知";
-"Graphics" = "顯示卡";
+"Graphics" = "圖形卡";
 "Serial number" = "序號";
 "Model identifier" = "機型識別碼";
 "Production year" = "生產年份";
@@ -187,8 +189,8 @@
 
 // UI · SupportWindow
 "Close" = "關閉";
-"Support text" = "感謝你使用 Perch。\n\nPerch 是免費的開放原始碼軟體，由開發者利用閒暇時間打造與維護。如果它讓你的日常輕鬆一點，你的贊助能幫助它持續下去。";
-"Support Perch" = "贊助 Perch";
+"Support text" = "感謝你使用 Perch。\n\nPerch 免費且開放原始碼，由開發者利用閒暇時間打造與維護。如果它讓你的日子輕鬆一點，你的贊助能幫助它繼續走下去。";
+"Support Perch" = "支持 Perch";
 "Donate" = "捐款";
 
 // Update · UpdateWindow
@@ -196,33 +198,33 @@
 
 // Views · SettingsShell
 "Report a bug" = "回報錯誤";
-"Support the application" = "贊助此應用程式";
-"Close application" = "結束應用程式";
+"Support the application" = "支持此應用程式";
+"Close application" = "關閉應用程式";
 "Toggle the module" = "開啟或關閉模組";
 "Modules" = "模組";
 "Search" = "搜尋";
 "Preview" = "預覽";
-"Support" = "贊助";
+"Support" = "支援";
 "Pause the Perch" = "暫停 Perch";
 
 // Views · Setup
-"Perch Setup" = "Perch 設定";
+"Perch Setup" = "設定 Perch";
 "Previous" = "上一步";
 "Previous page" = "上一頁";
 "Welcome to Perch" = "歡迎使用 Perch";
-"welcome_message" = "Perch 將系統監視器、App 啟動器和視窗切換器放進你的選單列。透過這個簡短的設定流程，選擇要先顯示哪些內容。";
+"welcome_message" = "Perch 會將系統監視器、App 啟動器和視窗切換器放入你的選單列。這個簡短的設定流程會選擇優先顯示的內容。";
 "Select preset" = "選擇預設組合";
 "select_preset_message" = "選擇一組初始模組。之後隨時可以在「設定」中更改。";
-"Start the application automatically when starting your Mac" = "啟動 Mac 時自動開啟此應用程式";
-"Do not start the application automatically when starting your Mac" = "啟動 Mac 時不要自動開啟此應用程式";
-"Do everything silently in the background (recommended)" = "在背景靜默完成所有作業（建議）";
+"Start the application automatically when starting your Mac" = "在 Mac 啟動時自動開啟應用程式";
+"Do not start the application automatically when starting your Mac" = "在 Mac 啟動時不要自動開啟應用程式";
+"Do everything silently in the background (recommended)" = "在背景中靜默完成所有作業（建議）";
 "Check for a new version on startup" = "啟動時檢查新版本";
 "Check for a new version every day (once a day)" = "每天檢查新版本（一天一次）";
 "Check for a new version every week (once a week)" = "每週檢查新版本（一週一次）";
 "Check for a new version every month (once a month)" = "每月檢查新版本（一個月一次）";
 "Never check for updates (not recommended)" = "永不檢查更新（不建議）";
 "The configuration is completed" = "設定已完成";
-"finish_setup_message" = "一切就緒。\n\nPerch 是免費的開放原始碼軟體。如果它對你有幫助，你可以贊助它的開發。";
+"finish_setup_message" = "一切就緒。\n\nPerch 免費且開放原始碼。如果它對你有幫助，你可以支持它的開發。";
 
 // Views · SetupFlow
 "Next" = "下一步";

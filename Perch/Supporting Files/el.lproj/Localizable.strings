@@ -1,10 +1,12 @@
 /*
  * Localizable.strings — Perch, Greek.
  *
- * The source every other language is checked against: `python3 Tools/i18n.py`
- * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
- * in step with the code. %0, %1 ... are filled in by `localized()` in
- * Perch/UI/Localized.swift and must survive translation.
+ * Translated from en.lproj, which is the source: `python3 Tools/i18n.py`
+ * keeps this file in step with it. %0, %1 ... are filled in by
+ * `localized()` in Perch/UI/Localized.swift and must survive translation.
+ *
+ * Machine-translated on 2026-10-10, from the English alone, and not yet
+ * reviewed by a native speaker. Corrections are welcome.
  */
 
 // Monitor · CPUModuleShell
@@ -30,13 +32,13 @@
 "Temperature" = "Θερμοκρασία";
 
 // Monitor · CombinedBar
-"No module has anything to show here yet." = "Καμία μονάδα δεν έχει ακόμη κάτι να εμφανίσει εδώ.";
-"Combined modules" = "Συνδυασμένες μονάδες";
+"No module has anything to show here yet." = "Κανένα άρθρωμα δεν έχει ακόμη κάτι να δείξει εδώ.";
+"Combined modules" = "Συνδυασμένα αρθρώματα";
 "Combined details" = "Συνδυασμένες λεπτομέρειες";
 
 // Monitor · DiskModuleShell
 "Disk" = "Δίσκος";
-"Startup volume" = "Τόμος εκκίνησης";
+"Startup volume" = "Δίσκος εκκίνησης";
 "not mounted" = "μη προσαρτημένος";
 
 // Monitor · DiskPopup
@@ -71,9 +73,9 @@
 "Ring" = "Δακτύλιος";
 "Gauge" = "Μετρητής";
 "Used and free" = "Σε χρήση και ελεύθερα";
-"Rates" = "Ταχύτητες";
+"Rates" = "Ρυθμοί";
 "Bar chart" = "Ραβδόγραμμα";
-"Line chart" = "Γράφημα γραμμής";
+"Line chart" = "Γράφημα γραμμών";
 "Traffic chart" = "Γράφημα κίνησης";
 
 // Monitor · NetworkModuleShell
@@ -81,7 +83,7 @@
 "Internet connection lost" = "Η σύνδεση στο Διαδίκτυο χάθηκε";
 "Internet connection established" = "Η σύνδεση στο Διαδίκτυο αποκαταστάθηκε";
 "Tell me when" = "Ενημέρωση όταν";
-"Connection comes or goes" = "Η σύνδεση διακόπτεται ή επανέρχεται";
+"Connection comes or goes" = "Η σύνδεση έρχεται ή χάνεται";
 "Wi-Fi network changes" = "Αλλάζει το δίκτυο Wi-Fi";
 "Interface changes" = "Αλλάζει η διεπαφή";
 "Local address changes" = "Αλλάζει η τοπική διεύθυνση";
@@ -92,11 +94,11 @@
 "Local IP" = "Τοπική IP";
 "Interface" = "Διεπαφή";
 "Physical address" = "Φυσική διεύθυνση";
-"Online" = "Σε σύνδεση";
+"Online" = "Συνδεδεμένο";
 "Offline" = "Εκτός σύνδεσης";
 
 // Monitor · Popup
-"Dashboard" = "Επισκόπηση";
+"Dashboard" = "Πίνακας";
 
 // Monitor · PopupParts
 "Idle" = "Αδράνεια";
@@ -123,22 +125,22 @@
 
 // Monitor · SensorsModuleShell
 "Sensors" = "Αισθητήρες";
-"Show in the popup" = "Εμφάνιση στο αναδυόμενο παράθυρο";
+"Show in the popup" = "Εμφάνιση στο αναδυόμενο";
 "Hottest temperature" = "Υψηλότερη θερμοκρασία";
 
 // Monitor · SensorsPopup
 "History" = "Ιστορικό";
 
 // Monitor · SensorsTile
-"hottest" = "μέγιστη";
+"hottest" = "θερμότερος";
 "sensors" = "αισθητήρες";
-"No sensors answered" = "Κανένας αισθητήρας δεν απάντησε";
+"No sensors answered" = "Δεν απάντησε κανένας αισθητήρας";
 
 // Monitor · Thresholds
 "Total load" = "Συνολικό φορτίο";
 "System load" = "Φορτίο συστήματος";
 "User load" = "Φορτίο χρήστη";
-"Efficiency cores load" = "Φορτίο πυρήνων αποδοτικότητας";
+"Efficiency cores load" = "Φορτίο πυρήνων απόδοσης ενέργειας";
 "Performance cores load" = "Φορτίο πυρήνων επιδόσεων";
 "Memory pressure" = "Πίεση μνήμης";
 "Memory used" = "Μνήμη σε χρήση";
@@ -155,7 +157,7 @@
 "Once per week" = "Μία φορά την εβδομάδα";
 "Never" = "Ποτέ";
 "Check for update" = "Έλεγχος για ενημέρωση";
-"Start at login" = "Άνοιγμα κατά τη σύνδεση";
+"Start at login" = "Έναρξη κατά τη σύνδεση";
 "Spacing" = "Απόσταση";
 "Celsius" = "Κελσίου";
 "Fahrenheit" = "Φαρενάιτ";
@@ -165,29 +167,29 @@
 "Once per month" = "Μία φορά τον μήνα";
 
 // Startup · Startup
-"Successfully updated" = "Επιτυχής ενημέρωση";
+"Successfully updated" = "Ενημερώθηκε με επιτυχία";
 "Perch was updated to v" = "Το Perch ενημερώθηκε στην έκδοση %0";
 
 // Startup · UpdateCheck
-"New version available" = "Διαθέσιμη νέα έκδοση";
-"Click to install the new version of Perch" = "Κάντε κλικ για να εγκαταστήσετε τη νέα έκδοση του Perch";
+"New version available" = "Νέα έκδοση διαθέσιμη";
+"Click to install the new version of Perch" = "Κάντε κλικ για εγκατάσταση της νέας έκδοσης του Perch";
 
 // System · DashboardPane
 "Unknown" = "Άγνωστο";
 "Graphics" = "Γραφικά";
 "Serial number" = "Σειριακός αριθμός";
 "Model identifier" = "Αναγνωριστικό μοντέλου";
-"Production year" = "Έτος παραγωγής";
+"Production year" = "Έτος κατασκευής";
 "Number of cores" = "%0 πυρήνες";
 "Number of threads" = "%0 νήματα";
-"Number of e-cores" = "%0 πυρήνες αποδοτικότητας";
+"Number of e-cores" = "%0 πυρήνες απόδοσης ενέργειας";
 "Number of p-cores" = "%0 πυρήνες επιδόσεων";
 "Disks" = "Δίσκοι";
 "Display" = "Οθόνη";
 
 // UI · SupportWindow
 "Close" = "Κλείσιμο";
-"Support text" = "Σας ευχαριστούμε που χρησιμοποιείτε το Perch.\n\nΤο Perch είναι δωρεάν και ανοιχτού κώδικα, και αναπτύσσεται και συντηρείται στον ελεύθερο χρόνο. Αν κάνει τη μέρα σας λίγο πιο εύκολη, μια συνεισφορά βοηθά να συνεχιστεί.";
+"Support text" = "Ευχαριστούμε που χρησιμοποιείτε το Perch.\n\nΤο Perch είναι δωρεάν και ανοιχτού κώδικα, και αναπτύσσεται και συντηρείται στον ελεύθερο χρόνο. Αν κάνει τη μέρα σας λίγο πιο εύκολη, μια συνεισφορά βοηθά να συνεχίσει.";
 "Support Perch" = "Υποστήριξη του Perch";
 "Donate" = "Δωρεά";
 
@@ -198,8 +200,8 @@
 "Report a bug" = "Αναφορά σφάλματος";
 "Support the application" = "Υποστήριξη της εφαρμογής";
 "Close application" = "Κλείσιμο εφαρμογής";
-"Toggle the module" = "Ενεργοποίηση/απενεργοποίηση μονάδας";
-"Modules" = "Μονάδες";
+"Toggle the module" = "Εναλλαγή αρθρώματος";
+"Modules" = "Αρθρώματα";
 "Search" = "Αναζήτηση";
 "Preview" = "Προεπισκόπηση";
 "Support" = "Υποστήριξη";
@@ -210,19 +212,19 @@
 "Previous" = "Προηγούμενο";
 "Previous page" = "Προηγούμενη σελίδα";
 "Welcome to Perch" = "Καλώς ορίσατε στο Perch";
-"welcome_message" = "Το Perch φέρνει στη γραμμή μενού σας μια παρακολούθηση συστήματος, έναν εκκινητή εφαρμογών και έναν εναλλάκτη παραθύρων. Αυτή η σύντομη ρύθμιση επιλέγει τι θα εμφανίζεται πρώτα.";
-"Select preset" = "Επιλογή προρρύθμισης";
-"select_preset_message" = "Επιλέξτε τις μονάδες με τις οποίες θα ξεκινήσετε. Μπορείτε να αλλάξετε οτιδήποτε αργότερα στις Ρυθμίσεις.";
-"Start the application automatically when starting your Mac" = "Αυτόματο άνοιγμα της εφαρμογής κατά την εκκίνηση του Mac";
-"Do not start the application automatically when starting your Mac" = "Χωρίς αυτόματο άνοιγμα της εφαρμογής κατά την εκκίνηση του Mac";
+"welcome_message" = "Το Perch βάζει μια παρακολούθηση συστήματος, έναν εκκινητή εφαρμογών και έναν εναλλάκτη παραθύρων στη γραμμή μενού σας. Αυτή η σύντομη ρύθμιση επιλέγει τι θα εμφανίζεται αρχικά.";
+"Select preset" = "Επιλογή προκαθορισμένου";
+"select_preset_message" = "Επιλέξτε ένα αρχικό σύνολο αρθρωμάτων. Μπορείτε να αλλάξετε οτιδήποτε αργότερα στις Ρυθμίσεις.";
+"Start the application automatically when starting your Mac" = "Αυτόματη έναρξη της εφαρμογής κατά την εκκίνηση του Mac";
+"Do not start the application automatically when starting your Mac" = "Χωρίς αυτόματη έναρξη της εφαρμογής κατά την εκκίνηση του Mac";
 "Do everything silently in the background (recommended)" = "Όλα αθόρυβα στο παρασκήνιο (προτείνεται)";
 "Check for a new version on startup" = "Έλεγχος για νέα έκδοση κατά την εκκίνηση";
-"Check for a new version every day (once a day)" = "Έλεγχος για νέα έκδοση κάθε μέρα (μία φορά την ημέρα)";
+"Check for a new version every day (once a day)" = "Έλεγχος για νέα έκδοση καθημερινά (μία φορά την ημέρα)";
 "Check for a new version every week (once a week)" = "Έλεγχος για νέα έκδοση κάθε εβδομάδα (μία φορά την εβδομάδα)";
 "Check for a new version every month (once a month)" = "Έλεγχος για νέα έκδοση κάθε μήνα (μία φορά τον μήνα)";
-"Never check for updates (not recommended)" = "Χωρίς έλεγχο για ενημερώσεις (δεν προτείνεται)";
+"Never check for updates (not recommended)" = "Ποτέ έλεγχος για ενημερώσεις (δεν προτείνεται)";
 "The configuration is completed" = "Η ρύθμιση ολοκληρώθηκε";
-"finish_setup_message" = "Όλα είναι έτοιμα.\n\nΤο Perch είναι δωρεάν και ανοιχτού κώδικα. Αν σας είναι χρήσιμο, μπορείτε να υποστηρίξετε την ανάπτυξή του.";
+"finish_setup_message" = "Όλα είναι έτοιμα.\n\nΤο Perch είναι δωρεάν και ανοιχτού κώδικα. Αν σας φαίνεται χρήσιμο, μπορείτε να υποστηρίξετε την ανάπτυξή του.";
 
 // Views · SetupFlow
 "Next" = "Επόμενο";

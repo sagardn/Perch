@@ -1,10 +1,12 @@
 /*
  * Localizable.strings — Perch, Dutch.
  *
- * The source every other language is checked against: `python3 Tools/i18n.py`
- * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
- * in step with the code. %0, %1 ... are filled in by `localized()` in
- * Perch/UI/Localized.swift and must survive translation.
+ * Translated from en.lproj, which is the source: `python3 Tools/i18n.py`
+ * keeps this file in step with it. %0, %1 ... are filled in by
+ * `localized()` in Perch/UI/Localized.swift and must survive translation.
+ *
+ * Machine-translated on 2026-10-10, from the English alone, and not yet
+ * reviewed by a native speaker. Corrections are welcome.
  */
 
 // Monitor · CPUModuleShell
@@ -16,7 +18,7 @@
 "1 minute" = "1 minuut";
 "5 minutes" = "5 minuten";
 "Menu bar" = "Menubalk";
-"Notify me when" = "Meld me als";
+"Notify me when" = "Meld wanneer";
 
 // Monitor · CPUPopup
 "Clock" = "Kloksnelheid";
@@ -37,7 +39,7 @@
 // Monitor · DiskModuleShell
 "Disk" = "Schijf";
 "Startup volume" = "Opstartvolume";
-"not mounted" = "niet gekoppeld";
+"not mounted" = "niet aangekoppeld";
 
 // Monitor · DiskPopup
 "Format" = "Structuur";
@@ -54,7 +56,7 @@
 // Monitor · GPUPopup
 "Memory" = "Geheugen";
 "Model" = "Model";
-"Utilization" = "Gebruik";
+"Utilization" = "Belasting";
 "GPU usage threshold" = "Drempel GPU-gebruik";
 
 // Monitor · GPUTile
@@ -74,18 +76,18 @@
 "Rates" = "Snelheden";
 "Bar chart" = "Staafdiagram";
 "Line chart" = "Lijndiagram";
-"Traffic chart" = "Verkeer";
+"Traffic chart" = "Verkeersdiagram";
 
 // Monitor · NetworkModuleShell
 "Network" = "Netwerk";
 "Internet connection lost" = "Internetverbinding verbroken";
-"Internet connection established" = "Internetverbinding gemaakt";
-"Tell me when" = "Laat me weten als";
-"Connection comes or goes" = "Verbinding komt of gaat";
-"Wi-Fi network changes" = "Wifinetwerk verandert";
-"Interface changes" = "Interface verandert";
-"Local address changes" = "Lokaal adres verandert";
-"Public address changes" = "Openbaar adres verandert";
+"Internet connection established" = "Internetverbinding tot stand gebracht";
+"Tell me when" = "Meld wanneer";
+"Connection comes or goes" = "De verbinding komt of gaat";
+"Wi-Fi network changes" = "Het wifinetwerk verandert";
+"Interface changes" = "De interface verandert";
+"Local address changes" = "Het lokale adres verandert";
+"Public address changes" = "Het openbare adres verandert";
 
 // Monitor · NetworkPopup
 "Download" = "Download";
@@ -96,7 +98,7 @@
 "Offline" = "Offline";
 
 // Monitor · Popup
-"Dashboard" = "Overzicht";
+"Dashboard" = "Dashboard";
 
 // Monitor · PopupParts
 "Idle" = "Inactief";
@@ -116,56 +118,56 @@
 // Monitor · RAMTile
 "App" = "App";
 "Swap" = "Swap";
-"Pressure" = "Geheugendruk";
+"Pressure" = "Druk";
 
 // Monitor · SensorReadings
 "Battery" = "Batterij";
 
 // Monitor · SensorsModuleShell
 "Sensors" = "Sensoren";
-"Show in the popup" = "Toon in venster";
+"Show in the popup" = "Toon in pop-up";
 "Hottest temperature" = "Hoogste temperatuur";
 
 // Monitor · SensorsPopup
 "History" = "Geschiedenis";
 
 // Monitor · SensorsTile
-"hottest" = "max.";
+"hottest" = "heetst";
 "sensors" = "sensoren";
-"No sensors answered" = "Geen sensoren gaven antwoord";
+"No sensors answered" = "Geen sensoren reageerden";
 
 // Monitor · Thresholds
 "Total load" = "Totale belasting";
 "System load" = "Systeembelasting";
 "User load" = "Gebruikersbelasting";
-"Efficiency cores load" = "Belasting efficiëntiecores";
-"Performance cores load" = "Belasting prestatiecores";
+"Efficiency cores load" = "Belasting efficiency-cores";
+"Performance cores load" = "Belasting performance-cores";
 "Memory pressure" = "Geheugendruk";
-"Memory used" = "Gebruikt geheugen";
-"Memory free" = "Vrij geheugen";
-"Swap in use" = "Gebruikte swap";
+"Memory used" = "Geheugen gebruikt";
+"Memory free" = "Geheugen vrij";
+"Swap in use" = "Swap in gebruik";
 "Disk usage" = "Schijfgebruik";
 
 // Settings · GeneralPane
 "Reset" = "Herstel";
 "Silent" = "Stil";
 "Settings" = "Instellingen";
-"Check for updates" = "Zoek naar updates";
-"Once per day" = "Dagelijks";
-"Once per week" = "Wekelijks";
+"Check for updates" = "Controleer op updates";
+"Once per day" = "Eenmaal per dag";
+"Once per week" = "Eenmaal per week";
 "Never" = "Nooit";
-"Check for update" = "Zoek naar update";
+"Check for update" = "Controleer op update";
 "Start at login" = "Open bij inloggen";
 "Spacing" = "Tussenruimte";
 "Celsius" = "Celsius";
 "Fahrenheit" = "Fahrenheit";
 
 // Settings · UpdateInterval
-"At start" = "Bij openen";
-"Once per month" = "Maandelijks";
+"At start" = "Bij opstarten";
+"Once per month" = "Eenmaal per maand";
 
 // Startup · Startup
-"Successfully updated" = "Bijwerken gelukt";
+"Successfully updated" = "Bijwerken voltooid";
 "Perch was updated to v" = "Perch is bijgewerkt naar versie %0";
 
 // Startup · UpdateCheck
@@ -176,18 +178,18 @@
 "Unknown" = "Onbekend";
 "Graphics" = "Grafisch";
 "Serial number" = "Serienummer";
-"Model identifier" = "Modelaanduiding";
+"Model identifier" = "Model-ID";
 "Production year" = "Productiejaar";
 "Number of cores" = "%0 cores";
 "Number of threads" = "%0 threads";
-"Number of e-cores" = "%0 efficiëntiecores";
-"Number of p-cores" = "%0 prestatiecores";
+"Number of e-cores" = "%0 efficiency-cores";
+"Number of p-cores" = "%0 performance-cores";
 "Disks" = "Schijven";
 "Display" = "Beeldscherm";
 
 // UI · SupportWindow
 "Close" = "Sluit";
-"Support text" = "Bedankt dat je Perch gebruikt.\n\nPerch is gratis en open source, en wordt in vrije tijd gemaakt en onderhouden. Als het je dag een beetje makkelijker maakt, helpt een bijdrage om het draaiende te houden.";
+"Support text" = "Bedankt dat je Perch gebruikt.\n\nPerch is gratis en opensource, en wordt in de vrije tijd gebouwd en onderhouden. Als het je dag een beetje makkelijker maakt, helpt een bijdrage om het draaiende te houden.";
 "Support Perch" = "Steun Perch";
 "Donate" = "Doneer";
 
@@ -198,31 +200,31 @@
 "Report a bug" = "Meld een bug";
 "Support the application" = "Steun de app";
 "Close application" = "Stop de app";
-"Toggle the module" = "Zet de module aan of uit";
+"Toggle the module" = "Schakel de module in of uit";
 "Modules" = "Modules";
 "Search" = "Zoek";
 "Preview" = "Voorvertoning";
-"Support" = "Steun";
+"Support" = "Ondersteuning";
 "Pause the Perch" = "Pauzeer Perch";
 
 // Views · Setup
-"Perch Setup" = "Perch-configuratie";
+"Perch Setup" = "Perch instellen";
 "Previous" = "Vorige";
 "Previous page" = "Vorige pagina";
 "Welcome to Perch" = "Welkom bij Perch";
-"welcome_message" = "Perch zet een systeemmonitor, een appstarter en een vensterwisselaar in je menubalk. Deze korte configuratie kiest wat er eerst wordt getoond.";
+"welcome_message" = "Perch zet een systeemmonitor, een appstarter en een vensterwisselaar in je menubalk. In deze korte configuratie kies je wat als eerste wordt getoond.";
 "Select preset" = "Kies voorinstelling";
-"select_preset_message" = "Kies een startset modules. Je kunt alles later wijzigen in Instellingen.";
+"select_preset_message" = "Kies een beginset modules. Je kunt alles later wijzigen in Instellingen.";
 "Start the application automatically when starting your Mac" = "Open de app automatisch bij het opstarten van je Mac";
 "Do not start the application automatically when starting your Mac" = "Open de app niet automatisch bij het opstarten van je Mac";
 "Do everything silently in the background (recommended)" = "Doe alles stil op de achtergrond (aanbevolen)";
-"Check for a new version on startup" = "Zoek bij het openen naar een nieuwe versie";
-"Check for a new version every day (once a day)" = "Zoek elke dag naar een nieuwe versie (één keer per dag)";
-"Check for a new version every week (once a week)" = "Zoek elke week naar een nieuwe versie (één keer per week)";
-"Check for a new version every month (once a month)" = "Zoek elke maand naar een nieuwe versie (één keer per maand)";
-"Never check for updates (not recommended)" = "Zoek nooit naar updates (niet aanbevolen)";
+"Check for a new version on startup" = "Controleer bij het opstarten op een nieuwe versie";
+"Check for a new version every day (once a day)" = "Controleer elke dag op een nieuwe versie (eenmaal per dag)";
+"Check for a new version every week (once a week)" = "Controleer elke week op een nieuwe versie (eenmaal per week)";
+"Check for a new version every month (once a month)" = "Controleer elke maand op een nieuwe versie (eenmaal per maand)";
+"Never check for updates (not recommended)" = "Controleer nooit op updates (niet aanbevolen)";
 "The configuration is completed" = "De configuratie is voltooid";
-"finish_setup_message" = "Je bent klaar.\n\nPerch is gratis en open source. Als je er iets aan hebt, kun je de ontwikkeling steunen.";
+"finish_setup_message" = "Je bent klaar.\n\nPerch is gratis en opensource. Als je er iets aan hebt, kun je de ontwikkeling steunen.";
 
 // Views · SetupFlow
 "Next" = "Volgende";

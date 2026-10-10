@@ -1,10 +1,12 @@
 /*
  * Localizable.strings — Perch, Vietnamese.
  *
- * The source every other language is checked against: `python3 Tools/i18n.py`
- * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
- * in step with the code. %0, %1 ... are filled in by `localized()` in
- * Perch/UI/Localized.swift and must survive translation.
+ * Translated from en.lproj, which is the source: `python3 Tools/i18n.py`
+ * keeps this file in step with it. %0, %1 ... are filled in by
+ * `localized()` in Perch/UI/Localized.swift and must survive translation.
+ *
+ * Machine-translated on 2026-10-10, from the English alone, and not yet
+ * reviewed by a native speaker. Corrections are welcome.
  */
 
 // Monitor · CPUModuleShell
@@ -31,13 +33,13 @@
 
 // Monitor · CombinedBar
 "No module has anything to show here yet." = "Chưa có mô-đun nào có nội dung để hiển thị ở đây.";
-"Combined modules" = "Gộp mô-đun";
-"Combined details" = "Gộp chi tiết";
+"Combined modules" = "Mô-đun kết hợp";
+"Combined details" = "Chi tiết kết hợp";
 
 // Monitor · DiskModuleShell
 "Disk" = "Ổ đĩa";
 "Startup volume" = "Ổ đĩa khởi động";
-"not mounted" = "chưa gắn";
+"not mounted" = "chưa được gắn";
 
 // Monitor · DiskPopup
 "Format" = "Định dạng";
@@ -69,7 +71,7 @@
 "Name" = "Tên";
 "Figure" = "Số";
 "Ring" = "Vòng";
-"Gauge" = "Đồng hồ";
+"Gauge" = "Đồng hồ đo";
 "Used and free" = "Đã dùng và trống";
 "Rates" = "Tốc độ";
 "Bar chart" = "Biểu đồ cột";
@@ -81,11 +83,11 @@
 "Internet connection lost" = "Mất kết nối Internet";
 "Internet connection established" = "Đã kết nối Internet";
 "Tell me when" = "Báo cho tôi khi";
-"Connection comes or goes" = "Kết nối hoặc ngắt kết nối";
+"Connection comes or goes" = "Có hoặc mất kết nối";
 "Wi-Fi network changes" = "Mạng Wi-Fi thay đổi";
 "Interface changes" = "Giao diện mạng thay đổi";
 "Local address changes" = "Địa chỉ cục bộ thay đổi";
-"Public address changes" = "Địa chỉ công cộng thay đổi";
+"Public address changes" = "Địa chỉ công khai thay đổi";
 
 // Monitor · NetworkPopup
 "Download" = "Tải xuống";
@@ -108,15 +110,15 @@
 "RAM" = "RAM";
 
 // Monitor · RAMPopup
-"Wired" = "Bộ nhớ dành riêng";
+"Wired" = "Cố định";
 "Compressed" = "Đã nén";
-"Swap size" = "Kích thước hoán đổi";
+"Swap size" = "Dung lượng hoán đổi";
 "Memory threshold" = "Ngưỡng bộ nhớ";
 
 // Monitor · RAMTile
-"App" = "Bộ nhớ ứng dụng";
+"App" = "Ứng dụng";
 "Swap" = "Hoán đổi";
-"Pressure" = "Áp lực bộ nhớ";
+"Pressure" = "Áp lực";
 
 // Monitor · SensorReadings
 "Battery" = "Pin";
@@ -130,7 +132,7 @@
 "History" = "Lịch sử";
 
 // Monitor · SensorsTile
-"hottest" = "cao nhất";
+"hottest" = "nóng nhất";
 "sensors" = "cảm biến";
 "No sensors answered" = "Không có cảm biến nào phản hồi";
 
@@ -138,7 +140,7 @@
 "Total load" = "Tổng tải";
 "System load" = "Tải hệ thống";
 "User load" = "Tải người dùng";
-"Efficiency cores load" = "Tải lõi tiết kiệm điện";
+"Efficiency cores load" = "Tải lõi hiệu suất";
 "Performance cores load" = "Tải lõi hiệu năng";
 "Memory pressure" = "Áp lực bộ nhớ";
 "Memory used" = "Bộ nhớ đã dùng";
@@ -150,7 +152,7 @@
 "Reset" = "Đặt lại";
 "Silent" = "Im lặng";
 "Settings" = "Cài đặt";
-"Check for updates" = "Kiểm tra bản cập nhật";
+"Check for updates" = "Kiểm tra cập nhật";
 "Once per day" = "Mỗi ngày một lần";
 "Once per week" = "Mỗi tuần một lần";
 "Never" = "Không bao giờ";
@@ -169,7 +171,7 @@
 "Perch was updated to v" = "Perch đã được cập nhật lên phiên bản %0";
 
 // Startup · UpdateCheck
-"New version available" = "Đã có phiên bản mới";
+"New version available" = "Có phiên bản mới";
 "Click to install the new version of Perch" = "Bấm để cài đặt phiên bản mới của Perch";
 
 // System · DashboardPane
@@ -180,14 +182,14 @@
 "Production year" = "Năm sản xuất";
 "Number of cores" = "%0 lõi";
 "Number of threads" = "%0 luồng";
-"Number of e-cores" = "%0 lõi tiết kiệm điện";
+"Number of e-cores" = "%0 lõi hiệu suất";
 "Number of p-cores" = "%0 lõi hiệu năng";
 "Disks" = "Ổ đĩa";
 "Display" = "Màn hình";
 
 // UI · SupportWindow
 "Close" = "Đóng";
-"Support text" = "Cảm ơn bạn đã sử dụng Perch.\n\nPerch miễn phí và mã nguồn mở, được xây dựng và duy trì trong thời gian rảnh. Nếu Perch giúp ngày của bạn dễ dàng hơn một chút, một khoản đóng góp sẽ giúp ứng dụng tiếp tục phát triển.";
+"Support text" = "Cảm ơn bạn đã sử dụng Perch.\n\nPerch miễn phí và mã nguồn mở, được xây dựng và duy trì trong thời gian rảnh. Nếu ứng dụng giúp ngày của bạn dễ dàng hơn một chút, một khoản đóng góp sẽ giúp ứng dụng tiếp tục phát triển.";
 "Support Perch" = "Ủng hộ Perch";
 "Donate" = "Quyên góp";
 
@@ -197,36 +199,36 @@
 // Views · SettingsShell
 "Report a bug" = "Báo cáo lỗi";
 "Support the application" = "Ủng hộ ứng dụng";
-"Close application" = "Thoát ứng dụng";
+"Close application" = "Đóng ứng dụng";
 "Toggle the module" = "Bật/tắt mô-đun";
 "Modules" = "Mô-đun";
 "Search" = "Tìm kiếm";
 "Preview" = "Xem trước";
-"Support" = "Ủng hộ";
+"Support" = "Hỗ trợ";
 "Pause the Perch" = "Tạm dừng Perch";
 
 // Views · Setup
 "Perch Setup" = "Thiết lập Perch";
-"Previous" = "Quay lại";
+"Previous" = "Trước";
 "Previous page" = "Trang trước";
 "Welcome to Perch" = "Chào mừng bạn đến với Perch";
-"welcome_message" = "Perch đưa trình theo dõi hệ thống, trình khởi chạy ứng dụng và trình chuyển cửa sổ vào thanh menu của bạn. Bước thiết lập ngắn này sẽ chọn những gì được hiển thị trước tiên.";
-"Select preset" = "Chọn mẫu cài sẵn";
+"welcome_message" = "Perch đặt trình theo dõi hệ thống, trình khởi chạy ứng dụng và trình chuyển cửa sổ vào thanh menu của bạn. Bước thiết lập ngắn này sẽ chọn những gì được hiển thị trước.";
+"Select preset" = "Chọn cấu hình sẵn";
 "select_preset_message" = "Chọn một bộ mô-đun ban đầu. Bạn có thể thay đổi bất kỳ mục nào sau này trong Cài đặt.";
 "Start the application automatically when starting your Mac" = "Tự động mở ứng dụng khi khởi động máy Mac";
 "Do not start the application automatically when starting your Mac" = "Không tự động mở ứng dụng khi khởi động máy Mac";
-"Do everything silently in the background (recommended)" = "Thực hiện mọi thứ âm thầm trong nền (khuyên dùng)";
+"Do everything silently in the background (recommended)" = "Thực hiện mọi việc một cách im lặng trong nền (khuyên dùng)";
 "Check for a new version on startup" = "Kiểm tra phiên bản mới khi khởi động";
 "Check for a new version every day (once a day)" = "Kiểm tra phiên bản mới hằng ngày (mỗi ngày một lần)";
 "Check for a new version every week (once a week)" = "Kiểm tra phiên bản mới hằng tuần (mỗi tuần một lần)";
 "Check for a new version every month (once a month)" = "Kiểm tra phiên bản mới hằng tháng (mỗi tháng một lần)";
-"Never check for updates (not recommended)" = "Không bao giờ kiểm tra bản cập nhật (không khuyên dùng)";
+"Never check for updates (not recommended)" = "Không bao giờ kiểm tra cập nhật (không khuyên dùng)";
 "The configuration is completed" = "Đã hoàn tất cấu hình";
 "finish_setup_message" = "Mọi thứ đã sẵn sàng.\n\nPerch miễn phí và mã nguồn mở. Nếu thấy hữu ích, bạn có thể ủng hộ việc phát triển ứng dụng.";
 
 // Views · SetupFlow
 "Next" = "Tiếp";
-"Next page" = "Trang sau";
+"Next page" = "Trang tiếp theo";
 "Finish" = "Hoàn tất";
 "Finish setup" = "Hoàn tất thiết lập";
 "Default" = "Mặc định";

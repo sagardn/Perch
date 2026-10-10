@@ -1,10 +1,12 @@
 /*
  * Localizable.strings — Perch, Portuguese (Brazil).
  *
- * The source every other language is checked against: `python3 Tools/i18n.py`
- * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
- * in step with the code. %0, %1 ... are filled in by `localized()` in
- * Perch/UI/Localized.swift and must survive translation.
+ * Translated from en.lproj, which is the source: `python3 Tools/i18n.py`
+ * keeps this file in step with it. %0, %1 ... are filled in by
+ * `localized()` in Perch/UI/Localized.swift and must survive translation.
+ *
+ * Machine-translated on 2026-10-10, from the English alone, and not yet
+ * reviewed by a native speaker. Corrections are welcome.
  */
 
 // Monitor · CPUModuleShell
@@ -19,7 +21,7 @@
 "Notify me when" = "Notificar quando";
 
 // Monitor · CPUPopup
-"Clock" = "Frequência";
+"Clock" = "Relógio";
 "Processor" = "Processador";
 "Cores" = "Núcleos";
 "Uptime" = "Tempo ativo";
@@ -54,7 +56,7 @@
 // Monitor · GPUPopup
 "Memory" = "Memória";
 "Model" = "Modelo";
-"Utilization" = "Uso";
+"Utilization" = "Utilização";
 "GPU usage threshold" = "Limite de uso da GPU";
 
 // Monitor · GPUTile
@@ -62,8 +64,8 @@
 
 // Monitor · MemoryReadings
 "Normal" = "Normal";
-"Warning" = "Alerta";
-"Critical" = "Crítica";
+"Warning" = "Aviso";
+"Critical" = "Crítico";
 
 // Monitor · MenuBarStyle
 "Name" = "Nome";
@@ -71,29 +73,29 @@
 "Ring" = "Anel";
 "Gauge" = "Medidor";
 "Used and free" = "Usado e livre";
-"Rates" = "Taxas";
-"Bar chart" = "Barras";
-"Line chart" = "Linhas";
-"Traffic chart" = "Tráfego";
+"Rates" = "Velocidades";
+"Bar chart" = "Gráfico de barras";
+"Line chart" = "Gráfico de linhas";
+"Traffic chart" = "Gráfico de tráfego";
 
 // Monitor · NetworkModuleShell
 "Network" = "Rede";
 "Internet connection lost" = "Conexão com a internet perdida";
 "Internet connection established" = "Conexão com a internet estabelecida";
 "Tell me when" = "Avisar quando";
-"Connection comes or goes" = "A conexão cai ou volta";
-"Wi-Fi network changes" = "A rede Wi-Fi muda";
-"Interface changes" = "A interface muda";
-"Local address changes" = "O endereço local muda";
-"Public address changes" = "O endereço público muda";
+"Connection comes or goes" = "A conexão cair ou voltar";
+"Wi-Fi network changes" = "A rede Wi-Fi mudar";
+"Interface changes" = "A interface mudar";
+"Local address changes" = "O endereço local mudar";
+"Public address changes" = "O endereço público mudar";
 
 // Monitor · NetworkPopup
 "Download" = "Download";
 "Local IP" = "IP local";
 "Interface" = "Interface";
 "Physical address" = "Endereço físico";
-"Online" = "Conectado";
-"Offline" = "Desconectado";
+"Online" = "On-line";
+"Offline" = "Off-line";
 
 // Monitor · Popup
 "Dashboard" = "Painel";
@@ -108,7 +110,7 @@
 "RAM" = "RAM";
 
 // Monitor · RAMPopup
-"Wired" = "Residente";
+"Wired" = "Fixa";
 "Compressed" = "Comprimida";
 "Swap size" = "Tamanho do swap";
 "Memory threshold" = "Limite de memória";
@@ -116,21 +118,21 @@
 // Monitor · RAMTile
 "App" = "App";
 "Swap" = "Swap";
-"Pressure" = "Pressão de memória";
+"Pressure" = "Pressão";
 
 // Monitor · SensorReadings
 "Battery" = "Bateria";
 
 // Monitor · SensorsModuleShell
 "Sensors" = "Sensores";
-"Show in the popup" = "Mostrar na janela";
-"Hottest temperature" = "Temperatura máxima";
+"Show in the popup" = "Mostrar no pop-up";
+"Hottest temperature" = "Temperatura mais alta";
 
 // Monitor · SensorsPopup
 "History" = "Histórico";
 
 // Monitor · SensorsTile
-"hottest" = "máx.";
+"hottest" = "mais quente";
 "sensors" = "sensores";
 "No sensors answered" = "Nenhum sensor respondeu";
 
@@ -140,28 +142,28 @@
 "User load" = "Carga do usuário";
 "Efficiency cores load" = "Carga dos núcleos de eficiência";
 "Performance cores load" = "Carga dos núcleos de desempenho";
-"Memory pressure" = "Pressão de memória";
+"Memory pressure" = "Pressão da memória";
 "Memory used" = "Memória usada";
 "Memory free" = "Memória livre";
-"Swap in use" = "Swap usado";
+"Swap in use" = "Swap em uso";
 "Disk usage" = "Uso do disco";
 
 // Settings · GeneralPane
 "Reset" = "Redefinir";
 "Silent" = "Silencioso";
 "Settings" = "Ajustes";
-"Check for updates" = "Buscar atualizações";
+"Check for updates" = "Verificar atualizações";
 "Once per day" = "Uma vez por dia";
 "Once per week" = "Uma vez por semana";
 "Never" = "Nunca";
-"Check for update" = "Buscar atualização";
+"Check for update" = "Verificar atualização";
 "Start at login" = "Abrir ao iniciar sessão";
 "Spacing" = "Espaçamento";
 "Celsius" = "Celsius";
 "Fahrenheit" = "Fahrenheit";
 
 // Settings · UpdateInterval
-"At start" = "Ao abrir";
+"At start" = "Ao iniciar";
 "Once per month" = "Uma vez por mês";
 
 // Startup · Startup
@@ -187,7 +189,7 @@
 
 // UI · SupportWindow
 "Close" = "Fechar";
-"Support text" = "Agradecemos por usar o Perch.\n\nO Perch é gratuito e de código aberto, e é criado e mantido no tempo livre. Se ele deixa o seu dia um pouco mais fácil, uma contribuição ajuda a mantê-lo vivo.";
+"Support text" = "Obrigado por usar o Perch.\n\nO Perch é gratuito e de código aberto, e é desenvolvido e mantido no tempo livre. Se ele deixa o seu dia um pouco mais fácil, uma contribuição ajuda a mantê-lo vivo.";
 "Support Perch" = "Apoiar o Perch";
 "Donate" = "Doar";
 
@@ -196,9 +198,9 @@
 
 // Views · SettingsShell
 "Report a bug" = "Relatar um erro";
-"Support the application" = "Apoiar o app";
-"Close application" = "Encerrar o app";
-"Toggle the module" = "Ativar ou desativar o módulo";
+"Support the application" = "Apoiar o aplicativo";
+"Close application" = "Fechar o aplicativo";
+"Toggle the module" = "Ativar/desativar o módulo";
 "Modules" = "Módulos";
 "Search" = "Buscar";
 "Preview" = "Pré-visualização";
@@ -209,23 +211,23 @@
 "Perch Setup" = "Configuração do Perch";
 "Previous" = "Anterior";
 "Previous page" = "Página anterior";
-"Welcome to Perch" = "Boas-vindas ao Perch";
+"Welcome to Perch" = "Bem-vindo ao Perch";
 "welcome_message" = "O Perch coloca um monitor do sistema, um iniciador de apps e um alternador de janelas na sua barra de menus. Esta configuração rápida escolhe o que mostrar primeiro.";
 "Select preset" = "Selecionar predefinição";
-"select_preset_message" = "Escolha um conjunto inicial de módulos. Você pode mudar tudo depois nos Ajustes.";
-"Start the application automatically when starting your Mac" = "Abrir o app automaticamente ao iniciar o Mac";
-"Do not start the application automatically when starting your Mac" = "Não abrir o app automaticamente ao iniciar o Mac";
+"select_preset_message" = "Escolha um conjunto inicial de módulos. Você pode alterar tudo isso depois em Ajustes.";
+"Start the application automatically when starting your Mac" = "Abrir o aplicativo automaticamente ao ligar o Mac";
+"Do not start the application automatically when starting your Mac" = "Não abrir o aplicativo automaticamente ao ligar o Mac";
 "Do everything silently in the background (recommended)" = "Fazer tudo silenciosamente em segundo plano (recomendado)";
-"Check for a new version on startup" = "Buscar uma nova versão ao abrir";
-"Check for a new version every day (once a day)" = "Buscar uma nova versão todos os dias (uma vez por dia)";
-"Check for a new version every week (once a week)" = "Buscar uma nova versão toda semana (uma vez por semana)";
-"Check for a new version every month (once a month)" = "Buscar uma nova versão todo mês (uma vez por mês)";
-"Never check for updates (not recommended)" = "Nunca buscar atualizações (não recomendado)";
+"Check for a new version on startup" = "Verificar se há uma nova versão ao iniciar";
+"Check for a new version every day (once a day)" = "Verificar se há uma nova versão todos os dias (uma vez por dia)";
+"Check for a new version every week (once a week)" = "Verificar se há uma nova versão toda semana (uma vez por semana)";
+"Check for a new version every month (once a month)" = "Verificar se há uma nova versão todo mês (uma vez por mês)";
+"Never check for updates (not recommended)" = "Nunca verificar atualizações (não recomendado)";
 "The configuration is completed" = "A configuração foi concluída";
-"finish_setup_message" = "Tudo pronto.\n\nO Perch é gratuito e de código aberto. Se ele for útil para você, você pode apoiar o seu desenvolvimento.";
+"finish_setup_message" = "Tudo pronto.\n\nO Perch é gratuito e de código aberto. Se ele for útil para você, você pode apoiar o desenvolvimento dele.";
 
 // Views · SetupFlow
-"Next" = "Seguinte";
+"Next" = "Próximo";
 "Next page" = "Próxima página";
 "Finish" = "Concluir";
 "Finish setup" = "Concluir configuração";

@@ -1,10 +1,12 @@
 /*
  * Localizable.strings — Perch, German.
  *
- * The source every other language is checked against: `python3 Tools/i18n.py`
- * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
- * in step with the code. %0, %1 ... are filled in by `localized()` in
- * Perch/UI/Localized.swift and must survive translation.
+ * Translated from en.lproj, which is the source: `python3 Tools/i18n.py`
+ * keeps this file in step with it. %0, %1 ... are filled in by
+ * `localized()` in Perch/UI/Localized.swift and must survive translation.
+ *
+ * Machine-translated on 2026-10-10, from the English alone, and not yet
+ * reviewed by a native speaker. Corrections are welcome.
  */
 
 // Monitor · CPUModuleShell
@@ -16,13 +18,13 @@
 "1 minute" = "1 Minute";
 "5 minutes" = "5 Minuten";
 "Menu bar" = "Menüleiste";
-"Notify me when" = "Mitteilen, wenn";
+"Notify me when" = "Benachrichtigen, wenn";
 
 // Monitor · CPUPopup
 "Clock" = "Takt";
 "Processor" = "Prozessor";
 "Cores" = "Kerne";
-"Uptime" = "Laufzeit";
+"Uptime" = "Betriebszeit";
 "System" = "System";
 "User" = "Benutzer";
 "CPU usage threshold" = "CPU-Auslastungsgrenze";
@@ -30,9 +32,9 @@
 "Temperature" = "Temperatur";
 
 // Monitor · CombinedBar
-"No module has anything to show here yet." = "Noch kein Modul hat hier etwas anzuzeigen.";
-"Combined modules" = "Module kombinieren";
-"Combined details" = "Details kombinieren";
+"No module has anything to show here yet." = "Noch hat kein Modul hier etwas anzuzeigen.";
+"Combined modules" = "Kombinierte Module";
+"Combined details" = "Kombinierte Details";
 
 // Monitor · DiskModuleShell
 "Disk" = "Festplatte";
@@ -69,23 +71,23 @@
 "Name" = "Name";
 "Figure" = "Zahl";
 "Ring" = "Ring";
-"Gauge" = "Skala";
+"Gauge" = "Anzeige";
 "Used and free" = "Belegt und frei";
-"Rates" = "Datenraten";
+"Rates" = "Raten";
 "Bar chart" = "Balkendiagramm";
 "Line chart" = "Liniendiagramm";
-"Traffic chart" = "Datenverkehr";
+"Traffic chart" = "Datenverkehrsdiagramm";
 
 // Monitor · NetworkModuleShell
 "Network" = "Netzwerk";
-"Internet connection lost" = "Internetverbindung unterbrochen";
+"Internet connection lost" = "Internetverbindung getrennt";
 "Internet connection established" = "Internetverbindung hergestellt";
 "Tell me when" = "Mitteilen, wenn";
-"Connection comes or goes" = "Verbindung kommt oder geht";
-"Wi-Fi network changes" = "WLAN-Netzwerk ändert sich";
-"Interface changes" = "Schnittstelle ändert sich";
-"Local address changes" = "Lokale Adresse ändert sich";
-"Public address changes" = "Öffentliche Adresse ändert sich";
+"Connection comes or goes" = "Verbindung hergestellt oder getrennt wird";
+"Wi-Fi network changes" = "WLAN-Netzwerk wechselt";
+"Interface changes" = "Schnittstelle wechselt";
+"Local address changes" = "Lokale Adresse sich ändert";
+"Public address changes" = "Öffentliche Adresse sich ändert";
 
 // Monitor · NetworkPopup
 "Download" = "Download";
@@ -110,13 +112,13 @@
 // Monitor · RAMPopup
 "Wired" = "Reserviert";
 "Compressed" = "Komprimiert";
-"Swap size" = "Swap-Größe";
+"Swap size" = "Auslagerungsgröße";
 "Memory threshold" = "Speichergrenze";
 
 // Monitor · RAMTile
 "App" = "App";
-"Swap" = "Swap";
-"Pressure" = "Speicherdruck";
+"Swap" = "Auslagerung";
+"Pressure" = "Auslastung";
 
 // Monitor · SensorReadings
 "Battery" = "Batterie";
@@ -130,7 +132,7 @@
 "History" = "Verlauf";
 
 // Monitor · SensorsTile
-"hottest" = "max.";
+"hottest" = "am heißesten";
 "sensors" = "Sensoren";
 "No sensors answered" = "Keine Sensoren haben geantwortet";
 
@@ -138,12 +140,12 @@
 "Total load" = "Gesamtlast";
 "System load" = "Systemlast";
 "User load" = "Benutzerlast";
-"Efficiency cores load" = "Last Effizienzkerne";
-"Performance cores load" = "Last Leistungskerne";
-"Memory pressure" = "Speicherdruck";
-"Memory used" = "Belegter Speicher";
-"Memory free" = "Freier Speicher";
-"Swap in use" = "Benutzter Swap";
+"Efficiency cores load" = "Last der Effizienzkerne";
+"Performance cores load" = "Last der Leistungskerne";
+"Memory pressure" = "Speicherauslastung";
+"Memory used" = "Speicher belegt";
+"Memory free" = "Speicher frei";
+"Swap in use" = "Auslagerung belegt";
 "Disk usage" = "Festplattenbelegung";
 
 // Settings · GeneralPane
@@ -151,8 +153,8 @@
 "Silent" = "Still";
 "Settings" = "Einstellungen";
 "Check for updates" = "Nach Updates suchen";
-"Once per day" = "Täglich";
-"Once per week" = "Wöchentlich";
+"Once per day" = "Einmal täglich";
+"Once per week" = "Einmal wöchentlich";
 "Never" = "Nie";
 "Check for update" = "Nach Update suchen";
 "Start at login" = "Bei Anmeldung starten";
@@ -162,7 +164,7 @@
 
 // Settings · UpdateInterval
 "At start" = "Beim Start";
-"Once per month" = "Monatlich";
+"Once per month" = "Einmal monatlich";
 
 // Startup · Startup
 "Successfully updated" = "Erfolgreich aktualisiert";
@@ -170,13 +172,13 @@
 
 // Startup · UpdateCheck
 "New version available" = "Neue Version verfügbar";
-"Click to install the new version of Perch" = "Klicke, um die neue Version von Perch zu installieren";
+"Click to install the new version of Perch" = "Klicken, um die neue Version von Perch zu installieren";
 
 // System · DashboardPane
 "Unknown" = "Unbekannt";
 "Graphics" = "Grafik";
 "Serial number" = "Seriennummer";
-"Model identifier" = "Modell-Identifizierung";
+"Model identifier" = "Modell-ID";
 "Production year" = "Baujahr";
 "Number of cores" = "%0 Kerne";
 "Number of threads" = "%0 Threads";
@@ -187,7 +189,7 @@
 
 // UI · SupportWindow
 "Close" = "Schließen";
-"Support text" = "Danke, dass du Perch verwendest.\n\nPerch ist kostenlos und quelloffen und wird in der Freizeit entwickelt und gepflegt. Wenn es dir den Tag ein wenig leichter macht, hilft ein Beitrag, es am Leben zu halten.";
+"Support text" = "Danke, dass du Perch verwendest.\n\nPerch ist kostenlos und Open Source und wird in der Freizeit entwickelt und gepflegt. Wenn es dir den Tag ein wenig leichter macht, hilft ein Beitrag, es am Leben zu halten.";
 "Support Perch" = "Perch unterstützen";
 "Donate" = "Spenden";
 
@@ -210,19 +212,19 @@
 "Previous" = "Zurück";
 "Previous page" = "Vorherige Seite";
 "Welcome to Perch" = "Willkommen bei Perch";
-"welcome_message" = "Perch bringt einen Systemmonitor, einen App-Starter und einen Fensterwechsler in deine Menüleiste. Diese kurze Einrichtung legt fest, was zuerst angezeigt wird.";
+"welcome_message" = "Perch bringt eine Systemüberwachung, einen App-Starter und einen Fensterwechsler in deine Menüleiste. Diese kurze Einrichtung legt fest, was zuerst angezeigt wird.";
 "Select preset" = "Vorgabe auswählen";
 "select_preset_message" = "Wähle eine Auswahl an Modulen für den Anfang. Du kannst alles später in den Einstellungen ändern.";
-"Start the application automatically when starting your Mac" = "App beim Starten deines Mac automatisch öffnen";
-"Do not start the application automatically when starting your Mac" = "App beim Starten deines Mac nicht automatisch öffnen";
+"Start the application automatically when starting your Mac" = "App automatisch beim Starten des Mac öffnen";
+"Do not start the application automatically when starting your Mac" = "App nicht automatisch beim Starten des Mac öffnen";
 "Do everything silently in the background (recommended)" = "Alles still im Hintergrund erledigen (empfohlen)";
-"Check for a new version on startup" = "Beim Start nach einer neuen Version suchen";
+"Check for a new version on startup" = "Beim Starten nach einer neuen Version suchen";
 "Check for a new version every day (once a day)" = "Täglich nach einer neuen Version suchen (einmal am Tag)";
 "Check for a new version every week (once a week)" = "Wöchentlich nach einer neuen Version suchen (einmal pro Woche)";
 "Check for a new version every month (once a month)" = "Monatlich nach einer neuen Version suchen (einmal im Monat)";
 "Never check for updates (not recommended)" = "Nie nach Updates suchen (nicht empfohlen)";
 "The configuration is completed" = "Die Einrichtung ist abgeschlossen";
-"finish_setup_message" = "Alles bereit.\n\nPerch ist kostenlos und quelloffen. Wenn es dir nützt, kannst du seine Entwicklung unterstützen.";
+"finish_setup_message" = "Alles bereit.\n\nPerch ist kostenlos und Open Source. Wenn es dir nützt, kannst du die Weiterentwicklung unterstützen.";
 
 // Views · SetupFlow
 "Next" = "Weiter";

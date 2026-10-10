@@ -1,10 +1,12 @@
 /*
  * Localizable.strings — Perch, Korean.
  *
- * The source every other language is checked against: `python3 Tools/i18n.py`
- * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
- * in step with the code. %0, %1 ... are filled in by `localized()` in
- * Perch/UI/Localized.swift and must survive translation.
+ * Translated from en.lproj, which is the source: `python3 Tools/i18n.py`
+ * keeps this file in step with it. %0, %1 ... are filled in by
+ * `localized()` in Perch/UI/Localized.swift and must survive translation.
+ *
+ * Machine-translated on 2026-10-10, from the English alone, and not yet
+ * reviewed by a native speaker. Corrections are welcome.
  */
 
 // Monitor · CPUModuleShell
@@ -16,7 +18,7 @@
 "1 minute" = "1분";
 "5 minutes" = "5분";
 "Menu bar" = "메뉴 막대";
-"Notify me when" = "다음의 경우 알림";
+"Notify me when" = "알림 조건";
 
 // Monitor · CPUPopup
 "Clock" = "클럭";
@@ -31,8 +33,8 @@
 
 // Monitor · CombinedBar
 "No module has anything to show here yet." = "아직 여기에 표시할 모듈이 없습니다.";
-"Combined modules" = "모듈 결합";
-"Combined details" = "세부사항 결합";
+"Combined modules" = "결합된 모듈";
+"Combined details" = "결합된 세부사항";
 
 // Monitor · DiskModuleShell
 "Disk" = "디스크";
@@ -42,11 +44,11 @@
 // Monitor · DiskPopup
 "Format" = "포맷";
 "Used" = "사용됨";
-"Free" = "사용 가능";
+"Free" = "여유";
 "Disk usage threshold" = "디스크 사용량 임계값";
 
 // Monitor · DiskTile
-"free" = "사용 가능";
+"free" = "여유";
 
 // Monitor · GPUModuleShell
 "GPU" = "GPU";
@@ -70,7 +72,7 @@
 "Figure" = "수치";
 "Ring" = "링";
 "Gauge" = "게이지";
-"Used and free" = "사용됨 및 사용 가능";
+"Used and free" = "사용됨 및 여유";
 "Rates" = "속도";
 "Bar chart" = "막대 차트";
 "Line chart" = "선 차트";
@@ -78,9 +80,9 @@
 
 // Monitor · NetworkModuleShell
 "Network" = "네트워크";
-"Internet connection lost" = "인터넷 연결이 끊어졌습니다";
-"Internet connection established" = "인터넷에 연결되었습니다";
-"Tell me when" = "다음의 경우 알리기";
+"Internet connection lost" = "인터넷 연결이 끊어짐";
+"Internet connection established" = "인터넷에 연결됨";
+"Tell me when" = "알림 조건";
 "Connection comes or goes" = "연결되거나 끊어질 때";
 "Wi-Fi network changes" = "Wi-Fi 네트워크가 변경될 때";
 "Interface changes" = "인터페이스가 변경될 때";
@@ -108,15 +110,15 @@
 "RAM" = "RAM";
 
 // Monitor · RAMPopup
-"Wired" = "와이어드 메모리";
+"Wired" = "와이어드";
 "Compressed" = "압축됨";
 "Swap size" = "스왑 크기";
 "Memory threshold" = "메모리 임계값";
 
 // Monitor · RAMTile
-"App" = "앱 메모리";
+"App" = "앱";
 "Swap" = "스왑";
-"Pressure" = "메모리 압력";
+"Pressure" = "압박";
 
 // Monitor · SensorReadings
 "Battery" = "배터리";
@@ -140,22 +142,22 @@
 "User load" = "사용자 부하";
 "Efficiency cores load" = "효율 코어 부하";
 "Performance cores load" = "성능 코어 부하";
-"Memory pressure" = "메모리 압력";
+"Memory pressure" = "메모리 압박";
 "Memory used" = "사용된 메모리";
-"Memory free" = "사용 가능한 메모리";
-"Swap in use" = "사용된 스왑";
+"Memory free" = "여유 메모리";
+"Swap in use" = "사용 중인 스왑";
 "Disk usage" = "디스크 사용량";
 
 // Settings · GeneralPane
 "Reset" = "재설정";
-"Silent" = "조용히";
+"Silent" = "무음";
 "Settings" = "설정";
 "Check for updates" = "업데이트 확인";
 "Once per day" = "하루에 한 번";
 "Once per week" = "일주일에 한 번";
 "Never" = "안 함";
 "Check for update" = "업데이트 확인";
-"Start at login" = "로그인 시 시작";
+"Start at login" = "로그인 시 열기";
 "Spacing" = "간격";
 "Celsius" = "섭씨";
 "Fahrenheit" = "화씨";
@@ -175,11 +177,11 @@
 // System · DashboardPane
 "Unknown" = "알 수 없음";
 "Graphics" = "그래픽";
-"Serial number" = "일련 번호";
+"Serial number" = "일련번호";
 "Model identifier" = "모델 식별자";
 "Production year" = "생산 연도";
-"Number of cores" = "코어 %0개";
-"Number of threads" = "스레드 %0개";
+"Number of cores" = "%0코어";
+"Number of threads" = "%0스레드";
 "Number of e-cores" = "효율 코어 %0개";
 "Number of p-cores" = "성능 코어 %0개";
 "Disks" = "디스크";
@@ -187,7 +189,7 @@
 
 // UI · SupportWindow
 "Close" = "닫기";
-"Support text" = "Perch를 사용해 주셔서 감사합니다.\n\nPerch는 무료 오픈 소스 앱으로, 여가 시간에 개발 및 유지 관리되고 있습니다. Perch 덕분에 하루가 조금이라도 편해졌다면, 후원으로 개발이 계속될 수 있도록 도와주십시오.";
+"Support text" = "Perch를 사용해 주셔서 감사합니다.\n\nPerch는 무료 오픈 소스이며 여가 시간에 개발하고 관리됩니다. 하루가 조금이라도 편해졌다면 후원이 계속 이어가는 데 도움이 됩니다.";
 "Support Perch" = "Perch 후원하기";
 "Donate" = "기부하기";
 
@@ -196,13 +198,13 @@
 
 // Views · SettingsShell
 "Report a bug" = "버그 신고";
-"Support the application" = "앱 후원하기";
-"Close application" = "앱 종료";
+"Support the application" = "응용 프로그램 후원하기";
+"Close application" = "응용 프로그램 종료";
 "Toggle the module" = "모듈 켜기/끄기";
 "Modules" = "모듈";
 "Search" = "검색";
 "Preview" = "미리보기";
-"Support" = "후원";
+"Support" = "지원";
 "Pause the Perch" = "Perch 일시 정지";
 
 // Views · Setup
@@ -210,11 +212,11 @@
 "Previous" = "이전";
 "Previous page" = "이전 페이지";
 "Welcome to Perch" = "Perch에 오신 것을 환영합니다";
-"welcome_message" = "Perch는 시스템 모니터, 앱 실행기, 윈도우 전환기를 메뉴 막대에 제공합니다. 이 간단한 설정에서 먼저 표시할 항목을 선택합니다.";
-"Select preset" = "사전 설정 선택";
+"welcome_message" = "Perch는 시스템 모니터, 앱 실행기, 윈도우 전환기를 메뉴 막대에 제공합니다. 이 간단한 설정에서 처음에 표시할 항목을 선택합니다.";
+"Select preset" = "프리셋 선택";
 "select_preset_message" = "시작할 모듈 세트를 선택하십시오. 나중에 설정에서 언제든지 변경할 수 있습니다.";
-"Start the application automatically when starting your Mac" = "Mac을 시동할 때 앱을 자동으로 시작";
-"Do not start the application automatically when starting your Mac" = "Mac을 시동할 때 앱을 자동으로 시작하지 않음";
+"Start the application automatically when starting your Mac" = "Mac을 시동할 때 응용 프로그램 자동으로 열기";
+"Do not start the application automatically when starting your Mac" = "Mac을 시동할 때 응용 프로그램 자동으로 열지 않기";
 "Do everything silently in the background (recommended)" = "모든 작업을 백그라운드에서 조용히 수행(권장)";
 "Check for a new version on startup" = "시작할 때 새로운 버전 확인";
 "Check for a new version every day (once a day)" = "매일 새로운 버전 확인(하루에 한 번)";
@@ -222,7 +224,7 @@
 "Check for a new version every month (once a month)" = "매월 새로운 버전 확인(한 달에 한 번)";
 "Never check for updates (not recommended)" = "업데이트 확인 안 함(권장하지 않음)";
 "The configuration is completed" = "설정이 완료되었습니다";
-"finish_setup_message" = "모든 준비가 끝났습니다.\n\nPerch는 무료 오픈 소스 앱입니다. 유용하게 사용하고 계시다면 개발을 후원할 수 있습니다.";
+"finish_setup_message" = "모든 준비가 끝났습니다.\n\nPerch는 무료 오픈 소스입니다. 유용하다면 개발을 후원할 수 있습니다.";
 
 // Views · SetupFlow
 "Next" = "다음";

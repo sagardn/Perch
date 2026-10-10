@@ -1,25 +1,27 @@
 /*
  * Localizable.strings — Perch, Tamil.
  *
- * The source every other language is checked against: `python3 Tools/i18n.py`
- * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
- * in step with the code. %0, %1 ... are filled in by `localized()` in
- * Perch/UI/Localized.swift and must survive translation.
+ * Translated from en.lproj, which is the source: `python3 Tools/i18n.py`
+ * keeps this file in step with it. %0, %1 ... are filled in by
+ * `localized()` in Perch/UI/Localized.swift and must survive translation.
+ *
+ * Machine-translated on 2026-10-10, from the English alone, and not yet
+ * reviewed by a native speaker. Corrections are welcome.
  */
 
 // Monitor · CPUModuleShell
 "CPU" = "CPU";
-"None" = "எதுவுமில்லை";
+"None" = "ஏதுமில்லை";
 "2 minutes" = "2 நிமிடங்கள்";
 "Chart history" = "விளக்கப்பட வரலாறு";
-"Top processes" = "முதன்மைச் செயல்முறைகள்";
+"Top processes" = "முன்னணி செயல்முறைகள்";
 "1 minute" = "1 நிமிடம்";
 "5 minutes" = "5 நிமிடங்கள்";
 "Menu bar" = "மெனு பார்";
 "Notify me when" = "இவை நிகழும்போது அறிவி";
 
 // Monitor · CPUPopup
-"Clock" = "கிளாக்";
+"Clock" = "கடிகார வேகம்";
 "Processor" = "செயலி";
 "Cores" = "கோர்கள்";
 "Uptime" = "இயக்க நேரம்";
@@ -30,20 +32,20 @@
 "Temperature" = "வெப்பநிலை";
 
 // Monitor · CombinedBar
-"No module has anything to show here yet." = "இங்கே காட்ட இன்னும் எந்தத் தொகுதியிலும் எதுவும் இல்லை.";
-"Combined modules" = "இணைந்த தொகுதிகள்";
-"Combined details" = "இணைந்த விவரங்கள்";
+"No module has anything to show here yet." = "இங்கே காட்ட எந்தத் தொகுதியிலும் இன்னும் எதுவும் இல்லை.";
+"Combined modules" = "ஒருங்கிணைந்த தொகுதிகள்";
+"Combined details" = "ஒருங்கிணைந்த விவரங்கள்";
 
 // Monitor · DiskModuleShell
-"Disk" = "டிஸ்க்";
+"Disk" = "வட்டு";
 "Startup volume" = "தொடக்க வால்யூம்";
-"not mounted" = "மவுண்ட் செய்யப்படவில்லை";
+"not mounted" = "ஏற்றப்படவில்லை";
 
 // Monitor · DiskPopup
 "Format" = "வடிவம்";
 "Used" = "பயன்படுத்தியது";
 "Free" = "காலி";
-"Disk usage threshold" = "டிஸ்க் பயன்பாட்டு வரம்பு";
+"Disk usage threshold" = "வட்டு பயன்பாட்டு வரம்பு";
 
 // Monitor · DiskTile
 "free" = "காலி";
@@ -63,24 +65,24 @@
 // Monitor · MemoryReadings
 "Normal" = "இயல்பு";
 "Warning" = "எச்சரிக்கை";
-"Critical" = "நெருக்கடி";
+"Critical" = "அபாயம்";
 
 // Monitor · MenuBarStyle
 "Name" = "பெயர்";
 "Figure" = "எண்";
 "Ring" = "வளையம்";
-"Gauge" = "அளவி";
-"Used and free" = "பயன்பாடும் காலியும்";
+"Gauge" = "அளவீடு";
+"Used and free" = "பயன்படுத்தியது மற்றும் காலி";
 "Rates" = "வேகங்கள்";
 "Bar chart" = "பட்டை விளக்கப்படம்";
 "Line chart" = "கோட்டு விளக்கப்படம்";
-"Traffic chart" = "டிராஃபிக் விளக்கப்படம்";
+"Traffic chart" = "போக்குவரத்து விளக்கப்படம்";
 
 // Monitor · NetworkModuleShell
 "Network" = "நெட்வொர்க்";
 "Internet connection lost" = "இணைய இணைப்பு துண்டிக்கப்பட்டது";
 "Internet connection established" = "இணைய இணைப்பு ஏற்படுத்தப்பட்டது";
-"Tell me when" = "இவை நிகழும்போது தெரிவி";
+"Tell me when" = "இவை நிகழும்போது சொல்";
 "Connection comes or goes" = "இணைப்பு வரும்போது அல்லது போகும்போது";
 "Wi-Fi network changes" = "Wi-Fi நெட்வொர்க் மாறும்போது";
 "Interface changes" = "இடைமுகம் மாறும்போது";
@@ -108,7 +110,7 @@
 "RAM" = "RAM";
 
 // Monitor · RAMPopup
-"Wired" = "வயர்டு";
+"Wired" = "நிலையானது";
 "Compressed" = "சுருக்கப்பட்டது";
 "Swap size" = "ஸ்வாப் அளவு";
 "Memory threshold" = "நினைவக வரம்பு";
@@ -130,7 +132,7 @@
 "History" = "வரலாறு";
 
 // Monitor · SensorsTile
-"hottest" = "அதிகபட்சம்";
+"hottest" = "அதிக வெப்பம்";
 "sensors" = "சென்சார்கள்";
 "No sensors answered" = "எந்தச் சென்சாரும் பதிலளிக்கவில்லை";
 
@@ -138,31 +140,31 @@
 "Total load" = "மொத்தச் சுமை";
 "System load" = "சிஸ்டம் சுமை";
 "User load" = "பயனர் சுமை";
-"Efficiency cores load" = "திறன் கோர்களின் சுமை";
+"Efficiency cores load" = "ஆற்றல்திறன் கோர்களின் சுமை";
 "Performance cores load" = "செயல்திறன் கோர்களின் சுமை";
 "Memory pressure" = "நினைவக அழுத்தம்";
 "Memory used" = "பயன்படுத்திய நினைவகம்";
 "Memory free" = "காலி நினைவகம்";
-"Swap in use" = "பயன்பாட்டிலுள்ள ஸ்வாப்";
-"Disk usage" = "டிஸ்க் பயன்பாடு";
+"Swap in use" = "பயன்பாட்டில் உள்ள ஸ்வாப்";
+"Disk usage" = "வட்டு பயன்பாடு";
 
 // Settings · GeneralPane
 "Reset" = "மீட்டமை";
-"Silent" = "அமைதியாக";
+"Silent" = "அமைதி";
 "Settings" = "அமைப்புகள்";
 "Check for updates" = "புதுப்பிப்புகளைச் சரிபார்";
-"Once per day" = "தினமும் ஒருமுறை";
-"Once per week" = "வாரம் ஒருமுறை";
+"Once per day" = "நாளுக்கு ஒருமுறை";
+"Once per week" = "வாரத்திற்கு ஒருமுறை";
 "Never" = "ஒருபோதும் இல்லை";
 "Check for update" = "புதுப்பிப்பைச் சரிபார்";
-"Start at login" = "உள்நுழைவில் தொடங்கு";
+"Start at login" = "உள்நுழையும்போது தொடங்கு";
 "Spacing" = "இடைவெளி";
 "Celsius" = "செல்சியஸ்";
 "Fahrenheit" = "ஃபாரன்ஹீட்";
 
 // Settings · UpdateInterval
 "At start" = "தொடக்கத்தில்";
-"Once per month" = "மாதம் ஒருமுறை";
+"Once per month" = "மாதத்திற்கு ஒருமுறை";
 
 // Startup · Startup
 "Successfully updated" = "வெற்றிகரமாகப் புதுப்பிக்கப்பட்டது";
@@ -180,15 +182,15 @@
 "Production year" = "தயாரிப்பு ஆண்டு";
 "Number of cores" = "%0 கோர்கள்";
 "Number of threads" = "%0 த்ரெட்கள்";
-"Number of e-cores" = "%0 திறன் கோர்கள்";
+"Number of e-cores" = "%0 ஆற்றல்திறன் கோர்கள்";
 "Number of p-cores" = "%0 செயல்திறன் கோர்கள்";
-"Disks" = "டிஸ்க்குகள்";
+"Disks" = "வட்டுகள்";
 "Display" = "டிஸ்ப்ளே";
 
 // UI · SupportWindow
 "Close" = "மூடு";
-"Support text" = "Perch-ஐப் பயன்படுத்துவதற்கு நன்றி.\n\nPerch இலவசமானது, திறந்த மூலமானது; ஓய்வு நேரத்தில் உருவாக்கப்பட்டுப் பராமரிக்கப்படுகிறது. இது உங்கள் நாளைச் சற்று எளிதாக்கினால், உங்கள் பங்களிப்பு இதைத் தொடர உதவும்.";
-"Support Perch" = "Perch-ஐ ஆதரியுங்கள்";
+"Support text" = "Perch-ஐப் பயன்படுத்துவதற்கு நன்றி.\n\nPerch இலவசமானது, திறந்த மூலமானது; ஓய்வு நேரத்தில் உருவாக்கப்பட்டுப் பராமரிக்கப்படுகிறது. இது உங்கள் நாளைச் சற்று எளிதாக்கினால், உங்கள் பங்களிப்பு இது தொடர உதவும்.";
+"Support Perch" = "Perch-ஐ ஆதரி";
 "Donate" = "நன்கொடை அளி";
 
 // Update · UpdateWindow
@@ -210,19 +212,19 @@
 "Previous" = "முந்தையது";
 "Previous page" = "முந்தைய பக்கம்";
 "Welcome to Perch" = "Perch-க்கு வரவேற்கிறோம்";
-"welcome_message" = "Perch உங்கள் மெனு பாரில் ஒரு சிஸ்டம் மானிட்டர், ஒரு ஆப் லாஞ்சர், ஒரு சாளர மாற்றி ஆகியவற்றை வைக்கிறது. முதலில் எதைக் காட்ட வேண்டும் என்பதை இந்தச் சிறிய அமைவு தேர்ந்தெடுக்கிறது.";
+"welcome_message" = "Perch உங்கள் மெனு பாரில் ஒரு சிஸ்டம் கண்காணிப்பான், ஒரு ஆப்ஸ் துவக்கி, ஒரு சாளர மாற்றி ஆகியவற்றை வைக்கிறது. இந்தச் சிறிய அமைவு முதலில் எதைக் காட்ட வேண்டும் என்பதைத் தேர்ந்தெடுக்கிறது.";
 "Select preset" = "முன்னமைவைத் தேர்ந்தெடு";
-"select_preset_message" = "தொடக்கத்திற்கான தொகுதிகளின் தொகுப்பைத் தேர்ந்தெடுங்கள். பின்னர் அமைப்புகளில் இதில் எதையும் மாற்றலாம்.";
-"Start the application automatically when starting your Mac" = "Mac தொடங்கும்போது பயன்பாட்டைத் தானாகத் தொடங்கு";
-"Do not start the application automatically when starting your Mac" = "Mac தொடங்கும்போது பயன்பாட்டைத் தானாகத் தொடங்காதே";
+"select_preset_message" = "தொடங்குவதற்கான தொகுதிகளின் தொகுப்பைத் தேர்ந்தெடுக்கவும். இவற்றில் எதையும் பின்னர் அமைப்புகளில் மாற்றலாம்.";
+"Start the application automatically when starting your Mac" = "உங்கள் Mac தொடங்கும்போது பயன்பாட்டைத் தானாகத் தொடங்கு";
+"Do not start the application automatically when starting your Mac" = "உங்கள் Mac தொடங்கும்போது பயன்பாட்டைத் தானாகத் தொடங்காதே";
 "Do everything silently in the background (recommended)" = "அனைத்தையும் பின்னணியில் அமைதியாகச் செய் (பரிந்துரைக்கப்படுகிறது)";
 "Check for a new version on startup" = "தொடக்கத்தில் புதிய பதிப்பைச் சரிபார்";
-"Check for a new version every day (once a day)" = "தினமும் புதிய பதிப்பைச் சரிபார் (நாளுக்கு ஒருமுறை)";
-"Check for a new version every week (once a week)" = "ஒவ்வொரு வாரமும் புதிய பதிப்பைச் சரிபார் (வாரம் ஒருமுறை)";
-"Check for a new version every month (once a month)" = "ஒவ்வொரு மாதமும் புதிய பதிப்பைச் சரிபார் (மாதம் ஒருமுறை)";
+"Check for a new version every day (once a day)" = "ஒவ்வொரு நாளும் புதிய பதிப்பைச் சரிபார் (நாளுக்கு ஒருமுறை)";
+"Check for a new version every week (once a week)" = "ஒவ்வொரு வாரமும் புதிய பதிப்பைச் சரிபார் (வாரத்திற்கு ஒருமுறை)";
+"Check for a new version every month (once a month)" = "ஒவ்வொரு மாதமும் புதிய பதிப்பைச் சரிபார் (மாதத்திற்கு ஒருமுறை)";
 "Never check for updates (not recommended)" = "புதுப்பிப்புகளை ஒருபோதும் சரிபார்க்காதே (பரிந்துரைக்கப்படவில்லை)";
-"The configuration is completed" = "உள்ளமைவு முடிந்தது";
-"finish_setup_message" = "எல்லாம் தயார்.\n\nPerch இலவசமானது, திறந்த மூலமானது. இது உங்களுக்குப் பயனுள்ளதாக இருந்தால், அதன் மேம்பாட்டை ஆதரிக்கலாம்.";
+"The configuration is completed" = "அமைவு முடிந்தது";
+"finish_setup_message" = "எல்லாம் தயார்.\n\nPerch இலவசமானது, திறந்த மூலமானது. இது உங்களுக்குப் பயனுள்ளதாக இருந்தால், இதன் மேம்பாட்டை ஆதரிக்கலாம்.";
 
 // Views · SetupFlow
 "Next" = "அடுத்து";
@@ -232,4 +234,4 @@
 "Default" = "இயல்புநிலை";
 "Basic" = "அடிப்படை";
 "Recommended" = "பரிந்துரைக்கப்பட்டது";
-"Extended" = "விரிவாக்கப்பட்டது";
+"Extended" = "விரிவானது";

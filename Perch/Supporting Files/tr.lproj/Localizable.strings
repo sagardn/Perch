@@ -1,10 +1,12 @@
 /*
  * Localizable.strings — Perch, Turkish.
  *
- * The source every other language is checked against: `python3 Tools/i18n.py`
- * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
- * in step with the code. %0, %1 ... are filled in by `localized()` in
- * Perch/UI/Localized.swift and must survive translation.
+ * Translated from en.lproj, which is the source: `python3 Tools/i18n.py`
+ * keeps this file in step with it. %0, %1 ... are filled in by
+ * `localized()` in Perch/UI/Localized.swift and must survive translation.
+ *
+ * Machine-translated on 2026-10-10, from the English alone, and not yet
+ * reviewed by a native speaker. Corrections are welcome.
  */
 
 // Monitor · CPUModuleShell
@@ -12,11 +14,11 @@
 "None" = "Yok";
 "2 minutes" = "2 dakika";
 "Chart history" = "Grafik geçmişi";
-"Top processes" = "Başlıca işlemler";
+"Top processes" = "En çok kullanan işlemler";
 "1 minute" = "1 dakika";
 "5 minutes" = "5 dakika";
 "Menu bar" = "Menü çubuğu";
-"Notify me when" = "Şu durumda bildir";
+"Notify me when" = "Şu durumlarda bildir";
 
 // Monitor · CPUPopup
 "Clock" = "Saat hızı";
@@ -30,7 +32,7 @@
 "Temperature" = "Sıcaklık";
 
 // Monitor · CombinedBar
-"No module has anything to show here yet." = "Burada gösterecek bir şeyi olan modül henüz yok.";
+"No module has anything to show here yet." = "Henüz burada gösterecek bir şeyi olan modül yok.";
 "Combined modules" = "Birleşik modüller";
 "Combined details" = "Birleşik ayrıntılar";
 
@@ -80,8 +82,8 @@
 "Network" = "Ağ";
 "Internet connection lost" = "İnternet bağlantısı kesildi";
 "Internet connection established" = "İnternet bağlantısı kuruldu";
-"Tell me when" = "Şu durumda haber ver";
-"Connection comes or goes" = "Bağlantı kurulduğunda veya kesildiğinde";
+"Tell me when" = "Şu durumlarda haber ver";
+"Connection comes or goes" = "Bağlantı gelip gittiğinde";
 "Wi-Fi network changes" = "Wi-Fi ağı değiştiğinde";
 "Interface changes" = "Arayüz değiştiğinde";
 "Local address changes" = "Yerel adres değiştiğinde";
@@ -108,15 +110,15 @@
 "RAM" = "RAM";
 
 // Monitor · RAMPopup
-"Wired" = "Kalıcı Bellek";
+"Wired" = "Kalıcı";
 "Compressed" = "Sıkıştırılmış";
 "Swap size" = "Takas boyutu";
 "Memory threshold" = "Bellek eşiği";
 
 // Monitor · RAMTile
-"App" = "Uygulama Belleği";
+"App" = "Uygulama";
 "Swap" = "Takas";
-"Pressure" = "Bellek Baskısı";
+"Pressure" = "Baskı";
 
 // Monitor · SensorReadings
 "Battery" = "Pil";
@@ -151,18 +153,18 @@
 "Silent" = "Sessiz";
 "Settings" = "Ayarlar";
 "Check for updates" = "Güncellemeleri denetle";
-"Once per day" = "Günde bir";
-"Once per week" = "Haftada bir";
-"Never" = "Asla";
+"Once per day" = "Günde bir kez";
+"Once per week" = "Haftada bir kez";
+"Never" = "Hiçbir zaman";
 "Check for update" = "Güncellemeyi denetle";
 "Start at login" = "Girişte başlat";
 "Spacing" = "Aralık";
-"Celsius" = "Santigrat";
-"Fahrenheit" = "Fahrenhayt";
+"Celsius" = "Celsius";
+"Fahrenheit" = "Fahrenheit";
 
 // Settings · UpdateInterval
-"At start" = "Açılışta";
-"Once per month" = "Ayda bir";
+"At start" = "Başlangıçta";
+"Once per month" = "Ayda bir kez";
 
 // Startup · Startup
 "Successfully updated" = "Başarıyla güncellendi";
@@ -170,13 +172,13 @@
 
 // Startup · UpdateCheck
 "New version available" = "Yeni sürüm var";
-"Click to install the new version of Perch" = "Perch'in yeni sürümünü yüklemek için tıklayın";
+"Click to install the new version of Perch" = "Perch’ün yeni sürümünü yüklemek için tıklayın";
 
 // System · DashboardPane
 "Unknown" = "Bilinmiyor";
 "Graphics" = "Grafik";
 "Serial number" = "Seri numarası";
-"Model identifier" = "Model tanımlayıcı";
+"Model identifier" = "Model tanımlayıcısı";
 "Production year" = "Üretim yılı";
 "Number of cores" = "%0 çekirdek";
 "Number of threads" = "%0 iş parçacığı";
@@ -187,8 +189,8 @@
 
 // UI · SupportWindow
 "Close" = "Kapat";
-"Support text" = "Perch'i kullandığınız için teşekkürler.\n\nPerch ücretsiz ve açık kaynaklıdır; boş zamanlarda geliştirilip bakımı yapılmaktadır. Gününüzü biraz kolaylaştırıyorsa, yapacağınız bir katkı sürmesine yardımcı olur.";
-"Support Perch" = "Perch'i destekle";
+"Support text" = "Perch’ü kullandığınız için teşekkürler.\n\nPerch ücretsiz ve açık kaynaktır; boş zamanlarda geliştirilip bakımı yapılır. Gününüzü biraz olsun kolaylaştırıyorsa, yapacağınız katkı onun devam etmesine yardımcı olur.";
+"Support Perch" = "Perch’ü destekle";
 "Donate" = "Bağış yap";
 
 // Update · UpdateWindow
@@ -197,35 +199,35 @@
 // Views · SettingsShell
 "Report a bug" = "Hata bildir";
 "Support the application" = "Uygulamayı destekle";
-"Close application" = "Uygulamadan çık";
+"Close application" = "Uygulamayı kapat";
 "Toggle the module" = "Modülü aç/kapat";
 "Modules" = "Modüller";
 "Search" = "Ara";
 "Preview" = "Önizleme";
 "Support" = "Destek";
-"Pause the Perch" = "Perch'i duraklat";
+"Pause the Perch" = "Perch’ü duraklat";
 
 // Views · Setup
 "Perch Setup" = "Perch Kurulumu";
-"Previous" = "Geri";
+"Previous" = "Önceki";
 "Previous page" = "Önceki sayfa";
-"Welcome to Perch" = "Perch'e hoş geldiniz";
-"welcome_message" = "Perch; sistem izleyiciyi, uygulama başlatıcıyı ve pencere değiştiriciyi menü çubuğunuza yerleştirir. Bu kısa kurulum, önce neyin gösterileceğini seçer.";
-"Select preset" = "Ön ayar seçin";
-"select_preset_message" = "Başlangıç için bir modül seti seçin. Herhangi bir kısmını daha sonra Ayarlar'da değiştirebilirsiniz.";
-"Start the application automatically when starting your Mac" = "Mac'iniz açılırken uygulamayı otomatik olarak başlat";
-"Do not start the application automatically when starting your Mac" = "Mac'iniz açılırken uygulamayı otomatik olarak başlatma";
+"Welcome to Perch" = "Perch’e hoş geldiniz";
+"welcome_message" = "Perch, menü çubuğunuza bir sistem izleyici, bir uygulama başlatıcı ve bir pencere değiştirici yerleştirir. Bu kısa kurulum, önce neyin gösterileceğini seçer.";
+"Select preset" = "Hazır ayar seçin";
+"select_preset_message" = "Başlangıç için bir modül seti seçin. Bunların herhangi birini daha sonra Ayarlar’da değiştirebilirsiniz.";
+"Start the application automatically when starting your Mac" = "Mac’iniz başlarken uygulamayı otomatik olarak başlat";
+"Do not start the application automatically when starting your Mac" = "Mac’iniz başlarken uygulamayı otomatik olarak başlatma";
 "Do everything silently in the background (recommended)" = "Her şeyi arka planda sessizce yap (önerilir)";
-"Check for a new version on startup" = "Açılışta yeni sürümü denetle";
-"Check for a new version every day (once a day)" = "Her gün yeni sürümü denetle (günde bir)";
-"Check for a new version every week (once a week)" = "Her hafta yeni sürümü denetle (haftada bir)";
-"Check for a new version every month (once a month)" = "Her ay yeni sürümü denetle (ayda bir)";
-"Never check for updates (not recommended)" = "Güncellemeleri asla denetleme (önerilmez)";
+"Check for a new version on startup" = "Başlangıçta yeni sürümü denetle";
+"Check for a new version every day (once a day)" = "Her gün yeni sürümü denetle (günde bir kez)";
+"Check for a new version every week (once a week)" = "Her hafta yeni sürümü denetle (haftada bir kez)";
+"Check for a new version every month (once a month)" = "Her ay yeni sürümü denetle (ayda bir kez)";
+"Never check for updates (not recommended)" = "Güncellemeleri hiçbir zaman denetleme (önerilmez)";
 "The configuration is completed" = "Yapılandırma tamamlandı";
-"finish_setup_message" = "Her şey hazır.\n\nPerch ücretsiz ve açık kaynaklıdır. İşinize yarıyorsa geliştirilmesine destek olabilirsiniz.";
+"finish_setup_message" = "Her şey hazır.\n\nPerch ücretsiz ve açık kaynaktır. İşinize yarıyorsa geliştirilmesine destek olabilirsiniz.";
 
 // Views · SetupFlow
-"Next" = "İleri";
+"Next" = "Sonraki";
 "Next page" = "Sonraki sayfa";
 "Finish" = "Bitir";
 "Finish setup" = "Kurulumu bitir";

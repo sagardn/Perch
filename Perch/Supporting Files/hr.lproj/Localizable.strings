@@ -1,10 +1,12 @@
 /*
  * Localizable.strings — Perch, Croatian.
  *
- * The source every other language is checked against: `python3 Tools/i18n.py`
- * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
- * in step with the code. %0, %1 ... are filled in by `localized()` in
- * Perch/UI/Localized.swift and must survive translation.
+ * Translated from en.lproj, which is the source: `python3 Tools/i18n.py`
+ * keeps this file in step with it. %0, %1 ... are filled in by
+ * `localized()` in Perch/UI/Localized.swift and must survive translation.
+ *
+ * Machine-translated on 2026-10-10, from the English alone, and not yet
+ * reviewed by a native speaker. Corrections are welcome.
  */
 
 // Monitor · CPUModuleShell
@@ -15,8 +17,8 @@
 "Top processes" = "Najzahtjevniji procesi";
 "1 minute" = "1 minuta";
 "5 minutes" = "5 minuta";
-"Menu bar" = "Traka s izbornicima";
-"Notify me when" = "Obavijesti me kad";
+"Menu bar" = "Traka izbornika";
+"Notify me when" = "Obavijesti me kada";
 
 // Monitor · CPUPopup
 "Clock" = "Takt";
@@ -31,19 +33,19 @@
 
 // Monitor · CombinedBar
 "No module has anything to show here yet." = "Nijedan modul ovdje još nema što prikazati.";
-"Combined modules" = "Spojeni moduli";
-"Combined details" = "Spojeni detalji";
+"Combined modules" = "Kombinirani moduli";
+"Combined details" = "Kombinirani detalji";
 
 // Monitor · DiskModuleShell
 "Disk" = "Disk";
-"Startup volume" = "Disk za pokretanje";
-"not mounted" = "nije priključen";
+"Startup volume" = "Pokretački volumen";
+"not mounted" = "nije montiran";
 
 // Monitor · DiskPopup
 "Format" = "Format";
-"Used" = "Zauzeto";
+"Used" = "Iskorišteno";
 "Free" = "Slobodno";
-"Disk usage threshold" = "Prag zauzetosti diska";
+"Disk usage threshold" = "Prag upotrebe diska";
 
 // Monitor · DiskTile
 "free" = "slobodno";
@@ -58,7 +60,7 @@
 "GPU usage threshold" = "Prag upotrebe GPU-a";
 
 // Monitor · GPUTile
-"cores" = "jezgri";
+"cores" = "jezgre";
 
 // Monitor · MemoryReadings
 "Normal" = "Normalno";
@@ -67,10 +69,10 @@
 
 // Monitor · MenuBarStyle
 "Name" = "Naziv";
-"Figure" = "Broj";
+"Figure" = "Brojka";
 "Ring" = "Prsten";
 "Gauge" = "Mjerač";
-"Used and free" = "Zauzeto i slobodno";
+"Used and free" = "Iskorišteno i slobodno";
 "Rates" = "Brzine";
 "Bar chart" = "Stupčasti grafikon";
 "Line chart" = "Linijski grafikon";
@@ -78,10 +80,10 @@
 
 // Monitor · NetworkModuleShell
 "Network" = "Mreža";
-"Internet connection lost" = "Veza s internetom je izgubljena";
-"Internet connection established" = "Veza s internetom je uspostavljena";
-"Tell me when" = "Javi mi kad";
-"Connection comes or goes" = "Veza se pojavi ili nestane";
+"Internet connection lost" = "Internetska veza je prekinuta";
+"Internet connection established" = "Internetska veza je uspostavljena";
+"Tell me when" = "Javi mi kada";
+"Connection comes or goes" = "Veza se uspostavi ili prekine";
 "Wi-Fi network changes" = "Promijeni se Wi-Fi mreža";
 "Interface changes" = "Promijeni se sučelje";
 "Local address changes" = "Promijeni se lokalna adresa";
@@ -92,11 +94,11 @@
 "Local IP" = "Lokalni IP";
 "Interface" = "Sučelje";
 "Physical address" = "Fizička adresa";
-"Online" = "Na mreži";
-"Offline" = "Izvan mreže";
+"Online" = "Povezano";
+"Offline" = "Nije povezano";
 
 // Monitor · Popup
-"Dashboard" = "Pregled";
+"Dashboard" = "Nadzorna ploča";
 
 // Monitor · PopupParts
 "Idle" = "Neaktivno";
@@ -108,13 +110,13 @@
 "RAM" = "RAM";
 
 // Monitor · RAMPopup
-"Wired" = "Rezervirana";
-"Compressed" = "Komprimirana";
+"Wired" = "Fiksno";
+"Compressed" = "Komprimirano";
 "Swap size" = "Veličina swapa";
 "Memory threshold" = "Prag memorije";
 
 // Monitor · RAMTile
-"App" = "Aplikacije";
+"App" = "Aplikacija";
 "Swap" = "Swap";
 "Pressure" = "Opterećenje";
 
@@ -130,32 +132,32 @@
 "History" = "Povijest";
 
 // Monitor · SensorsTile
-"hottest" = "maks.";
-"sensors" = "senzora";
+"hottest" = "najviša";
+"sensors" = "senzori";
 "No sensors answered" = "Nijedan senzor nije odgovorio";
 
 // Monitor · Thresholds
 "Total load" = "Ukupno opterećenje";
 "System load" = "Opterećenje sustava";
-"User load" = "Opterećenje korisnika";
+"User load" = "Korisničko opterećenje";
 "Efficiency cores load" = "Opterećenje učinkovitih jezgri";
 "Performance cores load" = "Opterećenje jezgri za performanse";
 "Memory pressure" = "Opterećenje memorije";
 "Memory used" = "Iskorištena memorija";
 "Memory free" = "Slobodna memorija";
-"Swap in use" = "Korišteni swap";
-"Disk usage" = "Zauzetost diska";
+"Swap in use" = "Swap u upotrebi";
+"Disk usage" = "Upotreba diska";
 
 // Settings · GeneralPane
 "Reset" = "Resetiraj";
-"Silent" = "U pozadini";
+"Silent" = "Tiho";
 "Settings" = "Postavke";
-"Check for updates" = "Traži ažuriranja";
+"Check for updates" = "Provjeri ima li ažuriranja";
 "Once per day" = "Jednom dnevno";
 "Once per week" = "Jednom tjedno";
-"Never" = "Nikad";
-"Check for update" = "Potraži ažuriranja";
-"Start at login" = "Otvori pri prijavi";
+"Never" = "Nikada";
+"Check for update" = "Provjeri ažuriranje";
+"Start at login" = "Pokreni pri prijavi";
 "Spacing" = "Razmak";
 "Celsius" = "Celzijus";
 "Fahrenheit" = "Fahrenheit";
@@ -165,7 +167,7 @@
 "Once per month" = "Jednom mjesečno";
 
 // Startup · Startup
-"Successfully updated" = "Ažuriranje je uspjelo";
+"Successfully updated" = "Uspješno ažurirano";
 "Perch was updated to v" = "Perch je ažuriran na verziju %0";
 
 // Startup · UpdateCheck
@@ -187,9 +189,9 @@
 
 // UI · SupportWindow
 "Close" = "Zatvori";
-"Support text" = "Hvala što koristite Perch.\n\nPerch je besplatan i otvorenog koda, a nastaje i održava se u slobodno vrijeme. Ako vam barem malo olakšava dan, prilog će pomoći u njegovu daljnjem razvoju.";
+"Support text" = "Hvala što koristite Perch.\n\nPerch je besplatan i otvorenog koda, a razvija se i održava u slobodno vrijeme. Ako vam olakšava dan, doprinos pomaže da se nastavi.";
 "Support Perch" = "Podržite Perch";
-"Donate" = "Donirajte";
+"Donate" = "Doniraj";
 
 // Update · UpdateWindow
 "Install" = "Instaliraj";
@@ -207,29 +209,29 @@
 
 // Views · Setup
 "Perch Setup" = "Postavljanje aplikacije Perch";
-"Previous" = "Natrag";
+"Previous" = "Prethodno";
 "Previous page" = "Prethodna stranica";
 "Welcome to Perch" = "Dobro došli u Perch";
-"welcome_message" = "Perch u traku s izbornicima stavlja nadzor sustava, pokretač aplikacija i prebacivač prozora. U ovom kratkom postavljanju birate što će se prvo prikazivati.";
-"Select preset" = "Odaberite skup";
-"select_preset_message" = "Odaberite početni skup modula. Bilo što od toga možete kasnije promijeniti u Postavkama.";
-"Start the application automatically when starting your Mac" = "Automatski otvaraj aplikaciju pri pokretanju Maca";
-"Do not start the application automatically when starting your Mac" = "Ne otvaraj aplikaciju automatski pri pokretanju Maca";
-"Do everything silently in the background (recommended)" = "Sve obavljaj neprimjetno u pozadini (preporučeno)";
-"Check for a new version on startup" = "Traži novu verziju pri pokretanju";
-"Check for a new version every day (once a day)" = "Traži novu verziju svaki dan (jednom dnevno)";
-"Check for a new version every week (once a week)" = "Traži novu verziju svaki tjedan (jednom tjedno)";
-"Check for a new version every month (once a month)" = "Traži novu verziju svaki mjesec (jednom mjesečno)";
-"Never check for updates (not recommended)" = "Nikad ne traži ažuriranja (ne preporučuje se)";
-"The configuration is completed" = "Postavljanje je dovršeno";
+"welcome_message" = "Perch u traku izbornika dodaje monitor sustava, pokretač aplikacija i preklopnik prozora. Ovo kratko postavljanje odabire što će se prvo prikazati.";
+"Select preset" = "Odaberite predložak";
+"select_preset_message" = "Odaberite početni skup modula. Sve možete kasnije promijeniti u Postavkama.";
+"Start the application automatically when starting your Mac" = "Automatski pokreni aplikaciju pri pokretanju Maca";
+"Do not start the application automatically when starting your Mac" = "Ne pokreći aplikaciju automatski pri pokretanju Maca";
+"Do everything silently in the background (recommended)" = "Sve radi tiho u pozadini (preporučeno)";
+"Check for a new version on startup" = "Provjeri novu verziju pri pokretanju";
+"Check for a new version every day (once a day)" = "Provjeravaj novu verziju svaki dan (jednom dnevno)";
+"Check for a new version every week (once a week)" = "Provjeravaj novu verziju svaki tjedan (jednom tjedno)";
+"Check for a new version every month (once a month)" = "Provjeravaj novu verziju svaki mjesec (jednom mjesečno)";
+"Never check for updates (not recommended)" = "Nikada ne provjeravaj ažuriranja (nije preporučeno)";
+"The configuration is completed" = "Konfiguracija je dovršena";
 "finish_setup_message" = "Sve je spremno.\n\nPerch je besplatan i otvorenog koda. Ako vam je koristan, možete podržati njegov razvoj.";
 
 // Views · SetupFlow
 "Next" = "Dalje";
 "Next page" = "Sljedeća stranica";
-"Finish" = "Dovrši";
-"Finish setup" = "Dovrši postavljanje";
-"Default" = "Zadani";
-"Basic" = "Osnovni";
-"Recommended" = "Preporučeni";
-"Extended" = "Prošireni";
+"Finish" = "Završi";
+"Finish setup" = "Završi postavljanje";
+"Default" = "Zadano";
+"Basic" = "Osnovno";
+"Recommended" = "Preporučeno";
+"Extended" = "Prošireno";

@@ -1,10 +1,12 @@
 /*
  * Localizable.strings — Perch, Portuguese (Portugal).
  *
- * The source every other language is checked against: `python3 Tools/i18n.py`
- * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
- * in step with the code. %0, %1 ... are filled in by `localized()` in
- * Perch/UI/Localized.swift and must survive translation.
+ * Translated from en.lproj, which is the source: `python3 Tools/i18n.py`
+ * keeps this file in step with it. %0, %1 ... are filled in by
+ * `localized()` in Perch/UI/Localized.swift and must survive translation.
+ *
+ * Machine-translated on 2026-10-10, from the English alone, and not yet
+ * reviewed by a native speaker. Corrections are welcome.
  */
 
 // Monitor · CPUModuleShell
@@ -19,13 +21,13 @@
 "Notify me when" = "Notificar quando";
 
 // Monitor · CPUPopup
-"Clock" = "Frequência";
+"Clock" = "Relógio";
 "Processor" = "Processador";
 "Cores" = "Núcleos";
-"Uptime" = "Tempo ativo";
+"Uptime" = "Tempo de atividade";
 "System" = "Sistema";
 "User" = "Utilizador";
-"CPU usage threshold" = "Limiar de utilização do CPU";
+"CPU usage threshold" = "Limite de utilização do CPU";
 "Total" = "Total";
 "Temperature" = "Temperatura";
 
@@ -43,7 +45,7 @@
 "Format" = "Formato";
 "Used" = "Usado";
 "Free" = "Livre";
-"Disk usage threshold" = "Limiar de utilização do disco";
+"Disk usage threshold" = "Limite de utilização do disco";
 
 // Monitor · DiskTile
 "free" = "livres";
@@ -55,7 +57,7 @@
 "Memory" = "Memória";
 "Model" = "Modelo";
 "Utilization" = "Utilização";
-"GPU usage threshold" = "Limiar de utilização do GPU";
+"GPU usage threshold" = "Limite de utilização da GPU";
 
 // Monitor · GPUTile
 "cores" = "núcleos";
@@ -63,37 +65,37 @@
 // Monitor · MemoryReadings
 "Normal" = "Normal";
 "Warning" = "Aviso";
-"Critical" = "Crítica";
+"Critical" = "Crítico";
 
 // Monitor · MenuBarStyle
 "Name" = "Nome";
 "Figure" = "Número";
 "Ring" = "Anel";
-"Gauge" = "Mostrador";
+"Gauge" = "Medidor";
 "Used and free" = "Usado e livre";
 "Rates" = "Velocidades";
-"Bar chart" = "Barras";
-"Line chart" = "Linhas";
-"Traffic chart" = "Tráfego";
+"Bar chart" = "Gráfico de barras";
+"Line chart" = "Gráfico de linhas";
+"Traffic chart" = "Gráfico de tráfego";
 
 // Monitor · NetworkModuleShell
 "Network" = "Rede";
 "Internet connection lost" = "Ligação à internet perdida";
 "Internet connection established" = "Ligação à internet estabelecida";
 "Tell me when" = "Avisar quando";
-"Connection comes or goes" = "A ligação cai ou volta";
-"Wi-Fi network changes" = "A rede Wi-Fi muda";
-"Interface changes" = "A interface muda";
-"Local address changes" = "O endereço local muda";
-"Public address changes" = "O endereço público muda";
+"Connection comes or goes" = "A ligação cair ou voltar";
+"Wi-Fi network changes" = "A rede Wi-Fi mudar";
+"Interface changes" = "A interface mudar";
+"Local address changes" = "O endereço local mudar";
+"Public address changes" = "O endereço público mudar";
 
 // Monitor · NetworkPopup
 "Download" = "Transferência";
 "Local IP" = "IP local";
 "Interface" = "Interface";
 "Physical address" = "Endereço físico";
-"Online" = "Ligado";
-"Offline" = "Desligado";
+"Online" = "Online";
+"Offline" = "Offline";
 
 // Monitor · Popup
 "Dashboard" = "Painel";
@@ -108,29 +110,29 @@
 "RAM" = "RAM";
 
 // Monitor · RAMPopup
-"Wired" = "Residente";
+"Wired" = "Fixa";
 "Compressed" = "Comprimida";
 "Swap size" = "Tamanho da swap";
-"Memory threshold" = "Limiar de memória";
+"Memory threshold" = "Limite de memória";
 
 // Monitor · RAMTile
 "App" = "App";
 "Swap" = "Swap";
-"Pressure" = "Pressão de memória";
+"Pressure" = "Pressão";
 
 // Monitor · SensorReadings
 "Battery" = "Bateria";
 
 // Monitor · SensorsModuleShell
 "Sensors" = "Sensores";
-"Show in the popup" = "Mostrar na janela";
-"Hottest temperature" = "Temperatura máxima";
+"Show in the popup" = "Mostrar na janela pop-up";
+"Hottest temperature" = "Temperatura mais alta";
 
 // Monitor · SensorsPopup
 "History" = "Histórico";
 
 // Monitor · SensorsTile
-"hottest" = "máx.";
+"hottest" = "mais quente";
 "sensors" = "sensores";
 "No sensors answered" = "Nenhum sensor respondeu";
 
@@ -140,10 +142,10 @@
 "User load" = "Carga do utilizador";
 "Efficiency cores load" = "Carga dos núcleos de eficiência";
 "Performance cores load" = "Carga dos núcleos de desempenho";
-"Memory pressure" = "Pressão de memória";
+"Memory pressure" = "Pressão da memória";
 "Memory used" = "Memória usada";
 "Memory free" = "Memória livre";
-"Swap in use" = "Swap usada";
+"Swap in use" = "Swap em uso";
 "Disk usage" = "Utilização do disco";
 
 // Settings · GeneralPane
@@ -161,7 +163,7 @@
 "Fahrenheit" = "Fahrenheit";
 
 // Settings · UpdateInterval
-"At start" = "Ao abrir";
+"At start" = "Ao arrancar";
 "Once per month" = "Uma vez por mês";
 
 // Startup · Startup
@@ -177,7 +179,7 @@
 "Graphics" = "Gráficos";
 "Serial number" = "Número de série";
 "Model identifier" = "Identificador do modelo";
-"Production year" = "Ano de fabrico";
+"Production year" = "Ano de produção";
 "Number of cores" = "%0 núcleos";
 "Number of threads" = "%0 threads";
 "Number of e-cores" = "%0 núcleos de eficiência";
@@ -187,7 +189,7 @@
 
 // UI · SupportWindow
 "Close" = "Fechar";
-"Support text" = "Agradecemos por utilizar o Perch.\n\nO Perch é gratuito e de código aberto, e é desenvolvido e mantido nos tempos livres. Se lhe torna o dia um pouco mais fácil, uma contribuição ajuda a mantê-lo vivo.";
+"Support text" = "Obrigado por utilizar o Perch.\n\nO Perch é gratuito e de código aberto, e é desenvolvido e mantido nos tempos livres. Se lhe facilita um pouco o dia, uma contribuição ajuda a mantê-lo vivo.";
 "Support Perch" = "Apoiar o Perch";
 "Donate" = "Doar";
 
@@ -196,9 +198,9 @@
 
 // Views · SettingsShell
 "Report a bug" = "Comunicar um erro";
-"Support the application" = "Apoiar a app";
-"Close application" = "Encerrar a app";
-"Toggle the module" = "Ativar ou desativar o módulo";
+"Support the application" = "Apoiar a aplicação";
+"Close application" = "Fechar a aplicação";
+"Toggle the module" = "Ativar/desativar o módulo";
 "Modules" = "Módulos";
 "Search" = "Pesquisar";
 "Preview" = "Pré-visualização";
@@ -209,14 +211,14 @@
 "Perch Setup" = "Configuração do Perch";
 "Previous" = "Anterior";
 "Previous page" = "Página anterior";
-"Welcome to Perch" = "Boas-vindas ao Perch";
-"welcome_message" = "O Perch coloca um monitor do sistema, um iniciador de apps e um alternador de janelas na sua barra de menus. Esta breve configuração escolhe o que mostrar primeiro.";
+"Welcome to Perch" = "Bem-vindo ao Perch";
+"welcome_message" = "O Perch coloca um monitor do sistema, um lançador de aplicações e um alternador de janelas na barra de menus. Esta configuração rápida escolhe o que mostrar primeiro.";
 "Select preset" = "Selecionar predefinição";
 "select_preset_message" = "Escolha um conjunto inicial de módulos. Pode alterar tudo mais tarde nas Definições.";
-"Start the application automatically when starting your Mac" = "Abrir a app automaticamente ao arrancar o Mac";
-"Do not start the application automatically when starting your Mac" = "Não abrir a app automaticamente ao arrancar o Mac";
+"Start the application automatically when starting your Mac" = "Abrir a aplicação automaticamente ao ligar o Mac";
+"Do not start the application automatically when starting your Mac" = "Não abrir a aplicação automaticamente ao ligar o Mac";
 "Do everything silently in the background (recommended)" = "Fazer tudo silenciosamente em segundo plano (recomendado)";
-"Check for a new version on startup" = "Procurar uma nova versão ao abrir";
+"Check for a new version on startup" = "Procurar uma nova versão ao arrancar";
 "Check for a new version every day (once a day)" = "Procurar uma nova versão todos os dias (uma vez por dia)";
 "Check for a new version every week (once a week)" = "Procurar uma nova versão todas as semanas (uma vez por semana)";
 "Check for a new version every month (once a month)" = "Procurar uma nova versão todos os meses (uma vez por mês)";
@@ -229,7 +231,7 @@
 "Next page" = "Página seguinte";
 "Finish" = "Concluir";
 "Finish setup" = "Concluir configuração";
-"Default" = "Predefinido";
+"Default" = "Predefinição";
 "Basic" = "Básico";
 "Recommended" = "Recomendado";
 "Extended" = "Alargado";

@@ -1,10 +1,12 @@
 /*
  * Localizable.strings — Perch, Swedish.
  *
- * The source every other language is checked against: `python3 Tools/i18n.py`
- * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
- * in step with the code. %0, %1 ... are filled in by `localized()` in
- * Perch/UI/Localized.swift and must survive translation.
+ * Translated from en.lproj, which is the source: `python3 Tools/i18n.py`
+ * keeps this file in step with it. %0, %1 ... are filled in by
+ * `localized()` in Perch/UI/Localized.swift and must survive translation.
+ *
+ * Machine-translated on 2026-10-10, from the English alone, and not yet
+ * reviewed by a native speaker. Corrections are welcome.
  */
 
 // Monitor · CPUModuleShell
@@ -12,7 +14,7 @@
 "None" = "Ingen";
 "2 minutes" = "2 minuter";
 "Chart history" = "Diagramhistorik";
-"Top processes" = "Toppprocesser";
+"Top processes" = "Mest aktiva processer";
 "1 minute" = "1 minut";
 "5 minutes" = "5 minuter";
 "Menu bar" = "Menyrad";
@@ -35,7 +37,7 @@
 "Combined details" = "Kombinerade detaljer";
 
 // Monitor · DiskModuleShell
-"Disk" = "Skiva";
+"Disk" = "Disk";
 "Startup volume" = "Startvolym";
 "not mounted" = "inte monterad";
 
@@ -43,7 +45,7 @@
 "Format" = "Format";
 "Used" = "Använt";
 "Free" = "Ledigt";
-"Disk usage threshold" = "Tröskel för skivanvändning";
+"Disk usage threshold" = "Tröskel för diskanvändning";
 
 // Monitor · DiskTile
 "free" = "ledigt";
@@ -61,9 +63,9 @@
 "cores" = "kärnor";
 
 // Monitor · MemoryReadings
-"Normal" = "Normalt";
+"Normal" = "Normal";
 "Warning" = "Varning";
-"Critical" = "Kritiskt";
+"Critical" = "Kritisk";
 
 // Monitor · MenuBarStyle
 "Name" = "Namn";
@@ -79,21 +81,21 @@
 // Monitor · NetworkModuleShell
 "Network" = "Nätverk";
 "Internet connection lost" = "Internetanslutningen bröts";
-"Internet connection established" = "Internetanslutningen upprättades";
-"Tell me when" = "Säg till när";
+"Internet connection established" = "Internetanslutningen har upprättats";
+"Tell me when" = "Berätta när";
 "Connection comes or goes" = "Anslutningen kommer eller går";
 "Wi-Fi network changes" = "Wi-Fi-nätverket ändras";
 "Interface changes" = "Gränssnittet ändras";
 "Local address changes" = "Den lokala adressen ändras";
-"Public address changes" = "Den publika adressen ändras";
+"Public address changes" = "Den offentliga adressen ändras";
 
 // Monitor · NetworkPopup
 "Download" = "Hämtning";
 "Local IP" = "Lokal IP";
 "Interface" = "Gränssnitt";
 "Physical address" = "Fysisk adress";
-"Online" = "Ansluten";
-"Offline" = "Frånkopplad";
+"Online" = "Online";
+"Offline" = "Offline";
 
 // Monitor · Popup
 "Dashboard" = "Översikt";
@@ -143,8 +145,8 @@
 "Memory pressure" = "Minnestryck";
 "Memory used" = "Använt minne";
 "Memory free" = "Ledigt minne";
-"Swap in use" = "Använt växlingsminne";
-"Disk usage" = "Skivanvändning";
+"Swap in use" = "Växling som används";
+"Disk usage" = "Diskanvändning";
 
 // Settings · GeneralPane
 "Reset" = "Återställ";
@@ -176,18 +178,18 @@
 "Unknown" = "Okänd";
 "Graphics" = "Grafik";
 "Serial number" = "Serienummer";
-"Model identifier" = "Modellidentifierare";
+"Model identifier" = "Modell-ID";
 "Production year" = "Tillverkningsår";
 "Number of cores" = "%0 kärnor";
 "Number of threads" = "%0 trådar";
 "Number of e-cores" = "%0 effektivitetskärnor";
 "Number of p-cores" = "%0 prestandakärnor";
-"Disks" = "Skivor";
+"Disks" = "Diskar";
 "Display" = "Skärm";
 
 // UI · SupportWindow
 "Close" = "Stäng";
-"Support text" = "Tack för att du använder Perch.\n\nPerch är gratis och har öppen källkod, och det byggs och underhålls på fritiden. Om det gör din dag lite enklare hjälper ett bidrag till att hålla det vid liv.";
+"Support text" = "Tack för att du använder Perch.\n\nPerch är gratis och har öppen källkod, och det byggs och underhålls på fritiden. Om det gör din dag lite enklare hjälper ett bidrag till att hålla det igång.";
 "Support Perch" = "Stöd Perch";
 "Donate" = "Donera";
 
@@ -195,14 +197,14 @@
 "Install" = "Installera";
 
 // Views · SettingsShell
-"Report a bug" = "Rapportera en bugg";
-"Support the application" = "Stöd appen";
-"Close application" = "Stäng appen";
-"Toggle the module" = "Slå på/av modulen";
+"Report a bug" = "Rapportera ett fel";
+"Support the application" = "Stöd programmet";
+"Close application" = "Stäng programmet";
+"Toggle the module" = "Slå på eller av modulen";
 "Modules" = "Moduler";
 "Search" = "Sök";
 "Preview" = "Förhandsvisning";
-"Support" = "Stöd";
+"Support" = "Support";
 "Pause the Perch" = "Pausa Perch";
 
 // Views · Setup
@@ -213,8 +215,8 @@
 "welcome_message" = "Perch lägger en systemövervakare, en appstartare och en fönsterväxlare i menyraden. Den här korta konfigurationen väljer vad som ska visas först.";
 "Select preset" = "Välj förinställning";
 "select_preset_message" = "Välj en uppsättning moduler att börja med. Du kan ändra allt senare i Inställningar.";
-"Start the application automatically when starting your Mac" = "Starta appen automatiskt när du startar din Mac";
-"Do not start the application automatically when starting your Mac" = "Starta inte appen automatiskt när du startar din Mac";
+"Start the application automatically when starting your Mac" = "Starta programmet automatiskt när du startar din Mac";
+"Do not start the application automatically when starting your Mac" = "Starta inte programmet automatiskt när du startar din Mac";
 "Do everything silently in the background (recommended)" = "Gör allt tyst i bakgrunden (rekommenderas)";
 "Check for a new version on startup" = "Sök efter en ny version vid start";
 "Check for a new version every day (once a day)" = "Sök efter en ny version varje dag (en gång om dagen)";

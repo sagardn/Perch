@@ -1,10 +1,12 @@
 /*
  * Localizable.strings — Perch, Japanese.
  *
- * The source every other language is checked against: `python3 Tools/i18n.py`
- * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
- * in step with the code. %0, %1 ... are filled in by `localized()` in
- * Perch/UI/Localized.swift and must survive translation.
+ * Translated from en.lproj, which is the source: `python3 Tools/i18n.py`
+ * keeps this file in step with it. %0, %1 ... are filled in by
+ * `localized()` in Perch/UI/Localized.swift and must survive translation.
+ *
+ * Machine-translated on 2026-10-10, from the English alone, and not yet
+ * reviewed by a native speaker. Corrections are welcome.
  */
 
 // Monitor · CPUModuleShell
@@ -16,7 +18,7 @@
 "1 minute" = "1分";
 "5 minutes" = "5分";
 "Menu bar" = "メニューバー";
-"Notify me when" = "次の場合に通知";
+"Notify me when" = "通知するタイミング";
 
 // Monitor · CPUPopup
 "Clock" = "クロック";
@@ -31,8 +33,8 @@
 
 // Monitor · CombinedBar
 "No module has anything to show here yet." = "ここに表示できるモジュールはまだありません。";
-"Combined modules" = "モジュールを統合";
-"Combined details" = "詳細を統合";
+"Combined modules" = "結合したモジュール";
+"Combined details" = "結合した詳細";
 
 // Monitor · DiskModuleShell
 "Disk" = "ディスク";
@@ -74,14 +76,14 @@
 "Rates" = "速度";
 "Bar chart" = "棒グラフ";
 "Line chart" = "折れ線グラフ";
-"Traffic chart" = "通信量グラフ";
+"Traffic chart" = "トラフィックグラフ";
 
 // Monitor · NetworkModuleShell
 "Network" = "ネットワーク";
 "Internet connection lost" = "インターネット接続が切断されました";
-"Internet connection established" = "インターネットに接続されました";
-"Tell me when" = "次の場合に知らせる";
-"Connection comes or goes" = "接続または切断したとき";
+"Internet connection established" = "インターネットに接続しました";
+"Tell me when" = "通知するタイミング";
+"Connection comes or goes" = "接続または切断されたとき";
 "Wi-Fi network changes" = "Wi-Fiネットワークが変わったとき";
 "Interface changes" = "インターフェイスが変わったとき";
 "Local address changes" = "ローカルアドレスが変わったとき";
@@ -108,15 +110,15 @@
 "RAM" = "RAM";
 
 // Monitor · RAMPopup
-"Wired" = "確保されているメモリ";
+"Wired" = "確保中";
 "Compressed" = "圧縮";
 "Swap size" = "スワップサイズ";
 "Memory threshold" = "メモリのしきい値";
 
 // Monitor · RAMTile
-"App" = "アプリメモリ";
+"App" = "App";
 "Swap" = "スワップ";
-"Pressure" = "メモリプレッシャー";
+"Pressure" = "プレッシャー";
 
 // Monitor · SensorReadings
 "Battery" = "バッテリー";
@@ -143,7 +145,7 @@
 "Memory pressure" = "メモリプレッシャー";
 "Memory used" = "使用済みメモリ";
 "Memory free" = "空きメモリ";
-"Swap in use" = "使用済みスワップ";
+"Swap in use" = "使用中のスワップ";
 "Disk usage" = "ディスク使用率";
 
 // Settings · GeneralPane
@@ -155,7 +157,7 @@
 "Once per week" = "1週間に1回";
 "Never" = "しない";
 "Check for update" = "アップデートを確認";
-"Start at login" = "ログイン時に起動";
+"Start at login" = "ログイン時に開く";
 "Spacing" = "間隔";
 "Celsius" = "摂氏";
 "Fahrenheit" = "華氏";
@@ -187,7 +189,7 @@
 
 // UI · SupportWindow
 "Close" = "閉じる";
-"Support text" = "Perchをご利用いただきありがとうございます。\n\nPerchは無料のオープンソースソフトウェアで、空き時間に開発・保守されています。毎日が少しでも快適になっているなら、寄付で開発を支えていただけると幸いです。";
+"Support text" = "Perchをご利用いただきありがとうございます。\n\nPerchは無料のオープンソースソフトウェアで、空き時間に開発・保守されています。毎日が少しでも楽になったと感じたら、ご支援が開発の継続につながります。";
 "Support Perch" = "Perchを支援";
 "Donate" = "寄付する";
 
@@ -196,40 +198,40 @@
 
 // Views · SettingsShell
 "Report a bug" = "バグを報告";
-"Support the application" = "アプリを支援";
-"Close application" = "アプリを終了";
+"Support the application" = "アプリケーションを支援";
+"Close application" = "アプリケーションを終了";
 "Toggle the module" = "モジュールのオン/オフ";
 "Modules" = "モジュール";
 "Search" = "検索";
 "Preview" = "プレビュー";
-"Support" = "支援";
+"Support" = "サポート";
 "Pause the Perch" = "Perchを一時停止";
 
 // Views · Setup
-"Perch Setup" = "Perchセットアップ";
+"Perch Setup" = "Perchの設定";
 "Previous" = "戻る";
 "Previous page" = "前のページ";
 "Welcome to Perch" = "Perchへようこそ";
-"welcome_message" = "Perchは、システムモニタ、アプリランチャー、ウインドウスイッチャーをメニューバーにまとめます。この簡単なセットアップで、最初に表示する項目を選びます。";
+"welcome_message" = "Perchは、システムモニタ、Appランチャー、ウインドウスイッチャーをメニューバーにまとめます。この簡単な設定で、最初に表示する項目を選びます。";
 "Select preset" = "プリセットを選択";
-"select_preset_message" = "最初に使うモジュールのセットを選んでください。あとで「設定」からいつでも変更できます。";
-"Start the application automatically when starting your Mac" = "Macの起動時にアプリを自動的に起動する";
-"Do not start the application automatically when starting your Mac" = "Macの起動時にアプリを自動的に起動しない";
-"Do everything silently in the background (recommended)" = "すべてをバックグラウンドで自動的に行う（推奨）";
-"Check for a new version on startup" = "起動時に新しいバージョンを確認する";
-"Check for a new version every day (once a day)" = "新しいバージョンを毎日確認する（1日に1回）";
-"Check for a new version every week (once a week)" = "新しいバージョンを毎週確認する（1週間に1回）";
-"Check for a new version every month (once a month)" = "新しいバージョンを毎月確認する（1か月に1回）";
+"select_preset_message" = "最初に使うモジュールのセットを選んでください。あとから「設定」でいつでも変更できます。";
+"Start the application automatically when starting your Mac" = "Macの起動時にアプリケーションを自動的に開く";
+"Do not start the application automatically when starting your Mac" = "Macの起動時にアプリケーションを自動的に開かない";
+"Do everything silently in the background (recommended)" = "すべてバックグラウンドで通知なしに行う（推奨）";
+"Check for a new version on startup" = "起動時に新しいバージョンを確認";
+"Check for a new version every day (once a day)" = "毎日新しいバージョンを確認（1日に1回）";
+"Check for a new version every week (once a week)" = "毎週新しいバージョンを確認（1週間に1回）";
+"Check for a new version every month (once a month)" = "毎月新しいバージョンを確認（1か月に1回）";
 "Never check for updates (not recommended)" = "アップデートを確認しない（非推奨）";
 "The configuration is completed" = "設定が完了しました";
-"finish_setup_message" = "準備が整いました。\n\nPerchは無料のオープンソースソフトウェアです。お役に立てていれば、開発を支援していただけます。";
+"finish_setup_message" = "準備ができました。\n\nPerchは無料のオープンソースソフトウェアです。お役に立てたなら、開発を支援していただけます。";
 
 // Views · SetupFlow
 "Next" = "次へ";
 "Next page" = "次のページ";
 "Finish" = "完了";
-"Finish setup" = "セットアップを完了";
+"Finish setup" = "設定を完了";
 "Default" = "デフォルト";
 "Basic" = "ベーシック";
-"Recommended" = "おすすめ";
+"Recommended" = "推奨";
 "Extended" = "拡張";

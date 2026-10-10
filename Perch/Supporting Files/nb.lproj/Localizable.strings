@@ -1,10 +1,12 @@
 /*
  * Localizable.strings — Perch, Norwegian Bokmål.
  *
- * The source every other language is checked against: `python3 Tools/i18n.py`
- * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
- * in step with the code. %0, %1 ... are filled in by `localized()` in
- * Perch/UI/Localized.swift and must survive translation.
+ * Translated from en.lproj, which is the source: `python3 Tools/i18n.py`
+ * keeps this file in step with it. %0, %1 ... are filled in by
+ * `localized()` in Perch/UI/Localized.swift and must survive translation.
+ *
+ * Machine-translated on 2026-10-10, from the English alone, and not yet
+ * reviewed by a native speaker. Corrections are welcome.
  */
 
 // Monitor · CPUModuleShell
@@ -12,7 +14,7 @@
 "None" = "Ingen";
 "2 minutes" = "2 minutter";
 "Chart history" = "Diagramhistorikk";
-"Top processes" = "Toppprosesser";
+"Top processes" = "Mest aktive prosesser";
 "1 minute" = "1 minutt";
 "5 minutes" = "5 minutter";
 "Menu bar" = "Menylinje";
@@ -31,12 +33,12 @@
 
 // Monitor · CombinedBar
 "No module has anything to show here yet." = "Ingen moduler har noe å vise her ennå.";
-"Combined modules" = "Samlede moduler";
-"Combined details" = "Samlede detaljer";
+"Combined modules" = "Kombinerte moduler";
+"Combined details" = "Kombinerte detaljer";
 
 // Monitor · DiskModuleShell
 "Disk" = "Disk";
-"Startup volume" = "Oppstartsvolum";
+"Startup volume" = "Startvolum";
 "not mounted" = "ikke montert";
 
 // Monitor · DiskPopup
@@ -72,14 +74,14 @@
 "Gauge" = "Måler";
 "Used and free" = "Brukt og ledig";
 "Rates" = "Hastigheter";
-"Bar chart" = "Stolpediagram";
+"Bar chart" = "Søylediagram";
 "Line chart" = "Linjediagram";
 "Traffic chart" = "Trafikkdiagram";
 
 // Monitor · NetworkModuleShell
 "Network" = "Nettverk";
 "Internet connection lost" = "Internettforbindelsen ble brutt";
-"Internet connection established" = "Internettforbindelsen ble opprettet";
+"Internet connection established" = "Internettforbindelsen er opprettet";
 "Tell me when" = "Si fra når";
 "Connection comes or goes" = "Forbindelsen kommer eller går";
 "Wi-Fi network changes" = "Wi-Fi-nettverket endres";
@@ -108,22 +110,22 @@
 "RAM" = "RAM";
 
 // Monitor · RAMPopup
-"Wired" = "Fast";
+"Wired" = "Låst";
 "Compressed" = "Komprimert";
-"Swap size" = "Swap-størrelse";
-"Memory threshold" = "Terskel for minne";
+"Swap size" = "Størrelse på swap";
+"Memory threshold" = "Minneterskel";
 
 // Monitor · RAMTile
 "App" = "App";
 "Swap" = "Swap";
-"Pressure" = "Trykk";
+"Pressure" = "Press";
 
 // Monitor · SensorReadings
 "Battery" = "Batteri";
 
 // Monitor · SensorsModuleShell
 "Sensors" = "Sensorer";
-"Show in the popup" = "Vis i popup-vinduet";
+"Show in the popup" = "Vis i popupvinduet";
 "Hottest temperature" = "Høyeste temperatur";
 
 // Monitor · SensorsPopup
@@ -140,9 +142,9 @@
 "User load" = "Brukerbelastning";
 "Efficiency cores load" = "Belastning på effektivitetskjerner";
 "Performance cores load" = "Belastning på ytelseskjerner";
-"Memory pressure" = "Minnetrykk";
-"Memory used" = "Brukt minne";
-"Memory free" = "Ledig minne";
+"Memory pressure" = "Minnepress";
+"Memory used" = "Minne brukt";
+"Memory free" = "Minne ledig";
 "Swap in use" = "Swap i bruk";
 "Disk usage" = "Diskbruk";
 
@@ -155,8 +157,8 @@
 "Once per week" = "Én gang i uken";
 "Never" = "Aldri";
 "Check for update" = "Se etter oppdatering";
-"Start at login" = "Start ved pålogging";
-"Spacing" = "Avstand";
+"Start at login" = "Åpne ved pålogging";
+"Spacing" = "Mellomrom";
 "Celsius" = "Celsius";
 "Fahrenheit" = "Fahrenheit";
 
@@ -165,7 +167,7 @@
 "Once per month" = "Én gang i måneden";
 
 // Startup · Startup
-"Successfully updated" = "Oppdateringen var vellykket";
+"Successfully updated" = "Oppdateringen er fullført";
 "Perch was updated to v" = "Perch er oppdatert til versjon %0";
 
 // Startup · UpdateCheck
@@ -187,7 +189,7 @@
 
 // UI · SupportWindow
 "Close" = "Lukk";
-"Support text" = "Takk for at du bruker Perch.\n\nPerch er gratis og har åpen kildekode, og det utvikles og vedlikeholdes på fritiden. Hvis det gjør dagen din litt enklere, hjelper et bidrag med å holde det i gang.";
+"Support text" = "Takk for at du bruker Perch.\n\nPerch er gratis og åpen kildekode, og utvikles og vedlikeholdes på fritiden. Hvis den gjør hverdagen din litt enklere, hjelper et bidrag med å holde den i gang.";
 "Support Perch" = "Støtt Perch";
 "Donate" = "Doner";
 
@@ -196,33 +198,33 @@
 
 // Views · SettingsShell
 "Report a bug" = "Rapporter en feil";
-"Support the application" = "Støtt appen";
-"Close application" = "Lukk appen";
-"Toggle the module" = "Slå modulen av/på";
+"Support the application" = "Støtt programmet";
+"Close application" = "Avslutt programmet";
+"Toggle the module" = "Slå modulen av eller på";
 "Modules" = "Moduler";
 "Search" = "Søk";
 "Preview" = "Forhåndsvisning";
-"Support" = "Støtt";
+"Support" = "Støtte";
 "Pause the Perch" = "Sett Perch på pause";
 
 // Views · Setup
-"Perch Setup" = "Perch-oppsett";
+"Perch Setup" = "Oppsett av Perch";
 "Previous" = "Forrige";
 "Previous page" = "Forrige side";
 "Welcome to Perch" = "Velkommen til Perch";
 "welcome_message" = "Perch legger en systemmonitor, en appstarter og en vindusveksler i menylinjen. Dette korte oppsettet velger hva som skal vises først.";
 "Select preset" = "Velg forhåndsinnstilling";
-"select_preset_message" = "Velg modulene du vil starte med. Du kan endre alt senere i Innstillinger.";
-"Start the application automatically when starting your Mac" = "Start appen automatisk når du starter Macen";
-"Do not start the application automatically when starting your Mac" = "Ikke start appen automatisk når du starter Macen";
+"select_preset_message" = "Velg et utgangspunkt med moduler. Du kan endre alt senere i Innstillinger.";
+"Start the application automatically when starting your Mac" = "Åpne programmet automatisk når Macen starter";
+"Do not start the application automatically when starting your Mac" = "Ikke åpne programmet automatisk når Macen starter";
 "Do everything silently in the background (recommended)" = "Gjør alt stille i bakgrunnen (anbefales)";
 "Check for a new version on startup" = "Se etter en ny versjon ved oppstart";
 "Check for a new version every day (once a day)" = "Se etter en ny versjon hver dag (én gang om dagen)";
 "Check for a new version every week (once a week)" = "Se etter en ny versjon hver uke (én gang i uken)";
 "Check for a new version every month (once a month)" = "Se etter en ny versjon hver måned (én gang i måneden)";
-"Never check for updates (not recommended)" = "Se aldri etter oppdateringer (anbefales ikke)";
-"The configuration is completed" = "Oppsettet er fullført";
-"finish_setup_message" = "Alt er klart.\n\nPerch er gratis og har åpen kildekode. Hvis du har nytte av det, kan du støtte utviklingen.";
+"Never check for updates (not recommended)" = "Aldri se etter oppdateringer (anbefales ikke)";
+"The configuration is completed" = "Konfigureringen er fullført";
+"finish_setup_message" = "Alt er klart.\n\nPerch er gratis og åpen kildekode. Hvis du har nytte av den, kan du støtte utviklingen.";
 
 // Views · SetupFlow
 "Next" = "Neste";

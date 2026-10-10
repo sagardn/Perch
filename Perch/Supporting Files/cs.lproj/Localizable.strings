@@ -1,10 +1,12 @@
 /*
  * Localizable.strings — Perch, Czech.
  *
- * The source every other language is checked against: `python3 Tools/i18n.py`
- * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
- * in step with the code. %0, %1 ... are filled in by `localized()` in
- * Perch/UI/Localized.swift and must survive translation.
+ * Translated from en.lproj, which is the source: `python3 Tools/i18n.py`
+ * keeps this file in step with it. %0, %1 ... are filled in by
+ * `localized()` in Perch/UI/Localized.swift and must survive translation.
+ *
+ * Machine-translated on 2026-10-10, from the English alone, and not yet
+ * reviewed by a native speaker. Corrections are welcome.
  */
 
 // Monitor · CPUModuleShell
@@ -22,7 +24,7 @@
 "Clock" = "Frekvence";
 "Processor" = "Procesor";
 "Cores" = "Jádra";
-"Uptime" = "Doba běhu";
+"Uptime" = "Doba provozu";
 "System" = "Systém";
 "User" = "Uživatel";
 "CPU usage threshold" = "Práh využití CPU";
@@ -30,7 +32,7 @@
 "Temperature" = "Teplota";
 
 // Monitor · CombinedBar
-"No module has anything to show here yet." = "Žádný modul tu zatím nemá co zobrazit.";
+"No module has anything to show here yet." = "Zatím tu žádný modul nemá co zobrazit.";
 "Combined modules" = "Sloučené moduly";
 "Combined details" = "Sloučené podrobnosti";
 
@@ -41,12 +43,12 @@
 
 // Monitor · DiskPopup
 "Format" = "Formát";
-"Used" = "Obsazeno";
+"Used" = "Využito";
 "Free" = "Volné";
-"Disk usage threshold" = "Práh zaplnění disku";
+"Disk usage threshold" = "Práh využití disku";
 
 // Monitor · DiskTile
-"free" = "volno";
+"free" = "volné";
 
 // Monitor · GPUModuleShell
 "GPU" = "GPU";
@@ -68,9 +70,9 @@
 // Monitor · MenuBarStyle
 "Name" = "Název";
 "Figure" = "Číslo";
-"Ring" = "Prstenec";
+"Ring" = "Kruh";
 "Gauge" = "Ukazatel";
-"Used and free" = "Obsazeno a volno";
+"Used and free" = "Využité a volné";
 "Rates" = "Rychlosti";
 "Bar chart" = "Sloupcový graf";
 "Line chart" = "Čárový graf";
@@ -80,8 +82,8 @@
 "Network" = "Síť";
 "Internet connection lost" = "Připojení k internetu bylo ztraceno";
 "Internet connection established" = "Připojení k internetu bylo navázáno";
-"Tell me when" = "Oznámit, když";
-"Connection comes or goes" = "Připojení se objeví nebo zmizí";
+"Tell me when" = "Dej mi vědět, když";
+"Connection comes or goes" = "Připojení naskočí nebo vypadne";
 "Wi-Fi network changes" = "Změní se síť Wi-Fi";
 "Interface changes" = "Změní se rozhraní";
 "Local address changes" = "Změní se místní adresa";
@@ -99,7 +101,7 @@
 "Dashboard" = "Přehled";
 
 // Monitor · PopupParts
-"Idle" = "Nečinnost";
+"Idle" = "Nečinné";
 
 // Monitor · PopupSection
 "Process" = "Proces";
@@ -110,7 +112,7 @@
 // Monitor · RAMPopup
 "Wired" = "Vyhrazená";
 "Compressed" = "Komprimovaná";
-"Swap size" = "Velikost odkládání";
+"Swap size" = "Velikost odkládacího prostoru";
 "Memory threshold" = "Práh paměti";
 
 // Monitor · RAMTile
@@ -123,15 +125,15 @@
 
 // Monitor · SensorsModuleShell
 "Sensors" = "Senzory";
-"Show in the popup" = "Zobrazit v překryvném okně";
+"Show in the popup" = "Zobrazit ve vyskakovacím okně";
 "Hottest temperature" = "Nejvyšší teplota";
 
 // Monitor · SensorsPopup
 "History" = "Historie";
 
 // Monitor · SensorsTile
-"hottest" = "max.";
-"sensors" = "senzorů";
+"hottest" = "nejvyšší";
+"sensors" = "senzory";
 "No sensors answered" = "Žádný senzor neodpověděl";
 
 // Monitor · Thresholds
@@ -144,18 +146,18 @@
 "Memory used" = "Využitá paměť";
 "Memory free" = "Volná paměť";
 "Swap in use" = "Využité odkládání";
-"Disk usage" = "Zaplnění disku";
+"Disk usage" = "Využití disku";
 
 // Settings · GeneralPane
 "Reset" = "Obnovit";
-"Silent" = "Na pozadí";
+"Silent" = "Tiše";
 "Settings" = "Nastavení";
-"Check for updates" = "Hledat aktualizace";
+"Check for updates" = "Vyhledat aktualizace";
 "Once per day" = "Jednou denně";
 "Once per week" = "Jednou týdně";
 "Never" = "Nikdy";
-"Check for update" = "Vyhledat aktualizace";
-"Start at login" = "Otevřít při přihlášení";
+"Check for update" = "Vyhledat aktualizaci";
+"Start at login" = "Spustit po přihlášení";
 "Spacing" = "Rozestupy";
 "Celsius" = "Celsius";
 "Fahrenheit" = "Fahrenheit";
@@ -165,7 +167,7 @@
 "Once per month" = "Jednou měsíčně";
 
 // Startup · Startup
-"Successfully updated" = "Aktualizace proběhla";
+"Successfully updated" = "Aktualizace proběhla úspěšně";
 "Perch was updated to v" = "Perch byl aktualizován na verzi %0";
 
 // Startup · UpdateCheck
@@ -187,7 +189,7 @@
 
 // UI · SupportWindow
 "Close" = "Zavřít";
-"Support text" = "Děkujeme, že používáte Perch.\n\nPerch je zdarma a má otevřený zdrojový kód. Vzniká a udržuje se ve volném čase. Pokud vám alespoň trochu usnadňuje den, příspěvek pomůže v jeho dalším vývoji.";
+"Support text" = "Děkujeme, že používáte Perch.\n\nPerch je zdarma a s otevřeným zdrojovým kódem a vzniká a udržuje se ve volném čase. Pokud vám trochu usnadňuje den, příspěvek pomůže v jeho dalším vývoji.";
 "Support Perch" = "Podpořit Perch";
 "Donate" = "Přispět";
 
@@ -209,20 +211,20 @@
 "Perch Setup" = "Nastavení Perch";
 "Previous" = "Zpět";
 "Previous page" = "Předchozí stránka";
-"Welcome to Perch" = "Vítejte v Perch";
-"welcome_message" = "Perch přidá do řádku nabídek monitor systému, spouštěč aplikací a přepínač oken. V tomto krátkém nastavení vyberete, co se má zobrazit nejdřív.";
-"Select preset" = "Vyberte sadu";
-"select_preset_message" = "Vyberte počáteční sadu modulů. Cokoli z toho můžete později změnit v Nastavení.";
-"Start the application automatically when starting your Mac" = "Otevírat aplikaci automaticky při spuštění Macu";
-"Do not start the application automatically when starting your Mac" = "Neotevírat aplikaci automaticky při spuštění Macu";
-"Do everything silently in the background (recommended)" = "Dělat vše nenápadně na pozadí (doporučeno)";
+"Welcome to Perch" = "Vítá vás Perch";
+"welcome_message" = "Perch přidá do řádku nabídek monitor systému, spouštěč aplikací a přepínač oken. V tomto krátkém nastavení vyberete, co se zobrazí jako první.";
+"Select preset" = "Vyberte předvolbu";
+"select_preset_message" = "Vyberte výchozí sadu modulů. Cokoli z ní můžete později změnit v Nastavení.";
+"Start the application automatically when starting your Mac" = "Spouštět aplikaci automaticky po zapnutí Macu";
+"Do not start the application automatically when starting your Mac" = "Nespouštět aplikaci automaticky po zapnutí Macu";
+"Do everything silently in the background (recommended)" = "Dělat vše tiše na pozadí (doporučeno)";
 "Check for a new version on startup" = "Hledat novou verzi při spuštění";
 "Check for a new version every day (once a day)" = "Hledat novou verzi každý den (jednou denně)";
 "Check for a new version every week (once a week)" = "Hledat novou verzi každý týden (jednou týdně)";
 "Check for a new version every month (once a month)" = "Hledat novou verzi každý měsíc (jednou měsíčně)";
 "Never check for updates (not recommended)" = "Nikdy nehledat aktualizace (nedoporučeno)";
 "The configuration is completed" = "Nastavení je dokončeno";
-"finish_setup_message" = "Vše je připraveno.\n\nPerch je zdarma a má otevřený zdrojový kód. Pokud je pro vás užitečný, můžete podpořit jeho vývoj.";
+"finish_setup_message" = "Vše je připraveno.\n\nPerch je zdarma a s otevřeným zdrojovým kódem. Pokud vám je užitečný, můžete podpořit jeho vývoj.";
 
 // Views · SetupFlow
 "Next" = "Další";
@@ -231,5 +233,5 @@
 "Finish setup" = "Dokončit nastavení";
 "Default" = "Výchozí";
 "Basic" = "Základní";
-"Recommended" = "Doporučená";
-"Extended" = "Rozšířená";
+"Recommended" = "Doporučené";
+"Extended" = "Rozšířené";

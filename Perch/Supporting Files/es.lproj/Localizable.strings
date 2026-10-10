@@ -1,10 +1,12 @@
 /*
  * Localizable.strings — Perch, Spanish.
  *
- * The source every other language is checked against: `python3 Tools/i18n.py`
- * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
- * in step with the code. %0, %1 ... are filled in by `localized()` in
- * Perch/UI/Localized.swift and must survive translation.
+ * Translated from en.lproj, which is the source: `python3 Tools/i18n.py`
+ * keeps this file in step with it. %0, %1 ... are filled in by
+ * `localized()` in Perch/UI/Localized.swift and must survive translation.
+ *
+ * Machine-translated on 2026-10-10, from the English alone, and not yet
+ * reviewed by a native speaker. Corrections are welcome.
  */
 
 // Monitor · CPUModuleShell
@@ -37,7 +39,7 @@
 // Monitor · DiskModuleShell
 "Disk" = "Disco";
 "Startup volume" = "Volumen de arranque";
-"not mounted" = "sin montar";
+"not mounted" = "no montado";
 
 // Monitor · DiskPopup
 "Format" = "Formato";
@@ -46,7 +48,7 @@
 "Disk usage threshold" = "Umbral de uso del disco";
 
 // Monitor · DiskTile
-"free" = "libres";
+"free" = "libre";
 
 // Monitor · GPUModuleShell
 "GPU" = "GPU";
@@ -54,7 +56,7 @@
 // Monitor · GPUPopup
 "Memory" = "Memoria";
 "Model" = "Modelo";
-"Utilization" = "Uso";
+"Utilization" = "Utilización";
 "GPU usage threshold" = "Umbral de uso de GPU";
 
 // Monitor · GPUTile
@@ -62,8 +64,8 @@
 
 // Monitor · MemoryReadings
 "Normal" = "Normal";
-"Warning" = "Aviso";
-"Critical" = "Crítica";
+"Warning" = "Advertencia";
+"Critical" = "Crítico";
 
 // Monitor · MenuBarStyle
 "Name" = "Nombre";
@@ -72,16 +74,16 @@
 "Gauge" = "Indicador";
 "Used and free" = "Usado y libre";
 "Rates" = "Velocidades";
-"Bar chart" = "Barras";
-"Line chart" = "Líneas";
-"Traffic chart" = "Tráfico";
+"Bar chart" = "Gráfico de barras";
+"Line chart" = "Gráfico de líneas";
+"Traffic chart" = "Gráfico de tráfico";
 
 // Monitor · NetworkModuleShell
 "Network" = "Red";
 "Internet connection lost" = "Conexión a internet perdida";
 "Internet connection established" = "Conexión a internet establecida";
 "Tell me when" = "Avisarme cuando";
-"Connection comes or goes" = "La conexión va y viene";
+"Connection comes or goes" = "La conexión aparece o se pierde";
 "Wi-Fi network changes" = "Cambia la red Wi-Fi";
 "Interface changes" = "Cambia la interfaz";
 "Local address changes" = "Cambia la dirección local";
@@ -108,7 +110,7 @@
 "RAM" = "RAM";
 
 // Monitor · RAMPopup
-"Wired" = "No paginable";
+"Wired" = "Fija";
 "Compressed" = "Comprimida";
 "Swap size" = "Tamaño de intercambio";
 "Memory threshold" = "Umbral de memoria";
@@ -116,23 +118,23 @@
 // Monitor · RAMTile
 "App" = "App";
 "Swap" = "Intercambio";
-"Pressure" = "Presión de memoria";
+"Pressure" = "Presión";
 
 // Monitor · SensorReadings
 "Battery" = "Batería";
 
 // Monitor · SensorsModuleShell
 "Sensors" = "Sensores";
-"Show in the popup" = "Mostrar en la ventana";
-"Hottest temperature" = "Temperatura máxima";
+"Show in the popup" = "Mostrar en la ventana emergente";
+"Hottest temperature" = "Temperatura más alta";
 
 // Monitor · SensorsPopup
 "History" = "Historial";
 
 // Monitor · SensorsTile
-"hottest" = "máx.";
+"hottest" = "más caliente";
 "sensors" = "sensores";
-"No sensors answered" = "Ningún sensor ha respondido";
+"No sensors answered" = "Ningún sensor respondió";
 
 // Monitor · Thresholds
 "Total load" = "Carga total";
@@ -143,7 +145,7 @@
 "Memory pressure" = "Presión de memoria";
 "Memory used" = "Memoria usada";
 "Memory free" = "Memoria libre";
-"Swap in use" = "Intercambio usado";
+"Swap in use" = "Intercambio en uso";
 "Disk usage" = "Uso del disco";
 
 // Settings · GeneralPane
@@ -161,7 +163,7 @@
 "Fahrenheit" = "Fahrenheit";
 
 // Settings · UpdateInterval
-"At start" = "Al abrir";
+"At start" = "Al iniciar";
 "Once per month" = "Una vez al mes";
 
 // Startup · Startup
@@ -196,13 +198,13 @@
 
 // Views · SettingsShell
 "Report a bug" = "Informar de un error";
-"Support the application" = "Apoyar la app";
-"Close application" = "Salir de la app";
+"Support the application" = "Apoyar la aplicación";
+"Close application" = "Cerrar la aplicación";
 "Toggle the module" = "Activar o desactivar el módulo";
 "Modules" = "Módulos";
 "Search" = "Buscar";
 "Preview" = "Vista previa";
-"Support" = "Apoyo";
+"Support" = "Apoyar";
 "Pause the Perch" = "Pausar Perch";
 
 // Views · Setup
@@ -212,23 +214,23 @@
 "Welcome to Perch" = "Te damos la bienvenida a Perch";
 "welcome_message" = "Perch pone un monitor del sistema, un lanzador de apps y un selector de ventanas en tu barra de menús. Esta breve configuración elige qué mostrar primero.";
 "Select preset" = "Seleccionar preajuste";
-"select_preset_message" = "Elige un conjunto inicial de módulos. Puedes cambiarlo todo más adelante en Ajustes.";
-"Start the application automatically when starting your Mac" = "Abrir la app automáticamente al arrancar el Mac";
-"Do not start the application automatically when starting your Mac" = "No abrir la app automáticamente al arrancar el Mac";
+"select_preset_message" = "Elige un conjunto inicial de módulos. Puedes cambiar cualquier cosa más tarde en Ajustes.";
+"Start the application automatically when starting your Mac" = "Abrir la aplicación automáticamente al arrancar el Mac";
+"Do not start the application automatically when starting your Mac" = "No abrir la aplicación automáticamente al arrancar el Mac";
 "Do everything silently in the background (recommended)" = "Hacerlo todo en silencio en segundo plano (recomendado)";
-"Check for a new version on startup" = "Buscar una nueva versión al abrir";
+"Check for a new version on startup" = "Buscar una nueva versión al iniciar";
 "Check for a new version every day (once a day)" = "Buscar una nueva versión cada día (una vez al día)";
 "Check for a new version every week (once a week)" = "Buscar una nueva versión cada semana (una vez a la semana)";
 "Check for a new version every month (once a month)" = "Buscar una nueva versión cada mes (una vez al mes)";
 "Never check for updates (not recommended)" = "No buscar nunca actualizaciones (no recomendado)";
-"The configuration is completed" = "La configuración ha terminado";
+"The configuration is completed" = "La configuración ha finalizado";
 "finish_setup_message" = "Todo listo.\n\nPerch es gratuito y de código abierto. Si te resulta útil, puedes apoyar su desarrollo.";
 
 // Views · SetupFlow
 "Next" = "Siguiente";
 "Next page" = "Página siguiente";
 "Finish" = "Terminar";
-"Finish setup" = "Terminar configuración";
+"Finish setup" = "Terminar la configuración";
 "Default" = "Predeterminado";
 "Basic" = "Básico";
 "Recommended" = "Recomendado";

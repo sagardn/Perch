@@ -1,10 +1,12 @@
 /*
  * Localizable.strings — Perch, Catalan.
  *
- * The source every other language is checked against: `python3 Tools/i18n.py`
- * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
- * in step with the code. %0, %1 ... are filled in by `localized()` in
- * Perch/UI/Localized.swift and must survive translation.
+ * Translated from en.lproj, which is the source: `python3 Tools/i18n.py`
+ * keeps this file in step with it. %0, %1 ... are filled in by
+ * `localized()` in Perch/UI/Localized.swift and must survive translation.
+ *
+ * Machine-translated on 2026-10-10, from the English alone, and not yet
+ * reviewed by a native speaker. Corrections are welcome.
  */
 
 // Monitor · CPUModuleShell
@@ -16,7 +18,7 @@
 "1 minute" = "1 minut";
 "5 minutes" = "5 minuts";
 "Menu bar" = "Barra de menús";
-"Notify me when" = "Notifica’m quan";
+"Notify me when" = "Avisa'm quan";
 
 // Monitor · CPUPopup
 "Clock" = "Freqüència";
@@ -25,28 +27,28 @@
 "Uptime" = "Temps actiu";
 "System" = "Sistema";
 "User" = "Usuari";
-"CPU usage threshold" = "Llindar d’ús de la CPU";
+"CPU usage threshold" = "Llindar d'ús de la CPU";
 "Total" = "Total";
 "Temperature" = "Temperatura";
 
 // Monitor · CombinedBar
-"No module has anything to show here yet." = "Encara no hi ha cap mòdul amb res a mostrar aquí.";
+"No module has anything to show here yet." = "Encara no hi ha cap mòdul amb res per mostrar aquí.";
 "Combined modules" = "Mòduls combinats";
 "Combined details" = "Detalls combinats";
 
 // Monitor · DiskModuleShell
 "Disk" = "Disc";
-"Startup volume" = "Volum d’arrencada";
+"Startup volume" = "Volum d'arrencada";
 "not mounted" = "no muntat";
 
 // Monitor · DiskPopup
 "Format" = "Format";
-"Used" = "Utilitzat";
+"Used" = "En ús";
 "Free" = "Lliure";
-"Disk usage threshold" = "Llindar d’ús del disc";
+"Disk usage threshold" = "Llindar d'ús del disc";
 
 // Monitor · DiskTile
-"free" = "lliures";
+"free" = "lliure";
 
 // Monitor · GPUModuleShell
 "GPU" = "GPU";
@@ -55,7 +57,7 @@
 "Memory" = "Memòria";
 "Model" = "Model";
 "Utilization" = "Ús";
-"GPU usage threshold" = "Llindar d’ús de la GPU";
+"GPU usage threshold" = "Llindar d'ús de la GPU";
 
 // Monitor · GPUTile
 "cores" = "nuclis";
@@ -63,36 +65,36 @@
 // Monitor · MemoryReadings
 "Normal" = "Normal";
 "Warning" = "Avís";
-"Critical" = "Crítica";
+"Critical" = "Crític";
 
 // Monitor · MenuBarStyle
 "Name" = "Nom";
 "Figure" = "Xifra";
 "Ring" = "Anell";
 "Gauge" = "Indicador";
-"Used and free" = "Utilitzat i lliure";
+"Used and free" = "En ús i lliure";
 "Rates" = "Velocitats";
-"Bar chart" = "Barres";
-"Line chart" = "Línies";
-"Traffic chart" = "Trànsit";
+"Bar chart" = "Gràfic de barres";
+"Line chart" = "Gràfic de línies";
+"Traffic chart" = "Gràfic de trànsit";
 
 // Monitor · NetworkModuleShell
 "Network" = "Xarxa";
-"Internet connection lost" = "S’ha perdut la connexió a internet";
-"Internet connection established" = "S’ha establert la connexió a internet";
-"Tell me when" = "Avisa’m quan";
-"Connection comes or goes" = "La connexió va i ve";
+"Internet connection lost" = "S'ha perdut la connexió a Internet";
+"Internet connection established" = "S'ha establert la connexió a Internet";
+"Tell me when" = "Digues-me quan";
+"Connection comes or goes" = "La connexió apareix o desapareix";
 "Wi-Fi network changes" = "Canvia la xarxa Wi-Fi";
 "Interface changes" = "Canvia la interfície";
-"Local address changes" = "Canvia l’adreça local";
-"Public address changes" = "Canvia l’adreça pública";
+"Local address changes" = "Canvia l'adreça local";
+"Public address changes" = "Canvia l'adreça pública";
 
 // Monitor · NetworkPopup
 "Download" = "Baixada";
 "Local IP" = "IP local";
 "Interface" = "Interfície";
 "Physical address" = "Adreça física";
-"Online" = "Connectat";
+"Online" = "En línia";
 "Offline" = "Sense connexió";
 
 // Monitor · Popup
@@ -108,53 +110,53 @@
 "RAM" = "RAM";
 
 // Monitor · RAMPopup
-"Wired" = "Permanent";
+"Wired" = "Fixa";
 "Compressed" = "Comprimida";
-"Swap size" = "Mida de l’intercanvi";
+"Swap size" = "Mida de l'intercanvi";
 "Memory threshold" = "Llindar de memòria";
 
 // Monitor · RAMTile
 "App" = "App";
 "Swap" = "Intercanvi";
-"Pressure" = "Pressió de memòria";
+"Pressure" = "Pressió";
 
 // Monitor · SensorReadings
 "Battery" = "Bateria";
 
 // Monitor · SensorsModuleShell
 "Sensors" = "Sensors";
-"Show in the popup" = "Mostra a la finestra";
-"Hottest temperature" = "Temperatura màxima";
+"Show in the popup" = "Mostra a la finestra emergent";
+"Hottest temperature" = "Temperatura més alta";
 
 // Monitor · SensorsPopup
 "History" = "Historial";
 
 // Monitor · SensorsTile
-"hottest" = "màx.";
+"hottest" = "màxima";
 "sensors" = "sensors";
-"No sensors answered" = "Cap sensor no ha respost";
+"No sensors answered" = "Cap sensor ha respost";
 
 // Monitor · Thresholds
 "Total load" = "Càrrega total";
 "System load" = "Càrrega del sistema";
-"User load" = "Càrrega de l’usuari";
-"Efficiency cores load" = "Càrrega dels nuclis d’eficiència";
+"User load" = "Càrrega de l'usuari";
+"Efficiency cores load" = "Càrrega dels nuclis d'eficiència";
 "Performance cores load" = "Càrrega dels nuclis de rendiment";
 "Memory pressure" = "Pressió de memòria";
-"Memory used" = "Memòria utilitzada";
+"Memory used" = "Memòria en ús";
 "Memory free" = "Memòria lliure";
-"Swap in use" = "Intercanvi utilitzat";
+"Swap in use" = "Intercanvi en ús";
 "Disk usage" = "Ús del disc";
 
 // Settings · GeneralPane
 "Reset" = "Restableix";
 "Silent" = "Silenciós";
 "Settings" = "Configuració";
-"Check for updates" = "Busca actualitzacions";
+"Check for updates" = "Cerca actualitzacions";
 "Once per day" = "Un cop al dia";
 "Once per week" = "Un cop a la setmana";
 "Never" = "Mai";
-"Check for update" = "Busca una actualització";
+"Check for update" = "Cerca una actualització";
 "Start at login" = "Obre en iniciar la sessió";
 "Spacing" = "Espaiat";
 "Celsius" = "Celsius";
@@ -165,12 +167,12 @@
 "Once per month" = "Un cop al mes";
 
 // Startup · Startup
-"Successfully updated" = "S’ha actualitzat correctament";
-"Perch was updated to v" = "El Perch s’ha actualitzat a la versió %0";
+"Successfully updated" = "Actualitzat correctament";
+"Perch was updated to v" = "Perch s'ha actualitzat a la versió %0";
 
 // Startup · UpdateCheck
-"New version available" = "Nova versió disponible";
-"Click to install the new version of Perch" = "Fes clic per instal·lar la nova versió del Perch";
+"New version available" = "Hi ha una versió nova disponible";
+"Click to install the new version of Perch" = "Fes clic per instal·lar la versió nova de Perch";
 
 // System · DashboardPane
 "Unknown" = "Desconegut";
@@ -180,55 +182,55 @@
 "Production year" = "Any de fabricació";
 "Number of cores" = "%0 nuclis";
 "Number of threads" = "%0 fils";
-"Number of e-cores" = "%0 nuclis d’eficiència";
+"Number of e-cores" = "%0 nuclis d'eficiència";
 "Number of p-cores" = "%0 nuclis de rendiment";
-"Disks" = "Discos";
+"Disks" = "Discs";
 "Display" = "Pantalla";
 
 // UI · SupportWindow
 "Close" = "Tanca";
-"Support text" = "Gràcies per fer servir el Perch.\n\nEl Perch és gratuït i de codi obert, i es desenvolupa i manté en temps lliure. Si et fa el dia una mica més fàcil, una contribució ajuda a mantenir-lo viu.";
-"Support Perch" = "Dona suport al Perch";
+"Support text" = "Gràcies per fer servir Perch.\n\nPerch és gratuït i de codi obert, i es crea i es manté en el temps lliure. Si et fa el dia una mica més fàcil, una contribució ajuda a mantenir-lo viu.";
+"Support Perch" = "Dona suport a Perch";
 "Donate" = "Fes un donatiu";
 
 // Update · UpdateWindow
 "Install" = "Instal·la";
 
 // Views · SettingsShell
-"Report a bug" = "Informa d’un error";
-"Support the application" = "Dona suport a l’app";
-"Close application" = "Surt de l’app";
+"Report a bug" = "Informa d'un error";
+"Support the application" = "Dona suport a l'aplicació";
+"Close application" = "Tanca l'aplicació";
 "Toggle the module" = "Activa o desactiva el mòdul";
 "Modules" = "Mòduls";
 "Search" = "Cerca";
 "Preview" = "Previsualització";
 "Support" = "Suport";
-"Pause the Perch" = "Posa en pausa el Perch";
+"Pause the Perch" = "Posa en pausa Perch";
 
 // Views · Setup
-"Perch Setup" = "Configuració del Perch";
+"Perch Setup" = "Configuració de Perch";
 "Previous" = "Anterior";
 "Previous page" = "Pàgina anterior";
-"Welcome to Perch" = "Et donem la benvinguda al Perch";
-"welcome_message" = "El Perch posa un monitor del sistema, un llançador d’apps i un selector de finestres a la barra de menús. Aquesta configuració breu tria què es mostra primer.";
-"Select preset" = "Selecciona un valor predefinit";
-"select_preset_message" = "Tria un conjunt inicial de mòduls. Ho pots canviar tot més endavant a Configuració.";
-"Start the application automatically when starting your Mac" = "Obre l’app automàticament en arrencar el Mac";
-"Do not start the application automatically when starting your Mac" = "No obris l’app automàticament en arrencar el Mac";
+"Welcome to Perch" = "Et donem la benvinguda a Perch";
+"welcome_message" = "Perch posa un monitor del sistema, un llançador d'apps i un commutador de finestres a la barra de menús. Aquesta configuració breu tria què es mostra primer.";
+"Select preset" = "Tria una configuració predefinida";
+"select_preset_message" = "Tria un conjunt inicial de mòduls. Pots canviar-ho tot més endavant a Configuració.";
+"Start the application automatically when starting your Mac" = "Obre l'aplicació automàticament en iniciar el Mac";
+"Do not start the application automatically when starting your Mac" = "No obris l'aplicació automàticament en iniciar el Mac";
 "Do everything silently in the background (recommended)" = "Fes-ho tot en silenci en segon pla (recomanat)";
-"Check for a new version on startup" = "Busca una versió nova en obrir";
-"Check for a new version every day (once a day)" = "Busca una versió nova cada dia (un cop al dia)";
-"Check for a new version every week (once a week)" = "Busca una versió nova cada setmana (un cop a la setmana)";
-"Check for a new version every month (once a month)" = "Busca una versió nova cada mes (un cop al mes)";
-"Never check for updates (not recommended)" = "No busquis mai actualitzacions (no recomanat)";
-"The configuration is completed" = "La configuració s’ha completat";
-"finish_setup_message" = "Ja està tot a punt.\n\nEl Perch és gratuït i de codi obert. Si et resulta útil, pots donar suport al seu desenvolupament.";
+"Check for a new version on startup" = "Cerca una versió nova en obrir l'app";
+"Check for a new version every day (once a day)" = "Cerca una versió nova cada dia (un cop al dia)";
+"Check for a new version every week (once a week)" = "Cerca una versió nova cada setmana (un cop a la setmana)";
+"Check for a new version every month (once a month)" = "Cerca una versió nova cada mes (un cop al mes)";
+"Never check for updates (not recommended)" = "No cerquis mai actualitzacions (no recomanat)";
+"The configuration is completed" = "La configuració s'ha completat";
+"finish_setup_message" = "Ja està tot a punt.\n\nPerch és gratuït i de codi obert. Si et resulta útil, pots donar suport al seu desenvolupament.";
 
 // Views · SetupFlow
 "Next" = "Següent";
 "Next page" = "Pàgina següent";
-"Finish" = "Acaba";
-"Finish setup" = "Acaba la configuració";
+"Finish" = "Finalitza";
+"Finish setup" = "Finalitza la configuració";
 "Default" = "Per omissió";
 "Basic" = "Bàsic";
 "Recommended" = "Recomanat";

@@ -1,17 +1,19 @@
 /*
  * Localizable.strings — Perch, Finnish.
  *
- * The source every other language is checked against: `python3 Tools/i18n.py`
- * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
- * in step with the code. %0, %1 ... are filled in by `localized()` in
- * Perch/UI/Localized.swift and must survive translation.
+ * Translated from en.lproj, which is the source: `python3 Tools/i18n.py`
+ * keeps this file in step with it. %0, %1 ... are filled in by
+ * `localized()` in Perch/UI/Localized.swift and must survive translation.
+ *
+ * Machine-translated on 2026-10-10, from the English alone, and not yet
+ * reviewed by a native speaker. Corrections are welcome.
  */
 
 // Monitor · CPUModuleShell
 "CPU" = "CPU";
 "None" = "Ei mitään";
 "2 minutes" = "2 minuuttia";
-"Chart history" = "Kaaviohistoria";
+"Chart history" = "Kaavion historia";
 "Top processes" = "Raskaimmat prosessit";
 "1 minute" = "1 minuutti";
 "5 minutes" = "5 minuuttia";
@@ -20,30 +22,30 @@
 
 // Monitor · CPUPopup
 "Clock" = "Kellotaajuus";
-"Processor" = "Prosessori";
+"Processor" = "Suoritin";
 "Cores" = "Ytimet";
 "Uptime" = "Käynnissäoloaika";
 "System" = "Järjestelmä";
 "User" = "Käyttäjä";
-"CPU usage threshold" = "CPU-käytön kynnys";
+"CPU usage threshold" = "CPU-käytön raja";
 "Total" = "Yhteensä";
 "Temperature" = "Lämpötila";
 
 // Monitor · CombinedBar
-"No module has anything to show here yet." = "Millään moduulilla ei ole vielä mitään näytettävää.";
+"No module has anything to show here yet." = "Millään moduulilla ei ole vielä täällä mitään näytettävää.";
 "Combined modules" = "Yhdistetyt moduulit";
 "Combined details" = "Yhdistetyt tiedot";
 
 // Monitor · DiskModuleShell
 "Disk" = "Levy";
-"Startup volume" = "Käynnistystaltio";
+"Startup volume" = "Käynnistysasema";
 "not mounted" = "ei liitetty";
 
 // Monitor · DiskPopup
 "Format" = "Muoto";
-"Used" = "Käytetty";
+"Used" = "Käytössä";
 "Free" = "Vapaana";
-"Disk usage threshold" = "Levyn käytön kynnys";
+"Disk usage threshold" = "Levyn käytön raja";
 
 // Monitor · DiskTile
 "free" = "vapaana";
@@ -55,7 +57,7 @@
 "Memory" = "Muisti";
 "Model" = "Malli";
 "Utilization" = "Käyttöaste";
-"GPU usage threshold" = "GPU-käytön kynnys";
+"GPU usage threshold" = "GPU-käytön raja";
 
 // Monitor · GPUTile
 "cores" = "ydintä";
@@ -70,7 +72,7 @@
 "Figure" = "Luku";
 "Ring" = "Rengas";
 "Gauge" = "Mittari";
-"Used and free" = "Käytetty ja vapaa";
+"Used and free" = "Käytössä ja vapaana";
 "Rates" = "Nopeudet";
 "Bar chart" = "Pylväskaavio";
 "Line chart" = "Viivakaavio";
@@ -79,27 +81,27 @@
 // Monitor · NetworkModuleShell
 "Network" = "Verkko";
 "Internet connection lost" = "Internet-yhteys katkesi";
-"Internet connection established" = "Internet-yhteys muodostettiin";
+"Internet connection established" = "Internet-yhteys muodostettu";
 "Tell me when" = "Kerro, kun";
-"Connection comes or goes" = "Yhteys katkeaa tai palaa";
+"Connection comes or goes" = "Yhteys muodostuu tai katkeaa";
 "Wi-Fi network changes" = "Wi-Fi-verkko vaihtuu";
 "Interface changes" = "Liitäntä vaihtuu";
-"Local address changes" = "Paikallinen osoite vaihtuu";
-"Public address changes" = "Julkinen osoite vaihtuu";
+"Local address changes" = "Paikallinen osoite muuttuu";
+"Public address changes" = "Julkinen osoite muuttuu";
 
 // Monitor · NetworkPopup
 "Download" = "Lataus";
 "Local IP" = "Paikallinen IP";
 "Interface" = "Liitäntä";
 "Physical address" = "Fyysinen osoite";
-"Online" = "Yhteydessä";
-"Offline" = "Ei yhteyttä";
+"Online" = "Verkossa";
+"Offline" = "Ei verkossa";
 
 // Monitor · Popup
 "Dashboard" = "Yleiskatsaus";
 
 // Monitor · PopupParts
-"Idle" = "Joutilas";
+"Idle" = "Jouten";
 
 // Monitor · PopupSection
 "Process" = "Prosessi";
@@ -110,13 +112,13 @@
 // Monitor · RAMPopup
 "Wired" = "Kiinteä";
 "Compressed" = "Pakattu";
-"Swap size" = "Swapin koko";
-"Memory threshold" = "Muistin kynnys";
+"Swap size" = "Sivutustilan koko";
+"Memory threshold" = "Muistin raja";
 
 // Monitor · RAMTile
-"App" = "Appi";
-"Swap" = "Swap";
-"Pressure" = "Paine";
+"App" = "Apit";
+"Swap" = "Sivutus";
+"Pressure" = "Kuormitus";
 
 // Monitor · SensorReadings
 "Battery" = "Akku";
@@ -132,7 +134,7 @@
 // Monitor · SensorsTile
 "hottest" = "kuumin";
 "sensors" = "anturia";
-"No sensors answered" = "Yksikään anturi ei vastannut";
+"No sensors answered" = "Mikään anturi ei vastannut";
 
 // Monitor · Thresholds
 "Total load" = "Kokonaiskuorma";
@@ -140,22 +142,22 @@
 "User load" = "Käyttäjän kuorma";
 "Efficiency cores load" = "Tehokkuusytimien kuorma";
 "Performance cores load" = "Suorituskykyytimien kuorma";
-"Memory pressure" = "Muistipaine";
-"Memory used" = "Käytetty muisti";
-"Memory free" = "Vapaa muisti";
-"Swap in use" = "Swapia käytössä";
+"Memory pressure" = "Muistin kuormitus";
+"Memory used" = "Muistia käytössä";
+"Memory free" = "Muistia vapaana";
+"Swap in use" = "Sivutusta käytössä";
 "Disk usage" = "Levyn käyttö";
 
 // Settings · GeneralPane
 "Reset" = "Nollaa";
-"Silent" = "Hiljaa";
+"Silent" = "Hiljainen";
 "Settings" = "Asetukset";
 "Check for updates" = "Tarkista päivitykset";
 "Once per day" = "Kerran päivässä";
 "Once per week" = "Kerran viikossa";
 "Never" = "Ei koskaan";
 "Check for update" = "Tarkista päivitys";
-"Start at login" = "Avaa kirjauduttaessa";
+"Start at login" = "Käynnistä kirjautuessa";
 "Spacing" = "Välistys";
 "Celsius" = "Celsius";
 "Fahrenheit" = "Fahrenheit";
@@ -176,7 +178,7 @@
 "Unknown" = "Tuntematon";
 "Graphics" = "Grafiikka";
 "Serial number" = "Sarjanumero";
-"Model identifier" = "Mallitunniste";
+"Model identifier" = "Mallin tunniste";
 "Production year" = "Valmistusvuosi";
 "Number of cores" = "%0 ydintä";
 "Number of threads" = "%0 säiettä";
@@ -187,7 +189,7 @@
 
 // UI · SupportWindow
 "Close" = "Sulje";
-"Support text" = "Kiitos, että käytät Perchiä.\n\nPerch on ilmainen ja avointa lähdekoodia, ja sitä kehitetään ja ylläpidetään vapaa-ajalla. Jos se helpottaa päivääsi edes vähän, lahjoitus auttaa pitämään sen hengissä.";
+"Support text" = "Kiitos, että käytät Perchiä.\n\nPerch on ilmainen ja avointa lähdekoodia, ja sitä kehitetään ja ylläpidetään vapaa-ajalla. Jos se helpottaa päivääsi hieman, lahjoitus auttaa pitämään sen käynnissä.";
 "Support Perch" = "Tue Perchiä";
 "Donate" = "Lahjoita";
 
@@ -196,11 +198,11 @@
 
 // Views · SettingsShell
 "Report a bug" = "Ilmoita virheestä";
-"Support the application" = "Tue appia";
-"Close application" = "Sulje appi";
-"Toggle the module" = "Laita moduuli päälle tai pois";
+"Support the application" = "Tue sovellusta";
+"Close application" = "Sulje sovellus";
+"Toggle the module" = "Moduuli päälle/pois";
 "Modules" = "Moduulit";
-"Search" = "Etsi";
+"Search" = "Hae";
 "Preview" = "Esikatselu";
 "Support" = "Tue";
 "Pause the Perch" = "Keskeytä Perch";
@@ -210,17 +212,17 @@
 "Previous" = "Edellinen";
 "Previous page" = "Edellinen sivu";
 "Welcome to Perch" = "Tervetuloa Perchiin";
-"welcome_message" = "Perch tuo valikkoriville järjestelmän valvonnan, appien käynnistimen ja ikkunanvaihtajan. Tässä lyhyessä käyttöönotossa valitaan, mitä näytetään ensin.";
+"welcome_message" = "Perch tuo valikkoriville järjestelmän valvonnan, apien käynnistimen ja ikkunanvaihtajan. Tämä lyhyt käyttöönotto valitsee, mitä näytetään ensin.";
 "Select preset" = "Valitse esiasetus";
-"select_preset_message" = "Valitse moduulit, joilla aloitat. Voit muuttaa mitä tahansa myöhemmin Asetuksissa.";
-"Start the application automatically when starting your Mac" = "Avaa appi automaattisesti, kun Mac käynnistetään";
-"Do not start the application automatically when starting your Mac" = "Älä avaa appia automaattisesti, kun Mac käynnistetään";
+"select_preset_message" = "Valitse moduulien aloitusjoukko. Voit muuttaa mitä tahansa myöhemmin asetuksissa.";
+"Start the application automatically when starting your Mac" = "Käynnistä sovellus automaattisesti, kun Mac käynnistyy";
+"Do not start the application automatically when starting your Mac" = "Älä käynnistä sovellusta automaattisesti, kun Mac käynnistyy";
 "Do everything silently in the background (recommended)" = "Tee kaikki hiljaa taustalla (suositus)";
 "Check for a new version on startup" = "Tarkista uusi versio käynnistettäessä";
-"Check for a new version every day (once a day)" = "Tarkista uusi versio joka päivä (kerran päivässä)";
-"Check for a new version every week (once a week)" = "Tarkista uusi versio joka viikko (kerran viikossa)";
-"Check for a new version every month (once a month)" = "Tarkista uusi versio joka kuukausi (kerran kuukaudessa)";
-"Never check for updates (not recommended)" = "Älä koskaan tarkista päivityksiä (ei suositella)";
+"Check for a new version every day (once a day)" = "Tarkista uusi versio päivittäin (kerran päivässä)";
+"Check for a new version every week (once a week)" = "Tarkista uusi versio viikoittain (kerran viikossa)";
+"Check for a new version every month (once a month)" = "Tarkista uusi versio kuukausittain (kerran kuukaudessa)";
+"Never check for updates (not recommended)" = "Älä koskaan tarkista päivityksiä (ei suositeltu)";
 "The configuration is completed" = "Käyttöönotto on valmis";
 "finish_setup_message" = "Kaikki on valmista.\n\nPerch on ilmainen ja avointa lähdekoodia. Jos siitä on sinulle hyötyä, voit tukea sen kehitystä.";
 

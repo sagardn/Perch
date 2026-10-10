@@ -1,18 +1,20 @@
 /*
  * Localizable.strings — Perch, Hungarian.
  *
- * The source every other language is checked against: `python3 Tools/i18n.py`
- * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
- * in step with the code. %0, %1 ... are filled in by `localized()` in
- * Perch/UI/Localized.swift and must survive translation.
+ * Translated from en.lproj, which is the source: `python3 Tools/i18n.py`
+ * keeps this file in step with it. %0, %1 ... are filled in by
+ * `localized()` in Perch/UI/Localized.swift and must survive translation.
+ *
+ * Machine-translated on 2026-10-10, from the English alone, and not yet
+ * reviewed by a native speaker. Corrections are welcome.
  */
 
 // Monitor · CPUModuleShell
 "CPU" = "CPU";
 "None" = "Nincs";
 "2 minutes" = "2 perc";
-"Chart history" = "Diagramelőzmények";
-"Top processes" = "Legaktívabb folyamatok";
+"Chart history" = "Diagram előzményei";
+"Top processes" = "Leginkább terhelő folyamatok";
 "1 minute" = "1 perc";
 "5 minutes" = "5 perc";
 "Menu bar" = "Menüsor";
@@ -30,9 +32,9 @@
 "Temperature" = "Hőmérséklet";
 
 // Monitor · CombinedBar
-"No module has anything to show here yet." = "Egyik modulnak sincs még itt mit megjelenítenie.";
-"Combined modules" = "Egyesített modulok";
-"Combined details" = "Egyesített részletek";
+"No module has anything to show here yet." = "Egyik modulnak sincs még itt megjeleníthető tartalma.";
+"Combined modules" = "Kombinált modulok";
+"Combined details" = "Kombinált részletek";
 
 // Monitor · DiskModuleShell
 "Disk" = "Lemez";
@@ -41,7 +43,7 @@
 
 // Monitor · DiskPopup
 "Format" = "Formátum";
-"Used" = "Használt";
+"Used" = "Foglalt";
 "Free" = "Szabad";
 "Disk usage threshold" = "Lemezhasználati küszöb";
 
@@ -67,10 +69,10 @@
 
 // Monitor · MenuBarStyle
 "Name" = "Név";
-"Figure" = "Szám";
+"Figure" = "Érték";
 "Ring" = "Gyűrű";
 "Gauge" = "Mérő";
-"Used and free" = "Használt és szabad";
+"Used and free" = "Foglalt és szabad";
 "Rates" = "Sebességek";
 "Bar chart" = "Oszlopdiagram";
 "Line chart" = "Vonaldiagram";
@@ -78,8 +80,8 @@
 
 // Monitor · NetworkModuleShell
 "Network" = "Hálózat";
-"Internet connection lost" = "Megszakadt az internetkapcsolat";
-"Internet connection established" = "Létrejött az internetkapcsolat";
+"Internet connection lost" = "Az internetkapcsolat megszakadt";
+"Internet connection established" = "Az internetkapcsolat létrejött";
 "Tell me when" = "Szólj, ha";
 "Connection comes or goes" = "A kapcsolat létrejön vagy megszakad";
 "Wi-Fi network changes" = "Megváltozik a Wi-Fi-hálózat";
@@ -96,7 +98,7 @@
 "Offline" = "Offline";
 
 // Monitor · Popup
-"Dashboard" = "Áttekintés";
+"Dashboard" = "Irányítópult";
 
 // Monitor · PopupParts
 "Idle" = "Tétlen";
@@ -116,7 +118,7 @@
 // Monitor · RAMTile
 "App" = "App";
 "Swap" = "Swap";
-"Pressure" = "Nyomás";
+"Pressure" = "Terhelés";
 
 // Monitor · SensorReadings
 "Battery" = "Akkumulátor";
@@ -130,9 +132,9 @@
 "History" = "Előzmények";
 
 // Monitor · SensorsTile
-"hottest" = "legforróbb";
+"hottest" = "legmagasabb";
 "sensors" = "érzékelő";
-"No sensors answered" = "Egy érzékelő sem válaszolt";
+"No sensors answered" = "Egyik érzékelő sem válaszolt";
 
 // Monitor · Thresholds
 "Total load" = "Teljes terhelés";
@@ -140,8 +142,8 @@
 "User load" = "Felhasználói terhelés";
 "Efficiency cores load" = "Hatékonysági magok terhelése";
 "Performance cores load" = "Teljesítménymagok terhelése";
-"Memory pressure" = "Memórianyomás";
-"Memory used" = "Használt memória";
+"Memory pressure" = "Memóriaterhelés";
+"Memory used" = "Foglalt memória";
 "Memory free" = "Szabad memória";
 "Swap in use" = "Használt swap";
 "Disk usage" = "Lemezhasználat";
@@ -170,7 +172,7 @@
 
 // Startup · UpdateCheck
 "New version available" = "Új verzió érhető el";
-"Click to install the new version of Perch" = "Kattints a Perch új verziójának telepítéséhez";
+"Click to install the new version of Perch" = "Kattintson a Perch új verziójának telepítéséhez";
 
 // System · DashboardPane
 "Unknown" = "Ismeretlen";
@@ -187,7 +189,7 @@
 
 // UI · SupportWindow
 "Close" = "Bezárás";
-"Support text" = "Köszönjük, hogy a Perchet használod.\n\nA Perch ingyenes és nyílt forráskódú, fejlesztése és karbantartása szabadidőben történik. Ha egy kicsit is megkönnyíti a napodat, egy hozzájárulással segíthetsz, hogy folytatódhasson.";
+"Support text" = "Köszönjük, hogy a Perch-et használja.\n\nA Perch ingyenes és nyílt forráskódú, és szabadidőben készül és fejlődik. Ha egy kicsit megkönnyíti a napját, egy hozzájárulás segít fenntartani.";
 "Support Perch" = "A Perch támogatása";
 "Donate" = "Adományozás";
 
@@ -209,12 +211,12 @@
 "Perch Setup" = "A Perch beállítása";
 "Previous" = "Előző";
 "Previous page" = "Előző oldal";
-"Welcome to Perch" = "Üdvözöl a Perch";
-"welcome_message" = "A Perch rendszerfigyelőt, alkalmazásindítót és ablakváltót helyez el a menüsorban. Ebben a rövid beállításban kiválaszthatod, mi jelenjen meg először.";
+"Welcome to Perch" = "Üdvözli a Perch";
+"welcome_message" = "A Perch rendszerfigyelőt, alkalmazásindítót és ablakváltót helyez el a menüsorban. Ez a rövid beállítás kiválasztja, mi jelenjen meg először.";
 "Select preset" = "Előbeállítás kiválasztása";
-"select_preset_message" = "Válaszd ki, mely modulokkal indulj. Később bármit módosíthatsz a Beállításokban.";
+"select_preset_message" = "Válasszon egy kezdő modulkészletet. Később a Beállításokban bármit módosíthat.";
 "Start the application automatically when starting your Mac" = "Az alkalmazás automatikus indítása a Mac indításakor";
-"Do not start the application automatically when starting your Mac" = "Az alkalmazás ne induljon el automatikusan a Mac indításakor";
+"Do not start the application automatically when starting your Mac" = "Ne induljon el automatikusan az alkalmazás a Mac indításakor";
 "Do everything silently in the background (recommended)" = "Minden csendben, a háttérben történjen (ajánlott)";
 "Check for a new version on startup" = "Új verzió keresése indításkor";
 "Check for a new version every day (once a day)" = "Új verzió keresése minden nap (naponta egyszer)";
@@ -222,10 +224,10 @@
 "Check for a new version every month (once a month)" = "Új verzió keresése minden hónapban (havonta egyszer)";
 "Never check for updates (not recommended)" = "Soha ne keressen frissítéseket (nem ajánlott)";
 "The configuration is completed" = "A beállítás befejeződött";
-"finish_setup_message" = "Minden készen áll.\n\nA Perch ingyenes és nyílt forráskódú. Ha hasznosnak találod, támogathatod a fejlesztését.";
+"finish_setup_message" = "Minden készen áll.\n\nA Perch ingyenes és nyílt forráskódú. Ha hasznosnak találja, támogathatja a fejlesztését.";
 
 // Views · SetupFlow
-"Next" = "Következő";
+"Next" = "Tovább";
 "Next page" = "Következő oldal";
 "Finish" = "Befejezés";
 "Finish setup" = "Beállítás befejezése";

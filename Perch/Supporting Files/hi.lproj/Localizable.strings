@@ -1,10 +1,12 @@
 /*
  * Localizable.strings — Perch, Hindi.
  *
- * The source every other language is checked against: `python3 Tools/i18n.py`
- * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
- * in step with the code. %0, %1 ... are filled in by `localized()` in
- * Perch/UI/Localized.swift and must survive translation.
+ * Translated from en.lproj, which is the source: `python3 Tools/i18n.py`
+ * keeps this file in step with it. %0, %1 ... are filled in by
+ * `localized()` in Perch/UI/Localized.swift and must survive translation.
+ *
+ * Machine-translated on 2026-10-10, from the English alone, and not yet
+ * reviewed by a native speaker. Corrections are welcome.
  */
 
 // Monitor · CPUModuleShell
@@ -12,10 +14,10 @@
 "None" = "कोई नहीं";
 "2 minutes" = "2 मिनट";
 "Chart history" = "चार्ट इतिहास";
-"Top processes" = "शीर्ष प्रक्रियाएँ";
+"Top processes" = "शीर्ष प्रोसेस";
 "1 minute" = "1 मिनट";
 "5 minutes" = "5 मिनट";
-"Menu bar" = "मेनू बार";
+"Menu bar" = "मेन्यू बार";
 "Notify me when" = "मुझे सूचित करें जब";
 
 // Monitor · CPUPopup
@@ -30,14 +32,14 @@
 "Temperature" = "तापमान";
 
 // Monitor · CombinedBar
-"No module has anything to show here yet." = "अभी तक किसी मॉड्यूल के पास यहाँ दिखाने के लिए कुछ नहीं है।";
+"No module has anything to show here yet." = "अभी किसी मॉड्यूल के पास यहाँ दिखाने के लिए कुछ नहीं है।";
 "Combined modules" = "संयुक्त मॉड्यूल";
 "Combined details" = "संयुक्त विवरण";
 
 // Monitor · DiskModuleShell
 "Disk" = "डिस्क";
 "Startup volume" = "स्टार्टअप वॉल्यूम";
-"not mounted" = "माउंट नहीं";
+"not mounted" = "माउंट नहीं है";
 
 // Monitor · DiskPopup
 "Format" = "फ़ॉर्मैट";
@@ -71,7 +73,7 @@
 "Ring" = "रिंग";
 "Gauge" = "गेज";
 "Used and free" = "उपयोग में और खाली";
-"Rates" = "गति";
+"Rates" = "दरें";
 "Bar chart" = "बार चार्ट";
 "Line chart" = "लाइन चार्ट";
 "Traffic chart" = "ट्रैफ़िक चार्ट";
@@ -79,19 +81,19 @@
 // Monitor · NetworkModuleShell
 "Network" = "नेटवर्क";
 "Internet connection lost" = "इंटरनेट कनेक्शन टूट गया";
-"Internet connection established" = "इंटरनेट कनेक्शन जुड़ गया";
+"Internet connection established" = "इंटरनेट कनेक्शन स्थापित हुआ";
 "Tell me when" = "मुझे बताएँ जब";
 "Connection comes or goes" = "कनेक्शन जुड़े या टूटे";
 "Wi-Fi network changes" = "Wi-Fi नेटवर्क बदले";
 "Interface changes" = "इंटरफ़ेस बदले";
-"Local address changes" = "स्थानीय पता बदले";
-"Public address changes" = "सार्वजनिक पता बदले";
+"Local address changes" = "लोकल पता बदले";
+"Public address changes" = "पब्लिक पता बदले";
 
 // Monitor · NetworkPopup
 "Download" = "डाउनलोड";
-"Local IP" = "स्थानीय IP";
+"Local IP" = "लोकल IP";
 "Interface" = "इंटरफ़ेस";
-"Physical address" = "भौतिक पता";
+"Physical address" = "फ़िज़िकल पता";
 "Online" = "ऑनलाइन";
 "Offline" = "ऑफ़लाइन";
 
@@ -102,7 +104,7 @@
 "Idle" = "निष्क्रिय";
 
 // Monitor · PopupSection
-"Process" = "प्रक्रिया";
+"Process" = "प्रोसेस";
 
 // Monitor · RAMModuleShell
 "RAM" = "RAM";
@@ -124,13 +126,13 @@
 // Monitor · SensorsModuleShell
 "Sensors" = "सेंसर";
 "Show in the popup" = "पॉपअप में दिखाएँ";
-"Hottest temperature" = "सर्वाधिक तापमान";
+"Hottest temperature" = "सबसे अधिक तापमान";
 
 // Monitor · SensorsPopup
 "History" = "इतिहास";
 
 // Monitor · SensorsTile
-"hottest" = "सर्वाधिक";
+"hottest" = "अधिकतम";
 "sensors" = "सेंसर";
 "No sensors answered" = "किसी सेंसर ने जवाब नहीं दिया";
 
@@ -148,7 +150,7 @@
 
 // Settings · GeneralPane
 "Reset" = "रीसेट करें";
-"Silent" = "चुपचाप";
+"Silent" = "मौन";
 "Settings" = "सेटिंग्ज़";
 "Check for updates" = "अपडेट जाँचें";
 "Once per day" = "दिन में एक बार";
@@ -158,7 +160,7 @@
 "Start at login" = "लॉगिन पर शुरू करें";
 "Spacing" = "अंतराल";
 "Celsius" = "सेल्सियस";
-"Fahrenheit" = "फ़ैरनहाइट";
+"Fahrenheit" = "फ़ारेनहाइट";
 
 // Settings · UpdateInterval
 "At start" = "शुरू होने पर";
@@ -166,7 +168,7 @@
 
 // Startup · Startup
 "Successfully updated" = "सफलतापूर्वक अपडेट हुआ";
-"Perch was updated to v" = "Perch को संस्करण %0 में अपडेट किया गया है";
+"Perch was updated to v" = "Perch को संस्करण %0 में अपडेट कर दिया गया है";
 
 // Startup · UpdateCheck
 "New version available" = "नया संस्करण उपलब्ध है";
@@ -177,7 +179,7 @@
 "Graphics" = "ग्राफ़िक्स";
 "Serial number" = "सीरियल नंबर";
 "Model identifier" = "मॉडल पहचानकर्ता";
-"Production year" = "उत्पादन वर्ष";
+"Production year" = "निर्माण वर्ष";
 "Number of cores" = "%0 कोर";
 "Number of threads" = "%0 थ्रेड";
 "Number of e-cores" = "%0 एफ़िशिएंसी कोर";
@@ -187,8 +189,8 @@
 
 // UI · SupportWindow
 "Close" = "बंद करें";
-"Support text" = "Perch का उपयोग करने के लिए धन्यवाद।\n\nPerch निःशुल्क और ओपन सोर्स है, और इसे खाली समय में बनाया और सँभाला जाता है। अगर यह आपका दिन थोड़ा आसान बनाता है, तो आपका योगदान इसे जारी रखने में मदद करता है।";
-"Support Perch" = "Perch का समर्थन करें";
+"Support text" = "Perch का उपयोग करने के लिए धन्यवाद।\n\nPerch मुफ़्त और ओपन सोर्स है, और इसे खाली समय में बनाया और बनाए रखा जाता है। अगर यह आपका दिन थोड़ा आसान बनाता है, तो आपका योगदान इसे जारी रखने में मदद करता है।";
+"Support Perch" = "Perch को सपोर्ट करें";
 "Donate" = "दान करें";
 
 // Update · UpdateWindow
@@ -196,40 +198,40 @@
 
 // Views · SettingsShell
 "Report a bug" = "बग रिपोर्ट करें";
-"Support the application" = "ऐप्लिकेशन का समर्थन करें";
+"Support the application" = "ऐप्लिकेशन को सपोर्ट करें";
 "Close application" = "ऐप्लिकेशन बंद करें";
-"Toggle the module" = "मॉड्यूल चालू या बंद करें";
+"Toggle the module" = "मॉड्यूल चालू/बंद करें";
 "Modules" = "मॉड्यूल";
 "Search" = "खोजें";
 "Preview" = "प्रीव्यू";
-"Support" = "समर्थन";
-"Pause the Perch" = "Perch को पॉज़ करें";
+"Support" = "सपोर्ट";
+"Pause the Perch" = "Perch को रोकें";
 
 // Views · Setup
 "Perch Setup" = "Perch सेटअप";
 "Previous" = "पिछला";
 "Previous page" = "पिछला पेज";
 "Welcome to Perch" = "Perch में आपका स्वागत है";
-"welcome_message" = "Perch आपके मेनू बार में एक सिस्टम मॉनिटर, एक ऐप लॉन्चर और एक विंडो स्विचर रखता है। यह छोटा सेटअप चुनता है कि पहले क्या दिखाया जाए।";
+"welcome_message" = "Perch आपके मेन्यू बार में सिस्टम मॉनिटर, ऐप लॉन्चर और विंडो स्विचर जोड़ता है। यह छोटा सेटअप तय करता है कि पहले क्या दिखाया जाए।";
 "Select preset" = "प्रीसेट चुनें";
-"select_preset_message" = "मॉड्यूल का एक शुरुआती सेट चुनें। आप बाद में सेटिंग्ज़ में इसमें कुछ भी बदल सकते हैं।";
-"Start the application automatically when starting your Mac" = "Mac शुरू होने पर ऐप्लिकेशन को अपने आप शुरू करें";
-"Do not start the application automatically when starting your Mac" = "Mac शुरू होने पर ऐप्लिकेशन को अपने आप शुरू न करें";
+"select_preset_message" = "शुरुआत के लिए मॉड्यूल का एक सेट चुनें। आप बाद में सेटिंग्ज़ में इसमें कुछ भी बदल सकते हैं।";
+"Start the application automatically when starting your Mac" = "Mac शुरू होने पर ऐप्लिकेशन अपने आप शुरू करें";
+"Do not start the application automatically when starting your Mac" = "Mac शुरू होने पर ऐप्लिकेशन अपने आप शुरू न करें";
 "Do everything silently in the background (recommended)" = "सब कुछ बैकग्राउंड में चुपचाप करें (अनुशंसित)";
-"Check for a new version on startup" = "स्टार्टअप पर नए संस्करण की जाँच करें";
-"Check for a new version every day (once a day)" = "हर दिन नए संस्करण की जाँच करें (दिन में एक बार)";
-"Check for a new version every week (once a week)" = "हर सप्ताह नए संस्करण की जाँच करें (सप्ताह में एक बार)";
-"Check for a new version every month (once a month)" = "हर महीने नए संस्करण की जाँच करें (महीने में एक बार)";
-"Never check for updates (not recommended)" = "अपडेट की कभी जाँच न करें (अनुशंसित नहीं)";
-"The configuration is completed" = "कॉन्फ़िगरेशन पूरा हुआ";
-"finish_setup_message" = "सब तैयार है।\n\nPerch निःशुल्क और ओपन सोर्स है। अगर यह आपके लिए उपयोगी है, तो आप इसके विकास का समर्थन कर सकते हैं।";
+"Check for a new version on startup" = "शुरू होने पर नया संस्करण जाँचें";
+"Check for a new version every day (once a day)" = "हर दिन नया संस्करण जाँचें (दिन में एक बार)";
+"Check for a new version every week (once a week)" = "हर सप्ताह नया संस्करण जाँचें (सप्ताह में एक बार)";
+"Check for a new version every month (once a month)" = "हर महीने नया संस्करण जाँचें (महीने में एक बार)";
+"Never check for updates (not recommended)" = "कभी भी अपडेट न जाँचें (अनुशंसित नहीं)";
+"The configuration is completed" = "कॉन्फ़िगरेशन पूरा हो गया";
+"finish_setup_message" = "सब तैयार है।\n\nPerch मुफ़्त और ओपन सोर्स है। अगर यह आपके काम का है, तो आप इसके विकास में सहयोग कर सकते हैं।";
 
 // Views · SetupFlow
 "Next" = "अगला";
 "Next page" = "अगला पेज";
 "Finish" = "समाप्त करें";
-"Finish setup" = "सेटअप समाप्त करें";
+"Finish setup" = "सेटअप पूरा करें";
 "Default" = "डिफ़ॉल्ट";
-"Basic" = "बुनियादी";
+"Basic" = "बेसिक";
 "Recommended" = "अनुशंसित";
-"Extended" = "विस्तारित";
+"Extended" = "विस्तृत";

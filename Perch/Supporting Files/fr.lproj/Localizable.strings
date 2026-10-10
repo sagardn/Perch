@@ -1,10 +1,12 @@
 /*
  * Localizable.strings — Perch, French.
  *
- * The source every other language is checked against: `python3 Tools/i18n.py`
- * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
- * in step with the code. %0, %1 ... are filled in by `localized()` in
- * Perch/UI/Localized.swift and must survive translation.
+ * Translated from en.lproj, which is the source: `python3 Tools/i18n.py`
+ * keeps this file in step with it. %0, %1 ... are filled in by
+ * `localized()` in Perch/UI/Localized.swift and must survive translation.
+ *
+ * Machine-translated on 2026-10-10, from the English alone, and not yet
+ * reviewed by a native speaker. Corrections are welcome.
  */
 
 // Monitor · CPUModuleShell
@@ -12,17 +14,17 @@
 "None" = "Aucun";
 "2 minutes" = "2 minutes";
 "Chart history" = "Historique du graphique";
-"Top processes" = "Processus principaux";
+"Top processes" = "Principaux processus";
 "1 minute" = "1 minute";
 "5 minutes" = "5 minutes";
 "Menu bar" = "Barre des menus";
-"Notify me when" = "M’avertir quand";
+"Notify me when" = "M’avertir lorsque";
 
 // Monitor · CPUPopup
 "Clock" = "Fréquence";
 "Processor" = "Processeur";
 "Cores" = "Cœurs";
-"Uptime" = "Durée d’activité";
+"Uptime" = "Temps d’activité";
 "System" = "Système";
 "User" = "Utilisateur";
 "CPU usage threshold" = "Seuil d’utilisation du CPU";
@@ -46,7 +48,7 @@
 "Disk usage threshold" = "Seuil d’utilisation du disque";
 
 // Monitor · DiskTile
-"free" = "libres";
+"free" = "libre";
 
 // Monitor · GPUModuleShell
 "GPU" = "GPU";
@@ -61,26 +63,26 @@
 "cores" = "cœurs";
 
 // Monitor · MemoryReadings
-"Normal" = "Normale";
+"Normal" = "Normal";
 "Warning" = "Avertissement";
 "Critical" = "Critique";
 
 // Monitor · MenuBarStyle
 "Name" = "Nom";
-"Figure" = "Chiffre";
+"Figure" = "Valeur";
 "Ring" = "Anneau";
 "Gauge" = "Jauge";
 "Used and free" = "Utilisé et libre";
 "Rates" = "Débits";
-"Bar chart" = "Barres";
-"Line chart" = "Courbe";
-"Traffic chart" = "Trafic";
+"Bar chart" = "Histogramme";
+"Line chart" = "Graphique linéaire";
+"Traffic chart" = "Graphique du trafic";
 
 // Monitor · NetworkModuleShell
 "Network" = "Réseau";
 "Internet connection lost" = "Connexion Internet perdue";
 "Internet connection established" = "Connexion Internet établie";
-"Tell me when" = "Me prévenir quand";
+"Tell me when" = "Me prévenir lorsque";
 "Connection comes or goes" = "La connexion apparaît ou disparaît";
 "Wi-Fi network changes" = "Le réseau Wi-Fi change";
 "Interface changes" = "L’interface change";
@@ -116,7 +118,7 @@
 // Monitor · RAMTile
 "App" = "App";
 "Swap" = "Swap";
-"Pressure" = "Pression mémoire";
+"Pressure" = "Pression";
 
 // Monitor · SensorReadings
 "Battery" = "Batterie";
@@ -124,7 +126,7 @@
 // Monitor · SensorsModuleShell
 "Sensors" = "Capteurs";
 "Show in the popup" = "Afficher dans la fenêtre";
-"Hottest temperature" = "Température maximale";
+"Hottest temperature" = "Température la plus élevée";
 
 // Monitor · SensorsPopup
 "History" = "Historique";
@@ -138,7 +140,7 @@
 "Total load" = "Charge totale";
 "System load" = "Charge système";
 "User load" = "Charge utilisateur";
-"Efficiency cores load" = "Charge des cœurs à haute efficacité";
+"Efficiency cores load" = "Charge des cœurs d’efficacité";
 "Performance cores load" = "Charge des cœurs de performance";
 "Memory pressure" = "Pression de la mémoire";
 "Memory used" = "Mémoire utilisée";
@@ -180,14 +182,14 @@
 "Production year" = "Année de fabrication";
 "Number of cores" = "%0 cœurs";
 "Number of threads" = "%0 threads";
-"Number of e-cores" = "%0 cœurs à haute efficacité";
+"Number of e-cores" = "%0 cœurs d’efficacité";
 "Number of p-cores" = "%0 cœurs de performance";
 "Disks" = "Disques";
 "Display" = "Écran";
 
 // UI · SupportWindow
 "Close" = "Fermer";
-"Support text" = "Merci d’utiliser Perch.\n\nPerch est gratuit et open source, développé et maintenu sur du temps libre. S’il vous facilite un peu la vie, une contribution aide à le faire vivre.";
+"Support text" = "Merci d’utiliser Perch.\n\nPerch est gratuit et open source, développé et maintenu sur du temps libre. S’il vous simplifie un peu la vie, une contribution aide à le faire vivre.";
 "Support Perch" = "Soutenir Perch";
 "Donate" = "Faire un don";
 
@@ -196,8 +198,8 @@
 
 // Views · SettingsShell
 "Report a bug" = "Signaler un bug";
-"Support the application" = "Soutenir l’app";
-"Close application" = "Quitter l’app";
+"Support the application" = "Soutenir l’application";
+"Close application" = "Quitter l’application";
 "Toggle the module" = "Activer ou désactiver le module";
 "Modules" = "Modules";
 "Search" = "Rechercher";
@@ -210,11 +212,11 @@
 "Previous" = "Précédent";
 "Previous page" = "Page précédente";
 "Welcome to Perch" = "Bienvenue dans Perch";
-"welcome_message" = "Perch place un moniteur système, un lanceur d’apps et un sélecteur de fenêtres dans votre barre des menus. Cette courte configuration choisit ce qui s’affiche en premier.";
+"welcome_message" = "Perch ajoute à votre barre des menus un moniteur système, un lanceur d’apps et un sélecteur de fenêtres. Cette courte configuration choisit ce qui s’affiche en premier.";
 "Select preset" = "Choisir un préréglage";
 "select_preset_message" = "Choisissez un ensemble de modules de départ. Vous pourrez tout modifier plus tard dans les Réglages.";
-"Start the application automatically when starting your Mac" = "Ouvrir l’app automatiquement au démarrage de votre Mac";
-"Do not start the application automatically when starting your Mac" = "Ne pas ouvrir l’app automatiquement au démarrage de votre Mac";
+"Start the application automatically when starting your Mac" = "Ouvrir l’application automatiquement au démarrage du Mac";
+"Do not start the application automatically when starting your Mac" = "Ne pas ouvrir l’application automatiquement au démarrage du Mac";
 "Do everything silently in the background (recommended)" = "Tout faire discrètement en arrière-plan (recommandé)";
 "Check for a new version on startup" = "Rechercher une nouvelle version au démarrage";
 "Check for a new version every day (once a day)" = "Rechercher une nouvelle version chaque jour (une fois par jour)";

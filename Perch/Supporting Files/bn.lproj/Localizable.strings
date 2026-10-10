@@ -1,10 +1,12 @@
 /*
  * Localizable.strings — Perch, Bengali.
  *
- * The source every other language is checked against: `python3 Tools/i18n.py`
- * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
- * in step with the code. %0, %1 ... are filled in by `localized()` in
- * Perch/UI/Localized.swift and must survive translation.
+ * Translated from en.lproj, which is the source: `python3 Tools/i18n.py`
+ * keeps this file in step with it. %0, %1 ... are filled in by
+ * `localized()` in Perch/UI/Localized.swift and must survive translation.
+ *
+ * Machine-translated on 2026-10-10, from the English alone, and not yet
+ * reviewed by a native speaker. Corrections are welcome.
  */
 
 // Monitor · CPUModuleShell
@@ -12,17 +14,17 @@
 "None" = "কোনোটি নয়";
 "2 minutes" = "২ মিনিট";
 "Chart history" = "চার্টের ইতিহাস";
-"Top processes" = "শীর্ষ প্রক্রিয়া";
+"Top processes" = "শীর্ষ প্রসেস";
 "1 minute" = "১ মিনিট";
 "5 minutes" = "৫ মিনিট";
 "Menu bar" = "মেনু বার";
 "Notify me when" = "আমাকে জানান যখন";
 
 // Monitor · CPUPopup
-"Clock" = "ক্লক";
+"Clock" = "ফ্রিকোয়েন্সি";
 "Processor" = "প্রসেসর";
 "Cores" = "কোর";
-"Uptime" = "আপটাইম";
+"Uptime" = "চালু থাকার সময়";
 "System" = "সিস্টেম";
 "User" = "ব্যবহারকারী";
 "CPU usage threshold" = "CPU ব্যবহারের সীমা";
@@ -30,7 +32,7 @@
 "Temperature" = "তাপমাত্রা";
 
 // Monitor · CombinedBar
-"No module has anything to show here yet." = "এখনও কোনো মডিউলের এখানে দেখানোর মতো কিছু নেই।";
+"No module has anything to show here yet." = "এখানে দেখানোর মতো কিছু এখনও কোনো মডিউলে নেই।";
 "Combined modules" = "সম্মিলিত মডিউল";
 "Combined details" = "সম্মিলিত বিবরণ";
 
@@ -71,7 +73,7 @@
 "Ring" = "রিং";
 "Gauge" = "গেজ";
 "Used and free" = "ব্যবহৃত ও খালি";
-"Rates" = "গতি";
+"Rates" = "হার";
 "Bar chart" = "বার চার্ট";
 "Line chart" = "লাইন চার্ট";
 "Traffic chart" = "ট্রাফিক চার্ট";
@@ -102,7 +104,7 @@
 "Idle" = "নিষ্ক্রিয়";
 
 // Monitor · PopupSection
-"Process" = "প্রক্রিয়া";
+"Process" = "প্রসেস";
 
 // Monitor · RAMModuleShell
 "RAM" = "RAM";
@@ -138,9 +140,9 @@
 "Total load" = "মোট লোড";
 "System load" = "সিস্টেম লোড";
 "User load" = "ব্যবহারকারী লোড";
-"Efficiency cores load" = "এফিসিয়েন্সি কোর লোড";
-"Performance cores load" = "পারফরম্যান্স কোর লোড";
-"Memory pressure" = "মেমরি চাপ";
+"Efficiency cores load" = "এফিশিয়েন্সি কোরের লোড";
+"Performance cores load" = "পারফরম্যান্স কোরের লোড";
+"Memory pressure" = "মেমরির চাপ";
 "Memory used" = "ব্যবহৃত মেমরি";
 "Memory free" = "খালি মেমরি";
 "Swap in use" = "ব্যবহৃত সোয়াপ";
@@ -150,18 +152,18 @@
 "Reset" = "রিসেট";
 "Silent" = "নীরব";
 "Settings" = "সেটিংস";
-"Check for updates" = "আপডেট খুঁজুন";
+"Check for updates" = "আপডেট দেখুন";
 "Once per day" = "দিনে একবার";
 "Once per week" = "সপ্তাহে একবার";
-"Never" = "কখনও না";
-"Check for update" = "আপডেট খুঁজুন";
-"Start at login" = "লগইনে চালু করুন";
+"Never" = "কখনো না";
+"Check for update" = "আপডেট দেখুন";
+"Start at login" = "লগইনের সময় চালু করুন";
 "Spacing" = "ব্যবধান";
 "Celsius" = "সেলসিয়াস";
 "Fahrenheit" = "ফারেনহাইট";
 
 // Settings · UpdateInterval
-"At start" = "চালু হলে";
+"At start" = "চালু হওয়ার সময়";
 "Once per month" = "মাসে একবার";
 
 // Startup · Startup
@@ -180,15 +182,15 @@
 "Production year" = "উৎপাদনের বছর";
 "Number of cores" = "%0টি কোর";
 "Number of threads" = "%0টি থ্রেড";
-"Number of e-cores" = "%0টি এফিসিয়েন্সি কোর";
+"Number of e-cores" = "%0টি এফিশিয়েন্সি কোর";
 "Number of p-cores" = "%0টি পারফরম্যান্স কোর";
 "Disks" = "ডিস্ক";
 "Display" = "ডিসপ্লে";
 
 // UI · SupportWindow
 "Close" = "বন্ধ করুন";
-"Support text" = "Perch ব্যবহার করার জন্য ধন্যবাদ।\n\nPerch বিনামূল্যে ও ওপেন সোর্স, এবং এটি অবসর সময়ে তৈরি ও রক্ষণাবেক্ষণ করা হয়। এটি যদি আপনার দিনটা একটু সহজ করে, তবে আপনার অবদান এটিকে চালিয়ে যেতে সাহায্য করে।";
-"Support Perch" = "Perch-কে সহায়তা করুন";
+"Support text" = "Perch ব্যবহার করার জন্য ধন্যবাদ।\n\nPerch বিনামূল্যে ও ওপেন সোর্স, এবং অবসর সময়ে তৈরি ও রক্ষণাবেক্ষণ করা হয়। এটি যদি আপনার দিনকে একটু সহজ করে, তবে আপনার অবদান এটিকে চালু রাখতে সাহায্য করে।";
+"Support Perch" = "Perch-কে সমর্থন করুন";
 "Donate" = "দান করুন";
 
 // Update · UpdateWindow
@@ -196,33 +198,33 @@
 
 // Views · SettingsShell
 "Report a bug" = "বাগ রিপোর্ট করুন";
-"Support the application" = "অ্যাপ্লিকেশনকে সহায়তা করুন";
+"Support the application" = "অ্যাপ্লিকেশনটিকে সমর্থন করুন";
 "Close application" = "অ্যাপ্লিকেশন বন্ধ করুন";
-"Toggle the module" = "মডিউল চালু বা বন্ধ করুন";
+"Toggle the module" = "মডিউল চালু/বন্ধ করুন";
 "Modules" = "মডিউল";
-"Search" = "খুঁজুন";
+"Search" = "অনুসন্ধান";
 "Preview" = "প্রিভিউ";
-"Support" = "সহায়তা";
-"Pause the Perch" = "Perch থামান";
+"Support" = "সমর্থন";
+"Pause the Perch" = "Perch বিরতি দিন";
 
 // Views · Setup
 "Perch Setup" = "Perch সেটআপ";
-"Previous" = "আগের";
-"Previous page" = "আগের পৃষ্ঠা";
+"Previous" = "পূর্ববর্তী";
+"Previous page" = "পূর্ববর্তী পৃষ্ঠা";
 "Welcome to Perch" = "Perch-এ স্বাগতম";
-"welcome_message" = "Perch আপনার মেনু বারে একটি সিস্টেম মনিটর, একটি অ্যাপ লঞ্চার এবং একটি উইন্ডো সুইচার রাখে। এই ছোট সেটআপে বেছে নেওয়া হয় প্রথমে কী দেখানো হবে।";
+"welcome_message" = "Perch আপনার মেনু বারে একটি সিস্টেম মনিটর, একটি অ্যাপ লঞ্চার এবং একটি উইন্ডো সুইচার যোগ করে। এই ছোট সেটআপে প্রথমে কী দেখানো হবে তা বেছে নেওয়া হয়।";
 "Select preset" = "প্রিসেট বেছে নিন";
-"select_preset_message" = "শুরু করার জন্য মডিউলের একটি সেট বেছে নিন। পরে সেটিংসে এর যেকোনো কিছু বদলাতে পারবেন।";
-"Start the application automatically when starting your Mac" = "Mac চালু হলে অ্যাপ্লিকেশনটি স্বয়ংক্রিয়ভাবে চালু করুন";
-"Do not start the application automatically when starting your Mac" = "Mac চালু হলে অ্যাপ্লিকেশনটি স্বয়ংক্রিয়ভাবে চালু করবেন না";
-"Do everything silently in the background (recommended)" = "সবকিছু ব্যাকগ্রাউন্ডে নীরবে করুন (প্রস্তাবিত)";
-"Check for a new version on startup" = "চালু হওয়ার সময় নতুন সংস্করণ খুঁজুন";
-"Check for a new version every day (once a day)" = "প্রতিদিন নতুন সংস্করণ খুঁজুন (দিনে একবার)";
-"Check for a new version every week (once a week)" = "প্রতি সপ্তাহে নতুন সংস্করণ খুঁজুন (সপ্তাহে একবার)";
-"Check for a new version every month (once a month)" = "প্রতি মাসে নতুন সংস্করণ খুঁজুন (মাসে একবার)";
-"Never check for updates (not recommended)" = "কখনও আপডেট খুঁজবেন না (প্রস্তাবিত নয়)";
+"select_preset_message" = "মডিউলের একটি প্রাথমিক সেট বেছে নিন। পরে সেটিংসে এর যেকোনো কিছু বদলাতে পারবেন।";
+"Start the application automatically when starting your Mac" = "আপনার Mac চালু হলে অ্যাপ্লিকেশনটি স্বয়ংক্রিয়ভাবে চালু করুন";
+"Do not start the application automatically when starting your Mac" = "আপনার Mac চালু হলে অ্যাপ্লিকেশনটি স্বয়ংক্রিয়ভাবে চালু করবেন না";
+"Do everything silently in the background (recommended)" = "সবকিছু নীরবে ব্যাকগ্রাউন্ডে করুন (প্রস্তাবিত)";
+"Check for a new version on startup" = "চালু হওয়ার সময় নতুন সংস্করণ দেখুন";
+"Check for a new version every day (once a day)" = "প্রতিদিন নতুন সংস্করণ দেখুন (দিনে একবার)";
+"Check for a new version every week (once a week)" = "প্রতি সপ্তাহে নতুন সংস্করণ দেখুন (সপ্তাহে একবার)";
+"Check for a new version every month (once a month)" = "প্রতি মাসে নতুন সংস্করণ দেখুন (মাসে একবার)";
+"Never check for updates (not recommended)" = "কখনো আপডেট দেখবেন না (প্রস্তাবিত নয়)";
 "The configuration is completed" = "কনফিগারেশন সম্পন্ন হয়েছে";
-"finish_setup_message" = "সব প্রস্তুত।\n\nPerch বিনামূল্যে ও ওপেন সোর্স। এটি আপনার কাজে লাগলে, এর উন্নয়নে সহায়তা করতে পারেন।";
+"finish_setup_message" = "সব প্রস্তুত।\n\nPerch বিনামূল্যে ও ওপেন সোর্স। এটি আপনার কাজে লাগলে এর উন্নয়নে সহায়তা করতে পারেন।";
 
 // Views · SetupFlow
 "Next" = "পরবর্তী";
@@ -230,6 +232,6 @@
 "Finish" = "শেষ করুন";
 "Finish setup" = "সেটআপ শেষ করুন";
 "Default" = "ডিফল্ট";
-"Basic" = "মৌলিক";
+"Basic" = "প্রাথমিক";
 "Recommended" = "প্রস্তাবিত";
 "Extended" = "বর্ধিত";

@@ -1,10 +1,12 @@
 /*
  * Localizable.strings — Perch, Bulgarian.
  *
- * The source every other language is checked against: `python3 Tools/i18n.py`
- * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
- * in step with the code. %0, %1 ... are filled in by `localized()` in
- * Perch/UI/Localized.swift and must survive translation.
+ * Translated from en.lproj, which is the source: `python3 Tools/i18n.py`
+ * keeps this file in step with it. %0, %1 ... are filled in by
+ * `localized()` in Perch/UI/Localized.swift and must survive translation.
+ *
+ * Machine-translated on 2026-10-10, from the English alone, and not yet
+ * reviewed by a native speaker. Corrections are welcome.
  */
 
 // Monitor · CPUModuleShell
@@ -12,7 +14,7 @@
 "None" = "Няма";
 "2 minutes" = "2 минути";
 "Chart history" = "История на графиката";
-"Top processes" = "Най-натоварващи процеси";
+"Top processes" = "Водещи процеси";
 "1 minute" = "1 минута";
 "5 minutes" = "5 минути";
 "Menu bar" = "Лента с менюта";
@@ -30,23 +32,23 @@
 "Temperature" = "Температура";
 
 // Monitor · CombinedBar
-"No module has anything to show here yet." = "Все още няма модул, който да показва нещо тук.";
-"Combined modules" = "Обединени модули";
-"Combined details" = "Обединени подробности";
+"No module has anything to show here yet." = "Все още няма модул с данни за показване тук.";
+"Combined modules" = "Комбинирани модули";
+"Combined details" = "Комбинирани подробности";
 
 // Monitor · DiskModuleShell
 "Disk" = "Диск";
 "Startup volume" = "Стартов том";
-"not mounted" = "не е свързан";
+"not mounted" = "не е монтиран";
 
 // Monitor · DiskPopup
 "Format" = "Формат";
-"Used" = "Заето";
+"Used" = "Използвано";
 "Free" = "Свободно";
-"Disk usage threshold" = "Праг на заетост на диска";
+"Disk usage threshold" = "Праг на използване на диска";
 
 // Monitor · DiskTile
-"free" = "свободни";
+"free" = "свободно";
 
 // Monitor · GPUModuleShell
 "GPU" = "GPU";
@@ -69,18 +71,18 @@
 "Name" = "Име";
 "Figure" = "Число";
 "Ring" = "Пръстен";
-"Gauge" = "Скала";
-"Used and free" = "Заето и свободно";
+"Gauge" = "Индикатор";
+"Used and free" = "Използвано и свободно";
 "Rates" = "Скорости";
-"Bar chart" = "Стълбовидна графика";
-"Line chart" = "Линейна графика";
-"Traffic chart" = "Графика на трафика";
+"Bar chart" = "Стълбовидна диаграма";
+"Line chart" = "Линейна диаграма";
+"Traffic chart" = "Диаграма на трафика";
 
 // Monitor · NetworkModuleShell
 "Network" = "Мрежа";
-"Internet connection lost" = "Връзката с интернет е прекъсната";
+"Internet connection lost" = "Връзката с интернет е загубена";
 "Internet connection established" = "Връзката с интернет е установена";
-"Tell me when" = "Съобщавай ми, когато";
+"Tell me when" = "Кажи ми, когато";
 "Connection comes or goes" = "Връзката се появи или изчезне";
 "Wi-Fi network changes" = "Wi-Fi мрежата се смени";
 "Interface changes" = "Интерфейсът се смени";
@@ -96,10 +98,10 @@
 "Offline" = "Офлайн";
 
 // Monitor · Popup
-"Dashboard" = "Преглед";
+"Dashboard" = "Табло";
 
 // Monitor · PopupParts
-"Idle" = "Неактивно";
+"Idle" = "Бездействие";
 
 // Monitor · PopupSection
 "Process" = "Процес";
@@ -108,31 +110,31 @@
 "RAM" = "RAM";
 
 // Monitor · RAMPopup
-"Wired" = "Резервирана";
+"Wired" = "Фиксирана";
 "Compressed" = "Компресирана";
 "Swap size" = "Размер на суапа";
 "Memory threshold" = "Праг на паметта";
 
 // Monitor · RAMTile
-"App" = "Приложения";
+"App" = "Приложение";
 "Swap" = "Суап";
-"Pressure" = "Натоварване";
+"Pressure" = "Натиск";
 
 // Monitor · SensorReadings
 "Battery" = "Батерия";
 
 // Monitor · SensorsModuleShell
 "Sensors" = "Сензори";
-"Show in the popup" = "Показвай в изскачащия прозорец";
+"Show in the popup" = "Показване в изскачащия прозорец";
 "Hottest temperature" = "Най-висока температура";
 
 // Monitor · SensorsPopup
 "History" = "История";
 
 // Monitor · SensorsTile
-"hottest" = "макс.";
-"sensors" = "сензора";
-"No sensors answered" = "Нито един сензор не отговори";
+"hottest" = "най-висока";
+"sensors" = "сензори";
+"No sensors answered" = "Няма отговорили сензори";
 
 // Monitor · Thresholds
 "Total load" = "Общо натоварване";
@@ -140,22 +142,22 @@
 "User load" = "Натоварване от потребителя";
 "Efficiency cores load" = "Натоварване на ефективните ядра";
 "Performance cores load" = "Натоварване на производителните ядра";
-"Memory pressure" = "Натоварване на паметта";
+"Memory pressure" = "Натиск върху паметта";
 "Memory used" = "Използвана памет";
 "Memory free" = "Свободна памет";
 "Swap in use" = "Използван суап";
-"Disk usage" = "Заетост на диска";
+"Disk usage" = "Използване на диска";
 
 // Settings · GeneralPane
-"Reset" = "Нулирай";
-"Silent" = "Във фонов режим";
+"Reset" = "Нулиране";
+"Silent" = "Безшумно";
 "Settings" = "Настройки";
-"Check for updates" = "Проверявай за актуализации";
+"Check for updates" = "Проверка за актуализации";
 "Once per day" = "Веднъж дневно";
 "Once per week" = "Веднъж седмично";
 "Never" = "Никога";
-"Check for update" = "Провери за актуализации";
-"Start at login" = "Отваряй при влизане";
+"Check for update" = "Проверка за актуализация";
+"Start at login" = "Стартиране при влизане";
 "Spacing" = "Разстояние";
 "Celsius" = "Целзий";
 "Fahrenheit" = "Фаренхайт";
@@ -165,7 +167,7 @@
 "Once per month" = "Веднъж месечно";
 
 // Startup · Startup
-"Successfully updated" = "Актуализацията е успешна";
+"Successfully updated" = "Актуализирано успешно";
 "Perch was updated to v" = "Perch е актуализиран до версия %0";
 
 // Startup · UpdateCheck
@@ -178,31 +180,31 @@
 "Serial number" = "Сериен номер";
 "Model identifier" = "Идентификатор на модела";
 "Production year" = "Година на производство";
-"Number of cores" = "Ядра: %0";
-"Number of threads" = "Нишки: %0";
-"Number of e-cores" = "Ефективни ядра: %0";
-"Number of p-cores" = "Производителни ядра: %0";
+"Number of cores" = "%0 ядра";
+"Number of threads" = "%0 нишки";
+"Number of e-cores" = "%0 ефективни ядра";
+"Number of p-cores" = "%0 производителни ядра";
 "Disks" = "Дискове";
 "Display" = "Дисплей";
 
 // UI · SupportWindow
-"Close" = "Затвори";
-"Support text" = "Благодарим ви, че използвате Perch.\n\nPerch е безплатно приложение с отворен код, което се създава и поддържа в свободното време. Ако то ви улеснява поне малко, дарението помага за развитието му.";
+"Close" = "Затваряне";
+"Support text" = "Благодарим ви, че използвате Perch.\n\nPerch е безплатен и с отворен код, създава се и се поддържа в свободното време. Ако прави деня ви малко по-лесен, един принос помага той да продължи.";
 "Support Perch" = "Подкрепете Perch";
-"Donate" = "Дарете";
+"Donate" = "Дарение";
 
 // Update · UpdateWindow
-"Install" = "Инсталирай";
+"Install" = "Инсталиране";
 
 // Views · SettingsShell
-"Report a bug" = "Съобщи за грешка";
-"Support the application" = "Подкрепете приложението";
-"Close application" = "Затвори приложението";
-"Toggle the module" = "Включи или изключи модула";
+"Report a bug" = "Докладване на грешка";
+"Support the application" = "Подкрепа за приложението";
+"Close application" = "Затваряне на приложението";
+"Toggle the module" = "Включване/изключване на модула";
 "Modules" = "Модули";
 "Search" = "Търсене";
-"Preview" = "Визуализация";
-"Support" = "Поддръжка";
+"Preview" = "Преглед";
+"Support" = "Подкрепа";
 "Pause the Perch" = "Пауза на Perch";
 
 // Views · Setup
@@ -210,26 +212,26 @@
 "Previous" = "Назад";
 "Previous page" = "Предишна страница";
 "Welcome to Perch" = "Добре дошли в Perch";
-"welcome_message" = "Perch добавя в лентата с менюта системен монитор, стартер за приложения и превключвател на прозорци. С тази кратка настройка избирате какво да се показва първо.";
-"Select preset" = "Изберете набор";
-"select_preset_message" = "Изберете начален набор от модули. Всичко от него можете да промените по-късно в Настройки.";
-"Start the application automatically when starting your Mac" = "Отваряй приложението автоматично при стартиране на Mac";
-"Do not start the application automatically when starting your Mac" = "Не отваряй приложението автоматично при стартиране на Mac";
-"Do everything silently in the background (recommended)" = "Прави всичко незабележимо във фонов режим (препоръчително)";
-"Check for a new version on startup" = "Проверявай за нова версия при стартиране";
-"Check for a new version every day (once a day)" = "Проверявай за нова версия всеки ден (веднъж дневно)";
-"Check for a new version every week (once a week)" = "Проверявай за нова версия всяка седмица (веднъж седмично)";
-"Check for a new version every month (once a month)" = "Проверявай за нова версия всеки месец (веднъж месечно)";
-"Never check for updates (not recommended)" = "Никога не проверявай за актуализации (не се препоръчва)";
+"welcome_message" = "Perch поставя системен монитор, стартер на приложения и превключвател на прозорци в лентата с менюта. Тази кратка настройка избира какво да се показва първо.";
+"Select preset" = "Избор на шаблон";
+"select_preset_message" = "Изберете начален набор от модули. Можете да промените всичко по-късно в Настройки.";
+"Start the application automatically when starting your Mac" = "Автоматично стартиране на приложението при включване на вашия Mac";
+"Do not start the application automatically when starting your Mac" = "Без автоматично стартиране на приложението при включване на вашия Mac";
+"Do everything silently in the background (recommended)" = "Всичко безшумно във фонов режим (препоръчително)";
+"Check for a new version on startup" = "Проверка за нова версия при стартиране";
+"Check for a new version every day (once a day)" = "Проверка за нова версия всеки ден (веднъж дневно)";
+"Check for a new version every week (once a week)" = "Проверка за нова версия всяка седмица (веднъж седмично)";
+"Check for a new version every month (once a month)" = "Проверка за нова версия всеки месец (веднъж месечно)";
+"Never check for updates (not recommended)" = "Без проверка за актуализации (не се препоръчва)";
 "The configuration is completed" = "Настройката е завършена";
-"finish_setup_message" = "Всичко е готово.\n\nPerch е безплатно приложение с отворен код. Ако ви е полезно, можете да подкрепите разработката му.";
+"finish_setup_message" = "Всичко е готово.\n\nPerch е безплатен и с отворен код. Ако ви е полезен, можете да подкрепите разработката му.";
 
 // Views · SetupFlow
 "Next" = "Напред";
 "Next page" = "Следваща страница";
 "Finish" = "Готово";
-"Finish setup" = "Завърши настройката";
-"Default" = "Стандартен";
+"Finish setup" = "Завършване на настройката";
+"Default" = "По подразбиране";
 "Basic" = "Основен";
 "Recommended" = "Препоръчителен";
 "Extended" = "Разширен";

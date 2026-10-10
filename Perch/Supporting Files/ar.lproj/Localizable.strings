@@ -1,22 +1,24 @@
 /*
  * Localizable.strings — Perch, Arabic.
  *
- * The source every other language is checked against: `python3 Tools/i18n.py`
- * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
- * in step with the code. %0, %1 ... are filled in by `localized()` in
- * Perch/UI/Localized.swift and must survive translation.
+ * Translated from en.lproj, which is the source: `python3 Tools/i18n.py`
+ * keeps this file in step with it. %0, %1 ... are filled in by
+ * `localized()` in Perch/UI/Localized.swift and must survive translation.
+ *
+ * Machine-translated on 2026-10-10, from the English alone, and not yet
+ * reviewed by a native speaker. Corrections are welcome.
  */
 
 // Monitor · CPUModuleShell
 "CPU" = "CPU";
 "None" = "بلا";
 "2 minutes" = "دقيقتان";
-"Chart history" = "سجل المخطط";
+"Chart history" = "سجل الرسم البياني";
 "Top processes" = "أكثر العمليات استهلاكًا";
 "1 minute" = "دقيقة واحدة";
 "5 minutes" = "5 دقائق";
 "Menu bar" = "شريط القائمة";
-"Notify me when" = "أعلمني عند";
+"Notify me when" = "أعلمني عندما";
 
 // Monitor · CPUPopup
 "Clock" = "التردد";
@@ -31,18 +33,18 @@
 
 // Monitor · CombinedBar
 "No module has anything to show here yet." = "لا توجد وحدة لديها ما تعرضه هنا بعد.";
-"Combined modules" = "دمج الوحدات";
-"Combined details" = "تفاصيل مدمجة";
+"Combined modules" = "الوحدات المدمجة";
+"Combined details" = "التفاصيل المدمجة";
 
 // Monitor · DiskModuleShell
 "Disk" = "القرص";
-"Startup volume" = "قرص بدء التشغيل";
-"not mounted" = "غير محمّل";
+"Startup volume" = "وحدة تخزين بدء التشغيل";
+"not mounted" = "غير مُركَّب";
 
 // Monitor · DiskPopup
 "Format" = "التنسيق";
-"Used" = "المستخدم";
-"Free" = "المتاح";
+"Used" = "مستخدم";
+"Free" = "متاح";
 "Disk usage threshold" = "حد استخدام القرص";
 
 // Monitor · DiskTile
@@ -80,12 +82,12 @@
 "Network" = "الشبكة";
 "Internet connection lost" = "انقطع الاتصال بالإنترنت";
 "Internet connection established" = "تم الاتصال بالإنترنت";
-"Tell me when" = "أخبرني عند";
-"Connection comes or goes" = "الاتصال أو الانقطاع";
-"Wi-Fi network changes" = "تغيير شبكة Wi-Fi";
-"Interface changes" = "تغيير الواجهة";
-"Local address changes" = "تغيير العنوان المحلي";
-"Public address changes" = "تغيير العنوان العام";
+"Tell me when" = "أخبرني عندما";
+"Connection comes or goes" = "يتوفر الاتصال أو ينقطع";
+"Wi-Fi network changes" = "تتغير شبكة Wi-Fi";
+"Interface changes" = "تتغير الواجهة";
+"Local address changes" = "يتغير العنوان المحلي";
+"Public address changes" = "يتغير العنوان العام";
 
 // Monitor · NetworkPopup
 "Download" = "التنزيل";
@@ -108,13 +110,13 @@
 "RAM" = "RAM";
 
 // Monitor · RAMPopup
-"Wired" = "محجوزة";
+"Wired" = "مثبتة";
 "Compressed" = "مضغوطة";
 "Swap size" = "حجم التبديل";
 "Memory threshold" = "حد الذاكرة";
 
 // Monitor · RAMTile
-"App" = "التطبيقات";
+"App" = "التطبيق";
 "Swap" = "التبديل";
 "Pressure" = "الضغط";
 
@@ -150,12 +152,12 @@
 "Reset" = "إعادة تعيين";
 "Silent" = "صامت";
 "Settings" = "الإعدادات";
-"Check for updates" = "البحث عن تحديثات";
+"Check for updates" = "التحقق من وجود تحديثات";
 "Once per day" = "مرة يوميًا";
 "Once per week" = "مرة أسبوعيًا";
 "Never" = "أبدًا";
-"Check for update" = "البحث عن تحديث";
-"Start at login" = "البدء عند تسجيل الدخول";
+"Check for update" = "التحقق من وجود تحديث";
+"Start at login" = "التشغيل عند تسجيل الدخول";
 "Spacing" = "التباعد";
 "Celsius" = "مئوية";
 "Fahrenheit" = "فهرنهايت";
@@ -178,8 +180,8 @@
 "Serial number" = "الرقم التسلسلي";
 "Model identifier" = "معرّف الطراز";
 "Production year" = "سنة الإنتاج";
-"Number of cores" = "عدد النوى: %0";
-"Number of threads" = "عدد مسارات التنفيذ: %0";
+"Number of cores" = "النوى: %0";
+"Number of threads" = "المسارات: %0";
 "Number of e-cores" = "نوى الكفاءة: %0";
 "Number of p-cores" = "نوى الأداء: %0";
 "Disks" = "الأقراص";
@@ -210,17 +212,17 @@
 "Previous" = "السابق";
 "Previous page" = "الصفحة السابقة";
 "Welcome to Perch" = "مرحبًا بك في Perch";
-"welcome_message" = "يضع Perch في شريط القائمة مراقبًا للنظام ومشغّلًا للتطبيقات ومبدّلًا للنوافذ. يحدد هذا الإعداد القصير ما يظهر أولًا.";
+"welcome_message" = "يضع Perch مراقب النظام ومشغّل التطبيقات ومبدّل النوافذ في شريط القائمة. يحدد هذا الإعداد القصير ما يُعرض أولًا.";
 "Select preset" = "اختيار إعداد مسبق";
-"select_preset_message" = "اختر مجموعة أولية من الوحدات. يمكنك تغيير أي جزء منها لاحقًا في الإعدادات.";
-"Start the application automatically when starting your Mac" = "تشغيل التطبيق تلقائيًا عند بدء تشغيل جهاز Mac";
-"Do not start the application automatically when starting your Mac" = "عدم تشغيل التطبيق تلقائيًا عند بدء تشغيل جهاز Mac";
-"Do everything silently in the background (recommended)" = "تنفيذ كل شيء بصمت في الخلفية (مستحسن)";
-"Check for a new version on startup" = "البحث عن إصدار جديد عند بدء التشغيل";
-"Check for a new version every day (once a day)" = "البحث عن إصدار جديد كل يوم (مرة يوميًا)";
-"Check for a new version every week (once a week)" = "البحث عن إصدار جديد كل أسبوع (مرة أسبوعيًا)";
-"Check for a new version every month (once a month)" = "البحث عن إصدار جديد كل شهر (مرة شهريًا)";
-"Never check for updates (not recommended)" = "عدم البحث عن تحديثات أبدًا (غير مستحسن)";
+"select_preset_message" = "اختر مجموعة أولية من الوحدات. يمكنك تغيير أي منها لاحقًا في الإعدادات.";
+"Start the application automatically when starting your Mac" = "تشغيل التطبيق تلقائيًا عند تشغيل جهاز Mac";
+"Do not start the application automatically when starting your Mac" = "عدم تشغيل التطبيق تلقائيًا عند تشغيل جهاز Mac";
+"Do everything silently in the background (recommended)" = "تنفيذ كل شيء بصمت في الخلفية (موصى به)";
+"Check for a new version on startup" = "التحقق من وجود إصدار جديد عند بدء التشغيل";
+"Check for a new version every day (once a day)" = "التحقق من وجود إصدار جديد يوميًا (مرة في اليوم)";
+"Check for a new version every week (once a week)" = "التحقق من وجود إصدار جديد أسبوعيًا (مرة في الأسبوع)";
+"Check for a new version every month (once a month)" = "التحقق من وجود إصدار جديد شهريًا (مرة في الشهر)";
+"Never check for updates (not recommended)" = "عدم التحقق من وجود تحديثات أبدًا (غير موصى به)";
 "The configuration is completed" = "اكتمل الإعداد";
 "finish_setup_message" = "كل شيء جاهز.\n\nPerch مجاني ومفتوح المصدر. إذا كان مفيدًا لك، يمكنك دعم تطويره.";
 
@@ -231,5 +233,5 @@
 "Finish setup" = "إنهاء الإعداد";
 "Default" = "افتراضي";
 "Basic" = "أساسي";
-"Recommended" = "مستحسن";
+"Recommended" = "موصى به";
 "Extended" = "موسّع";

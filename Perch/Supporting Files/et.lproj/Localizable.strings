@@ -1,17 +1,19 @@
 /*
  * Localizable.strings — Perch, Estonian.
  *
- * The source every other language is checked against: `python3 Tools/i18n.py`
- * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
- * in step with the code. %0, %1 ... are filled in by `localized()` in
- * Perch/UI/Localized.swift and must survive translation.
+ * Translated from en.lproj, which is the source: `python3 Tools/i18n.py`
+ * keeps this file in step with it. %0, %1 ... are filled in by
+ * `localized()` in Perch/UI/Localized.swift and must survive translation.
+ *
+ * Machine-translated on 2026-10-10, from the English alone, and not yet
+ * reviewed by a native speaker. Corrections are welcome.
  */
 
 // Monitor · CPUModuleShell
 "CPU" = "CPU";
 "None" = "Puudub";
 "2 minutes" = "2 minutit";
-"Chart history" = "Diagrammi ajalugu";
+"Chart history" = "Graafiku ajalugu";
 "Top processes" = "Suurimad protsessid";
 "1 minute" = "1 minut";
 "5 minutes" = "5 minutit";
@@ -37,7 +39,7 @@
 // Monitor · DiskModuleShell
 "Disk" = "Ketas";
 "Startup volume" = "Käivitusketas";
-"not mounted" = "pole ühendatud";
+"not mounted" = "ühendamata";
 
 // Monitor · DiskPopup
 "Format" = "Vorming";
@@ -61,7 +63,7 @@
 "cores" = "tuuma";
 
 // Monitor · MemoryReadings
-"Normal" = "Normaalne";
+"Normal" = "Tavaline";
 "Warning" = "Hoiatus";
 "Critical" = "Kriitiline";
 
@@ -79,10 +81,10 @@
 // Monitor · NetworkModuleShell
 "Network" = "Võrk";
 "Internet connection lost" = "Internetiühendus katkes";
-"Internet connection established" = "Internetiühendus loodi";
+"Internet connection established" = "Internetiühendus loodud";
 "Tell me when" = "Anna teada, kui";
 "Connection comes or goes" = "Ühendus tekib või kaob";
-"Wi-Fi network changes" = "Wi-Fi-võrk muutub";
+"Wi-Fi network changes" = "Wi-Fi võrk muutub";
 "Interface changes" = "Liides muutub";
 "Local address changes" = "Kohalik aadress muutub";
 "Public address changes" = "Avalik aadress muutub";
@@ -108,14 +110,14 @@
 "RAM" = "RAM";
 
 // Monitor · RAMPopup
-"Wired" = "Fikseeritud";
+"Wired" = "Lukustatud";
 "Compressed" = "Tihendatud";
-"Swap size" = "Saalemälu suurus";
+"Swap size" = "Saaleala suurus";
 "Memory threshold" = "Mälu lävi";
 
 // Monitor · RAMTile
-"App" = "Rakendus";
-"Swap" = "Saalemälu";
+"App" = "Rakendused";
+"Swap" = "Saaleala";
 "Pressure" = "Surve";
 
 // Monitor · SensorReadings
@@ -123,7 +125,7 @@
 
 // Monitor · SensorsModuleShell
 "Sensors" = "Andurid";
-"Show in the popup" = "Kuva hüpikaknas";
+"Show in the popup" = "Näita hüpikaknas";
 "Hottest temperature" = "Kõrgeim temperatuur";
 
 // Monitor · SensorsPopup
@@ -143,12 +145,12 @@
 "Memory pressure" = "Mälusurve";
 "Memory used" = "Kasutatud mälu";
 "Memory free" = "Vaba mälu";
-"Swap in use" = "Kasutusel saalemälu";
+"Swap in use" = "Kasutusel saaleala";
 "Disk usage" = "Ketta kasutus";
 
 // Settings · GeneralPane
 "Reset" = "Lähtesta";
-"Silent" = "Vaikselt";
+"Silent" = "Vaikne";
 "Settings" = "Seaded";
 "Check for updates" = "Otsi uuendusi";
 "Once per day" = "Kord päevas";
@@ -173,7 +175,7 @@
 "Click to install the new version of Perch" = "Klõpsa, et installida Perchi uus versioon";
 
 // System · DashboardPane
-"Unknown" = "Teadmata";
+"Unknown" = "Tundmatu";
 "Graphics" = "Graafika";
 "Serial number" = "Seerianumber";
 "Model identifier" = "Mudeli identifikaator";
@@ -187,7 +189,7 @@
 
 // UI · SupportWindow
 "Close" = "Sulge";
-"Support text" = "Aitäh, et kasutad Perchi.\n\nPerch on tasuta ja avatud lähtekoodiga ning seda arendatakse ja hoitakse töös vabal ajal. Kui see teeb su päeva natuke lihtsamaks, aitab annetus sel edasi elada.";
+"Support text" = "Aitäh, et kasutad Perchi.\n\nPerch on tasuta ja avatud lähtekoodiga ning seda arendatakse ja hooldatakse vabal ajal. Kui see teeb su päeva veidi lihtsamaks, aitab annetus sel jätkuda.";
 "Support Perch" = "Toeta Perchi";
 "Donate" = "Anneta";
 
@@ -210,11 +212,11 @@
 "Previous" = "Eelmine";
 "Previous page" = "Eelmine leht";
 "Welcome to Perch" = "Tere tulemast Perchi";
-"welcome_message" = "Perch paigutab menüüribale süsteemimonitori, rakenduste käivitaja ja akende vahetaja. Selles lühikeses seadistuses valitakse, mida esmalt näidata.";
+"welcome_message" = "Perch toob su menüüribale süsteemimonitori, rakenduste käivitaja ja akende vahetaja. See lühike seadistus valib, mida esmalt näidata.";
 "Select preset" = "Vali eelseadistus";
-"select_preset_message" = "Vali moodulid, millega alustada. Saad kõike hiljem seadetes muuta.";
-"Start the application automatically when starting your Mac" = "Käivita rakendus automaatselt Maci käivitamisel";
-"Do not start the application automatically when starting your Mac" = "Ära käivita rakendust automaatselt Maci käivitamisel";
+"select_preset_message" = "Vali moodulite algkomplekt. Kõike saad hiljem seadetes muuta.";
+"Start the application automatically when starting your Mac" = "Käivita rakendus Maci käivitamisel automaatselt";
+"Do not start the application automatically when starting your Mac" = "Ära käivita rakendust Maci käivitamisel automaatselt";
 "Do everything silently in the background (recommended)" = "Tee kõik vaikselt taustal (soovitatav)";
 "Check for a new version on startup" = "Otsi uut versiooni käivitamisel";
 "Check for a new version every day (once a day)" = "Otsi uut versiooni iga päev (kord päevas)";
@@ -222,14 +224,14 @@
 "Check for a new version every month (once a month)" = "Otsi uut versiooni iga kuu (kord kuus)";
 "Never check for updates (not recommended)" = "Ära kunagi otsi uuendusi (pole soovitatav)";
 "The configuration is completed" = "Seadistamine on lõpetatud";
-"finish_setup_message" = "Kõik on valmis.\n\nPerch on tasuta ja avatud lähtekoodiga. Kui sellest on sulle kasu, saad selle arendust toetada.";
+"finish_setup_message" = "Kõik on valmis.\n\nPerch on tasuta ja avatud lähtekoodiga. Kui see on sulle kasulik, saad selle arendamist toetada.";
 
 // Views · SetupFlow
-"Next" = "Järgmine";
+"Next" = "Edasi";
 "Next page" = "Järgmine leht";
 "Finish" = "Lõpeta";
 "Finish setup" = "Lõpeta seadistamine";
 "Default" = "Vaikimisi";
 "Basic" = "Põhiline";
-"Recommended" = "Soovitatud";
+"Recommended" = "Soovitatav";
 "Extended" = "Laiendatud";

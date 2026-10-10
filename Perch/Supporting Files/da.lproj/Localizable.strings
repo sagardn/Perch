@@ -1,10 +1,12 @@
 /*
  * Localizable.strings — Perch, Danish.
  *
- * The source every other language is checked against: `python3 Tools/i18n.py`
- * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
- * in step with the code. %0, %1 ... are filled in by `localized()` in
- * Perch/UI/Localized.swift and must survive translation.
+ * Translated from en.lproj, which is the source: `python3 Tools/i18n.py`
+ * keeps this file in step with it. %0, %1 ... are filled in by
+ * `localized()` in Perch/UI/Localized.swift and must survive translation.
+ *
+ * Machine-translated on 2026-10-10, from the English alone, and not yet
+ * reviewed by a native speaker. Corrections are welcome.
  */
 
 // Monitor · CPUModuleShell
@@ -16,34 +18,34 @@
 "1 minute" = "1 minut";
 "5 minutes" = "5 minutter";
 "Menu bar" = "Menulinje";
-"Notify me when" = "Giv mig besked, når";
+"Notify me when" = "Giv besked, når";
 
 // Monitor · CPUPopup
-"Clock" = "Klokfrekvens";
+"Clock" = "Frekvens";
 "Processor" = "Processor";
 "Cores" = "Kerner";
 "Uptime" = "Oppetid";
 "System" = "System";
 "User" = "Bruger";
-"CPU usage threshold" = "Grænse for CPU-forbrug";
+"CPU usage threshold" = "Tærskel for CPU-forbrug";
 "Total" = "I alt";
 "Temperature" = "Temperatur";
 
 // Monitor · CombinedBar
-"No module has anything to show here yet." = "Ingen moduler har noget at vise her endnu.";
-"Combined modules" = "Samlede moduler";
-"Combined details" = "Samlede detaljer";
+"No module has anything to show here yet." = "Intet modul har noget at vise her endnu.";
+"Combined modules" = "Kombinerede moduler";
+"Combined details" = "Kombinerede detaljer";
 
 // Monitor · DiskModuleShell
 "Disk" = "Disk";
 "Startup volume" = "Startvolumen";
-"not mounted" = "ikke indlæst";
+"not mounted" = "ikke monteret";
 
 // Monitor · DiskPopup
 "Format" = "Format";
 "Used" = "Brugt";
 "Free" = "Ledig";
-"Disk usage threshold" = "Grænse for diskforbrug";
+"Disk usage threshold" = "Tærskel for diskforbrug";
 
 // Monitor · DiskTile
 "free" = "ledig";
@@ -55,7 +57,7 @@
 "Memory" = "Hukommelse";
 "Model" = "Model";
 "Utilization" = "Udnyttelse";
-"GPU usage threshold" = "Grænse for GPU-forbrug";
+"GPU usage threshold" = "Tærskel for GPU-forbrug";
 
 // Monitor · GPUTile
 "cores" = "kerner";
@@ -78,8 +80,8 @@
 
 // Monitor · NetworkModuleShell
 "Network" = "Netværk";
-"Internet connection lost" = "Internetforbindelsen blev afbrudt";
-"Internet connection established" = "Internetforbindelsen blev oprettet";
+"Internet connection lost" = "Internetforbindelsen er afbrudt";
+"Internet connection established" = "Internetforbindelsen er oprettet";
 "Tell me when" = "Fortæl mig, når";
 "Connection comes or goes" = "Forbindelsen kommer eller går";
 "Wi-Fi network changes" = "Wi-Fi-netværket skifter";
@@ -111,7 +113,7 @@
 "Wired" = "Fast";
 "Compressed" = "Komprimeret";
 "Swap size" = "Swapstørrelse";
-"Memory threshold" = "Grænse for hukommelse";
+"Memory threshold" = "Tærskel for hukommelse";
 
 // Monitor · RAMTile
 "App" = "App";
@@ -130,7 +132,7 @@
 "History" = "Historik";
 
 // Monitor · SensorsTile
-"hottest" = "varmest";
+"hottest" = "højeste";
 "sensors" = "sensorer";
 "No sensors answered" = "Ingen sensorer svarede";
 
@@ -148,24 +150,24 @@
 
 // Settings · GeneralPane
 "Reset" = "Nulstil";
-"Silent" = "Lydløst";
+"Silent" = "Lydløs";
 "Settings" = "Indstillinger";
 "Check for updates" = "Søg efter opdateringer";
-"Once per day" = "Én gang om dagen";
-"Once per week" = "Én gang om ugen";
+"Once per day" = "En gang om dagen";
+"Once per week" = "En gang om ugen";
 "Never" = "Aldrig";
 "Check for update" = "Søg efter opdatering";
-"Start at login" = "Start ved login";
+"Start at login" = "Åbn ved login";
 "Spacing" = "Afstand";
 "Celsius" = "Celsius";
 "Fahrenheit" = "Fahrenheit";
 
 // Settings · UpdateInterval
 "At start" = "Ved start";
-"Once per month" = "Én gang om måneden";
+"Once per month" = "En gang om måneden";
 
 // Startup · Startup
-"Successfully updated" = "Opdateringen lykkedes";
+"Successfully updated" = "Opdateret";
 "Perch was updated to v" = "Perch er blevet opdateret til version %0";
 
 // Startup · UpdateCheck
@@ -176,7 +178,7 @@
 "Unknown" = "Ukendt";
 "Graphics" = "Grafik";
 "Serial number" = "Serienummer";
-"Model identifier" = "Modelidentifikator";
+"Model identifier" = "Model-id";
 "Production year" = "Produktionsår";
 "Number of cores" = "%0 kerner";
 "Number of threads" = "%0 tråde";
@@ -187,39 +189,39 @@
 
 // UI · SupportWindow
 "Close" = "Luk";
-"Support text" = "Tak, fordi du bruger Perch.\n\nPerch er gratis og open source, og det udvikles og vedligeholdes i fritiden. Hvis det gør din dag en smule nemmere, hjælper et bidrag med at holde det kørende.";
+"Support text" = "Tak, fordi du bruger Perch.\n\nPerch er gratis og open source og bliver udviklet og vedligeholdt i fritiden. Hvis det gør din dag lidt lettere, hjælper et bidrag med at holde det i gang.";
 "Support Perch" = "Støt Perch";
-"Donate" = "Donér";
+"Donate" = "Doner";
 
 // Update · UpdateWindow
 "Install" = "Installer";
 
 // Views · SettingsShell
-"Report a bug" = "Rapportér en fejl";
-"Support the application" = "Støt appen";
-"Close application" = "Luk appen";
+"Report a bug" = "Rapporter en fejl";
+"Support the application" = "Støt programmet";
+"Close application" = "Luk programmet";
 "Toggle the module" = "Slå modulet til/fra";
 "Modules" = "Moduler";
 "Search" = "Søg";
 "Preview" = "Eksempel";
-"Support" = "Støt";
+"Support" = "Support";
 "Pause the Perch" = "Sæt Perch på pause";
 
 // Views · Setup
-"Perch Setup" = "Konfiguration af Perch";
+"Perch Setup" = "Indstilling af Perch";
 "Previous" = "Forrige";
 "Previous page" = "Forrige side";
 "Welcome to Perch" = "Velkommen til Perch";
-"welcome_message" = "Perch giver dig en systemovervågning, en appstarter og en vinduesskifter på menulinjen. Denne korte konfiguration vælger, hvad der skal vises først.";
+"welcome_message" = "Perch placerer en systemovervågning, en appstarter og en vinduesskifter på din menulinje. Denne korte indstilling vælger, hvad der vises først.";
 "Select preset" = "Vælg forudindstilling";
-"select_preset_message" = "Vælg de moduler, du vil starte med. Du kan ændre det hele senere i Indstillinger.";
-"Start the application automatically when starting your Mac" = "Start appen automatisk, når du starter din Mac";
-"Do not start the application automatically when starting your Mac" = "Start ikke appen automatisk, når du starter din Mac";
+"select_preset_message" = "Vælg et startsæt af moduler. Du kan ændre det hele senere i Indstillinger.";
+"Start the application automatically when starting your Mac" = "Start programmet automatisk, når din Mac starter";
+"Do not start the application automatically when starting your Mac" = "Start ikke programmet automatisk, når din Mac starter";
 "Do everything silently in the background (recommended)" = "Gør alt lydløst i baggrunden (anbefales)";
 "Check for a new version on startup" = "Søg efter en ny version ved start";
-"Check for a new version every day (once a day)" = "Søg efter en ny version hver dag (én gang om dagen)";
-"Check for a new version every week (once a week)" = "Søg efter en ny version hver uge (én gang om ugen)";
-"Check for a new version every month (once a month)" = "Søg efter en ny version hver måned (én gang om måneden)";
+"Check for a new version every day (once a day)" = "Søg efter en ny version hver dag (en gang om dagen)";
+"Check for a new version every week (once a week)" = "Søg efter en ny version hver uge (en gang om ugen)";
+"Check for a new version every month (once a month)" = "Søg efter en ny version hver måned (en gang om måneden)";
 "Never check for updates (not recommended)" = "Søg aldrig efter opdateringer (anbefales ikke)";
 "The configuration is completed" = "Konfigurationen er fuldført";
 "finish_setup_message" = "Du er klar.\n\nPerch er gratis og open source. Hvis du har gavn af det, kan du støtte udviklingen.";
@@ -228,7 +230,7 @@
 "Next" = "Næste";
 "Next page" = "Næste side";
 "Finish" = "Afslut";
-"Finish setup" = "Afslut konfiguration";
+"Finish setup" = "Afslut indstilling";
 "Default" = "Standard";
 "Basic" = "Basis";
 "Recommended" = "Anbefalet";

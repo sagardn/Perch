@@ -1,10 +1,9 @@
 /*
  * Localizable.strings — Perch, English (United Kingdom).
  *
- * The source every other language is checked against: `python3 Tools/i18n.py`
- * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
- * in step with the code. %0, %1 ... are filled in by `localized()` in
- * Perch/UI/Localized.swift and must survive translation.
+ * Translated from en.lproj, which is the source: `python3 Tools/i18n.py`
+ * keeps this file in step with it. %0, %1 ... are filled in by
+ * `localized()` in Perch/UI/Localized.swift and must survive translation.
  */
 
 // Monitor · CPUModuleShell
@@ -203,7 +202,7 @@
 "Search" = "Search";
 "Preview" = "Preview";
 "Support" = "Support";
-"Pause the Perch" = "Pause the Perch";
+"Pause the Perch" = "Pause Perch";
 
 // Views · Setup
 "Perch Setup" = "Perch Setup";

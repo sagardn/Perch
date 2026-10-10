@@ -1,18 +1,20 @@
 /*
  * Localizable.strings — Perch, Ukrainian.
  *
- * The source every other language is checked against: `python3 Tools/i18n.py`
- * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
- * in step with the code. %0, %1 ... are filled in by `localized()` in
- * Perch/UI/Localized.swift and must survive translation.
+ * Translated from en.lproj, which is the source: `python3 Tools/i18n.py`
+ * keeps this file in step with it. %0, %1 ... are filled in by
+ * `localized()` in Perch/UI/Localized.swift and must survive translation.
+ *
+ * Machine-translated on 2026-10-10, from the English alone, and not yet
+ * reviewed by a native speaker. Corrections are welcome.
  */
 
 // Monitor · CPUModuleShell
-"CPU" = "ЦП";
+"CPU" = "CPU";
 "None" = "Немає";
 "2 minutes" = "2 хвилини";
 "Chart history" = "Історія графіка";
-"Top processes" = "Активні процеси";
+"Top processes" = "Найактивніші процеси";
 "1 minute" = "1 хвилина";
 "5 minutes" = "5 хвилин";
 "Menu bar" = "Смуга меню";
@@ -25,14 +27,14 @@
 "Uptime" = "Час роботи";
 "System" = "Система";
 "User" = "Користувач";
-"CPU usage threshold" = "Поріг навантаження ЦП";
+"CPU usage threshold" = "Поріг використання CPU";
 "Total" = "Усього";
 "Temperature" = "Температура";
 
 // Monitor · CombinedBar
-"No module has anything to show here yet." = "Модулям поки що нічого тут показати.";
+"No module has anything to show here yet." = "Жодному модулю ще нічого тут показати.";
 "Combined modules" = "Об’єднані модулі";
-"Combined details" = "Об’єднані відомості";
+"Combined details" = "Об’єднані подробиці";
 
 // Monitor · DiskModuleShell
 "Disk" = "Диск";
@@ -43,19 +45,19 @@
 "Format" = "Формат";
 "Used" = "Використано";
 "Free" = "Вільно";
-"Disk usage threshold" = "Поріг заповнення диска";
+"Disk usage threshold" = "Поріг використання диска";
 
 // Monitor · DiskTile
 "free" = "вільно";
 
 // Monitor · GPUModuleShell
-"GPU" = "ГП";
+"GPU" = "GPU";
 
 // Monitor · GPUPopup
 "Memory" = "Пам’ять";
 "Model" = "Модель";
-"Utilization" = "Навантаження";
-"GPU usage threshold" = "Поріг навантаження ГП";
+"Utilization" = "Завантаження";
+"GPU usage threshold" = "Поріг використання GPU";
 
 // Monitor · GPUTile
 "cores" = "ядер";
@@ -69,34 +71,34 @@
 "Name" = "Назва";
 "Figure" = "Число";
 "Ring" = "Кільце";
-"Gauge" = "Шкала";
-"Used and free" = "Зайнято й вільно";
-"Rates" = "Швидкість";
-"Bar chart" = "Гістограма";
+"Gauge" = "Індикатор";
+"Used and free" = "Використано й вільно";
+"Rates" = "Швидкості";
+"Bar chart" = "Стовпчикова діаграма";
 "Line chart" = "Лінійний графік";
 "Traffic chart" = "Графік трафіку";
 
 // Monitor · NetworkModuleShell
 "Network" = "Мережа";
-"Internet connection lost" = "З’єднання з інтернетом втрачено";
-"Internet connection established" = "З’єднання з інтернетом встановлено";
+"Internet connection lost" = "Інтернет-з’єднання втрачено";
+"Internet connection established" = "Інтернет-з’єднання встановлено";
 "Tell me when" = "Повідомляти, коли";
 "Connection comes or goes" = "З’єднання з’являється або зникає";
 "Wi-Fi network changes" = "Змінюється мережа Wi-Fi";
 "Interface changes" = "Змінюється інтерфейс";
 "Local address changes" = "Змінюється локальна адреса";
-"Public address changes" = "Змінюється зовнішня адреса";
+"Public address changes" = "Змінюється публічна адреса";
 
 // Monitor · NetworkPopup
 "Download" = "Завантаження";
 "Local IP" = "Локальна IP";
 "Interface" = "Інтерфейс";
 "Physical address" = "Фізична адреса";
-"Online" = "У мережі";
-"Offline" = "Не в мережі";
+"Online" = "Онлайн";
+"Offline" = "Офлайн";
 
 // Monitor · Popup
-"Dashboard" = "Огляд";
+"Dashboard" = "Панель";
 
 // Monitor · PopupParts
 "Idle" = "Простій";
@@ -105,7 +107,7 @@
 "Process" = "Процес";
 
 // Monitor · RAMModuleShell
-"RAM" = "ОЗП";
+"RAM" = "RAM";
 
 // Monitor · RAMPopup
 "Wired" = "Зарезервована";
@@ -116,7 +118,7 @@
 // Monitor · RAMTile
 "App" = "Програми";
 "Swap" = "Своп";
-"Pressure" = "Навантаження";
+"Pressure" = "Тиск";
 
 // Monitor · SensorReadings
 "Battery" = "Акумулятор";
@@ -130,33 +132,33 @@
 "History" = "Історія";
 
 // Monitor · SensorsTile
-"hottest" = "макс.";
+"hottest" = "найгарячіший";
 "sensors" = "датчиків";
-"No sensors answered" = "Датчики не відповіли";
+"No sensors answered" = "Жоден датчик не відповів";
 
 // Monitor · Thresholds
 "Total load" = "Загальне навантаження";
 "System load" = "Навантаження системи";
 "User load" = "Навантаження користувача";
-"Efficiency cores load" = "Навантаження ядер ефективності";
-"Performance cores load" = "Навантаження ядер продуктивності";
-"Memory pressure" = "Навантаження на пам’ять";
+"Efficiency cores load" = "Навантаження енергоефективних ядер";
+"Performance cores load" = "Навантаження продуктивних ядер";
+"Memory pressure" = "Тиск на пам’ять";
 "Memory used" = "Використано пам’яті";
 "Memory free" = "Вільно пам’яті";
 "Swap in use" = "Використано свопу";
-"Disk usage" = "Заповнення диска";
+"Disk usage" = "Використання диска";
 
 // Settings · GeneralPane
 "Reset" = "Скинути";
-"Silent" = "У фоні";
+"Silent" = "Без звуку";
 "Settings" = "Параметри";
 "Check for updates" = "Перевіряти оновлення";
 "Once per day" = "Раз на день";
 "Once per week" = "Раз на тиждень";
 "Never" = "Ніколи";
 "Check for update" = "Перевірити оновлення";
-"Start at login" = "Відкривати під час входу";
-"Spacing" = "Інтервал";
+"Start at login" = "Запускати під час входу";
+"Spacing" = "Відступ";
 "Celsius" = "Цельсій";
 "Fahrenheit" = "Фаренгейт";
 
@@ -165,31 +167,31 @@
 "Once per month" = "Раз на місяць";
 
 // Startup · Startup
-"Successfully updated" = "Оновлення виконано";
+"Successfully updated" = "Успішно оновлено";
 "Perch was updated to v" = "Perch оновлено до версії %0";
 
 // Startup · UpdateCheck
 "New version available" = "Доступна нова версія";
-"Click to install the new version of Perch" = "Клацніть, щоб інсталювати нову версію Perch";
+"Click to install the new version of Perch" = "Натисніть, щоб інсталювати нову версію Perch";
 
 // System · DashboardPane
 "Unknown" = "Невідомо";
 "Graphics" = "Графіка";
 "Serial number" = "Серійний номер";
 "Model identifier" = "Ідентифікатор моделі";
-"Production year" = "Рік випуску";
+"Production year" = "Рік виробництва";
 "Number of cores" = "Ядер: %0";
 "Number of threads" = "Потоків: %0";
-"Number of e-cores" = "Ядер ефективності: %0";
-"Number of p-cores" = "Ядер продуктивності: %0";
+"Number of e-cores" = "Енергоефективних ядер: %0";
+"Number of p-cores" = "Продуктивних ядер: %0";
 "Disks" = "Диски";
 "Display" = "Дисплей";
 
 // UI · SupportWindow
 "Close" = "Закрити";
-"Support text" = "Дякуємо, що користуєтеся Perch.\n\nPerch — безплатна програма з відкритим кодом, яку створюють і підтримують у вільний час. Якщо вона трохи спрощує ваш день, внесок допоможе її розвитку.";
+"Support text" = "Дякуємо, що користуєтеся Perch.\n\nPerch — безплатна програма з відкритим кодом, яку створюють і підтримують у вільний час. Якщо вона хоч трохи полегшує ваш день, ваш внесок допоможе їй розвиватися далі.";
 "Support Perch" = "Підтримати Perch";
-"Donate" = "Зробити внесок";
+"Donate" = "Пожертвувати";
 
 // Update · UpdateWindow
 "Install" = "Інсталювати";
@@ -210,19 +212,19 @@
 "Previous" = "Назад";
 "Previous page" = "Попередня сторінка";
 "Welcome to Perch" = "Вітаємо в Perch";
-"welcome_message" = "Perch додає на смугу меню системний монітор, запуск програм і перемикач вікон. У цьому короткому налаштуванні можна вибрати, що показувати спершу.";
+"welcome_message" = "Perch додає до смуги меню монітор системи, запускач програм і перемикач вікон. Це коротке налаштування визначить, що показувати спершу.";
 "Select preset" = "Виберіть набір";
-"select_preset_message" = "Виберіть початковий набір модулів. Пізніше все це можна змінити в Параметрах.";
-"Start the application automatically when starting your Mac" = "Відкривати програму автоматично під час запуску Mac";
-"Do not start the application automatically when starting your Mac" = "Не відкривати програму автоматично під час запуску Mac";
-"Do everything silently in the background (recommended)" = "Робити все непомітно у фоновому режимі (рекомендовано)";
-"Check for a new version on startup" = "Перевіряти наявність нової версії під час запуску";
-"Check for a new version every day (once a day)" = "Перевіряти наявність нової версії щодня (раз на день)";
-"Check for a new version every week (once a week)" = "Перевіряти наявність нової версії щотижня (раз на тиждень)";
-"Check for a new version every month (once a month)" = "Перевіряти наявність нової версії щомісяця (раз на місяць)";
+"select_preset_message" = "Виберіть початковий набір модулів. Будь-що з цього можна змінити пізніше в Параметрах.";
+"Start the application automatically when starting your Mac" = "Автоматично запускати програму під час запуску Mac";
+"Do not start the application automatically when starting your Mac" = "Не запускати програму автоматично під час запуску Mac";
+"Do everything silently in the background (recommended)" = "Робити все тихо у фоновому режимі (рекомендовано)";
+"Check for a new version on startup" = "Перевіряти нову версію під час запуску";
+"Check for a new version every day (once a day)" = "Перевіряти нову версію щодня (раз на день)";
+"Check for a new version every week (once a week)" = "Перевіряти нову версію щотижня (раз на тиждень)";
+"Check for a new version every month (once a month)" = "Перевіряти нову версію щомісяця (раз на місяць)";
 "Never check for updates (not recommended)" = "Ніколи не перевіряти оновлення (не рекомендовано)";
 "The configuration is completed" = "Налаштування завершено";
-"finish_setup_message" = "Усе готово.\n\nPerch — безплатна програма з відкритим кодом. Якщо вона вам корисна, ви можете підтримати її розробку.";
+"finish_setup_message" = "Усе готово.\n\nPerch — безплатна програма з відкритим кодом. Якщо вона вам корисна, ви можете підтримати її розвиток.";
 
 // Views · SetupFlow
 "Next" = "Далі";

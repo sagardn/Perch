@@ -1,10 +1,12 @@
 /*
- * Localizable.strings — Perch, Chinese, Simplified.
+ * Localizable.strings — Perch, Chinese (Simplified).
  *
- * The source every other language is checked against: `python3 Tools/i18n.py`
- * keeps the 40 others in step with it, and `python3 Tools/i18n.py scan` keeps it
- * in step with the code. %0, %1 ... are filled in by `localized()` in
- * Perch/UI/Localized.swift and must survive translation.
+ * Translated from en.lproj, which is the source: `python3 Tools/i18n.py`
+ * keeps this file in step with it. %0, %1 ... are filled in by
+ * `localized()` in Perch/UI/Localized.swift and must survive translation.
+ *
+ * Machine-translated on 2026-10-10, from the English alone, and not yet
+ * reviewed by a native speaker. Corrections are welcome.
  */
 
 // Monitor · CPUModuleShell
@@ -12,7 +14,7 @@
 "None" = "无";
 "2 minutes" = "2 分钟";
 "Chart history" = "图表历史";
-"Top processes" = "主要进程";
+"Top processes" = "占用最高的进程";
 "1 minute" = "1 分钟";
 "5 minutes" = "5 分钟";
 "Menu bar" = "菜单栏";
@@ -30,13 +32,13 @@
 "Temperature" = "温度";
 
 // Monitor · CombinedBar
-"No module has anything to show here yet." = "暂无可在此显示内容的模块。";
-"Combined modules" = "合并模块";
-"Combined details" = "合并详情";
+"No module has anything to show here yet." = "暂无模块可在此显示内容。";
+"Combined modules" = "组合模块";
+"Combined details" = "组合详情";
 
 // Monitor · DiskModuleShell
 "Disk" = "磁盘";
-"Startup volume" = "启动宗卷";
+"Startup volume" = "启动卷";
 "not mounted" = "未装载";
 
 // Monitor · DiskPopup
@@ -72,20 +74,20 @@
 "Gauge" = "仪表";
 "Used and free" = "已用和可用";
 "Rates" = "速率";
-"Bar chart" = "柱状图";
+"Bar chart" = "条形图";
 "Line chart" = "折线图";
 "Traffic chart" = "流量图";
 
 // Monitor · NetworkModuleShell
 "Network" = "网络";
 "Internet connection lost" = "互联网连接已断开";
-"Internet connection established" = "互联网已连接";
-"Tell me when" = "在以下情况提醒我";
-"Connection comes or goes" = "连接接通或断开时";
-"Wi-Fi network changes" = "Wi-Fi 网络更改时";
-"Interface changes" = "接口更改时";
-"Local address changes" = "本地地址更改时";
-"Public address changes" = "公网地址更改时";
+"Internet connection established" = "互联网连接已建立";
+"Tell me when" = "在以下情况告诉我";
+"Connection comes or goes" = "连接建立或断开";
+"Wi-Fi network changes" = "Wi-Fi 网络更改";
+"Interface changes" = "接口更改";
+"Local address changes" = "本地地址更改";
+"Public address changes" = "公网地址更改";
 
 // Monitor · NetworkPopup
 "Download" = "下载";
@@ -96,7 +98,7 @@
 "Offline" = "离线";
 
 // Monitor · Popup
-"Dashboard" = "仪表板";
+"Dashboard" = "仪表盘";
 
 // Monitor · PopupParts
 "Idle" = "闲置";
@@ -108,15 +110,15 @@
 "RAM" = "RAM";
 
 // Monitor · RAMPopup
-"Wired" = "联动内存";
+"Wired" = "联动";
 "Compressed" = "已压缩";
-"Swap size" = "交换区大小";
+"Swap size" = "交换大小";
 "Memory threshold" = "内存阈值";
 
 // Monitor · RAMTile
-"App" = "App 内存";
+"App" = "App";
 "Swap" = "交换";
-"Pressure" = "内存压力";
+"Pressure" = "压力";
 
 // Monitor · SensorReadings
 "Battery" = "电池";
@@ -127,12 +129,12 @@
 "Hottest temperature" = "最高温度";
 
 // Monitor · SensorsPopup
-"History" = "历史记录";
+"History" = "历史";
 
 // Monitor · SensorsTile
-"hottest" = "最高";
-"sensors" = "个传感器";
-"No sensors answered" = "无传感器响应";
+"hottest" = "最热";
+"sensors" = "传感器";
+"No sensors answered" = "没有传感器响应";
 
 // Monitor · Thresholds
 "Total load" = "总负载";
@@ -157,8 +159,8 @@
 "Check for update" = "检查更新";
 "Start at login" = "登录时启动";
 "Spacing" = "间距";
-"Celsius" = "摄氏";
-"Fahrenheit" = "华氏";
+"Celsius" = "摄氏度";
+"Fahrenheit" = "华氏度";
 
 // Settings · UpdateInterval
 "At start" = "启动时";
@@ -187,9 +189,9 @@
 
 // UI · SupportWindow
 "Close" = "关闭";
-"Support text" = "感谢你使用 Perch。\n\nPerch 是免费的开源软件，由开发者利用业余时间构建和维护。如果它让你的日常更轻松一些，你的捐助将帮助它持续发展。";
+"Support text" = "感谢使用 Perch。\n\nPerch 免费且开源，由开发者利用业余时间构建和维护。如果它让你的日常轻松了一些，你的支持将帮助它继续走下去。";
 "Support Perch" = "支持 Perch";
-"Donate" = "捐助";
+"Donate" = "捐赠";
 
 // Update · UpdateWindow
 "Install" = "安装";
@@ -197,8 +199,8 @@
 // Views · SettingsShell
 "Report a bug" = "报告错误";
 "Support the application" = "支持此应用";
-"Close application" = "退出应用";
-"Toggle the module" = "打开或关闭模块";
+"Close application" = "关闭应用";
+"Toggle the module" = "启用或停用模块";
 "Modules" = "模块";
 "Search" = "搜索";
 "Preview" = "预览";
@@ -206,23 +208,23 @@
 "Pause the Perch" = "暂停 Perch";
 
 // Views · Setup
-"Perch Setup" = "Perch 设置";
+"Perch Setup" = "设置 Perch";
 "Previous" = "上一步";
 "Previous page" = "上一页";
 "Welcome to Perch" = "欢迎使用 Perch";
-"welcome_message" = "Perch 将系统监视器、应用启动器和窗口切换器放进你的菜单栏。通过这个简短的设置，选择首先显示的内容。";
+"welcome_message" = "Perch 将系统监视器、App 启动器和窗口切换器放进你的菜单栏。这个简短的设置会选择首先显示的内容。";
 "Select preset" = "选择预设";
-"select_preset_message" = "选择一组初始模块。之后你可以随时在“设置”中更改。";
-"Start the application automatically when starting your Mac" = "启动 Mac 时自动打开此应用";
-"Do not start the application automatically when starting your Mac" = "启动 Mac 时不自动打开此应用";
+"select_preset_message" = "选择一组初始模块。之后可以随时在“设置”中更改。";
+"Start the application automatically when starting your Mac" = "在 Mac 启动时自动打开应用";
+"Do not start the application automatically when starting your Mac" = "在 Mac 启动时不自动打开应用";
 "Do everything silently in the background (recommended)" = "在后台静默完成所有操作（推荐）";
 "Check for a new version on startup" = "启动时检查新版本";
 "Check for a new version every day (once a day)" = "每天检查新版本（每天一次）";
 "Check for a new version every week (once a week)" = "每周检查新版本（每周一次）";
 "Check for a new version every month (once a month)" = "每月检查新版本（每月一次）";
 "Never check for updates (not recommended)" = "从不检查更新（不推荐）";
-"The configuration is completed" = "设置已完成";
-"finish_setup_message" = "一切就绪。\n\nPerch 是免费的开源软件。如果它对你有用，你可以支持它的开发。";
+"The configuration is completed" = "配置已完成";
+"finish_setup_message" = "一切就绪。\n\nPerch 免费且开源。如果它对你有用，你可以支持它的开发。";
 
 // Views · SetupFlow
 "Next" = "下一步";
