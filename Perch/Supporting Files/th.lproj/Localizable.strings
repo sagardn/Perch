@@ -382,3 +382,10 @@
 "Sleep Display" = "พักหน้าจอ";
 "Start Screen Saver" = "เริ่มภาพพักหน้าจอ";
 "Toggle Dark Mode" = "สลับโหมดมืด";
+
+// UI · ShortcutRecorder
+"Keyboard shortcut" = "ปุ่มลัดแป้นพิมพ์";
+"Type shortcut…" = "ป้อนปุ่มลัด…";
+"Record Shortcut" = "บันทึกปุ่มลัด";
+"Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "คลิก แล้วกดปุ่มผสมที่มี ⌃, ⌥ หรือ ⌘ ⎋ เพื่อยกเลิก ⌫ เพื่อล้าง";
+"%0 already uses this shortcut" = "%0 ใช้ปุ่มลัดนี้อยู่แล้ว";

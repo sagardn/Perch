@@ -382,3 +382,10 @@
 "Sleep Display" = "Ekranı Uyut";
 "Start Screen Saver" = "Ekran Koruyucuyu Başlat";
 "Toggle Dark Mode" = "Karanlık Modu Aç/Kapat";
+
+// UI · ShortcutRecorder
+"Keyboard shortcut" = "Klavye kısayolu";
+"Type shortcut…" = "Kısayolu yazın…";
+"Record Shortcut" = "Kısayolu Kaydet";
+"Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Tıklayın, sonra ⌃, ⌥ veya ⌘ içeren bir kombinasyona basın. ⎋ vazgeçer, ⌫ temizler.";
+"%0 already uses this shortcut" = "%0 bu kısayolu zaten kullanıyor";

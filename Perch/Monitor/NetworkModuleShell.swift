@@ -209,6 +209,7 @@ final class NetworkSettingsPage: NSView {
         self.translatesAutoresizingMaskIntoConstraints = false
 
         let section = Controls.section(localized("Network"), [
+            Controls.row(localized("Keyboard shortcut"), ShortcutRecorder(module: "Network")),
             Controls.row(localized("Top processes"), Controls.choice(
                 [("None", "0"), ("5", "5"), ("8", "8")],
                 selected: "\(NetworkSettings.processCount)") { value in

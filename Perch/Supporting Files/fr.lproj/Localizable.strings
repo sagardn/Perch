@@ -382,3 +382,10 @@
 "Sleep Display" = "Mettre l’écran en veille";
 "Start Screen Saver" = "Lancer l’économiseur d’écran";
 "Toggle Dark Mode" = "Activer/désactiver le mode sombre";
+
+// UI · ShortcutRecorder
+"Keyboard shortcut" = "Raccourci clavier";
+"Type shortcut…" = "Saisissez le raccourci…";
+"Record Shortcut" = "Enregistrer un raccourci";
+"Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Cliquez, puis appuyez sur une combinaison avec ⌃, ⌥ ou ⌘. ⎋ annule, ⌫ efface.";
+"%0 already uses this shortcut" = "%0 utilise déjà ce raccourci";

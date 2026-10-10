@@ -382,3 +382,10 @@
 "Sleep Display" = "Poner la pantalla en reposo";
 "Start Screen Saver" = "Iniciar salvapantallas";
 "Toggle Dark Mode" = "Activar/desactivar modo oscuro";
+
+// UI · ShortcutRecorder
+"Keyboard shortcut" = "Función rápida de teclado";
+"Type shortcut…" = "Escribe la función rápida…";
+"Record Shortcut" = "Grabar función rápida";
+"Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Haz clic y pulsa una combinación con ⌃, ⌥ o ⌘. ⎋ cancela, ⌫ borra.";
+"%0 already uses this shortcut" = "%0 ya usa esta función rápida";

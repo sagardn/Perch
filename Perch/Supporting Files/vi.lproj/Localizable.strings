@@ -382,3 +382,10 @@
 "Sleep Display" = "Cho màn hình ngủ";
 "Start Screen Saver" = "Bắt đầu trình bảo vệ màn hình";
 "Toggle Dark Mode" = "Bật/tắt Chế độ tối";
+
+// UI · ShortcutRecorder
+"Keyboard shortcut" = "Phím tắt bàn phím";
+"Type shortcut…" = "Nhập phím tắt…";
+"Record Shortcut" = "Ghi phím tắt";
+"Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Bấm, sau đó nhấn tổ hợp có ⌃, ⌥ hoặc ⌘. ⎋ để hủy, ⌫ để xóa.";
+"%0 already uses this shortcut" = "%0 đã sử dụng phím tắt này";

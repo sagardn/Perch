@@ -379,3 +379,10 @@
 "Sleep Display" = "Sleep Display";
 "Start Screen Saver" = "Start Screen Saver";
 "Toggle Dark Mode" = "Toggle Dark Mode";
+
+// UI · ShortcutRecorder
+"Keyboard shortcut" = "Keyboard shortcut";
+"Type shortcut…" = "Type shortcut…";
+"Record Shortcut" = "Record Shortcut";
+"Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears.";
+"%0 already uses this shortcut" = "%0 already uses this shortcut";

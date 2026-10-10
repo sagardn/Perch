@@ -382,3 +382,10 @@
 "Sleep Display" = "Försätt skärmen i viloläge";
 "Start Screen Saver" = "Starta skärmsläckaren";
 "Toggle Dark Mode" = "Växla mörkt läge";
+
+// UI · ShortcutRecorder
+"Keyboard shortcut" = "Kortkommando";
+"Type shortcut…" = "Skriv kortkommando…";
+"Record Shortcut" = "Spela in kortkommando";
+"Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Klicka och tryck sedan på en kombination med ⌃, ⌥ eller ⌘. ⎋ avbryter, ⌫ rensar.";
+"%0 already uses this shortcut" = "%0 använder redan det här kortkommandot";

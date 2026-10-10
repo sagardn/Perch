@@ -382,3 +382,10 @@
 "Sleep Display" = "Repousar Monitor";
 "Start Screen Saver" = "Iniciar Protetor de Tela";
 "Toggle Dark Mode" = "Alternar Modo Escuro";
+
+// UI · ShortcutRecorder
+"Keyboard shortcut" = "Atalho de teclado";
+"Type shortcut…" = "Digite o atalho…";
+"Record Shortcut" = "Gravar Atalho";
+"Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Clique e pressione uma combinação com ⌃, ⌥ ou ⌘. ⎋ cancela, ⌫ limpa.";
+"%0 already uses this shortcut" = "%0 já usa este atalho";

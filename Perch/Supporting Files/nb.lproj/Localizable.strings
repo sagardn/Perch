@@ -382,3 +382,10 @@
 "Sleep Display" = "Sett skjermen i dvale";
 "Start Screen Saver" = "Start skjermsparer";
 "Toggle Dark Mode" = "Slå mørk modus av/på";
+
+// UI · ShortcutRecorder
+"Keyboard shortcut" = "Tastatursnarvei";
+"Type shortcut…" = "Skriv inn snarvei…";
+"Record Shortcut" = "Ta opp snarvei";
+"Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Klikk, og trykk deretter en kombinasjon med ⌃, ⌥ eller ⌘. ⎋ avbryter, ⌫ fjerner.";
+"%0 already uses this shortcut" = "%0 bruker allerede denne snarveien";

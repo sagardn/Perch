@@ -382,3 +382,10 @@
 "Sleep Display" = "Pune monitorul în repaus";
 "Start Screen Saver" = "Pornește protectorul de ecran";
 "Toggle Dark Mode" = "Comută modul întunecat";
+
+// UI · ShortcutRecorder
+"Keyboard shortcut" = "Scurtătură de tastatură";
+"Type shortcut…" = "Tastați scurtătura…";
+"Record Shortcut" = "Înregistrați scurtătura";
+"Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Faceți clic, apoi apăsați o combinație cu ⌃, ⌥ sau ⌘. ⎋ anulează, ⌫ șterge.";
+"%0 already uses this shortcut" = "%0 utilizează deja această scurtătură";

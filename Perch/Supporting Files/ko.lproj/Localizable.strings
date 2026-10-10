@@ -382,3 +382,10 @@
 "Sleep Display" = "디스플레이 잠자기";
 "Start Screen Saver" = "화면 보호기 시작";
 "Toggle Dark Mode" = "다크 모드 전환";
+
+// UI · ShortcutRecorder
+"Keyboard shortcut" = "키보드 단축키";
+"Type shortcut…" = "단축키 입력…";
+"Record Shortcut" = "단축키 기록";
+"Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "클릭한 다음 ⌃, ⌥ 또는 ⌘가 포함된 조합을 누르십시오. ⎋는 취소, ⌫는 지우기.";
+"%0 already uses this shortcut" = "%0에서 이미 이 단축키를 사용 중입니다";

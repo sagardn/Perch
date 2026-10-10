@@ -78,6 +78,7 @@ final class GPUSettingsPage: NSView {
         self.translatesAutoresizingMaskIntoConstraints = false
 
         let section = Controls.section(localized("GPU"), [
+            Controls.row(localized("Keyboard shortcut"), ShortcutRecorder(module: "GPU")),
             Controls.row(localized("Chart history"), Controls.choice(
                 [("1 minute", "60"), ("2 minutes", "120"), ("5 minutes", "300")],
                 selected: "\(GPUSettings.historyLength)") { value in

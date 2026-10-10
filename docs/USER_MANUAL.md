@@ -144,27 +144,24 @@ menu without Quit at the top.
 
 ### Module popup shortcuts
 
-Each monitor module can have a global shortcut that opens its popup. Perch ships
-none, and there is no recorder in Settings yet, so a shortcut is set from
-Terminal. It is stored as a list of virtual key codes: the modifiers first, in
-the order **⌃ 59, ⇧ 60, ⌘ 55, ⌥ 58**, then the key.
+Each monitor module can have a global shortcut that opens its popup. Perch
+ships none. Set one on the module's page in Settings: **Keyboard shortcut →
+Record Shortcut**, then press the combination.
 
-```bash
-# ⌃⌥C opens the CPU popup (C is key code 8)
-defaults write com.sagar.perch CPU_popupShortcut -array 59 58 8
-
-# remove it again
-defaults delete com.sagar.perch CPU_popupShortcut
-```
-
-The keys are `CPU_popupShortcut`, `GPU_popupShortcut`, `RAM_popupShortcut`,
-`Disk_popupShortcut`, `Network_popupShortcut` and `Sensors_popupShortcut`.
-Restart Perch after changing one. A shortcut that lists the modifiers in any
-other order never matches.
+- It needs at least one of ⌃ ⌥ ⌘ -- a plain key would fire every time you
+  typed it -- except the function keys, which can stand alone.
+- ⎋ cancels recording; ⌫ removes the shortcut.
+- A combination another module already uses is refused, and the button's
+  tooltip says which module has it.
 
 Setting the first shortcut is what makes macOS ask for **Input Monitoring**:
-watching for a key pressed in another app needs it. With no popup shortcut set,
-Perch does not watch the keyboard at all.
+watching for a key pressed in another app needs it. With no popup shortcut
+set, Perch does not watch the keyboard at all.
+
+Under the hood each is stored as `<Module>_popupShortcut`, a list of key
+codes with the modifiers first in the order ⌃ 59, ⇧ 60, ⌘ 55, ⌥ 58 -- the
+order a pressed key is matched in, so a hand-written list in another order
+never fires.
 
 ### The Settings window
 

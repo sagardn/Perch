@@ -382,3 +382,10 @@
 "Sleep Display" = "Laita näyttö nukkumaan";
 "Start Screen Saver" = "Käynnistä näytönsäästäjä";
 "Toggle Dark Mode" = "Vaihda tumma tila";
+
+// UI · ShortcutRecorder
+"Keyboard shortcut" = "Näppäinoikotie";
+"Type shortcut…" = "Syötä oikotie…";
+"Record Shortcut" = "Tallenna oikotie";
+"Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Klikkaa ja paina yhdistelmää, jossa on ⌃, ⌥ tai ⌘. ⎋ kumoaa, ⌫ tyhjentää.";
+"%0 already uses this shortcut" = "%0 käyttää jo tätä oikotietä";

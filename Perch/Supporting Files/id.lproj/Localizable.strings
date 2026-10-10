@@ -382,3 +382,10 @@
 "Sleep Display" = "Tidurkan Layar";
 "Start Screen Saver" = "Mulai Penghemat Layar";
 "Toggle Dark Mode" = "Alihkan Mode Gelap";
+
+// UI · ShortcutRecorder
+"Keyboard shortcut" = "Pintasan papan ketik";
+"Type shortcut…" = "Ketik pintasan…";
+"Record Shortcut" = "Rekam Pintasan";
+"Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Klik, lalu tekan kombinasi dengan ⌃, ⌥, atau ⌘. ⎋ membatalkan, ⌫ menghapus.";
+"%0 already uses this shortcut" = "%0 sudah menggunakan pintasan ini";

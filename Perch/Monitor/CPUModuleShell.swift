@@ -151,6 +151,7 @@ final class CPUSettingsPage: NSView {
             } + [runaway, throttling])
 
         let section = Controls.section(localized("CPU"), [
+            Controls.row(localized("Keyboard shortcut"), ShortcutRecorder(module: "CPU")),
             Controls.row(localized("Show temperature"),
                          Controls.toggle(CPUSettings.showsTemperature) { on in
                              CPUSettings.showsTemperature = on

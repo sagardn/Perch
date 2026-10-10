@@ -382,3 +382,10 @@
 "Sleep Display" = "Приспиване на дисплея";
 "Start Screen Saver" = "Стартиране на скрийнсейвъра";
 "Toggle Dark Mode" = "Превключване на тъмен режим";
+
+// UI · ShortcutRecorder
+"Keyboard shortcut" = "Клавишна комбинация";
+"Type shortcut…" = "Въведете комбинация…";
+"Record Shortcut" = "Запис на комбинация";
+"Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Щракнете, после натиснете комбинация с ⌃, ⌥ или ⌘. ⎋ отказва, ⌫ изчиства.";
+"%0 already uses this shortcut" = "%0 вече използва тази комбинация";

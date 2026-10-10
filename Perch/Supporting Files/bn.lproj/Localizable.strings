@@ -382,3 +382,10 @@
 "Sleep Display" = "ডিসপ্লে স্লিপ করুন";
 "Start Screen Saver" = "স্ক্রিন সেভার চালু করুন";
 "Toggle Dark Mode" = "ডার্ক মোড টগল করুন";
+
+// UI · ShortcutRecorder
+"Keyboard shortcut" = "কীবোর্ড শর্টকাট";
+"Type shortcut…" = "শর্টকাট টাইপ করুন…";
+"Record Shortcut" = "শর্টকাট রেকর্ড করুন";
+"Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "ক্লিক করুন, তারপর ⌃, ⌥ বা ⌘ সহ একটি কম্বিনেশন চাপুন। ⎋ বাতিল করে, ⌫ মুছে দেয়।";
+"%0 already uses this shortcut" = "%0 ইতিমধ্যে এই শর্টকাট ব্যবহার করছে";

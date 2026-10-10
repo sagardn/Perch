@@ -382,3 +382,10 @@
 "Sleep Display" = "使显示器进入睡眠";
 "Start Screen Saver" = "启动屏幕保护程序";
 "Toggle Dark Mode" = "切换深色模式";
+
+// UI · ShortcutRecorder
+"Keyboard shortcut" = "键盘快捷键";
+"Type shortcut…" = "键入快捷键…";
+"Record Shortcut" = "录制快捷键";
+"Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "点按，然后按下含 ⌃、⌥ 或 ⌘ 的组合键。⎋ 取消，⌫ 清除。";
+"%0 already uses this shortcut" = "%0 已在使用此快捷键";

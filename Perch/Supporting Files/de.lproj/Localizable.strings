@@ -382,3 +382,10 @@
 "Sleep Display" = "Display in Ruhezustand";
 "Start Screen Saver" = "Bildschirmschoner starten";
 "Toggle Dark Mode" = "Dunkelmodus umschalten";
+
+// UI · ShortcutRecorder
+"Keyboard shortcut" = "Tastaturkurzbefehl";
+"Type shortcut…" = "Kurzbefehl eingeben …";
+"Record Shortcut" = "Kurzbefehl aufnehmen";
+"Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Klicken, dann eine Kombination mit ⌃, ⌥ oder ⌘ drücken. ⎋ bricht ab, ⌫ löscht.";
+"%0 already uses this shortcut" = "%0 verwendet diesen Kurzbefehl bereits";

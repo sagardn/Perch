@@ -382,3 +382,10 @@
 "Sleep Display" = "إسبات شاشة العرض";
 "Start Screen Saver" = "بدء شاشة التوقف";
 "Toggle Dark Mode" = "تبديل الوضع الداكن";
+
+// UI · ShortcutRecorder
+"Keyboard shortcut" = "اختصار لوحة المفاتيح";
+"Type shortcut…" = "اكتب الاختصار…";
+"Record Shortcut" = "تسجيل اختصار";
+"Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "انقر، ثم اضغط مجموعة مفاتيح مع ⌃ أو ⌥ أو ⌘. ⎋ للإلغاء، ⌫ للمسح.";
+"%0 already uses this shortcut" = "يستخدم %0 هذا الاختصار بالفعل";

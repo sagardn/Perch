@@ -382,3 +382,10 @@
 "Sleep Display" = "Posar la pantalla en repòs";
 "Start Screen Saver" = "Iniciar el protector de pantalla";
 "Toggle Dark Mode" = "Activar o desactivar el mode fosc";
+
+// UI · ShortcutRecorder
+"Keyboard shortcut" = "Drecera de teclat";
+"Type shortcut…" = "Escriu la drecera…";
+"Record Shortcut" = "Enregistrar drecera";
+"Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Fes clic i prem una combinació amb ⌃, ⌥ o ⌘. ⎋ cancel·la, ⌫ esborra.";
+"%0 already uses this shortcut" = "%0 ja utilitza aquesta drecera";

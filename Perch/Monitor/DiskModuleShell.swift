@@ -144,6 +144,7 @@ final class DiskSettingsPage: NSView {
         }
 
         let section = Controls.section(localized("Disk"), [
+            Controls.row(localized("Keyboard shortcut"), ShortcutRecorder(module: "Disk")),
             Controls.row(localized("Watch"), Controls.choice(choices, selected: chosen) { value in
                 DiskSettings.watchedVolume = value
             }),

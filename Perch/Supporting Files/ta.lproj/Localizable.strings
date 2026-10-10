@@ -382,3 +382,10 @@
 "Sleep Display" = "டிஸ்ப்ளேவை உறங்கவை";
 "Start Screen Saver" = "ஸ்கிரீன் சேவரைத் தொடங்கு";
 "Toggle Dark Mode" = "டார்க் மோடை மாற்று";
+
+// UI · ShortcutRecorder
+"Keyboard shortcut" = "விசைப்பலகை குறுக்குவழி";
+"Type shortcut…" = "குறுக்குவழியை உள்ளிடவும்…";
+"Record Shortcut" = "குறுக்குவழியைப் பதிவுசெய்";
+"Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "கிளிக் செய்து, ⌃, ⌥ அல்லது ⌘ உடன் ஒரு சேர்க்கையை அழுத்தவும். ⎋ ரத்துசெய்யும், ⌫ அழிக்கும்.";
+"%0 already uses this shortcut" = "%0 ஏற்கனவே இந்தக் குறுக்குவழியைப் பயன்படுத்துகிறது";

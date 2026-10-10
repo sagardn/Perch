@@ -382,3 +382,10 @@
 "Sleep Display" = "Lülita kuva unerežiimi";
 "Start Screen Saver" = "Käivita ekraanisäästja";
 "Toggle Dark Mode" = "Lülita tume režiim sisse/välja";
+
+// UI · ShortcutRecorder
+"Keyboard shortcut" = "Klaviatuuri otsetee";
+"Type shortcut…" = "Sisestage otsetee…";
+"Record Shortcut" = "Salvesta otsetee";
+"Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Klõpsake, seejärel vajutage kombinatsiooni klahviga ⌃, ⌥ või ⌘. ⎋ tühistab, ⌫ kustutab.";
+"%0 already uses this shortcut" = "%0 kasutab seda otseteed juba";

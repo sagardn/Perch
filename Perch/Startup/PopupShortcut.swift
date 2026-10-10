@@ -1,39 +1,5 @@
 import AppKit
 
-/// The keyboard shortcut that opens a module's popup.
-///
-/// A shortcut is stored as a list of key codes with the modifiers first, in a
-/// fixed order, because that is the shape the settings page records when
-/// somebody presses a combination. Assembling it the same way on the way back
-/// in is the whole of the matching, so the order is load-bearing: a shortcut
-/// assembled in a different order never matches the one that was stored, and
-/// the symptom is a shortcut that silently does nothing.
-enum PopupShortcut {
-
-    /// Virtual key codes for the modifier keys, in the order a stored
-    /// shortcut lists them.
-    ///
-    /// Control, shift, command, option. Not a sorted order and not the order
-    /// they appear on the keyboard -- it is the order the recorder wrote, and
-    /// it is written down here because it cannot be derived.
-    static let control: UInt16 = 59
-    static let shift: UInt16 = 60
-    static let command: UInt16 = 55
-    static let option: UInt16 = 58
-
-    /// The stored form of whatever is currently held down.
-    static func keyCodes(modifiers: NSEvent.ModifierFlags,
-                         keyCode: UInt16) -> [UInt16] {
-        var codes: [UInt16] = []
-        if modifiers.contains(.control) { codes.append(control) }
-        if modifiers.contains(.shift) { codes.append(shift) }
-        if modifiers.contains(.command) { codes.append(command) }
-        if modifiers.contains(.option) { codes.append(option) }
-        codes.append(keyCode)
-        return codes
-    }
-}
-
 extension AppDelegate {
 
     /// Watch for popup shortcuts, but only while one is actually set.

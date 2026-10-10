@@ -382,3 +382,10 @@
 "Sleep Display" = "Metti in stop il monitor";
 "Start Screen Saver" = "Avvia salvaschermo";
 "Toggle Dark Mode" = "Attiva/disattiva modalità scura";
+
+// UI · ShortcutRecorder
+"Keyboard shortcut" = "Abbreviazione da tastiera";
+"Type shortcut…" = "Digita l'abbreviazione…";
+"Record Shortcut" = "Registra abbreviazione";
+"Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Fai clic, poi premi una combinazione con ⌃, ⌥ o ⌘. ⎋ annulla, ⌫ cancella.";
+"%0 already uses this shortcut" = "%0 usa già questa abbreviazione";

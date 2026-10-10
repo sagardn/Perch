@@ -382,3 +382,10 @@
 "Sleep Display" = "Kijelző altatása";
 "Start Screen Saver" = "Képernyővédő indítása";
 "Toggle Dark Mode" = "Sötét mód be/ki";
+
+// UI · ShortcutRecorder
+"Keyboard shortcut" = "Billentyűparancs";
+"Type shortcut…" = "Írja be a billentyűparancsot…";
+"Record Shortcut" = "Billentyűparancs rögzítése";
+"Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Kattintson, majd nyomjon le egy kombinációt a ⌃, ⌥ vagy ⌘ billentyűvel. ⎋: mégse, ⌫: törlés.";
+"%0 already uses this shortcut" = "A(z) %0 már használja ezt a billentyűparancsot";

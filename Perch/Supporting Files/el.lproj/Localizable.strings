@@ -382,3 +382,10 @@
 "Sleep Display" = "Αδράνεια οθόνης";
 "Start Screen Saver" = "Έναρξη προφύλαξης οθόνης";
 "Toggle Dark Mode" = "Εναλλαγή σκούρου θέματος";
+
+// UI · ShortcutRecorder
+"Keyboard shortcut" = "Συντόμευση πληκτρολογίου";
+"Type shortcut…" = "Πληκτρολογήστε συντόμευση…";
+"Record Shortcut" = "Καταγραφή συντόμευσης";
+"Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Κάντε κλικ και πατήστε έναν συνδυασμό με ⌃, ⌥ ή ⌘. Το ⎋ ακυρώνει, το ⌫ διαγράφει.";
+"%0 already uses this shortcut" = "Το %0 χρησιμοποιεί ήδη αυτήν τη συντόμευση";

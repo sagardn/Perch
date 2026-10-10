@@ -90,6 +90,7 @@ final class RAMSettingsPage: NSView {
         self.translatesAutoresizingMaskIntoConstraints = false
 
         let section = Controls.section(localized("Memory"), [
+            Controls.row(localized("Keyboard shortcut"), ShortcutRecorder(module: "RAM")),
             Controls.row(localized("Chart history"), Controls.choice(
                 [("1 minute", "60"), ("2 minutes", "120"), ("5 minutes", "300")],
                 selected: "\(RAMSettings.historyLength)") { value in

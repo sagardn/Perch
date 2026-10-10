@@ -382,3 +382,10 @@
 "Sleep Display" = "Zaslon v mirovanje";
 "Start Screen Saver" = "Zaženi ohranjevalnik zaslona";
 "Toggle Dark Mode" = "Preklopi temni način";
+
+// UI · ShortcutRecorder
+"Keyboard shortcut" = "Bližnjica na tipkovnici";
+"Type shortcut…" = "Vnesite bližnjico…";
+"Record Shortcut" = "Posnemi bližnjico";
+"Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Kliknite in pritisnite kombinacijo s ⌃, ⌥ ali ⌘. ⎋ prekliče, ⌫ počisti.";
+"%0 already uses this shortcut" = "%0 že uporablja to bližnjico";

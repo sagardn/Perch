@@ -382,3 +382,10 @@
 "Sleep Display" = "خواباندن نمایشگر";
 "Start Screen Saver" = "شروع محافظ صفحه";
 "Toggle Dark Mode" = "تغییر حالت تیره";
+
+// UI · ShortcutRecorder
+"Keyboard shortcut" = "میان‌بر صفحه‌کلید";
+"Type shortcut…" = "میان‌بر را وارد کنید…";
+"Record Shortcut" = "ضبط میان‌بر";
+"Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "کلیک کنید، سپس ترکیبی با ⌃، ⌥ یا ⌘ را فشار دهید. ⎋ لغو می‌کند، ⌫ پاک می‌کند.";
+"%0 already uses this shortcut" = "%0 قبلاً از این میان‌بر استفاده می‌کند";

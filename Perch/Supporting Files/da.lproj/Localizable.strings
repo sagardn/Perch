@@ -382,3 +382,10 @@
 "Sleep Display" = "Sæt skærm på vågeblus";
 "Start Screen Saver" = "Start pauseskærm";
 "Toggle Dark Mode" = "Slå mørk tilstand til/fra";
+
+// UI · ShortcutRecorder
+"Keyboard shortcut" = "Tastaturgenvej";
+"Type shortcut…" = "Indtast genvej…";
+"Record Shortcut" = "Optag genvej";
+"Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Klik, og tryk derefter på en kombination med ⌃, ⌥ eller ⌘. ⎋ annullerer, ⌫ rydder.";
+"%0 already uses this shortcut" = "%0 bruger allerede denne genvej";

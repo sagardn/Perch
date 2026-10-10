@@ -382,3 +382,10 @@
 "Sleep Display" = "Zet beeldscherm in sluimerstand";
 "Start Screen Saver" = "Start schermbeveiliging";
 "Toggle Dark Mode" = "Schakel donkere modus in/uit";
+
+// UI · ShortcutRecorder
+"Keyboard shortcut" = "Toetscombinatie";
+"Type shortcut…" = "Typ toetscombinatie…";
+"Record Shortcut" = "Neem toetscombinatie op";
+"Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Klik en druk op een combinatie met ⌃, ⌥ of ⌘. ⎋ annuleert, ⌫ wist.";
+"%0 already uses this shortcut" = "%0 gebruikt deze toetscombinatie al";

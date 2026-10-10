@@ -382,3 +382,10 @@
 "Sleep Display" = "Uspať monitor";
 "Start Screen Saver" = "Spustiť šetrič obrazovky";
 "Toggle Dark Mode" = "Prepnúť tmavý režim";
+
+// UI · ShortcutRecorder
+"Keyboard shortcut" = "Klávesová skratka";
+"Type shortcut…" = "Zadajte skratku…";
+"Record Shortcut" = "Nahrať skratku";
+"Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Kliknite a stlačte kombináciu s ⌃, ⌥ alebo ⌘. ⎋ zruší, ⌫ vymaže.";
+"%0 already uses this shortcut" = "%0 už používa túto skratku";

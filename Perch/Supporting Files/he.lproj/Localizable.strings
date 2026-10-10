@@ -382,3 +382,10 @@
 "Sleep Display" = "הרדמת המסך";
 "Start Screen Saver" = "הפעלת שומר המסך";
 "Toggle Dark Mode" = "החלפת מצב כהה";
+
+// UI · ShortcutRecorder
+"Keyboard shortcut" = "קיצור מקלדת";
+"Type shortcut…" = "הקלד/י קיצור…";
+"Record Shortcut" = "הקלטת קיצור";
+"Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "לחץ/י ואז הקש/י צירוף עם ⌃, ⌥ או ⌘. ⎋ מבטל, ⌫ מנקה.";
+"%0 already uses this shortcut" = "%0 כבר משתמש בקיצור זה";

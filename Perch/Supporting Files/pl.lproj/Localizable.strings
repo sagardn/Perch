@@ -382,3 +382,10 @@
 "Sleep Display" = "Uśpij monitor";
 "Start Screen Saver" = "Uruchom wygaszacz ekranu";
 "Toggle Dark Mode" = "Przełącz tryb ciemny";
+
+// UI · ShortcutRecorder
+"Keyboard shortcut" = "Skrót klawiszowy";
+"Type shortcut…" = "Wpisz skrót…";
+"Record Shortcut" = "Nagraj skrót";
+"Click, then press a combination with ⌃, ⌥ or ⌘. ⎋ cancels, ⌫ clears." = "Kliknij, a następnie naciśnij kombinację z ⌃, ⌥ lub ⌘. ⎋ anuluje, ⌫ czyści.";
+"%0 already uses this shortcut" = "%0 już używa tego skrótu";

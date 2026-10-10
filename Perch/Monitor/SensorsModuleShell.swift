@@ -146,6 +146,7 @@ final class SensorsSettingsPage: NSView {
                 .map { ($0.name, $0.id) }
 
         let general = Controls.section(localized("Sensors"), [
+            Controls.row(localized("Keyboard shortcut"), ShortcutRecorder(module: "Sensors")),
             Controls.row(localized("Watch"), Controls.choice(choices,
                                                   selected: SensorsSettings.watched ?? "") { id in
                 SensorsSettings.watched = id.isEmpty ? nil : id
