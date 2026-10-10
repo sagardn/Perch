@@ -195,9 +195,12 @@ final class LargeFilesWindow: NSWindow, NSWindowDelegate, ClosableWindow {
         }
 
         let items = filtered
-        let total = items.reduce(Int64(0)) { $0 + $1.bytes }
-        status.stringValue = localized("%0 items, %1 in total",
-                                       String(items.count), Readings.bytes(UInt64(total)))
+        let total = UInt64(items.reduce(Int64(0)) { $0 + $1.bytes })
+        // One file is named, not counted: "1 items" is wrong, and a singular
+        // form would only fix the languages that have exactly two.
+        status.stringValue = items.count == 1 && items[0].url.lastPathComponent.count < 40
+            ? localized("%0, %1", items[0].url.lastPathComponent, Readings.bytes(total))
+            : localized("%0 items, %1 in total", String(items.count), Readings.bytes(total))
 
         let home = FileManager.default.homeDirectoryForCurrentUser
         for item in items {
@@ -218,7 +221,7 @@ final class LargeFilesWindow: NSWindow, NSWindowDelegate, ClosableWindow {
         let onScreen = Set(filtered.map(\.url))
         let count = selected.intersection(onScreen).count
         binButton.isEnabled = count > 0
-        binButton.title = count > 0
+        binButton.title = count > 1
             ? localized("Move %0 to Bin", String(count))
             : localized("Move to Bin")
     }
@@ -229,7 +232,10 @@ final class LargeFilesWindow: NSWindow, NSWindowDelegate, ClosableWindow {
         guard !chosen.isEmpty else { return }
 
         let bytes = chosen.reduce(Int64(0)) { $0 + $1.bytes }
-        Alert.show(localized("Move %0 items to the Bin?", String(chosen.count)),
+        let question = chosen.count == 1
+            ? localized("Move %0 to the Bin?", chosen[0].url.lastPathComponent)
+            : localized("Move %0 items to the Bin?", String(chosen.count))
+        Alert.show(question,
                    localized("%0 will be freed once the Bin is emptied. Until then everything can be put back from Finder.",
                              Readings.bytes(UInt64(bytes))),
                    style: .warning,

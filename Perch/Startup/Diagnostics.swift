@@ -208,8 +208,26 @@ extension AppDelegate {
             let subject = request.subject
 
             if subject == "uninstall" {
+                // Ten seconds, not six. Six caught the window mid-draw often
+                // enough to hand back a blank PNG, which reads as a layout
+                // bug and is not one.
                 self.renderWindow(of: UninstallWindow.self, to: request.path,
-                                  after: 6, present: UninstallWindow.present)
+                                  after: 10, present: UninstallWindow.present)
+            } else if subject.hasPrefix("uninstall:tool:") {
+                let name = String(subject.dropFirst("uninstall:tool:".count))
+                self.renderWindow(of: UninstallWindow.self, to: request.path,
+                                  after: 10) {
+                    UninstallWindow.present()
+                    (NSApp.windows.first { $0 is UninstallWindow } as? UninstallWindow)?
+                        .selectTools(picking: name)
+                }
+            } else if subject == "uninstall:tools" {
+                self.renderWindow(of: UninstallWindow.self, to: request.path,
+                                  after: 8) {
+                    UninstallWindow.present()
+                    (NSApp.windows.first { $0 is UninstallWindow } as? UninstallWindow)?
+                        .selectTools()
+                }
             } else if subject == "files" {
                 self.renderLargeFiles(to: request.path)
             } else if subject == "setup:window" {

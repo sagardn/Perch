@@ -201,8 +201,8 @@ final class DiskSettingsPage: NSView {
             Controls.row(localized("What is taking the room"), Controls.group([
                 Controls.button("Find large files…") { LargeFilesWindow.present() },
             ])),
-            Controls.row(localized("An app you no longer want"), Controls.group([
-                Controls.button("Remove an app…") { UninstallWindow.present() },
+            Controls.row(localized("An app or tool you no longer want"), Controls.group([
+                Controls.button("Remove an app or tool…") { UninstallWindow.present() },
             ])),
         ])
 

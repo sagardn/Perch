@@ -147,7 +147,7 @@ extension AppLeftovers {
         }
     }
 
-    private static func size(of url: URL, fm: FileManager) -> Int64 {
+    static func size(of url: URL, fm: FileManager) -> Int64 {
         let values = try? url.resourceValues(forKeys: [.isDirectoryKey,
                                                        .totalFileAllocatedSizeKey])
         if values?.isDirectory != true {
