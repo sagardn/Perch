@@ -98,6 +98,23 @@ enum WindowControl {
         return value
     }
 
+    /// An attribute's value as an `AXUIElement`, or nil if it is something
+    /// else.
+    ///
+    /// The type is compared with `CFGetTypeID` and then cast unconditionally,
+    /// which looks like the unsafe spelling and is the safe one. `as?` cannot
+    /// do this job: the compiler rejects a conditional downcast to a
+    /// CoreFoundation type with *"will always succeed"* and points at
+    /// `CFGetTypeID` instead -- so `raw as? AXUIElement` would hand back a
+    /// CFString as an element and fail later, somewhere else.
+    ///
+    /// One place, so the force cast sits beside the check that makes it
+    /// sound rather than three times across the file.
+    private static func element(_ value: CFTypeRef?) -> AXUIElement? {
+        guard let value, CFGetTypeID(value) == AXUIElementGetTypeID() else { return nil }
+        return (value as! AXUIElement)
+    }
+
     private static func bool(_ element: AXUIElement, _ name: String) -> Bool {
         (attribute(element, name) as? Bool) ?? false
     }
@@ -118,10 +135,9 @@ enum WindowControl {
     /// it can be the desktop, so fall back to the app's real windows and
     /// prefer a minimized one -- that is the window a click wants to restore.
     private static func targetWindow(of app: AXUIElement) -> AXUIElement? {
-        if let main = attribute(app, kAXMainWindowAttribute as String),
-           CFGetTypeID(main) == AXUIElementGetTypeID() {
-            let element = main as! AXUIElement
-            if isRealWindow(element) { return element }
+        if let main = element(attribute(app, kAXMainWindowAttribute as String)),
+           isRealWindow(main) {
+            return main
         }
         let all = windows(of: app)
         return all.first(where: { bool($0, kAXMinimizedAttribute as String) }) ?? all.first
@@ -289,13 +305,9 @@ enum WindowControl {
     /// Chrome's "New Incognito Window" never gets picked first.
     static func newWindow(_ app: NSRunningApplication) -> Bool {
         let axApp = AXUIElementCreateApplication(app.processIdentifier)
-        guard let bar = attribute(axApp, kAXMenuBarAttribute as String),
-              CFGetTypeID(bar) == AXUIElementGetTypeID() else { return false }
-
-        let menuBar = bar as! AXUIElement
-        guard let topLevel = attribute(menuBar, kAXChildrenAttribute as String) as? [AXUIElement] else {
-            return false
-        }
+        guard let menuBar = element(attribute(axApp, kAXMenuBarAttribute as String)),
+              let topLevel = attribute(menuBar, kAXChildrenAttribute as String)
+                as? [AXUIElement] else { return false }
 
         var fallback: AXUIElement?
 
@@ -379,9 +391,9 @@ enum WindowControl {
     private static func menuItem(of axApp: AXUIElement,
                                  cmdChar: String,
                                  modifiers: Int = 0) -> (item: AXUIElement, menu: AXUIElement)? {
-        guard let bar = attribute(axApp, kAXMenuBarAttribute as String),
-              CFGetTypeID(bar) == AXUIElementGetTypeID() else { return nil }
-        let topLevel = (attribute(bar as! AXUIElement, kAXChildrenAttribute as String)
+        guard let bar = element(attribute(axApp, kAXMenuBarAttribute as String))
+        else { return nil }
+        let topLevel = (attribute(bar, kAXChildrenAttribute as String)
                         as? [AXUIElement]) ?? []
         for top in topLevel {
             guard let menu = (attribute(top, kAXChildrenAttribute as String)

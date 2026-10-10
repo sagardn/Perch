@@ -13,10 +13,12 @@
 # be a guess that turns the build red.
 
 disabled_rules:
-  # 3 sites, all `as!` on a value whose type the surrounding code has just
-  # checked. force_cast is an *error* by default, so enabling it is a build
-  # break until those three are rewritten -- worth doing, not worth doing
-  # blind in the same commit as the config.
+  # One site, and it is correct. `WindowControl.element(_:)` compares
+  # CFGetTypeID and then casts unconditionally, because `as?` cannot do this
+  # job: the compiler rejects a conditional downcast to a CoreFoundation type
+  # with "will always succeed" and points at CFGetTypeID instead. The safe
+  # spelling here is the one that looks unsafe, so the rule would be telling
+  # us to introduce the bug.
   - force_cast
   # MonitorBar.state returns (combined:row:own:) and the disk counters return
   # (total:byDevice:). large_tuple errors at three members, and both of those
