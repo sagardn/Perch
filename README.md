@@ -224,6 +224,21 @@ network in three cases, and every one is under your control:
 ## Troubleshooting
 
 <details>
+<summary><strong>"DMG signature validation failed: could not read current team ID"</strong></summary>
+
+<br>
+
+You are on Perch **1.0.5 or older**. The updater in those versions only accepts
+an update when the running app carries an Apple Developer Team ID, which an
+ad-hoc-signed app never has, so it can never install one. Nothing a newer
+release does can change that check. Update once by hand with the install
+command above — it replaces the old copy and keeps your settings — and from
+then on the built-in updater works. Afterwards, remove Perch from **System
+Settings → Privacy & Security → Accessibility** with **−** and allow it again.
+
+</details>
+
+<details>
 <summary><strong>A hotkey does nothing</strong></summary>
 
 <br>
