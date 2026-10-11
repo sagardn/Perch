@@ -75,7 +75,19 @@ jobs:
         # No Developer ID here, so the app is signed ad hoc: it runs, but macOS
         # will quarantine it on download. The release notes tell people how to
         # open it. Add a certificate and a notarytool step when you have one.
-        run: codesign --force --deep --sign - build/Build/Products/Release/Perch.app
+        #
+        # Extended attributes are cleared first: codesign refuses a bundle
+        # carrying any ("resource fork, Finder information, or similar
+        # detritus not allowed"), and the v1.0.16 run failed here while the
+        # same command signed the same build locally. Its output is
+        # re-printed as annotations, which can be read without signing in.
+        run: |
+          xattr -cr build/Build/Products/Release/Perch.app
+          if ! codesign --force --deep --sign - build/Build/Products/Release/Perch.app > sign.log 2>&1; then
+            sed 's/^/::error::/' sign.log
+            exit 1
+          fi
+          cat sign.log
 
       - name: Package Perch.dmg
         # hdiutil rather than create-dmg: no extra dependency to clone, and the
