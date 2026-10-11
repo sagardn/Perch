@@ -27,6 +27,14 @@ final class MonitorBar {
             // the autosave name is where macOS remembers the position the
             // user dragged the item to, and renaming it would move them all.
             self.item.autosaveName = "PerchNative-\(segment.name)"
+            // The autosave name also restores whether the item was visible,
+            // and macOS keeps an item it once hid hidden on every launch
+            // after -- so a module switched on in Settings could draw into
+            // an item nobody can see, on that Mac and no other. The switch
+            // in Settings is the one place that decides whether a module is
+            // in the menu bar, so an item made for a module that is on is
+            // made visible.
+            self.item.isVisible = true
             self.item.button?.toolTip = segment.name
             self.item.button?.title = ""
             self.item.button?.target = self
@@ -46,6 +54,18 @@ final class MonitorBar {
             segment.view.setFrameOrigin(.zero)
             segment.view.setFrameSize(NSSize(width: width, height: CombinedBar.height))
             if abs(item.length - width) > 0.5 { item.length = width }
+        }
+
+        /// What became of the item on screen, for the diagnostics report.
+        ///
+        /// "Hidden" is macOS's own flag; "covered" is an item macOS has kept
+        /// but not drawn, which is what happens to the leftmost status
+        /// items when the menu bar runs out of room for the frontmost app's
+        /// menus.
+        var onScreen: String {
+            guard item.isVisible else { return "hidden" }
+            guard let window = item.button?.window else { return "no-window" }
+            return window.occlusionState.contains(.visible) ? "shown" : "covered"
         }
 
         @objc fileprivate func press() {
@@ -176,12 +196,13 @@ final class MonitorBar {
     var moduleReport: [String] {
         ModuleRegistry.shared.all.map { module in
             let segment = segments[module.moduleName]
-            return [module.moduleName,
-                    module.isEnabled ? "on" : "off",
-                    module.isAvailable ? "available" : "unavailable",
-                    segment == nil ? "no-segment"
-                        : "\(segment!.isVisible ? "visible" : "hidden")+\(Int(segment!.width))"
-            ].joined(separator: ":")
+            var parts = [module.moduleName,
+                         module.isEnabled ? "on" : "off",
+                         module.isAvailable ? "available" : "unavailable",
+                         segment == nil ? "no-segment"
+                             : "\(segment!.isVisible ? "visible" : "hidden")+\(Int(segment!.width))"]
+            if let entry = entries[module.moduleName] { parts.append(entry.onScreen) }
+            return parts.joined(separator: ":")
         }
     }
 

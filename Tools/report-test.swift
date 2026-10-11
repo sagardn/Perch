@@ -84,6 +84,19 @@ check("the sensor count", text.contains("229"))
 // Counts, never identities: two volumes, not which two.
 check("how many volumes, not which", text.contains("volumes") && text.contains("2"))
 
+print("\nThe menu bar")
+do {
+    var i = loaded()
+    i.menuBar = ["Disk:on:available:visible+38:hidden", "Sensors:on:available:visible+34:covered"]
+    let text = Diagnostics.report(i)
+    check("each module's line is in it",
+          text.contains("Disk:on:available:visible+38:hidden")
+          && text.contains("Sensors:on:available:visible+34:covered"))
+    check("under its own heading", text.contains("\nMenu bar\n"))
+    check("and the heading is left out when there is nothing to list",
+          !Diagnostics.report(loaded()).contains("\nMenu bar\n"))
+}
+
 // MARK: - A Mac that answers nothing
 
 print("\nA machine with no sensors")

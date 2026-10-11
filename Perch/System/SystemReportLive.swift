@@ -53,6 +53,7 @@ extension Diagnostics {
         input.isWiFi = network.wifiInterface != nil
             && network.primaryInterface == network.wifiInterface
         input.hasPublicAddressLookup = NetworkSettings.looksUpPublicIP
+        input.menuBar = MonitorBar.shared.moduleReport
         return input
     }
 

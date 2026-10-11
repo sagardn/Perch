@@ -49,6 +49,11 @@ enum Diagnostics {
         var isWiFi = false
         var hasPublicAddressLookup = false
 
+        /// One line per module, from `MonitorBar.moduleReport`: on or off,
+        /// whether the hardware offers it, and what became of its item. The
+        /// one way to see why a module is missing from somebody's menu bar.
+        var menuBar: [String] = []
+
         // Deliberately absent from the report, and present here only so the
         // tests can prove they do not reach it: serial number, SSID, local
         // and public IP, MAC address, router address, DNS servers, volume
@@ -99,6 +104,12 @@ enum Diagnostics {
         line("primary interface", input.hasPrimaryInterface ? "present" : nil)
         line("Wi-Fi", input.isWiFi ? "yes" : "no")
         line("public address lookup", input.hasPublicAddressLookup ? "on" : "off")
+
+        if !input.menuBar.isEmpty {
+            out.append("")
+            out.append("Menu bar")
+            for module in input.menuBar { out.append("  \(module)") }
+        }
 
         out.append("")
         out.append("A dash means this Mac did not answer. That is not always a")
