@@ -546,9 +546,12 @@ private struct RootGrid: View {
 }
 
 private struct RootChip: View {
-    enum State { case waiting, now, done }
+    // Not `State`: a nested type of that name hides SwiftUI's, and the
+    // Swift on the macOS 26 runner then reads `@State` below as this enum.
+    // Xcode 27 resolves it, so it built locally and failed only in CI.
+    enum Progress { case waiting, now, done }
     let url: URL
-    let state: State
+    let state: Progress
 
     @State private var pulse = false
 
