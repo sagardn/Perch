@@ -433,3 +433,4 @@
 "window_control_message" = "Perchs kortkommandon flyttar och minimerar fönster åt dig. macOS ber dig tillåta det en gång, under Integritet och säkerhet → Hjälpmedel. Inget du skriver registreras eller skickas någonstans.";
 "finish_setup_body" = "Perch bor i menyraden. Klicka på ett mätvärde för detaljer, eller tryck på ⌃Space för att söka. Perch är gratis och öppen källkod; om du har nytta av det kan du stödja utvecklingen.";
 "Diagnostics copied — paste them into the issue" = "Diagnostik kopierad – klistra in den i rapporten";
+"Shows as" = "Visas som";

@@ -433,3 +433,4 @@
 "window_control_message" = "Các phím tắt của Perch di chuyển và thu nhỏ cửa sổ cho bạn. macOS yêu cầu bạn cho phép việc này một lần, trong Quyền riêng tư & Bảo mật → Trợ năng. Không có gì bạn nhập bị ghi lại hoặc gửi đi bất cứ đâu.";
 "finish_setup_body" = "Perch nằm trên thanh menu của bạn. Bấm vào một chỉ số để xem chi tiết, hoặc nhấn ⌃Space để tìm kiếm. Perch miễn phí và mã nguồn mở; nếu thấy hữu ích, bạn có thể ủng hộ việc phát triển.";
 "Diagnostics copied — paste them into the issue" = "Đã sao chép chẩn đoán — dán vào báo cáo";
+"Shows as" = "Hiển thị dạng";

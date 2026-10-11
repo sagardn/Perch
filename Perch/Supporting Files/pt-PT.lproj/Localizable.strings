@@ -433,3 +433,4 @@
 "window_control_message" = "Os atalhos do Perch movem e minimizam janelas por si. O macOS pede que o permita uma vez, em Privacidade e segurança → Acessibilidade. Nada do que escreve é registado ou enviado para lado nenhum.";
 "finish_setup_body" = "O Perch vive na barra de menus. Clique numa leitura para ver os detalhes, ou prima ⌃Space para pesquisar. O Perch é gratuito e de código aberto; se lhe for útil, pode apoiar o seu desenvolvimento.";
 "Diagnostics copied — paste them into the issue" = "Diagnóstico copiado — cole-o no relatório";
+"Shows as" = "Mostrar como";

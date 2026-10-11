@@ -433,3 +433,4 @@
 "window_control_message" = "Perchovi prečaci premještaju i minimiziraju prozore umjesto vas. macOS traži da to jednom dopustite, u Privatnost i sigurnost → Pristupačnost. Ništa što upišete ne bilježi se niti se igdje šalje.";
 "finish_setup_body" = "Perch živi u vašoj traci izbornika. Kliknite očitanje za pojedinosti ili pritisnite ⌃Space za pretraživanje. Perch je besplatan i otvorenog koda; ako vam koristi, možete podržati njegov razvoj.";
 "Diagnostics copied — paste them into the issue" = "Dijagnostika kopirana — zalijepite je u prijavu";
+"Shows as" = "Prikazuje se kao";

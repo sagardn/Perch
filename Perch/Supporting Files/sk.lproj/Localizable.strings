@@ -433,3 +433,4 @@
 "window_control_message" = "Skratky aplikácie Perch za vás presúvajú a minimalizujú okná. macOS vás raz požiada, aby ste to povolili v časti Súkromie a bezpečnosť → Prístupnosť. Nič z toho, čo napíšete, sa nezaznamenáva ani nikam neodosiela.";
 "finish_setup_body" = "Perch sídli na lište menu. Kliknutím na údaj zobrazíte podrobnosti, stlačením ⌃Space môžete vyhľadávať. Perch je zadarmo a s otvoreným zdrojovým kódom; ak je pre vás užitočný, môžete podporiť jeho vývoj.";
 "Diagnostics copied — paste them into the issue" = "Diagnostika skopírovaná – vložte ju do hlásenia";
+"Shows as" = "Zobraziť ako";

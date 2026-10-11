@@ -433,3 +433,4 @@
 "window_control_message" = "Perchi otseteed liigutavad ja minimeerivad aknaid sinu eest. macOS palub sul seda üks kord lubada jaotises Privaatsus ja turvalisus → Hõlbustusfunktsioonid. Midagi, mida sisestad, ei salvestata ega saadeta kuhugi.";
 "finish_setup_body" = "Perch elab sinu menüüribal. Klõpsa näidul, et näha üksikasju, või vajuta otsimiseks ⌃Space. Perch on tasuta ja avatud lähtekoodiga; kui see on sulle kasulik, saad toetada selle arendamist.";
 "Diagnostics copied — paste them into the issue" = "Diagnostika kopeeritud – kleebi see veateatesse";
+"Shows as" = "Kuvatakse kui";

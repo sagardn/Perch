@@ -433,3 +433,4 @@
 "window_control_message" = "Perchin pikanäppäimet siirtävät ja pienentävät ikkunoita puolestasi. macOS pyytää sinua sallimaan tämän kerran kohdassa Tietosuoja ja suojaus → Käyttöapu. Mitään kirjoittamaasi ei tallenneta eikä lähetetä minnekään.";
 "finish_setup_body" = "Perch asuu valikkorivilläsi. Klikkaa lukemaa nähdäksesi sen tiedot tai paina ⌃Space hakeaksesi. Perch on ilmainen ja avointa lähdekoodia; jos siitä on sinulle hyötyä, voit tukea sen kehitystä.";
 "Diagnostics copied — paste them into the issue" = "Diagnostiikka kopioitu – liitä se raporttiin";
+"Shows as" = "Näkyy muodossa";

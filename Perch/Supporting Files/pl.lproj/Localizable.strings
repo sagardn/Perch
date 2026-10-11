@@ -433,3 +433,4 @@
 "window_control_message" = "Skróty Perch przesuwają i minimalizują okna za Ciebie. macOS prosi o jednorazowe zezwolenie na to w ustawieniach Prywatność i ochrona → Dostępność. Nic, co wpisujesz, nie jest rejestrowane ani nigdzie wysyłane.";
 "finish_setup_body" = "Perch mieszka na pasku menu. Kliknij odczyt, aby zobaczyć szczegóły, lub naciśnij ⌃Space, aby wyszukiwać. Perch jest bezpłatny i ma otwarty kod źródłowy; jeśli Ci się przydaje, możesz wesprzeć jego rozwój.";
 "Diagnostics copied — paste them into the issue" = "Skopiowano diagnostykę — wklej ją do zgłoszenia";
+"Shows as" = "Wyświetlaj jako";

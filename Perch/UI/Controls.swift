@@ -278,16 +278,17 @@ enum Controls {
         return row
     }
 
-    /// Which shapes a module draws in the menu bar, as tiles that show them.
+    /// Which shapes a module draws in the menu bar: one row, "Shows as", with
+    /// a pop-up menu whose items picture each shape.
     ///
-    /// Replaces a switch per shape -- nine rows on the Disk page reading
-    /// Name, Figure, Line chart, Bar chart, Ring, Gauge... -- which asked
-    /// somebody to picture a "Gauge" in a menu bar before choosing one. Each
-    /// tile draws the shape with the menu bar's own `MenuBarWidget`, fed a
-    /// sample reading, so what is chosen is what appears.
+    /// It was a switch per shape -- nine rows on the Disk page reading Name,
+    /// Figure, Line chart... which asked somebody to picture a "Gauge" before
+    /// choosing one -- then a grid of tiles drawing them, which fixed that
+    /// and took a quarter of the screen. The menu keeps the pictures, drawn
+    /// by the menu bar's own `MenuBarWidget`, and costs one row.
     ///
     /// `label` is what the module puts in the menu bar -- "SSD", "CPU" -- so
-    /// the Name tile shows that word and not a placeholder.
+    /// the Name item shows that word and not a placeholder.
     ///
     /// `value` is the sample figure -- "62°" for a temperature reads as one,
     /// where "42%" would not -- and `title` is for a module that names its
@@ -296,8 +297,13 @@ enum Controls {
                        value: String = "42%",
                        title: @escaping (MenuBarStyle) -> String = { $0.title },
                        _ changed: @escaping (Set<MenuBarStyle>) -> Void) -> NSView {
-        ShapePicker(styles, shown: shown, label: label, value: value, title: title,
-                    changed: changed)
+        // A row with a pop-up menu, not a grid of tiles: the grid took a
+        // quarter of a screen to choose how one number looks, and the user
+        // chose the menu over both a compact and a larger grid. The menu's
+        // items still carry each shape's picture -- see ShapeMenu.
+        row(localized("Shows as"),
+            ShapeMenu(styles, shown: shown, label: label, value: value, title: title,
+                      changed: changed))
     }
 
     /// A colour well, its hex code, and a reset, for one of `PerchColors`.
@@ -567,203 +573,3 @@ private final class ColourControl: NSStackView, NSTextFieldDelegate {
 
 // MARK: - Shape picker
 
-/// See `Controls.shapes`.
-private final class ShapePicker: NSView {
-
-    private var shown: Set<MenuBarStyle>
-    private let changed: (Set<MenuBarStyle>) -> Void
-    private var tiles: [ShapeTile] = []
-
-    /// Three across: the settings column is 520-1,100pt wide, and at three
-    /// the narrowest tile still holds "Traffic chart" and its preview.
-    private static let columns = 3
-
-    init(_ styles: [MenuBarStyle], shown: Set<MenuBarStyle>, label: String, value: String,
-         title: (MenuBarStyle) -> String, changed: @escaping (Set<MenuBarStyle>) -> Void) {
-        self.shown = shown
-        self.changed = changed
-        super.init(frame: .zero)
-        translatesAutoresizingMaskIntoConstraints = false
-
-        let sample = Self.sample(label: label, value: value)
-        tiles = styles.map { style in
-            ShapeTile(style, title: title(style), sample: sample, isOn: shown.contains(style))
-        }
-        for tile in tiles {
-            tile.onToggle = { [weak self, weak tile] in
-                guard let self, let tile else { return }
-                self.toggle(tile)
-            }
-        }
-
-        let grid = NSStackView()
-        grid.orientation = .vertical
-        grid.spacing = 8
-        grid.alignment = .leading
-        grid.translatesAutoresizingMaskIntoConstraints = false
-        for start in stride(from: 0, to: tiles.count, by: Self.columns) {
-            let slice = Array(tiles[start..<min(start + Self.columns, tiles.count)])
-            let row = NSStackView(views: slice)
-            row.orientation = .horizontal
-            row.spacing = 8
-            row.distribution = .fillEqually
-            row.translatesAutoresizingMaskIntoConstraints = false
-            grid.addArrangedSubview(row)
-            // A short last row keeps the column width rather than stretching
-            // two tiles across three columns' worth of room.
-            let share = CGFloat(slice.count) / CGFloat(Self.columns)
-            let gaps = CGFloat(Self.columns - slice.count) * 8
-            row.widthAnchor.constraint(equalTo: grid.widthAnchor, multiplier: share,
-                                       constant: -gaps * share).isActive = true
-        }
-        addSubview(grid)
-        NSLayoutConstraint.activate([
-            grid.leadingAnchor.constraint(equalTo: leadingAnchor),
-            grid.trailingAnchor.constraint(equalTo: trailingAnchor),
-            grid.topAnchor.constraint(equalTo: topAnchor, constant: 8),
-            grid.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8),
-        ])
-    }
-
-    required init?(coder: NSCoder) { fatalError("not used") }
-
-    /// The last shape refuses to go: a module with nothing in the menu bar
-    /// is a module turned off, and that is the switch at the top of the page.
-    private func toggle(_ tile: ShapeTile) {
-        if shown.contains(tile.style) {
-            guard shown.count > 1 else { NSSound.beep(); return }
-            shown.remove(tile.style)
-        } else {
-            shown.insert(tile.style)
-        }
-        for tile in tiles { tile.isOn = shown.contains(tile.style) }
-        changed(shown)
-    }
-
-    /// A reading that every shape can draw, busy enough to look like one.
-    private static func sample(label: String, value: String) -> MenuBarReading {
-        let history = (0..<24).map { 0.35 + 0.25 * sin(Double($0) / 3) }
-        var rates = MenuBarReading.Pair("98 KB/s", "1.2 MB/s")
-        rates.speeds = .init(upload: 98_000, download: 1_200_000)
-        return MenuBarReading(
-            label: label, load: 0.42, value: value,
-            history: history,
-            bars: [0.35, 0.6, 0.25, 0.5],
-            segments: [.init(0.42, .perchCalm)],
-            pair: .init("120 GB", "60 GB"),
-            rates: rates,
-            mirrored: .init(up: history.map { $0 * 0.4 }, down: history))
-    }
-}
-
-/// One shape: a strip of menu bar with the shape drawn in it, and its name.
-private final class ShapeTile: NSView {
-
-    let style: MenuBarStyle
-    var onToggle: (() -> Void)?
-    var isOn: Bool { didSet { needsDisplay = true; check.isHidden = !isOn; updateLayer() } }
-
-    private let widget = MenuBarWidget()
-    private let title = NSTextField(labelWithString: "")
-    private let check = NSImageView()
-    private var hovering = false { didSet { updateLayer() } }
-
-    init(_ style: MenuBarStyle, title name: String, sample: MenuBarReading, isOn: Bool) {
-        self.style = style
-        self.isOn = isOn
-        super.init(frame: .zero)
-        translatesAutoresizingMaskIntoConstraints = false
-        wantsLayer = true
-        layer?.cornerRadius = 9
-        layer?.cornerCurve = .continuous
-        layer?.borderWidth = 1.5
-
-        let strip = MenuStrip()
-        strip.translatesAutoresizingMaskIntoConstraints = false
-
-        widget.styles = [style]
-        widget.content = sample
-        widget.translatesAutoresizingMaskIntoConstraints = false
-        strip.addSubview(widget)
-
-        title.stringValue = name
-        title.font = .systemFont(ofSize: 11.5, weight: .medium)
-        title.alignment = .center
-        title.lineBreakMode = .byTruncatingTail
-        title.translatesAutoresizingMaskIntoConstraints = false
-
-        check.image = NSImage(systemSymbolName: "checkmark.circle.fill", accessibilityDescription: nil)?
-            .withSymbolConfiguration(.init(pointSize: 13, weight: .semibold))
-        check.contentTintColor = .controlAccentColor
-        check.isHidden = !isOn
-        check.translatesAutoresizingMaskIntoConstraints = false
-
-        for view in [strip, title, check] { addSubview(view) }
-        NSLayoutConstraint.activate([
-            heightAnchor.constraint(equalToConstant: 74),
-            strip.topAnchor.constraint(equalTo: topAnchor, constant: 8),
-            strip.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
-            strip.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
-            strip.heightAnchor.constraint(equalToConstant: 34),
-            widget.centerXAnchor.constraint(equalTo: strip.centerXAnchor),
-            widget.centerYAnchor.constraint(equalTo: strip.centerYAnchor),
-            widget.heightAnchor.constraint(equalToConstant: MenuBarMetrics.height),
-            title.topAnchor.constraint(equalTo: strip.bottomAnchor, constant: 6),
-            title.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 6),
-            title.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -6),
-            check.topAnchor.constraint(equalTo: topAnchor, constant: 4),
-            check.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -4),
-        ])
-
-        setAccessibilityElement(true)
-        setAccessibilityRole(.checkBox)
-        setAccessibilityLabel(name)
-
-        addTrackingArea(NSTrackingArea(rect: .zero,
-                                       options: [.mouseEnteredAndExited, .activeInKeyWindow, .inVisibleRect],
-                                       owner: self, userInfo: nil))
-    }
-
-    required init?(coder: NSCoder) { fatalError("not used") }
-
-    override var wantsUpdateLayer: Bool { true }
-
-    /// Colours resolved here, against the current appearance, for the same
-    /// reason `Card` does it: a CGColor made once keeps its first appearance.
-    override func updateLayer() {
-        effectiveAppearance.performAsCurrentDrawingAppearance {
-            layer?.backgroundColor = (isOn ? NSColor.controlAccentColor.withAlphaComponent(0.10)
-                                           : NSColor.quaternaryLabelColor
-                                               .withAlphaComponent(hovering ? 0.22 : 0.10)).cgColor
-            layer?.borderColor = (isOn ? NSColor.controlAccentColor
-                                       : NSColor.separatorColor.withAlphaComponent(0.4)).cgColor
-        }
-        title.textColor = isOn ? .labelColor : .secondaryLabelColor
-    }
-
-    override func accessibilityValue() -> Any? { isOn ? 1 : 0 }
-    override func accessibilityPerformPress() -> Bool { onToggle?(); return true }
-
-    override func mouseEntered(with event: NSEvent) { hovering = true }
-    override func mouseExited(with event: NSEvent) { hovering = false }
-    override func mouseUp(with event: NSEvent) {
-        if bounds.contains(convert(event.locationInWindow, from: nil)) { onToggle?() }
-    }
-}
-
-/// The menu bar's own ground, so a shape is judged against what it will sit on.
-private final class MenuStrip: NSView {
-    override var wantsUpdateLayer: Bool { true }
-    override init(frame: NSRect) {
-        super.init(frame: frame)
-        wantsLayer = true
-        layer?.cornerRadius = 6
-        layer?.cornerCurve = .continuous
-    }
-    required init?(coder: NSCoder) { fatalError("not used") }
-    override func updateLayer() {
-        effectiveAppearance.performAsCurrentDrawingAppearance {
-            layer?.backgroundColor = NSColor.labelColor.withAlphaComponent(0.06).cgColor
-        }
-    }
-}

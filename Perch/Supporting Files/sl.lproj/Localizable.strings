@@ -433,3 +433,4 @@
 "window_control_message" = "Bližnjice aplikacije Perch namesto vas premikajo in pomanjšujejo okna. macOS vas enkrat prosi, da to dovolite v razdelku Zasebnost in varnost → Dostopnost. Nič, kar vtipkate, se ne beleži in se nikamor ne pošilja.";
 "finish_setup_body" = "Perch domuje v menijski vrstici. Kliknite odčitek za podrobnosti ali pritisnite ⌃Space za iskanje. Perch je brezplačen in odprtokoden; če vam koristi, lahko podprete njegov razvoj.";
 "Diagnostics copied — paste them into the issue" = "Diagnostika kopirana – prilepite jo v prijavo";
+"Shows as" = "Prikaz kot";

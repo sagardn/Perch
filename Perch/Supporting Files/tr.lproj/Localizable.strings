@@ -433,3 +433,4 @@
 "window_control_message" = "Perch'ün kestirmeleri pencereleri sizin için taşır ve küçültür. macOS bunun için bir kez Gizlilik ve Güvenlik → Erişilebilirlik bölümünden izin vermenizi ister. Yazdığınız hiçbir şey kaydedilmez veya bir yere gönderilmez.";
 "finish_setup_body" = "Perch menü çubuğunuzda yaşar. Ayrıntılar için bir ölçüme tıklayın ya da aramak için ⌃Space tuşlarına basın. Perch ücretsiz ve açık kaynaktır; işinize yarıyorsa geliştirilmesine destek olabilirsiniz.";
 "Diagnostics copied — paste them into the issue" = "Tanılama kopyalandı — bildirime yapıştırın";
+"Shows as" = "Görünüm";

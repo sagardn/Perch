@@ -433,3 +433,4 @@
 "window_control_message" = "A Perch billentyűparancsai áthelyezik és kis méretre állítják helyetted az ablakokat. A macOS egyszer kéri, hogy ezt engedélyezd az Adatvédelem és biztonság → Kisegítő lehetőségek részen. Semmit, amit begépelsz, nem rögzít és sehová nem küld.";
 "finish_setup_body" = "A Perch a menüsorban lakik. Kattints egy mért értékre a részletekért, vagy nyomd meg a ⌃Space billentyűt a kereséshez. A Perch ingyenes és nyílt forráskódú; ha hasznos számodra, támogathatod a fejlesztését.";
 "Diagnostics copied — paste them into the issue" = "Diagnosztika másolva – illeszd be a hibajelentésbe";
+"Shows as" = "Megjelenés";

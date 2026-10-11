@@ -433,3 +433,4 @@
 "window_control_message" = "Pintasan Perch memindahkan dan meminimalkan jendela untuk Anda. macOS meminta Anda mengizinkannya sekali, di Privasi & Keamanan → Aksesibilitas. Tidak ada yang Anda ketik yang direkam atau dikirim ke mana pun.";
 "finish_setup_body" = "Perch tinggal di bar menu Anda. Klik sebuah bacaan untuk detailnya, atau tekan ⌃Space untuk mencari. Perch gratis dan sumber terbuka; jika bermanfaat bagi Anda, Anda dapat mendukung pengembangannya.";
 "Diagnostics copied — paste them into the issue" = "Diagnostik disalin — tempel ke laporan";
+"Shows as" = "Ditampilkan sebagai";
