@@ -49,12 +49,14 @@ jobs:
           fi
 
       # The destination is named, as build.yaml names it: without one the
-      # v1.0.16 runs stopped in under a minute, before compiling anything,
-      # while build.yaml built the same commit. The log is piped to a file so
+      # v1.0.16 run stopped in under a minute, before compiling anything.
+      # The log is piped to a file so
       # its errors can be re-printed as annotations, which -- unlike the log
-      # -- can be read without signing in; pipefail keeps the failure.
+      # -- can be read without signing in. pipefail is set by hand: the default
+      # shell lacks it, and without it the tee reported a failed build as passing.
       - name: Build
         run: |
+          set -o pipefail
           xcodebuild \
             -project Perch.xcodeproj \
             -scheme Perch \
@@ -78,9 +80,10 @@ jobs:
         #
         # Extended attributes are cleared first: codesign refuses a bundle
         # carrying any ("resource fork, Finder information, or similar
-        # detritus not allowed"), and the v1.0.16 run failed here while the
-        # same command signed the same build locally. Its output is
-        # re-printed as annotations, which can be read without signing in.
+        # detritus not allowed"). Its output is re-printed as annotations,
+        # which can be read without signing in -- which is how a build that
+        # had failed behind a tee showed up here, as "bundle format
+        # unrecognized" on an app that was never finished.
         run: |
           xattr -cr build/Build/Products/Release/Perch.app
           if ! codesign --force --deep --sign - build/Build/Products/Release/Perch.app > sign.log 2>&1; then

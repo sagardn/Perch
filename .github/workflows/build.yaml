@@ -25,8 +25,10 @@ jobs:
       # Compiler errors are re-printed as annotations because a run's log is
       # only readable when signed in to GitHub, while its annotations are
       # public: this build went red and stayed red with nobody able to see why.
-      # bash runs with pipefail here, so the tee does not hide the failure.
+      # pipefail is set by hand: a step's default shell is `bash -e`, without
+      # it, so a tee here once reported a failed build as a passing one.
       - run: |
+          set -o pipefail
           xcodebuild -scheme Perch -destination 'platform=macOS' -configuration Release archive CODE_SIGNING_ALLOWED=NO 2>&1 \
             | tee build.log
       - if: failure()
