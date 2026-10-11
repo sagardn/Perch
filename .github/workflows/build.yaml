@@ -24,10 +24,11 @@ jobs:
       - uses: actions/checkout@v4
       # Compiler errors are re-printed as annotations because a run's log is
       # only readable when signed in to GitHub, while its annotations are
-      # public: this build was red for a week with nobody able to see why.
+      # public: this build went red and stayed red with nobody able to see why.
       # bash runs with pipefail here, so the tee does not hide the failure.
       - run: |
           xcodebuild -scheme Perch -destination 'platform=macOS' -configuration Release archive CODE_SIGNING_ALLOWED=NO 2>&1 \
             | tee build.log
       - if: failure()
-        run: grep -E ': error: ' build.log | sort -u | head -20 | sed 's/^/::error::/' || true
+        run: |
+          grep -E ': error: ' build.log | sort -u | head -20 | sed 's/^/::error::/' || true

@@ -28,6 +28,7 @@
 		FEEDFACE0BC0000000000000 /* AICleanupWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0BC1000000000000 /* AICleanupWindow.swift */; };
 		FEEDFACE0BB0000000000000 /* AIAssistants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0BB1000000000000 /* AIAssistants.swift */; };
 		FEEDFACE0B60000000000000 /* LargeFilesWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0B61000000000000 /* LargeFilesWindow.swift */; };
+		FEEDFACE0EB0000000000000 /* CleanerParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0EB1000000000000 /* CleanerParts.swift */; };
 		FEEDFACE0481000000000000 /* DiskPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0480000000000000 /* DiskPopup.swift */; };
 		FEEDFACE0491000000000000 /* DiskModuleShell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0490000000000000 /* DiskModuleShell.swift */; };
 		FEEDFACE04A1000000000000 /* DiskTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE04A0000000000000 /* DiskTile.swift */; };
@@ -227,6 +228,7 @@
 		FEEDFACE0BC1000000000000 /* AICleanupWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AICleanupWindow.swift; sourceTree = "<group>"; };
 		FEEDFACE0BB1000000000000 /* AIAssistants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIAssistants.swift; sourceTree = "<group>"; };
 		FEEDFACE0B61000000000000 /* LargeFilesWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeFilesWindow.swift; sourceTree = "<group>"; };
+		FEEDFACE0EB1000000000000 /* CleanerParts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanerParts.swift; sourceTree = "<group>"; };
 		FEEDFACE0480000000000000 /* DiskPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskPopup.swift; sourceTree = "<group>"; };
 		FEEDFACE0490000000000000 /* DiskModuleShell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskModuleShell.swift; sourceTree = "<group>"; };
 		FEEDFACE04A0000000000000 /* DiskTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskTile.swift; sourceTree = "<group>"; };
@@ -537,6 +539,7 @@
 				FEEDFACE0B41000000000000 /* DiskCleanup.swift */,
 				FEEDFACE0B51000000000000 /* LargeFiles.swift */,
 				FEEDFACE0B61000000000000 /* LargeFilesWindow.swift */,
+				FEEDFACE0EB1000000000000 /* CleanerParts.swift */,
 				FEEDFACE0B81000000000000 /* UninstallWindow.swift */,
 				FEEDFACE0BA1000000000000 /* CleanupPane.swift */,
 				FEEDFACE0BC1000000000000 /* AICleanupWindow.swift */,
@@ -851,6 +854,7 @@
 				FEEDFACE0BC0000000000000 /* AICleanupWindow.swift in Sources */,
 				FEEDFACE0BB0000000000000 /* AIAssistants.swift in Sources */,
 				FEEDFACE0B60000000000000 /* LargeFilesWindow.swift in Sources */,
+				FEEDFACE0EB0000000000000 /* CleanerParts.swift in Sources */,
 				FEEDFACE0481000000000000 /* DiskPopup.swift in Sources */,
 				FEEDFACE0491000000000000 /* DiskModuleShell.swift in Sources */,
 				FEEDFACE04A1000000000000 /* DiskTile.swift in Sources */,
