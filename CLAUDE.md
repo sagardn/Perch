@@ -42,11 +42,11 @@ the migration has got.
 ## Tests
 
 ```bash
-Tools/run-tests.sh            # all of them, about 15 seconds
+Tools/run-tests.sh            # all of them, about 25 seconds
 Tools/run-tests.sh disk       # just Tools/disk-test.swift
 ```
 
-Twenty-four suites, 978 assertions. `tests.yaml` runs the same script on every
+Thirty suites, 1,283 assertions. `tests.yaml` runs the same script on every
 push, so a suite that fails fails the build.
 
 Pure logic gets a test. The pattern is a script compiled against the app's
