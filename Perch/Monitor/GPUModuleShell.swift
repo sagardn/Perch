@@ -8,7 +8,15 @@ extension GPUModule: PerchModule {
     /// False on a Mac where no accelerator answers at all, which is not a
     /// machine that exists -- but a module that claims to be available and
     /// then shows a dash is worse than one that says it has nothing.
-    var isAvailable: Bool { !GPUStats.read().isEmpty }
+    ///
+    /// Answered once. This is read every second by the menu bar's tick and
+    /// cost 1.58 ms a read, walking the IORegistry for accelerators that do
+    /// not come and go: a Mac does not grow a GPU while it is running, and
+    /// the one case that could -- an eGPU unplugged -- leaves the module
+    /// showing a dash, which is what it would show anyway.
+    var isAvailable: Bool { Self.hasAccelerator }
+
+    private static let hasAccelerator: Bool = !GPUStats.read().isEmpty
 
     /// Off, as the module it replaces was. A graphics figure is a specialist
     /// reading, and the menu bar is finite.

@@ -8,7 +8,21 @@ extension DiskModule: PerchModule {
     /// A Mac with no browsable volume is a Mac that is not running, but a
     /// module that claims to be available and then shows a dash is worse
     /// than one that says it has nothing.
-    var isAvailable: Bool { !DiskReadings.volumes(includingRemovable: true).isEmpty }
+    ///
+    /// Cached, because this is read once a second and cost 6.16 ms a read.
+    /// `MonitorBar` ticks every second and asks the registry which modules
+    /// are enabled *and available*, which called this; enumerating every
+    /// mounted volume goes through CacheDelete's volume validation, and that
+    /// was the single hottest thing in a 20-second sample of the idle app.
+    /// The answer changes only when a volume is mounted or unmounted, so
+    /// that is when it is thrown away.
+    var isAvailable: Bool {
+        if let known = DiskAvailability.cached { return known }
+        DiskAvailability.observe()
+        let answer = !DiskReadings.volumes(includingRemovable: true).isEmpty
+        DiskAvailability.cached = answer
+        return answer
+    }
 
     /// On, as the module it replaces was.
     var isOnByDefault: Bool { true }
@@ -203,4 +217,32 @@ final class DiskSettingsPage: NSView {
     }
 
     required init?(coder: NSCoder) { fatalError("not used") }
+}
+
+
+/// Remembers whether any volume is mounted, and forgets when one comes or
+/// goes.
+///
+/// A plain static rather than a property on the module: `DiskModule` is a
+/// class whose instances the registry holds one of, and the question is
+/// about the machine rather than about any instance of it.
+enum DiskAvailability {
+
+    static var cached: Bool?
+
+    private static var observing = false
+
+    /// Registered on the first read rather than at launch, so a Mac that
+    /// never looks at the Disk module never registers anything.
+    static func observe() {
+        guard !observing else { return }
+        observing = true
+        let centre = NSWorkspace.shared.notificationCenter
+        for name in [NSWorkspace.didMountNotification, NSWorkspace.didUnmountNotification,
+                     NSWorkspace.didRenameVolumeNotification] {
+            centre.addObserver(forName: name, object: nil, queue: .main) { _ in
+                cached = nil
+            }
+        }
+    }
 }
