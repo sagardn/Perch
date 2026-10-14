@@ -82,6 +82,8 @@
 		FEEDFACE0B01000000000000 /* SettingsShell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0F01000000000000 /* SettingsShell.swift */; };
 		FEEDFACEB100000000000000 /* AppChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACEF100000000000000 /* AppChooser.swift */; };
 		FEEDFACEB101000000000000 /* AppEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACEF101000000000000 /* AppEntry.swift */; };
+		FEEDFACE0BF0000000000000 /* DockWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0BF1000000000000 /* DockWatcher.swift */; };
+		FEEDFACE0BE0000000000000 /* DockClick.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0BE1000000000000 /* DockClick.swift */; };
 		FEEDFACEB102000000000000 /* AppsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACEF102000000000000 /* AppsWindow.swift */; };
 		FEEDFACEB103000000000000 /* Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACEF103000000000000 /* Gesture.swift */; };
 		FEEDFACEB2E7000000000000 /* QuickSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACEF2E7000000000000 /* QuickSearch.swift */; };
@@ -324,6 +326,8 @@
 		FEEDFACE0F01000000000000 /* SettingsShell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsShell.swift; sourceTree = "<group>"; };
 		FEEDFACEF100000000000000 /* AppChooser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppChooser.swift; sourceTree = "<group>"; };
 		FEEDFACEF101000000000000 /* AppEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppEntry.swift; sourceTree = "<group>"; };
+		FEEDFACE0BF1000000000000 /* DockWatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockWatcher.swift; sourceTree = "<group>"; };
+		FEEDFACE0BE1000000000000 /* DockClick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockClick.swift; sourceTree = "<group>"; };
 		FEEDFACEF102000000000000 /* AppsWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsWindow.swift; sourceTree = "<group>"; };
 		FEEDFACEF103000000000000 /* Gesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gesture.swift; sourceTree = "<group>"; };
 		FEEDFACEF2E7000000000000 /* QuickSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickSearch.swift; sourceTree = "<group>"; };
@@ -518,6 +522,8 @@
 			children = (
 				FEEDFACEF100000000000000 /* AppChooser.swift */,
 				FEEDFACEF101000000000000 /* AppEntry.swift */,
+				FEEDFACE0BF1000000000000 /* DockWatcher.swift */,
+				FEEDFACE0BE1000000000000 /* DockClick.swift */,
 				FEEDFACEF102000000000000 /* AppsWindow.swift */,
 				FEEDFACEF103000000000000 /* Gesture.swift */,
 				FEEDFACEF2E7000000000000 /* QuickSearch.swift */,
@@ -903,6 +909,8 @@
 				FEEDFACE0B01000000000000 /* SettingsShell.swift in Sources */,
 				FEEDFACEB100000000000000 /* AppChooser.swift in Sources */,
 				FEEDFACEB101000000000000 /* AppEntry.swift in Sources */,
+				FEEDFACE0BF0000000000000 /* DockWatcher.swift in Sources */,
+				FEEDFACE0BE0000000000000 /* DockClick.swift in Sources */,
 				FEEDFACEB102000000000000 /* AppsWindow.swift in Sources */,
 				FEEDFACEB103000000000000 /* Gesture.swift in Sources */,
 				FEEDFACEB2E7000000000000 /* QuickSearch.swift in Sources */,

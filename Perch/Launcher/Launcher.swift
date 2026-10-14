@@ -29,6 +29,7 @@ final class Launcher {
     func start() {
         entries = Config.load()
         Recents.shared.start()
+        DockWatcher.shared.start()
 
         searchPanel = SearchPanel(source: { [weak self] in self?.entries ?? [] },
                                   onPick: { entry, active in WindowControl.toggle(entry, activeApp: active) },

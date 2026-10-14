@@ -39,6 +39,20 @@ enum Prefs {
 
     /// Where the search panel appears.  Defaults to the pointer, which is how
     /// the menu behaved before the panel existed.
+    private static let dockClickKey = "dockClickPutsAway"
+
+    /// Click an app in the Dock to bring it up, click it again to put it
+    /// away. On by default: it only adds behaviour to a click that macOS
+    /// currently answers by doing nothing, so nothing a person already
+    /// relies on changes.
+    static var dockClickPutsAway: Bool {
+        get {
+            if UserDefaults.standard.object(forKey: dockClickKey) == nil { return true }
+            return UserDefaults.standard.bool(forKey: dockClickKey)
+        }
+        set { UserDefaults.standard.set(newValue, forKey: dockClickKey) }
+    }
+
     static var openAtPointer: Bool {
         get {
             if UserDefaults.standard.object(forKey: openAtPointerKey) == nil { return true }
