@@ -35,22 +35,43 @@ enum DockClick {
         items.first { $0.frame.contains(point) }
     }
 
+    /// How long an app must already have been in front for a click on its
+    /// icon to mean "put it away".
+    ///
+    /// The whole difficulty is telling a click that *raised* an app from a
+    /// click on an app that was already there. Reading "who is frontmost"
+    /// inside the mouse-down callback cannot do it: whether the Dock
+    /// activates on the press or the release is its business, not a contract,
+    /// and a click that had just raised the app looked identical to a click
+    /// on an app that had been in front all along -- which is a single click
+    /// that puts an app away when the person meant to bring it up.
+    ///
+    /// So the question asked is not "is it frontmost" but "has it been
+    /// frontmost since before this click began". A click that caused the
+    /// activation can never satisfy that, whichever event the Dock acts on.
+    /// It also rules out the second of two quick clicks on the same icon.
+    static let settledBefore: TimeInterval = 0.3
+
     /// Which app to put away, or nil to leave the click to the Dock.
     ///
-    /// Only one case is ours: the click landed on a running app that was
-    /// already in front when the mouse went down, and is still in front now.
-    /// Everything else -- launching, raising, restoring -- the Dock has just
-    /// done, and doing it again would fight it.
+    /// Only one case is ours: the click landed on a running app that had
+    /// settled in front *before* the mouse went down, and is still in front
+    /// now. Everything else -- launching, raising, restoring -- the Dock has
+    /// just done, and doing it again would fight it.
     ///
-    /// `frontmostNow` is checked as well as `frontmostAtPress` because the
-    /// Dock acts on mouse-up: if the click raised something, the app in
-    /// front has changed by the time this is asked, and that click was a
-    /// raise rather than a put-away.
+    /// `activatedAt` is when that app last came to the front, from the
+    /// workspace's own notification. nil means it has been in front since
+    /// before Perch was watching, which is as settled as it gets.
     static func appToPutAway(hit: Item?,
                              frontmostAtPress: String?,
-                             frontmostNow: String?) -> String? {
+                             frontmostNow: String?,
+                             pressedAt: Date = Date(),
+                             activatedAt: Date? = nil) -> String? {
         guard let hit, hit.isRunning else { return nil }
         guard hit.bundleID == frontmostAtPress, hit.bundleID == frontmostNow else { return nil }
+        if let activatedAt, pressedAt.timeIntervalSince(activatedAt) < settledBefore {
+            return nil
+        }
         return hit.bundleID
     }
 

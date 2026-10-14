@@ -91,6 +91,55 @@ check("the Finder is not a special case",
       decide(finder, press: "com.apple.finder", now: "com.apple.finder")
         == "com.apple.finder")
 
+// MARK: - A click that raised the app is not a click that puts it away
+
+print("\nAn app has to have been in front before the click, not because of it")
+
+// The reported bug: one click, and the app went away instead of coming up.
+// Reading "who is frontmost" during the click cannot tell the two apart --
+// whether the Dock activates on the press or the release is its business --
+// so the question is whether the app had settled in front BEFORE the press.
+let press = Date()
+
+check("in front since well before the click: put away",
+      DockClick.appToPutAway(hit: chrome, frontmostAtPress: "com.google.Chrome",
+                             frontmostNow: "com.google.Chrome",
+                             pressedAt: press,
+                             activatedAt: press.addingTimeInterval(-3))
+        == "com.google.Chrome")
+
+// This is the bug. The click itself raised it, so the activation lands at
+// the same moment as the press.
+check("raised by this very click: left alone",
+      DockClick.appToPutAway(hit: chrome, frontmostAtPress: "com.google.Chrome",
+                             frontmostNow: "com.google.Chrome",
+                             pressedAt: press,
+                             activatedAt: press) == nil)
+check("raised a moment before the press: still left alone",
+      DockClick.appToPutAway(hit: chrome, frontmostAtPress: "com.google.Chrome",
+                             frontmostNow: "com.google.Chrome",
+                             pressedAt: press,
+                             activatedAt: press.addingTimeInterval(-0.1)) == nil)
+// Two quick clicks: the first raises, the second must not put away.
+check("the second of two quick clicks is left alone",
+      DockClick.appToPutAway(hit: chrome, frontmostAtPress: "com.google.Chrome",
+                             frontmostNow: "com.google.Chrome",
+                             pressedAt: press,
+                             activatedAt: press.addingTimeInterval(-0.25)) == nil)
+check("just past the settling time: put away",
+      DockClick.appToPutAway(hit: chrome, frontmostAtPress: "com.google.Chrome",
+                             frontmostNow: "com.google.Chrome",
+                             pressedAt: press,
+                             activatedAt: press.addingTimeInterval(-0.31))
+        == "com.google.Chrome")
+// Nothing recorded means it has been in front since before Perch started
+// watching, which is as settled as an app gets.
+check("no activation on record: put away",
+      DockClick.appToPutAway(hit: chrome, frontmostAtPress: "com.google.Chrome",
+                             frontmostNow: "com.google.Chrome",
+                             pressedAt: press, activatedAt: nil)
+        == "com.google.Chrome")
+
 // MARK: - The cheap pre-filter
 
 print("\nThe region a click must be in to be worth reading the Dock for")

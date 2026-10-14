@@ -32,7 +32,24 @@ final class DockWatcher {
     private var region: CGRect?
     private var regionReadAt = Date.distantPast
 
-    private init() {}
+    /// When the frontmost app last changed, and to what. Tracked from the
+    /// workspace's notification rather than read inside the tap, because a
+    /// click that has just raised an app is indistinguishable, at that
+    /// moment, from a click on an app that was already in front.
+    private var activatedBundle: String?
+    private var activatedAt: Date?
+    private var pressedAt = Date.distantPast
+
+    private init() {
+        NSWorkspace.shared.notificationCenter.addObserver(
+            forName: NSWorkspace.didActivateApplicationNotification,
+            object: nil, queue: .main) { [weak self] notification in
+            let app = notification.userInfo?[NSWorkspace.applicationUserInfoKey]
+                as? NSRunningApplication
+            self?.activatedBundle = app?.bundleIdentifier
+            self?.activatedAt = Date()
+        }
+    }
 
     var isRunning: Bool { tap != nil }
 
@@ -107,12 +124,17 @@ final class DockWatcher {
             region = DockClick.region(of: items)
             regionReadAt = Date()
             pressedItem = DockClick.hit(event.location, in: items)
+            pressedAt = Date()
             frontmostAtPress = pressedItem == nil
                 ? nil : NSWorkspace.shared.frontmostApplication?.bundleIdentifier
 
         case .leftMouseUp:
             let press = pressedItem
             let atPress = frontmostAtPress
+            let at = pressedAt
+            // Only this app's own activation time matters; another app
+            // coming forward says nothing about how settled this one was.
+            let settled = activatedBundle == press?.bundleID ? activatedAt : nil
             pressedItem = nil
             frontmostAtPress = nil
             guard press != nil else { return }
@@ -126,7 +148,9 @@ final class DockWatcher {
                 let now = NSWorkspace.shared.frontmostApplication?.bundleIdentifier
                 guard let bundleID = DockClick.appToPutAway(hit: press,
                                                             frontmostAtPress: atPress,
-                                                            frontmostNow: now)
+                                                            frontmostNow: now,
+                                                            pressedAt: at,
+                                                            activatedAt: settled)
                 else { return }
                 // The same decision the launcher's own click makes, so full
                 // screen, windows that refuse to minimise and apps with no
