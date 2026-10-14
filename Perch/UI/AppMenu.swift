@@ -12,9 +12,22 @@ import AppKit
 /// they cannot find, or the app gone.
 enum AppMenu {
 
-    /// `module` is the settings page to open, or nil for the Dashboard.
+    /// `module` is the reading that was right-clicked: the page Settings
+    /// opens, and the one "Turn off" takes out of the menu bar.
     static func make(for module: String? = nil) -> NSMenu {
         let menu = NSMenu()
+
+        // First, because it is the reason somebody right-clicked this
+        // particular reading rather than any other. Quitting the whole app
+        // to be rid of one figure is not what they meant.
+        if let module, ModuleRegistry.shared.named(module) != nil {
+            let off = NSMenuItem(title: localized("Turn off %0", localized(module)),
+                                 action: #selector(Target.turnOff(_:)), keyEquivalent: "")
+            off.target = target
+            off.representedObject = module
+            menu.addItem(off)
+            menu.addItem(.separator())
+        }
 
         let settings = NSMenuItem(title: localized("Settings") + "…",
                                   action: #selector(Target.openSettings(_:)),
@@ -53,6 +66,22 @@ enum AppMenu {
             NotificationCenter.default.post(
                 name: .toggleSettings, object: nil,
                 userInfo: ["module": (sender.representedObject as? String) ?? "Dashboard"])
+        }
+
+        /// Takes one module out of the menu bar and leaves the rest alone.
+        ///
+        /// The same path the switch in Settings uses, including `stop()` for
+        /// `willStop()`, so a module turned off here cannot leave a
+        /// threshold alert posted about a reading that is gone. The
+        /// notification is what keeps the switch in Settings in step if the
+        /// window is open.
+        @objc func turnOff(_ sender: NSMenuItem) {
+            guard let name = sender.representedObject as? String,
+                  let module = ModuleRegistry.shared.named(name) else { return }
+            module.isEnabled = false
+            module.stop()
+            NotificationCenter.default.post(name: .toggleModule, object: nil,
+                                            userInfo: ["module": name, "state": false])
         }
 
         @objc func togglePause() {
