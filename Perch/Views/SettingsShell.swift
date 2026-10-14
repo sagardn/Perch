@@ -84,6 +84,31 @@ final class SettingsModel: ObservableObject {
 
     func setEnabled(_ name: String, _ enabled: Bool) {
         moduleStates[name] = enabled
+
+        // The switch used to do nothing but change its own appearance. It
+        // set this dictionary, posted the notification below -- which only
+        // this class observes, to set the same dictionary again -- and never
+        // touched the module. So a module switched off kept its menu bar
+        // item, kept sampling, and came back on as soon as the window was
+        // reopened, because `moduleStates` is built from `isEnabled` at init
+        // and `isEnabled` had never changed. Reproduced by switching Sensors
+        // off and reading the defaults: `Sensors_state` was still 1.
+        //
+        // The machinery was already right: every module's `start()` returns
+        // early unless it is enabled, and `stop()` takes its item out of the
+        // bar. Nothing called either.
+        if let module = ModuleRegistry.shared.named(name) {
+            // Setting this persists the choice and adds or removes the menu
+            // bar item on its own. Switching off also calls `stop()`, which
+            // is the only thing that runs `willStop()` -- a module taken out
+            // of the bar with a threshold alert still posted would keep
+            // shouting about a reading nobody can see. Switching on needs
+            // nothing further: every `start()` is a guard and a `show`, and
+            // `show` is idempotent.
+            module.isEnabled = enabled
+            if !enabled { module.stop() }
+        }
+
         NotificationCenter.default.post(name: .toggleModule, object: nil,
                                         userInfo: ["module": name, "state": enabled])
     }
