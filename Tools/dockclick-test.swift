@@ -91,6 +91,30 @@ check("the Finder is not a special case",
       decide(finder, press: "com.apple.finder", now: "com.apple.finder")
         == "com.apple.finder")
 
+// MARK: - Restoring is not putting away
+
+print("\nThere has to be something on screen to put away")
+
+// The reported bug, in full: click Chrome to bring it back from the Dock,
+// and it goes straight back down. Minimising an app does not deactivate it,
+// so Chrome with every window minimised is still the frontmost app -- and
+// the click that restores it looks identical to a click on an app sitting
+// in front of you, unless you ask what was on screen before the click.
+check("all windows minimised: the click restores, and is left alone",
+      DockClick.appToPutAway(hit: chrome, frontmostAtPress: "com.google.Chrome",
+                             frontmostNow: "com.google.Chrome",
+                             hadWindowOnScreen: false) == nil)
+check("a window was on screen: put away",
+      DockClick.appToPutAway(hit: chrome, frontmostAtPress: "com.google.Chrome",
+                             frontmostNow: "com.google.Chrome",
+                             hadWindowOnScreen: true) == "com.google.Chrome")
+// An app whose last window was closed is frontmost with nothing showing;
+// clicking its icon asks for a new window, not for silence.
+check("frontmost with no window at all: left alone, the Dock opens one",
+      DockClick.appToPutAway(hit: mail, frontmostAtPress: "com.apple.mail",
+                             frontmostNow: "com.apple.mail",
+                             hadWindowOnScreen: false) == nil)
+
 // MARK: - A click that raised the app is not a click that puts it away
 
 print("\nAn app has to have been in front before the click, not because of it")

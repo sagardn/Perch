@@ -39,6 +39,9 @@ final class DockWatcher {
     private var activatedBundle: String?
     private var activatedAt: Date?
     private var pressedAt = Date.distantPast
+    /// Whether the clicked app had anything on screen when the button went
+    /// down. Read then, because the Dock may be about to restore a window.
+    private var hadWindowAtPress = false
 
     private init() {
         NSWorkspace.shared.notificationCenter.addObserver(
@@ -125,6 +128,11 @@ final class DockWatcher {
             regionReadAt = Date()
             pressedItem = DockClick.hit(event.location, in: items)
             pressedAt = Date()
+            hadWindowAtPress = pressedItem.flatMap { item in
+                NSRunningApplication
+                    .runningApplications(withBundleIdentifier: item.bundleID).first
+                    .map { DockClick.hasWindowOnScreen(pid: $0.processIdentifier) }
+            } ?? false
             frontmostAtPress = pressedItem == nil
                 ? nil : NSWorkspace.shared.frontmostApplication?.bundleIdentifier
 
@@ -135,6 +143,7 @@ final class DockWatcher {
             // Only this app's own activation time matters; another app
             // coming forward says nothing about how settled this one was.
             let settled = activatedBundle == press?.bundleID ? activatedAt : nil
+            let hadWindow = hadWindowAtPress
             pressedItem = nil
             frontmostAtPress = nil
             guard press != nil else { return }
@@ -149,6 +158,7 @@ final class DockWatcher {
                 guard let bundleID = DockClick.appToPutAway(hit: press,
                                                             frontmostAtPress: atPress,
                                                             frontmostNow: now,
+                                                            hadWindowOnScreen: hadWindow,
                                                             pressedAt: at,
                                                             activatedAt: settled)
                 else { return }
