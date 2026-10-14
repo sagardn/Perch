@@ -438,4 +438,5 @@
 "Pause" = "暫停";
 "Resume" = "繼續";
 "Turn off %0" = "關閉 %0";
-"Click an app in the Dock to put it away" = "點一下 Dock 中的 App 可收起它";
+"Click an app in front to minimise it" = "點一下最前面的 App 可縮到最小";
+"The same for a click in the Dock" = "在 Dock 中點一下也一樣";

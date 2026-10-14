@@ -438,4 +438,5 @@
 "Pause" = "일시 정지";
 "Resume" = "재개";
 "Turn off %0" = "%0 끄기";
-"Click an app in the Dock to put it away" = "Dock의 앱을 클릭하면 치웁니다";
+"Click an app in front to minimise it" = "맨 앞의 앱을 클릭하면 최소화";
+"The same for a click in the Dock" = "Dock 클릭도 동일하게";

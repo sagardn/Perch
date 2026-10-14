@@ -438,4 +438,5 @@
 "Pause" = "Pauză";
 "Resume" = "Reia";
 "Turn off %0" = "Dezactivează %0";
-"Click an app in the Dock to put it away" = "Clic pe o aplicație din Dock pentru a o pune deoparte";
+"Click an app in front to minimise it" = "Clic pe aplicația din față pentru a o minimiza";
+"The same for a click in the Dock" = "La fel pentru un clic în Dock";

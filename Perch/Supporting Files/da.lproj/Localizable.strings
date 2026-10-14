@@ -438,4 +438,5 @@
 "Pause" = "Pause";
 "Resume" = "Fortsæt";
 "Turn off %0" = "Slå %0 fra";
-"Click an app in the Dock to put it away" = "Klik på en app i Dock for at lægge den væk";
+"Click an app in front to minimise it" = "Klik på appen forrest for at minimere den";
+"The same for a click in the Dock" = "Det samme for et klik i Dock";

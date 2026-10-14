@@ -232,11 +232,13 @@ final class GeneralPane: NSStackView {
                          Controls.toggle(Prefs.openAtPointer) { Prefs.openAtPointer = $0 }),
             Controls.row(localized("Close when it loses focus"),
                          Controls.toggle(Prefs.hideOnOutsideClick) { Prefs.hideOnOutsideClick = $0 }),
-            Controls.row(localized("Click an app in the Dock to put it away"),
+            Controls.row(localized("Click an app in front to minimise it"),
+                         Controls.toggle(Prefs.clickMinimizes) { Prefs.clickMinimizes = $0 }),
+            Controls.row(localized("The same for a click in the Dock"),
                          Controls.toggle(Prefs.dockClickPutsAway) {
                              Prefs.dockClickPutsAway = $0
                              DockWatcher.shared.refresh()
-                         }),
+                         }, indented: true),
             Controls.row(localized("⌃Tab cycles your marked apps"),
                          Controls.toggle(Prefs.cycleHotkeyEnabled) {
                              Prefs.cycleHotkeyEnabled = $0

@@ -438,4 +438,5 @@
 "Pause" = "Пауза";
 "Resume" = "Продовжити";
 "Turn off %0" = "Вимкнути %0";
-"Click an app in the Dock to put it away" = "Клік на програмі в Dock прибирає її";
+"Click an app in front to minimise it" = "Клік на програмі попереду згортає її";
+"The same for a click in the Dock" = "Те саме для кліку в Dock";

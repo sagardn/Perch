@@ -276,7 +276,19 @@ enum WindowControl {
         if running != nil, snapshot.isActive, !snapshot.isHidden, !entry.launchOnly,
            !ensureTrusted(for: "Minimising a window") { return }
 
-        switch ClickToggle.decide(snapshot) {
+        var action = ClickToggle.decide(snapshot)
+        // With minimising switched off the launcher is a plain launcher: a
+        // click brings an app forward and never puts it away. Applied here
+        // rather than in `ClickToggle`, so the decision stays pure and the
+        // preference governs the panel and the per-app hotkeys together.
+        if !Prefs.clickMinimizes {
+            switch action {
+            case .minimize, .hide, .refuseFullScreen: action = .raise
+            default: break
+            }
+        }
+
+        switch action {
         case .launch:
             if !launch(entry.bundleID) { Notify.show("\(entry.name) is not installed") }
         case .unhide:

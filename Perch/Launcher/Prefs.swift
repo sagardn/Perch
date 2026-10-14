@@ -39,6 +39,22 @@ enum Prefs {
 
     /// Where the search panel appears.  Defaults to the pointer, which is how
     /// the menu behaved before the panel existed.
+    private static let clickMinimizesKey = "clickMinimizes"
+
+    /// Whether clicking the app you are already in minimises it.
+    ///
+    /// Off turns the launcher back into a plain launcher: a click only ever
+    /// brings an app forward, which is what macOS does and what somebody
+    /// coming from it may want back. It governs the panel and the per-app
+    /// hotkeys together, because they are the same click by another route.
+    static var clickMinimizes: Bool {
+        get {
+            if UserDefaults.standard.object(forKey: clickMinimizesKey) == nil { return true }
+            return UserDefaults.standard.bool(forKey: clickMinimizesKey)
+        }
+        set { UserDefaults.standard.set(newValue, forKey: clickMinimizesKey) }
+    }
+
     private static let dockClickKey = "dockClickPutsAway"
 
     /// Click an app in the Dock to bring it up, click it again to put it

@@ -438,4 +438,5 @@
 "Pause" = "বিরতি";
 "Resume" = "চালিয়ে যান";
 "Turn off %0" = "%0 বন্ধ করুন";
-"Click an app in the Dock to put it away" = "Dock-এ অ্যাপে ক্লিক করলে সেটি সরে যাবে";
+"Click an app in front to minimise it" = "সামনের অ্যাপে ক্লিক করলে সেটি ছোট হবে";
+"The same for a click in the Dock" = "Dock-এ ক্লিকের জন্যও একই";

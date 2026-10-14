@@ -438,4 +438,5 @@
 "Pause" = "Pozastaviť";
 "Resume" = "Pokračovať";
 "Turn off %0" = "Vypnúť %0";
-"Click an app in the Dock to put it away" = "Kliknutím na aplikáciu v Docku ju odložíte";
+"Click an app in front to minimise it" = "Kliknutím na aplikáciu vpredu ju minimalizujete";
+"The same for a click in the Dock" = "To isté pre kliknutie v Docku";

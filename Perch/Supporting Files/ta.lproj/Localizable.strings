@@ -438,4 +438,5 @@
 "Pause" = "இடைநிறுத்து";
 "Resume" = "தொடர்";
 "Turn off %0" = "%0 ஐ அணை";
-"Click an app in the Dock to put it away" = "Dock இல் பயன்பாட்டைக் சொடுக்கினால் அது மறையும்";
+"Click an app in front to minimise it" = "முன்னால் உள்ள பயன்பாட்டைச் சொடுக்கினால் சிறிதாகும்";
+"The same for a click in the Dock" = "Dock இல் சொடுக்கினாலும் அதுவே";

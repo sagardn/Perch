@@ -438,4 +438,5 @@
 "Pause" = "השהיה";
 "Resume" = "המשך";
 "Turn off %0" = "כיבוי %0";
-"Click an app in the Dock to put it away" = "לחיצה על יישום ב‑Dock מסלקת אותו";
+"Click an app in front to minimise it" = "לחיצה על היישום הקדמי ממזערת אותו";
+"The same for a click in the Dock" = "אותו דבר ללחיצה ב‑Dock";

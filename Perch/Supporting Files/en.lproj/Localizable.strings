@@ -528,4 +528,5 @@
 "Pause" = "Pause";
 "Resume" = "Resume";
 "Turn off %0" = "Turn off %0";
-"Click an app in the Dock to put it away" = "Click an app in the Dock to put it away";
+"Click an app in front to minimise it" = "Click an app in front to minimise it";
+"The same for a click in the Dock" = "The same for a click in the Dock";

@@ -438,4 +438,5 @@
 "Pause" = "Szünet";
 "Resume" = "Folytatás";
 "Turn off %0" = "%0 kikapcsolása";
-"Click an app in the Dock to put it away" = "A Dockban egy appra kattintva elteszi";
+"Click an app in front to minimise it" = "Az előtérben lévő appra kattintva lekicsinyíti";
+"The same for a click in the Dock" = "Ugyanez a Dockban kattintva";

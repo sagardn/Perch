@@ -438,4 +438,5 @@
 "Pause" = "Peata";
 "Resume" = "Jätka";
 "Turn off %0" = "Lülita %0 välja";
-"Click an app in the Dock to put it away" = "Klõps Dockis olevale rakendusele paneb selle ära";
+"Click an app in front to minimise it" = "Klõps esiplaanil olevale rakendusele minimeerib selle";
+"The same for a click in the Dock" = "Sama Dockis klõpsamisel";

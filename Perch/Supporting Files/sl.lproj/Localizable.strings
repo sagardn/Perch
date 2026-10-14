@@ -438,4 +438,5 @@
 "Pause" = "Premor";
 "Resume" = "Nadaljuj";
 "Turn off %0" = "Izklopi %0";
-"Click an app in the Dock to put it away" = "Klik na aplikacijo v Docku jo pospravi";
+"Click an app in front to minimise it" = "Klik na aplikacijo v ospredju jo pomanjša";
+"The same for a click in the Dock" = "Enako za klik v Docku";

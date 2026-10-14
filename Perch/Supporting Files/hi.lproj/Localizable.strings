@@ -438,4 +438,5 @@
 "Pause" = "रोकें";
 "Resume" = "जारी रखें";
 "Turn off %0" = "%0 बंद करें";
-"Click an app in the Dock to put it away" = "Dock में ऐप पर क्लिक करके उसे हटाएँ";
+"Click an app in front to minimise it" = "सामने वाले ऐप पर क्लिक करके उसे छोटा करें";
+"The same for a click in the Dock" = "Dock में क्लिक के लिए भी वही";

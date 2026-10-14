@@ -438,4 +438,5 @@
 "Pause" = "Пауза";
 "Resume" = "Продолжить";
 "Turn off %0" = "Выключить %0";
-"Click an app in the Dock to put it away" = "Щелчок по приложению в Dock убирает его";
+"Click an app in front to minimise it" = "Щелчок по приложению впереди сворачивает его";
+"The same for a click in the Dock" = "То же для щелчка в Dock";

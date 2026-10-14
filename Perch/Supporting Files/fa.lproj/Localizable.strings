@@ -438,4 +438,5 @@
 "Pause" = "مکث";
 "Resume" = "ادامه";
 "Turn off %0" = "خاموش کردن %0";
-"Click an app in the Dock to put it away" = "کلیک روی برنامه در Dock آن را کنار می‌گذارد";
+"Click an app in front to minimise it" = "کلیک روی برنامهٔ جلو آن را کوچک می‌کند";
+"The same for a click in the Dock" = "همین برای کلیک در Dock";

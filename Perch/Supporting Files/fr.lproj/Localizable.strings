@@ -438,4 +438,5 @@
 "Pause" = "Pause";
 "Resume" = "Reprendre";
 "Turn off %0" = "Désactiver %0";
-"Click an app in the Dock to put it away" = "Cliquer une app dans le Dock la range";
+"Click an app in front to minimise it" = "Cliquer l'app au premier plan la réduit";
+"The same for a click in the Dock" = "Pareil pour un clic dans le Dock";
