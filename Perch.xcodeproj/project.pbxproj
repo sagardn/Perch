@@ -87,6 +87,7 @@
 		FEEDFACEB2E7000000000000 /* QuickSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACEF2E7000000000000 /* QuickSearch.swift */; };
 		FEEDFACEB2E8000000000000 /* QuickActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACEF2E8000000000000 /* QuickActions.swift */; };
 		FEEDFACEB2E3000000000000 /* Snap.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACEF2E3000000000000 /* Snap.swift */; };
+		FEEDFACE0EC0000000000000 /* ClickToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0EC1000000000000 /* ClickToggle.swift */; };
 		FEEDFACEB2E4000000000000 /* WindowSnapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACEF2E4000000000000 /* WindowSnapper.swift */; };
 		FEEDFACEB104000000000000 /* Hotkey.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACEF104000000000000 /* Hotkey.swift */; };
 		FEEDFACEB105000000000000 /* Launcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACEF105000000000000 /* Launcher.swift */; };
@@ -328,6 +329,7 @@
 		FEEDFACEF2E7000000000000 /* QuickSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickSearch.swift; sourceTree = "<group>"; };
 		FEEDFACEF2E8000000000000 /* QuickActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickActions.swift; sourceTree = "<group>"; };
 		FEEDFACEF2E3000000000000 /* Snap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snap.swift; sourceTree = "<group>"; };
+		FEEDFACE0EC1000000000000 /* ClickToggle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClickToggle.swift; sourceTree = "<group>"; };
 		FEEDFACEF2E4000000000000 /* WindowSnapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowSnapper.swift; sourceTree = "<group>"; };
 		FEEDFACEF104000000000000 /* Hotkey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hotkey.swift; sourceTree = "<group>"; };
 		FEEDFACEF105000000000000 /* Launcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Launcher.swift; sourceTree = "<group>"; };
@@ -521,6 +523,7 @@
 				FEEDFACEF2E7000000000000 /* QuickSearch.swift */,
 				FEEDFACEF2E8000000000000 /* QuickActions.swift */,
 				FEEDFACEF2E3000000000000 /* Snap.swift */,
+				FEEDFACE0EC1000000000000 /* ClickToggle.swift */,
 				FEEDFACEF2E4000000000000 /* WindowSnapper.swift */,
 				FEEDFACEF104000000000000 /* Hotkey.swift */,
 				FEEDFACEF105000000000000 /* Launcher.swift */,
@@ -905,6 +908,7 @@
 				FEEDFACEB2E7000000000000 /* QuickSearch.swift in Sources */,
 				FEEDFACEB2E8000000000000 /* QuickActions.swift in Sources */,
 				FEEDFACEB2E3000000000000 /* Snap.swift in Sources */,
+				FEEDFACE0EC0000000000000 /* ClickToggle.swift in Sources */,
 				FEEDFACEB2E4000000000000 /* WindowSnapper.swift in Sources */,
 				FEEDFACEB104000000000000 /* Hotkey.swift in Sources */,
 				FEEDFACEB105000000000000 /* Launcher.swift in Sources */,

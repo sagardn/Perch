@@ -99,9 +99,9 @@ of them has. Perch is all three, built as one native app.
   |---|---|
   | Not running | launches it |
   | Running, behind other windows | brings it to the front |
-  | Already frontmost | minimises it |
+  | Already frontmost | minimises all its windows, like the Windows taskbar |
   | Minimised or hidden | restores and focuses it |
-  | A menu-bar-only app | activates it |
+  | Running with no window open | opens one, as the Dock does |
 
 - **Your own `⌃Tab`** — mark the three or four apps you live in, and `⌃Tab`
   cycles only those, most recent first. If another app already owns `⌃Tab`,

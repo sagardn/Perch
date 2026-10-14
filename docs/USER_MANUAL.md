@@ -116,11 +116,16 @@ away:
 |---|---|
 | not running | it launches (a notice says so if it is not installed) |
 | hidden | it unhides and comes forward |
-| minimised | it restores and comes forward |
+| minimised | it restores and comes forward -- the windows Perch put away, or one window if you minimised them yourself |
 | running but not frontmost | it comes forward |
-| already frontmost | its window minimises |
+| running with no window open | it opens one, as clicking it in the Dock would |
+| already frontmost | every window it has on screen minimises |
+| already frontmost, with windows that cannot minimise | it hides |
 | already frontmost and full-screen | a notice: macOS cannot minimise a full-screen window |
 | marked **launch-only** (Launchpad) | it only ever comes forward, never minimises |
+
+"Frontmost" means the app you were in when you opened the panel, not the panel
+itself, so picking the app you were just using puts it away.
 
 ### Inside the search panel
 

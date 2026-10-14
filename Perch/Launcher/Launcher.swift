@@ -31,7 +31,7 @@ final class Launcher {
         Recents.shared.start()
 
         searchPanel = SearchPanel(source: { [weak self] in self?.entries ?? [] },
-                                  onPick: { entry in WindowControl.toggle(entry) },
+                                  onPick: { entry, active in WindowControl.toggle(entry, activeApp: active) },
                                   onSetListed: { [weak self] changed, listed in
                                       self?.setListed(changed, listed)
                                   },

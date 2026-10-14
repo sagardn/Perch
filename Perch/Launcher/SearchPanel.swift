@@ -84,7 +84,13 @@ final class SearchPanel: NSPanel, NSTableViewDataSource, NSTableViewDelegate, NS
     private let scroll = NSScrollView()
     private var rows: [Row] = []
     private var source: () -> [AppEntry] = { [] }
-    private var onPick: (AppEntry) -> Void = { _ in }
+    /// Called with the picked app and the app that was in front before the
+    /// panel opened -- see `WindowControl.toggle` for why the second one.
+    private var onPick: (AppEntry, String?) -> Void = { _, _ in }
+
+    /// The app in front when the panel was asked for, before the panel took
+    /// focus. Nil when that was Perch itself.
+    private var activeBeforeShow: String?
     private var onSetListed: ([AppEntry], Bool) -> Void = { _, _ in }
     private var onEditApps: () -> Void = {}
     private var isMarked: (String) -> Bool = { _ in false }
@@ -125,7 +131,7 @@ final class SearchPanel: NSPanel, NSTableViewDataSource, NSTableViewDelegate, NS
     // MARK: - Setup
 
     init(source: @escaping () -> [AppEntry],
-         onPick: @escaping (AppEntry) -> Void,
+         onPick: @escaping (AppEntry, String?) -> Void,
          onSetListed: @escaping ([AppEntry], Bool) -> Void,
          onEditApps: @escaping () -> Void,
          isMarked: @escaping (String) -> Bool,
@@ -220,6 +226,8 @@ final class SearchPanel: NSPanel, NSTableViewDataSource, NSTableViewDelegate, NS
     }
 
     func show() {
+        let front = NSWorkspace.shared.frontmostApplication?.bundleIdentifier
+        activeBeforeShow = front == Bundle.main.bundleIdentifier ? nil : front
         field.stringValue = ""
         reload()
         // .accessory apps have no key window until they activate.
@@ -547,8 +555,12 @@ final class SearchPanel: NSPanel, NSTableViewDataSource, NSTableViewDelegate, NS
             dismissThen { quick.perform() }
             return
         }
-        dismissThen { [onPick] in
-            onPick(AppEntry(name: row.name, bundleID: row.bundleID))
+        // The configured entry when there is one, so a launch-only app picked
+        // here behaves as it does from its shortcut.
+        let entry = source().first { $0.bundleID == row.bundleID }
+            ?? AppEntry(name: row.name, bundleID: row.bundleID)
+        dismissThen { [onPick, activeBeforeShow] in
+            onPick(entry, activeBeforeShow)
         }
     }
 

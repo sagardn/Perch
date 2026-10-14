@@ -231,62 +231,92 @@ enum WindowControl {
                                      minimized as CFBoolean)
     }
 
-    /// The click behaviour, mirroring the Dock but with restore folded in.
+    /// One click on an app in the launcher. What it does is
+    /// `ClickToggle.decide`; this reads the app's state for it and carries
+    /// the answer out.
     ///
-    /// not running      -> launch
-    /// behind           -> bring to front
-    /// frontmost        -> minimize
-    /// minimized/hidden -> restore and focus
-    /// full screen      -> cannot minimize (macOS); raise it if it is behind
-    static func toggle(_ entry: AppEntry) {
+    /// `activeApp` is the app the person was in when they reached for the
+    /// launcher. The search panel takes focus while it is open, so by the
+    /// time a row is picked the frontmost app is Perch, or whichever app
+    /// macOS has got round to handing focus back to -- and comparing with
+    /// that made "click the app you are in to minimise it" depend on a
+    /// timer. Nil means ask macOS, which is right for a hotkey: nothing of
+    /// Perch's was in front.
+    static func toggle(_ entry: AppEntry, activeApp: String? = nil) {
         defer { invalidateState(entry.bundleID) }
-        guard let running = runningApp(entry.bundleID) else {
-            if !launch(entry.bundleID) {
-                Notify.show("\(entry.name) is not installed")
+        let running = runningApp(entry.bundleID)
+        let active = activeApp ?? NSWorkspace.shared.frontmostApplication?.bundleIdentifier
+
+        var snapshot = ClickToggle.Snapshot(isRunning: running != nil,
+                                            isHidden: running?.isHidden ?? false,
+                                            isActive: active == entry.bundleID,
+                                            launchOnly: entry.launchOnly)
+        // Reading windows is the part that needs Accessibility, and only the
+        // in-front case needs what it reads. Without the grant the list is
+        // left empty, which decides as "no window" and so as the Dock's
+        // reopen -- and the reopen event is itself the Dock's whole click:
+        // the app raises, un-minimises or opens a window as it sees fit. The
+        // person is asked for the grant only when a minimise is what they
+        // wanted.
+        var windows: [AXUIElement] = []
+        if let running, !snapshot.isHidden, !entry.launchOnly, isTrusted {
+            let axApp = AXUIElementCreateApplication(running.processIdentifier)
+            let main = element(attribute(axApp, kAXMainWindowAttribute as String))
+            windows = self.windows(of: axApp)
+            let remembered = minimizedByPerch[running.processIdentifier] ?? []
+            snapshot.windows = windows.map { window in
+                ClickToggle.Window(
+                    isMinimized: bool(window, kAXMinimizedAttribute as String),
+                    isFullScreen: bool(window, "AXFullScreen"),
+                    canMinimize: isSettable(window, kAXMinimizedAttribute as String),
+                    isMain: main.map { CFEqual($0, window) } ?? false,
+                    minimizedByPerch: remembered.contains { CFEqual($0, window) })
             }
-            return
         }
+        if running != nil, snapshot.isActive, !snapshot.isHidden, !entry.launchOnly,
+           !ensureTrusted(for: "Minimising a window") { return }
 
-        if entry.launchOnly {
-            activate(running)
-            return
-        }
-
-        if running.isHidden {
-            running.unhide()
-            activate(running)
-            return
-        }
-
-        let isFrontmost = NSWorkspace.shared.frontmostApplication?
-            .bundleIdentifier == entry.bundleID
-
-        // Picking the app you are already in is the one branch that minimises,
-        // and minimising is the one thing here that needs permission. Ask at
-        // exactly that point: raising, launching and unhiding all work
-        // without it, so there is no reason to gate the whole function.
-        if isFrontmost, !ensureTrusted(for: "Minimising a window") { return }
-
-        let axApp = AXUIElementCreateApplication(running.processIdentifier)
-        guard let window = targetWindow(of: axApp) else {
-            activate(running)
-            return
-        }
-
-        if bool(window, kAXMinimizedAttribute as String) {
-            setMinimized(window, false)
-            activate(running)
-        } else if !isFrontmost {
-            activate(running)
-        } else if bool(window, "AXFullScreen") {
-            // macOS cannot minimize a full-screen window.  Hiding the app as a
-            // substitute was tried and rejected: Cmd-H tears down the
-            // full-screen space, after which the app reports no windows while
-            // AXHidden stays false and nothing can bring it back.
+        switch ClickToggle.decide(snapshot) {
+        case .launch:
+            if !launch(entry.bundleID) { Notify.show("\(entry.name) is not installed") }
+        case .unhide:
+            running?.unhide()
+            running.map(activate)
+        case .raise:
+            running.map(activate)
+        case .reopen:
+            // NSWorkspace sends a running app the reopen event, the same one
+            // the Dock sends, and that is what makes it open a window.
+            if !launch(entry.bundleID) { running.map(activate) }
+        case .restore(let indices):
+            for index in indices { setMinimized(windows[index], false) }
+            if let running { minimizedByPerch[running.processIdentifier] = nil }
+            running.map(activate)
+        case .minimize(let indices):
+            let down = indices.map { windows[$0] }
+            for window in down { setMinimized(window, true) }
+            if let running { minimizedByPerch[running.processIdentifier] = down }
+        case .hide:
+            running?.hide()
+        case .refuseFullScreen:
+            // Hiding the app as a substitute was tried and rejected: Cmd-H
+            // tears down the full-screen space, after which the app reports
+            // no windows while AXHidden stays false and nothing can bring it
+            // back.
             Notify.show("macOS can't minimize a full-screen window", symbol: "macwindow")
-        } else {
-            setMinimized(window, true)
         }
+    }
+
+    /// The windows each app's last minimise put down, by process, so the
+    /// click that brings them back brings back those and not every window
+    /// the app has in the Dock. A process id rather than a bundle id: a
+    /// relaunched app has new windows, and stale elements must not match.
+    private static var minimizedByPerch: [pid_t: [AXUIElement]] = [:]
+
+    private static func isSettable(_ element: AXUIElement, _ name: String) -> Bool {
+        var settable: DarwinBoolean = false
+        return AXUIElementIsAttributeSettable(element, name as CFString, &settable) == .success
+            && settable.boolValue
     }
 
     // MARK: - New window
