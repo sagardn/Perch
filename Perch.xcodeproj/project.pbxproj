@@ -1185,7 +1185,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Perch;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0.16;
+				MARKETING_VERSION = 1.0.17;
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sagar.perch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1217,7 +1217,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Perch;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0.16;
+				MARKETING_VERSION = 1.0.17;
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sagar.perch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
