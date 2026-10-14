@@ -434,3 +434,6 @@
 "finish_setup_body" = "Perch נמצא בשורת התפריטים שלך. לחץ/י על נתון כדי לראות פרטים, או הקש/י ⌃Space לחיפוש. Perch הוא חינמי וקוד פתוח; אם הוא מועיל לך, אפשר לתמוך בפיתוח שלו.";
 "Diagnostics copied — paste them into the issue" = "נתוני האבחון הועתקו — הדביקו אותם בדיווח";
 "Shows as" = "מוצג כ־";
+"Quit Perch" = "יציאה מ‑Perch";
+"Pause" = "השהיה";
+"Resume" = "המשך";

@@ -434,3 +434,6 @@
 "finish_setup_body" = "A Perch a menüsorban lakik. Kattints egy mért értékre a részletekért, vagy nyomd meg a ⌃Space billentyűt a kereséshez. A Perch ingyenes és nyílt forráskódú; ha hasznos számodra, támogathatod a fejlesztését.";
 "Diagnostics copied — paste them into the issue" = "Diagnosztika másolva – illeszd be a hibajelentésbe";
 "Shows as" = "Megjelenés";
+"Quit Perch" = "Perch bezárása";
+"Pause" = "Szünet";
+"Resume" = "Folytatás";

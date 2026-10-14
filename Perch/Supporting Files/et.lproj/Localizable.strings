@@ -434,3 +434,6 @@
 "finish_setup_body" = "Perch elab sinu menüüribal. Klõpsa näidul, et näha üksikasju, või vajuta otsimiseks ⌃Space. Perch on tasuta ja avatud lähtekoodiga; kui see on sulle kasulik, saad toetada selle arendamist.";
 "Diagnostics copied — paste them into the issue" = "Diagnostika kopeeritud – kleebi see veateatesse";
 "Shows as" = "Kuvatakse kui";
+"Quit Perch" = "Välju Perchist";
+"Pause" = "Peata";
+"Resume" = "Jätka";

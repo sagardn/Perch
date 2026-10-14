@@ -434,3 +434,6 @@
 "finish_setup_body" = "Perch bor i menylinjen din. Klikk på en måling for å se detaljer, eller trykk ⌃Space for å søke. Perch er gratis og åpen kildekode; hvis du har nytte av det, kan du støtte utviklingen.";
 "Diagnostics copied — paste them into the issue" = "Diagnostikk kopiert – lim den inn i rapporten";
 "Shows as" = "Vises som";
+"Quit Perch" = "Avslutt Perch";
+"Pause" = "Pause";
+"Resume" = "Fortsett";

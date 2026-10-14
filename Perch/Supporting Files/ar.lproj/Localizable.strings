@@ -434,3 +434,6 @@
 "finish_setup_body" = "يوجد Perch في شريط القائمة. انقر على أي قراءة لعرض تفاصيلها، أو اضغط ⌃Space للبحث. Perch مجاني ومفتوح المصدر؛ وإن كان مفيدًا لك، يمكنك دعم تطويره.";
 "Diagnostics copied — paste them into the issue" = "تم نسخ التشخيص — الصقه في البلاغ";
 "Shows as" = "يظهر كـ";
+"Quit Perch" = "إنهاء Perch";
+"Pause" = "إيقاف مؤقت";
+"Resume" = "استئناف";

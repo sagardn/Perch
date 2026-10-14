@@ -434,3 +434,6 @@
 "finish_setup_body" = "Perch nằm trên thanh menu của bạn. Bấm vào một chỉ số để xem chi tiết, hoặc nhấn ⌃Space để tìm kiếm. Perch miễn phí và mã nguồn mở; nếu thấy hữu ích, bạn có thể ủng hộ việc phát triển.";
 "Diagnostics copied — paste them into the issue" = "Đã sao chép chẩn đoán — dán vào báo cáo";
 "Shows as" = "Hiển thị dạng";
+"Quit Perch" = "Thoát Perch";
+"Pause" = "Tạm dừng";
+"Resume" = "Tiếp tục";

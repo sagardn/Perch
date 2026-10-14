@@ -434,3 +434,6 @@
 "finish_setup_body" = "Perch woont in je menubalk. Klik op een meetwaarde voor details, of druk op ⌃Space om te zoeken. Perch is gratis en open source; als je er iets aan hebt, kun je de ontwikkeling steunen.";
 "Diagnostics copied — paste them into the issue" = "Diagnose gekopieerd — plak die in het rapport";
 "Shows as" = "Weergave";
+"Quit Perch" = "Stop Perch";
+"Pause" = "Pauzeer";
+"Resume" = "Hervat";

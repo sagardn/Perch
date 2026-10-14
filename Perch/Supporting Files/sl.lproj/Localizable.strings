@@ -434,3 +434,6 @@
 "finish_setup_body" = "Perch domuje v menijski vrstici. Kliknite odčitek za podrobnosti ali pritisnite ⌃Space za iskanje. Perch je brezplačen in odprtokoden; če vam koristi, lahko podprete njegov razvoj.";
 "Diagnostics copied — paste them into the issue" = "Diagnostika kopirana – prilepite jo v prijavo";
 "Shows as" = "Prikaz kot";
+"Quit Perch" = "Končaj Perch";
+"Pause" = "Premor";
+"Resume" = "Nadaljuj";

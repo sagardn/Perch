@@ -434,3 +434,6 @@
 "finish_setup_body" = "El Perch viu a la barra de menús. Fes clic en una lectura per veure'n els detalls, o prem ⌃Space per cercar. El Perch és gratuït i de codi obert; si et resulta útil, pots donar suport al seu desenvolupament.";
 "Diagnostics copied — paste them into the issue" = "Diagnòstic copiat: enganxeu-lo a l'informe";
 "Shows as" = "Es mostra com a";
+"Quit Perch" = "Surt del Perch";
+"Pause" = "Pausa";
+"Resume" = "Reprèn";

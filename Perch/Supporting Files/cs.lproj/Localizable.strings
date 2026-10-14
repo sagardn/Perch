@@ -434,3 +434,6 @@
 "finish_setup_body" = "Perch sídlí v řádku nabídek. Klikněte na údaj pro podrobnosti nebo stiskněte ⌃Space pro hledání. Perch je zdarma a s otevřeným zdrojovým kódem; pokud je vám užitečný, můžete podpořit jeho vývoj.";
 "Diagnostics copied — paste them into the issue" = "Diagnostika zkopírována – vložte ji do hlášení";
 "Shows as" = "Zobrazit jako";
+"Quit Perch" = "Ukončit Perch";
+"Pause" = "Pozastavit";
+"Resume" = "Pokračovat";

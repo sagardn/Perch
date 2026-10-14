@@ -434,3 +434,6 @@
 "finish_setup_body" = "Perch asuu valikkorivilläsi. Klikkaa lukemaa nähdäksesi sen tiedot tai paina ⌃Space hakeaksesi. Perch on ilmainen ja avointa lähdekoodia; jos siitä on sinulle hyötyä, voit tukea sen kehitystä.";
 "Diagnostics copied — paste them into the issue" = "Diagnostiikka kopioitu – liitä se raporttiin";
 "Shows as" = "Näkyy muodossa";
+"Quit Perch" = "Lopeta Perch";
+"Pause" = "Keskeytä";
+"Resume" = "Jatka";

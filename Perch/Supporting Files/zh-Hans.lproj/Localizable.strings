@@ -434,3 +434,6 @@
 "finish_setup_body" = "Perch 位于菜单栏中。点按读数可查看详细信息，或按 ⌃Space 进行搜索。Perch 免费且开源；如果它对你有用，你可以支持它的开发。";
 "Diagnostics copied — paste them into the issue" = "已拷贝诊断信息——粘贴到问题报告中";
 "Shows as" = "显示为";
+"Quit Perch" = "退出 Perch";
+"Pause" = "暂停";
+"Resume" = "继续";

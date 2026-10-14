@@ -524,3 +524,6 @@
 "finish_setup_body" = "Perch lives in your menu bar. Click a reading for its details, or ⌃Space to search. Perch is free and open source; if it is useful to you, you can support its development.";
 "Diagnostics copied — paste them into the issue" = "Diagnostics copied — paste them into the issue";
 "Shows as" = "Shows as";
+"Quit Perch" = "Quit Perch";
+"Pause" = "Pause";
+"Resume" = "Resume";

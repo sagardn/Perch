@@ -434,3 +434,6 @@
 "finish_setup_body" = "Perch locuiește în bara de meniu. Fă clic pe o valoare pentru detalii sau apasă ⌃Space pentru a căuta. Perch este gratuit și open source; dacă îți este util, poți sprijini dezvoltarea sa.";
 "Diagnostics copied — paste them into the issue" = "Diagnostic copiat — lipește-l în raport";
 "Shows as" = "Afișat ca";
+"Quit Perch" = "Ieși din Perch";
+"Pause" = "Pauză";
+"Resume" = "Reia";

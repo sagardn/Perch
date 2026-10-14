@@ -434,3 +434,6 @@
 "finish_setup_body" = "Perch vive en la barra de menús. Haz clic en una lectura para ver sus detalles, o pulsa ⌃Space para buscar. Perch es gratuito y de código abierto; si te resulta útil, puedes apoyar su desarrollo.";
 "Diagnostics copied — paste them into the issue" = "Diagnóstico copiado: pégalo en el informe";
 "Shows as" = "Se muestra como";
+"Quit Perch" = "Salir de Perch";
+"Pause" = "Pausar";
+"Resume" = "Reanudar";

@@ -434,3 +434,6 @@
 "finish_setup_body" = "Perch는 메뉴 막대에 있습니다. 측정값을 클릭하면 세부사항을 볼 수 있고, ⌃Space를 누르면 검색할 수 있습니다. Perch는 무료 오픈 소스입니다. 유용하다면 개발을 후원할 수 있습니다.";
 "Diagnostics copied — paste them into the issue" = "진단 정보를 복사했습니다 — 보고서에 붙여넣으세요";
 "Shows as" = "표시 방식";
+"Quit Perch" = "Perch 종료";
+"Pause" = "일시 정지";
+"Resume" = "재개";

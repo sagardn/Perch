@@ -38,6 +38,10 @@ final class MonitorBar {
             self.item.button?.toolTip = segment.name
             self.item.button?.title = ""
             self.item.button?.target = self
+            // Right-click has to be asked for: a status item button sends
+            // its action on a left click only, so the menu below would
+            // never be reached.
+            self.item.button?.sendAction(on: [.leftMouseUp, .rightMouseUp])
             self.item.button?.action = #selector(self.press)
             self.item.button?.addSubview(segment.view)
             segment.onResize = { [weak self] in self?.fit() }
@@ -69,6 +73,19 @@ final class MonitorBar {
         }
 
         @objc fileprivate func press() {
+            // Control-click is a right-click everywhere in macOS, and is how
+            // somebody on a trackpad without a second button gets here.
+            let event = NSApp.currentEvent
+            if event?.type == .rightMouseUp
+                || event?.modifierFlags.contains(.control) == true {
+                item.menu = AppMenu.make(for: segment.name)
+                item.button?.performClick(nil)
+                // Cleared straight away: an item with a menu attached opens
+                // that menu on every click after, and the left click has to
+                // go on opening the popup.
+                item.menu = nil
+                return
+            }
             guard let frame = item.button?.window?.frame else { return }
             segment.activate(anchor: frame, offsetX: 0)
         }

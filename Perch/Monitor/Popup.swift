@@ -202,6 +202,24 @@ final class ReadingPopup: NSPanel {
 
     override var canBecomeKey: Bool { true }
 
+    /// A right-click anywhere in the popup gives the same menu the menu bar
+    /// reading does. The popup is where somebody is already looking when
+    /// they want Settings or Quit, and a window that answers a right-click
+    /// with nothing reads as a window that is not finished.
+    ///
+    /// Rows that have a menu of their own -- a process offering Quit and
+    /// Force Quit -- handle the click before it reaches here, because the
+    /// view under the pointer is asked first.
+    override func rightMouseDown(with event: NSEvent) {
+        let pane = content is CombinedDetails ? "Dashboard" : content.title
+        let menu = AppMenu.make(for: pane)
+        // Without this the popup treats the menu opening as a click
+        // elsewhere and closes underneath it.
+        isShowingOwnMenu = true
+        NSMenu.popUpContextMenu(menu, with: event, for: contentView ?? NSView())
+        isShowingOwnMenu = false
+    }
+
     override func cancelOperation(_ sender: Any?) {
         hide()
     }

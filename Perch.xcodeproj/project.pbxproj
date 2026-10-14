@@ -60,6 +60,7 @@
 		FEEDFACE0321000000000000 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0320000000000000 /* Preferences.swift */; };
 		FEEDFACE0323000000000000 /* GeneralPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0322000000000000 /* GeneralPane.swift */; };
 		FEEDFACE0325000000000000 /* Controls.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0324000000000000 /* Controls.swift */; };
+		FEEDFACE0BD0000000000000 /* AppMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0BD1000000000000 /* AppMenu.swift */; };
 		FEEDFACE0309000000000000 /* UpdateWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0308000000000000 /* UpdateWindow.swift */; };
 		FEEDFACE0307000000000000 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0306000000000000 /* Alert.swift */; };
 		FEEDFACEB2E9000000000000 /* ShortcutRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACEF2E9000000000000 /* ShortcutRecorder.swift */; };
@@ -260,6 +261,7 @@
 		FEEDFACE0320000000000000 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		FEEDFACE0322000000000000 /* GeneralPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPane.swift; sourceTree = "<group>"; };
 		FEEDFACE0324000000000000 /* Controls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controls.swift; sourceTree = "<group>"; };
+		FEEDFACE0BD1000000000000 /* AppMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMenu.swift; sourceTree = "<group>"; };
 		FEEDFACE0308000000000000 /* UpdateWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateWindow.swift; sourceTree = "<group>"; };
 		FEEDFACE0306000000000000 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		FEEDFACEF2E9000000000000 /* ShortcutRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcutRecorder.swift; sourceTree = "<group>"; };
@@ -426,6 +428,7 @@
 				FEEDFACE0342000000000000 /* SupportWindow.swift */,
 				FEEDFACE0334000000000000 /* Localized.swift */,
 				FEEDFACE0324000000000000 /* Controls.swift */,
+				FEEDFACE0BD1000000000000 /* AppMenu.swift */,
 				FEEDFACE0306000000000000 /* Alert.swift */,
 				FEEDFACEF2E9000000000000 /* ShortcutRecorder.swift */,
 				FEEDFACEF2EA000000000000 /* ShapeMenu.swift */,
@@ -885,6 +888,7 @@
 				FEEDFACE0321000000000000 /* Preferences.swift in Sources */,
 				FEEDFACE0323000000000000 /* GeneralPane.swift in Sources */,
 				FEEDFACE0325000000000000 /* Controls.swift in Sources */,
+				FEEDFACE0BD0000000000000 /* AppMenu.swift in Sources */,
 				FEEDFACE0309000000000000 /* UpdateWindow.swift in Sources */,
 				FEEDFACE0307000000000000 /* Alert.swift in Sources */,
 				FEEDFACEB2E9000000000000 /* ShortcutRecorder.swift in Sources */,

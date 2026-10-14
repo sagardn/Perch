@@ -434,3 +434,6 @@
 "finish_setup_body" = "Perch menü çubuğunuzda yaşar. Ayrıntılar için bir ölçüme tıklayın ya da aramak için ⌃Space tuşlarına basın. Perch ücretsiz ve açık kaynaktır; işinize yarıyorsa geliştirilmesine destek olabilirsiniz.";
 "Diagnostics copied — paste them into the issue" = "Tanılama kopyalandı — bildirime yapıştırın";
 "Shows as" = "Görünüm";
+"Quit Perch" = "Perch'ten çık";
+"Pause" = "Duraklat";
+"Resume" = "Sürdür";

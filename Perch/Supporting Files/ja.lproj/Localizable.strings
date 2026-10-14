@@ -434,3 +434,6 @@
 "finish_setup_body" = "Perchはメニューバーに常駐します。項目をクリックすると詳細が表示され、⌃Spaceで検索できます。Perchは無料のオープンソースです。役に立ったら、開発を支援していただけます。";
 "Diagnostics copied — paste them into the issue" = "診断情報をコピーしました — 報告に貼り付けてください";
 "Shows as" = "表示形式";
+"Quit Perch" = "Perch を終了";
+"Pause" = "一時停止";
+"Resume" = "再開";
