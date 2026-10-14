@@ -127,6 +127,28 @@ away:
 "Frontmost" means the app you were in when you opened the panel, not the panel
 itself, so picking the app you were just using puts it away.
 
+### Clicking in the Dock
+
+macOS already launches, raises and restores an app from a Dock click. The one
+thing it does not do is answer a click on the app you are **already in** — that
+click does nothing at all. Perch fills exactly that gap, so clicking a Dock icon
+a second time puts the app away.
+
+Nothing is intercepted. Perch listens and acts afterwards, only in the case
+macOS leaves empty, so every other Dock click behaves as it always has. Three
+conditions all have to hold, and each one exists because of a bug it prevents:
+
+| Condition | Without it |
+|---|---|
+| The app was in front **before** the click | a click that *raised* the app would also put it away |
+| It had been in front for 0.3 s | the second of two quick clicks would put it away |
+| It had a window **on screen** | restoring from the Dock would minimise it again straight away |
+
+Switch it off in **Settings ▸ Search & switcher ▸ The same for a click in the
+Dock**. The parent row, **Click an app in front to minimise it**, governs the
+search panel and the per-app hotkeys as well — turn that off and a click only
+ever brings an app forward.
+
 ### Inside the search panel
 
 | Key | Action |

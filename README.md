@@ -93,7 +93,9 @@ of them has. Perch is all three, built as one native app.
 - **Answers in the same panel** — type `12*8+5` or `5 km in miles` and the answer
   sits above your apps; ↩ copies it. Type `lock`, `sleep`, `dark` or `empty bin`
   for the system action. A query that could be an app's name stays an app search.
-- **One click, the right action** — Perch reads each app's state and does what you meant:
+- **One click, the right action** — Perch reads each app's state and does what you
+  meant. The same decision whether you click a row, press its hotkey, or click the
+  app in your **Dock**:
 
   | When the app is… | Clicking it… |
   |---|---|
@@ -102,6 +104,14 @@ of them has. Perch is all three, built as one native app.
   | Already frontmost | minimises all its windows, like the Windows taskbar |
   | Minimised or hidden | restores and focuses it |
   | Running with no window open | opens one, as the Dock does |
+
+  Switch either half off in **Settings ▸ Search & switcher**.
+
+- **Your Dock learns the same trick** — macOS launches, raises and restores from a
+  Dock click, but answers a click on the app you are *already in* by doing nothing.
+  Perch fills that one gap, so a second click puts the app away. Nothing is
+  intercepted: Perch only ever acts in the case macOS leaves empty, which is why
+  the rest of your Dock behaves exactly as it always has.
 
 - **Your own `⌃Tab`** — mark the three or four apps you live in, and `⌃Tab`
   cycles only those, most recent first. If another app already owns `⌃Tab`,
@@ -135,6 +145,10 @@ Every popup opens the same way — a one-line verdict like **● Light load** or
 Wherever a popup lists processes, **right-click one** to **Quit** it politely or
 **Force Quit** it when it has stopped answering. Quit is what ⌘Q does, so a
 document with unsaved changes still gets to ask.
+
+**Right-click a reading itself** — in the menu bar or anywhere in its popup — for
+`Turn off CPU`, `Settings…`, `Pause`, and `Quit Perch`. Turning one off takes
+that reading out of the menu bar and leaves the other five alone.
 
 - **Nine shapes** for the menu bar: a figure, a line or bar chart, a ring, a
   gauge, a stacked pair, network rates and more. Mix them per module.

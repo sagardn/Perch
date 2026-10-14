@@ -1,16 +1,54 @@
 # Performance baseline
 
-Measured 2026-10-09 on a MacBook Air 13" (M2, 8 cores, 16 GB), macOS 27.0,
-Perch 1.0.11 installed at `/Applications/Perch.app`, ad-hoc signed.
-
 Reproduce with `./Tools/bench.sh`. **Do not claim an improvement without
 re-running it on the same machine with the same modules enabled** — these
 numbers are a reference point for one configuration, not an absolute.
 
-Modules enabled during the run: CPU, GPU, RAM, Network. Off: Disk, Sensors,
-Battery, Bluetooth. No popup or settings window was opened.
+## Re-measured 2026-10-15 — Perch 1.0.16
 
-## Numbers
+Same machine (MacBook Air 13", M2, 16 GB), macOS 27.0 (26A428). Modules on:
+CPU, GPU, RAM, Disk, Network. Sensors off. Menu bar items separate, not
+combined.
+
+| Measure | 2026-10-09, 1.0.11 | 2026-10-15, 1.0.16 |
+|---|---|---|
+| Idle CPU, sustained | 6.0 % | **2.84 %, 2.71 %, 2.90 %** across 3 × 45–60 s |
+| Resident, fresh process | 127 MB | **68 MB**, flat over 5 min (68.1 → 68.7) |
+| Resident, after opening windows | — | 101–128 MB, and it comes back down |
+
+Two cautions on reading that table. The configurations are not identical --
+Disk is on now and was off then -- so this is not a clean before-and-after of
+any single change. And the idle figure moves by a few tenths between windows
+on an otherwise idle machine, which is why three are quoted: a single window
+is not evidence, and a 31 % "win" measured here from one window turned out to
+be noise.
+
+The reader poll interval row cited `Kit/module/reader.swift:57`. That file has
+not existed since `Kit/` was deleted. The 1-second tick is
+`MonitorBar.startTicking`, `Perch/Monitor/MonitorBar.swift:369`.
+
+### Costs worth knowing, measured the same day
+
+| What | Cost | Where it matters |
+|---|---|---|
+| `DiskModule.isAvailable` | 6.16 ms | was read every tick in combined mode; now cached |
+| `GPUModule.isAvailable` | 1.58 ms | same; now answered once |
+| `DiskReadings.volumes()` | 6.16 ms | every 15 ticks, popup only |
+| `DiskReadings.counters()` | 0.07 ms | every tick |
+| Reading the Dock over Accessibility | **59.95 ms** first, **2.21 ms** after | the first is the AX connection warming up, paid at launch off the main thread |
+| `CGWindowList` on-screen check | 0.68 ms | one Dock click |
+| `AIAssistants.find()` | 0.10 s for 2.7 GB | only walks what it offers |
+| Full test suite | 25.7 s, 32 suites | before every release |
+
+## The original run — 2026-10-09, Perch 1.0.11
+
+Measured on the same MacBook Air 13" (M2, 8 cores, 16 GB), macOS 27.0, installed
+at `/Applications/Perch.app`, ad-hoc signed. Modules on: CPU, GPU, RAM, Network.
+Off: Disk, Sensors, Battery, Bluetooth. No popup or settings window was opened.
+
+Kept rather than replaced, because its method notes -- particularly the
+`ps -o %cpu` trap below -- are the reason the newer numbers are taken the way
+they are.
 
 | Measure | Result | Confidence |
 |---|---|---|
