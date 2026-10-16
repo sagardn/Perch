@@ -64,6 +64,9 @@ enum Controls {
 
         container.addArrangedSubview(card)
         card.widthAnchor.constraint(equalTo: container.widthAnchor).isActive = true
+        // The card wraps its rows. Without this it is free to take any
+        // height above them and hand the difference back to the rows.
+        fitToContent(card)
 
         if let footer {
             let note = NSTextField(wrappingLabelWithString: footer)
@@ -169,6 +172,7 @@ enum Controls {
             text.topAnchor.constraint(greaterThanOrEqualTo: view.topAnchor, constant: 6),
             text.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: -6),
         ])
+        fitToContent(view)
         return view
     }
 
@@ -184,7 +188,29 @@ enum Controls {
             control.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             control.centerYAnchor.constraint(equalTo: view.centerYAnchor),
         ])
+        fitToContent(view)
         return view
+    }
+
+    /// Makes a view as short as its own constraints allow.
+    ///
+    /// Every row here states a *minimum* height and centres its content with
+    /// inequalities, which says what a row may not be and never what it is.
+    /// A height nothing determines is one the layout engine may satisfy at
+    /// any value, so a row given slack by whatever is above it simply grows:
+    /// the Keyboard card opened with 160 points of nothing over its first
+    /// shortcut and 200 more under it, while the two rows below -- same
+    /// builder, same constraints -- sat at their natural height.
+    ///
+    /// A zero-height constraint at a priority everything else beats resolves
+    /// it. The row collapses to the tallest thing it actually contains, and
+    /// slack from above has nowhere to land. `ScrollingPage` already does
+    /// this to the page itself; the rows and cards inside it were left
+    /// ambiguous.
+    static func fitToContent(_ view: NSView) {
+        let shortest = view.heightAnchor.constraint(equalToConstant: 0)
+        shortest.priority = .defaultLow
+        shortest.isActive = true
     }
 
     // MARK: - Controls
