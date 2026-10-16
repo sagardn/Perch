@@ -211,32 +211,32 @@ do {
           CPUReadings.describe(uptime: 3_600 * 2 + 60 * 5) == "2h 5m")
 }
 
-// MARK: - ProcessCPU.parse
+// MARK: - ProcessCPU.percent
 
-print("\nProcessCPU.parse")
+print("\nProcessCPU.percent")
 
-do {
-    let entries = ProcessCPU.parse("""
-      PID %CPU COMM
-      481 12.4 Google Chrome
-       22  0.0 idled
-      900  7.5 WindowServer
-    """, limit: 8)
-    check("the header is dropped", entries.allSatisfy { $0.pid != 0 })
-    check("a name with a space survives", entries.first?.name == "Google Chrome")
-    check("the percentage is read", entries.first?.usage == 12.4)
-    check("a process at zero is dropped", entries.count == 2)
-}
+// This replaced parsing `ps`, which cost 98 ms a refresh against 0.8 ms for
+// a native sweep -- about 10% of a core for as long as the CPU popup was
+// open, which is why Perch was the top entry in its own list.
+check("a second of CPU over a second is one core",
+      ProcessCPU.percent(before: 0, after: 1_000_000_000, elapsed: 1) == 100)
+check("two cores' worth reads over 100%",
+      ProcessCPU.percent(before: 0, after: 2_000_000_000, elapsed: 1) == 200)
+check("half a second over a second is 50%",
+      ProcessCPU.percent(before: 0, after: 500_000_000, elapsed: 1) == 50)
+check("an idle process reads zero",
+      ProcessCPU.percent(before: 5_000_000_000, after: 5_000_000_000, elapsed: 1) == 0)
+check("the elapsed time divides",
+      ProcessCPU.percent(before: 0, after: 1_000_000_000, elapsed: 2) == 50)
 
-do {
-    let many = (1...20).map { "\($0) 5.0 proc\($0)" }.joined(separator: "\n")
-    check("the limit is honoured", ProcessCPU.parse("HEADER\n" + many, limit: 5).count == 5)
-}
-
-do {
-    check("malformed rows are dropped",
-          ProcessCPU.parse("HEADER\nrubbish\nx y z\n", limit: 8).isEmpty)
-}
+// nil, never zero, when the answer cannot be trusted.
+check("no time passed: no answer",
+      ProcessCPU.percent(before: 0, after: 1_000_000_000, elapsed: 0) == nil)
+check("time going backwards: no answer",
+      ProcessCPU.percent(before: 0, after: 1_000_000_000, elapsed: -1) == nil)
+// A pid is reused by a different process, whose CPU time starts lower.
+check("the counter going backwards means the pid was reused",
+      ProcessCPU.percent(before: 9_000_000_000, after: 1_000_000, elapsed: 1) == nil)
 
 // MARK: - MemoryReadings
 
