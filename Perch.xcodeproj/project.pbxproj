@@ -19,12 +19,25 @@
 		FEEDFACE0511000000000000 /* SensorsModuleShell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0510000000000000 /* SensorsModuleShell.swift */; };
 		FEEDFACE0521000000000000 /* SensorsTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0520000000000000 /* SensorsTile.swift */; };
 		FEEDFACE0471000000000000 /* DiskReadings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0470000000000000 /* DiskReadings.swift */; };
+		FEEDFACE4CD7548B74F36480 /* DiskPartitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE1AEF561E09F64A99 /* DiskPartitions.swift */; };
 		FEEDFACE0B40000000000000 /* DiskCleanup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0B41000000000000 /* DiskCleanup.swift */; };
 		FEEDFACE0B50000000000000 /* LargeFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0B51000000000000 /* LargeFiles.swift */; };
 		FEEDFACE0B70000000000000 /* AppLeftovers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0B71000000000000 /* AppLeftovers.swift */; };
 		FEEDFACE0B80000000000000 /* UninstallWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0B81000000000000 /* UninstallWindow.swift */; };
 		FEEDFACE0B90000000000000 /* CommandLineTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0B91000000000000 /* CommandLineTools.swift */; };
 		FEEDFACE0BA0000000000000 /* CleanupPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0BA1000000000000 /* CleanupPane.swift */; };
+		FEEDFACE0E01000000000000 /* ClipboardActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0E01100000000000 /* ClipboardActions.swift */; };
+		FEEDFACE0E02000000000000 /* ClipboardEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0E02100000000000 /* ClipboardEntry.swift */; };
+		FEEDFACE0E03000000000000 /* ClipboardHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0E03100000000000 /* ClipboardHistory.swift */; };
+		FEEDFACE0E04000000000000 /* ClipboardHistoryWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0E04100000000000 /* ClipboardHistoryWindow.swift */; };
+		FEEDFACE0E05000000000000 /* ClipboardModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0E05100000000000 /* ClipboardModule.swift */; };
+		FEEDFACE0E06000000000000 /* ClipboardPasteboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0E06100000000000 /* ClipboardPasteboard.swift */; };
+		FEEDFACE0E07000000000000 /* ClipboardPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0E07100000000000 /* ClipboardPopupView.swift */; };
+		FEEDFACE0E08000000000000 /* ClipboardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0E08100000000000 /* ClipboardService.swift */; };
+		FEEDFACE0E09000000000000 /* ClipboardSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0E09100000000000 /* ClipboardSettings.swift */; };
+		FEEDFACE0E0A000000000000 /* ClipboardSettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0E0A100000000000 /* ClipboardSettingsPage.swift */; };
+		FEEDFACE0E0B000000000000 /* ClipboardStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0E0B100000000000 /* ClipboardStore.swift */; };
+		FEEDFACE0E0C000000000000 /* ClipboardViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0E0C100000000000 /* ClipboardViews.swift */; };
 		FEEDFACE0BC0000000000000 /* AICleanupWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0BC1000000000000 /* AICleanupWindow.swift */; };
 		FEEDFACE0BB0000000000000 /* AIAssistants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0BB1000000000000 /* AIAssistants.swift */; };
 		FEEDFACE0B60000000000000 /* LargeFilesWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0B61000000000000 /* LargeFilesWindow.swift */; };
@@ -55,11 +68,22 @@
 		FEEDFACE0B20000000000000 /* SystemReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0B21000000000000 /* SystemReport.swift */; };
 		FEEDFACE0B30000000000000 /* SystemReportLive.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0B31000000000000 /* SystemReportLive.swift */; };
 		FEEDFACE0333000000000000 /* DashboardPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0332000000000000 /* DashboardPane.swift */; };
+		FEEDFACE0D0C000000000000 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0D0C100000000000 /* DashboardView.swift */; };
+		FEEDFACE0D0B000000000000 /* DashboardStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0D0B100000000000 /* DashboardStorage.swift */; };
+		FEEDFACE0D0A000000000000 /* DashboardProcesses.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0D0A100000000000 /* DashboardProcesses.swift */; };
+		FEEDFACE0D09000000000000 /* DashboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0D09100000000000 /* DashboardModel.swift */; };
+		FEEDFACE0D08000000000000 /* DashboardLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0D08100000000000 /* DashboardLogic.swift */; };
+		FEEDFACE0D07000000000000 /* DashboardBattery.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0D07100000000000 /* DashboardBattery.swift */; };
+		FEEDFACE0D06000000000000 /* BusiestProcesses.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0D06100000000000 /* BusiestProcesses.swift */; };
+		FEEDFACE0D05000000000000 /* BatteryHealth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0D05100000000000 /* BatteryHealth.swift */; };
 		FEEDFACE0335000000000000 /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0334000000000000 /* Localized.swift */; };
 		FEEDFACE0328000000000000 /* LoginItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0327000000000000 /* LoginItem.swift */; };
 		FEEDFACE0321000000000000 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0320000000000000 /* Preferences.swift */; };
 		FEEDFACE0323000000000000 /* GeneralPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0322000000000000 /* GeneralPane.swift */; };
+		FEEDFACE0D03000000000000 /* LauncherPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0D03100000000000 /* LauncherPane.swift */; };
 		FEEDFACE0325000000000000 /* Controls.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0324000000000000 /* Controls.swift */; };
+		FEEDFACE0D02000000000000 /* ScrollingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0D02100000000000 /* ScrollingPage.swift */; };
+		FEEDFACE0D01000000000000 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0D01100000000000 /* Design.swift */; };
 		FEEDFACE0BD0000000000000 /* AppMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0BD1000000000000 /* AppMenu.swift */; };
 		FEEDFACE0309000000000000 /* UpdateWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0308000000000000 /* UpdateWindow.swift */; };
 		FEEDFACE0307000000000000 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0306000000000000 /* Alert.swift */; };
@@ -102,7 +126,9 @@
 		FEEDFACEB200000000000000 /* GPUStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACEF200000000000000 /* GPUStats.swift */; };
 		FEEDFACEB201000000000000 /* Modules.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACEF201000000000000 /* Modules.swift */; };
 		FEEDFACEB202000000000000 /* Monitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACEF202000000000000 /* Monitor.swift */; };
+		FEEDFACE0D04000000000000 /* DashboardReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0D04100000000000 /* DashboardReport.swift */; };
 		FEEDFACEB203000000000000 /* NetworkInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACEF203000000000000 /* NetworkInfo.swift */; };
+		FEEDFACE476D8F388B4FEF97 /* WiFiNameAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE82C926B329E7E92D /* WiFiNameAccess.swift */; };
 		FEEDFACEB204000000000000 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACEF204000000000000 /* NetworkMonitor.swift */; };
 		FEEDFACEB205000000000000 /* NetworkPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACEF205000000000000 /* NetworkPopup.swift */; };
 		FEEDFACEB2E0000000000000 /* PopupParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACEF2E0000000000000 /* PopupParts.swift */; };
@@ -223,12 +249,25 @@
 		FEEDFACE0510000000000000 /* SensorsModuleShell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorsModuleShell.swift; sourceTree = "<group>"; };
 		FEEDFACE0520000000000000 /* SensorsTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorsTile.swift; sourceTree = "<group>"; };
 		FEEDFACE0470000000000000 /* DiskReadings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskReadings.swift; sourceTree = "<group>"; };
+		FEEDFACE1AEF561E09F64A99 /* DiskPartitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskPartitions.swift; sourceTree = "<group>"; };
 		FEEDFACE0B41000000000000 /* DiskCleanup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskCleanup.swift; sourceTree = "<group>"; };
 		FEEDFACE0B51000000000000 /* LargeFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeFiles.swift; sourceTree = "<group>"; };
 		FEEDFACE0B71000000000000 /* AppLeftovers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLeftovers.swift; sourceTree = "<group>"; };
 		FEEDFACE0B81000000000000 /* UninstallWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UninstallWindow.swift; sourceTree = "<group>"; };
 		FEEDFACE0B91000000000000 /* CommandLineTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandLineTools.swift; sourceTree = "<group>"; };
 		FEEDFACE0BA1000000000000 /* CleanupPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanupPane.swift; sourceTree = "<group>"; };
+		FEEDFACE0E01100000000000 /* ClipboardActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardActions.swift; sourceTree = "<group>"; };
+		FEEDFACE0E02100000000000 /* ClipboardEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardEntry.swift; sourceTree = "<group>"; };
+		FEEDFACE0E03100000000000 /* ClipboardHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardHistory.swift; sourceTree = "<group>"; };
+		FEEDFACE0E04100000000000 /* ClipboardHistoryWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardHistoryWindow.swift; sourceTree = "<group>"; };
+		FEEDFACE0E05100000000000 /* ClipboardModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardModule.swift; sourceTree = "<group>"; };
+		FEEDFACE0E06100000000000 /* ClipboardPasteboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardPasteboard.swift; sourceTree = "<group>"; };
+		FEEDFACE0E07100000000000 /* ClipboardPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardPopupView.swift; sourceTree = "<group>"; };
+		FEEDFACE0E08100000000000 /* ClipboardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardService.swift; sourceTree = "<group>"; };
+		FEEDFACE0E09100000000000 /* ClipboardSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardSettings.swift; sourceTree = "<group>"; };
+		FEEDFACE0E0A100000000000 /* ClipboardSettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardSettingsPage.swift; sourceTree = "<group>"; };
+		FEEDFACE0E0B100000000000 /* ClipboardStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardStore.swift; sourceTree = "<group>"; };
+		FEEDFACE0E0C100000000000 /* ClipboardViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardViews.swift; sourceTree = "<group>"; };
 		FEEDFACE0BC1000000000000 /* AICleanupWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AICleanupWindow.swift; sourceTree = "<group>"; };
 		FEEDFACE0BB1000000000000 /* AIAssistants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIAssistants.swift; sourceTree = "<group>"; };
 		FEEDFACE0B61000000000000 /* LargeFilesWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeFilesWindow.swift; sourceTree = "<group>"; };
@@ -259,11 +298,22 @@
 		FEEDFACE0B21000000000000 /* SystemReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemReport.swift; sourceTree = "<group>"; };
 		FEEDFACE0B31000000000000 /* SystemReportLive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemReportLive.swift; sourceTree = "<group>"; };
 		FEEDFACE0332000000000000 /* DashboardPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardPane.swift; sourceTree = "<group>"; };
+		FEEDFACE0D0C100000000000 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		FEEDFACE0D0B100000000000 /* DashboardStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardStorage.swift; sourceTree = "<group>"; };
+		FEEDFACE0D0A100000000000 /* DashboardProcesses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardProcesses.swift; sourceTree = "<group>"; };
+		FEEDFACE0D09100000000000 /* DashboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardModel.swift; sourceTree = "<group>"; };
+		FEEDFACE0D08100000000000 /* DashboardLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardLogic.swift; sourceTree = "<group>"; };
+		FEEDFACE0D07100000000000 /* DashboardBattery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardBattery.swift; sourceTree = "<group>"; };
+		FEEDFACE0D06100000000000 /* BusiestProcesses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusiestProcesses.swift; sourceTree = "<group>"; };
+		FEEDFACE0D05100000000000 /* BatteryHealth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryHealth.swift; sourceTree = "<group>"; };
 		FEEDFACE0334000000000000 /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
 		FEEDFACE0327000000000000 /* LoginItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginItem.swift; sourceTree = "<group>"; };
 		FEEDFACE0320000000000000 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		FEEDFACE0322000000000000 /* GeneralPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPane.swift; sourceTree = "<group>"; };
+		FEEDFACE0D03100000000000 /* LauncherPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauncherPane.swift; sourceTree = "<group>"; };
 		FEEDFACE0324000000000000 /* Controls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controls.swift; sourceTree = "<group>"; };
+		FEEDFACE0D02100000000000 /* ScrollingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingPage.swift; sourceTree = "<group>"; };
+		FEEDFACE0D01100000000000 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
 		FEEDFACE0BD1000000000000 /* AppMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMenu.swift; sourceTree = "<group>"; };
 		FEEDFACE0308000000000000 /* UpdateWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateWindow.swift; sourceTree = "<group>"; };
 		FEEDFACE0306000000000000 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -346,7 +396,9 @@
 		FEEDFACEF200000000000000 /* GPUStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPUStats.swift; sourceTree = "<group>"; };
 		FEEDFACEF201000000000000 /* Modules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modules.swift; sourceTree = "<group>"; };
 		FEEDFACEF202000000000000 /* Monitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Monitor.swift; sourceTree = "<group>"; };
+		FEEDFACE0D04100000000000 /* DashboardReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardReport.swift; sourceTree = "<group>"; };
 		FEEDFACEF203000000000000 /* NetworkInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkInfo.swift; sourceTree = "<group>"; };
+		FEEDFACE82C926B329E7E92D /* WiFiNameAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiNameAccess.swift; sourceTree = "<group>"; };
 		FEEDFACEF204000000000000 /* NetworkMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		FEEDFACEF205000000000000 /* NetworkPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkPopup.swift; sourceTree = "<group>"; };
 		FEEDFACEF2E0000000000000 /* PopupParts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupParts.swift; sourceTree = "<group>"; };
@@ -412,6 +464,14 @@
 				FEEDFACE0B21000000000000 /* SystemReport.swift */,
 				FEEDFACE0B31000000000000 /* SystemReportLive.swift */,
 				FEEDFACE0332000000000000 /* DashboardPane.swift */,
+				FEEDFACE0D0C100000000000 /* DashboardView.swift */,
+				FEEDFACE0D0B100000000000 /* DashboardStorage.swift */,
+				FEEDFACE0D0A100000000000 /* DashboardProcesses.swift */,
+				FEEDFACE0D09100000000000 /* DashboardModel.swift */,
+				FEEDFACE0D08100000000000 /* DashboardLogic.swift */,
+				FEEDFACE0D07100000000000 /* DashboardBattery.swift */,
+				FEEDFACE0D06100000000000 /* BusiestProcesses.swift */,
+				FEEDFACE0D05100000000000 /* BatteryHealth.swift */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -422,6 +482,7 @@
 				FEEDFACE0327000000000000 /* LoginItem.swift */,
 				FEEDFACE0320000000000000 /* Preferences.swift */,
 				FEEDFACE0322000000000000 /* GeneralPane.swift */,
+				FEEDFACE0D03100000000000 /* LauncherPane.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -434,6 +495,8 @@
 				FEEDFACE0342000000000000 /* SupportWindow.swift */,
 				FEEDFACE0334000000000000 /* Localized.swift */,
 				FEEDFACE0324000000000000 /* Controls.swift */,
+				FEEDFACE0D02100000000000 /* ScrollingPage.swift */,
+				FEEDFACE0D01100000000000 /* Design.swift */,
 				FEEDFACE0BD1000000000000 /* AppMenu.swift */,
 				FEEDFACE0306000000000000 /* Alert.swift */,
 				FEEDFACEF2E9000000000000 /* ShortcutRecorder.swift */,
@@ -494,6 +557,7 @@
 				FEEDFACE0001000000000000 /* Launcher */,
 				FEEDFACE0002000000000000 /* Monitor */,
 				FEEDFACE0003000000000000 /* Cleanup */,
+				FEEDFACE0004000000000000 /* Clipboard */,
 				9A5B1CB3229E72A7008B9D3C /* Supporting Files */,
 				9AABEB79243FD26200668CB0 /* AppDelegate.swift */,
 				FEEDFACE0A30000000000000 /* Startup */,
@@ -543,6 +607,25 @@
 			path = Launcher;
 			sourceTree = "<group>";
 		};
+		FEEDFACE0004000000000000 /* Clipboard */ = {
+			isa = PBXGroup;
+			children = (
+				FEEDFACE0E01100000000000 /* ClipboardActions.swift */,
+				FEEDFACE0E02100000000000 /* ClipboardEntry.swift */,
+				FEEDFACE0E03100000000000 /* ClipboardHistory.swift */,
+				FEEDFACE0E04100000000000 /* ClipboardHistoryWindow.swift */,
+				FEEDFACE0E05100000000000 /* ClipboardModule.swift */,
+				FEEDFACE0E06100000000000 /* ClipboardPasteboard.swift */,
+				FEEDFACE0E07100000000000 /* ClipboardPopupView.swift */,
+				FEEDFACE0E08100000000000 /* ClipboardService.swift */,
+				FEEDFACE0E09100000000000 /* ClipboardSettings.swift */,
+				FEEDFACE0E0A100000000000 /* ClipboardSettingsPage.swift */,
+				FEEDFACE0E0B100000000000 /* ClipboardStore.swift */,
+				FEEDFACE0E0C100000000000 /* ClipboardViews.swift */,
+			);
+			path = Clipboard;
+			sourceTree = "<group>";
+		};
 		FEEDFACE0003000000000000 /* Cleanup */ = {
 			isa = PBXGroup;
 			children = (
@@ -575,6 +658,7 @@
 				FEEDFACE0510000000000000 /* SensorsModuleShell.swift */,
 				FEEDFACE0520000000000000 /* SensorsTile.swift */,
 				FEEDFACE0470000000000000 /* DiskReadings.swift */,
+				FEEDFACE1AEF561E09F64A99 /* DiskPartitions.swift */,
 				FEEDFACE0480000000000000 /* DiskPopup.swift */,
 				FEEDFACE0490000000000000 /* DiskModuleShell.swift */,
 				FEEDFACE04A0000000000000 /* DiskTile.swift */,
@@ -596,7 +680,9 @@
 				FEEDFACEF200000000000000 /* GPUStats.swift */,
 				FEEDFACEF201000000000000 /* Modules.swift */,
 				FEEDFACEF202000000000000 /* Monitor.swift */,
+				FEEDFACE0D04100000000000 /* DashboardReport.swift */,
 				FEEDFACEF203000000000000 /* NetworkInfo.swift */,
+				FEEDFACE82C926B329E7E92D /* WiFiNameAccess.swift */,
 				FEEDFACEF204000000000000 /* NetworkMonitor.swift */,
 				FEEDFACEF205000000000000 /* NetworkPopup.swift */,
 				FEEDFACEF2E0000000000000 /* PopupParts.swift */,
@@ -857,12 +943,25 @@
 				FEEDFACE0511000000000000 /* SensorsModuleShell.swift in Sources */,
 				FEEDFACE0521000000000000 /* SensorsTile.swift in Sources */,
 				FEEDFACE0471000000000000 /* DiskReadings.swift in Sources */,
+				FEEDFACE4CD7548B74F36480 /* DiskPartitions.swift in Sources */,
 				FEEDFACE0B40000000000000 /* DiskCleanup.swift in Sources */,
 				FEEDFACE0B50000000000000 /* LargeFiles.swift in Sources */,
 				FEEDFACE0B70000000000000 /* AppLeftovers.swift in Sources */,
 				FEEDFACE0B80000000000000 /* UninstallWindow.swift in Sources */,
 				FEEDFACE0B90000000000000 /* CommandLineTools.swift in Sources */,
 				FEEDFACE0BA0000000000000 /* CleanupPane.swift in Sources */,
+				FEEDFACE0E01000000000000 /* ClipboardActions.swift in Sources */,
+				FEEDFACE0E02000000000000 /* ClipboardEntry.swift in Sources */,
+				FEEDFACE0E03000000000000 /* ClipboardHistory.swift in Sources */,
+				FEEDFACE0E04000000000000 /* ClipboardHistoryWindow.swift in Sources */,
+				FEEDFACE0E05000000000000 /* ClipboardModule.swift in Sources */,
+				FEEDFACE0E06000000000000 /* ClipboardPasteboard.swift in Sources */,
+				FEEDFACE0E07000000000000 /* ClipboardPopupView.swift in Sources */,
+				FEEDFACE0E08000000000000 /* ClipboardService.swift in Sources */,
+				FEEDFACE0E09000000000000 /* ClipboardSettings.swift in Sources */,
+				FEEDFACE0E0A000000000000 /* ClipboardSettingsPage.swift in Sources */,
+				FEEDFACE0E0B000000000000 /* ClipboardStore.swift in Sources */,
+				FEEDFACE0E0C000000000000 /* ClipboardViews.swift in Sources */,
 				FEEDFACE0BC0000000000000 /* AICleanupWindow.swift in Sources */,
 				FEEDFACE0BB0000000000000 /* AIAssistants.swift in Sources */,
 				FEEDFACE0B60000000000000 /* LargeFilesWindow.swift in Sources */,
@@ -892,11 +991,22 @@
 				FEEDFACE0B20000000000000 /* SystemReport.swift in Sources */,
 				FEEDFACE0B30000000000000 /* SystemReportLive.swift in Sources */,
 				FEEDFACE0333000000000000 /* DashboardPane.swift in Sources */,
+				FEEDFACE0D0C000000000000 /* DashboardView.swift in Sources */,
+				FEEDFACE0D0B000000000000 /* DashboardStorage.swift in Sources */,
+				FEEDFACE0D0A000000000000 /* DashboardProcesses.swift in Sources */,
+				FEEDFACE0D09000000000000 /* DashboardModel.swift in Sources */,
+				FEEDFACE0D08000000000000 /* DashboardLogic.swift in Sources */,
+				FEEDFACE0D07000000000000 /* DashboardBattery.swift in Sources */,
+				FEEDFACE0D06000000000000 /* BusiestProcesses.swift in Sources */,
+				FEEDFACE0D05000000000000 /* BatteryHealth.swift in Sources */,
 				FEEDFACE0335000000000000 /* Localized.swift in Sources */,
 				FEEDFACE0328000000000000 /* LoginItem.swift in Sources */,
 				FEEDFACE0321000000000000 /* Preferences.swift in Sources */,
 				FEEDFACE0323000000000000 /* GeneralPane.swift in Sources */,
+				FEEDFACE0D03000000000000 /* LauncherPane.swift in Sources */,
 				FEEDFACE0325000000000000 /* Controls.swift in Sources */,
+				FEEDFACE0D02000000000000 /* ScrollingPage.swift in Sources */,
+				FEEDFACE0D01000000000000 /* Design.swift in Sources */,
 				FEEDFACE0BD0000000000000 /* AppMenu.swift in Sources */,
 				FEEDFACE0309000000000000 /* UpdateWindow.swift in Sources */,
 				FEEDFACE0307000000000000 /* Alert.swift in Sources */,
@@ -929,7 +1039,9 @@
 				FEEDFACEB200000000000000 /* GPUStats.swift in Sources */,
 				FEEDFACEB201000000000000 /* Modules.swift in Sources */,
 				FEEDFACEB202000000000000 /* Monitor.swift in Sources */,
+				FEEDFACE0D04000000000000 /* DashboardReport.swift in Sources */,
 				FEEDFACEB203000000000000 /* NetworkInfo.swift in Sources */,
+				FEEDFACE476D8F388B4FEF97 /* WiFiNameAccess.swift in Sources */,
 				FEEDFACEB204000000000000 /* NetworkMonitor.swift in Sources */,
 				FEEDFACEB205000000000000 /* NetworkPopup.swift in Sources */,
 				FEEDFACEB2E0000000000000 /* PopupParts.swift in Sources */,
@@ -1185,7 +1297,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Perch;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0.17;
+				MARKETING_VERSION = 1.0.18;
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sagar.perch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1217,7 +1329,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Perch;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0.17;
+				MARKETING_VERSION = 1.0.18;
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sagar.perch;
 				PRODUCT_NAME = "$(TARGET_NAME)";

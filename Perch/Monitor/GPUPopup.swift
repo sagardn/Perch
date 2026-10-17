@@ -176,3 +176,29 @@ final class GPUModule: PopupContent {
         }
     }
 }
+
+// MARK: - Dashboard
+
+/// In this file because the latest reading is private to it.
+extension GPUModule: DashboardReporting {
+    func dashboardReport() -> DashboardReport? {
+        guard let reading = latest else { return nil }
+        guard let utilization = reading.utilization else {
+            // Idle and unreported look the same as a number; only one is
+            // true, so the card says which.
+            return DashboardReport(value: "—", caption: reading.name,
+                                   unavailable: localized("This GPU's driver does not report how busy it is."))
+        }
+        var facts: [DashboardReport.Fact] = [.init(label: localized("Device"), value: reading.name)]
+        if let memory = reading.memoryUsed {
+            facts.append(.init(label: localized("Memory in use"), value: Readings.bytes(memory)))
+        }
+        let share = utilization / 100
+        return DashboardReport(
+            value: "\(Int(utilization.rounded()))%",
+            caption: StatusWords.load(share),
+            severity: .of(load: share),
+            facts: facts,
+            history: usageHistory)
+    }
+}

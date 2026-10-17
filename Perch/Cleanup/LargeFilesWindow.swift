@@ -1134,6 +1134,15 @@ struct CheckCircle: View {
             }
         }
         .frame(width: 18, height: 18)
+        // Drawn, so VoiceOver had nothing to read: every tick box in all
+        // three cleanup windows was an unnamed button. Named here once, with
+        // its state as the value -- "partly" matters, a folder half ticked is
+        // a different thing to move to the Bin than a whole one.
+        .accessibilityElement()
+        .accessibilityLabel(localized("Select"))
+        .accessibilityValue(tick == .all ? localized("Selected")
+                            : tick == .some ? localized("Partly selected")
+                            : localized("Not selected"))
     }
 }
 

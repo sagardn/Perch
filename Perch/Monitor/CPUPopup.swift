@@ -292,3 +292,30 @@ final class CPUModule: PopupContent {
         String(format: "%.1f%%", value * 100)
     }
 }
+
+// MARK: - Dashboard
+
+/// In this file because `latest` and `usageHistory` are private to it.
+extension CPUModule: DashboardReporting {
+    func dashboardReport() -> DashboardReport? {
+        guard let load = latest else { return nil }
+        let thermal = Throttling.current
+        let severity = Throttling.severity(load: .of(load: load.total), thermal)
+
+        var facts = [DashboardReport.Fact(label: localized("User"), value: percent(load.user)),
+                     DashboardReport.Fact(label: localized("System"), value: percent(load.system))]
+        // getloadavg is one syscall, not a sample: the kernel keeps it.
+        if let average = CPUReadings.loadAverage() {
+            facts.append(.init(label: localized("Load average"),
+                               value: String(format: "%.2f", average.one)))
+        }
+        return DashboardReport(
+            value: "\(Int((load.total * 100).rounded()))%",
+            caption: thermal.verdict ?? StatusWords.load(load.total),
+            severity: severity,
+            facts: facts,
+            history: usageHistory,
+            signal: .cpu(recentLoad: Health.recentMean(usageHistory) ?? load.total,
+                         throttled: thermal >= .throttled))
+    }
+}

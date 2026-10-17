@@ -4,6 +4,63 @@ Reproduce with `./Tools/bench.sh`. **Do not claim an improvement without
 re-running it on the same machine with the same modules enabled** — these
 numbers are a reference point for one configuration, not an absolute.
 
+## Re-measured 2026-10-17 — the idle cost of warming the window-state cache
+
+Same machine (MacBook Air 13", M2, 16 GB), macOS 27.0. Modules on: CPU, GPU,
+RAM, Disk, Network, Clipboard. Sensors off. Nine regular apps running, no
+Perch window open, nothing being typed.
+
+| Measure | before | after |
+|---|---|---|
+| Idle CPU, 2 s samples | mean 5.5 %, peak **17.7 %** (8 samples) | mean **1.53 %**, peak 2.3 % (15 samples) |
+
+The app was doing nothing visible in either case. The cost was
+`Launcher`'s warm timer calling `WindowControl.warmStaleStates()` every two
+seconds: three apps per fire, each one blocking Accessibility IPC into that
+app, about 78 ms of main-thread IPC every two seconds for ever. It also woke
+every app it read, so the heat was not confined to Perch -- which is how it
+was noticed, as a warm laptop rather than as a slow app.
+
+It could not do its job either, which is what settles it. Three apps every
+two seconds is 1.5 a second; nine apps on the five-second life the cache then
+had need 1.8 a second to stay fresh. It never caught up, so the search panel
+paid the full sweep on opening anyway. The cost was real and the benefit was
+arithmetically unreachable, and both got worse the more apps were open.
+
+What replaced it: the timer and `warmStaleStates` are gone, the cache lives
+60 s instead of 5, and the `NSWorkspace` notifications for hiding, unhiding,
+launching and quitting invalidate the entry for that app (activation was
+already covered by `Recents`). Nothing sweeps on a clock. A stale entry can
+only affect the state drawn in a search row, never what a click does, because
+`WindowControl.toggle` reads the windows fresh every time and never consults
+the cache.
+
+Also measured, and left alone deliberately: copying a 181 MB TIFF takes the
+resident set from 111 MB to 435 MB, because `ClipboardCapture.read` fetches
+the whole image and *then* rejects it for being over the 25 MB limit. It is a
+spike, not a leak -- three copies in a row stayed at 435 MB and it drains
+back toward baseline -- but it lands on a machine already at 70 % memory.
+
+The check cannot come first. A pasteboard hands over a type's bytes or
+nothing and has no way of being asked how many there are. An `autoreleasepool`
+around the read was tried and measured 428 MB against 435, which is noise:
+the read runs in a `Timer` callback and the run loop already drains a pool
+around each one, so there was nothing for a second pool to release. The code
+went back to the simple version with the finding written down in it.
+
+What actually bounds this is the order the types are tried in. PNG and JPEG
+come before TIFF, so a screenshot is captured as PNG at a few MB and its
+181 MB TIFF form is never asked for. The figure above is a synthetic
+worst case, not what copying a screenshot costs.
+
+Two more things measured the same day and *not* changed, both for the same
+reason -- the measurement said the change was not worth its risk:
+
+| Considered | Measured | Why it was dropped |
+|---|---|---|
+| Move `ClipboardCapture.read` and its SHA256 off the main thread | SHA256 is 2.1 ms at 5 MB, 10.7 ms at 25 MB (the largest image the limit accepts), 77.8 ms at 181 MB (never reached -- oversize returns before hashing) | 10.7 ms is inside one frame. A background read is also a race: `NSPasteboard` has no snapshot, so a read that lands after a second copy returns the new bytes under the old change count, and the only guard is discarding the capture -- a clipboard manager that loses entries when you copy twice quickly |
+| Make the Dashboard's card fill opaque | card 1.04:1 against the window, settings card 1.49:1 | The right fix was not opacity. The two fills are meant to be identical and differ tenfold, because `withAlphaComponent(0.14)` sets the alpha where SwiftUI's `.opacity(0.14)` multiplies the colour's own 0.1. `Surface` now sets it, and matches |
+
 ## Re-measured 2026-10-15 — Perch 1.0.16
 
 Same machine (MacBook Air 13", M2, 16 GB), macOS 27.0 (26A428). Modules on:

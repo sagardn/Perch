@@ -27,7 +27,11 @@ let allModules: [any PerchModule] = [
     RAMModule(),
     DiskModule(),
     SensorsModule(),
-    NetworkModule()
+    NetworkModule(),
+    // Last, so an existing menu bar keeps its order when it is switched on.
+    // Not a monitor, but a module in every way the shell cares about: a
+    // switch, an item, a popup, a page.
+    ClipboardModule.shared
 ]
 
 /// Application lifecycle.
@@ -174,6 +178,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate,
     func applicationWillTerminate(_ notification: Notification) {
         ModuleRegistry.shared.stopAll()
         MonitorBar.shared.stop()
+        // Separately from the module's stop(), which also runs when its menu
+        // bar item is switched off -- and history must not stop with it.
+        ClipboardService.shared.stop()
     }
 
     deinit {

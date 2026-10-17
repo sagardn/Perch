@@ -28,6 +28,13 @@ enum MenuBarStyle: String, CaseIterable {
     case rates = "speed"
     /// Upload above the line, download below, on one scale. Network's.
     case trafficChart = "network_chart"
+    /// An SF Symbol, for a module whose reading is a place to go rather than
+    /// a number: the clipboard. Offered only by a module that names one.
+    case symbol = "symbol"
+
+    /// The shapes that only some modules can fill, which the shared default
+    /// list leaves out.
+    static let special: Set<MenuBarStyle> = [.pair, .rates, .trafficChart, .symbol]
 
     /// What the settings page calls it.
     var title: String {
@@ -41,6 +48,7 @@ enum MenuBarStyle: String, CaseIterable {
         case .pair:         return localized("Used and free")
         case .rates:        return localized("Rates")
         case .trafficChart: return localized("Traffic chart")
+        case .symbol:       return localized("Icon")
         }
     }
 }
@@ -130,6 +138,11 @@ enum MenuBarMetrics {
             .font: NSFont.systemFont(ofSize: 7, weight: .regular)
         ]).width + padding * 2
 
+    /// An icon at the size of the menu bar's own -- macOS draws its status
+    /// icons at about 16pt in a 22pt-tall bar -- with the usual padding.
+    static let symbolPointSize: CGFloat = 14
+    static let symbolWidth: CGFloat = 18 + padding * 2
+
     /// A point for every two samples at the default two-minute history, so
     /// the chart is the width the one it replaces was.
     static let chartWidth: CGFloat = 32
@@ -192,6 +205,7 @@ enum MenuBarMetrics {
         case .pair:         return pairWidth
         case .rates:        return ratesWidth
         case .trafficChart: return chartWidth + padding * 2
+        case .symbol:       return symbolWidth
         }
     }
 }

@@ -135,27 +135,24 @@ enum DeviceInfo {
     // MARK: - Operating system
 
     struct OS {
+        /// "macOS Tahoe", or plain "macOS" for a release `MacOSRelease` does
+        /// not know.
         let name: String
+        /// Always major.minor.patch, which the diagnostics report compares.
         let version: String
         let build: String
+        /// "macOS Tahoe 26.1" or "macOS 27.0", for reading.
+        let description: String
     }
 
     static let os: OS = {
         let v = ProcessInfo.processInfo.operatingSystemVersion
-        return OS(name: macOSName(v.majorVersion),
+        return OS(name: MacOSRelease.name(major: v.majorVersion).map { "macOS \($0)" } ?? "macOS",
                   version: "\(v.majorVersion).\(v.minorVersion).\(v.patchVersion)",
-                  build: platformBuild() ?? "")
+                  build: platformBuild() ?? "",
+                  description: MacOSRelease.describe(major: v.majorVersion, minor: v.minorVersion,
+                                                     patch: v.patchVersion))
     }()
-
-    private static func macOSName(_ major: Int) -> String {
-        switch major {
-        case 26...: return "macOS Tahoe"
-        case 15: return "macOS Sequoia"
-        case 14: return "macOS Sonoma"
-        case 13: return "macOS Ventura"
-        default: return "macOS"
-        }
-    }
 
     private static func platformBuild() -> String? {
         var size = 0
@@ -294,31 +291,80 @@ enum DeviceInfo {
 
     // MARK: - Display
 
+    /// A display: what the panel is, and what it is doing now.
+    ///
+    /// Three resolutions, because there are three and they were being
+    /// confused. The row used to print the frame times the backing scale --
+    /// 2940×1912 on this M2 Air -- and call it the display. That is the
+    /// buffer macOS renders the scaled desktop into; the panel itself is
+    /// 2560×1664, and the desktop looks like 1470×956. Measured with
+    /// CGDisplayCopyAllDisplayModes: the native-flagged mode is 2560×1664,
+    /// the current mode's pixels are 2940×1912, and the largest mode on offer
+    /// (3420×2224) is a scaled mode, not the panel -- so "the biggest mode"
+    /// is not a usable stand-in for native either.
     struct Display {
         let name: String
-        let pixelWidth: Int
-        let pixelHeight: Int
-        let refreshHz: Int
-        /// Diagonal in inches, from the panel's physical size.
-        let inches: Int?
+        let isBuiltIn: Bool
+        /// Diagonal in inches, from the panel's physical size, to a tenth.
+        /// A tenth because the whole inch was wrong: this Air's panel
+        /// measures 290.6 × 189.0 mm, a 13.6-inch diagonal -- Apple's figure
+        /// for it -- which rounded to 14.
+        let inches: Double?
+        /// The panel's own pixels: the mode the driver flags as native. nil
+        /// where no mode carries the flag, rather than a guess.
+        let native: (width: Int, height: Int)?
+        /// The desktop's size in points -- what "Looks like" means in
+        /// Displays settings.
+        let looksLike: (width: Int, height: Int)
+        /// The buffer the desktop is drawn into before it is scaled to the
+        /// panel.
+        let rendered: (width: Int, height: Int)
+        /// The current mode's refresh rate. nil where the mode reports 0,
+        /// which a variable-rate panel does.
+        let refreshHz: Int?
+        /// The fastest the screen can refresh, from NSScreen.
+        let maximumHz: Int
     }
+
+    /// The IOKit flag on the panel's own mode (IOGraphicsTypes.h).
+    private static let nativeModeFlag: UInt32 = 0x0200_0000
 
     static var displays: [Display] {
         NSScreen.screens.map { screen in
             let frame = screen.frame
             let scale = screen.backingScaleFactor
-            var inches: Int?
-            if let number = screen.deviceDescription[NSDeviceDescriptionKey("NSScreenNumber")] as? CGDirectDisplayID {
+            let number = screen.deviceDescription[NSDeviceDescriptionKey("NSScreenNumber")] as? CGDirectDisplayID
+
+            var inches: Double?
+            var native: (Int, Int)?
+            var refresh: Int?
+            var builtIn = false
+            var rendered = (Int(frame.width * scale), Int(frame.height * scale))
+            if let number {
+                builtIn = CGDisplayIsBuiltin(number) != 0
                 let mm = CGDisplayScreenSize(number)
                 if mm.width > 0 && mm.height > 0 {
-                    inches = Int((sqrt(mm.width * mm.width + mm.height * mm.height) / 25.4).rounded())
+                    inches = ((sqrt(mm.width * mm.width + mm.height * mm.height) / 25.4) * 10).rounded() / 10
                 }
+                if let mode = CGDisplayCopyDisplayMode(number) {
+                    rendered = (mode.pixelWidth, mode.pixelHeight)
+                    refresh = mode.refreshRate > 0 ? Int(mode.refreshRate.rounded()) : nil
+                }
+                // The duplicate low-resolution modes have to be asked for:
+                // without them the list can leave out the native mode.
+                let options = [kCGDisplayShowDuplicateLowResolutionModes: kCFBooleanTrue] as CFDictionary
+                let modes = (CGDisplayCopyAllDisplayModes(number, options) as? [CGDisplayMode]) ?? []
+                native = modes.first { $0.ioFlags & nativeModeFlag != 0 }
+                    .map { ($0.pixelWidth, $0.pixelHeight) }
             }
             return Display(name: screen.localizedName,
-                           pixelWidth: Int(frame.width * scale),
-                           pixelHeight: Int(frame.height * scale),
-                           refreshHz: screen.maximumFramesPerSecond,
-                           inches: inches)
+                           isBuiltIn: builtIn,
+                           inches: inches,
+                           native: native,
+                           looksLike: (Int(frame.width), Int(frame.height)),
+                           rendered: rendered,
+                           refreshHz: refresh,
+                           maximumHz: screen.maximumFramesPerSecond)
         }
     }
 
@@ -352,3 +398,74 @@ enum DeviceInfo {
     }
 }
 
+// MARK: - Device facts
+
+// Pure, and here rather than with the Dashboard that shows them, because
+// Tools/hardware-report.swift compiles this file on its own.
+
+enum MacOSRelease {
+
+    /// The marketing name of a major version, where it is known for certain.
+    ///
+    /// A table, because there is no public API for it: `sw_vers` and
+    /// `ProcessInfo` give "macOS" and a number. It used to end in
+    /// `case 26...: "macOS Tahoe"`, which named every future release Tahoe --
+    /// and this Mac, measured, runs 27.0 and was called Tahoe. A release this
+    /// table has not met gets the version alone, which is never wrong.
+    static func name(major: Int) -> String? {
+        switch major {
+        case 26: return "Tahoe"
+        case 15: return "Sequoia"
+        case 14: return "Sonoma"
+        case 13: return "Ventura"
+        case 12: return "Monterey"
+        case 11: return "Big Sur"
+        default: return nil
+        }
+    }
+
+    /// "27.0", "26.1", "15.6.1": the form `sw_vers` prints, with a patch
+    /// only when there is one.
+    static func version(major: Int, minor: Int, patch: Int) -> String {
+        patch == 0 ? "\(major).\(minor)" : "\(major).\(minor).\(patch)"
+    }
+
+    /// "macOS Tahoe 26.1", or "macOS 27.0" for a release the table does not
+    /// know.
+    static func describe(major: Int, minor: Int, patch: Int) -> String {
+        let number = version(major: major, minor: minor, patch: patch)
+        guard let name = name(major: major) else { return "macOS \(number)" }
+        return "macOS \(name) \(number)"
+    }
+}
+
+enum SerialMask {
+    /// All but the last four characters hidden.
+    ///
+    /// A serial number identifies one machine to Apple's warranty and
+    /// support systems, and the Dashboard is a screen people screenshot. Four
+    /// characters are enough to tell two of your own Macs apart and not
+    /// enough to be anybody else's. A serial of four or fewer is hidden
+    /// whole, since "the last four" of it would be all of it.
+    static func masked(_ serial: String) -> String {
+        let visible = serial.count > 4 ? 4 : 0
+        return String(repeating: "•", count: serial.count - visible) + serial.suffix(visible)
+    }
+}
+
+enum Uptime {
+    /// "3d 4h 12m", "4h 12m", "12m". Days and hours are left out while
+    /// they are zero, minutes never are.
+    static func describe(seconds: TimeInterval) -> String {
+        guard seconds.isFinite, seconds >= 0 else { return "—" }
+        let total = Int(seconds)
+        let days = total / 86_400
+        let hours = (total % 86_400) / 3_600
+        let minutes = (total % 3_600) / 60
+        var parts: [String] = []
+        if days > 0 { parts.append("\(days)d") }
+        if days > 0 || hours > 0 { parts.append("\(hours)h") }
+        parts.append("\(minutes)m")
+        return parts.joined(separator: " ")
+    }
+}

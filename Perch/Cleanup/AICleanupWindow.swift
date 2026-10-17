@@ -381,8 +381,47 @@ private struct AICleanupView: View {
         }
     }
 
+    /// What the button is about to act on, in words.
+    ///
+    /// The header's "2.9 GB across 7 assistants" is everything the scan
+    /// offered; the button's figure is only what is ticked. With nothing
+    /// saying so the two read as a contradiction -- the ring at the top
+    /// already encodes exactly this ratio and nothing labels it either.
+    ///
+    /// Both lines come from `chosen`, the same array `moveChosenToBin` acts
+    /// on, so the words and the button cannot drift apart. In particular the
+    /// count is of what is ticked *and still offered*: a tick hidden by the
+    /// age rule is not counted here, because it is not going to be moved.
+    ///
+    /// "shown", not "found": `totalBytes` is the total of what the age rule
+    /// lets through, which is also the figure in the header, and with a rule
+    /// in force the scan found more than that. `AIAssistants.hidden` is what
+    /// the difference is, and the empty state is where it is reported.
+    private var selectionSummary: some View {
+        VStack(alignment: .leading, spacing: 1) {
+            if !model.chosen.isEmpty {
+                // The same line, the same font and the same key as the other
+                // two cleanup windows' footers. It takes a count and a size
+                // and names no noun, which is why "1 selected" needs no
+                // singular form in any language.
+                Text(localized("%0 selected · %1", String(model.chosen.count),
+                               Readings.bytes(UInt64(model.chosenBytes))))
+                    .font(.system(size: 12, weight: .medium))
+                    .monospacedDigit()
+                    .foregroundStyle(.secondary)
+                    .contentTransition(.numericText())
+                Text(localized("of %0 shown", Readings.bytes(UInt64(model.totalBytes))))
+                    .font(.system(size: 10.5))
+                    .foregroundStyle(.tertiary)
+                    .contentTransition(.numericText())
+            }
+        }
+        .lineLimit(1)
+    }
+
     private var footer: some View {
         HStack(spacing: 10) {
+            selectionSummary
             if model.choosesConversations {
                 // In the footer as well as in the alert: the alert is read
                 // after the decision, this is read while it is being made.
@@ -452,7 +491,14 @@ private struct AssistantHeader: View {
     }
 }
 
-/// "Unused for: All · 30 · 90 · 180 days".
+/// "Unused for: Any time · 30+ · 90+ · 180+ days".
+///
+/// The options read "30+ days" rather than "30 days" because the rule is
+/// `lastUsed < now - days` -- not used in *at least* that long. "30 days"
+/// invited reading it as the opposite, as everything touched within the
+/// month. The no-filter option was "Any age", which named the wrong quantity:
+/// nothing here is measured by how old a file is, only by how long it has
+/// gone unused.
 private struct AgePicker: View {
     @Binding var days: Int?
 
@@ -463,7 +509,7 @@ private struct AgePicker: View {
                 .foregroundStyle(.secondary)
             Picker(selection: $days) {
                 ForEach(AICleanupModel.dayChoices, id: \.self) { choice in
-                    Text(choice.map { localized("%0 days", String($0)) } ?? localized("Any age"))
+                    Text(choice.map { localized("%0+ days", String($0)) } ?? localized("Any time"))
                         .tag(choice)
                 }
             } label: {

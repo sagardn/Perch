@@ -38,10 +38,23 @@ final class SettingsModel: ObservableObject {
     @Published var moduleStates: [String: Bool] = [:]
     @Published var paused: Bool = Preferences.shared.bool("pause", default: false)
 
-    let dashboard = Item(id: "Dashboard", title: localized("Dashboard"), isModule: false)
+    let dashboard = Item(id: "Dashboard", title: SettingsModel.title(for: "Dashboard"), isModule: false)
     let appSettings = Item(id: "Settings", title: localized("Settings"), isModule: false)
     let cleanup = Item(id: "Free up space", title: localized("Free up space"), isModule: false)
+    let launcher = Item(id: "Search & switcher", title: localized("Search & switcher"), isModule: false)
     private(set) var moduleItems: [Item] = []
+
+    /// What a page is called on screen, which is not always its name.
+    ///
+    /// The Dashboard's name is what every notification and the menu bar's
+    /// gear address it by, and it stays; what it is called is Overview,
+    /// which is what it now is.
+    static func title(for id: String) -> String {
+        switch id {
+        case "Dashboard": return localized("Overview")
+        default:          return localized(id)
+        }
+    }
 
     init() {
         self.moduleItems = ModuleRegistry.shared.all
@@ -62,10 +75,18 @@ final class SettingsModel: ObservableObject {
         NotificationCenter.default.removeObserver(self)
     }
 
-    var filteredModules: [Item] {
+    var filteredModules: [Item] { filtered(moduleItems) }
+
+    /// The pages above and below the modules, filtered by the same search:
+    /// typing "space" should find Free up space, not hide everything but
+    /// the modules that do not match.
+    var filteredPlaces: [Item] { filtered([dashboard, cleanup, launcher]) }
+    var filteredSettings: [Item] { filtered([appSettings]) }
+
+    private func filtered(_ items: [Item]) -> [Item] {
         let query = search.trimmingCharacters(in: .whitespaces)
-        guard !query.isEmpty else { return moduleItems }
-        return moduleItems.filter { $0.title.localizedCaseInsensitiveContains(query) }
+        guard !query.isEmpty else { return items }
+        return items.filter { $0.title.localizedCaseInsensitiveContains(query) }
     }
 
     /// Whether the current selection is a module, and whether it can preview.
@@ -169,6 +190,8 @@ struct Glyph {
             return Glyph(symbol: available(["gearshape.fill"]), color: .gray)
         case "Free up space":
             return Glyph(symbol: available(["sparkles"]), color: .pink)
+        case "Search & switcher":
+            return Glyph(symbol: available(["magnifyingglass"]), color: .purple)
         case "CPU":
             return Glyph(symbol: available(["cpu.fill", "cpu"]), color: .blue)
         case "GPU":
@@ -181,25 +204,13 @@ struct Glyph {
             return Glyph(symbol: available(["thermometer.medium", "thermometer"]), color: .red)
         case "Network":
             return Glyph(symbol: available(["network"]), color: .teal)
+        case "Battery":
+            return Glyph(symbol: available(["battery.100percent", "battery.100"]), color: .green)
+        case "Clipboard":
+            return Glyph(symbol: available(["doc.on.clipboard.fill", "doc.on.clipboard"]), color: .cyan)
         default:
             return Glyph(symbol: available(["circle.grid.2x2.fill"]), color: .secondary)
         }
-    }
-}
-
-private struct GlyphTile: View {
-    let glyph: Glyph
-    var size: CGFloat = 20
-
-    var body: some View {
-        RoundedRectangle(cornerRadius: size * 0.27, style: .continuous)
-            .fill(glyph.color.gradient)
-            .frame(width: size, height: size)
-            .overlay(
-                Image(systemName: glyph.symbol)
-                    .font(.system(size: size * 0.55, weight: .semibold))
-                    .foregroundStyle(.white)
-            )
     }
 }
 
@@ -236,18 +247,36 @@ private struct HostedView: NSViewRepresentable {
 
 // MARK: - Glass
 
+// MARK: - Glass
+
 /// The window's ground: Liquid Glass where the system has it, vibrancy
-/// everywhere else.
+/// before that, and the plain window colour under Reduce Transparency --
+/// glass is exactly what that setting asks to see less of.
+private struct Backdrop: View {
+    @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
+
+    var body: some View {
+        if reduceTransparency {
+            Color(nsColor: .windowBackgroundColor)
+        } else {
+            GlassBackdrop()
+        }
+    }
+}
+
+/// Regular glass, tinted a little with the window's own colour.
 ///
-/// The window itself has to be non-opaque for either to show -- a titled
-/// window composites over solid black by default, which is what made the
-/// popups look like flat panels before the same fix.
+/// Untinted, regular glass is close to clear, and a page of small text read
+/// against whatever window happened to be behind it. The tint is the
+/// window background's own colour, so it follows the appearance: the glass
+/// still shows what is behind it, softened enough that rows stay legible.
 private struct GlassBackdrop: NSViewRepresentable {
     func makeNSView(context: Context) -> NSView {
         if #available(macOS 26.0, *) {
             let glass = NSGlassEffectView()
             glass.style = .regular
             glass.cornerRadius = 0
+            glass.tintColor = NSColor.windowBackgroundColor.withAlphaComponent(0.45)
             glass.contentView = NSView()
             return glass
         }
@@ -272,27 +301,47 @@ struct SettingsShellView: View {
                 .navigationSplitViewColumnWidth(min: 200, ideal: 216, max: 280)
         } detail: {
             HostedView(view: model.detail)
+                // Take the whole pane, whatever the page inside wants to
+                // be. SwiftUI sizes a hosted AppKit view to its fitting
+                // size, so a page narrower than the window made this view
+                // narrower too -- and the backdrop behind it shrank to
+                // match, leaving the desktop showing between the sidebar
+                // and the content.
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .frame(minWidth: 520, minHeight: 420)
-                .background(GlassBackdrop().ignoresSafeArea())
                 .toolbar { toolbarItems }
         }
-        .navigationTitle(model.selectedModule.map { localized($0.moduleName) }
-                         ?? localized(model.selection))
+        .navigationTitle(SettingsModel.title(for: model.selection))
+        .modifier(PageTitledItself(active: model.selection == "Dashboard"))
+        // Behind the split view, not behind one of its columns: one surface
+        // for the whole window, which the columns' widths cannot uncover.
+        .background(Backdrop().ignoresSafeArea())
     }
 
     // MARK: Sidebar
 
     private var sidebar: some View {
         VStack(spacing: 0) {
+            // Three groups, by what each is for: the pages about the Mac and
+            // the launcher, the monitoring modules with their switches, and
+            // Perch's own settings last -- where macOS puts them, and out of
+            // the way of the pages reached for daily. Settings used to sit
+            // between the Dashboard and Free up space, splitting the two
+            // pages that are about the Mac.
             List(selection: selectionBinding) {
-                Section {
-                    row(model.dashboard)
-                    row(model.appSettings)
-                    row(model.cleanup)
+                if !model.filteredPlaces.isEmpty {
+                    Section {
+                        ForEach(model.filteredPlaces) { item in row(item) }
+                    }
                 }
-                Section(localized("Modules")) {
-                    ForEach(model.filteredModules) { item in
-                        row(item)
+                if !model.filteredModules.isEmpty {
+                    Section(localized("Monitoring")) {
+                        ForEach(model.filteredModules) { item in row(item) }
+                    }
+                }
+                if !model.filteredSettings.isEmpty {
+                    Section {
+                        ForEach(model.filteredSettings) { item in row(item) }
                     }
                 }
             }
@@ -315,10 +364,15 @@ struct SettingsShellView: View {
     }
 
     private func row(_ item: SettingsModel.Item) -> some View {
-        HStack(spacing: 9) {
+        let on = !item.isModule || (model.moduleStates[item.id] ?? false)
+        return HStack(spacing: 9) {
             GlyphTile(glyph: .named(item.id))
+                // A module that is off reads as off before its switch is
+                // found: the tile and the name fade, the switch says why.
+                .opacity(on ? 1 : 0.45)
             Text(item.title)
                 .lineLimit(1)
+                .foregroundStyle(on ? .primary : .secondary)
             if item.isModule {
                 Spacer(minLength: 4)
                 // Enabling a module no longer means selecting it first.
@@ -329,6 +383,9 @@ struct SettingsShellView: View {
                     .controlSize(.mini)
                     .labelsHidden()
                     .help(localized("Toggle the module"))
+                    // A switch with no label is "switch, on" to VoiceOver,
+                    // in a column of six of them.
+                    .accessibilityLabel(localized("%0 in the menu bar", item.title))
             }
         }
         .padding(.vertical, 3)
@@ -366,13 +423,17 @@ struct SettingsShellView: View {
                 if let url = AppLinks.issuesURL { NSWorkspace.shared.open(url) }
             }
             FooterButton(symbol: model.paused ? "play.fill" : "pause.fill",
-                         help: localized("Pause the Perch"),
+                         // Says what a click will do, which flips with the
+                         // state: "Pause" on a paused app was an instruction
+                         // that had already been followed.
+                         help: model.paused ? localized("Resume the readings")
+                                            : localized("Pause the readings"),
                          tint: model.paused ? .orange : nil,
                          isOn: model.paused) {
                 model.togglePause()
             }
             FooterButton(symbol: "power",
-                         help: localized("Close application"),
+                         help: localized("Quit Perch"),
                          hoverTint: .red) {
                 NSApp.terminate(nil)
             }
@@ -467,7 +528,29 @@ private struct FooterButton: View {
         }
         .buttonStyle(.plain)
         .help(help)
+        // `.help` is a tooltip, which VoiceOver does not read as the name:
+        // without this the four icons were "button", four times.
+        .accessibilityLabel(label ?? help)
         .onHover { hovering = $0 }
         .animation(.easeOut(duration: 0.12), value: hovering)
+    }
+}
+
+/// Takes the toolbar's title away on a page that draws its own.
+///
+/// The Overview opens with "Overview" in its header, beside the Mac it is
+/// about, and the toolbar saying it again above that read as a stutter. The
+/// window keeps its title -- the Window menu and Mission Control still say
+/// Overview; only the toolbar's copy goes. `toolbar(removing: .title)` is
+/// macOS 15; on 14 the title stays, which is a repeat and not a fault.
+private struct PageTitledItself: ViewModifier {
+    let active: Bool
+
+    func body(content: Content) -> some View {
+        if #available(macOS 15.0, *) {
+            content.toolbar(removing: active ? .title : nil)
+        } else {
+            content
+        }
     }
 }

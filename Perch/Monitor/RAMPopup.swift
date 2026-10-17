@@ -67,7 +67,7 @@ final class RAMModule: PopupContent {
     /// module this replaces called `memory`. Not the two network shapes:
     /// memory has no direction and no second series.
     var menuBarStyles: [MenuBarStyle] {
-        MenuBarStyle.allCases.filter { ![.rates, .trafficChart].contains($0) }
+        MenuBarStyle.allCases.filter { ![.rates, .trafficChart, .symbol].contains($0) }
     }
 
     func makeView() -> NSView {
@@ -232,5 +232,32 @@ final class RAMModule: PopupContent {
                 }
             }
         }
+    }
+}
+
+// MARK: - Dashboard
+
+/// In this file because the latest sample is private to it.
+extension RAMModule: DashboardReporting {
+    func dashboardReport() -> DashboardReport? {
+        guard let usage = latest else { return nil }
+        let pressure = latestPressure
+        var facts = [DashboardReport.Fact(
+            label: localized("Used"),
+            value: localized("%0 of %1", Readings.bytes(usage.used), Readings.bytes(usage.total)))]
+        facts.append(.init(label: localized("Compressed"), value: Readings.bytes(usage.compressed)))
+        if let swap = latestSwap {
+            facts.append(.init(label: localized("Swap"), value: Readings.bytes(swap.used)))
+        }
+        return DashboardReport(
+            value: "\(Int((usage.percent * 100).rounded()))%",
+            // The pressure, named as pressure. The percentage above it is
+            // how full memory is, which on a Mac is not the same question.
+            caption: localized("Pressure: %0", localized(pressure.label)),
+            severity: pressure == .critical ? .critical : pressure == .warning ? .warning : .calm,
+            facts: facts,
+            history: usageHistory,
+            fill: usage.percent,
+            signal: .memory(pressure: pressure.rawValue))
     }
 }

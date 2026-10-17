@@ -1,4 +1,5 @@
 import AppKit
+import UserNotifications
 
 /// The Settings pane: how Perch behaves, how the menu bar is arranged, how the
 /// search and switcher work, and what to do with the settings themselves.
@@ -32,6 +33,7 @@ final class GeneralPane: NSStackView {
     private var dependent: [String: NSView] = [:]
     private var accessibilityStatus: NSTextField?
     private var accessibilityButton: NSButton?
+    private var notificationStatus: NSTextField?
     private var launchAtLoginSwitch: ActionSwitch?
 
     init(width: CGFloat, onRestartNeeded: @escaping () -> Void = {}) {
@@ -48,10 +50,10 @@ final class GeneralPane: NSStackView {
         column.orientation = .vertical
         column.alignment = .leading
         column.spacing = 14
-        // 44 at the top, not 18: the shell's window has a transparent title
-        // bar that the detail view scrolls under, and at 18 the app icon came
-        // out sliced in half by it.
-        column.edgeInsets = NSEdgeInsets(top: 44, left: 18, bottom: 18, right: 18)
+        // `contentTop`, not 44: the 44 was for a title bar the detail view
+        // scrolled under, but it is now placed below the toolbar already,
+        // and the two together left a 100pt band above the first card.
+        column.edgeInsets = NSEdgeInsets(top: PerchMetrics.contentTop, left: 18, bottom: 18, right: 18)
         column.translatesAutoresizingMaskIntoConstraints = false
 
         // Each section is pinned to the column's width. Without this a stack
@@ -59,10 +61,11 @@ final class GeneralPane: NSStackView {
         // cards came out ~380pt wide inside a 1,100pt pane and labels
         // truncated while most of the pane sat empty.
         // Ordered by how often each is reached for: how Perch starts, then
-        // how it looks, then the launcher, then the two things somebody
-        // comes here once for -- a permission and a backup.
-        let sections = [identity(), general(), menuBar(), colours(), searchAndSwitcher(),
-                        permissions(), backup()]
+        // how it looks, then the things somebody comes here once for -- a
+        // permission, a backup, the welcome tour. The launcher's rows have
+        // a page of their own now, Search & switcher in the sidebar.
+        let sections = [identity(), general(), menuBar(), colours(),
+                        permissions(), backup(), help()]
         for section in sections {
             column.addArrangedSubview(section)
             section.widthAnchor.constraint(equalTo: column.widthAnchor,
@@ -208,54 +211,12 @@ final class GeneralPane: NSStackView {
         ])
     }
 
-    private func searchAndSwitcher() -> NSView {
-        // Two fingers is not offered: macOS makes a two-finger tap a secondary
-        // click and the pair Smart Zoom, so TapRecognizer refuses anything
-        // below three. A row for it would be a switch that cannot turn on.
-        let fingerRows = [3, 4].map { count -> NSView in
-            // Two whole keys rather than a word slotted into a sentence:
-            // "Three" and "-finger double tap" are not separable in every
-            // language, and the version that indexed an array of words could
-            // not be translated at all.
-            let label = count == 3 ? localized("Three-finger double tap")
-                                   : localized("Four-finger double tap")
-            let row = Controls.row(label,
-                                   Controls.toggle(Prefs.gestureFingerCounts.contains(count)) { [weak self] on in
-                                       self?.setGestureFinger(count, on)
-                                   }, indented: true)
-            dependent["gesture.\(count)"] = row
-            return row
-        }
-
-        return Controls.section(localized("Search & switcher"), symbol: "magnifyingglass", tint: .systemPurple, [
-            Controls.row(localized("Open where the pointer is"),
-                         Controls.toggle(Prefs.openAtPointer) { Prefs.openAtPointer = $0 }),
-            Controls.row(localized("Close when it loses focus"),
-                         Controls.toggle(Prefs.hideOnOutsideClick) { Prefs.hideOnOutsideClick = $0 }),
-            Controls.row(localized("Click an app in front to minimise it"),
-                         Controls.toggle(Prefs.clickMinimizes) { Prefs.clickMinimizes = $0 }),
-            Controls.row(localized("The same for a click in the Dock"),
-                         Controls.toggle(Prefs.dockClickPutsAway) {
-                             Prefs.dockClickPutsAway = $0
-                             DockWatcher.shared.refresh()
-                         }, indented: true),
-            Controls.row(localized("⌃Tab cycles your marked apps"),
-                         Controls.toggle(Prefs.cycleHotkeyEnabled) {
-                             Prefs.cycleHotkeyEnabled = $0
-                             Launcher.shared.applyCycleHotkey()
-                         }),
-            Controls.row(localized("Trackpad gesture opens the search"),
-                         Controls.toggle(Prefs.gestureEnabled) { [weak self] on in
-                             Prefs.gestureEnabled = on
-                             Launcher.shared.applyGesture(userAsked: true)
-                             self?.syncDependentRows()
-                         }),
-        ] + fingerRows)
-    }
-
-    /// Its own section rather than the last row of Search & switcher, where
-    /// it sat: it is the one setting here macOS owns rather than Perch, and
-    /// the one whose state can change behind the pane's back.
+    /// Every permission Perch asks for, what it is for, and where it stands.
+    ///
+    /// Each row names the feature before the permission, because nobody
+    /// grants "Accessibility" -- they want the switcher to work -- and says
+    /// what happens without it. Window control is also on the Search &
+    /// switcher page, beside the thing that needs it.
     private func permissions() -> NSView {
         let status = Controls.label(Self.accessibilityState)
         accessibilityStatus = status
@@ -265,12 +226,21 @@ final class GeneralPane: NSStackView {
         }
         accessibilityButton = allow
 
+        let alerts = Controls.label("")
+        notificationStatus = alerts
+        let openAlerts = Controls.button("Notification settings…") {
+            Self.openNotificationSettings()
+        }
+
         let section = Controls.section(localized("Permissions"), symbol: "lock.shield.fill",
-                                       tint: .systemGreen, [
+                                       tint: .systemGreen,
+                                       footer: localized("Perch reads nothing else that needs asking. Nothing it reads leaves this Mac."), [
             // The state and the way to change it on one row, rather than a
             // status row and a full-width button bar under it.
             Controls.row(localized("Window control"), Controls.group([status, allow]),
                          detail: localized("Accessibility access, which the switcher needs to bring windows forward.")),
+            Controls.row(localized("Alerts"), Controls.group([alerts, openAlerts]),
+                         detail: localized("Notifications, for the alerts you switch on in each module and for updates.")),
         ])
         syncAccessibility()
         return section
@@ -305,6 +275,25 @@ final class GeneralPane: NSStackView {
         ])
     }
 
+    /// The first-run tour, again. It changes nothing by being walked
+    /// through: every choice in it starts on the current setting and writes
+    /// only when clicked, so reopening it is safe for somebody who has set
+    /// Perch up just how they like it.
+    private func help() -> NSView {
+        Controls.section(localized("Help"), symbol: "questionmark.circle.fill", tint: .systemBlue, [
+            Controls.row(localized("Welcome tour"),
+                         Controls.button("Show again…") {
+                             (NSApp.delegate as? AppDelegate)?.ensureSetupWindow().show()
+                         },
+                         detail: localized("The launcher's keys, the presets and the permissions, one page each.")),
+            Controls.row(localized("User manual"),
+                         Controls.button("Open…") {
+                             if let url = AppLinks.manualURL { NSWorkspace.shared.open(url) }
+                         },
+                         detail: localized("Every setting and keyboard shortcut, on the project's site.")),
+        ])
+    }
+
     // MARK: - Behaviour
 
     /// The app icon drawn into a bitmap of exactly `side` points.
@@ -332,9 +321,33 @@ final class GeneralPane: NSStackView {
     private func syncAccessibility() {
         accessibilityStatus?.stringValue = Self.accessibilityState
         accessibilityButton?.isHidden = WindowControl.isTrusted
+        syncNotifications()
     }
 
-    private static var accessibilityState: String {
+    /// Asked of the system, which answers on its own queue.
+    private func syncNotifications() {
+        UNUserNotificationCenter.current().getNotificationSettings { [weak self] settings in
+            let text: String
+            switch settings.authorizationStatus {
+            case .authorized, .provisional: text = localized("Allowed")
+            case .denied:                   text = localized("Not allowed")
+            // Asked for the first time an alert fires, not before: a
+            // permission prompt for alerts nobody has switched on is noise.
+            default:                        text = localized("Asked when an alert is first due")
+            }
+            DispatchQueue.main.async { self?.notificationStatus?.stringValue = text }
+        }
+    }
+
+    private static func openNotificationSettings() {
+        let id = Bundle.main.bundleIdentifier ?? "com.sagar.perch"
+        for address in ["x-apple.systempreferences:com.apple.Notifications-Settings.extension?id=\(id)",
+                        "x-apple.systempreferences:com.apple.preference.notifications"] {
+            if let url = URL(string: address), NSWorkspace.shared.open(url) { return }
+        }
+    }
+
+    static var accessibilityState: String {
         if WindowControl.isTrusted { return localized("Allowed") }
         return WindowControl.wasRevoked ? localized("Allowed, but stale since the update")
                                         : localized("Not allowed")
@@ -357,38 +370,11 @@ final class GeneralPane: NSStackView {
         return control
     }
 
-    /// Turning every finger count off would leave the gesture listening for
-    /// nothing, so the last one on refuses to go off.
-    private func setGestureFinger(_ count: Int, _ on: Bool) {
-        var counts = Prefs.gestureFingerCounts
-        if on {
-            counts.insert(count)
-        } else {
-            guard counts.count > 1 else {
-                syncDependentRows()
-                Alert.show("Keep at least one",
-                           "Turn the trackpad gesture off instead if you do not want it.")
-                return
-            }
-            counts.remove(count)
-        }
-        Prefs.gestureFingerCounts = counts
-        Launcher.shared.applyGesture()
-    }
-
     /// Rows that only mean something while another setting is on.
     private func syncDependentRows() {
         let combined = prefs.combinedModules
         for name in ["combined.spacing", "combined.separator", "combined.details"] {
             dependent[name]?.isHidden = !combined
-        }
-        let gesture = Prefs.gestureEnabled
-        for count in [3, 4] {
-            let row = dependent["gesture.\(count)"]
-            row?.isHidden = !gesture
-            if let toggle = row?.subviews.compactMap({ $0 as? ActionSwitch }).first {
-                toggle.state = Prefs.gestureFingerCounts.contains(count) ? .on : .off
-            }
         }
     }
 

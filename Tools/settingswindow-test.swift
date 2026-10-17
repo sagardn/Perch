@@ -39,6 +39,7 @@ check("and the last one in the list, not just the first",
 check("Dashboard opens the dashboard", resolve("Dashboard") == .dashboard)
 check("Settings opens the app's own page", resolve("Settings") == .appSettings)
 check("Free up space opens the cleanup page", resolve("Free up space") == .cleanup)
+check("Search & switcher opens the launcher page", resolve("Search & switcher") == .launcher)
 
 // MARK: - The alias
 
@@ -98,12 +99,15 @@ check("the app settings page is not", !SettingsSelection.appSettings.isModule)
 // It has no menu bar item to bring forward: it configures nothing and
 // belongs to no reading.
 check("nor is the cleanup page", !SettingsSelection.cleanup.isModule)
+check("nor is the launcher page", !SettingsSelection.launcher.isModule)
+check("the launcher page reports its name",
+      SettingsSelection.launcher.name == "Search & switcher")
 
 // MARK: - Round trip
 
 print("\nResolving a page's own name returns the same page")
 
-for selection in [SettingsSelection.dashboard, .appSettings, .cleanup]
+for selection in [SettingsSelection.dashboard, .appSettings, .cleanup, .launcher]
                  + modules.map({ SettingsSelection.module($0) }) {
     check("\(selection.name) survives a round trip",
           resolve(selection.name) == selection)

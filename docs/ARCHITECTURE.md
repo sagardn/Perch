@@ -175,9 +175,9 @@ be checked twice: written separately from the same protocol, they agreed on
 machine the DC input's power also equals its own volts times amps to two
 decimals, which is the closest thing to a second instrument available.
 
-### Battery and Bluetooth are gone, and are not coming back
+### The Battery and Bluetooth modules are gone
 
-Neither was rebuilt, and that was a decision rather than a gap. macOS already
+Neither module was rebuilt, and that was a decision rather than a gap. macOS already
 shows battery charge and Bluetooth device batteries in its own menu bar, so a
 second copy inside Perch was duplication to maintain rather than something the
 app was for. Both modules, both framework targets and both embedded
@@ -188,6 +188,33 @@ app can never request is a promise about data it does not collect.
 A settings file that still names either module is ignored rather than
 repaired — there is no module to attach a stale `Battery_state` to, and the
 registry simply does not list one.
+
+**Battery health is back, as a Dashboard card and not as a module.** The
+reasoning above is about charge, which macOS shows in its own menu bar. Wear --
+maximum capacity, cycle count, condition -- macOS shows only in System
+Settings ▸ Battery, which is where the card's link goes. There is no menu
+bar item and no module, so `Battery_state` still resolves to nothing; the
+card's name lives only in the Dashboard's stored layout.
+
+- **Health is Apple's own report**, `system_profiler SPPowerDataType -json`,
+  read off the main thread at most every half hour while the Dashboard is
+  open (measured: 0.10 s). No public API returns Apple's maximum-capacity
+  figure. The controller's registry has the capacities it is computed from,
+  but on this Mac two different ratios of them (nominal 4713 and full-charge
+  4586 mAh against a design 4563) both rounded to the 100% macOS showed, so
+  neither could be confirmed as Apple's -- and a ratio that only happens to
+  agree here would be an estimate presented as the reading everywhere else.
+  A figure the report leaves out is shown as "Not reported". The cycle count
+  alone falls back to the registry's `CycleCount`, which is the same number.
+- **Condition** is the report's own word. "Good" and `IOPSKeys.h`'s "Check
+  Battery" are shown as System Settings shows them (Normal, Service
+  recommended); anything else is shown as written.
+- **Charge and charging state** are `IOPowerSources`, refreshed when IOKit
+  posts a power-source change, not on a timer.
+- A Mac with no internal battery shows no card.
+
+Measured against `system_profiler`'s text output on this M2 Air: 100%, 18
+cycles, Normal, and the same charge, on both.
 
 `LoadBand.of(_:reversed:)` stays. It exists for readings where low is the bad
 end, which was battery charge, and it is the kind of thing worth keeping
@@ -314,22 +341,28 @@ threshold")`). Both are now zero.
 Deleting those 376 was safe for a specific reason rather than by luck.
 `scan`'s `used()` counts every string literal in the tree, not only the
 arguments of `localized(`, so a key reached through a variable still counts
-as used — and seven call sites do pass a variable:
+as used — and these call sites do pass a variable:
 
 ```
-Thresholds.swift:347      localized(level.label)
-RAMTile.swift:90          localized(pressure.label)
-Views/Settings.swift:147  localized(title)
-SettingsShell.swift:49    localized($0.moduleName)
-SettingsShell.swift:251   localized($0.moduleName)
-SettingsShell.swift:252   localized(model.selection)
-Setup.swift:364           localized(preset.name)
+Controls.swift            localized(title)          ×2, choice() and button()
+AppMenu.swift             localized(module)
+Thresholds.swift          localized(level.label)
+RAMTile.swift             localized(pressure.label)
+RAMPopup.swift            localized(pressure.label)
+PopupParts.swift          localized(title)          DisclosureButton
+DashboardView.swift       localized(issue.module)
+SettingsShell.swift       localized(id), localized($0.moduleName)
+Setup.swift               localized(preset.name)
 ```
 
 Every one of them resolves to a literal that is written down somewhere:
 `MemoryReadings.Pressure.label` returns "Normal"/"Warning"/"Critical", the
-module shells name themselves, Setup's presets are an array of literals, and
-`model.selection` is handed the same `title` that line 147 localises. Add an
+module shells name themselves, a page id is one of `SettingsSelection`'s
+names, an issue's module is one of the literals in `Health.issues`, Setup's
+presets are an array of literals, and the controls' titles are literals at
+their call sites. Controls' `button()` titles are a gap in the other
+direction: `scan` sees only `localized("…")`, so a new button title has to be
+added to en.lproj by hand. Add an
 eighth call site whose argument is *computed* — a key assembled from parts,
 or read from a file — and `scan`'s unused list stops being trustworthy. Say
 so here if you do.
@@ -545,6 +578,101 @@ There is no RAM cleaner and there will not be one. The "inactive" memory a
 cleaner frees is the file cache, and dropping it makes the next read slower
 for no gain; measured here, 3.3 GB of it.
 
+## The Dashboard
+
+The Overview page (`Perch/System/Dashboard*.swift`) has no sampler. It reads
+what each module's `menuBarContent()` stored on the last menu bar tick, through
+`DashboardReporting` (each module's conformance is in its popup file, beside
+the private state it reads), and redraws when `MonitorBar` posts
+`.monitorDidTick`. It listens only while it is in a window. A module that is
+off, or on with every shape switched off, is not sampled at all, and its card
+says which rather than showing a stale or zero figure.
+
+The rules -- the stored card layout, what counts as an issue, the macOS
+release names, the serial mask -- are pure and tested in
+`Tools/dashboard-test.swift`. Two decisions in them were made against
+something that went wrong:
+
+- **No raw-sensor temperature in the health summary.** The first version
+  took the Sensors module's hottest reading, and its first render on an idle
+  M2 Air said "Running very hot: TpOA reads 102 °C". TpOA is an unnamed SMC
+  key. Whether the Mac is too hot is macOS's call, made in `thermalState`,
+  and it reaches the summary through the CPU's throttling signal.
+- **Memory is judged by pressure, never by percentage**, the same rule the
+  menu bar's colour follows.
+
+Storage is a full-width panel under the cards (`DashboardStorage.swift`)
+rather than a fourth card: a ring legible enough to carry its percentage
+needs about 130pt, and the breakdown beside it 200 more, which a grid cell
+does not have. The ring and the figures beside it are drawn from one
+`StorageDetail`, so they cannot disagree, and a volume with no capacity, or
+more free than total, draws a dash instead of an empty ring. Two layout traps
+are recorded in the code where they were fixed:
+
+- The page's width comes from the scroll view's visible area. It was measured
+  off the cards, which is a loop: content a few points too wide made the cards
+  wider, which made the page wider, and it never shrank back.
+- The panel picks one row or two by that width (`StoragePanel.rowWidth`),
+  not by `ViewThatFits`, which judged the row as fitting at 1100pt and let
+  the uptime caption run off the edge.
+
+`DeviceInfo.displays` reports three resolutions because there are three: the
+panel's native mode (the mode IOKit flags native -- 2560×1664 on this Air), the
+size the desktop looks like (1470×956) and the buffer it is drawn into
+(2940×1912). The old row printed the last as though it were the panel.
+
+## Clipboard history
+
+`Perch/Clipboard/` is not monitoring either, but it is a module in every way
+the shell cares about: a switch in the sidebar, an item `MonitorBar` draws
+(individually or in the combined row, at the position the user dragged it
+to), a `ReadingPopup`, a tile in the combined popup, and a settings page. It
+adds no menu bar machinery of its own. The item is the new `.symbol` shape, an
+SF Symbol in the bar's ink, offered only by a reading that names a symbol,
+and left out of every other module's shape list (`MenuBarStyle.special`).
+
+| File | What it does |
+|---|---|
+| `ClipboardEntry.swift` | the entry, and the pasteboard type names, including the do-not-keep markers |
+| `ClipboardHistory.swift` | the rules: deduplication, limits, retention, pins, search, filters |
+| `ClipboardPasteboard.swift` | reading a copy, writing one back, images through ImageIO |
+| `ClipboardStore.swift` | `index.json` plus `payloads/`, 0700/0600, corrupt index set aside, orphans removed |
+| `ClipboardService.swift` | the one monitor, and the history every view observes |
+| `ClipboardSettings.swift` | preferences under `Clipboard_` |
+| `ClipboardActions.swift` | using an entry, optional paste, the privacy note |
+| `ClipboardModule.swift` | the `PerchModule` and `PopupContent` |
+| `ClipboardPopupView.swift`, `ClipboardHistoryWindow.swift`, `ClipboardViews.swift`, `ClipboardSettingsPage.swift` | the interface |
+
+Decisions, each made against something that would otherwise go wrong:
+
+- **Two switches.** The module's switch (`Clipboard_state`) is the menu bar
+  item, and `Clipboard_monitoring` is whether anything is kept. History
+  works with the item hidden, so the module's `stop()`, which also runs when
+  the item is switched off, never stops the service; the app delegate stops
+  it at quit.
+- **A change count, not a read.** `NSPasteboard` posts no notification, so the
+  service polls `changeCount` every 0.75 s while monitoring is on, and has
+  no timer while it is off. Content is read only when the count moved, and
+  not for a change Perch's own restore made. That change is skipped twice
+  over: by its recorded change count, and by a marker type on everything
+  Perch writes.
+- **macOS 15.4+ gates programmatic clipboard reads** (`NSPasteboard.accessBehavior`).
+  Perch asks for no new permission; the settings page shows the state, and a
+  denied read shows as *Blocked by macOS* instead of an empty history.
+- **What is never kept:** the nspasteboard.org concealed, transient and
+  auto-generated markers, whatever the settings say; and copies made while
+  an excluded app is in front. The source is "the app in front", because the
+  pasteboard does not record its writer, and the interface says so.
+- **Not encrypted.** The store is the user's own, 0700/0600, under
+  `~/Library/Application Support/Perch/Clipboard/`; nothing claims more.
+- **Paste is opt-in** and is the only part that needs a permission
+  (Accessibility, already used for window control). It never targets Perch
+  and reports "sent", not "pasted".
+
+`Tools/clipboard-test.swift` drives all of it against a fake pasteboard
+and a temporary directory, so the suite never touches the developer's
+clipboard.
+
 ## Adding a module
 
 1. Write the reader in `Perch/Monitor/`, against public APIs.
@@ -554,6 +682,8 @@ for no gain; measured here, 3.3 GB of it.
    `PopupSection.swift` — do not draw bespoke sections.
 4. Register it in `NativeModules.all` while it is still a preview, and in
    `ModuleRegistry` once it ships.
+5. For a Dashboard card, add a case to `DashboardCard` and conform the
+   module to `DashboardReporting` from the state it already samples.
 
 The contract:
 

@@ -95,7 +95,7 @@ final class WindowSnapper {
         guard WindowControl.ensureTrusted(for: "Window snapping") else { return }
         guard let app = NSWorkspace.shared.frontmostApplication,
               app.bundleIdentifier != Bundle.main.bundleIdentifier else { return }
-        let axApp = AXUIElementCreateApplication(app.processIdentifier)
+        let axApp = WindowControl.appElement(app.processIdentifier)
         guard let window = Self.element(Self.attribute(axApp, kAXFocusedWindowAttribute))
         else { return }
 

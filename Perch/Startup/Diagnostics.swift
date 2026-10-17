@@ -228,6 +228,14 @@ extension AppDelegate {
                     (NSApp.windows.first { $0 is UninstallWindow } as? UninstallWindow)?
                         .selectTools()
                 }
+            } else if subject == "clipboard" {
+                self.renderWindow(of: ClipboardHistoryWindow.self, to: request.path, after: 4) {
+                    ClipboardHistoryWindow.present(over: nil)
+                }
+            } else if subject == "menubar" {
+                self.renderMenuBar(to: request.path)
+            } else if subject.hasPrefix("popup:") {
+                self.renderPopup(String(subject.dropFirst("popup:".count)), to: request.path)
             } else if subject == "ai" {
                 self.renderWindow(of: AICleanupWindow.self, to: request.path,
                                   after: 12, present: AICleanupWindow.present)
@@ -273,11 +281,18 @@ extension AppDelegate {
         // own until it has been given a width, and a pane clipped to a guess
         // hides the section at the bottom -- which is what the first version
         // of this did.
+        //
+        // The tall frame is 4000 rather than the 1400 it was: Clipboard is
+        // longer than 1400 and the trim is a `min`, so the page came out
+        // clipped at exactly the cap, with its last two sections missing and
+        // nothing in the output saying so. A render that quietly drops the
+        // part you are looking at is worse than no render.
         pane.appearance = NSAppearance(named: .aqua)
-        pane.frame = NSRect(x: 0, y: 0, width: 540, height: 1400)
+        let tallest: CGFloat = 4000
+        pane.frame = NSRect(x: 0, y: 0, width: 540, height: tallest)
         pane.layoutSubtreeIfNeeded()
-        let used = pane.subviews.map(\.frame.height).max() ?? 1400
-        pane.frame = NSRect(x: 0, y: 0, width: 540, height: min(used + 8, 1400))
+        let used = pane.subviews.map(\.frame.height).max() ?? tallest
+        pane.frame = NSRect(x: 0, y: 0, width: 540, height: min(used + 8, tallest))
         pane.layoutSubtreeIfNeeded()
 
         write(pane, to: path, describedAs: "\(name) settings, \(Int(pane.frame.height))pt tall")
@@ -387,6 +402,69 @@ extension AppDelegate {
     }
 
     /// Captures one of Perch's own windows once it has settled.
+    /// Perch's own menu bar items, left to right, side by side in one image.
+    ///
+    /// Each item's view is this process's own, so it draws into a bitmap
+    /// without Screen Recording -- the bar around them is another process's
+    /// and is not in the picture, so they are drawn on the window colour.
+    private func renderMenuBar(to path: String) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            defer { NSApp.terminate(nil) }
+            let items = NSApp.windows
+                .filter { String(describing: type(of: $0)).contains("StatusBar") && $0.windowNumber > 0 }
+                .sorted { $0.frame.minX < $1.frame.minX }
+            // Drawn from each item's own view, not asked of the window
+            // server: a status item's window number does not fit a
+            // CGWindowID (measured: none of seven did), so CGWindowList
+            // cannot be asked for it, and the plain conversion traps.
+            let images = items.compactMap { window -> CGImage? in
+                guard let view = window.contentView, view.bounds.width > 0,
+                      let rep = view.bitmapImageRepForCachingDisplay(in: view.bounds) else { return nil }
+                view.cacheDisplay(in: view.bounds, to: rep)
+                return rep.cgImage
+            }
+            guard !images.isEmpty else {
+                NSLog("Perch: --render menubar: no menu bar items to capture (windows: %@)",
+                      NSApp.windows.map { String(describing: type(of: $0)) }.joined(separator: ", "))
+                return
+            }
+            let gap = 8
+            let width = images.reduce(0) { $0 + $1.width + gap }
+            let height = images.map(\.height).max() ?? 0
+            guard let context = CGContext(data: nil, width: width, height: height, bitsPerComponent: 8,
+                                          bytesPerRow: 0, space: CGColorSpaceCreateDeviceRGB(),
+                                          bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) else { return }
+            context.setFillColor(NSColor.windowBackgroundColor.cgColor)
+            context.fill(CGRect(x: 0, y: 0, width: width, height: height))
+            var x = 0
+            for image in images {
+                context.draw(image, in: CGRect(x: x, y: 0, width: image.width, height: image.height))
+                x += image.width + gap
+            }
+            guard let joined = context.makeImage(),
+                  let png = NSBitmapImageRep(cgImage: joined).representation(using: .png, properties: [:])
+            else { return }
+            try? png.write(to: URL(fileURLWithPath: path))
+            NSLog("Perch: rendered \(images.count) menu bar items to \(path)")
+        }
+    }
+
+    /// A module's menu bar popup, opened as a click on its item opens it.
+    ///
+    /// Opened after a wait, for the same reason `--popup` waits: the menu
+    /// bar has to have built the item, and the module to have sampled once,
+    /// or the popup is photographed showing dashes.
+    private func renderPopup(_ name: String, to path: String) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+            guard MonitorBar.shared.openPopup(for: name) else {
+                Log.error("--render popup:\(name): that module has no item in the menu bar")
+                NSApp.terminate(nil)
+                return
+            }
+            self.renderWindow(of: ReadingPopup.self, to: path, after: 2) {}
+        }
+    }
+
     private func renderWindow<W: NSWindow>(of type: W.Type, to path: String,
                                            after seconds: TimeInterval,
                                            present: () -> Void) {

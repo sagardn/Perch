@@ -127,15 +127,29 @@ final class CPUSettingsPage: NSView {
 
         // One app on its own, not the machine: the case this is for was an
         // app holding 59% of a core while the total sat at a modest 30%.
-        let runaway = Controls.row(localized("One app stays this busy for 5 minutes"),
-                                   Controls.threshold(on: RunawayApps.isEnabled,
-                                                      value: RunawayApps.threshold,
-                                                      suffix: "%", range: 20...400, step: 10) { on, level in
-            RunawayApps.threshold = level
-            RunawayApps.isEnabled = on
-        })
-        let throttling = Controls.row(localized("The Mac slows down to cool off"),
-                                      Controls.toggle(Throttling.alertsEnabled) { Throttling.alertsEnabled = $0 })
+        // The duration is read, not written into the sentence: it is a
+        // stored preference with a range of 1 to 60, and the label said
+        // "5 minutes" whatever it was set to. "This busy" meant the figure
+        // in the stepper beside it, which only works if the sentence says
+        // so.
+        let runaway = Controls.row(
+            localized("One app stays busy"),
+            Controls.threshold(on: RunawayApps.isEnabled,
+                               value: RunawayApps.threshold,
+                               suffix: "%", range: 20...400, step: 10) { on, level in
+                RunawayApps.threshold = level
+                RunawayApps.isEnabled = on
+            },
+            detail: localized("Notified once when a single app holds at least this share of one core for %0 minutes.",
+                              String(RunawayApps.minutes)))
+
+        // What throttling is, in the words somebody would use for it: the
+        // row named the symptom and never said what causes it or that it
+        // ends by itself.
+        let throttling = Controls.row(
+            localized("The Mac slows down to cool off"),
+            Controls.toggle(Throttling.alertsEnabled) { Throttling.alertsEnabled = $0 },
+            detail: localized("macOS lowers the processor's speed when the Mac runs hot, and raises it again once it cools."))
         let alerts = Controls.section(localized("Notify me when"), symbol: "bell.badge.fill",
                                       tint: .systemRed,
             CPUThreshold.allCases.filter { $0.isAvailable }.map { threshold in

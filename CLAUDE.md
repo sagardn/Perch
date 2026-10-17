@@ -46,7 +46,7 @@ Tools/run-tests.sh            # all of them, about 25 seconds
 Tools/run-tests.sh disk       # just Tools/disk-test.swift
 ```
 
-Thirty suites, 1,283 assertions. `tests.yaml` runs the same script on every
+Thirty-four suites, 1,515 assertions. `tests.yaml` runs the same script on every
 push, so a suite that fails fails the build.
 
 Pure logic gets a test. The pattern is a script compiled against the app's
@@ -115,7 +115,7 @@ same commit.
 Reading a key out of a variable is fine as long as the value exists as a
 literal somewhere, which is how `scan` sees it. A key *computed* at runtime is
 invisible to it and makes its unused list untrustworthy; `docs/ARCHITECTURE.md`
-▸ Localisation lists the seven call sites that pass a variable today.
+▸ Localisation lists the call sites that pass a variable today.
 
 ## Building and releasing
 

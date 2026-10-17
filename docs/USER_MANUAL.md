@@ -21,6 +21,7 @@ hotkeys and it is a system monitor.
 - [Managing your app list](#managing-your-app-list)
 - [The trackpad gesture](#the-trackpad-gesture)
 - [The system monitor](#the-system-monitor)
+- [Clipboard history](#clipboard-history)
 - [Settings](#settings)
 - [Where Perch keeps things](#where-perch-keeps-things)
 - [Privacy](#privacy)
@@ -449,15 +450,111 @@ likely to go unnoticed.
 
 ---
 
+## Clipboard history
+
+Perch can keep what you copy, text and images, so you can use it again. It is
+**off until you turn it on**: Settings ▸ Clipboard ▸ **Enable clipboard
+history**, which explains first what is kept and where.
+
+**Two separate switches.** *Enable clipboard history* decides whether copies
+are kept. The **Clipboard** switch in the sidebar decides whether it has an
+item in the menu bar. History keeps working with the item hidden.
+
+**The menu bar item** is an icon beside the other readings, faded while
+history is off. Click it for the latest copies:
+
+- Type to search; **↑ ↓** move the highlight; **Return** or a click copies the
+  entry back to the clipboard, ready for **⌘V**.
+- Right-click an entry to copy, pin or delete it.
+- **View All…** opens the full history; the **⚙︎** opens its settings.
+
+In combined mode with **One popup for all**, the clipboard is a tile in that
+popup instead.
+
+**The history window** lists everything, newest first, with a search (text,
+the app that was in front, image sizes) and **All / Text / Images / Pinned**.
+Select an entry to see all of it. **Return** copies it, **Space** pins it, **⌫**
+deletes it, and **Clear** removes unpinned entries or everything, after a
+confirmation.
+
+**Restoring** puts back every form that was kept: plain text, its RTF and HTML
+formatting, a link, an image as PNG and TIFF, or files as files. If a stored
+form has gone missing, Perch says that only the text went back.
+
+**Paste for me** (off by default) also sends ⌘V to the app you were in. It
+needs the same window-control permission the switcher uses; without it, the
+entry is copied and you paste it yourself. Perch says it *sent* ⌘V, because it
+cannot see whether the app took it.
+
+| Setting | Default | |
+|---|---|---|
+| Text, links and files | On | |
+| Keep formatting | On | RTF and HTML with the text |
+| Images | On | Up to 25 MB each; larger ones are left out, not shrunk |
+| Keep at most | 200 | Not counting pinned entries |
+| Remove entries after | 30 days | Pinned entries stay unless **Pinned entries expire too** |
+| Keep history after quitting | On | Off deletes it when Perch quits |
+| Clear unpinned entries when Perch quits | Off | |
+| Entries in the popup | 8 | |
+| Keyboard shortcut | none | Opens the popup, or the history window while the item is hidden |
+
+**Never kept, whatever the settings:** anything an app marks as concealed,
+transient or auto-generated (the [nspasteboard.org](http://nspasteboard.org)
+markers that password managers use), and copies made while an app on the
+**Ignore copies made in** list is in front. That list starts with the common
+password managers. Perch can tell which app was *in front* when something was
+copied, not which app wrote it.
+
+**macOS may ask** whether Perch can read what you copy (System Settings ▸
+Privacy & Security ▸ Paste from Other Apps). Choose **Allow**; if it is set to
+deny, history shows as **Blocked by macOS**.
+
+---
+
 ## Settings
 
-Open Settings from the **⚙︎** in any popup. The window has a sidebar:
-**Dashboard**, **Settings**, then one page per module with its on/off switch.
+Open Settings from the **⚙︎** in any popup. The window has a sidebar in three
+groups: **Overview**, **Free up space** and **Search & switcher**; then
+**Monitoring**, one page per module with its on/off switch (a module that is
+off is dimmed); then **Settings**. The search field at the top filters all of
+them.
 
-### Dashboard
+### Overview
 
-A summary of this Mac: processor, memory, graphics, disks, displays, model
-identifier, production year, serial number and uptime.
+How the Mac is doing now, from the readings the modules already take — the
+Overview samples nothing of its own.
+
+- **The header** names the Mac and its macOS release, and says in one line
+  whether anything needs looking at. It is drawn only from modules that are
+  on.
+- **Issues** appear only when there is one: sustained heavy CPU load (ten
+  seconds at 80% or more), macOS slowing the processor to cool it, memory
+  *pressure* raised or critical (the kernel's own level, not how full memory
+  is), the watched volume past 90% or 95%, or no network interface up. Each
+  has a **Details** button to the module's page.
+- **Cards** for CPU, Memory, Disk and Network, each with its figure, its
+  verdict in words, recent history and two or three supporting figures. Click
+  a card to open that module's page. A module that is off says so and offers
+  **Turn On**; one whose every menu bar shape is off says it is not being
+  measured, because Perch samples what the menu bar shows.
+- **Battery health** (on a Mac with a battery) shows the maximum capacity,
+  cycle count and condition exactly as System Settings ▸ Battery reports them,
+  read every half hour while the Dashboard is open, with the current charge and
+  whether it is charging. A figure macOS does not report is shown as "Not
+  reported", never estimated.
+- **Customize** chooses which cards show — GPU and Sensors are available but
+  hidden by default — and their order, with **Restore Defaults**.
+- **About this Mac** is folded away until opened. *Hardware* lists the model,
+  processor and cores, memory, graphics, storage, each display's own panel
+  resolution and fastest refresh rate, the model identifier, the production
+  year where the name carries one, and the serial number — masked to its last
+  four characters, with buttons to show and copy it. *Right now* lists the
+  macOS release and build, uptime, and each display's current mode: the size
+  it looks like, the resolution it is drawn at when that differs, and its
+  refresh rate.
+
+A macOS release Perch does not know the name of is shown by its number alone
+(“macOS 27.0”) rather than given the last name it knew.
 
 ### Module pages
 
@@ -502,11 +599,18 @@ colour restores the default. Changes apply immediately.
 
 ### Search & switcher
 
+Its own page in the sidebar. **Keyboard** lists each global key and whether
+Perch holds it: a key another app registered first stays that app's, and the
+row says “taken by another app” instead. If ⌃Tab is taken, the cycle uses ⌥Tab
+and the row says so. **Edit apps…** opens the app list.
+
 | Setting | Default | Notes |
 |---|---|---|
+| **⌃Tab cycles your marked apps** | On | Off gives ⌃Tab back to every other app |
 | **Open where the pointer is** | On | Off centres the panel on the screen |
 | **Close when it loses focus** | On | Off keeps the panel up while you click elsewhere; ⎋ and ⌃Space still close it |
-| **⌃Tab cycles your marked apps** | On | Off gives ⌃Tab back to every other app |
+| **Click an app in front to minimise it** | On | In the search and with an app's own shortcut |
+| **Click an app in the Dock to minimise it** | On | A separate setting; needs window control |
 | **Trackpad gesture opens the search** | On | Then **Three-finger double tap** (on) and **Four-finger double tap** (off) |
 | **Window control** | — | Shows whether Accessibility is granted, with **Allow…** when it is not |
 
@@ -530,6 +634,18 @@ defaults write com.sagar.perch gestureFingerCounts -array 4
 defaults write com.sagar.perch cycleHotkeyEnabled -bool false
 ```
 
+### Permissions
+
+**Window control** (Accessibility) is what the switcher needs to bring windows
+forward. **Alerts** (Notifications) is asked for the first time an alert is
+due, and has a button to its page in System Settings.
+
+### Help
+
+**Welcome tour** opens the first-run window again. Walking through it changes
+nothing: each choice starts on the current setting and is written only when
+clicked. **User manual** opens this document.
+
 ### Backup
 
 **Export…** writes every Perch setting to a file. **Import…** reads one back and
@@ -552,6 +668,7 @@ everything to the defaults after a confirmation, and restarts Perch.
 | Path | What |
 |---|---|
 | `~/Library/Application Support/Perch/apps.json` | The launcher's app list |
+| `~/Library/Application Support/Perch/Clipboard/` | Clipboard history: `index.json`, and `payloads/` for images and formatting. Readable by your account only; not encrypted beyond your account and FileVault. Deleted entries take their files with them |
 | `com.sagar.perch` (UserDefaults) | Every setting — both halves |
 
 Perch installs no helper, daemon or extension.
@@ -560,8 +677,9 @@ Perch installs no helper, daemon or extension.
 
 ## Privacy
 
-Perch collects no telemetry or analytics and has no account. It talks to the
-network in three cases:
+Perch collects no telemetry or analytics and has no account. Clipboard
+history never leaves the Mac, and its content is never written to a log. It
+talks to the network in three cases:
 
 - **Update check** — a plain read of
   `https://api.github.com/repos/sagardn/Perch/releases/latest`, on the schedule
@@ -569,12 +687,18 @@ network in three cases:
 - **Connectivity check** — while the Network popup is open, a TCP handshake
   with `1.1.1.1` on port 53, every few seconds, to measure latency and whether
   the internet answers. No data is sent over it.
-- **Public IP** — `https://ifconfig.co/ip`, only when **Look up the public
-  address** is on and you have asked to be told when the public IP changes;
-  then once every two minutes. `ifconfig.co` runs
-  [echoip](https://github.com/mpolden/echoip), which is open source and
-  self-hostable if you would rather not depend on someone else's server;
-  repoint the endpoint in `Perch/Monitor/NetworkInfo.swift`.
+- **Public IP** — `https://ifconfig.co/json`, while **Look up the public
+  address** is on in the Network module. **It is on by default.** The request
+  is made when the Network popup opens, every two minutes for as long as it
+  stays open, and again when the connection changes — not on a background
+  timer, and never while the popup is closed. The reply carries your public
+  address and the country and network operator that address belongs to, which
+  is what the row shows; nothing about your Mac is sent to get it. Switch
+  **Look up the public address** off and no request is made at all.
+
+  `ifconfig.co` runs [echoip](https://github.com/mpolden/echoip), which is
+  open source and self-hostable if you would rather not depend on someone
+  else's server; repoint the endpoint in `Perch/Monitor/NetworkInfo.swift`.
 
 ---
 

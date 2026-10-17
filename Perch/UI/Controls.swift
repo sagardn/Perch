@@ -53,7 +53,8 @@ enum Controls {
         let card = Card()
         card.orientation = .vertical
         card.spacing = 0
-        card.edgeInsets = NSEdgeInsets(top: 3, left: 12, bottom: 3, right: 12)
+        card.edgeInsets = NSEdgeInsets(top: 3, left: PerchMetrics.cardInset,
+                                       bottom: 3, right: PerchMetrics.cardInset)
         card.translatesAutoresizingMaskIntoConstraints = false
 
         for (index, row) in rows.enumerated() {
@@ -65,7 +66,8 @@ enum Controls {
         container.addArrangedSubview(card)
         card.widthAnchor.constraint(equalTo: container.widthAnchor).isActive = true
         // The card wraps its rows. Without this it is free to take any
-        // height above them and hand the difference back to the rows.
+        // height above them and hand the difference back to the rows, which
+        // is where the blank half of the Keyboard card came from.
         fitToContent(card)
 
         if let footer {
@@ -122,7 +124,7 @@ enum Controls {
     /// page nobody reads, and the rows that need one stop standing out.
     static func row(_ label: String, _ control: NSView, indented: Bool = false,
                     detail: String? = nil) -> NSView {
-        let view = NSView()
+        let view = DetailRow()
         view.translatesAutoresizingMaskIntoConstraints = false
 
         let title = NSTextField(labelWithString: label)
@@ -142,6 +144,8 @@ enum Controls {
             stack.alignment = .leading
             stack.spacing = 1
             stack.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+            view.caption = caption
+            view.indent = indented ? 16 : 0
             text = stack
         } else {
             text = title
@@ -154,6 +158,7 @@ enum Controls {
 
         view.addSubview(text)
         view.addSubview(control)
+        view.control = control
         NSLayoutConstraint.activate([
             // 28, not 32: the controls are mini switches and small pop-ups,
             // 22pt at most, and 32 left the settings page a screen and a half
@@ -162,6 +167,7 @@ enum Controls {
             text.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: indented ? 16 : 0),
             text.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             control.leadingAnchor.constraint(greaterThanOrEqualTo: text.trailingAnchor, constant: 12),
+
             control.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             control.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             // The row grows to whatever the control needs. Without these a
@@ -172,6 +178,7 @@ enum Controls {
             text.topAnchor.constraint(greaterThanOrEqualTo: view.topAnchor, constant: 6),
             text.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: -6),
         ])
+
         fitToContent(view)
         return view
     }
@@ -187,9 +194,62 @@ enum Controls {
             control.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             control.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             control.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            // The row is as tall as what is in it. Centring alone says where
+            // the control sits and nothing about how much room it needs, so
+            // a tall control -- the Clipboard page's list of ignored apps --
+            // was centred inside a 28pt row, drawn over the row above it and
+            // cut off by the card. It survived while the row's height was
+            // merely ambiguous and the engine happened to pick a tall one;
+            // `fitToContent` then asked for the shortest height the
+            // constraints allowed, and these are the constraints that were
+            // missing.
+            control.topAnchor.constraint(greaterThanOrEqualTo: view.topAnchor, constant: 6),
+            control.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: -6),
         ])
         fitToContent(view)
         return view
+    }
+
+    /// A row that hands its caption the width it has to wrap in.
+    ///
+    /// A wrapping `NSTextField` asks `preferredMaxLayoutWidth` how wide it may
+    /// be, and a label built by `wrappingLabelWithString` starts with that at
+    /// zero -- it has no width until something gives it one. A section's
+    /// footer gets one from a constraint against the card, which is why
+    /// footers have always wrapped to the full width. The captions under a
+    /// row's label never had the equivalent, because the width they want is
+    /// whatever the control beside them leaves over, and that is not known
+    /// until the control has been measured.
+    ///
+    /// So it is measured here instead of constrained. Two earlier attempts
+    /// tied the caption's trailing edge to the control's leading edge, and
+    /// both had to come out: the text and the control share a row, so any
+    /// constraint between them also moves the control, and it dragged the
+    /// right-hand values of the threshold rows out of line with each other.
+    /// Setting the width in `layout()` adds no constraint at all, so nothing
+    /// but the caption's own line breaks can change.
+    private final class DetailRow: NSView {
+        weak var caption: NSTextField?
+        weak var control: NSView?
+        var indent: CGFloat = 0
+
+        override func layout() {
+            if let caption, bounds.width > 0 {
+                // `fittingSize`, not the control's frame: the control holds
+                // its width at required priority, so this is the width it
+                // will have, and it does not depend on this pass having laid
+                // the control out already.
+                let taken = (control?.fittingSize.width ?? 0) + 12 + indent
+                // A floor, so a row whose control is unusually wide gives the
+                // caption a readable measure rather than a column of one word.
+                let width = max(180, bounds.width - taken)
+                if abs(caption.preferredMaxLayoutWidth - width) > 0.5 {
+                    caption.preferredMaxLayoutWidth = width
+                    caption.invalidateIntrinsicContentSize()
+                }
+            }
+            super.layout()
+        }
     }
 
     /// Makes a view as short as its own constraints allow.
@@ -416,17 +476,37 @@ private final class Card: NSStackView {
     override init(frame: NSRect) {
         super.init(frame: frame)
         wantsLayer = true
-        layer?.cornerRadius = 10
+        layer?.cornerRadius = PerchMetrics.cardRadius
         layer?.cornerCurve = .continuous
         layer?.borderWidth = 1
+        // The two display settings are read on every draw, so the card has
+        // to be told to draw again when either changes.
+        observer = NSWorkspace.shared.notificationCenter.addObserver(
+            forName: NSWorkspace.accessibilityDisplayOptionsDidChangeNotification,
+            object: nil, queue: .main) { [weak self] _ in self?.needsDisplay = true }
     }
     required init?(coder: NSCoder) { fatalError("not used") }
 
+    deinit {
+        if let observer { NSWorkspace.shared.notificationCenter.removeObserver(observer) }
+    }
+
+    private var observer: NSObjectProtocol?
+
+    /// The same three cases as the SwiftUI `Surface`, so a settings card and
+    /// a Dashboard card change together: Increase Contrast draws the hairline
+    /// at full strength, and Reduce Transparency fills the card opaque rather
+    /// than tinting the glass behind it.
     override func updateLayer() {
         super.updateLayer()
+        let display = NSWorkspace.shared
         effectiveAppearance.performAsCurrentDrawingAppearance {
-            layer?.backgroundColor = NSColor.quaternaryLabelColor.withAlphaComponent(0.14).cgColor
-            layer?.borderColor = NSColor.separatorColor.withAlphaComponent(0.45).cgColor
+            layer?.backgroundColor = display.accessibilityDisplayShouldReduceTransparency
+                ? NSColor.controlBackgroundColor.cgColor
+                : NSColor.quaternaryLabelColor.withAlphaComponent(0.14).cgColor
+            layer?.borderColor = display.accessibilityDisplayShouldIncreaseContrast
+                ? NSColor.separatorColor.cgColor
+                : NSColor.separatorColor.withAlphaComponent(0.45).cgColor
         }
     }
 }

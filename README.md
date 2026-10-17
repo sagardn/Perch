@@ -21,6 +21,7 @@
 <p align="center">
   <a href="#install"><strong>Install</strong></a> ·
   <a href="#what-you-get"><strong>Features</strong></a> ·
+  <a href="#clipboard-history"><strong>Clipboard</strong></a> ·
   <a href="#free-up-space"><strong>Free up space</strong></a> ·
   <a href="#keyboard-shortcuts"><strong>Shortcuts</strong></a> ·
   <a href="#privacy"><strong>Privacy</strong></a> ·
@@ -31,11 +32,31 @@
 <br>
 
 <p align="center">
-  <img src="docs/screenshots/menubar.png" width="347" alt="Perch in the menu bar: SSD, GPU, sensor, CPU and RAM readings coloured by load, with network speed">
+  <img src="docs/screenshots/dashboard.png" width="900" alt="Perch's Overview window: a health summary, then CPU, Memory, Network and Battery cards, with the module list and switches down the left">
 </p>
 
 <p align="center">
-  <img src="docs/screenshots/monitor.png" width="900" alt="The CPU, Network, Memory and Disk popups">
+  <em>The Overview: everything the enabled modules are reading, in one window.</em>
+</p>
+
+<br>
+
+<p align="center">
+  <img src="docs/screenshots/menubar.png" width="347" alt="Perch in the menu bar: GPU, clipboard, disk, CPU and RAM readings coloured by load, with upload and download rates">
+</p>
+
+<p align="center">
+  <em>The same readings in the menu bar, coloured by load — red for the disk that is filling up.</em>
+</p>
+
+<br>
+
+<p align="center">
+  <img src="docs/screenshots/monitor.png" width="900" alt="The CPU, Network, Memory and Disk popups side by side, each with a one-line verdict, headline figures, a chart and a list of the busiest processes">
+</p>
+
+<p align="center">
+  <em>Click any reading for its popup: a verdict, the figures, a chart, and which app is responsible.</em>
 </p>
 
 ---
@@ -72,8 +93,9 @@ of them has. Perch is all three, built as one native app.
     </td>
     <td width="50%" valign="top">
       <h3>🪶 Stay out of the way</h3>
-      No Dock icon, no window you did not ask for, no network calls behind your
-      back. The expensive work runs only while you are looking at it.
+      No Dock icon, no window you did not ask for, no account and no telemetry.
+      The expensive work runs only while you are looking at it, and every
+      network call Perch makes is <a href="#privacy">listed and switchable</a>.
     </td>
   </tr>
 </table>
@@ -164,6 +186,54 @@ that reading out of the menu bar and leaves the other five alone.
   could not act on anyway, and names the process that is actually busy rather
   than the app it happens to live inside.
 
+### The Overview
+
+The menu bar is for glancing; the **Overview** is for looking. It opens on a
+one-line verdict drawn from every module that is on — CPU load, memory
+pressure, free space and the network link — and says which of them it is
+drawing on, so a quiet summary is never a summary of nothing.
+
+Underneath, one card per module with the figures that matter, plus your Mac's
+model and macOS version, uptime, and battery health where there is a battery.
+Cards can be reordered and hidden with **Customize**, and a module that is
+switched off says so rather than disappearing.
+
+It costs nothing while it is closed: the Overview owns no timer and samples
+nothing, reading only what the menu bar's tick has already measured, and only
+while the window is on screen.
+
+### Clipboard history
+
+<p align="center">
+  <img src="docs/screenshots/clipboard.png" width="860" alt="Clipboard settings: Enable clipboard history with its status and entry count, a 'Reading the clipboard' permission row, and Capture options for text, images and paste-back">
+</p>
+
+Everything you copy, kept so you can use it again — text, rich text, links,
+files and images, each with the app it came from and when.
+
+- **Where it lives.** A menu bar item with your most recent entries, a full
+  **Clipboard History** window with search and Text / Images / Pinned filters,
+  and a keyboard shortcut you choose. The menu bar item and the history are
+  separate: history keeps working with the item hidden.
+- **Restoring.** Pick an entry to put it back on the clipboard ready for ⌘V, or
+  turn on **Paste for me** and have Perch paste it into the app you were in.
+  Pinned entries stay put and are never pushed out by the limit.
+- **What is kept.** Text, links and files, optionally with their formatting;
+  images up to 25 MB each, with previews. Larger images are left out rather
+  than shrunk.
+- **How long.** A limit on entries (200 by default) and an age (30 days), both
+  yours to change. History can be kept after quitting or cleared each time.
+
+**Privacy.** History is written to `~/Library/Application Support/Perch/` and
+goes nowhere else. Copies an app marks as private — which is what password
+managers do — are never recorded, whatever the settings say. You can also name
+apps whose copies Perch should ignore. Turning history off stops capture and
+leaves what is already there; **Clear** removes it.
+
+> Perch can tell which app was *in front* when something was copied, not which
+> app copied it. And macOS decides whether apps may read the clipboard at all —
+> the **Reading the clipboard** row shows where you stand and opens the setting.
+
 ### Free up space
 
 <p align="center">
@@ -197,6 +267,19 @@ guess costs you a trip to Finder rather than your data.
   Caches, logs and downloads come ticked, because the tool rebuilds them without
   noticing; **conversations and downloaded models never come ticked**, however
   large, because only you know whether you want them back.
+
+<table>
+  <tr>
+    <td width="50%" valign="top" align="center">
+      <img src="docs/screenshots/ai-cleanup.png" alt="Clean up AI assistants: 2.9 GB across 7 assistants, an 'Unused for' filter set to Any time, and Hugging Face's downloaded models listed with sizes">
+      <br><em>AI assistants, by age. Caches and downloads come ticked; conversations and models never do.</em>
+    </td>
+    <td width="50%" valign="top" align="center">
+      <img src="docs/screenshots/uninstall.png" alt="Remove an app or tool: an Apps / Command-line tools switch above a searchable list of installed applications">
+      <br><em>Uninstalling. Apps and command-line tools, searchable, with what each left behind.</em>
+    </td>
+  </tr>
+</table>
 
 > **What it will not touch.** Matching is an allowlist, not a block list — a
 > file is only offered if its name follows a convention Perch recognises. That
@@ -318,8 +401,25 @@ network in three cases, and every one is under your control:
 - **Connectivity check** — while the Network popup is open, a TCP handshake with
   `1.1.1.1` measures latency and whether the internet answers. No data is sent
   over it.
-- **Public IP** — fetched from `ifconfig.co` only if you turn on alerts for
-  public-IP changes in the Network module, and then once every two minutes.
+- **Public IP** — fetched from `ifconfig.co` while **Look up the public
+  address** is on in the Network module. **This is on by default.** It is
+  requested when the Network popup opens, every two minutes while it stays
+  open, and again when the connection changes. Your IP is what such a service
+  necessarily sees; nothing else about your Mac is sent. Turn the setting off
+  and no request is made.
+
+**Clipboard history**, when you turn it on, is stored unencrypted in
+`~/Library/Application Support/Perch/` and is never sent anywhere. Copies an
+app marks as private are never recorded, and you can name further apps to
+ignore — but Perch cannot know what is *inside* what you copy, so treat the
+history as what it is: a readable record of what you have copied, on a Mac
+whose user account already protects it. Turn it off, shorten its retention, or
+clear it whenever you like.
+
+Perch asks for **Accessibility** (to raise, minimise and restore windows) and
+asks for **Location** only if you press the button on the Wi-Fi name row, since
+macOS gives the network's name to no one else. It never asks for Full Disk
+Access.
 
 ---
 

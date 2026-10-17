@@ -15,6 +15,11 @@ enum SettingsSelection: Equatable {
     /// no menu bar item, but it is a page of its own because it is about the
     /// Mac rather than about any one reading.
     case cleanup
+    /// The launcher's page: its keys, how the search and switcher behave,
+    /// and the app list. Its own page rather than a section of Settings,
+    /// because it is half of what Perch is, and it was the fifth section
+    /// down a page about the menu bar.
+    case launcher
     /// A module's own settings page, by module name.
     case module(String)
 
@@ -48,6 +53,7 @@ enum SettingsSelection: Equatable {
         case "Dashboard":      return .dashboard
         case "Settings":       return .appSettings
         case "Free up space":  return .cleanup
+        case "Search & switcher": return .launcher
         default:               return nil
         }
     }
@@ -58,6 +64,7 @@ enum SettingsSelection: Equatable {
         case .dashboard:        return "Dashboard"
         case .appSettings:      return "Settings"
         case .cleanup:          return "Free up space"
+        case .launcher:         return "Search & switcher"
         case .module(let name): return name
         }
     }

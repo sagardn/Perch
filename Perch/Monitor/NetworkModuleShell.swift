@@ -218,7 +218,8 @@ final class NetworkSettingsPage: NSView {
             Controls.row(localized("Look up the public address"),
                          Controls.toggle(NetworkSettings.looksUpPublicIP) { on in
                              NetworkSettings.looksUpPublicIP = on
-                         }),
+                         },
+                         detail: localized("Asks ifconfig.co, an outside server, while the popup is open: when it opens, every two minutes, and when the network changes. Also every two minutes while the public address alert is on.")),
         ])
 
         let shapes = Controls.section(

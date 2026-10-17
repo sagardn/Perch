@@ -215,5 +215,26 @@ do {
     check("upload history stays bounded", monitor.uploadHistory.count <= 180)
 }
 
+print("\nPublic address")
+
+check("an IPv4 address is an address", NetworkInfo.parsePublicIP("122.152.54.39\n") == "122.152.54.39")
+check("an IPv6 address is an address", NetworkInfo.parsePublicIP("2001:db8::1") == "2001:db8::1")
+check("a captive portal's page is not", NetworkInfo.parsePublicIP("<html><body>Sign in to Wi-Fi</body></html>") == nil)
+check("nor is an empty reply", NetworkInfo.parsePublicIP("  \n") == nil)
+check("nor a number that only looks like one", NetworkInfo.parsePublicIP("999.1.1.1") == nil)
+// The reply ifconfig.co/json gave on this Mac, trimmed to what is read.
+let reply = Data(#"{"ip":"122.152.54.39","country":"Bangladesh","country_iso":"BD","asn_org":"Innovative Online Limited"}"#.utf8)
+let parsed = NetworkInfo.parsePublicAddress(reply)
+check("the JSON reply gives the address", parsed?.ip == "122.152.54.39")
+check("and the country", parsed?.countryCode == "BD" && parsed?.countryName == "Bangladesh")
+check("and the network", parsed?.network == "Innovative Online Limited")
+check("BD is the Bangladeshi flag", NetworkInfo.flag("BD") == "\u{1F1E7}\u{1F1E9}")
+check("lower case works the same", NetworkInfo.flag("bd") == NetworkInfo.flag("BD"))
+check("a code that is not two letters draws no flag", NetworkInfo.flag("B1") == nil && NetworkInfo.flag("BGD") == nil)
+check("a reply with no real address is no reading",
+      NetworkInfo.parsePublicAddress(Data(#"{"ip":"<html>","country_iso":"BD"}"#.utf8)) == nil)
+check("a missing or odd country still gives the address, without a flag",
+      NetworkInfo.parsePublicAddress(Data(#"{"ip":"1.2.3.4","country_iso":"XYZ"}"#.utf8))?.countryCode == nil)
+
 print(failures == 0 ? "\nall passed" : "\n\(failures) failed")
 exit(failures == 0 ? 0 : 1)

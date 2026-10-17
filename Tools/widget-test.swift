@@ -152,10 +152,14 @@ check("a negative count does not crash or go negative",
 check("the ring and the gauge are square to the drawing height",
       MenuBarMetrics.dialWidth == MenuBarMetrics.drawHeight + 4)
 
+// The clipboard's reading: an icon and nothing else.
+let icon = MenuBarReading(label: "CLIP", symbol: "doc.on.clipboard")
+
 print("\nWidget widths")
 
 for style in MenuBarStyle.allCases {
-    let source = [.rates, .trafficChart].contains(style) ? rates : reading
+    let source = [.rates, .trafficChart].contains(style) ? rates
+        : style == .symbol ? icon : reading
     let w = widget([style], source)
     check("\(style.rawValue) is positive and sane: \(Int(w.intrinsicContentSize.width))pt",
           w.intrinsicContentSize.width > 4 && w.intrinsicContentSize.width < 130)
@@ -189,7 +193,8 @@ do {
         segments: [.init(0.18, .perchMagenta), .init(0.34, .perchBlue)],
         pair: .init("13.0 GB", "3.0 GB"),
         rates: .init("240 KB/s", "1.2 MB/s"),
-        mirrored: .init(up: (0..<20).map { Double($0) }, down: (0..<20).map { Double(20 - $0) }))
+        mirrored: .init(up: (0..<20).map { Double($0) }, down: (0..<20).map { Double(20 - $0) }),
+        symbol: "doc.on.clipboard")
     let all = widget(MenuBarStyle.allCases, everything)
     let sum = MenuBarStyle.allCases.reduce(0.0) {
         $0 + MenuBarMetrics.width(of: $1, bars: cores.count)
@@ -213,7 +218,8 @@ do {
 print("\nEvery shape draws something")
 
 for style in MenuBarStyle.allCases {
-    let source = [.rates, .trafficChart].contains(style) ? rates : reading
+    let source = [.rates, .trafficChart].contains(style) ? rates
+        : style == .symbol ? icon : reading
     let w = widget([style], source)
     let drawn = render(w, to: "/tmp/menu-bar-\(style.rawValue).png")
     check("\(style.rawValue) put \(drawn) pixels down", drawn > 20)
@@ -305,6 +311,13 @@ UserDefaults.standard.set(42, forKey: "WidgetTestI_widget")
 check("a value of the wrong type falls back",
       MenuBarStyles.stored(for: "WidgetTestI") == [.mini])
 
+check("an icon reading takes only the icon's width",
+      widget([.symbol, .mini], MenuBarReading(label: "X", symbol: "doc.on.clipboard")).intrinsicContentSize.width
+        == MenuBarMetrics.symbolWidth + MenuBarMetrics.figureWidth)
+check("a reading with no icon takes no room for one",
+      widget([.symbol], reading).intrinsicContentSize.width == 0)
+check("the icon is left out of the shared shape list",
+      MenuBarStyle.special.contains(.symbol))
 check("every style has a name for the settings page",
       MenuBarStyle.allCases.allSatisfy { !$0.title.isEmpty })
 

@@ -61,6 +61,16 @@ do {
           c.owner(of: [59, 58, 8], excluding: "RAM", defaults: defaults) == nil)
     check("a free combination clashes with nothing",
           c.owner(of: [59, 58, 0], excluding: "CPU", defaults: defaults) == nil)
+check("the launcher's ⌃Space is not free for a module",
+      c.owner(of: [59, 49], excluding: "CPU", defaults: defaults) != nil)
+check("nor ⌃Tab, its ⌥Tab fallback, ⌃` or ⌃1",
+      [[59, 48], [58, 48], [59, 50], [59, 18]].allSatisfy {
+          c.owner(of: $0, excluding: "Clipboard", defaults: defaults) != nil })
+check("while ⌃⇧Space is",
+      c.owner(of: [59, 60, 49], excluding: "CPU", defaults: defaults) == nil)
+defaults.set([59, 58, 9], forKey: "Clipboard_popupShortcut")
+check("the clipboard's shortcut is checked like a module's",
+      c.owner(of: [59, 58, 9], excluding: "CPU", defaults: defaults) == "Clipboard")
 }
 
 print(failures == 0 ? "\nall passed" : "\n\(failures) failed")

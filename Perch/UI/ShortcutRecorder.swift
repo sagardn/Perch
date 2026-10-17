@@ -155,14 +155,38 @@ extension PopupShortcut {
     static let functionKeys: Set<UInt16> = [122, 120, 99, 118, 96, 97, 98, 100, 101, 109, 103, 111,
                                            105, 107, 113, 106, 64, 79, 80, 90]
 
-    /// The module already holding exactly this shortcut, if any.
+    /// What already holds exactly this shortcut, if anything: another
+    /// module, or one of the launcher's own keys.
+    ///
+    /// The launcher's keys were not checked before, so a module's popup could
+    /// be given ⌃Space and the two would fight for it -- whichever registered
+    /// last winning, silently. They are fixed rather than recorded, so they
+    /// are listed here; ⌥Tab is the cycle's fallback when another app holds
+    /// ⌃Tab, and is reserved whether or not it is in use.
     static func owner(of codes: [UInt16], excluding module: String,
                       defaults: UserDefaults = .standard) -> String? {
-        ["CPU", "GPU", "RAM", "Disk", "Sensors", "Network"].first { name in
+        if let reserved = launcherKeys[codes] { return reserved }
+        return ["CPU", "GPU", "RAM", "Disk", "Sensors", "Network", "Clipboard"].first { name in
             name != module
                 && (defaults.array(forKey: "\(name)_popupShortcut") as? [Int])?.map(UInt16.init) == codes
         }
     }
+
+    /// The launcher's global keys, in the stored form: ⌃Space, ⌃Tab, ⌥Tab,
+    /// ⌃` and ⌃1 to ⌃9.
+    static let launcherKeys: [[UInt16]: String] = {
+        var keys: [[UInt16]: String] = [
+            [control, 49]: localized("Search & switcher"),
+            [control, 48]: localized("Search & switcher"),
+            [option, 48]: localized("Search & switcher"),
+            [control, 50]: localized("Search & switcher"),
+        ]
+        // The digit row's key codes, which are not in order.
+        for code: UInt16 in [18, 19, 20, 21, 23, 22, 26, 28, 25] {
+            keys[[control, code]] = localized("Search & switcher")
+        }
+        return keys
+    }()
 
     /// "⌃⌥C": the modifiers in the order macOS menus print them, then the key.
     static func display(_ codes: [UInt16], keyName: (UInt16) -> String = keyName(for:)) -> String {

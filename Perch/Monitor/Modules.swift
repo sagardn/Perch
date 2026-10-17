@@ -62,7 +62,7 @@ extension PopupContent {
     /// The six every module shares. A module with a pair or a pair of
     /// series says so by overriding this.
     var menuBarStyles: [MenuBarStyle] {
-        MenuBarStyle.allCases.filter { ![.pair, .rates, .trafficChart].contains($0) }
+        MenuBarStyle.allCases.filter { !MenuBarStyle.special.contains($0) }
     }
     func menuBarContent() -> MenuBarReading? { nil }
     func willShow() {}

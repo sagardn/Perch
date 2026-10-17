@@ -17,8 +17,17 @@ final class SettingsWindow: NSWindow, NSWindowDelegate {
 
     private let model = SettingsModel()
 
-    private lazy var dashboard = DashboardPane(width: SettingsMetrics.width)
+    /// Its cards open pages and switch modules on through the sidebar's own
+    /// two paths, so a card and the sidebar can never do it differently.
+    private lazy var dashboard = DashboardPane(
+        open: { [weak self] name in self?.model.select(name) },
+        enable: { [weak self] name in self?.model.setEnabled(name, true) })
     private lazy var cleanup = CleanupPane(width: SettingsMetrics.width)
+    /// In a scroll view, as the module pages are: its rows ran off the
+    /// bottom of a short window with nothing to say there were more.
+    private lazy var cleanupPage = ScrollingPage(cleanup)
+    private lazy var launcher = LauncherPane()
+    private lazy var launcherPage = ScrollingPage(launcher)
     private lazy var appSettings = GeneralPane(width: SettingsMetrics.width) {
         _ = restartPerch()
     }
@@ -34,10 +43,16 @@ final class SettingsWindow: NSWindow, NSWindowDelegate {
         contentViewController = NSHostingController(
             rootView: SettingsShellView(model: model))
 
-        // The three of these together are what lets the glass behind the
-        // content composite. A titled window is opaque and draws its own
-        // background, which paints over the material; clearing the colour
-        // without clearing `isOpaque` leaves the window black.
+        // Non-opaque, so the Liquid Glass behind the whole window can
+        // composite -- see `Backdrop` in SettingsShell, which covers every
+        // point of it. A titled window draws its own opaque background over
+        // any material, and clearing the colour without clearing `isOpaque`
+        // leaves it black.
+        //
+        // The glass once sat behind the content column only, and wherever
+        // that column came out narrower than the pane, the window had
+        // nothing in it at all and the desktop showed through. It is now
+        // behind the split view itself, so no layout inside can uncover it.
         titlebarAppearsTransparent = true
         isOpaque = false
         backgroundColor = .clear
@@ -111,7 +126,7 @@ final class SettingsWindow: NSWindow, NSWindowDelegate {
             // A module is allowed to have no settings page. An empty view is
             // the honest answer -- leaving the previous module's page up
             // would say this one's switches belong to it.
-            view = module.makeSettingsPage() ?? NSView()
+            view = ScrollingPage(module.makeSettingsPage() ?? NSView())
             model.moduleStates[name] = module.isEnabled
 
         case .dashboard:
@@ -124,7 +139,11 @@ final class SettingsWindow: NSWindow, NSWindowDelegate {
 
         case .cleanup:
             cleanup.viewWillAppear()
-            view = cleanup
+            view = cleanupPage
+
+        case .launcher:
+            launcher.viewWillAppear()
+            view = launcherPage
         }
 
         NotificationCenter.default.post(
@@ -133,7 +152,7 @@ final class SettingsWindow: NSWindow, NSWindowDelegate {
                 ? ["module": selection.name, "state": true]
                 : ["state": false])
 
-        title = localized(selection.name)
+        title = SettingsModel.title(for: selection.name)
         model.selection = selection.name
         model.detail = view
     }

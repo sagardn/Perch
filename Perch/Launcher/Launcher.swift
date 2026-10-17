@@ -17,7 +17,6 @@ final class Launcher {
     private var searchHotkey: Hotkey?
     private var minimizeHotkey: Hotkey?
     private var cycleHotkey: Hotkey?
-    private var warmTimer: Timer?
     /// Ctrl+<digit> straight to one app. Held so they stay registered.
     private var appHotkeys: [Hotkey] = []
 
@@ -50,17 +49,14 @@ final class Launcher {
             self?.searchPanel?.toggle()
         }
         if searchHotkey == nil { taken.append("⌃Space") }
+        // The search panel's rows show each app's state. Keeping that cache
+        // correct is now the business of the notifications macOS already
+        // sends, rather than of a timer that swept every app on a clock.
+        WindowControl.observeAppChanges()
         // Ctrl+Tab walks back through recently used apps, one press per step.
         // Note this takes Ctrl+Tab away from every app that uses it for tab
         // switching -- Chrome, Safari, terminals -- because a global hotkey
         // consumes the key. Turn it off in the menu if that bites.
-        // Keep the window-state cache warm in the background so opening the
-        // search panel never pays the full Accessibility sweep.
-        warmTimer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { _ in
-            WindowControl.warmStaleStates()
-        }
-        warmTimer?.tolerance = 0.5
-
         if Prefs.cycleHotkeyEnabled {
             let cycle: () -> Void = { [weak self] in
                 Recents.shared.cycleToNext(among: self?.markedBundleIDs)
@@ -226,6 +222,28 @@ final class Launcher {
         Notify.show(marked ? "\(entry.name) joins ⌃Tab" : "\(entry.name) left ⌃Tab",
                     symbol: marked ? "arrow.left.arrow.right" : "minus.circle")
     }
+
+    // MARK: - What the keys are doing
+
+    /// A global key and whether Perch holds it.
+    ///
+    /// For the settings page, which used to have no way to say that a key
+    /// was taken: the HUD at launch was the only report, gone in four
+    /// seconds. Read-only -- registration, the ⌥Tab fallback and the retry
+    /// after launch are `start()`'s, and none of them change here.
+    struct KeyState {
+        let keys: String
+        let isActive: Bool
+    }
+
+    var searchKey: KeyState { KeyState(keys: "⌃Space", isActive: searchHotkey != nil) }
+    var minimizeKey: KeyState { KeyState(keys: "⌃`", isActive: minimizeHotkey != nil) }
+    /// nil while the cycle is switched off, since then no key is wanted.
+    var cycleKey: KeyState? {
+        guard Prefs.cycleHotkeyEnabled else { return nil }
+        return KeyState(keys: cycleUsesOption ? "⌥Tab" : "⌃Tab", isActive: cycleHotkey != nil)
+    }
+    var cycleFellBack: Bool { cycleUsesOption }
 
     func showSearch() {
         searchPanel?.show()

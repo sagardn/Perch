@@ -163,6 +163,9 @@ final class MonitorBar {
         return nil
     }
 
+    /// Whether this module's reading is in the menu bar -- which is also
+    /// whether it is being sampled, since the tick samples only what it
+    /// draws. The Dashboard says so when a card has nothing to show.
     func isShowing(_ name: String) -> Bool {
         entries[name] != nil || (combined.isShowing && segments[name] != nil)
     }
@@ -371,6 +374,10 @@ final class MonitorBar {
             self.entries.values.forEach { $0.tick() }
             self.combined.tick()
             if self.wantedNames() != self.built { self.present() }
+            // After the samples, so anything listening reads this tick's
+            // figures. The Dashboard is the listener: it has no timer of its
+            // own, and draws only what the modules just measured.
+            NotificationCenter.default.post(name: .monitorDidTick, object: nil)
         }
         timer.tolerance = 0.2
         RunLoop.main.add(timer, forMode: .common)

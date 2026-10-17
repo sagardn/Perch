@@ -39,6 +39,14 @@ extension AppDelegate {
         let pressed = PopupShortcut.keyCodes(modifiers: event.modifierFlags,
                                              keyCode: event.keyCode)
 
+        // Clipboard history answers its shortcut with its menu bar item
+        // hidden too -- the history window then -- so it is checked before
+        // the rule below, which only considers modules that are in the bar.
+        if !ClipboardSettings.shortcut.isEmpty, pressed == ClipboardSettings.shortcut {
+            ClipboardModule.shared.openFromShortcut()
+            return
+        }
+
         guard let module = ModuleRegistry.shared.all.first(where: {
             $0.isEnabled && $0.popupShortcut == pressed
         }), let window = module.menuBarWindow else { return }

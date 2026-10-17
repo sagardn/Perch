@@ -155,6 +155,12 @@ enum DockClick {
         else { return [] }
 
         let application = AXUIElementCreateApplication(dock.processIdentifier)
+        // Reading another process's Accessibility tree waits on that process,
+        // with no limit unless one is set, and the Dock is not immune to
+        // being busy. Bounded here rather than through WindowControl's
+        // helper so this file keeps compiling on its own, which is what its
+        // test suite does.
+        AXUIElementSetMessagingTimeout(application, 0.25)
         guard let lists = value(application, kAXChildrenAttribute as String) as? [AXUIElement],
               let list = lists.first,
               let elements = value(list, kAXChildrenAttribute as String) as? [AXUIElement]

@@ -46,6 +46,12 @@ final class SearchRowView: NSView {
         dot.font = .systemFont(ofSize: 10)
         dot.textColor = .secondaryLabelColor
         dot.translatesAutoresizingMaskIntoConstraints = false
+        // The glyph is the only thing on screen saying whether an app is
+        // open, and VoiceOver read it as "black circle". The words it stands
+        // for go on the name instead, and in a tooltip for the pointer.
+        let state = Self.state(of: mark)
+        dot.toolTip = state
+        dot.setAccessibilityElement(false)
 
         // Marking an app is what makes ⌃Tab cycle it, and until now the only
         // place that was visible was the options menu -- so the list gave no
@@ -58,13 +64,17 @@ final class SearchRowView: NSView {
         badge.layer?.backgroundColor = NSColor.labelColor.withAlphaComponent(0.1).cgColor
         badge.layer?.cornerRadius = 4
         badge.isHidden = !marked
+        badge.toolTip = localized("In the ⌃Tab switcher")
+        badge.setAccessibilityElement(false)
         badge.translatesAutoresizingMaskIntoConstraints = false
+        label.setAccessibilityLabel(([name, state] + [marked ? localized("In the ⌃Tab switcher") : nil])
+            .compactMap { $0 }.joined(separator: ", "))
 
         arrow.isBordered = false
         arrow.bezelStyle = .regularSquare
         arrow.imagePosition = .imageOnly
         arrow.image = NSImage(systemSymbolName: "chevron.right",
-                              accessibilityDescription: "App options")
+                              accessibilityDescription: localized("App options (→)"))
         arrow.imageScaling = .scaleNone
         arrow.toolTip = localized("App options (→)")
         arrow.alphaValue = 0
@@ -102,6 +112,16 @@ final class SearchRowView: NSView {
     }
 
     required init?(coder: NSCoder) { fatalError("not used") }
+
+    /// What the running mark means: `SearchPanel` draws ● for an app with
+    /// windows open and ○ for one whose windows are all minimised.
+    private static func state(of mark: String) -> String? {
+        switch mark {
+        case "●": return localized("Running")
+        case "○": return localized("Minimised")
+        default:  return nil
+        }
+    }
 
     private func updateArrow() {
         arrow.alphaValue = (isCurrent || hovering) ? 1 : 0

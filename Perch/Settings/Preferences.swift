@@ -48,6 +48,12 @@ final class Preferences {
         defaults.object(forKey: key) == nil ? fallback : defaults.integer(forKey: key)
     }
 
+    /// nil when nothing is stored, which is not the same as an empty list:
+    /// the Dashboard tells "never customised" from "hid everything" by it.
+    func strings(_ key: String) -> [String]? {
+        defaults.stringArray(forKey: key)
+    }
+
     func set(_ key: String, _ value: Any?) {
         if let value {
             defaults.set(value, forKey: key)

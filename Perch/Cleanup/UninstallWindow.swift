@@ -472,6 +472,8 @@ private struct SearchBox: View {
                     Image(systemName: "xmark.circle.fill").foregroundStyle(.tertiary)
                 }
                 .buttonStyle(.plain)
+                .help(localized("Clear the search"))
+                .accessibilityLabel(localized("Clear the search"))
             }
         }
         .padding(.horizontal, 9)

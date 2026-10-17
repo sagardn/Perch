@@ -20,6 +20,12 @@ enum AppLinks {
         URL(string: "https://github.com/\(repository)/issues/new")
     }
 
+    /// `docs/USER_MANUAL.md`, which documents every setting and shortcut.
+    /// Opened in the browser when asked for; Perch itself fetches nothing.
+    static var manualURL: URL? {
+        URL(string: "https://github.com/\(repository)/blob/main/docs/USER_MANUAL.md")
+    }
+
     static var releasesURL: URL? {
         URL(string: "https://github.com/\(repository)/releases")
     }

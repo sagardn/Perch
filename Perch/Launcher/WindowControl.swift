@@ -159,7 +159,46 @@ enum WindowControl {
     //
     // Main-thread only, so a plain dictionary needs no locking.
     private static var stateCache: [String: (state: AppState, at: Date)] = [:]
-    private static let stateTTL: TimeInterval = 5
+    // 60, not the 5 it was. The short life was there because nothing told
+    // the cache when an app's state changed, so it expired everything
+    // constantly and a background timer refreshed it -- which cost about 4%
+    // of a core for ever and, with nine apps running, provably could not keep
+    // up: it refreshed 3 apps every 2 seconds, 1.5 a second, where nine apps
+    // on a 5 second life need 1.8 a second. The panel opened cold anyway.
+    //
+    // The timer is gone and the events that actually change an app's state
+    // invalidate it instead, below. A minute is then a backstop for the one
+    // transition macOS does not announce -- a window minimised with its own
+    // yellow button -- and costs nothing when nothing happens. Only the
+    // state shown in a row depends on this; `toggle` reads the windows fresh
+    // every time, so a stale entry can never make a click do the wrong thing.
+    private static let stateTTL: TimeInterval = 60
+
+    private static var stateObservers: [NSObjectProtocol] = []
+
+    /// Drops an app's cached state when macOS says the app changed.
+    ///
+    /// Activation is already handled by `Recents`. These are the rest of the
+    /// transitions that move an app between the `AppState` cases: hiding and
+    /// unhiding are `.minimized`, launching and quitting are `.notRunning`.
+    /// Each costs a dictionary write, against the Accessibility sweep per app
+    /// that the timer here used to pay on a clock.
+    static func observeAppChanges() {
+        guard stateObservers.isEmpty else { return }
+        let center = NSWorkspace.shared.notificationCenter
+        let names: [Notification.Name] = [
+            NSWorkspace.didHideApplicationNotification,
+            NSWorkspace.didUnhideApplicationNotification,
+            NSWorkspace.didLaunchApplicationNotification,
+            NSWorkspace.didTerminateApplicationNotification,
+        ]
+        stateObservers = names.map { name in
+            center.addObserver(forName: name, object: nil, queue: .main) { note in
+                let app = note.userInfo?[NSWorkspace.applicationUserInfoKey] as? NSRunningApplication
+                invalidateState(app?.bundleIdentifier)
+            }
+        }
+    }
 
     static func invalidateState(_ bundleID: String?) {
         guard let bundleID else { return }
@@ -167,23 +206,6 @@ enum WindowControl {
     }
 
     static func invalidateAllStates() { stateCache.removeAll() }
-
-    /// Refresh a few stale entries so the panel never opens cold.
-    ///
-    /// Budgeted rather than exhaustive: a full sweep is ~260 ms of blocking
-    /// IPC, which is fine spread a couple of apps at a time across a timer
-    /// but not acceptable in one go on the main thread.
-    static func warmStaleStates(limit: Int = 3) {
-        let now = Date()
-        var budget = limit
-        for app in runningRegularApps() {
-            guard budget > 0, let bundleID = app.bundleIdentifier else { break }
-            if let cached = stateCache[bundleID],
-               now.timeIntervalSince(cached.at) < stateTTL { continue }
-            stateCache[bundleID] = (computeState(of: bundleID), now)
-            budget -= 1
-        }
-    }
 
     static func state(of bundleID: String) -> AppState {
         if let cached = stateCache[bundleID],
@@ -195,11 +217,25 @@ enum WindowControl {
         return fresh
     }
 
+    /// An app's Accessibility element, with a bound on how long it may block.
+    ///
+    /// Every read of one of these is synchronous IPC into that app, and the
+    /// default is to wait on it for as long as it takes. An app that is busy,
+    /// beachballing or stopped in a debugger therefore freezes whichever of
+    /// Perch's threads asked -- the main one, for the search panel's rows.
+    /// A quarter second is far longer than a healthy app needs (the whole
+    /// sweep of nine was about 260 ms) and short enough not to be felt.
+    static func appElement(_ pid: pid_t) -> AXUIElement {
+        let element = AXUIElementCreateApplication(pid)
+        AXUIElementSetMessagingTimeout(element, 0.25)
+        return element
+    }
+
     private static func computeState(of bundleID: String) -> AppState {
         guard let running = runningApp(bundleID) else { return .notRunning }
         if running.isHidden { return .minimized }
 
-        let axApp = AXUIElementCreateApplication(running.processIdentifier)
+        let axApp = appElement(running.processIdentifier)
         guard let window = targetWindow(of: axApp) else { return .noWindow }
 
         if bool(window, kAXMinimizedAttribute as String) { return .minimized }
@@ -260,7 +296,7 @@ enum WindowControl {
         // wanted.
         var windows: [AXUIElement] = []
         if let running, !snapshot.isHidden, !entry.launchOnly, isTrusted {
-            let axApp = AXUIElementCreateApplication(running.processIdentifier)
+            let axApp = appElement(running.processIdentifier)
             let main = element(attribute(axApp, kAXMainWindowAttribute as String))
             windows = self.windows(of: axApp)
             let remembered = minimizedByPerch[running.processIdentifier] ?? []
@@ -346,7 +382,7 @@ enum WindowControl {
     /// survives all three; an exact "new window" wins over a longer title so
     /// Chrome's "New Incognito Window" never gets picked first.
     static func newWindow(_ app: NSRunningApplication) -> Bool {
-        let axApp = AXUIElementCreateApplication(app.processIdentifier)
+        let axApp = appElement(app.processIdentifier)
         guard let menuBar = element(attribute(axApp, kAXMenuBarAttribute as String)),
               let topLevel = attribute(menuBar, kAXChildrenAttribute as String)
                 as? [AXUIElement] else { return false }
@@ -411,7 +447,7 @@ enum WindowControl {
     }
 
     static func windowList(for app: NSRunningApplication) -> [WindowRef] {
-        let axApp = AXUIElementCreateApplication(app.processIdentifier)
+        let axApp = appElement(app.processIdentifier)
 
         let axWindows = windows(of: axApp)
         if !axWindows.isEmpty {
@@ -504,7 +540,7 @@ enum WindowControl {
     /// which Perch already uses for window control, and behaves exactly like
     /// ⌘Q, save prompts included.
     static func quit(_ app: NSRunningApplication) {
-        let axApp = AXUIElementCreateApplication(app.processIdentifier)
+        let axApp = appElement(app.processIdentifier)
         if let quitItem = menuItem(of: axApp, cmdChar: "q")?.item {
             _ = press(quitItem, of: app)
             return
@@ -528,7 +564,7 @@ enum WindowControl {
     static func minimize(_ bundleID: String) {
         guard ensureTrusted(for: "Minimising a window"),
               let running = runningApp(bundleID) else { return }
-        let axApp = AXUIElementCreateApplication(running.processIdentifier)
+        let axApp = appElement(running.processIdentifier)
         guard let window = targetWindow(of: axApp) else { return }
         if bool(window, "AXFullScreen") {
             Notify.show("macOS can't minimize a full-screen window", symbol: "macwindow")
@@ -567,7 +603,7 @@ enum WindowControl {
     static func toggleActivateOnly(_ app: NSRunningApplication) {
         defer { invalidateState(app.bundleIdentifier) }
         if app.isHidden { app.unhide() }
-        let axApp = AXUIElementCreateApplication(app.processIdentifier)
+        let axApp = appElement(app.processIdentifier)
         if let window = targetWindow(of: axApp),
            bool(window, kAXMinimizedAttribute as String) {
             setMinimized(window, false)
@@ -582,7 +618,7 @@ enum WindowControl {
         guard let running = NSWorkspace.shared.frontmostApplication,
               let bundleID = running.bundleIdentifier else { return nil }
 
-        let axApp = AXUIElementCreateApplication(running.processIdentifier)
+        let axApp = appElement(running.processIdentifier)
         guard let window = targetWindow(of: axApp) else { return nil }
 
         if bool(window, "AXFullScreen") {
@@ -598,7 +634,7 @@ enum WindowControl {
         guard let running = runningApp(bundleID) else { return false }
         if running.isHidden { running.unhide() }
 
-        let axApp = AXUIElementCreateApplication(running.processIdentifier)
+        let axApp = appElement(running.processIdentifier)
         if let window = targetWindow(of: axApp),
            bool(window, kAXMinimizedAttribute as String) {
             setMinimized(window, false)

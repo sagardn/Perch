@@ -115,27 +115,116 @@ enum NetworkInfo {
 
     // MARK: - Public IP
 
+    /// The last answer, and when it came. Kept for two minutes rather than
+    /// for ever: the first version kept the first answer for the life of the
+    /// process, so an address that changed was never seen to change, and the
+    /// alert for exactly that could not fire.
     private(set) static var publicIP: String?
-    private static var fetching = false
+    /// Where the server places that address, from the same reply: ISO code
+    /// ("BD"), name ("Bangladesh") and the network's operator. A lookup in a
+    /// geolocation database, not a measurement -- a VPN's exit is reported
+    /// as wherever the VPN is, which is the point of one.
+    private(set) static var publicCountryCode: String?
+    private(set) static var publicCountryName: String?
+    private(set) static var publicNetwork: String?
+    private(set) static var publicIPAt: Date?
+    static let publicIPMaxAge: TimeInterval = 110
+    private static var waiting: [(String?) -> Void] = []
 
     /// Deliberately on demand, never automatic: finding the public IP means
     /// contacting an outside server, and that should be the user's choice
-    /// rather than something the menu does quietly in the background.
+    /// rather than something the menu does quietly in the background. The
+    /// popup asks only when its button is pressed; the change alert asks
+    /// only while it is switched on.
+    ///
+    /// Main thread only. A second caller while a request is out is answered
+    /// with the same reply -- it used to get no reply at all.
     static func lookUpPublicIP(completion: @escaping (String?) -> Void) {
-        if let publicIP { completion(publicIP); return }
+        if let publicIP, let at = publicIPAt, Date().timeIntervalSince(at) < publicIPMaxAge {
+            completion(publicIP)
+            return
+        }
+        waiting.append(completion)
+        guard waiting.count == 1 else { return }
         // echoip (github.com/mpolden/echoip): MIT, self-hostable, and not the
         // upstream endpoint this fork was cut from.
-        guard !fetching, let url = URL(string: "https://ifconfig.co/ip") else { return }
-        fetching = true
+        //
+        // The JSON form, not /ip: one request, the same server, and it says
+        // which country the address is in as well -- which is what the flag
+        // beside the address is drawn from.
+        guard let url = URL(string: "https://ifconfig.co/json") else { return finish(nil) }
 
         var request = URLRequest(url: url)
         request.timeoutInterval = 6
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
         URLSession.shared.dataTask(with: request) { data, _, _ in
-            fetching = false
-            let text = data.flatMap { String(data: $0, encoding: .utf8) }?
-                .trimmingCharacters(in: .whitespacesAndNewlines)
-            publicIP = text
-            DispatchQueue.main.async { completion(text) }
+            let address = data.flatMap(parsePublicAddress)
+            DispatchQueue.main.async { finish(address) }
         }.resume()
+    }
+
+    struct PublicAddress: Equatable {
+        let ip: String
+        let countryCode: String?
+        let countryName: String?
+        let network: String?
+    }
+
+    /// The JSON reply, if it carries a real address. The country code is
+    /// kept only when it is two letters -- what a flag can be drawn from.
+    static func parsePublicAddress(_ data: Data) -> PublicAddress? {
+        guard let object = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+              let ip = (object["ip"] as? String).flatMap(parsePublicIP) else { return nil }
+        let code = (object["country_iso"] as? String)?.uppercased()
+        let validCode = code.flatMap { $0.count == 2 && $0.allSatisfy { ("A"..."Z").contains($0) } ? $0 : nil }
+        func text(_ key: String) -> String? {
+            (object[key] as? String).flatMap { $0.isEmpty ? nil : $0 }
+        }
+        return PublicAddress(ip: ip, countryCode: validCode, countryName: text("country"),
+                             network: text("asn_org"))
+    }
+
+    /// 🇧🇩 from "BD": the two regional indicator letters every platform
+    /// draws as that country's flag.
+    static func flag(_ code: String?) -> String? {
+        guard let code, code.count == 2 else { return nil }
+        var flag = ""
+        for scalar in code.uppercased().unicodeScalars {
+            guard ("A"..."Z").contains(Character(scalar)),
+                  let indicator = Unicode.Scalar(0x1F1E6 + scalar.value - 65) else { return nil }
+            flag.unicodeScalars.append(indicator)
+        }
+        return flag
+    }
+
+    /// Drops the cached answer, so the next ask goes to the server: the
+    /// network changed, or somebody pressed refresh.
+    static func forgetPublicIP() {
+        publicIPAt = nil
+    }
+
+    private static func finish(_ address: PublicAddress?) {
+        if let address {
+            publicIP = address.ip
+            publicCountryCode = address.countryCode
+            publicCountryName = address.countryName
+            publicNetwork = address.network
+            publicIPAt = Date()
+        }
+        let callers = waiting
+        waiting.removeAll()
+        callers.forEach { $0(address?.ip) }
+    }
+
+    /// The reply if it is an address and nothing else. A captive portal
+    /// answers any request with its own web page, and that page is not the
+    /// Mac's address however it is trimmed.
+    static func parsePublicIP(_ text: String) -> String? {
+        let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty, trimmed.count <= 45 else { return nil }
+        var v4 = in_addr()
+        var v6 = in6_addr()
+        if inet_pton(AF_INET, trimmed, &v4) == 1 || inet_pton(AF_INET6, trimmed, &v6) == 1 { return trimmed }
+        return nil
     }
 }

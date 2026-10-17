@@ -19,7 +19,7 @@ final class DiskModule: PopupContent {
     /// Storage is the one module that fills every shape. It holds a capacity
     /// worth a figure, a ring and a pair; and it carries traffic worth a rate
     /// and a mirrored chart.
-    var menuBarStyles: [MenuBarStyle] { MenuBarStyle.allCases }
+    var menuBarStyles: [MenuBarStyle] { MenuBarStyle.allCases.filter { $0 != .symbol } }
 
     private let usedReading = BigReading(caption: localized("Used"), symbol: "internaldrive",
                                          tint: .systemIndigo)
@@ -301,5 +301,49 @@ private final class VolumeRow: NSView {
         row.value = "\(Readings.bytes(volume.used)) of \(Readings.bytes(volume.total))"
         bar.segments = [.init(fraction: volume.percent,
                               color: MenuBarReading.Severity.ofDisk(volume.percent).tint)]
+    }
+}
+
+// MARK: - Dashboard
+
+/// In this file because the watched volume is private to it.
+extension DiskModule: DashboardReporting {
+    func dashboardReport() -> DashboardReport? {
+        guard let volume = latest else { return nil }
+        return DashboardReport(
+            value: "\(Int((volume.percent * 100).rounded()))%",
+            caption: StatusWords.disk(volume.percent),
+            severity: .ofDisk(volume.percent),
+            // Available is what Finder calls free: space for important use,
+            // after purgeable space -- the same figure the popup shows.
+            facts: [.init(label: localized("Available"), value: Readings.bytes(volume.free)),
+                    .init(label: localized("Used"), value: Readings.bytes(volume.used)),
+                    .init(label: localized("Capacity"),
+                          value: "\(Readings.bytes(volume.total)) · \(volume.name)"),
+                    // What the disk is doing right now, which the capacity
+                    // figures cannot say. Already differenced on this tick
+                    // for the menu bar's traffic chart, so it costs nothing
+                    // to repeat here -- and ↑ is write in this module
+                    // everywhere else, so it is write here too.
+                    .init(label: localized("Read and write"),
+                          value: "↑ \(Readings.rate(activity.written))   ↓ \(Readings.rate(activity.read))")],
+            // No line: a disk's fill moves over days, and two minutes of it
+            // is a flat line. The capacity bar says what the line could not.
+            fill: volume.percent,
+            signal: .disk(used: volume.percent, free: volume.free, volume: volume.name),
+            storage: storageDetail(volume))
+    }
+
+    /// The panel's figures, from this tick's sample. The two rate lines go
+    /// on the larger of their peaks, so a quiet write reads as quiet beside
+    /// a busy read -- the rule the Network card follows.
+    private func storageDetail(_ volume: DiskReadings.Volume) -> StorageDetail {
+        let peak = max(readHistory.max() ?? 0, writeHistory.max() ?? 0)
+        let sampled = !readHistory.isEmpty
+        return StorageDetail(volume: volume.name, total: volume.total, free: volume.free,
+                             readRate: sampled ? activity.read : nil,
+                             writeRate: sampled ? activity.written : nil,
+                             readHistory: readHistory.normalised(against: peak),
+                             writeHistory: writeHistory.normalised(against: peak))
     }
 }

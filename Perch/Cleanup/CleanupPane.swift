@@ -25,12 +25,12 @@ final class CleanupPane: NSStackView {
             CleanupRow(symbol: "internaldrive.fill", tint: .systemOrange,
                        title: localized("Space macOS can reclaim"),
                        detail: localized("Backups and caches the system can hand back on its own."),
-                       button: localized("Storage settings…"),
+                       button: localized("Storage settings…"), opens: .systemSettings,
                        action: DiskCleanup.openStorageSettings),
             CleanupRow(symbol: "trash.fill", tint: .systemGray,
                        title: localized("Deleted files"),
                        detail: localized("Nothing is really gone until the Bin is emptied."),
-                       button: localized("Open Bin"),
+                       button: localized("Open Bin"), opens: .finder,
                        action: DiskCleanup.openBin),
         ])
 
@@ -38,17 +38,17 @@ final class CleanupPane: NSStackView {
             CleanupRow(symbol: "doc.viewfinder.fill", tint: .systemIndigo,
                        title: localized("Large files"),
                        detail: localized("The biggest files in your home folder, by kind: video, audio, archives, installers."),
-                       button: localized("Find large files…"),
+                       button: localized("Find large files…"), opens: .review,
                        action: LargeFilesWindow.present),
             CleanupRow(symbol: "sparkles", tint: .systemPink,
                        title: localized("AI assistants"),
                        detail: localized("Conversation history, caches, logs and downloaded updates. The tools stay installed and signed in."),
-                       button: localized("Clean up…"),
+                       button: localized("Clean up…"), opens: .review,
                        action: AICleanupWindow.present),
             CleanupRow(symbol: "xmark.bin.fill", tint: .systemRed,
                        title: localized("Uninstall an app or tool"),
                        detail: localized("Removes the app and the files it left around the system, or a command-line tool and its settings."),
-                       button: localized("Uninstall…"),
+                       button: localized("Uninstall…"), opens: .review,
                        action: UninstallWindow.present),
         ])
 
@@ -89,10 +89,32 @@ final class CleanupPane: NSStackView {
 /// kind of thing.
 private final class CleanupRow: NSView {
 
+    /// Where a button takes you, said before it is pressed.
+    ///
+    /// Two of these leave Perch for an app that does the job better, and
+    /// three open a window of Perch's own that finds things and asks before
+    /// moving any of them. The buttons looked identical, so "Open Bin" and
+    /// "Uninstall…" read as the same kind of click. The ones that leave carry
+    /// the outward arrow macOS uses for a link out, and every one says in
+    /// its tooltip what happens next.
+    enum Destination {
+        case systemSettings, finder, review
+
+        var help: String {
+            switch self {
+            case .systemSettings: return localized("Opens System Settings.")
+            case .finder:         return localized("Opens the Bin in Finder.")
+            case .review:         return localized("Opens a window that shows what it found. Nothing moves until you confirm.")
+            }
+        }
+
+        var leavesPerch: Bool { self != .review }
+    }
+
     private let pressed: () -> Void
 
     init(symbol: String, tint: NSColor, title: String, detail: String,
-         button: String, action: @escaping () -> Void) {
+         button: String, opens destination: Destination, action: @escaping () -> Void) {
         self.pressed = action
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
@@ -116,6 +138,13 @@ private final class CleanupRow: NSView {
 
         let control = NSButton(title: button, target: self, action: #selector(press))
         control.bezelStyle = .rounded
+        control.toolTip = destination.help
+        if destination.leavesPerch {
+            control.image = NSImage(systemSymbolName: "arrow.up.forward",
+                                    accessibilityDescription: nil)?
+                .withSymbolConfiguration(.init(pointSize: 9, weight: .semibold))
+            control.imagePosition = .imageTrailing
+        }
         control.translatesAutoresizingMaskIntoConstraints = false
         control.setContentHuggingPriority(.required, for: .horizontal)
         control.setContentCompressionResistancePriority(.required, for: .horizontal)

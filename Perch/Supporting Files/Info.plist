@@ -24,6 +24,10 @@
 	<string>public.app-category.utilities</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Perch shows the name of the Wi-Fi network you are on in its Network popup. macOS gives an app that name only with Location access. Perch does not use or keep your location.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Perch shows the name of the Wi-Fi network you are on in its Network popup. macOS gives an app that name only with Location access. Perch does not use or keep your location.</string>
 	<key>LSUIElement</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>

@@ -310,12 +310,12 @@ final class PopupHeader: NSView {
         label.alignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
 
-        let chart = Self.button("chart.line.uptrend.xyaxis", "Toggle charts")
+        let chart = Self.button("chart.line.uptrend.xyaxis", localized("Show or hide the charts"))
         chart.target = self
         chart.action = #selector(chartClicked)
         chart.isHidden = true
 
-        let gear = Self.button("gearshape", "Module settings")
+        let gear = Self.button("gearshape", localized("Open this module's settings"))
         gear.target = self
         gear.action = #selector(settingsClicked)
 

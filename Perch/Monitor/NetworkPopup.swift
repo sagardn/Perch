@@ -1,4 +1,5 @@
 import AppKit
+import Network
 
 /// The Network popup: a one-line verdict, the rates and their history, then
 /// the connection's detail and the processes using the link.
@@ -39,11 +40,22 @@ final class NetworkModule: PopupContent {
 
     private let latency = ValueRow(localized("Latency · jitter"))
     private let signal = SignalRow()
-    // Only shown when the name is missing for want of Location permission:
-    // otherwise the status line already says it, and a row repeating it is
-    // the duplication this layout was made to remove.
-    private let ssidBlocked = ValueRow(localized("Wi-Fi name"))
+    /// The network's name, or the button that gets permission to read it.
+    /// A row of its own on Wi-Fi rather than only in the status line, where
+    /// a long name was cut off and a missing one said nothing at all.
+    private let wifiName = WiFiNameRow()
+    /// What identifies the network the Mac is on, to notice it change and
+    /// look the public address up again.
+    private var networkSignature: String?
+    /// Told by the system of any change to the route out -- a VPN coming up
+    /// or going down included, which changes nothing on the Wi-Fi interface
+    /// and so nothing in the signature above. Only while the popup is open.
+    private var pathMonitor: NWPathMonitor?
+    private var pathSettle: DispatchWorkItem?
     private let localIP = ValueRow(localized("Local IP"))
+    /// The address the internet sees. Its own row type: it has a button,
+    /// because it is only ever looked up when somebody asks.
+    private let publicIP = PublicIPRow()
     private let interfaceName = ValueRow(localized("Interface"))
     // Since launch, which is what the counter measures: the baseline is
     // taken on the first sample and nothing resets it. "Total" alone did
@@ -107,7 +119,7 @@ final class NetworkModule: PopupContent {
         stack.setCustomSpacing(14, after: strip)
 
         stack.addArrangedSubview(SectionHeader(localized("Connection")))
-        for row in [latency, signal, ssidBlocked, localIP, interfaceName, sinceLaunch] {
+        for row in [latency, signal, wifiName, localIP, publicIP, interfaceName, sinceLaunch] {
             stack.addArrangedSubview(row)
         }
 
@@ -132,10 +144,49 @@ final class NetworkModule: PopupContent {
     func willShow() {
         ticks = 0
         cachedDetails = NetworkInfo.current()
+        publicIP.prepare()
+        // Granting access mid-popup shows the name at once, rather than on
+        // the next five-second re-read of the link.
+        watchPath()
+        WiFiNameAccess.shared.checkServices()
+        WiFiNameAccess.shared.onChange = { [weak self] in
+            guard let self else { return }
+            self.cachedDetails = NetworkInfo.current()
+            self.refreshInterface(NetworkMonitor.shared)
+        }
         NetworkMonitor.shared.probe()
     }
 
+    /// A new route means a likely new public address and country -- a VPN
+    /// to another country is exactly that -- so the address is asked for
+    /// again. Two seconds after the change settles: the moment a tunnel comes
+    /// up, the old route may still be the one a request takes.
+    private func watchPath() {
+        guard pathMonitor == nil else { return }
+        let monitor = NWPathMonitor()
+        var first = true
+        monitor.pathUpdateHandler = { [weak self] _ in
+            DispatchQueue.main.async {
+                guard let self else { return }
+                // The first update is the path as it already is.
+                if first { first = false; return }
+                self.pathSettle?.cancel()
+                let work = DispatchWorkItem { [weak self] in
+                    NetworkInfo.forgetPublicIP()
+                    self?.publicIP.refreshIfDue()
+                }
+                self.pathSettle = work
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: work)
+            }
+        }
+        monitor.start(queue: DispatchQueue.global(qos: .utility))
+        pathMonitor = monitor
+    }
+
     func didHide() {
+        pathMonitor?.cancel()
+        pathMonitor = nil
+        pathSettle?.cancel()
         // Otherwise a reopen would report a rate averaged over the minutes
         // the popup spent shut.
         ProcessNetwork.reset()
@@ -234,17 +285,30 @@ final class NetworkModule: PopupContent {
 
         let onWiFi = details.wifiInterface == name && details.rssi != nil
         signal.isHidden = !onWiFi
-        ssidBlocked.isHidden = !(onWiFi && details.ssid == nil && details.ssidBlocked)
+        wifiName.isHidden = !onWiFi
         // ssid() returns nil without Location permission, which is
         // indistinguishable from "not on Wi-Fi" unless the radio is known to
         // be up -- NetworkInfo already made that call.
-        ssidBlocked.value = "Hidden — allow Location"
+        wifiName.set(ssid: details.ssid, blocked: details.ssidBlocked)
+
+        // A different network is very likely a different public address:
+        // forget the old one and ask again, so the row follows the change
+        // without being pressed. The first read only records the network.
+        let signature = [name, details.router, details.localIP, details.ssid]
+            .map { $0 ?? "-" }.joined(separator: "|")
+        if let previous = networkSignature, previous != signature {
+            NetworkInfo.forgetPublicIP()
+        }
+        networkSignature = signature
+        publicIP.refreshIfDue()
 
         let medium: String
         if onWiFi, let rssi = details.rssi {
             interfaceName.value = "Wi-Fi (\(name))"
             signal.set(rssi: rssi)
-            medium = details.ssid.map { "Wi-Fi “\($0)”" } ?? "Wi-Fi"
+            // The name has a row of its own now; in the status line it was
+            // the part that got cut off.
+            medium = "Wi-Fi"
         } else {
             interfaceName.value = name
             // Any other physical en* is a cable: NetworkMonitor only picks
@@ -406,3 +470,255 @@ private final class SignalRow: NSView {
         value.stringValue = "\(quality.capitalized)  \(rssi) dBm"
     }
 }
+
+// MARK: - Dashboard
+
+/// In this file beside the sampling it reads from.
+extension NetworkModule: DashboardReporting {
+    func dashboardReport() -> DashboardReport? {
+        // `samples` counts the ticks this module has taken; before the second
+        // there is no rate, only a counter with nothing to subtract from.
+        guard samples > 1 else { return nil }
+        let monitor = NetworkMonitor.shared
+        let interface = monitor.link.interface ?? cachedDetails.primaryInterface
+        // Both lines on the download's scale or the upload's, whichever is
+        // larger, so a quiet upload reads as quiet beside a busy download.
+        let peak = max(monitor.downloadHistory.max() ?? 0, monitor.uploadHistory.max() ?? 0)
+
+        // Counters the monitor keeps from the interface's own totals; reading
+        // them is two integers, not a sample.
+        // One row each: on one row the pair did not fit the narrowest card
+        // and came out "↓ 57.0…16.0 KB".
+        var facts = [DashboardReport.Fact(label: localized("Received since launch"),
+                                          value: Readings.bytes(monitor.sessionDownload)),
+                     DashboardReport.Fact(label: localized("Sent since launch"),
+                                          value: Readings.bytes(monitor.sessionUpload))]
+        if let interface { facts.append(.init(label: localized("Interface"), value: interface)) }
+        return DashboardReport(
+            value: "↓ " + Readings.rate(monitor.rates.download),
+            pair: ((localized("Download"), "↓ " + Readings.rate(monitor.rates.download)),
+                   (localized("Upload"), "↑ " + Readings.rate(monitor.rates.upload))),
+            caption: monitor.link.isUp ? localized("Connected") : localized("Not connected"),
+            severity: .calm,
+            facts: facts,
+            history: monitor.downloadHistory.normalised(against: peak),
+            mirror: monitor.uploadHistory.normalised(against: peak),
+            signal: .network(linkUp: monitor.link.isUp))
+    }
+}
+
+// MARK: - Public IP
+
+/// "Public IP": the address the internet sees, kept current while the popup
+/// is open.
+///
+/// Looked up on its own while "Look up the public address" is on -- which is
+/// a request to an outside server, ifconfig.co, and is said so beside the
+/// switch in Network settings. When the popup opens, every two minutes while
+/// it stays open, and at once when the Mac moves to a different network, so a
+/// new address shows without being asked for. The refresh button asks now.
+/// Hidden when the setting is off, and then nothing is sent.
+private final class PublicIPRow: NSView {
+
+    private let value = NSTextField(labelWithString: "")
+    private let button = NSButton()
+    private var looking = false
+
+    init() {
+        super.init(frame: .zero)
+        translatesAutoresizingMaskIntoConstraints = false
+
+        let name = NSTextField(labelWithString: localized("Public IP"))
+        name.font = .systemFont(ofSize: 11)
+        name.textColor = .secondaryLabelColor
+        name.translatesAutoresizingMaskIntoConstraints = false
+
+        value.font = .systemFont(ofSize: 11, weight: .medium)
+        value.alignment = .right
+        value.isSelectable = true
+        value.translatesAutoresizingMaskIntoConstraints = false
+
+        button.isBordered = false
+        button.contentTintColor = .secondaryLabelColor
+        button.target = self
+        button.action = #selector(lookUpNow)
+        button.translatesAutoresizingMaskIntoConstraints = false
+
+        for view in [name, value, button] { addSubview(view) }
+        NSLayoutConstraint.activate([
+            widthAnchor.constraint(equalToConstant: PopupMetrics.contentWidth),
+            heightAnchor.constraint(equalToConstant: 18),
+            name.leadingAnchor.constraint(equalTo: leadingAnchor),
+            name.centerYAnchor.constraint(equalTo: centerYAnchor),
+            button.trailingAnchor.constraint(equalTo: trailingAnchor),
+            button.centerYAnchor.constraint(equalTo: centerYAnchor),
+            value.trailingAnchor.constraint(equalTo: button.leadingAnchor, constant: -6),
+            value.centerYAnchor.constraint(equalTo: centerYAnchor),
+            value.leadingAnchor.constraint(greaterThanOrEqualTo: name.trailingAnchor, constant: 8),
+        ])
+        // Not prepare(): that may look the address up, and building the
+        // popup is not opening it. `willShow` calls it.
+    }
+
+    required init?(coder: NSCoder) { fatalError("not used") }
+
+    /// On every open: the setting may have changed, and a cached answer may
+    /// have gone stale.
+    func prepare() {
+        isHidden = !NetworkSettings.looksUpPublicIP
+        guard !looking else { return }
+        if let address = NetworkInfo.publicIP {
+            show(address)
+        } else {
+            value.stringValue = "—"
+            setButton(symbol: "arrow.clockwise", help: localized("Look it up again"))
+        }
+        refreshIfDue()
+    }
+
+    /// Asks again once the last answer is two minutes old -- or has been
+    /// forgotten because the network changed. Cheap to call on every tick:
+    /// the cache answers until then, and nothing is sent.
+    func refreshIfDue() {
+        guard NetworkSettings.looksUpPublicIP, !looking else { return }
+        if let at = NetworkInfo.publicIPAt, Date().timeIntervalSince(at) < NetworkInfo.publicIPMaxAge,
+           NetworkInfo.publicIP != nil {
+            if let address = NetworkInfo.publicIP, !value.stringValue.hasSuffix(address) { show(address) }
+            return
+        }
+        lookUp()
+    }
+
+    /// The button: now, whatever the cache says.
+    @objc private func lookUpNow() {
+        NetworkInfo.forgetPublicIP()
+        lookUp()
+    }
+
+    private func lookUp() {
+        guard !looking else { return }
+        looking = true
+        // The old address stays while the new one is fetched, so the row
+        // does not flicker to "Looking up…" every two minutes.
+        if NetworkInfo.publicIP == nil { value.stringValue = localized("Looking up…") }
+        button.isEnabled = false
+        NetworkInfo.lookUpPublicIP { [weak self] address in
+            guard let self else { return }
+            self.looking = false
+            self.button.isEnabled = true
+            if let address {
+                self.show(address)
+            } else {
+                self.value.stringValue = localized("Not reached")
+                self.setButton(symbol: "arrow.clockwise", help: localized("Try again"))
+            }
+        }
+    }
+
+    private func show(_ address: String) {
+        // The flag of the country the server places the address in, from
+        // the same reply; the tooltip says where it came from, because a
+        // geolocation guess is not a fact about the Mac.
+        let flag = NetworkInfo.flag(NetworkInfo.publicCountryCode)
+        value.stringValue = [flag, address].compactMap { $0 }.joined(separator: " ")
+        let place = [NetworkInfo.publicCountryName, NetworkInfo.publicNetwork].compactMap { $0 }
+            .joined(separator: " · ")
+        value.toolTip = place.isEmpty ? nil : localized("%0, as ifconfig.co places this address", place)
+        value.setAccessibilityLabel([localized("Public IP %0", address), NetworkInfo.publicCountryName]
+            .compactMap { $0 }.joined(separator: ", "))
+        setButton(symbol: "arrow.clockwise", help: localized("Look it up again"))
+    }
+
+    private func setButton(symbol: String, help: String) {
+        button.title = ""
+        button.image = NSImage(systemSymbolName: symbol, accessibilityDescription: help)
+        button.imagePosition = .imageOnly
+        button.toolTip = help
+        button.setAccessibilityLabel(help)
+    }
+}
+
+// MARK: - Wi-Fi name
+
+/// "Wi-Fi name", and the network's name -- or, where macOS will not give it
+/// without Location access, the button that asks for that.
+private final class WiFiNameRow: NSView {
+
+    private let value = NSTextField(labelWithString: "")
+    private let button = NSButton()
+
+    init() {
+        super.init(frame: .zero)
+        translatesAutoresizingMaskIntoConstraints = false
+
+        let name = NSTextField(labelWithString: localized("Wi-Fi name"))
+        name.font = .systemFont(ofSize: 11)
+        name.textColor = .secondaryLabelColor
+        name.translatesAutoresizingMaskIntoConstraints = false
+
+        value.font = .systemFont(ofSize: 11, weight: .medium)
+        value.alignment = .right
+        value.lineBreakMode = .byTruncatingMiddle
+        value.isSelectable = true
+        value.translatesAutoresizingMaskIntoConstraints = false
+        value.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+
+        button.bezelStyle = .inline
+        button.controlSize = .small
+        button.font = .systemFont(ofSize: 10, weight: .medium)
+        button.target = self
+        button.action = #selector(pressed)
+        button.translatesAutoresizingMaskIntoConstraints = false
+
+        for view in [name, value, button] { addSubview(view) }
+        NSLayoutConstraint.activate([
+            widthAnchor.constraint(equalToConstant: PopupMetrics.contentWidth),
+            heightAnchor.constraint(equalToConstant: 18),
+            name.leadingAnchor.constraint(equalTo: leadingAnchor),
+            name.centerYAnchor.constraint(equalTo: centerYAnchor),
+            button.trailingAnchor.constraint(equalTo: trailingAnchor),
+            button.centerYAnchor.constraint(equalTo: centerYAnchor),
+            value.trailingAnchor.constraint(equalTo: button.leadingAnchor, constant: -6),
+            value.centerYAnchor.constraint(equalTo: centerYAnchor),
+            value.leadingAnchor.constraint(greaterThanOrEqualTo: name.trailingAnchor, constant: 8),
+        ])
+    }
+
+    required init?(coder: NSCoder) { fatalError("not used") }
+
+    func set(ssid: String?, blocked: Bool) {
+        if let ssid {
+            value.stringValue = ssid
+            value.toolTip = ssid
+            button.isHidden = true
+            return
+        }
+        guard blocked else {
+            value.stringValue = "—"
+            button.isHidden = true
+            return
+        }
+        value.stringValue = localized("Hidden")
+        button.isHidden = false
+        switch WiFiNameAccess.shared.state {
+        case .servicesOff:
+            value.stringValue = localized("Location is off")
+            button.title = localized("Location Services…")
+            button.toolTip = localized("Location Services is off for this Mac, and macOS shows no app the Wi-Fi name without it. Turn it on in System Settings, then allow Perch.")
+        case .denied:
+            button.title = localized("Location Services…")
+            button.toolTip = localized("Perch was refused Location access. Allow it in System Settings to show the network's name.")
+        default:
+            button.title = localized("Allow…")
+            button.toolTip = localized("macOS shows the Wi-Fi name only to apps with Location access. Perch uses it for the name and nothing else.")
+        }
+    }
+
+    @objc private func pressed() {
+        switch WiFiNameAccess.shared.state {
+        case .denied, .servicesOff: WiFiNameAccess.openSettings()
+        default:                    WiFiNameAccess.shared.request()
+        }
+    }
+}
+

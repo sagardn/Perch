@@ -368,7 +368,7 @@ final class DisclosureButton: NSView {
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
 
-        button.title = title
+        button.title = localized(title)
         button.isBordered = false
         button.imagePosition = .imageLeading
         button.font = .systemFont(ofSize: 11)
@@ -403,6 +403,9 @@ final class DisclosureButton: NSView {
         button.image = NSImage(systemSymbolName: isOpen ? "chevron.down" : "chevron.right",
                                accessibilityDescription: nil)?
             .withSymbolConfiguration(.init(pointSize: 9, weight: .semibold))
+        // The chevron is the only thing saying whether the rows are out, and
+        // it is a picture; VoiceOver hears it as the button's expanded state.
+        button.setAccessibilityExpanded(isOpen)
     }
 
     @objc private func clicked() {

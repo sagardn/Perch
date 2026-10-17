@@ -128,9 +128,19 @@ struct MenuBarReading: Equatable {
         }
     }
 
+    /// An SF Symbol to draw, for the icon shape. nil for every reading that
+    /// is a number.
+    var symbol: String?
+    /// Drawn faded: the module is in the menu bar but not doing its job --
+    /// clipboard history with capture switched off.
+    var dimmed = false
+
     init(label: String, load: Double = 0, value: String = "", severity: Severity? = nil,
          history: [Double] = [], bars: [Double] = [], segments: [Segment] = [],
-         pair: Pair? = nil, rates: Pair? = nil, mirrored: Mirrored? = nil) {
+         pair: Pair? = nil, rates: Pair? = nil, mirrored: Mirrored? = nil,
+         symbol: String? = nil, dimmed: Bool = false) {
+        self.symbol = symbol
+        self.dimmed = dimmed
         self.label = label
         self.load = load
         self.value = value
@@ -153,6 +163,7 @@ struct MenuBarReading: Equatable {
         case .pair:          return pair != nil
         case .rates:         return rates != nil
         case .trafficChart:  return mirrored != nil
+        case .symbol:        return symbol != nil
         default:             return true
         }
     }
@@ -272,7 +283,27 @@ final class MenuBarWidget: NSView {
         case .pair:         drawPair(reading, in: inner, arrows: false)
         case .rates:        drawPair(reading, in: inner, arrows: true)
         case .trafficChart: drawTrafficChart(reading, in: inner)
+        case .symbol:       drawSymbol(reading, in: inner)
         }
+    }
+
+    // MARK: - symbol
+
+    /// The module's icon in the bar's own ink, as macOS draws its own status
+    /// icons -- through a palette configuration, for the reason `drawPair`
+    /// records: a symbol drawn directly is not a template, and set() on the
+    /// colour does nothing.
+    private func drawSymbol(_ reading: MenuBarReading, in rect: NSRect) {
+        guard let name = reading.symbol else { return }
+        let colour = reading.dimmed ? ink.withAlphaComponent(0.4) : ink
+        guard let image = NSImage(systemSymbolName: name, accessibilityDescription: reading.label)?
+            .withSymbolConfiguration(.init(pointSize: MenuBarMetrics.symbolPointSize, weight: .regular)
+                .applying(.init(paletteColors: [colour]))) else { return }
+        let size = image.size
+        let box = NSRect(x: rect.midX - size.width / 2, y: rect.midY - size.height / 2,
+                         width: size.width, height: size.height)
+        image.draw(in: box, from: .zero, operation: .sourceOver, fraction: 1,
+                   respectFlipped: true, hints: [.interpolation: NSImageInterpolation.high.rawValue])
     }
 
     // MARK: - label

@@ -273,3 +273,26 @@ final class SensorRow: NSView {
         value.textColor = severity == .calm ? .labelColor : severity.tint
     }
 }
+
+// MARK: - Dashboard
+
+/// In this file because the sensor list is private to it.
+extension SensorsModule: DashboardReporting {
+    func dashboardReport() -> DashboardReport? {
+        guard !sensors.isEmpty || ticks > 0 else { return nil }
+        guard let watched else {
+            return DashboardReport(value: "—", caption: localized("Sensors"),
+                                   unavailable: localized("No sensor on this Mac answered."))
+        }
+        let isTemperature = watched.family == .temperature
+        let span = watchedHistory.range()
+        return DashboardReport(
+            value: watched.formatted,
+            caption: watched.name,
+            severity: isTemperature ? .ofTemperature(watched.value) : .calm,
+            facts: [.init(label: localized("Sensors read"), value: "\(sensors.count)")],
+            // No health signal: see `HealthSignal` for why a raw sensor is
+            // not a verdict on whether the Mac is too hot.
+            history: watchedHistory.map { span.normalise($0) })
+    }
+}
