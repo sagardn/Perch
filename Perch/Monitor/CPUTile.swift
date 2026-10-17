@@ -56,7 +56,7 @@ final class CPUTile: NSView {
 
             detail.leadingAnchor.constraint(equalTo: leadingAnchor),
             detail.trailingAnchor.constraint(equalTo: trailingAnchor),
-            detail.topAnchor.constraint(equalTo: bars.bottomAnchor, constant: 4),
+            detail.topAnchor.constraint(equalTo: bars.bottomAnchor, constant: 4)
         ])
     }
 

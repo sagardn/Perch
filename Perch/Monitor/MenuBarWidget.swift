@@ -121,11 +121,6 @@ struct MenuBarReading: Equatable {
     struct Mirrored: Equatable {
         let up: [Double]
         let down: [Double]
-
-        init(up: [Double], down: [Double]) {
-            self.up = up
-            self.down = down
-        }
     }
 
     /// An SF Symbol to draw, for the icon shape. nil for every reading that
@@ -235,7 +230,6 @@ final class MenuBarWidget: NSView {
     private let figureSize: CGFloat = 12
     private let speedFont = NSFont.monospacedDigitSystemFont(ofSize: 9, weight: .regular)
     private let arrowWidth: CGFloat = 9
-
 
     // MARK: - Size
 
@@ -380,7 +374,7 @@ final class MenuBarWidget: NSView {
             .font: NSFont.systemFont(ofSize: figureSize,
                                      weight: severity == .calm ? .regular : .semibold),
             .foregroundColor: color,
-            .paragraphStyle: style,
+            .paragraphStyle: style
         ]
         if coloured { attributes[.shadow] = halo }
         (reading.value as NSString).draw(

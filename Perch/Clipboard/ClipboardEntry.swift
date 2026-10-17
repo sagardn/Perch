@@ -101,6 +101,6 @@ enum ClipboardTypes {
         "de.petermaurer.TransientPasteboardType",
         "com.typeit4me.clipping",
         "Pasteboard generator type",
-        restoredMarker,
+        restoredMarker
     ]
 }

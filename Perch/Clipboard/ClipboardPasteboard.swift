@@ -253,7 +253,7 @@ enum ClipboardImages {
               let image = CGImageSourceCreateThumbnailAtIndex(source, 0, [
                   kCGImageSourceCreateThumbnailFromImageAlways: true,
                   kCGImageSourceCreateThumbnailWithTransform: true,
-                  kCGImageSourceThumbnailMaxPixelSize: side,
+                  kCGImageSourceThumbnailMaxPixelSize: side
               ] as CFDictionary) else { return nil }
         return encode(image, as: UTType.png)
     }

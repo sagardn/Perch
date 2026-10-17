@@ -92,7 +92,7 @@ final class StatusLine: NSView {
             dot.centerYAnchor.constraint(equalTo: centerYAnchor),
             text.leadingAnchor.constraint(equalTo: dot.trailingAnchor, constant: 7),
             text.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor),
-            text.centerYAnchor.constraint(equalTo: centerYAnchor),
+            text.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
         text.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
     }
@@ -119,7 +119,7 @@ final class StatusLine: NSView {
             translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
                 widthAnchor.constraint(equalToConstant: 8),
-                heightAnchor.constraint(equalToConstant: 8),
+                heightAnchor.constraint(equalToConstant: 8)
             ])
         }
 
@@ -167,7 +167,7 @@ final class ShareBar: NSView {
         translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             widthAnchor.constraint(equalToConstant: width),
-            heightAnchor.constraint(equalToConstant: height),
+            heightAnchor.constraint(equalToConstant: height)
         ])
     }
 
@@ -231,7 +231,7 @@ final class SplitTrafficChart: NSView {
         translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             widthAnchor.constraint(equalToConstant: PopupMetrics.contentWidth),
-            heightAnchor.constraint(equalToConstant: height),
+            heightAnchor.constraint(equalToConstant: height)
         ])
     }
 
@@ -317,7 +317,7 @@ final class PeakLegend: NSView {
             left.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 2),
             left.centerYAnchor.constraint(equalTo: centerYAnchor),
             right.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -2),
-            right.centerYAnchor.constraint(equalTo: centerYAnchor),
+            right.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }
 
@@ -332,12 +332,12 @@ final class PeakLegend: NSView {
                              _ tint: NSColor) -> NSAttributedString {
         let line = NSMutableAttributedString(string: arrow + " ", attributes: [
             .font: NSFont.systemFont(ofSize: 9, weight: .semibold),
-            .foregroundColor: tint,
+            .foregroundColor: tint
         ])
         let words = (name.isEmpty ? "" : name + " ") + "peak " + Readings.rate(peak)
         line.append(NSAttributedString(string: words, attributes: [
             .font: NSFont.monospacedDigitSystemFont(ofSize: 9, weight: .regular),
-            .foregroundColor: NSColor.secondaryLabelColor,
+            .foregroundColor: NSColor.secondaryLabelColor
         ]))
         return line
     }
@@ -382,7 +382,7 @@ final class DisclosureButton: NSView {
             widthAnchor.constraint(equalToConstant: PopupMetrics.contentWidth),
             heightAnchor.constraint(equalToConstant: 22),
             button.leadingAnchor.constraint(equalTo: leadingAnchor, constant: -2),
-            button.bottomAnchor.constraint(equalTo: bottomAnchor),
+            button.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
         updateChevron()
     }
@@ -452,7 +452,7 @@ final class PopupAction: NSView {
             button.leadingAnchor.constraint(equalTo: leadingAnchor),
             button.topAnchor.constraint(equalTo: topAnchor, constant: 2),
             button.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -2),
-            button.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor),
+            button.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor)
         ])
     }
 

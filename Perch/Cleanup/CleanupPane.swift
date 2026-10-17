@@ -31,7 +31,7 @@ final class CleanupPane: NSStackView {
                        title: localized("Deleted files"),
                        detail: localized("Nothing is really gone until the Bin is emptied."),
                        button: localized("Open Bin"), opens: .finder,
-                       action: DiskCleanup.openBin),
+                       action: DiskCleanup.openBin)
         ])
 
         let perchCan = Controls.section(localized("What Perch can find"), [
@@ -49,7 +49,7 @@ final class CleanupPane: NSStackView {
                        title: localized("Uninstall an app or tool"),
                        detail: localized("Removes the app and the files it left around the system, or a command-line tool and its settings."),
                        button: localized("Uninstall…"), opens: .review,
-                       action: UninstallWindow.present),
+                       action: UninstallWindow.present)
         ])
 
         let note = NSTextField(wrappingLabelWithString:
@@ -72,7 +72,7 @@ final class CleanupPane: NSStackView {
             column.topAnchor.constraint(equalTo: topAnchor),
             macOSCan.widthAnchor.constraint(equalTo: column.widthAnchor, constant: -36),
             perchCan.widthAnchor.constraint(equalTo: column.widthAnchor, constant: -36),
-            note.widthAnchor.constraint(equalTo: column.widthAnchor, constant: -36),
+            note.widthAnchor.constraint(equalTo: column.widthAnchor, constant: -36)
         ])
     }
 
@@ -163,7 +163,7 @@ private final class CleanupRow: NSView {
                                            constant: -12),
 
             control.trailingAnchor.constraint(equalTo: trailingAnchor),
-            control.centerYAnchor.constraint(equalTo: centerYAnchor),
+            control.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
         note.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
     }
@@ -198,7 +198,7 @@ private final class TintedTile: NSView {
             widthAnchor.constraint(equalToConstant: 26),
             heightAnchor.constraint(equalToConstant: 26),
             image.centerXAnchor.constraint(equalTo: centerXAnchor),
-            image.centerYAnchor.constraint(equalTo: centerYAnchor),
+            image.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }
 

@@ -391,7 +391,7 @@ private final class ReachabilityStrip: NSView {
         translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             widthAnchor.constraint(equalToConstant: PopupMetrics.contentWidth),
-            heightAnchor.constraint(equalToConstant: 6),
+            heightAnchor.constraint(equalToConstant: 6)
         ])
     }
 
@@ -452,7 +452,7 @@ private final class SignalRow: NSView {
             value.trailingAnchor.constraint(equalTo: trailingAnchor),
             value.centerYAnchor.constraint(equalTo: centerYAnchor),
             glyph.trailingAnchor.constraint(equalTo: value.leadingAnchor, constant: -5),
-            glyph.centerYAnchor.constraint(equalTo: centerYAnchor),
+            glyph.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }
 
@@ -554,7 +554,7 @@ private final class PublicIPRow: NSView {
             button.centerYAnchor.constraint(equalTo: centerYAnchor),
             value.trailingAnchor.constraint(equalTo: button.leadingAnchor, constant: -6),
             value.centerYAnchor.constraint(equalTo: centerYAnchor),
-            value.leadingAnchor.constraint(greaterThanOrEqualTo: name.trailingAnchor, constant: 8),
+            value.leadingAnchor.constraint(greaterThanOrEqualTo: name.trailingAnchor, constant: 8)
         ])
         // Not prepare(): that may look the address up, and building the
         // popup is not opening it. `willShow` calls it.
@@ -680,7 +680,7 @@ private final class WiFiNameRow: NSView {
             button.centerYAnchor.constraint(equalTo: centerYAnchor),
             value.trailingAnchor.constraint(equalTo: button.leadingAnchor, constant: -6),
             value.centerYAnchor.constraint(equalTo: centerYAnchor),
-            value.leadingAnchor.constraint(greaterThanOrEqualTo: name.trailingAnchor, constant: 8),
+            value.leadingAnchor.constraint(greaterThanOrEqualTo: name.trailingAnchor, constant: 8)
         ])
     }
 
@@ -721,4 +721,3 @@ private final class WiFiNameRow: NSView {
         }
     }
 }
-

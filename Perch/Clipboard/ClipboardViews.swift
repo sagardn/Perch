@@ -152,8 +152,7 @@ struct ClipboardRow: View {
         if entry.kind == .image, ClipboardSettings.showImagePreviews,
            let image = ClipboardThumbnails.shared.image(at: ClipboardService.shared.thumbnailURL(entry)) {
             Image(nsImage: image)
-                .resizable()
-                .aspectRatio(contentMode: .fill)
+                .resizable().scaledToFill()
                 .frame(width: side, height: side)
                 .clipShape(RoundedRectangle(cornerRadius: 5, style: .continuous))
                 .overlay(RoundedRectangle(cornerRadius: 5, style: .continuous)

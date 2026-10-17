@@ -79,7 +79,7 @@ final class SupportWindow: NSWindow, NSWindowDelegate {
             column.bottomAnchor.constraint(equalTo: backdrop.bottomAnchor, constant: -24),
             column.widthAnchor.constraint(equalToConstant: 400),
             message.widthAnchor.constraint(equalTo: column.widthAnchor),
-            links.widthAnchor.constraint(lessThanOrEqualTo: column.widthAnchor),
+            links.widthAnchor.constraint(lessThanOrEqualTo: column.widthAnchor)
         ])
 
         self.setContentSize(backdrop.fittingSize)

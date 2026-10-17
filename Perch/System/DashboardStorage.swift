@@ -410,4 +410,3 @@ struct PartitionMap: View {
         }
     }
 }
-

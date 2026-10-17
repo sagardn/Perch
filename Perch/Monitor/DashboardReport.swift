@@ -18,7 +18,7 @@ struct DashboardReport {
     var value: String
     /// A second figure of equal weight, for a reading that is two things at
     /// once: upload beside download. Each is (label, figure).
-    var pair: (first: (String, String), second: (String, String))? = nil
+    var pair: (first: (String, String), second: (String, String))?
     /// The verdict in a word or two, the same words the popup uses: "Light
     /// load", "Pressure normal". Always text, so the state never rests on
     /// colour alone.
@@ -33,18 +33,18 @@ struct DashboardReport {
     var history: [Double] = []
     /// A second series against the first, upload under download. Normalised
     /// on the same scale as `history`.
-    var mirror: [Double]? = nil
+    var mirror: [Double]?
     /// How full something is, 0...1, for a capacity bar: a disk, memory.
-    var fill: Double? = nil
+    var fill: Double?
     /// What the health summary should know.
-    var signal: HealthSignal? = nil
+    var signal: HealthSignal?
     /// The watched volume in full, for the Storage panel's chart and
     /// breakdown. Only the Disk module sets it.
-    var storage: StorageDetail? = nil
+    var storage: StorageDetail?
     /// Set when the module is running but this Mac cannot give the reading
     /// -- a GPU driver that publishes no utilization. The card says this
     /// instead of drawing a zero.
-    var unavailable: String? = nil
+    var unavailable: String?
 
     /// What VoiceOver reads for the whole card.
     var spoken: String {

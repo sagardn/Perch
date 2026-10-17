@@ -100,7 +100,7 @@ enum ClipboardSettings {
         "com.agilebits.onepassword7",
         "com.bitwarden.desktop",
         "com.dashlane.dashlanephonefinal",
-        "org.keepassxc.keepassxc",
+        "org.keepassxc.keepassxc"
     ]
 
     /// The shortcut, stored where `ShortcutRecorder` stores every module's.
@@ -115,7 +115,7 @@ enum ClipboardSettings {
         "Clipboard_captureText", "Clipboard_captureImages", "Clipboard_keepRichText",
         "Clipboard_showImagePreviews", "Clipboard_autoPaste", "Clipboard_maximumEntries",
         "Clipboard_retentionDays", "Clipboard_retentionIncludesPinned", "Clipboard_persistent",
-        "Clipboard_clearOnQuit", "Clipboard_popupCount", "Clipboard_excludedApps",
+        "Clipboard_clearOnQuit", "Clipboard_popupCount", "Clipboard_excludedApps"
     ]
 
     static func restoreDefaults() {

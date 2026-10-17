@@ -81,7 +81,7 @@ final class ReadingPopup: NSPanel {
             body.topAnchor.constraint(equalTo: document.topAnchor),
             body.leadingAnchor.constraint(equalTo: document.leadingAnchor),
             body.trailingAnchor.constraint(equalTo: document.trailingAnchor),
-            body.bottomAnchor.constraint(equalTo: document.bottomAnchor),
+            body.bottomAnchor.constraint(equalTo: document.bottomAnchor)
         ])
 
         scroll.drawsBackground = false
@@ -110,7 +110,7 @@ final class ReadingPopup: NSPanel {
             scroll.trailingAnchor.constraint(equalTo: background.trailingAnchor),
             scroll.bottomAnchor.constraint(equalTo: background.bottomAnchor),
 
-            body.widthAnchor.constraint(equalToConstant: width),
+            body.widthAnchor.constraint(equalToConstant: width)
         ])
     }
 
@@ -343,7 +343,7 @@ final class PopupHeader: NSView {
 
             rule.leadingAnchor.constraint(equalTo: leadingAnchor),
             rule.trailingAnchor.constraint(equalTo: trailingAnchor),
-            rule.bottomAnchor.constraint(equalTo: bottomAnchor),
+            rule.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 
@@ -362,12 +362,11 @@ final class PopupHeader: NSView {
         button.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             button.widthAnchor.constraint(equalToConstant: 24),
-            button.heightAnchor.constraint(equalToConstant: 24),
+            button.heightAnchor.constraint(equalToConstant: 24)
         ])
         return button
     }
 }
-
 
 /// A container whose origin is the top left, so content inside a scroll view
 /// stacks downwards the way every other list on the platform does.

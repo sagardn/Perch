@@ -56,7 +56,7 @@ final class RAMTile: NSView {
 
             detail.leadingAnchor.constraint(equalTo: leadingAnchor),
             detail.trailingAnchor.constraint(equalTo: trailingAnchor),
-            detail.topAnchor.constraint(equalTo: bar.bottomAnchor, constant: 6),
+            detail.topAnchor.constraint(equalTo: bar.bottomAnchor, constant: 6)
         ])
     }
 
@@ -74,12 +74,12 @@ final class RAMTile: NSView {
         bar.parts = [
             .init(Double(usage.app) / total, .perchBlue),
             .init(Double(usage.wired) / total, .perchMagenta),
-            .init(Double(usage.compressed) / total, .perchOlive),
+            .init(Double(usage.compressed) / total, .perchOlive)
         ]
 
         var parts = [
             "\(localized("App")) \(Readings.bytes(usage.app))",
-            "\(localized("Wired")) \(Readings.bytes(usage.wired))",
+            "\(localized("Wired")) \(Readings.bytes(usage.wired))"
         ]
         // Swap is reported only once there is some: a line saying "Swap 0 B"
         // on a machine that has never swapped is a line that says nothing,

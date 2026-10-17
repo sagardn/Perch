@@ -108,9 +108,11 @@ enum ClipboardActions {
         // Three keys, not one multi-line literal: i18n.py scan reads
         // localized("…") calls, and a triple-quoted string is invisible to it.
         alert.informativeText = [
-            localized("Perch will keep the text and images you copy so you can use them again. They are stored only on this Mac, in your user Library, readable by your account alone, and never sent anywhere. They are not encrypted beyond what your account and FileVault already provide."),
+            localized(
+                "Perch will keep the text and images you copy so you can use them again. They are stored only on this Mac, readable by your account alone, and never sent anywhere."),
+            localized("They are not encrypted beyond what your account and FileVault already provide."),
             localized("Copies that apps mark as private, such as passwords from a password manager, are never kept, and you can exclude other apps in Settings."),
-            localized("macOS may ask whether Perch can read what you copy. Choose Allow for history to work."),
+            localized("macOS may ask whether Perch can read what you copy. Choose Allow for history to work.")
         ].joined(separator: "\n\n")
         alert.addButton(withTitle: localized("Turn On"))
         alert.addButton(withTitle: localized("Cancel"))

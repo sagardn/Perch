@@ -8,7 +8,7 @@ struct AppEntry: Codable {
     var launchOnly: Bool = false
     /// Optional direct hotkey: a single character, pressed with Control.
     /// "2" means Ctrl+2 jumps straight to this app, no menu.
-    var shortcut: String? = nil
+    var shortcut: String?
     /// Held at the top of the search list regardless of recency or search
     /// score. Launchpad is pinned by default: it is a launcher you reach for,
     /// not an app you "use", so recency ranking would always bury it.

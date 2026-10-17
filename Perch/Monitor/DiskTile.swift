@@ -56,7 +56,7 @@ final class DiskTile: NSView {
 
             detail.leadingAnchor.constraint(equalTo: leadingAnchor),
             detail.trailingAnchor.constraint(equalTo: trailingAnchor),
-            detail.topAnchor.constraint(equalTo: chart.bottomAnchor, constant: 6),
+            detail.topAnchor.constraint(equalTo: chart.bottomAnchor, constant: 6)
         ])
     }
 

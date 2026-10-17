@@ -171,7 +171,7 @@ final class DiskSettingsPage: NSView {
                 [("1 minute", "60"), ("2 minutes", "120"), ("5 minutes", "300")],
                 selected: "\(DiskSettings.historyLength)") { value in
                     DiskSettings.historyLength = Int(value) ?? 120
-                }),
+                })
         ])
 
         let shapes = Controls.section(
@@ -212,13 +212,12 @@ final class DiskSettingsPage: NSView {
             column.topAnchor.constraint(equalTo: topAnchor),
             section.widthAnchor.constraint(equalTo: column.widthAnchor, constant: -36),
             shapes.widthAnchor.constraint(equalTo: column.widthAnchor, constant: -36),
-            alerts.widthAnchor.constraint(equalTo: column.widthAnchor, constant: -36),
+            alerts.widthAnchor.constraint(equalTo: column.widthAnchor, constant: -36)
         ])
     }
 
     required init?(coder: NSCoder) { fatalError("not used") }
 }
-
 
 /// Remembers whether any volume is mounted, and forgets when one comes or
 /// goes.

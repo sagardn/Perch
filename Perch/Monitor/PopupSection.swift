@@ -43,7 +43,7 @@ final class SectionHeader: NSView {
 
             right.leadingAnchor.constraint(equalTo: label.trailingAnchor, constant: 8),
             right.trailingAnchor.constraint(equalTo: trailingAnchor),
-            right.centerYAnchor.constraint(equalTo: centerYAnchor),
+            right.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }
 
@@ -132,7 +132,7 @@ final class ValueRow: NSView {
             trailing.trailingAnchor.constraint(equalTo: trailingAnchor),
             trailing.centerYAnchor.constraint(equalTo: centerYAnchor),
             trailing.leadingAnchor.constraint(greaterThanOrEqualTo: leading.trailingAnchor,
-                                              constant: 8),
+                                              constant: 8)
         ])
         // The value wins the squeeze: a truncated label still reads, a
         // truncated figure does not.
@@ -170,7 +170,7 @@ final class StatusPill: NSView {
             heightAnchor.constraint(equalToConstant: 14),
             label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 7),
             label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -7),
-            label.centerYAnchor.constraint(equalTo: centerYAnchor),
+            label.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }
 
@@ -239,7 +239,7 @@ final class BigReading: NSView {
             column.topAnchor.constraint(equalTo: topAnchor),
             column.bottomAnchor.constraint(equalTo: bottomAnchor),
             column.centerXAnchor.constraint(equalTo: centerXAnchor),
-            column.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor),
+            column.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor)
         ])
     }
 
@@ -304,7 +304,7 @@ final class TrafficChart: NSView {
         translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             widthAnchor.constraint(equalToConstant: PopupMetrics.contentWidth),
-            heightAnchor.constraint(equalToConstant: height),
+            heightAnchor.constraint(equalToConstant: height)
         ])
     }
 
@@ -372,7 +372,7 @@ final class TrafficChart: NSView {
         let arrow = String(text.prefix(1))
         let line = NSMutableAttributedString(string: text, attributes: [
             .font: NSFont.systemFont(ofSize: 9),
-            .foregroundColor: NSColor.secondaryLabelColor,
+            .foregroundColor: NSColor.secondaryLabelColor
         ])
         line.addAttribute(.foregroundColor, value: tint,
                           range: NSRange(location: 0, length: (arrow as NSString).length))
@@ -397,7 +397,7 @@ final class SquaresGrid: NSView {
         NSLayoutConstraint.activate([
             widthAnchor.constraint(equalToConstant: PopupMetrics.contentWidth),
             heightAnchor.constraint(equalToConstant: CGFloat(rows) * square
-                                    + CGFloat(rows - 1) * gap),
+                                    + CGFloat(rows - 1) * gap)
         ])
     }
 
@@ -494,7 +494,7 @@ final class ProcessRow: NSView {
 
             up.trailingAnchor.constraint(equalTo: trailingAnchor),
             up.centerYAnchor.constraint(equalTo: centerYAnchor),
-            up.widthAnchor.constraint(equalToConstant: Self.columnWidth),
+            up.widthAnchor.constraint(equalToConstant: Self.columnWidth)
         ])
         name.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
     }
@@ -642,7 +642,7 @@ final class ProcessHeader: NSView {
 
             upChip.trailingAnchor.constraint(equalTo: trailingAnchor,
                                              constant: -ProcessRow.columnWidth / 2 + 5),
-            upChip.centerYAnchor.constraint(equalTo: centerYAnchor),
+            upChip.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }
 
@@ -652,7 +652,7 @@ final class ProcessHeader: NSView {
         let view = ChipView(color)
         NSLayoutConstraint.activate([
             view.widthAnchor.constraint(equalToConstant: 10),
-            view.heightAnchor.constraint(equalToConstant: 10),
+            view.heightAnchor.constraint(equalToConstant: 10)
         ])
         return view
     }
@@ -676,7 +676,6 @@ private final class ChipView: NSView {
     override func updateLayer() { layer?.backgroundColor = color.cgColor }
 }
 
-
 // MARK: - Core bars
 
 /// One slim bar per logical core, each tinted by its own load.
@@ -695,7 +694,7 @@ final class CoreBars: NSView {
         translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             widthAnchor.constraint(equalToConstant: PopupMetrics.contentWidth),
-            heightAnchor.constraint(equalToConstant: height),
+            heightAnchor.constraint(equalToConstant: height)
         ])
     }
 
@@ -727,7 +726,6 @@ final class CoreBars: NSView {
     }
 }
 
-
 // MARK: - History chart
 
 /// A single series over time, filled to the baseline.
@@ -745,7 +743,7 @@ final class HistoryChart: NSView {
         translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             widthAnchor.constraint(equalToConstant: PopupMetrics.contentWidth),
-            heightAnchor.constraint(equalToConstant: height),
+            heightAnchor.constraint(equalToConstant: height)
         ])
     }
 

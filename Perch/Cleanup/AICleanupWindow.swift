@@ -485,7 +485,7 @@ private struct AssistantHeader: View {
             "windsurf": "Windsurf", "aider": "Aider", "continue": "Continue", "amp": "Amp",
             "qwen": "Qwen Code", "goose": "Goose", "crush": "Crush",
             "antigravity": "Antigravity", "chatgpt": "ChatGPT",
-            "huggingface": "Hugging Face", "ollama": "Ollama", "lm studio": "LM Studio",
+            "huggingface": "Hugging Face", "ollama": "Ollama", "lm studio": "LM Studio"
         ]
         return known[name.lowercased()] ?? name.prefix(1).uppercased() + name.dropFirst()
     }

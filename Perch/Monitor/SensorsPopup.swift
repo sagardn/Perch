@@ -255,7 +255,7 @@ final class SensorRow: NSView {
             value.leadingAnchor.constraint(greaterThanOrEqualTo: name.trailingAnchor,
                                            constant: 8),
             value.trailingAnchor.constraint(equalTo: trailingAnchor),
-            value.centerYAnchor.constraint(equalTo: centerYAnchor),
+            value.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }
 

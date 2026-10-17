@@ -92,7 +92,7 @@ final class UpdateWindow: NSWindow, NSWindowDelegate {
             body.bottomAnchor.constraint(equalTo: content.bottomAnchor, constant: -20),
             notesScroll.widthAnchor.constraint(equalTo: body.widthAnchor),
             buttons.widthAnchor.constraint(equalTo: body.widthAnchor),
-            progress.widthAnchor.constraint(equalTo: body.widthAnchor),
+            progress.widthAnchor.constraint(equalTo: body.widthAnchor)
         ])
 
         self.center()

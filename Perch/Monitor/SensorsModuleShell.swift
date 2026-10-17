@@ -163,7 +163,7 @@ final class SensorsSettingsPage: NSView {
             Controls.row(localized("List the keys nobody has named"),
                          Controls.toggle(SensorsSettings.showsUnnamed) { on in
                              SensorsSettings.showsUnnamed = on
-                         }),
+                         })
         ])
 
         let shapes = Controls.section(
@@ -171,7 +171,7 @@ final class SensorsSettingsPage: NSView {
             footer: localized("Pick one or more. They sit side by side in the menu bar, in this order."),
             [Controls.shapes(self.styles, shown: self.shown, label: SensorsModule().menuBarLabel,
                              value: "62°",
-                            title: self.titles,) { chosen in
+                            title: self.titles, ) { chosen in
                 self.shown = chosen
                 // In the order the tiles are laid out, not the order they
                 // were clicked, so the menu bar matches the page.
@@ -197,7 +197,7 @@ final class SensorsSettingsPage: NSView {
                     Controls.label(sensor.formatted),
                     Controls.toggle(SensorsSettings.isShown(sensor.id)) { on in
                         SensorsSettings.setShown(sensor.id, on)
-                    },
+                    }
                 ]))
             }
         }
@@ -215,7 +215,7 @@ final class SensorsSettingsPage: NSView {
         NSLayoutConstraint.activate([
             column.leadingAnchor.constraint(equalTo: leadingAnchor),
             column.trailingAnchor.constraint(equalTo: trailingAnchor),
-            column.topAnchor.constraint(equalTo: topAnchor),
+            column.topAnchor.constraint(equalTo: topAnchor)
         ])
         for section in column.arrangedSubviews {
             section.widthAnchor.constraint(equalTo: column.widthAnchor,

@@ -511,7 +511,7 @@ private final class EmptyNote: NSView {
             widthAnchor.constraint(equalToConstant: PopupMetrics.contentWidth),
             heightAnchor.constraint(equalToConstant: 28),
             label.leadingAnchor.constraint(equalTo: leadingAnchor),
-            label.centerYAnchor.constraint(equalTo: centerYAnchor),
+            label.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }
 

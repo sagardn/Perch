@@ -37,7 +37,7 @@ final class ShapeMenu: NSView {
             button.trailingAnchor.constraint(equalTo: trailingAnchor),
             button.topAnchor.constraint(equalTo: topAnchor),
             button.bottomAnchor.constraint(equalTo: bottomAnchor),
-            button.widthAnchor.constraint(greaterThanOrEqualToConstant: 150),
+            button.widthAnchor.constraint(greaterThanOrEqualToConstant: 150)
         ])
 
         // A pull-down's first item is its title, never a choice.

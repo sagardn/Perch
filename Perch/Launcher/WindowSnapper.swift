@@ -39,7 +39,7 @@ final class WindowSnapper {
             Binding(action: .center, keyCode: 8, modifiers: co, label: "⌃⌥C"),
             Binding(action: .restore, keyCode: 51, modifiers: co, label: "⌃⌥⌫"),
             Binding(action: .previousDisplay, keyCode: 123, modifiers: coc, label: "⌃⌥⌘←"),
-            Binding(action: .nextDisplay, keyCode: 124, modifiers: coc, label: "⌃⌥⌘→"),
+            Binding(action: .nextDisplay, keyCode: 124, modifiers: coc, label: "⌃⌥⌘→")
         ]
     }()
 

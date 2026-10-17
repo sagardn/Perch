@@ -107,7 +107,7 @@ final class SearchRowView: NSView {
             arrow.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
             arrow.centerYAnchor.constraint(equalTo: centerYAnchor),
             arrow.widthAnchor.constraint(equalToConstant: arrowWidth),
-            arrow.heightAnchor.constraint(equalToConstant: 24),
+            arrow.heightAnchor.constraint(equalToConstant: 24)
         ])
     }
 

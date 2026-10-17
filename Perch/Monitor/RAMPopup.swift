@@ -179,7 +179,7 @@ final class RAMModule: PopupContent {
                 .init(fraction: Double(usage.app) / total, color: .perchBlue),
                 .init(fraction: Double(usage.wired) / total, color: .perchMagenta),
                 .init(fraction: Double(usage.compressed) / total, color: .perchOlive),
-                .init(fraction: Double(usage.cached) / total, color: Self.cachedTint),
+                .init(fraction: Double(usage.cached) / total, color: Self.cachedTint)
             ]
             appRow.value = Readings.bytes(usage.app)
             wiredRow.value = Readings.bytes(usage.wired)

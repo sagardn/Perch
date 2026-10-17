@@ -68,7 +68,7 @@ enum QuickSearch {
             "sqrt": { $0.squareRoot() }, "abs": { abs($0) }, "round": { $0.rounded() },
             "floor": { $0.rounded(.down) }, "ceil": { $0.rounded(.up) },
             "sin": { sin($0) }, "cos": { cos($0) }, "tan": { tan($0) },
-            "ln": { log($0) }, "log": { log10($0) },
+            "ln": { log($0) }, "log": { log10($0) }
         ]
 
         init(_ text: String) {

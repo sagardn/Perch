@@ -159,7 +159,7 @@ final class GeneralPane: NSStackView {
                 [("System", "system"), ("Celsius", "celsius"), ("Fahrenheit", "fahrenheit")],
                 selected: prefs.temperatureUnits) { [weak self] value in
                     self?.prefs.temperatureUnits = value
-                }),
+                })
         ])
     }
 
@@ -192,7 +192,7 @@ final class GeneralPane: NSStackView {
             Controls.row(localized("Keep item positions"),
                          Controls.toggle(prefs.keepMenuBarPositions) { [weak self] on in
                              self?.prefs.keepMenuBarPositions = on
-                         }),
+                         })
         ])
     }
 
@@ -207,7 +207,7 @@ final class GeneralPane: NSStackView {
                          Controls.toggle(PerchColors.menuBarColoured) { PerchColors.menuBarColoured = $0 }),
             Controls.row(localized("Normal"), Controls.colour(.calm)),
             Controls.row(localized("Busy · upload and write"), Controls.colour(.warning)),
-            Controls.row(localized("Critical"), Controls.colour(.critical)),
+            Controls.row(localized("Critical"), Controls.colour(.critical))
         ])
     }
 
@@ -240,7 +240,7 @@ final class GeneralPane: NSStackView {
             Controls.row(localized("Window control"), Controls.group([status, allow]),
                          detail: localized("Accessibility access, which the switcher needs to bring windows forward.")),
             Controls.row(localized("Alerts"), Controls.group([alerts, openAlerts]),
-                         detail: localized("Notifications, for the alerts you switch on in each module and for updates.")),
+                         detail: localized("Notifications, for the alerts you switch on in each module and for updates."))
         ])
         syncAccessibility()
         return section
@@ -254,13 +254,13 @@ final class GeneralPane: NSStackView {
         // tint, and the first attempt came out the same grey as its siblings.
         reset.attributedTitle = NSAttributedString(string: localized("Reset…"), attributes: [
             .foregroundColor: NSColor.systemRed,
-            .font: NSFont.systemFont(ofSize: NSFont.smallSystemFontSize),
+            .font: NSFont.systemFont(ofSize: NSFont.smallSystemFontSize)
         ])
         return Controls.section(localized("Backup"), symbol: "archivebox.fill", tint: .systemIndigo, [
             Controls.row(localized("Your settings"), Controls.group([
                 Controls.button("Export…") { [weak self] in self?.export() },
                 Controls.button("Import…") { [weak self] in self?.importSettings() },
-                reset,
+                reset
             ])),
             // Next to Export because it is the same kind of thing -- text
             // about this install, for somewhere else. It carries no serial
@@ -271,7 +271,7 @@ final class GeneralPane: NSStackView {
                              Notify.show(localized("Diagnostics copied"),
                                          symbol: "doc.on.clipboard")
                          },
-                         detail: localized("For a bug report. No serial number, network name or address.")),
+                         detail: localized("For a bug report. No serial number, network name or address."))
         ])
     }
 
@@ -290,7 +290,7 @@ final class GeneralPane: NSStackView {
                          Controls.button("Open…") {
                              if let url = AppLinks.manualURL { NSWorkspace.shared.open(url) }
                          },
-                         detail: localized("Every setting and keyboard shortcut, on the project's site.")),
+                         detail: localized("Every setting and keyboard shortcut, on the project's site."))
         ])
     }
 

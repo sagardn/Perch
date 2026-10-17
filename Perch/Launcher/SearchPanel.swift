@@ -74,7 +74,7 @@ final class SearchPanel: NSPanel, NSTableViewDataSource, NSTableViewDelegate, NS
         /// In the ⌃Tab cycle.
         var marked: Bool = false
         /// A sum, a conversion or an action rather than an app.
-        var quick: QuickSearch.Result? = nil
+        var quick: QuickSearch.Result?
     }
 
     private let field = NSTextField()
@@ -213,7 +213,7 @@ final class SearchPanel: NSPanel, NSTableViewDataSource, NSTableViewDelegate, NS
             scroll.topAnchor.constraint(equalTo: field.bottomAnchor, constant: 10),
             scroll.leadingAnchor.constraint(equalTo: background.leadingAnchor),
             scroll.trailingAnchor.constraint(equalTo: background.trailingAnchor),
-            scroll.bottomAnchor.constraint(equalTo: background.bottomAnchor),
+            scroll.bottomAnchor.constraint(equalTo: background.bottomAnchor)
         ])
     }
 
@@ -460,7 +460,7 @@ final class SearchPanel: NSPanel, NSTableViewDataSource, NSTableViewDelegate, NS
         frame.size.height = height
         frame.size.width = width
 
-        if let visible = NSScreen.screens.first(where: { NSPointInRect(frame.origin, $0.frame) })?.visibleFrame
+        if let visible = NSScreen.screens.first(where: { $0.frame.contains(frame.origin) })?.visibleFrame
             ?? NSScreen.main?.visibleFrame {
             frame.origin.y = max(frame.origin.y, visible.minY + 8)
             frame.origin.x = min(max(frame.origin.x, visible.minX + 8),
@@ -677,7 +677,7 @@ final class SearchPanel: NSPanel, NSTableViewDataSource, NSTableViewDelegate, NS
                     }
                 }
             })
-            
+
             let windows = WindowControl.windowList(for: running)
             if windows.count > 1 {
                 menu.addItem(.separator())

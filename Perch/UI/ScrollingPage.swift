@@ -58,7 +58,7 @@ final class ScrollingPage: NSView {
             document.widthAnchor.constraint(equalTo: scroll.contentView.widthAnchor),
             // At least the visible height, so a short page still fills the
             // pane instead of floating in it.
-            document.heightAnchor.constraint(greaterThanOrEqualTo: scroll.contentView.heightAnchor),
+            document.heightAnchor.constraint(greaterThanOrEqualTo: scroll.contentView.heightAnchor)
         ]
         // The pages' columns hang from the top with nothing below them; this
         // is what gives the page a height of its own. Each subview, not just
@@ -80,7 +80,7 @@ final class ScrollingPage: NSView {
             scroll.leadingAnchor.constraint(equalTo: leadingAnchor),
             scroll.trailingAnchor.constraint(equalTo: trailingAnchor),
             scroll.topAnchor.constraint(equalTo: topAnchor),
-            scroll.bottomAnchor.constraint(equalTo: bottomAnchor),
+            scroll.bottomAnchor.constraint(equalTo: bottomAnchor)
         ]
         NSLayoutConstraint.activate(constraints)
     }

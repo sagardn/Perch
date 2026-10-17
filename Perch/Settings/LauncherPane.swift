@@ -105,7 +105,7 @@ final class LauncherPane: NSStackView {
                              Prefs.dockClickPutsAway = $0
                              DockWatcher.shared.refresh()
                          },
-                         detail: localized("Click it once to bring it forward, again to put it away. Needs window control.")),
+                         detail: localized("Click it once to bring it forward, again to put it away. Needs window control."))
         ])
     }
 
@@ -134,7 +134,7 @@ final class LauncherPane: NSStackView {
                              Prefs.gestureEnabled = on
                              Launcher.shared.applyGesture(userAsked: true)
                              self?.syncDependentRows()
-                         }),
+                         })
         ] + fingerRows)
     }
 
@@ -151,7 +151,7 @@ final class LauncherPane: NSStackView {
         let section = Controls.section(localized("Permission"), symbol: "lock.shield.fill",
                                        tint: .systemGreen, [
             Controls.row(localized("Window control"), Controls.group([status, allow]),
-                         detail: localized("Accessibility access, which the switcher needs to bring windows forward.")),
+                         detail: localized("Accessibility access, which the switcher needs to bring windows forward."))
         ])
         syncAccessibility()
         return section

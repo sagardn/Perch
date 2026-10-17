@@ -44,7 +44,7 @@ final class ClipboardSettingsPage: NSView {
         var constraints = [
             column.leadingAnchor.constraint(equalTo: leadingAnchor),
             column.trailingAnchor.constraint(equalTo: trailingAnchor),
-            column.topAnchor.constraint(equalTo: topAnchor),
+            column.topAnchor.constraint(equalTo: topAnchor)
         ]
         constraints += sections.map {
             $0.widthAnchor.constraint(equalTo: column.widthAnchor, constant: -PerchMetrics.pageInset * 2)
@@ -103,7 +103,7 @@ final class ClipboardSettingsPage: NSView {
                 }])),
             Controls.row(localized("Reading the clipboard"), Controls.group([
                 access, Controls.button("Privacy & Security…") { ClipboardActions.openPrivacySettings() }]),
-                         detail: localized("macOS decides whether apps may read what you copy, under Paste from Other Apps.")),
+                         detail: localized("macOS decides whether apps may read what you copy, under Paste from Other Apps."))
         ])
     }
 
@@ -131,7 +131,7 @@ final class ClipboardSettingsPage: NSView {
                          detail: localized("Up to 25 MB each. Larger images are left out rather than shrunk.")),
             Controls.row(localized("Show image previews"), previews, indented: true),
             Controls.row(localized("Paste for me"), paste,
-                         detail: localized("Choosing an entry also pastes it into the app you were in. Needs window control; otherwise it is copied for you to paste.")),
+                         detail: localized("Choosing an entry also pastes it into the app you were in. Needs window control; otherwise it is copied for you to paste."))
         ])
     }
 
@@ -160,7 +160,7 @@ final class ClipboardSettingsPage: NSView {
             Controls.row(localized("Pinned entries expire too"), pins, indented: true),
             Controls.row(localized("Keep history after quitting"), persistent,
                          detail: localized("Off, history lasts until Perch quits and is then deleted.")),
-            Controls.row(localized("Clear unpinned entries when Perch quits"), clearOnQuit, indented: true),
+            Controls.row(localized("Clear unpinned entries when Perch quits"), clearOnQuit, indented: true)
         ])
     }
 
@@ -185,7 +185,7 @@ final class ClipboardSettingsPage: NSView {
             Controls.row(localized("Show in the menu bar"), inMenuBar),
             Controls.row(localized("Entries in the popup"), count),
             Controls.row(localized("Keyboard shortcut"), ShortcutRecorder(module: "Clipboard"),
-                         detail: localized("Opens the popup, or the history window while the item is hidden. Works in other apps once window control is allowed.")),
+                         detail: localized("Opens the popup, or the history window while the item is hidden. Works in other apps once window control is allowed."))
         ])
     }
 
@@ -197,11 +197,12 @@ final class ClipboardSettingsPage: NSView {
         refreshers.append { [weak self] in self?.fillExclusions() }
 
         return Controls.section(localized("Privacy"), symbol: "hand.raised.fill", tint: .systemGreen,
-                                footer: localized("Copies an app marks as private, as password managers do, are never kept, whatever the settings. Perch can tell which app was in front when something was copied, not which app copied it."), [
+                                footer: localized(
+                                    "Copies an app marks as private, as password managers do, are never kept. Perch can tell which app was in front when a copy was made, not which app made it."), [
             Controls.row(localized("Ignore copies made in"), Controls.button("Add App…") { [weak self] in
                 self?.addExclusion()
             }),
-            Controls.row(excludedList),
+            Controls.row(excludedList)
         ])
     }
 
@@ -222,11 +223,11 @@ final class ClipboardSettingsPage: NSView {
                             localized("The entries and their stored images are deleted from this Mac. This cannot be undone.")) {
                         ClipboardService.shared.clear(keepingPinned: false)
                     }
-                },
+                }
             ])),
             Controls.row(localized("Settings"), Controls.button("Restore Defaults") {
                 ClipboardSettings.restoreDefaults()
-            }, detail: localized("Capture, keeping and popup options. Leaves history on or off, the menu bar item, the shortcut and every entry as they are.")),
+            }, detail: localized("Capture, keeping and popup options. Leaves history on or off, the menu bar item, the shortcut and every entry as they are."))
         ])
     }
 

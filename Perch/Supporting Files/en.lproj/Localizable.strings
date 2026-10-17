@@ -687,7 +687,8 @@
 "Copied. Pasting for you needs window control in Settings" = "Copied. Pasting for you needs window control in Settings";
 "Copied. Press ⌘V to paste" = "Copied. Press ⌘V to paste";
 "Copies that apps mark as private, such as passwords from a password manager, are never kept, and you can exclude other apps in Settings." = "Copies that apps mark as private, such as passwords from a password manager, are never kept, and you can exclude other apps in Settings.";
-"Perch will keep the text and images you copy so you can use them again. They are stored only on this Mac, in your user Library, readable by your account alone, and never sent anywhere. They are not encrypted beyond what your account and FileVault already provide." = "Perch will keep the text and images you copy so you can use them again. They are stored only on this Mac, in your user Library, readable by your account alone, and never sent anywhere. They are not encrypted beyond what your account and FileVault already provide.";
+"Perch will keep the text and images you copy so you can use them again. They are stored only on this Mac, readable by your account alone, and never sent anywhere." = "Perch will keep the text and images you copy so you can use them again. They are stored only on this Mac, readable by your account alone, and never sent anywhere.";
+"They are not encrypted beyond what your account and FileVault already provide." = "They are not encrypted beyond what your account and FileVault already provide.";
 "Sent ⌘V to %0" = "Sent ⌘V to %0";
 "That entry could not be restored: its stored data is missing" = "That entry could not be restored: its stored data is missing";
 "Turn on clipboard history?" = "Turn on clipboard history?";
@@ -755,7 +756,7 @@
 "Clear and reset" = "Clear and reset";
 "Clear unpinned entries when Perch quits" = "Clear unpinned entries when Perch quits";
 "Clipboard history" = "Clipboard history";
-"Copies an app marks as private, as password managers do, are never kept, whatever the settings. Perch can tell which app was in front when something was copied, not which app copied it." = "Copies an app marks as private, as password managers do, are never kept, whatever the settings. Perch can tell which app was in front when something was copied, not which app copied it.";
+"Copies an app marks as private, as password managers do, are never kept. Perch can tell which app was in front when a copy was made, not which app made it." = "Copies an app marks as private, as password managers do, are never kept. Perch can tell which app was in front when a copy was made, not which app made it.";
 "Enable clipboard history" = "Enable clipboard history";
 "Entries in the popup" = "Entries in the popup";
 "Entries, not counting pinned ones." = "Entries, not counting pinned ones.";
@@ -885,7 +886,7 @@
 // Monitor · NetworkModuleShell
 
 // Monitor · NetworkPopup (Wi-Fi name)
-"Asks ifconfig.co, an outside server, while the popup is open: when it opens, every two minutes, and when the network changes. Also every two minutes while the public address alert is on." = "Asks ifconfig.co, an outside server, while the popup is open: when it opens, every two minutes, and when the network changes. Also every two minutes while the public address alert is on.";
+"Asks ifconfig.co, an outside server, while the popup is open: on opening, every two minutes, and when the connection changes." = "Asks ifconfig.co, an outside server, while the popup is open: on opening, every two minutes, and when the connection changes.";
 "Location Services…" = "Location Services…";
 "Location is off" = "Location is off";
 "Location Services is off for this Mac, and macOS shows no app the Wi-Fi name without it. Turn it on in System Settings, then allow Perch." = "Location Services is off for this Mac, and macOS shows no app the Wi-Fi name without it. Turn it on in System Settings, then allow Perch.";

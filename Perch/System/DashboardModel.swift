@@ -109,7 +109,7 @@ final class DashboardModel: ObservableObject {
             // goes off there are no more ticks to wait for.
             center.addObserver(forName: .toggleModule, object: nil, queue: .main) { [weak self] _ in
                 DispatchQueue.main.async { self?.refresh() }
-            },
+            }
         ]
     }
 

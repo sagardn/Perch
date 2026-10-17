@@ -74,7 +74,7 @@ enum AppLeftovers {
     /// extension, and nothing in Foundation can tell them apart.
     static let fileSuffixes: Set<String> = [
         "plist", "savedstate", "log", "lock", "db", "sqlite", "sqlite3",
-        "json", "sfl2", "sfl3", "binarycookies", "asl", "crash", "ips",
+        "json", "sfl2", "sfl3", "binarycookies", "asl", "crash", "ips"
     ]
 
     private static func stripSuffix(_ filename: String) -> String {

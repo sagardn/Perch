@@ -128,7 +128,7 @@ private final class SetupChrome: NSView {
             footer.leadingAnchor.constraint(equalTo: leadingAnchor),
             footer.trailingAnchor.constraint(equalTo: trailingAnchor),
             footer.bottomAnchor.constraint(equalTo: bottomAnchor),
-            footer.heightAnchor.constraint(equalToConstant: footerHeight),
+            footer.heightAnchor.constraint(equalToConstant: footerHeight)
         ])
 
         render()
@@ -176,7 +176,7 @@ private final class SetupChrome: NSView {
         footer.addSubview(row)
         NSLayoutConstraint.activate([
             row.centerXAnchor.constraint(equalTo: footer.centerXAnchor),
-            row.centerYAnchor.constraint(equalTo: footer.centerYAnchor),
+            row.centerYAnchor.constraint(equalTo: footer.centerYAnchor)
         ])
         return footer
     }
@@ -216,7 +216,7 @@ private final class SetupChrome: NSView {
             page.leadingAnchor.constraint(equalTo: content.leadingAnchor),
             page.trailingAnchor.constraint(equalTo: content.trailingAnchor),
             page.topAnchor.constraint(equalTo: content.topAnchor),
-            page.bottomAnchor.constraint(equalTo: content.bottomAnchor),
+            page.bottomAnchor.constraint(equalTo: content.bottomAnchor)
         ])
     }
 }
@@ -256,7 +256,7 @@ final class SetupPageView: NSView {
             column.topAnchor.constraint(equalTo: topAnchor, constant: 36),
             column.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -16),
             column.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor, constant: 40),
-            column.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor, constant: -40),
+            column.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor, constant: -40)
         ])
     }
 
@@ -393,7 +393,7 @@ private final class WelcomePage: NSView {
             column.leadingAnchor.constraint(equalTo: leadingAnchor),
             column.trailingAnchor.constraint(equalTo: trailingAnchor),
             column.topAnchor.constraint(equalTo: topAnchor),
-            column.bottomAnchor.constraint(equalTo: bottomAnchor),
+            column.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 
@@ -433,7 +433,7 @@ private final class PresetPage: NSView {
             column.trailingAnchor.constraint(equalTo: trailingAnchor),
             column.topAnchor.constraint(equalTo: topAnchor),
             column.bottomAnchor.constraint(equalTo: bottomAnchor),
-            caption.widthAnchor.constraint(lessThanOrEqualTo: column.widthAnchor),
+            caption.widthAnchor.constraint(lessThanOrEqualTo: column.widthAnchor)
         ])
 
         select(SetupPreset.defaultIndex, apply: false)
@@ -499,7 +499,7 @@ private final class PresetPage: NSView {
             plate.heightAnchor.constraint(equalToConstant: MenuBarMetrics.height + 10),
             strip.leadingAnchor.constraint(equalTo: plate.leadingAnchor),
             strip.trailingAnchor.constraint(equalTo: plate.trailingAnchor),
-            strip.centerYAnchor.constraint(equalTo: plate.centerYAnchor),
+            strip.centerYAnchor.constraint(equalTo: plate.centerYAnchor)
         ])
         return plate
     }
@@ -561,7 +561,7 @@ private final class WindowControlPage: NSView {
             ("⌃Space", localized("Search and switch apps")),
             ("⌃Tab", localized("Cycle the apps you mark")),
             ("⌃⌥← →", localized("Snap a window to half the screen")),
-            ("⌃`", localized("Minimise and bring back")),
+            ("⌃`", localized("Minimise and bring back"))
         ].map { keys, what -> [NSView] in
             let key = NSTextField(labelWithString: keys)
             key.font = .monospacedSystemFont(ofSize: 12, weight: .semibold)
@@ -598,7 +598,7 @@ private final class WindowControlPage: NSView {
             column.leadingAnchor.constraint(equalTo: leadingAnchor),
             column.trailingAnchor.constraint(equalTo: trailingAnchor),
             column.topAnchor.constraint(equalTo: topAnchor),
-            column.bottomAnchor.constraint(equalTo: bottomAnchor),
+            column.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
         refresh()
     }
@@ -644,7 +644,7 @@ private final class LoginItemPage: NSView {
             column.leadingAnchor.constraint(equalTo: leadingAnchor),
             column.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor),
             column.topAnchor.constraint(equalTo: topAnchor),
-            column.bottomAnchor.constraint(equalTo: bottomAnchor),
+            column.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 
@@ -677,7 +677,7 @@ private final class UpdatesPage: NSView {
     private static let groups: [[UpdateInterval]] = [
         [.silent, .atStart],
         [.oncePerDay, .oncePerWeek, .oncePerMonth],
-        [.never],
+        [.never]
     ]
 
     private static func caption(for interval: UpdateInterval) -> String {
@@ -727,7 +727,7 @@ private final class UpdatesPage: NSView {
             column.leadingAnchor.constraint(equalTo: leadingAnchor),
             column.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor),
             column.topAnchor.constraint(equalTo: topAnchor),
-            column.bottomAnchor.constraint(equalTo: bottomAnchor),
+            column.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 
@@ -783,7 +783,7 @@ private final class DonePage: NSView {
             column.leadingAnchor.constraint(equalTo: leadingAnchor),
             column.trailingAnchor.constraint(equalTo: trailingAnchor),
             column.topAnchor.constraint(equalTo: topAnchor),
-            column.bottomAnchor.constraint(equalTo: bottomAnchor),
+            column.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 
@@ -825,7 +825,7 @@ private final class SetupLink: NSButton {
 
         NSLayoutConstraint.activate([
             widthAnchor.constraint(greaterThanOrEqualToConstant: 44),
-            heightAnchor.constraint(equalToConstant: 44),
+            heightAnchor.constraint(equalToConstant: 44)
         ])
     }
 

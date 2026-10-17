@@ -52,7 +52,7 @@ final class SensorsTile: NSView {
             summary.topAnchor.constraint(equalTo: value.bottomAnchor, constant: 6),
             detail.leadingAnchor.constraint(equalTo: leadingAnchor),
             detail.trailingAnchor.constraint(equalTo: trailingAnchor),
-            detail.topAnchor.constraint(equalTo: summary.bottomAnchor, constant: 4),
+            detail.topAnchor.constraint(equalTo: summary.bottomAnchor, constant: 4)
         ])
     }
 

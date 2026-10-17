@@ -275,7 +275,6 @@ struct DashboardView: View {
     }
 }
 
-
 // MARK: - Issue
 
 private struct IssueRow: View {
@@ -707,7 +706,7 @@ private struct DeviceDetails: View {
         let os = DeviceInfo.os
         var rows: [(String, AnyView)] = [
             (localized("System"), text(os.build.isEmpty ? os.description : "\(os.description) (\(os.build))")),
-            (localized("Uptime"), text(model.uptime)),
+            (localized("Uptime"), text(model.uptime))
         ]
         for display in displays {
             rows.append((displays.count > 1 ? display.name : localized("Display mode"), text(mode(display))))

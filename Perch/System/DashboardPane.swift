@@ -28,7 +28,7 @@ final class DashboardPane: NSView {
             host.leadingAnchor.constraint(equalTo: leadingAnchor),
             host.trailingAnchor.constraint(equalTo: trailingAnchor),
             host.topAnchor.constraint(equalTo: topAnchor),
-            host.bottomAnchor.constraint(equalTo: bottomAnchor),
+            host.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 

@@ -128,7 +128,7 @@ enum AIAssistants {
         "cursor": ["Library/Caches/com.todesktop.230313mzl4w4u92"],
         "antigravity": ["Library/Application Support/Antigravity IDE",
                         "Library/Caches/com.google.antigravity-ide"],
-        "windsurf": ["Library/Caches/com.exafunction.windsurf"],
+        "windsurf": ["Library/Caches/com.exafunction.windsurf"]
     ]
 
     /// Where downloaded models live, and what counts as one model.
@@ -153,7 +153,7 @@ enum AIAssistants {
         // removing one breaks every model whose manifest names it.
         ModelStore(tool: "ollama", path: ".ollama/models", unitPrefixes: nil),
         // models/<publisher>/<model>; a publisher folder is the unit.
-        ModelStore(tool: "lm studio", path: ".lmstudio/models", unitPrefixes: [""]),
+        ModelStore(tool: "lm studio", path: ".lmstudio/models", unitPrefixes: [""])
     ]
 
     // MARK: - The rules
@@ -171,13 +171,13 @@ enum AIAssistants {
     static let conversationNames: Set<String> = [
         "projects", "sessions", "session-env", "shell-snapshots", "plans",
         "file-history", "active_sessions", "history", "prompt-history",
-        "memories", "goals", "queue", "thread_history", "todos",
+        "memories", "goals", "queue", "thread_history", "todos"
     ]
 
     static let electronCacheNames: Set<String> = [
         "code cache", "gpucache", "cacheddata", "cachedextensionvsixs",
         "cachedprofilesdata", "dawncache", "dawngraphitecache", "dawnwebgpucache",
-        "shadercache", "grshadercache",
+        "shadercache", "grshadercache"
     ]
 
     /// `memories_1.sqlite` and `thread_history_1.sqlite` are the same thing

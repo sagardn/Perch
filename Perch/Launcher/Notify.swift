@@ -76,7 +76,7 @@ enum Notify {
                 row.leadingAnchor.constraint(equalTo: content.leadingAnchor, constant: 22),
                 row.trailingAnchor.constraint(equalTo: content.trailingAnchor, constant: -22),
                 row.topAnchor.constraint(equalTo: content.topAnchor, constant: 14),
-                row.bottomAnchor.constraint(equalTo: content.bottomAnchor, constant: -14),
+                row.bottomAnchor.constraint(equalTo: content.bottomAnchor, constant: -14)
             ])
 
             let size = content.fittingSize

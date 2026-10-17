@@ -290,7 +290,7 @@ private final class VolumeRow: NSView {
             bar.topAnchor.constraint(equalTo: row.bottomAnchor, constant: 1),
             bar.leadingAnchor.constraint(equalTo: leadingAnchor),
             bar.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -3),
-            widthAnchor.constraint(equalTo: row.widthAnchor),
+            widthAnchor.constraint(equalTo: row.widthAnchor)
         ])
     }
 

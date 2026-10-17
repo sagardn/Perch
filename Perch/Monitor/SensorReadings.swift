@@ -211,7 +211,7 @@ enum SensorReadings {
         "F0Ac": "Fan 1",
         "F1Ac": "Fan 2",
         "F0Mx": "Fan 1 maximum",
-        "F1Mx": "Fan 2 maximum",
+        "F1Mx": "Fan 2 maximum"
     ]
 }
 

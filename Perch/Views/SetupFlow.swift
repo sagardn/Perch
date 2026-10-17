@@ -118,20 +118,20 @@ struct SetupPreset: Equatable {
     static let all: [SetupPreset] = [
         SetupPreset(name: "Default", items: [
             Item("CPU", .mini), Item("RAM", .mini),
-            Item("Disk", .mini), Item("Network", .rates),
+            Item("Disk", .mini), Item("Network", .rates)
         ]),
         SetupPreset(name: "Basic", items: [
-            Item("CPU", .mini), Item("RAM", .mini),
+            Item("CPU", .mini), Item("RAM", .mini)
         ]),
         SetupPreset(name: "Recommended", items: [
             Item("CPU", .mini), Item("RAM", .barChart),
-            Item("Disk", .barChart), Item("Network", .rates),
+            Item("Disk", .barChart), Item("Network", .rates)
         ]),
         SetupPreset(name: "Extended", items: [
             Item("CPU", .lineChart), Item("GPU", .mini),
             Item("RAM", .barChart), Item("Disk", .barChart),
-            Item("Sensors", .label), Item("Network", .rates),
-        ]),
+            Item("Sensors", .label), Item("Network", .rates)
+        ])
     ]
 
     static let defaultIndex = 0

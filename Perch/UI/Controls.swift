@@ -103,7 +103,7 @@ enum Controls {
             tile.widthAnchor.constraint(equalToConstant: 20),
             tile.heightAnchor.constraint(equalToConstant: 20),
             image.centerXAnchor.constraint(equalTo: tile.centerXAnchor),
-            image.centerYAnchor.constraint(equalTo: tile.centerYAnchor),
+            image.centerYAnchor.constraint(equalTo: tile.centerYAnchor)
         ])
         return tile
     }
@@ -176,7 +176,7 @@ enum Controls {
             control.topAnchor.constraint(greaterThanOrEqualTo: view.topAnchor, constant: 6),
             control.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: -6),
             text.topAnchor.constraint(greaterThanOrEqualTo: view.topAnchor, constant: 6),
-            text.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: -6),
+            text.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: -6)
         ])
 
         fitToContent(view)
@@ -204,7 +204,7 @@ enum Controls {
             // constraints allowed, and these are the constraints that were
             // missing.
             control.topAnchor.constraint(greaterThanOrEqualTo: view.topAnchor, constant: 6),
-            control.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: -6),
+            control.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: -6)
         ])
         fitToContent(view)
         return view
@@ -440,7 +440,7 @@ enum Controls {
         NSLayoutConstraint.activate([
             field.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             field.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
-            field.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -4),
+            field.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -4)
         ])
         return view
     }
@@ -635,7 +635,7 @@ private final class ColourControl: NSStackView, NSTextFieldDelegate {
             field.widthAnchor.constraint(equalToConstant: 72),
             well.widthAnchor.constraint(equalToConstant: 38),
             well.heightAnchor.constraint(equalToConstant: 22),
-            reset.widthAnchor.constraint(equalToConstant: 18),
+            reset.widthAnchor.constraint(equalToConstant: 18)
         ])
         sync()
     }
@@ -678,4 +678,3 @@ private final class ColourControl: NSStackView, NSTextFieldDelegate {
 }
 
 // MARK: - Shape picker
-

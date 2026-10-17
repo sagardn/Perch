@@ -118,7 +118,7 @@ final class CPUSettingsPage: NSView {
             localized("Menu bar"), symbol: "menubar.rectangle", tint: .systemBlue,
             footer: localized("Pick one or more. They sit side by side in the menu bar, in this order."),
             [Controls.shapes(self.styles, shown: self.shown, label: CPUModule().menuBarLabel,
-                             value: "42%",) { chosen in
+                             value: "42%", ) { chosen in
                 self.shown = chosen
                 // In the order the tiles are laid out, not the order they
                 // were clicked, so the menu bar matches the page.
@@ -179,7 +179,7 @@ final class CPUSettingsPage: NSView {
                 [("None", "0"), ("5", "5"), ("8", "8"), ("12", "12")],
                 selected: "\(CPUSettings.processCount)") { value in
                     CPUSettings.processCount = Int(value) ?? 8
-                }),
+                })
         ])
 
         let column = NSStackView(views: [section, shapes, alerts])
@@ -196,7 +196,7 @@ final class CPUSettingsPage: NSView {
             column.topAnchor.constraint(equalTo: topAnchor),
             section.widthAnchor.constraint(equalTo: column.widthAnchor, constant: -36),
             shapes.widthAnchor.constraint(equalTo: column.widthAnchor, constant: -36),
-            alerts.widthAnchor.constraint(equalTo: column.widthAnchor, constant: -36),
+            alerts.widthAnchor.constraint(equalTo: column.widthAnchor, constant: -36)
         ])
     }
 

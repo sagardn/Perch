@@ -75,7 +75,7 @@ extension ClipboardHistory.Filter {
 struct ClipboardHistoryView: View {
     @ObservedObject var service: ClipboardService
     @ObservedObject var model: ClipboardHistoryModel
-    @State private var confirmingClear: Bool? = nil   // true: everything; false: unpinned only
+    @State private var confirmingClear: Bool?   // true: everything; false: unpinned only
     @FocusState private var listFocused: Bool
 
     private var entries: [ClipboardEntry] { service.history.matching(model.query, filter: model.filter) }
@@ -333,8 +333,7 @@ struct ClipboardInspector: View {
         if entry.kind == .image {
             if let image = service.imageURL(entry).flatMap(NSImage.init(contentsOf:)) {
                 Image(nsImage: image)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
+                    .resizable().scaledToFit()
                     .accessibilityLabel(ClipboardFormat.title(entry))
             } else {
                 Text(localized("The stored image is missing, so this entry cannot be restored."))

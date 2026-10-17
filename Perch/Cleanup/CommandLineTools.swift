@@ -325,7 +325,7 @@ extension CommandLineTools {
         "git", "gitconfig", "gitignore", "profile", "zshrc", "bashrc",
         "bash_profile", "zprofile", "zsh_history", "bash_history", "trash",
         "library", "documents", "desktop", "downloads", "applications",
-        "icloud", "keychains",
+        "icloud", "keychains"
     ]
 
     /// The shapes a settings file in the home folder takes.

@@ -53,7 +53,7 @@ enum LargeFiles {
             // breaks without it.
             .installer: ["dmg", "pkg", "iso", "mpkg", "msi", "appx"],
             .document: ["pdf", "doc", "docx", "pages", "xls", "xlsx", "numbers",
-                        "ppt", "pptx", "key", "epub", "txt", "rtf", "md"],
+                        "ppt", "pptx", "key", "epub", "txt", "rtf", "md"]
         ]
 
         static func of(_ url: URL) -> Category {
@@ -134,7 +134,7 @@ enum LargeFiles {
     static let opaqueExtensions: Set<String> = [
         "app", "photoslibrary", "musiclibrary", "tvlibrary", "imovielibrary",
         "fcpbundle", "logicx", "sparsebundle", "bundle", "framework",
-        "xcodeproj", "xcworkspace", "rtfd", "download",
+        "xcodeproj", "xcworkspace", "rtfd", "download"
     ]
 
     /// Directories that are one thing to a person, whatever they hold.
@@ -152,7 +152,7 @@ enum LargeFiles {
     static let opaqueDirectories: Set<String> = [
         "node_modules", ".git", ".svn", "Pods", "Carthage", "DerivedData",
         ".build", "build", "target", "vendor", "__pycache__", ".venv", "venv",
-        ".gradle", ".next", ".nuxt", "dist", ".cargo", ".rustup", ".npm",
+        ".gradle", ".next", ".nuxt", "dist", ".cargo", ".rustup", ".npm"
     ]
 
     static func isOpaque(_ url: URL) -> Bool {
@@ -307,7 +307,6 @@ extension LargeFiles {
         return total
     }
 }
-
 
 // MARK: - Removing what was chosen
 

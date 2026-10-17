@@ -91,14 +91,14 @@ final class GPUSettingsPage: NSView {
                 [("1 minute", "60"), ("2 minutes", "120"), ("5 minutes", "300")],
                 selected: "\(GPUSettings.historyLength)") { value in
                     GPUSettings.historyLength = Int(value) ?? 120
-                }),
+                })
         ])
 
         let shapes = Controls.section(
             localized("Menu bar"), symbol: "menubar.rectangle", tint: .systemBlue,
             footer: localized("Pick one or more. They sit side by side in the menu bar, in this order."),
             [Controls.shapes(self.styles, shown: self.shown, label: GPUModule().menuBarLabel,
-                             value: "42%",) { chosen in
+                             value: "42%", ) { chosen in
                 self.shown = chosen
                 // In the order the tiles are laid out, not the order they
                 // were clicked, so the menu bar matches the page.
@@ -133,7 +133,7 @@ final class GPUSettingsPage: NSView {
             column.topAnchor.constraint(equalTo: topAnchor),
             section.widthAnchor.constraint(equalTo: column.widthAnchor, constant: -36),
             shapes.widthAnchor.constraint(equalTo: column.widthAnchor, constant: -36),
-            alerts.widthAnchor.constraint(equalTo: column.widthAnchor, constant: -36),
+            alerts.widthAnchor.constraint(equalTo: column.widthAnchor, constant: -36)
         ])
     }
 
